@@ -1,0 +1,32 @@
+@import "../../styles/styles.scss";
+
+.button {
+  color: white;
+  padding: rem(12) rem(26);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(5);
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+
+  &__text {
+    display: block;
+    font-size: rem(16);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: rem(100);
+
+    &:hover {
+        background-color: $color_main__dark-gunmetal--opacity-05;
+    }
+  }
+}

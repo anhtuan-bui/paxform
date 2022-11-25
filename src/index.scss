@@ -1,0 +1,10 @@
+@import './styles/styles.scss';
+
+body {
+  margin: 0;
+  font-family: $font_family__Inter;
+  font-size: $font_size__desktop;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

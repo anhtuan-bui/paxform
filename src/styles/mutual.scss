@@ -1,0 +1,10 @@
+.container {
+    width: $width__desktop;
+    margin: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    @include desktop {
+        padding: rem(32);
+    }
+}

@@ -1,0 +1,33 @@
+@font-face {
+  font-family: GothamRoundedBold;
+  src: url(../assets/fonts/gotham-rounded/GothamRounded-Bold.otf)
+    format("opentype");
+}
+
+@font-face {
+  font-family: Inter;
+  src: url(../assets/fonts/Inter/Inter.ttf) format("truetype");
+}
+
+$width__desktop: 1440px;
+$width__tablet: 768px;
+$width__mobile: 375px;
+
+$font_size__desktop: 16px;
+$font_family__GotamRoundedBold: GothamRoundedBold;
+$font_family__Inter: Inter;
+
+$color_main__british-racing-green: #024127;
+$color_main__acid-green: #a8ca13;
+$color_main__dark-gunmetal: #212529;
+$color_main__dark-gunmetal--opacity-05: hsla(210, 11%, 15%, 0.5);
+$color_main__boston-university-red: #d00000;
+$color_main__medium-electric-blue: #084f94;
+
+$color_one__aero-blue: #cefdea;
+$color_one__light-godenrod-yellow: #f3fbd0;
+$color_one__platinum: #e3e6e8;
+$color_one__selective-yellow: #ffba08;
+$color_one__water: #cfe6fc;
+
+
