@@ -26,10 +26,10 @@
 
     &-right {
       display: flex;
-      gap: rem(20);
+      gap: rem(60);
 
       &-list {
-        max-width: rem(300);
+        max-width: rem(250);
 
         p {
           font-size: rem(14);
@@ -42,7 +42,7 @@
           padding-left: 0;
           display: flex;
           flex-direction: column;
-          gap: rem(15);
+          gap: rem(12);
 
           li {
             font-size: rem(14);
