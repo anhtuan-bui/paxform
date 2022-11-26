@@ -302,10 +302,11 @@ $color_bg_hero__gradient--first: #0a61b4;
   overflow: hidden;
   background-color: #f6f6f6;
   padding: rem(25);
-  height: 82%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
 
   &:hover {
     background-color: #f0f8ff;
