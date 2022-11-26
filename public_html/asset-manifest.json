@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.05a04a2a.css",
+    "main.css": "/static/css/main.b06603f3.css",
     "main.js": "/static/js/main.d2bd6dea.js",
     "static/js/787.dfd5b70e.chunk.js": "/static/js/787.dfd5b70e.chunk.js",
     "static/media/Business Image.svg": "/static/media/Business Image.324d28980088f4b7f7b2951e3daf190e.svg",
     "static/media/hero-right.svg": "/static/media/hero-right.4ff48d667ae506da927d6328ffc8b821.svg",
     "static/media/Personal Platform Image.svg": "/static/media/Personal Platform Image.ec5d95d065d4dbd2a452545dcfc9f2a8.svg",
     "static/media/Inter-Bold.ttf": "/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
-    "static/media/Inter-SemiBold.ttf": "/static/media/Inter-SemiBold.4d56bb21f2399db8ad48.ttf",
     "static/media/Inter-Medium.ttf": "/static/media/Inter-Medium.6dcbc9bed1ec438907ee.ttf",
     "static/media/Inter-Light.ttf": "/static/media/Inter-Light.eec8664621fec98efb37.ttf",
+    "static/media/Inter-Regular.ttf": "/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
     "static/media/flowbase.svg": "/static/media/flowbase.44dedd89764e9a1352f01f136f4be13d.svg",
     "static/media/most forms.svg": "/static/media/most forms.d95f23cec7c799c205d2fda4bbc42158.svg",
     "static/media/all information.svg": "/static/media/all information.bc33ba09c3198556fead9aa22657b5b1.svg",
@@ -48,12 +48,12 @@
     "static/media/arrow-right.svg": "/static/media/arrow-right.1c318de4fcf71ce07bc95ec3a501be1b.svg",
     "static/media/left.svg": "/static/media/left.482b7a8cfb145445f061ba6fd0059559.svg",
     "static/media/right.svg": "/static/media/right.860f22fa1256bcd17b01333cd0b9705b.svg",
-    "main.05a04a2a.css.map": "/static/css/main.05a04a2a.css.map",
+    "main.b06603f3.css.map": "/static/css/main.b06603f3.css.map",
     "main.d2bd6dea.js.map": "/static/js/main.d2bd6dea.js.map",
     "787.dfd5b70e.chunk.js.map": "/static/js/787.dfd5b70e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.05a04a2a.css",
+    "static/css/main.b06603f3.css",
     "static/js/main.d2bd6dea.js"
   ]
 }
