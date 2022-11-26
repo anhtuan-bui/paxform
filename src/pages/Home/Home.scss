@@ -106,7 +106,7 @@ $color_bg_hero__gradient--first: #0a61b4;
 
     &-right {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
 
       > .button {
         border: 1px solid #20976c;
