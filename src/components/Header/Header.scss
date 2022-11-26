@@ -20,13 +20,17 @@ $color_bg_hero__gradient--first: #0a61b4;
     color: black;
     height: rem(80);
 
+    .span--hover:after {
+      background-color: black;
+    }
+
     .nav__first-level-li-link {
       color: black;
     }
 
     .logo {
       path {
-        fill: black;
+        fill: #20976C;
       }
     }
 

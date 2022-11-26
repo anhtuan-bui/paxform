@@ -147,7 +147,7 @@ export default class Header extends Component {
                                         return (
                                             <li key={index} className='nav__first-level-li'>
                                                 <a href={item.link} className="nav__first-level-li-link">
-                                                    <span className='span__hover'>{item.text}</span>
+                                                    <span className='span--hover'>{item.text}</span>
                                                     {item.submenu.length > 0 && <ArrowRight />}
                                                 </a>
                                                 {item.submenu.length > 0 &&
