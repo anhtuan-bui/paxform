@@ -1,18 +1,19 @@
 @import "../../styles/styles.scss";
 
 .button {
-  color: white;
   padding: rem(12) rem(26);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: rem(5);
+  gap: rem(10);
   cursor: pointer;
   transition: 0.25s ease-in-out;
+  border-radius: rem(100);
 
   &__text {
     display: block;
     font-size: rem(16);
+    white-space: nowrap;
   }
 
   &__wrapper {
@@ -22,11 +23,49 @@
 
   &--outline {
     background-color: transparent;
+    border: 1px solid black;
+    transition: 0.25s ease-in-out;
     border: 1px solid white;
-    border-radius: rem(100);
 
     &:hover {
-        background-color: $color_main__dark-gunmetal--opacity-05;
+      background-color: $color_main__dark-gunmetal--opacity-05;
     }
+  }
+
+  &__arrow {
+    path {
+      stroke: black;
+    }
+
+    &--none {
+      display: none;
+    }
+  }
+
+  &--flat {
+    background-color: #20976C;
+    border: none;
+
+  }
+
+  &--white {
+    color: white;
+
+    .button__text {
+      color: white;
+    }
+
+    .button__arrow {
+      path {
+        stroke: white;
+      }
+    }
+  }
+}
+
+.triangle_right {
+
+  &--none {
+    display: none;
   }
 }

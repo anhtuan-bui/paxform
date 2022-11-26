@@ -10,6 +10,8 @@
 }
 
 $width__desktop: 1440px;
+$width__laptop: 1280px;
+$width__large-tablet: 1000px;
 $width__tablet: 768px;
 $width__mobile: 375px;
 
@@ -20,7 +22,7 @@ $font_family__Inter: Inter;
 $color_main__british-racing-green: #024127;
 $color_main__acid-green: #a8ca13;
 $color_main__dark-gunmetal: #212529;
-$color_main__dark-gunmetal--opacity-05: hsla(210, 11%, 15%, 0.5);
+$color_main__dark-gunmetal--opacity-05: hsla(210, 11%, 15%, 0.25);
 $color_main__boston-university-red: #d00000;
 $color_main__medium-electric-blue: #084f94;
 
