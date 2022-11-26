@@ -4,6 +4,8 @@ $color_bg_hero__gradient--last: #074581;
 $color_bg_hero__gradient--first: #0a61b4;
 
 .header {
+  display: flex;
+  align-items: center;
   background-color: transparent;
   position: fixed;
   top: 0;
