@@ -346,7 +346,7 @@ export default class Home extends Component {
 
                             <div className="simplify_flexbox rtl">
                                 <div className="simplify_flexbox__content ltr">
-                                    <h3 className="simplify_flexbox__content-title">Most forms are to complex</h3>
+                                    <h3 className="simplify_flexbox__content-title">Most forms are to0 complex</h3>
                                     <p>Completing forms manually is an incredibly long process, prone to typos and form abandonment that often result in delays. To make matters worse, nearly 30% of people have difficulties understanding basic forms.</p>
 
                                     <p>With Paxform, you fill in your data once and it will automatically match that data no matter which form you are filling in. Say goodbye to manually inputting the same data over and over again.</p>
