@@ -456,7 +456,7 @@ const TestmonialSwiper = () => {
                     {testmonial.map((item, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <div className="testmonial_card h-100">
+                                <div className="testmonial_card">
                                     <p className="testmonial_card__description">{item.description}</p>
                                     <div className="testmonial_card__name-box">
                                         <h3 className="testmonial_card__name">{item.name}</h3>

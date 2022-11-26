@@ -46,6 +46,9 @@
     background-color: #20976C;
     border: none;
 
+    &:hover {
+      background-color: darken(#20976C, 5%);
+    }
   }
 
   &--white {

@@ -307,6 +307,10 @@ $color_bg_hero__gradient--first: #0a61b4;
   flex-direction: column;
   justify-content: space-between;
 
+  &:hover {
+    background-color: #f0f8ff;
+  }
+
   &__description {
     margin-bottom: rem(20);
     font-size: rem(18);
@@ -358,6 +362,10 @@ $color_bg_hero__gradient--first: #0a61b4;
       border: none;
       background-color: white;
       box-shadow: 1px 0 10px rgba(0, 0, 0, 0.1);
+      transition: 0.25s ease-in-out;
+      &:hover {
+        background-color: #F0F8FF;
+      }
     }
   }
 
@@ -511,19 +519,18 @@ $color_bg_hero__gradient--first: #0a61b4;
     }
 
     p {
-        margin-bottom: rem(30);
-        color: #2f4356;
-
+      margin-bottom: rem(30);
+      color: #2f4356;
     }
 
     button {
-        margin-top: rem(50);
-        border: 1px solid #20976c;
-        color: #20976c;
-    
-        path {
-            stroke: #20976c;
-        }
+      margin-top: rem(50);
+      border: 1px solid #20976c;
+      color: #20976c;
+
+      path {
+        stroke: #20976c;
+      }
     }
   }
 }
