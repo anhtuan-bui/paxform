@@ -143,12 +143,16 @@ export default class Header extends Component {
         this.setState(this.app);
     }
 
+    clickLogo = () => {
+        window.location.href = '/';
+    }
+
     render() {
         return (
             <header className='header'>
                 <div className="container header__container">
                     <div className="logo">
-                        <Logo />
+                        <Logo onClick={this.clickLogo}/>
                     </div>
 
                     <div className="header_right__wrapper">
