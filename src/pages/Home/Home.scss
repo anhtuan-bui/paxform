@@ -21,6 +21,12 @@ $color_bg_hero__gradient--first: #0a61b4;
     align-items: center;
     height: rem(820);
     padding-bottom: 140px;
+
+    @include medium {
+      flex-direction: column;
+      padding-bottom: rem(140);
+      height: rem(1000);
+    }
   }
 
   &__content,
@@ -31,9 +37,13 @@ $color_bg_hero__gradient--first: #0a61b4;
   &__content {
     color: white;
 
+    @include medium {
+      margin-top: rem(140);
+    }
+
     h1,
     p {
-      width: rem(500);
+      max-width: 100%;
     }
 
     h1 {
@@ -41,10 +51,26 @@ $color_bg_hero__gradient--first: #0a61b4;
       font-weight: 700;
       margin-bottom: rem(24);
       margin-top: 0;
+
+      @include large {
+        font-size: rem(56);
+      }
+
+      @include medium {
+        font-size: rem(48);
+      }
+
+      @include extraSmall {
+        font-size: rem(40);
+      }
     }
 
     p {
       margin-bottom: rem(60);
+
+      @include medium {
+        margin-bottom: rem(40);
+      }
     }
   }
 
@@ -53,16 +79,51 @@ $color_bg_hero__gradient--first: #0a61b4;
 
     &-large {
       position: absolute;
-      top: rem(-250);
+      bottom: rem(-820);
       left: 0;
       z-index: 800;
+
+      @include large {
+        left: rem(-200);
+      }
+
+      @include medium {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: rem(-450);
+        width: rem(600);
+      }
+
+      @include small {
+        bottom: rem(-520);
+      }
+
+      @include extraSmall {
+        width: rem(500);
+      }
     }
 
     &-ci {
       position: absolute;
-      top: rem(250);
+      bottom: rem(-420);
       left: rem(500);
       z-index: 1200;
+
+      @include large {
+        left: rem(300);
+      }
+
+      @include medium {
+        bottom: rem(-20);
+        left: rem(80);
+        width: rem(150);
+      }
+
+      @include extraSmall {
+        width: rem(120);
+        left: rem(60);
+        bottom: rem(-40);
+      }
     }
   }
 }
@@ -93,6 +154,11 @@ $color_bg_hero__gradient--first: #0a61b4;
     justify-content: space-between;
     align-items: center;
 
+    @include small {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     &-left,
     &-right {
       flex: 1 1 0;
@@ -101,6 +167,10 @@ $color_bg_hero__gradient--first: #0a61b4;
     &-left {
       h2 {
         margin-bottom: rem(60);
+
+        @include small {
+          margin-bottom: rem(40);
+        }
       }
     }
 
@@ -111,6 +181,10 @@ $color_bg_hero__gradient--first: #0a61b4;
       > .button {
         border: 1px solid #20976c;
         color: #20976c;
+
+        @include small {
+          margin-bottom: rem(40);
+        }
 
         path {
           stroke: #20976c;
@@ -134,6 +208,14 @@ $color_bg_hero__gradient--first: #0a61b4;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: rem(48);
+
+      @include medium {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include small {
+        grid-template-columns: 1fr;
+      }
     }
 
     &-item {
@@ -141,8 +223,8 @@ $color_bg_hero__gradient--first: #0a61b4;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: rem(50);
-        height: rem(50);
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         margin-bottom: rem(30);
         background-color: #ddeeff;
@@ -159,6 +241,11 @@ $color_bg_hero__gradient--first: #0a61b4;
   &__image {
     grid-column: 2/4;
     position: relative;
+
+    @include medium {
+      grid-column: 1;
+      padding-bottom: rem(200);
+    }
 
     img {
       position: absolute;
@@ -215,10 +302,21 @@ $color_bg_hero__gradient--first: #0a61b4;
   &__image {
     position: relative;
 
+    @include medium {
+      padding-bottom: rem(200);
+    }
+
     img {
       position: absolute;
       top: rem(-100);
       left: rem(-80);
+
+      @include medium {
+        width: rem(500);
+        top: rem(-60);
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }
@@ -227,18 +325,32 @@ $color_bg_hero__gradient--first: #0a61b4;
   background-color: #e1edf9;
   position: relative;
   z-index: 1000;
+  padding-bottom: rem(140);
+
+  &__content,
+  &__image {
+    flex: 1 1 50%;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 80%;
+    }
+  }
 
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: rem(20);
-    gap: rem(80);
-  }
+    gap: rem(20);
 
-  &__content,
-  &__image {
-    flex: 1 1 0;
+    @include medium {
+      flex-direction: column;
+    }
   }
 
   &__name {
@@ -313,7 +425,7 @@ $color_bg_hero__gradient--first: #0a61b4;
   }
 
   &__description {
-    margin-bottom: rem(20);
+    margin: 0;
     font-size: rem(18);
   }
 
@@ -327,6 +439,7 @@ $color_bg_hero__gradient--first: #0a61b4;
   &__position {
     font-size: rem(14);
     letter-spacing: 1px;
+    margin: 0;
   }
 }
 
@@ -365,7 +478,7 @@ $color_bg_hero__gradient--first: #0a61b4;
       box-shadow: 1px 0 10px rgba(0, 0, 0, 0.1);
       transition: 0.25s ease-in-out;
       &:hover {
-        background-color: #F0F8FF;
+        background-color: #f0f8ff;
       }
     }
   }
@@ -401,9 +514,23 @@ $color_bg_hero__gradient--first: #0a61b4;
     align-items: center;
     gap: rem(80);
 
+    @include medium {
+      gap: rem(20);
+      flex-direction: column;
+    }
+
     &__content,
     &__image {
       flex: 1 1 0;
+    }
+
+    &__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+      }
     }
 
     &__content {
@@ -430,6 +557,15 @@ $color_bg_hero__gradient--first: #0a61b4;
     align-items: center;
     justify-content: space-between;
     gap: rem(80);
+
+    @include medium {
+      flex-direction: column;
+      gap: rem(20);
+    }
+  }
+
+  &__content, &__image {
+    flex: 1 1 50%;
   }
 
   &__content {
@@ -437,6 +573,24 @@ $color_bg_hero__gradient--first: #0a61b4;
       font-size: rem(38);
       font-weight: 700;
       margin-bottom: rem(60);
+
+      @include medium {
+        margin-top: rem(60);
+        font-size: rem(32);
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: rem(20);
+
+    @include medium {
+      flex-direction: column;
+      
+      img {
+        width: 60%;
+      }
     }
   }
 
@@ -444,6 +598,10 @@ $color_bg_hero__gradient--first: #0a61b4;
     img {
       position: relative;
       bottom: rem(-15);
+
+      @include medium {
+        width: 100%;
+      }
     }
   }
 }
@@ -460,12 +618,21 @@ $color_bg_hero__gradient--first: #0a61b4;
     justify-content: space-between;
     align-items: center;
     gap: rem(99);
+
+    @include medium {
+      flex-direction: column;
+      gap: rem(40);
+    }
   }
 
   &__box-left {
     display: flex;
     justify-content: space-between;
     gap: rem(48);
+
+    @include small {
+      flex-direction: column;
+    }
 
     &-item {
       flex: 1 1 0;

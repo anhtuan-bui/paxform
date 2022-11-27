@@ -32,7 +32,7 @@ $color_bg_hero__gradient--first: #0a61b4;
 
     .logo {
       path {
-        fill: #20976C;
+        fill: #20976c;
       }
     }
 
@@ -63,7 +63,7 @@ $color_bg_hero__gradient--first: #0a61b4;
     opacity: 0;
     visibility: hidden;
 
-    @include largeTablet {
+    @include large {
       flex-direction: column;
       position: absolute;
       background-color: white;
@@ -75,7 +75,7 @@ $color_bg_hero__gradient--first: #0a61b4;
     }
 
     &__wrapper {
-      @include largeTablet {
+      @include large {
         position: relative;
       }
     }
@@ -87,7 +87,7 @@ $color_bg_hero__gradient--first: #0a61b4;
     }
 
     .button {
-      @include largeTablet {
+      @include large {
         &__wrapper,
         &--outline {
           width: 100%;
@@ -101,7 +101,10 @@ $color_bg_hero__gradient--first: #0a61b4;
 
         &--outline {
           border: 1px solid $color_main__dark-gunmetal;
-          color: $color_main__dark-gunmetal;
+
+          span {
+            color: $color_main__dark-gunmetal;
+          }
 
           svg {
             path {
@@ -123,7 +126,7 @@ $color_bg_hero__gradient--first: #0a61b4;
     display: flex;
     position: relative;
 
-    @include largeTablet {
+    @include large {
       flex-direction: column;
       padding: 0;
       width: rem(300);
@@ -143,7 +146,7 @@ $color_bg_hero__gradient--first: #0a61b4;
       a {
         text-decoration: none;
 
-        @include largeTablet {
+        @include large {
           color: black;
         }
       }
@@ -156,7 +159,7 @@ $color_bg_hero__gradient--first: #0a61b4;
         color: white;
         padding: rem(15) rem(17);
 
-        @include largeTablet {
+        @include large {
           &:hover {
             background-color: $color_one__water;
           }
@@ -166,7 +169,7 @@ $color_bg_hero__gradient--first: #0a61b4;
           transform: rotate(90deg);
           cursor: pointer;
 
-          @include largeTablet {
+          @include large {
             path {
               stroke: black;
             }
@@ -180,7 +183,7 @@ $color_bg_hero__gradient--first: #0a61b4;
           opacity: 1;
           top: rem(40);
 
-          @include largeTablet {
+          @include large {
             height: 100%;
           }
         }
@@ -201,7 +204,7 @@ $color_bg_hero__gradient--first: #0a61b4;
     transition: 0.4s ease-in-out;
     box-shadow: rem(1) rem(1) rem(5) rgba(0, 0, 0, 0.25);
 
-    @include largeTablet {
+    @include large {
       position: static;
       width: 100%;
       height: 0;
@@ -294,4 +297,8 @@ $color_bg_hero__gradient--first: #0a61b4;
 .hamburger.active .hamburger__line:last-child {
   transform: translate(-50%, -50%) rotate(-45deg);
   top: 50%;
+}
+
+.hamburger__line--scrolled {
+  background-color: black;
 }

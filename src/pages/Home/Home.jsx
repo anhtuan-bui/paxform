@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 
-import { ReactComponent as HeroRight } from '../../assets/images/hero-right.svg';
+import { ReactComponent as HeroRight } from '../../assets/images/large-hero.svg';
 import { ReactComponent as CertificateIllustrator } from '../../assets/images/certificate-illustrator.svg';
 import { ReactComponent as ArrowRight } from '../../assets/images/arrow-right.svg';
 
@@ -52,6 +52,9 @@ import "swiper/scss/navigation";
 
 import './Home.scss';
 import Footer from '../../components/Footer/Footer';
+
+import { SCREEN_SIZE } from '../../configurations/configurations';
+
 
 const businessPlatform = [
     {
@@ -154,11 +157,51 @@ const testmonial = [
     }
 ]
 
+var HOME = {
+    numberOfComapniesPerView: 5,
+    numberOfTestmonialsPerView: 3,
+}
 export default class Home extends Component {
+
     constructor(props) {
         super(props);
 
-        this.state = this.json;
+        this.state = HOME;
+    }
+
+    componentDidMount() {
+        this.handleResize();
+        window.addEventListener('resize', this.handleResize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    }
+
+    handleResize = () => {
+        const screenWidth = window.innerWidth;
+        if (screenWidth > SCREEN_SIZE.large) {
+            HOME = {
+                numberOfComapniesPerView: 5,
+                numberOfTestmonialsPerView: 3,
+            }
+        } else if (screenWidth < SCREEN_SIZE.large && screenWidth > SCREEN_SIZE.medium) {
+            HOME = {
+                numberOfComapniesPerView: 4,
+                numberOfTestmonialsPerView: 2,
+            }
+        } else if (screenWidth < SCREEN_SIZE.medium && screenWidth > SCREEN_SIZE.small) {
+            HOME = {
+                numberOfComapniesPerView: 3,
+                numberOfTestmonialsPerView: 2,
+            }
+        } else if (screenWidth < SCREEN_SIZE.small) {
+            HOME = {
+                numberOfComapniesPerView: 2,
+                numberOfTestmonialsPerView: 1,
+            }
+        }
+        this.setState(HOME);
     }
 
 
@@ -190,7 +233,7 @@ export default class Home extends Component {
 
                             <Swiper
                                 spaceBetween={30}
-                                slidesPerView={5}
+                                slidesPerView={HOME.numberOfComapniesPerView}
                                 loop={true}
                                 loopFillGroupWithBlank={true}
                                 autoplay={{
@@ -217,7 +260,6 @@ export default class Home extends Component {
                                 <SwiperSlide>
                                     <div className="slider__image">
                                         <img src={linkedin} alt="linkedin" />
-
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
@@ -434,14 +476,13 @@ const TestmonialSwiper = () => {
             <div className="testmonial__swiper">
 
                 <Swiper
-                    slidesPerView={3}
+                    slidesPerView={HOME.numberOfTestmonialsPerView}
                     spaceBetween={24}
-                    slidesPerGroup={3}
+                    slidesPerGroup={HOME.numberOfTestmonialsPerView}
                     loop={true}
-                    loopFillGroupWithBlank={true}
                     autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: true,
+                        delay: 3000,
+                        disableOnInteraction: false,
                     }}
                     autoHeight={false}
                     pagination={{

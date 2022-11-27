@@ -4,20 +4,20 @@ h1 {
 }
 
 .container {
-  width: $width__desktop;
+  width: $width__extraLarge;
   margin: auto;
   max-width: 100%;
   box-sizing: border-box;
   padding: 0 100px;
 
-  @include laptop {
+  @include large {
     padding: 0 rem(32);
   }
 }
 
 .bottom_triangle {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   border-color: transparent transparent #f0f8ff #f0f8ff;
   border-style: solid;
@@ -25,6 +25,22 @@ h1 {
   height: 0px;
   width: 0px;
   z-index: 1000;
+
+  @include large {
+    border-width: rem(60) 50vw;
+  }
+  
+  @include medium {
+    border-width: rem(50) 50vw;
+  }
+
+  @include small {
+    border-width: rem(40) 50vw;
+  }
+
+  @include extraSmall {
+    border-width: rem(30) 50vw;
+  }
 
   &--dark-blue {
     border-color: transparent transparent #031a30 #031a30;
@@ -43,7 +59,7 @@ h1 {
   }
 
   &--footer {
-    border-color: transparent transparent #E1EDF9 #E1EDF9;
+    border-color: transparent transparent #e1edf9 #e1edf9;
   }
 }
 
@@ -72,7 +88,7 @@ h1 {
     transform-origin: bottom left;
     transition: transform 0.25s ease-out;
 
-    @include largeTablet {
+    @include large {
       background-color: transparent;
     }
   }

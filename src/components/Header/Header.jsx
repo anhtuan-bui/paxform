@@ -9,6 +9,8 @@ import { ReactComponent as Retail } from '../../assets/images/retail.svg';
 
 import './Header.scss';
 
+import { SCREEN_SIZE } from '../../configurations/configurations';
+
 const menu = [
     {
         text: 'Business',
@@ -62,8 +64,6 @@ const menu = [
     },
 ]
 
-const screenSize = 1000;
-
 export default class Header extends Component {
     app = {
         width: 1440,
@@ -78,17 +78,23 @@ export default class Header extends Component {
     componentDidMount() {
 
         this.handleResize();
-        this.changeBackground();
         window.addEventListener('resize', this.handleResize);
-        window.addEventListener('scroll', this.changeBackground);
+
+        this.handleScroll();
+        window.addEventListener('scroll', this.handleScroll);
 
         this.handleHamburger();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     handleHamburger = () => {
         const hamburger = document.querySelector('.hamburger');
         const headerRight = document.querySelector('.header_right');
-    
+
         hamburger.addEventListener('click', (e) => {
             this.app.hamburgerIsOpen = !this.app.hamburgerIsOpen;
             if (this.app.hamburgerIsOpen === true) {
@@ -103,12 +109,19 @@ export default class Header extends Component {
         hamburger.classList.toggle('active');
     }
 
-    changeBackground () {
+    handleScroll() {
+        const hamburgerLines = document.querySelectorAll('.hamburger__line');
         const header = document.querySelector('.header');
         if (window.scrollY >= 100) {
             header.classList.add('header--active');
+            hamburgerLines.forEach((line) => {
+                line.classList.add('hamburger__line--scrolled');
+            });
         } else {
             header.classList.remove('header--active');
+            hamburgerLines.forEach((line) => {
+                line.classList.remove('hamburger__line--scrolled');
+            });
         }
     }
 
@@ -117,7 +130,7 @@ export default class Header extends Component {
         const headerRight = document.querySelector('.header_right');
         this.app.width = window.innerWidth;
         try {
-            if (this.app.width < screenSize) {
+            if (this.app.width < SCREEN_SIZE.large) {
                 hamburger.classList.add('hamburger--active');
                 headerRight.classList.remove('header_right--active');
             } else {
@@ -146,7 +159,11 @@ export default class Header extends Component {
                                     {menu.map((item, index) => {
                                         return (
                                             <li key={index} className='nav__first-level-li'>
-                                                <a href={item.link} className="nav__first-level-li-link">
+                                                <a
+                                                    href={item.submenu.length > 0 ? '' : item.link}
+                                                    className="nav__first-level-li-link"
+                                                    onClick={item.submenu.length > 0 && ((e) => e.preventDefault())}
+                                                    >
                                                     <span className='span--hover'>{item.text}</span>
                                                     {item.submenu.length > 0 && <ArrowRight />}
                                                 </a>
@@ -175,7 +192,7 @@ export default class Header extends Component {
                                 </ul>
                             </nav>
                             <div className="button__wrapper">
-                                <Button type="arrow outline" text="Sign Up" color="white"/>
+                                <Button type="arrow outline" text="Sign Up" color="white" />
                             </div>
                         </div>
                         <div className="hamburger" onClick={this.onHamburgerClick}>
