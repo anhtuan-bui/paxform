@@ -72,7 +72,10 @@ export default class Header extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = this.app;
+
+        this.onHamburgerClick = this.clickHamburger.bind(this);
     }
 
     componentDidMount() {
@@ -83,7 +86,6 @@ export default class Header extends Component {
         this.handleScroll();
         window.addEventListener('scroll', this.handleScroll);
 
-        this.handleHamburger();
     }
 
     componentWillUnmount() {
@@ -91,22 +93,12 @@ export default class Header extends Component {
         window.removeEventListener('scroll', this.handleScroll);
     }
 
-    handleHamburger = () => {
-        const hamburger = document.querySelector('.hamburger');
+    clickHamburger() {
         const headerRight = document.querySelector('.header_right');
-
-        hamburger.addEventListener('click', (e) => {
-            this.app.hamburgerIsOpen = !this.app.hamburgerIsOpen;
-            if (this.app.hamburgerIsOpen === true) {
-                headerRight.classList.toggle('header_right--active');
-            }
-
-        })
-    }
-
-    onHamburgerClick() {
         const hamburger = document.querySelector('.hamburger');
+        headerRight.classList.toggle('header_right--active');
         hamburger.classList.toggle('active');
+        this.setState(this.app);
     }
 
     handleScroll() {
@@ -152,7 +144,7 @@ export default class Header extends Component {
             <header className='header'>
                 <div className="container header__container">
                     <div className="logo">
-                        <Logo onClick={this.clickLogo}/>
+                        <Logo onClick={this.clickLogo} />
                     </div>
 
                     <div className="header_right__wrapper">
@@ -167,7 +159,7 @@ export default class Header extends Component {
                                                     href={item.submenu.length > 0 ? '' : item.link}
                                                     className="nav__first-level-li-link"
                                                     onClick={item.submenu.length > 0 ? ((e) => e.preventDefault()) : undefined}
-                                                    >
+                                                >
                                                     <span className='span--hover'>{item.text}</span>
                                                     {item.submenu.length > 0 && <ArrowRight />}
                                                 </a>
@@ -199,7 +191,7 @@ export default class Header extends Component {
                                 <Button type="arrow outline" text="Sign Up" color="white" />
                             </div>
                         </div>
-                        <div className="hamburger" onClick={this.onHamburgerClick}>
+                        <div className="hamburger" onClick={this.clickHamburger}>
                             <div className='hamburger__line'></div>
                             <div className='hamburger__line hamburger__line--hidden'></div>
                             <div className='hamburger__line'></div>

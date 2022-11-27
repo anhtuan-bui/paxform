@@ -97,7 +97,7 @@ const personalPlatform = [
     },
     {
         image: icon24,
-        title: 'Link your family’s data',
+        title: "Link your family's data",
         description: 'The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.'
     },
     {
@@ -110,6 +110,7 @@ const personalPlatform = [
 var HOME = {
     numberOfComapniesPerView: 5,
     numberOftestimonialsPerView: 3,
+    autoplaySpeed: 4000
 }
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -134,7 +135,7 @@ export default class Home extends Component {
     }
 
     async getTestimonials() {
-        const response = await fetch('https://v1.paxfolio.com/wp-json/wp/v2/testimonials2');
+        const response = await fetch(API_URL + 'testimonials2');
         return await response.json();
     }
 
@@ -444,7 +445,7 @@ const TestimonialSwiper =  (data) => {
                     slidesPerGroup={HOME.numberOftestimonialsPerView}
                     loop={true}
                     autoplay={{
-                        delay: 3000,
+                        delay: 4000,
                         disableOnInteraction: false,
                     }}
                     autoHeight={false}

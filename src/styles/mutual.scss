@@ -13,6 +13,10 @@ h1 {
   @include large {
     padding: 0 rem(32);
   }
+
+  @include extraSmall {
+    padding: 0 rem(20);
+  }
 }
 
 .bottom_triangle {

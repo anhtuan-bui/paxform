@@ -14,14 +14,14 @@ $color_bg_hero__gradient--first: #0a61b4;
   z-index: 2000;
   width: 100%;
   height: rem(100);
-
+  
   &--active {
     transition: 0.25s ease-in-out;
     background-color: white;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
     color: black;
     height: rem(80);
-
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    
     .span--hover:after {
       background-color: black;
     }
@@ -72,6 +72,7 @@ $color_bg_hero__gradient--first: #0a61b4;
       border-radius: rem(20);
       overflow: hidden;
       gap: 0;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
     }
 
     &__wrapper {
@@ -130,6 +131,7 @@ $color_bg_hero__gradient--first: #0a61b4;
       flex-direction: column;
       padding: 0;
       width: rem(300);
+
     }
 
     p {
