@@ -75,7 +75,8 @@ export default class Header extends Component {
 
         this.state = this.app;
 
-        this.onHamburgerClick = this.clickHamburger.bind(this);
+        this.clickHamburger = this.clickHamburger.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
     }
 
     componentDidMount() {
@@ -85,7 +86,6 @@ export default class Header extends Component {
 
         this.handleScroll();
         window.addEventListener('scroll', this.handleScroll);
-
     }
 
     componentWillUnmount() {
@@ -94,11 +94,21 @@ export default class Header extends Component {
     }
 
     clickHamburger() {
+        this.app.hamburgerIsOpen = !this.app.hamburgerIsOpen;
+        this.handleHamburger();
+        this.setState(this.app)
+    }
+
+    handleHamburger() {
         const headerRight = document.querySelector('.header_right');
         const hamburger = document.querySelector('.hamburger');
-        headerRight.classList.toggle('header_right--active');
-        hamburger.classList.toggle('active');
-        this.setState(this.app);
+        if (this.app.hamburgerIsOpen) {
+            headerRight.classList.add('header_right--active');
+            hamburger.classList.add('active');
+        }else {
+            headerRight.classList.remove('header_right--active');
+            hamburger.classList.remove('active');
+        }
     }
 
     handleScroll() {
@@ -109,12 +119,18 @@ export default class Header extends Component {
             hamburgerLines.forEach((line) => {
                 line.classList.add('hamburger__line--scrolled');
             });
+
+            if (this.app.hamburgerIsOpen){
+                this.app.hamburgerIsOpen = false;
+                this.handleHamburger();
+            }
         } else {
             header.classList.remove('header--active');
             hamburgerLines.forEach((line) => {
                 line.classList.remove('hamburger__line--scrolled');
             });
         }
+        this.setState(this.app);
     }
 
     handleResize = () => {
