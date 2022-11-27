@@ -141,17 +141,17 @@ export default class Home extends Component {
 
     handleResize = () => {
         const screenWidth = window.innerWidth;
-        if (screenWidth > SCREEN_SIZE.large) {
+        if (screenWidth >= SCREEN_SIZE.large) {
             HOME = {
                 numberOfComapniesPerView: 5,
                 numberOftestimonialsPerView: 3,
             }
-        } else if (screenWidth < SCREEN_SIZE.large && screenWidth > SCREEN_SIZE.medium) {
+        } else if (screenWidth < SCREEN_SIZE.large && screenWidth >= SCREEN_SIZE.medium) {
             HOME = {
                 numberOfComapniesPerView: 4,
                 numberOftestimonialsPerView: 2,
             }
-        } else if (screenWidth < SCREEN_SIZE.medium && screenWidth > SCREEN_SIZE.small) {
+        } else if (screenWidth < SCREEN_SIZE.medium && screenWidth >= SCREEN_SIZE.small) {
             HOME = {
                 numberOfComapniesPerView: 3,
                 numberOftestimonialsPerView: 2,

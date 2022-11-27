@@ -14,6 +14,11 @@ $color_bg_hero__gradient--first: #0a61b4;
   &__button {
     display: flex;
     gap: rem(18);
+
+    @include extraSmall {
+      flex-direction: column;
+      gap: rem(10);
+    }
   }
 
   &__wrapper {
@@ -26,6 +31,10 @@ $color_bg_hero__gradient--first: #0a61b4;
       flex-direction: column;
       padding-bottom: rem(140);
       height: rem(1000);
+    }
+
+    @include extraSmall {
+      height: rem(1080);
     }
   }
 
@@ -302,21 +311,26 @@ $color_bg_hero__gradient--first: #0a61b4;
   &__image {
     position: relative;
 
-    @include medium {
-      padding-bottom: rem(200);
+    @include small {
+      padding-bottom: rem(100);
     }
 
     img {
       position: absolute;
-      top: rem(-100);
+      bottom: rem(-500);
       left: rem(-80);
 
       @include medium {
-        width: rem(500);
-        top: rem(-60);
+        width: rem(400);
         left: 50%;
         transform: translateX(-50%);
       }
+
+      @include small {
+        width: rem(300);
+        bottom: rem(-400);
+      }
+
     }
   }
 }
@@ -336,6 +350,11 @@ $color_bg_hero__gradient--first: #0a61b4;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include small {
+      padding-top: rem(100);
+    }
+
     img {
       width: 80%;
     }
@@ -406,6 +425,7 @@ $color_bg_hero__gradient--first: #0a61b4;
     font-weight: 700;
     margin-bottom: rem(24);
     width: rem(568);
+    max-width: 100%;
   }
 }
 
@@ -564,7 +584,8 @@ $color_bg_hero__gradient--first: #0a61b4;
     }
   }
 
-  &__content, &__image {
+  &__content,
+  &__image {
     flex: 1 1 50%;
   }
 
@@ -587,7 +608,7 @@ $color_bg_hero__gradient--first: #0a61b4;
 
     @include medium {
       flex-direction: column;
-      
+
       img {
         width: 60%;
       }

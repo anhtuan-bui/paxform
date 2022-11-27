@@ -130,7 +130,7 @@ export default class Header extends Component {
         const headerRight = document.querySelector('.header_right');
         this.app.width = window.innerWidth;
         try {
-            if (this.app.width < SCREEN_SIZE.large) {
+            if (this.app.width <= SCREEN_SIZE.large) {
                 hamburger.classList.add('hamburger--active');
                 headerRight.classList.remove('header_right--active');
             } else {
