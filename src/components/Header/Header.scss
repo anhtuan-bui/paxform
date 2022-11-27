@@ -134,6 +134,10 @@ $color_bg_hero__gradient--first: #0a61b4;
 
     }
 
+    @include extraSmall {
+      width: rem(280);
+    }
+
     p {
       margin: 0;
     }
