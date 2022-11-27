@@ -107,69 +107,24 @@ const personalPlatform = [
     },
 ]
 
-const testmonial = [
-    {
-        description: '“Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually I would have had to find all the details. which would have taken hours!”',
-        name: 'Betty Cooker',
-        position: 'Business Consultant'
-    },
-    {
-        description: '“Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually I would have had to find all the details.”',
-        name: 'Allison Noah',
-        position: 'Business Consultant'
-    },
-    {
-        description: '“All my information and medical history were filled in an instance. Had I done it manually I would have had to find all the details. which would have taken hours!”',
-        name: 'Reynald Steven',
-        position: 'Business Consultant'
-    },
-    {
-        description: '“Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually I would have had to find all the details. which would have taken hours!”',
-        name: 'Betty Cooker',
-        position: 'Business Consultant'
-
-    },
-    {
-        description: '“Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually I would have had to find all the details. which would have taken hours!”',
-        name: 'Betty Cooker',
-        position: 'Business Consultant'
-    },
-    {
-        description: '“Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually I would have had to find all the details.”',
-        name: 'Allison Noah',
-        position: 'Business Consultant'
-    },
-    {
-        description: '“All my information and medical history were filled in an instance. Had I done it manually I would have had to find all the details. which would have taken hours!”',
-        name: 'Reynald Steven',
-        position: 'Business Consultant'
-    },
-    {
-        description: '“Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually I would have had to find all the details. which would have taken hours!”',
-        name: 'Betty Cooker',
-        position: 'Business Consultant'
-
-    },
-    {
-        description: '“Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually I would have had to find all the details. which would have taken hours!”',
-        name: 'Betty Cooker',
-        position: 'Business Consultant'
-    }
-]
-
 var HOME = {
     numberOfComapniesPerView: 5,
-    numberOfTestmonialsPerView: 3,
+    numberOftestimonialsPerView: 3,
 }
+const API_URL = process.env.REACT_APP_API_URL;
+
 export default class Home extends Component {
+
+    testimonials  = [];
 
     constructor(props) {
         super(props);
 
         this.state = HOME;
     }
-
-    componentDidMount() {
+    
+    async componentDidMount() {
+        this.testimonials = await this.getTestimonials();
         this.handleResize();
         window.addEventListener('resize', this.handleResize);
     }
@@ -178,27 +133,33 @@ export default class Home extends Component {
         window.removeEventListener('resize', this.handleResize);
     }
 
+    async getTestimonials() {
+        const response = await fetch('https://v1.paxfolio.com/wp-json/wp/v2/testimonials2');
+        return await response.json();
+    }
+
+
     handleResize = () => {
         const screenWidth = window.innerWidth;
         if (screenWidth > SCREEN_SIZE.large) {
             HOME = {
                 numberOfComapniesPerView: 5,
-                numberOfTestmonialsPerView: 3,
+                numberOftestimonialsPerView: 3,
             }
         } else if (screenWidth < SCREEN_SIZE.large && screenWidth > SCREEN_SIZE.medium) {
             HOME = {
                 numberOfComapniesPerView: 4,
-                numberOfTestmonialsPerView: 2,
+                numberOftestimonialsPerView: 2,
             }
         } else if (screenWidth < SCREEN_SIZE.medium && screenWidth > SCREEN_SIZE.small) {
             HOME = {
                 numberOfComapniesPerView: 3,
-                numberOfTestmonialsPerView: 2,
+                numberOftestimonialsPerView: 2,
             }
         } else if (screenWidth < SCREEN_SIZE.small) {
             HOME = {
                 numberOfComapniesPerView: 2,
-                numberOfTestmonialsPerView: 1,
+                numberOftestimonialsPerView: 1,
             }
         }
         this.setState(HOME);
@@ -366,8 +327,8 @@ export default class Home extends Component {
                         <div className="bottom_triangle bottom_triangle--white"></div>
                     </section>
 
-                    <section className="testmonial">
-                        <TestmonialSwiper />
+                    <section className="testimonial">
+                        <TestimonialSwiper values={this.testimonials}/>
                         <div className="bottom_triangle bottom_triangle--blue"></div>
                     </section>
 
@@ -466,19 +427,21 @@ export default class Home extends Component {
     }
 }
 
-const TestmonialSwiper = () => {
+const TestimonialSwiper =  (data) => {
     const swiperRef = useRef();
 
+    const testimonials = data.values;
+
     return (
-        <div className="container testmonial__container">
-            <p className="testmonial__name">TESTMONIAL</p>
-            <h2 className="testmonial__title">What people are saying about Paxform</h2>
-            <div className="testmonial__swiper">
+        <div className="container testimonial__container">
+            <p className="testimonial__name">TESTIMONIAL</p>
+            <h2 className="testimonial__title">What people are saying about Paxform</h2>
+            <div className="testimonial__swiper">
 
                 <Swiper
-                    slidesPerView={HOME.numberOfTestmonialsPerView}
+                    slidesPerView={HOME.numberOftestimonialsPerView}
                     spaceBetween={24}
-                    slidesPerGroup={HOME.numberOfTestmonialsPerView}
+                    slidesPerGroup={HOME.numberOftestimonialsPerView}
                     loop={true}
                     autoplay={{
                         delay: 3000,
@@ -492,16 +455,16 @@ const TestmonialSwiper = () => {
                         swiperRef.current = swiper;
                     }}
                     modules={[Autoplay, Pagination, Navigation]}
-                    className="testmonial__slider"
+                    className="testimonial__slider"
                 >
-                    {testmonial.map((item, index) => {
+                    {testimonials.map((item, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <div className="testmonial_card">
-                                    <p className="testmonial_card__description">{item.description}</p>
-                                    <div className="testmonial_card__name-box">
-                                        <h3 className="testmonial_card__name">{item.name}</h3>
-                                        <p className="testmonial_card__position">{item.position}</p>
+                                <div className="testimonial_card">
+                                    <div className="testimonial_card__description" dangerouslySetInnerHTML={{__html: item.content.rendered}}></div>
+                                    <div className="testimonial_card__name-box">
+                                        <h3 className="testimonial_card__name">{item.title.rendered}</h3>
+                                        <p className="testimonial_card__position">{item.acf.client_bio}</p>
                                     </div>
                                 </div>
                             </SwiperSlide>

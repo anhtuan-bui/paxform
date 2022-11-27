@@ -166,7 +166,7 @@ export default class Header extends Component {
                                                 <a
                                                     href={item.submenu.length > 0 ? '' : item.link}
                                                     className="nav__first-level-li-link"
-                                                    onClick={item.submenu.length > 0 && ((e) => e.preventDefault())}
+                                                    onClick={item.submenu.length > 0 ? ((e) => e.preventDefault()) : undefined}
                                                     >
                                                     <span className='span--hover'>{item.text}</span>
                                                     {item.submenu.length > 0 && <ArrowRight />}
