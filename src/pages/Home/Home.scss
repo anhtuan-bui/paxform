@@ -371,10 +371,6 @@ $color_bg_hero__gradient--first: #0a61b4;
       justify-content: center;
       align-items: center;
 
-      @include small {
-        padding-top: rem(100);
-      }
-
       img {
         width: 80%;
       }
