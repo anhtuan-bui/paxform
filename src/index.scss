@@ -18,19 +18,16 @@ html {
 body {
   overflow-y: hidden;
 }
-.home,
-.footer,
-.header {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $font_family__GotamRoundedBold, sans-serif;
-  }
 
-  p {
-    line-height: rem(28);
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font_family__GotamRoundedBold, sans-serif;
+}
+
+p {
+  line-height: rem(28);
 }
