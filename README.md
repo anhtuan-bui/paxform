@@ -24,7 +24,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## I Important notes for macOS
+## Important notes for macOS
 ### `yarn build-mac`
 
 Builds the app for production to the `public_html` folder.\
