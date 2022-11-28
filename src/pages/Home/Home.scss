@@ -33,7 +33,6 @@ $color_bg_hero__gradient--first: #0a61b4;
         padding-bottom: rem(140);
         height: rem(1000);
       }
-      
 
       @include extraSmall {
         height: rem(1080);
@@ -206,6 +205,16 @@ $color_bg_hero__gradient--first: #0a61b4;
             stroke: #20976c;
           }
         }
+      }
+    }
+
+    &__title {
+      font-size: rem(38);
+      line-height: rem(48);
+
+      @include medium {
+        font-size: rem(24);
+        line-height: rem(30);
       }
     }
 
