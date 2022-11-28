@@ -691,8 +691,8 @@ $color_bg_hero__gradient--first: #0a61b4;
       &-item {
         flex: 1 1 0;
         &-image {
-          width: rem(50);
-          height: rem(50);
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           background-color: #ddeeff;
           display: flex;
