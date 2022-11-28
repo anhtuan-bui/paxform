@@ -10,26 +10,31 @@ import { ReactComponent as Retail } from '../../assets/images/retail.svg';
 import './Header.scss';
 
 import { SCREEN_SIZE } from '../../configurations/configurations';
+import { Link } from 'react-router-dom';
 
 const menu = [
     {
         text: 'Business',
         link: 'https://',
+        to: 'business',
         submenu: []
     },
     {
         text: 'Personal',
         link: 'https://',
+        to: 'personal',
         submenu: []
     },
     {
         text: 'Pricing',
         link: 'https://',
+        to: 'pricing',
         submenu: []
     },
     {
         text: 'Use Cases',
         link: 'https://',
+        to: 'usecases',
         submenu: [
             {
                 text: 'Education',
@@ -60,6 +65,7 @@ const menu = [
     {
         text: 'Resources',
         link: 'https://',
+        to: 'resources',
         submenu: []
     },
 ]
@@ -189,14 +195,14 @@ export default class Header extends Component {
                                     {menu.map((item, index) => {
                                         return (
                                             <li key={index} className='nav__first-level-li'>
-                                                <a
-                                                    href={item.submenu.length > 0 ? '' : item.link}
+                                                <Link
+                                                    to={item.submenu.length > 0 ? '' : item.to}
                                                     className="nav__first-level-li-link"
                                                     onClick={item.submenu.length > 0 ? ((e) => e.preventDefault()) : undefined}
                                                 >
                                                     <span className='span--hover'>{item.text}</span>
                                                     {item.submenu.length > 0 && <ArrowRight />}
-                                                </a>
+                                                </Link>
                                                 {item.submenu.length > 0 &&
 
                                                     <ul className='nav__second-level'>
