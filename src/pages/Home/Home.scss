@@ -339,7 +339,12 @@ $color_bg_hero__gradient--first: #0a61b4;
   background-color: #e1edf9;
   position: relative;
   z-index: 1000;
-  padding-bottom: rem(140);
+  padding-top: rem(80);
+  padding-bottom: rem(100);
+
+  @include large {
+    padding-bottom: rem(140);
+  }
 
   &__content,
   &__image {
