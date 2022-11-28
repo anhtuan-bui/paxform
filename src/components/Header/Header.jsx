@@ -86,11 +86,14 @@ export default class Header extends Component {
 
         this.handleScroll();
         window.addEventListener('scroll', this.handleScroll);
+
+        window.addEventListener('click', (e) => this.handleClickOutsideHamburger(e));
     }
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize);
         window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('click', (e) => this.handleClickOutsideHamburger(e));
     }
 
     clickHamburger() {
@@ -99,13 +102,21 @@ export default class Header extends Component {
         this.setState(this.app)
     }
 
+    handleClickOutsideHamburger(e) {
+        if (this.state.hamburgerIsOpen === true && !e.target.classList.contains('nav') && e.target.getAttribute('name') !== 'hamburger' && e.target.tagName !== 'BUTTON') {
+            this.app.hamburgerIsOpen = false;
+            this.handleHamburger();
+        }
+        this.setState(this.app);
+    }
+
     handleHamburger() {
         const headerRight = document.querySelector('.header_right');
         const hamburger = document.querySelector('.hamburger');
         if (this.app.hamburgerIsOpen) {
             headerRight.classList.add('header_right--active');
             hamburger.classList.add('active');
-        }else {
+        } else {
             headerRight.classList.remove('header_right--active');
             hamburger.classList.remove('active');
         }
@@ -120,7 +131,7 @@ export default class Header extends Component {
                 line.classList.add('hamburger__line--scrolled');
             });
 
-            if (this.app.hamburgerIsOpen){
+            if (this.app.hamburgerIsOpen) {
                 this.app.hamburgerIsOpen = false;
                 this.handleHamburger();
             }
@@ -137,7 +148,7 @@ export default class Header extends Component {
         const hamburger = document.querySelector('.hamburger');
         const headerRight = document.querySelector('.header_right');
         this.app.width = window.innerWidth;
-        if(this.app.hamburgerIsOpen){
+        if (this.app.hamburgerIsOpen) {
             this.app.hamburgerIsOpen = false;
             this.handleHamburger();
         }
@@ -211,10 +222,10 @@ export default class Header extends Component {
                                 <Button type="arrow outline" text="Sign Up" color="white" />
                             </div>
                         </div>
-                        <div className="hamburger" onClick={this.clickHamburger}>
-                            <div className='hamburger__line'></div>
-                            <div className='hamburger__line hamburger__line--hidden'></div>
-                            <div className='hamburger__line'></div>
+                        <div className="hamburger" name="hamburger" onClick={this.clickHamburger}>
+                            <div className='hamburger__line' name="hamburger"></div>
+                            <div className='hamburger__line hamburger__line--hidden' name="hamburger"></div>
+                            <div className='hamburger__line' name="hamburger"></div>
                         </div>
                     </div>
                 </div>
