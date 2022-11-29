@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../../components/Button/Button';
+import fillOutForm from '../../assets/images/fill-out-form.svg'
 import './Personal.scss';
 
 import personelHero from '../../assets/images/personal-hero.svg'
@@ -24,6 +25,20 @@ export default class Personal extends Component {
               <img src={personelHero} alt="personal hero" className='hero__image-large' />
             </div>
           </div>
+          <div className="bottom_triangle bottom_triangle--light-green"></div>
+        </section>
+
+        <section className="flex_box">
+          <div className="container flex_box__container">
+            <div className="flex_box__image">
+              <img src={fillOutForm} alt="filling out the forms" />
+            </div>
+            <div className="flex_box__content">
+              <h1 className="flex_box__content-title">Repeatedly Filling Out Forms with the Same Data Requirements?</h1>
+              <div className="flex_box__content-description">Save precious time by having all your information on demand. Autocomplete forms and applications on the go. Only fill in your data once.</div>
+            </div>
+          </div>
+
           <div className="bottom_triangle bottom_triangle--light-green"></div>
         </section>
       </main>

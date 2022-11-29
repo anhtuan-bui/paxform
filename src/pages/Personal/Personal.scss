@@ -42,10 +42,11 @@ $color_bg_hero__gradient--first: #059459;
         flex-direction: column;
         padding-bottom: rem(140);
         height: rem(1200);
+        padding-top: 0;
       }
 
-      @include extraSmall {
-        height: rem(1080);
+      @include small {
+        height: rem(1220);
       }
     }
 
@@ -55,16 +56,21 @@ $color_bg_hero__gradient--first: #059459;
       letter-spacing: rem(2);
       font-weight: 600;
       font-size: rem(14);
+      text-transform: uppercase;
 
       @include medium {
+        margin-top: rem(150);
         margin-bottom: rem(40);
       }
     }
 
     &__content {
       color: white;
-      flex: 1 1 50%;
+      flex: 1 1 40%;
 
+      @include extraLarge {
+        flex: 1 1 50%;
+      }
 
       h1,
       p {
@@ -72,22 +78,28 @@ $color_bg_hero__gradient--first: #059459;
       }
     }
     &__title {
-      font-size: rem(48);
-      font-weight: 400;
-      line-height: rem(50.4);
+      font-size: rem(42);
       margin-bottom: rem(24);
       margin-top: 0;
 
+      @include extraLarge {
+        font-size: rem(38);
+      }
+
       @include large {
-        font-size: rem(40);
+        font-size: rem(34);
       }
 
       @include medium {
-        font-size: rem(48);
+        font-size: rem(42);
+      }
+
+      @include small {
+        font-size: rem(36);
       }
 
       @include extraSmall {
-        font-size: rem(40);
+        font-size: rem(28);
       }
     }
 
@@ -97,27 +109,82 @@ $color_bg_hero__gradient--first: #059459;
 
     &__image {
       position: relative;
-      flex: 1 1 50%;
+      flex: 1 1 60%;
+
+      @include large {
+        flex: 1 1 50%;
+      }
 
       &-large {
         position: absolute;
         bottom: rem(-890);
         z-index: 800;
+        left: rem(-50);
 
         @include medium {
           left: 50%;
           transform: translateX(-50%);
-          bottom: rem(-560);
+          bottom: rem(-400);
           width: rem(600);
         }
 
         @include small {
-          bottom: rem(-640);
+          bottom: rem(-420);
         }
 
         @include extraSmall {
           width: rem(500);
-          bottom: rem(-660);
+          bottom: rem(-400);
+        }
+      }
+    }
+  }
+
+  .flex_box {
+    position: relative;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #def6ec;
+      position: relative;
+      z-index: 1000;
+      gap: rem(37);
+    }
+
+    &__content,
+    &__image {
+      flex: 1 1 0;
+    }
+
+    &__content {
+      &-title {
+        font-size: rem(38);
+        line-height: rem(48);
+
+        @include large {
+          font-size: rem(32);
+          line-height: rem(42);
+        }
+      }
+
+      &-description {
+        line-height: rem(25);
+        letter-spacing: 0.005rem;
+      }
+    }
+
+    &__image {
+      position: relative;
+
+      img {
+        position: relative;
+        height: 80%;
+        object-fit: cover;
+
+        @include extraLarge {
+          width: 100%;
         }
       }
     }
