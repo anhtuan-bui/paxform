@@ -105,7 +105,7 @@ const personalPlatform = [
     },
 ]
 
-var HOME = {
+var home = {
     numberOfComapniesPerView: 5,
     numberOftestimonialsPerView: 3,
     autoplaySpeed: 4000
@@ -119,7 +119,7 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
 
-        this.state = HOME;
+        this.state = home;
     }
 
     async componentDidMount() {
@@ -141,27 +141,27 @@ export default class Home extends Component {
     handleResize = () => {
         const screenWidth = window.innerWidth;
         if (screenWidth >= SCREEN_SIZE.large) {
-            HOME = {
+            home = {
                 numberOfComapniesPerView: 5,
                 numberOftestimonialsPerView: 3,
             }
         } else if (screenWidth < SCREEN_SIZE.large && screenWidth >= SCREEN_SIZE.medium) {
-            HOME = {
+            home = {
                 numberOfComapniesPerView: 4,
                 numberOftestimonialsPerView: 2,
             }
         } else if (screenWidth < SCREEN_SIZE.medium && screenWidth >= SCREEN_SIZE.small) {
-            HOME = {
+            home = {
                 numberOfComapniesPerView: 3,
                 numberOftestimonialsPerView: 2,
             }
         } else if (screenWidth < SCREEN_SIZE.small) {
-            HOME = {
+            home = {
                 numberOfComapniesPerView: 2,
                 numberOftestimonialsPerView: 1,
             }
         }
-        this.setState(HOME);
+        this.setState(home);
     }
 
     render() {
@@ -190,7 +190,7 @@ export default class Home extends Component {
 
                         <Swiper
                             spaceBetween={30}
-                            slidesPerView={HOME.numberOfComapniesPerView}
+                            slidesPerView={home.numberOfComapniesPerView}
                             loop={true}
                             loopFillGroupWithBlank={true}
                             autoplay={{
@@ -433,9 +433,9 @@ const TestimonialSwiper = (data) => {
             <div className="testimonial__swiper">
 
                 <Swiper
-                    slidesPerView={HOME.numberOftestimonialsPerView}
+                    slidesPerView={home.numberOftestimonialsPerView}
                     spaceBetween={24}
-                    slidesPerGroup={HOME.numberOftestimonialsPerView}
+                    slidesPerGroup={home.numberOftestimonialsPerView}
                     loop={true}
                     autoplay={{
                         delay: 4000,

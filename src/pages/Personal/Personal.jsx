@@ -3,9 +3,44 @@ import Button from '../../components/Button/Button';
 import fillOutForm from '../../assets/images/fill-out-form.svg'
 import './Personal.scss';
 
-import personelHero from '../../assets/images/personal-hero.svg'
+import personelHero from '../../assets/images/personal-hero.svg';
+import featuresImg from '../../assets/images/feature-organisation.svg';
+
+const features = [
+  {
+    title: 'Create Form Templates',
+    description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    isOpened: true,
+  },
+  {
+    title: 'Multiple Admins',
+    description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    isOpened: false,
+  },
+  {
+    title: 'View and Procees Applications',
+    description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    isOpened: false,
+  },
+  {
+    title: 'Use API',
+    description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    isOpened: false,
+  },
+  {
+    title: 'Request Information',
+    description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    isOpened: false,
+  },
+
+];
 
 export default class Personal extends Component {
+  componentDidMount() {
+    const panel = document.querySelector('.features__accordion-item-panel');
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  }
+
   render() {
     return (
       <main className='personal'>
@@ -39,7 +74,47 @@ export default class Personal extends Component {
             </div>
           </div>
 
-          <div className="bottom_triangle bottom_triangle--light-green"></div>
+          <div className="bottom_triangle bottom_triangle--green"></div>
+        </section>
+
+        <section className='features'>
+          <div className="container">
+            <h1 className="features__title">Features For Your Organisation</h1>
+            <div className="features__container">
+
+              <div className="features__accordion">
+                {features.map((feature, index) => (
+                  <div className="features__accordion-item" key={index}>
+                    <h2 className='features__accordion-item-title' onClick={(e) => {
+                      const panel = e.target.nextElementSibling;
+
+                      if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                      } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                      }
+
+                      document.querySelectorAll('.features__accordion-item').forEach((item) => {
+                        if (item !== e.target.parentElement) {
+                          item.lastChild.style.maxHeight = null;
+                        }
+                      });
+
+                    }}>{feature.title}</h2>
+                    <div className={`features__accordion-item-panel ${feature.isOpened ? 'features__accordion-item-panel--opened' : ''}`}>
+                      <div className='features__accordion-item-description'><p>{feature.description}</p></div>
+                    </div>
+                  </div>
+                ))}
+
+              </div>
+              <div className="features__image">
+                <img src={featuresImg} alt="forms from Paxform" />
+              </div>
+            </div>
+          </div>
+
+          <div className="bottom_triangle bottom_triangle--white"></div>
         </section>
       </main>
     )
