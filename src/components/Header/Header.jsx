@@ -10,7 +10,7 @@ import { ReactComponent as Retail } from '../../assets/images/retail.svg';
 import './Header.scss';
 
 import { SCREEN_SIZE } from '../../configurations/configurations';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const menu = [
     {
@@ -40,24 +40,28 @@ const menu = [
                 text: 'Education',
                 description: 'Lorem Ipsum is simply dummy text',
                 link: 'https://',
+                to: 'usecases/education',
                 image: <Education />
             },
             {
                 text: 'Hospitality',
                 description: 'Lorem Ipsum is simply dummy text',
                 link: 'https://',
+                to: 'usecases/hospitality',
                 image: <Hospitality />
             },
             {
                 text: 'Medical Care',
                 description: 'Lorem Ipsum is simply dummy text',
                 link: 'https://',
+                to: 'usecases/medical-care',
                 image: <Medical />
             },
             {
                 text: 'Retail',
                 description: 'Lorem Ipsum is simply dummy text',
                 link: 'https://',
+                to: 'usecases/retail',
                 image: <Retail />
             },
         ]
@@ -195,14 +199,14 @@ export default class Header extends Component {
                                     {menu.map((item, index) => {
                                         return (
                                             <li key={index} className='nav__first-level-li'>
-                                                <Link
+                                                <NavLink
                                                     to={item.submenu.length > 0 ? '' : item.to}
                                                     className="nav__first-level-li-link"
                                                     onClick={item.submenu.length > 0 ? ((e) => e.preventDefault()) : undefined}
                                                 >
                                                     <span className='span--hover'>{item.text}</span>
                                                     {item.submenu.length > 0 && <ArrowRight />}
-                                                </Link>
+                                                </NavLink>
                                                 {item.submenu.length > 0 &&
 
                                                     <ul className='nav__second-level'>
@@ -211,9 +215,9 @@ export default class Header extends Component {
                                                                 <li key={index} className='nav__second-level-li'>
                                                                     {subitem.image}
                                                                     <div className="nav__second-level-li-text">
-                                                                        <a href={subitem.link} className="nav__second-level-li-link">
+                                                                        <NavLink href={subitem.to} className="nav__second-level-li-link">
                                                                             <span>{subitem.text}</span>
-                                                                        </a>
+                                                                        </NavLink>
                                                                         <p className='nav__second-level-li-description'>{subitem.description}</p>
                                                                     </div>
                                                                 </li>
