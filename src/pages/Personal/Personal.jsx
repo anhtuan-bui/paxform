@@ -9,17 +9,17 @@ import featuresImg from '../../assets/images/feature-organisation.svg';
 const features = [
   {
     title: 'Create Form Templates',
-    description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
     isOpened: true,
   },
   {
     title: 'Multiple Admins',
-    description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     isOpened: false,
   },
   {
     title: 'View and Procees Applications',
-    description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     isOpened: false,
   },
   {
@@ -36,10 +36,59 @@ const features = [
 ];
 
 export default class Personal extends Component {
+  position = { top: 0, left: 0, x: 0, y: 0 };
+
+
+  constructor(props) {
+    super(props);
+    this.state = this.position;
+
+    this.descriptionHandler = this.descriptionHandler.bind(this);
+  }
+
   componentDidMount() {
     const panel = document.querySelector('.features__accordion-item-panel');
     panel.style.maxHeight = panel.scrollHeight + "px";
   }
+
+  descriptionHandler = (e) => {
+    const descriptions = document.querySelectorAll('.features__accordion-item-description');
+
+    descriptions.forEach(description => {
+      if (e.target.parentElement === description) {
+        this.position = {
+          left: description.scrollLeft,
+          top: description.scrollTop,
+          x: e.clientX,
+          y: e.clientY,
+        };
+
+        this.setState(this.position);
+
+        description.style.cursor = 'grabbing';
+        description.style.userSelect = 'none';
+
+
+        const mouseMoveHandler = (e) => {
+          const dx = e.clientX - this.state.x;
+          description.scrollLeft = this.state.left - dx;
+        }
+
+        const mouseUpHandler = () => {
+          document.removeEventListener('mousemove', mouseMoveHandler);
+          document.removeEventListener('mousedown', this.descriptionHandler);
+          document.removeEventListener('mouseup', mouseUpHandler);
+    
+          e.target.style.cursor = 'grab';
+          e.target.style.removeProperty('user-select');
+        };
+
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+      }
+    });
+  }
+
 
   render() {
     return (
@@ -101,8 +150,10 @@ export default class Personal extends Component {
                       });
 
                     }}>{feature.title}</h2>
-                    <div className={`features__accordion-item-panel ${feature.isOpened ? 'features__accordion-item-panel--opened' : ''}`}>
-                      <div className='features__accordion-item-description'><p>{feature.description}</p></div>
+                    <div className={`features__accordion-item-panel`}>
+                      <div className='features__accordion-item-description' key={`description-${index}`} >
+                        <p onMouseDown={(e) => this.descriptionHandler(e)}>{feature.description}</p>
+                      </div>
                     </div>
                   </div>
                 ))}

@@ -262,6 +262,8 @@ $color_bg_hero__gradient--first: #059459;
           overflow-x: scroll;
           overflow-y: hidden;
 
+          cursor: grab;
+
           &::-webkit-scrollbar {
             width: rem(10);
             height: rem(2);
