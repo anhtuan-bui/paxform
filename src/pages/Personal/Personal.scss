@@ -142,14 +142,14 @@ $color_bg_hero__gradient--first: #059459;
 
   .flex_box {
     position: relative;
+    background-color: #def6ec;
+    z-index: 1000;
 
     &__container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #def6ec;
       position: relative;
-      z-index: 1000;
       gap: rem(37);
     }
 
