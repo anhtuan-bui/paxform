@@ -211,11 +211,12 @@ export default class Header extends Component {
 
                                                     <ul className='nav__second-level'>
                                                         {item.submenu.map((subitem, index) => {
+                                                            console.log(subitem);
                                                             return (
                                                                 <li key={index} className='nav__second-level-li'>
                                                                     {subitem.image}
                                                                     <div className="nav__second-level-li-text">
-                                                                        <NavLink href={subitem.to} className="nav__second-level-li-link">
+                                                                        <NavLink to={subitem.to} className="nav__second-level-li-link">
                                                                             <span>{subitem.text}</span>
                                                                         </NavLink>
                                                                         <p className='nav__second-level-li-description'>{subitem.description}</p>
