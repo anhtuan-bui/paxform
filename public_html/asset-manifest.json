@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.31a28d08.css",
-    "main.js": "/static/js/main.4e258697.js",
+    "main.css": "/static/css/main.c31d8fd9.css",
+    "main.js": "/static/js/main.c2f721a2.js",
     "static/js/787.dfd5b70e.chunk.js": "/static/js/787.dfd5b70e.chunk.js",
-    "static/media/personal-hero.svg": "/static/media/personal-hero.e9677af35090752353c0180191f28fd4.svg",
+    "static/media/personal-hero.svg": "/static/media/personal-hero.5f0ee1a6dd163873567103a1eade2f87.svg",
     "static/media/Business Image.svg": "/static/media/Business Image.324d28980088f4b7f7b2951e3daf190e.svg",
     "static/media/large-hero.svg": "/static/media/large-hero.b5e26fe9ced7486b164488e29e662fbc.svg",
-    "static/media/feature-organisation.svg": "/static/media/feature-organisation.c72366283a9c4dbd257995583be5bc86.svg",
-    "static/media/fill-out-form.svg": "/static/media/fill-out-form.49ab636cbf56be7ee436653ce32d0cb2.svg",
+    "static/media/feature-organisation.svg": "/static/media/feature-organisation.088d01e8b1cf9d19b271e2145f613a3c.svg",
+    "static/media/fill-out-form.svg": "/static/media/fill-out-form.a4530d7a432a7eb7a8a09576342e85f7.svg",
     "static/media/Personal Platform Image.svg": "/static/media/Personal Platform Image.ec5d95d065d4dbd2a452545dcfc9f2a8.svg",
     "static/media/Inter-Bold.ttf": "/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
     "static/media/Inter-SemiBold.ttf": "/static/media/Inter-SemiBold.4d56bb21f2399db8ad48.ttf",
@@ -16,6 +16,7 @@
     "static/media/Inter-Regular.ttf": "/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
     "static/media/flowbase.svg": "/static/media/flowbase.44dedd89764e9a1352f01f136f4be13d.svg",
     "static/media/most forms.svg": "/static/media/most forms.d95f23cec7c799c205d2fda4bbc42158.svg",
+    "static/media/GothamRounded-Medium.otf": "/static/media/GothamRounded-Medium.10d88929ec344e9ef796.otf",
     "static/media/all information.svg": "/static/media/all information.bc33ba09c3198556fead9aa22657b5b1.svg",
     "static/media/GothamRounded-Bold.otf": "/static/media/GothamRounded-Bold.a829ff15fe2b18d9330b.otf",
     "static/media/get-started.svg": "/static/media/get-started.e2978a46905552b2f9167957feedaa16.svg",
@@ -29,6 +30,7 @@
     "static/media/flipreach.svg": "/static/media/flipreach.3f184a17af4c9b4ff6c2edb6a6c3042b.svg",
     "static/media/LOGO-footer.svg": "/static/media/LOGO-footer.4fcc4b0afc4d2344d421bb2858337a06.svg",
     "static/media/LOGO.svg": "/static/media/LOGO.1a3f5320c0950967ff2760b800b26e44.svg",
+    "static/media/tick.svg": "/static/media/tick.3c4908035180e068228e4fdf7746dd30.svg",
     "static/media/medical care.svg": "/static/media/medical care.36c1f3df818923685fb10bf3a595d638.svg",
     "static/media/discord-fill.svg": "/static/media/discord-fill.2891b81ac52edfe276c1a226fc4a929b.svg",
     "static/media/education.svg": "/static/media/education.ea9a1e8ddeb53f131920fc0f101b54d0.svg",
@@ -52,12 +54,12 @@
     "static/media/arrow-right.svg": "/static/media/arrow-right.1c318de4fcf71ce07bc95ec3a501be1b.svg",
     "static/media/left.svg": "/static/media/left.482b7a8cfb145445f061ba6fd0059559.svg",
     "static/media/right.svg": "/static/media/right.860f22fa1256bcd17b01333cd0b9705b.svg",
-    "main.31a28d08.css.map": "/static/css/main.31a28d08.css.map",
-    "main.4e258697.js.map": "/static/js/main.4e258697.js.map",
+    "main.c31d8fd9.css.map": "/static/css/main.c31d8fd9.css.map",
+    "main.c2f721a2.js.map": "/static/js/main.c2f721a2.js.map",
     "787.dfd5b70e.chunk.js.map": "/static/js/787.dfd5b70e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31a28d08.css",
-    "static/js/main.4e258697.js"
+    "static/css/main.c31d8fd9.css",
+    "static/js/main.c2f721a2.js"
   ]
 }

@@ -25,6 +25,9 @@ export default class Button extends Component {
         if (this.props.color === 'white') {
             this.button.class += ' button--white';
         }
+        if (this.props.color === 'green') {
+            this.button.class += ' button--green';
+        }
 
         if (this.props.type.includes('arrow')) {
             this.button.arrow = true;

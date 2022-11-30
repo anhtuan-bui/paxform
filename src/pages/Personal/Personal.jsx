@@ -5,6 +5,7 @@ import './Personal.scss';
 
 import personelHero from '../../assets/images/personal-hero.svg';
 import featuresImg from '../../assets/images/feature-organisation.svg';
+import { ReactComponent as Tick } from '../../assets/images/tick.svg';
 
 const features = [
   {
@@ -78,7 +79,7 @@ export default class Personal extends Component {
           document.removeEventListener('mousemove', mouseMoveHandler);
           document.removeEventListener('mousedown', this.descriptionHandler);
           document.removeEventListener('mouseup', mouseUpHandler);
-    
+
           e.target.style.cursor = 'grab';
           e.target.style.removeProperty('user-select');
         };
@@ -166,6 +167,95 @@ export default class Personal extends Component {
           </div>
 
           <div className="bottom_triangle bottom_triangle--white"></div>
+        </section>
+
+        <section className="plans">
+          <div className="container plans__container">
+            <p className='plans__name section_name'>PERSONAL PLANS</p>
+            <h1 className="plans__title section_title">Choose a Plan That’s Right for You</h1>
+            <div className="plans__pricing">
+              <div className="pricing_box pricing_box--grey">
+                <div className="pricing_box__top">
+
+                  <div className="pricing_box__dot"></div>
+                  <h2 className="pricing_box__title">Free</h2>
+                  <p className="pricing_box__description">A simple way to get started for you new to passfolio.</p>
+                  <div className="pricing_box__price"><span className='pricing_box__price-bt'>$0</span><span>/forever</span></div>
+                  <Button text="Get Started" type="outline arrow" color="green" />
+                </div>
+                <p className='pricing_box__price-sub'>What’s included</p>
+                <ul>
+                  <li>
+                    <Tick />
+                    <span>Unlimited data</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>5 Person saved</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>A simple way for you new started to Passfolio.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pricing_box pricing_box--green">
+                <div className="pricing_box__top">
+                  <div className="pricing_box__dot pricing_box__dot--green"></div>
+                  <h2 className="pricing_box__title">Premium</h2>
+                  <p className="pricing_box__description">Best for freelance coders & designers who need.</p>
+                  <div className="pricing_box__price"><span className='pricing_box__price-bt'>$50</span><span>/forever</span></div>
+                  <Button text="Get Started" type="flat arrow" color="white" />
+                </div>
+                <p className='pricing_box__price-sub'>What’s included</p>
+                <ul>
+                  <li>
+                    <Tick />
+                    <span>Unlimited data</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>5 Person saved</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>A simple way for you new started to Passfolio.</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>A simple way for you new started to Passfolio.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pricing_box pricing_box--blue">
+                <div className="pricing_box__top">
+                  <div className="pricing_box__dot pricing_box__dot--blue"></div>
+                  <h2 className="pricing_box__title">Family</h2>
+                  <p className="pricing_box__description">Best for freelance coders & designers who need.</p>
+                  <div className="pricing_box__price"><span className='pricing_box__price-bt'>Custom Pricing</span></div>
+                  <Button text="Get Started" type="outline arrow" color="green" />
+                </div>
+                <p className='pricing_box__price-sub'>What’s included</p>
+                <ul>
+                  <li>
+                    <Tick />
+                    <span>Unlimited data</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>5 Person saved</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>A simple way for you new started to Passfolio.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <Button className="plans__button" text="See full pricing" type="arrow outline" color="green" />
+          </div>
         </section>
       </main>
     )
