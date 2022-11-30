@@ -1,10 +1,10 @@
-import React, { Component, useRef } from 'react';
+import React, { Component } from 'react';
 import Button from '../../components/Button/Button';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay } from "swiper";
 
 import { ReactComponent as HeroRight } from '../../assets/images/large-hero.svg';
 import { ReactComponent as CertificateIllustrator } from '../../assets/images/certificate-illustrator.svg';
@@ -30,8 +30,6 @@ import personalPlatformImg from '../../assets/images/Personal Platform Image.svg
 
 import securityPolicy from '../../assets/images/security-policy.svg';
 
-import arrowLeft from '../../assets/images/left.svg';
-import arrowRight from '../../assets/images/right.svg';
 
 import information from '../../assets/images/all information.svg';
 import mostForms from '../../assets/images/most forms.svg';
@@ -52,6 +50,7 @@ import "swiper/scss/navigation";
 import './Home.scss';
 
 import { SCREEN_SIZE } from '../../configurations/configurations';
+import Testimonial from '../../components/Testimonial/Testimonial';
 
 
 const businessPlatform = [
@@ -110,11 +109,8 @@ var home = {
     numberOftestimonialsPerView: 3,
     autoplaySpeed: 4000
 }
-const API_URL = process.env.REACT_APP_API_URL;
 
 export default class Home extends Component {
-
-    testimonials = [];
 
     constructor(props) {
         super(props);
@@ -123,7 +119,6 @@ export default class Home extends Component {
     }
 
     async componentDidMount() {
-        this.testimonials = await this.getTestimonials();
         this.handleResize();
         window.addEventListener('resize', this.handleResize);
     }
@@ -131,12 +126,6 @@ export default class Home extends Component {
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize);
     }
-
-    async getTestimonials() {
-        const response = await fetch(API_URL + 'testimonials2');
-        return await response.json();
-    }
-
 
     handleResize = () => {
         const screenWidth = window.innerWidth;
@@ -324,7 +313,7 @@ export default class Home extends Component {
                 </section>
 
                 <section className="testimonial">
-                    <TestimonialSwiper values={this.testimonials} />
+                    <Testimonial />
                     <div className="bottom_triangle bottom_triangle--blue"></div>
                 </section>
 
@@ -419,64 +408,4 @@ export default class Home extends Component {
 
         )
     }
-}
-
-const TestimonialSwiper = (data) => {
-    const swiperRef = useRef();
-
-    const testimonials = data.values;
-
-    return (
-        <div className="container testimonial__container">
-            <p className="testimonial__name">TESTIMONIAL</p>
-            <h2 className="testimonial__title">What people are saying about Paxform</h2>
-            <div className="testimonial__swiper">
-
-                <Swiper
-                    slidesPerView={home.numberOftestimonialsPerView}
-                    spaceBetween={24}
-                    slidesPerGroup={home.numberOftestimonialsPerView}
-                    loop={true}
-                    autoplay={{
-                        delay: 4000,
-                        disableOnInteraction: false,
-                    }}
-                    autoHeight={false}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    onBeforeInit={(swiper) => {
-                        swiperRef.current = swiper;
-                    }}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="testimonial__slider"
-                >
-                    {testimonials.map((item, index) => {
-                        return (
-                            <SwiperSlide key={index}>
-                                <div className="testimonial_card">
-                                    <div className="testimonial_card__description" dangerouslySetInnerHTML={{ __html: item.content.rendered }}></div>
-                                    <div className="testimonial_card__name-box">
-                                        <h3 className="testimonial_card__name">{item.title.rendered}</h3>
-                                        <p className="testimonial_card__position">{item.acf.client_bio}</p>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        )
-                    })}
-
-                </Swiper>
-                <div className="slider__buttons--left">
-                    <button onClick={() => swiperRef.current?.slidePrev()}>
-                        <img src={arrowLeft} alt="arrow left" />
-                    </button>
-                </div>
-                <div className="slider__buttons--right">
-                    <button onClick={() => swiperRef.current?.slideNext()}>
-                        <img src={arrowRight} alt="arrow right" />
-                    </button>
-                </div>
-            </div>
-        </div>
-    )
 }

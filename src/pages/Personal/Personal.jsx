@@ -6,6 +6,7 @@ import './Personal.scss';
 import personelHero from '../../assets/images/personal-hero.svg';
 import featuresImg from '../../assets/images/feature-organisation.svg';
 import { ReactComponent as Tick } from '../../assets/images/tick.svg';
+import Testimonial from '../../components/Testimonial/Testimonial';
 
 const features = [
   {
@@ -256,6 +257,11 @@ export default class Personal extends Component {
             </div>
             <Button className="plans__button" text="See full pricing" type="arrow outline" color="green" />
           </div>
+        </section>
+        <section className="testimonial">
+
+        <Testimonial/>
+        <div className="bottom_triangle bottom_triangle--dark-blue"></div>
         </section>
       </main>
     )
