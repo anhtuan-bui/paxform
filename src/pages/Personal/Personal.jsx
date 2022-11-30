@@ -8,6 +8,12 @@ import featuresImg from '../../assets/images/feature-organisation.svg';
 import { ReactComponent as Tick } from '../../assets/images/tick.svg';
 import Testimonial from '../../components/Testimonial/Testimonial';
 
+import icon21 from '../../assets/images/icon2-1.svg';
+import icon22 from '../../assets/images/icon2-2.svg';
+import icon23 from '../../assets/images/icon2-3.svg';
+import icon24 from '../../assets/images/icon2-4.svg';
+import icon25 from '../../assets/images/icon2-5.svg';
+
 const features = [
   {
     title: 'Create Form Templates',
@@ -36,6 +42,35 @@ const features = [
   },
 
 ];
+
+
+const personalPlatform = [
+  {
+    image: icon21,
+    title: 'Capture, save and use personal information to complete forms and applications',
+    description: 'The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.'
+  },
+  {
+    image: icon22,
+    title: 'Share forms and applications with other parties and organizations',
+    description: 'Receive auto-completed electronic forms the moment your customer shares it with your organization - No more waiting for hard copies to arrive because Paxform eliminates.'
+  },
+  {
+    image: icon23,
+    title: 'Complete simple and complex forms',
+    description: 'Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant.'
+  },
+  {
+    image: icon24,
+    title: "Link your family's data",
+    description: 'The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.'
+  },
+  {
+    image: icon25,
+    title: 'Electronically sign documents',
+    description: 'Experience a new level of convenience by using your stored signatures to electronically sign your documents.'
+  },
+]
 
 export default class Personal extends Component {
   position = { top: 0, left: 0, x: 0, y: 0 };
@@ -260,8 +295,45 @@ export default class Personal extends Component {
         </section>
         <section className="testimonial">
 
-        <Testimonial/>
-        <div className="bottom_triangle bottom_triangle--dark-blue"></div>
+          <Testimonial />
+          <div className="bottom_triangle bottom_triangle--dark-blue"></div>
+        </section>
+
+        <section className="platform background--dark-blue platform__title--white">
+          <div className="container platform__container">
+            <div className="platform__top">
+              <div className="platform__top-left">
+
+                <p className="platform__name platform__name--green">PERSONAL PLATFORM</p>
+                <h2 className='platform__title '>Your personal information at your fingertips</h2>
+              </div>
+              <div className="platform__top-right">
+                <Button type="outline arrow" text="Learn more about Business" />
+              </div>
+
+            </div>
+            <div className="personal_platform__content">
+              <div className="business_platform__content-grid">
+                {personalPlatform.map((item, index) => {
+                  return (
+                    <div className="personal_platform__content-item" key={index}>
+                      <div className="personal_platform__content-item-image">
+
+                        <img src={item.image} alt="icon" />
+                      </div>
+                      <h3 className="personal_platform__content-item-title">{item.title}</h3>
+                      <p className="personal_platform__content-item-description">{item.description}</p>
+                    </div>
+                  )
+                })}
+                <div className="personal_platform__image">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bottom_triangle bottom_triangle--light-blue"></div>
+
         </section>
       </main>
     )

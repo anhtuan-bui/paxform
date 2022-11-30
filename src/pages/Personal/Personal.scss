@@ -426,4 +426,78 @@ $color_bg_hero__gradient--first: #059459;
       }
     }
   }
+
+  .platform {
+    background-color: #031A30;
+    position: relative;
+    z-index: 1000;
+    padding-top: rem(80);
+    padding-bottom: rem(250);
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include small {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      &-left,
+      &-right {
+        flex: 1 1 0;
+      }
+
+      &-left {
+        h2 {
+          margin-bottom: rem(60);
+
+          @include small {
+            margin-bottom: rem(40);
+          }
+        }
+      }
+
+      &-right {
+        display: flex;
+        justify-content: flex-end;
+
+        > .button {
+          border: 1px solid #20976c;
+          color: #20976c;
+
+          @include small {
+            margin-bottom: rem(40);
+          }
+
+          path {
+            stroke: #20976c;
+          }
+        }
+      }
+    }
+
+    &__title {
+      font-size: rem(38);
+      line-height: rem(48);
+      color: white;
+
+      @include medium {
+        font-size: rem(24);
+        line-height: rem(30);
+      }
+    }
+
+    &__name {
+      font-size: rem(14);
+      font-weight: 500;
+      color: white;
+      opacity: 0.5;
+      letter-spacing: 1px;
+      margin-bottom: rem(22);
+    }
+  }
+
+  
 }
