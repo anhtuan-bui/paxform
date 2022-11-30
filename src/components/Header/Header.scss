@@ -28,6 +28,12 @@ $color_bg_hero__gradient--first: #0a61b4;
 
     .nav__first-level-li-link {
       color: black;
+
+      svg {
+        path {
+          stroke: black;
+        }
+      }
     }
 
     .logo {
