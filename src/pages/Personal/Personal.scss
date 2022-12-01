@@ -307,7 +307,8 @@ $color_bg_hero__gradient--first: #059459;
 
   .plans {
     position: relative;
-    padding: rem(100) 0;
+    padding-top: rem(100);
+    margin-bottom: rem(100);
 
     &__container {
       > .button {
