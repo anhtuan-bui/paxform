@@ -72,6 +72,12 @@ const menu = [
         to: 'resources',
         submenu: []
     },
+    {
+        text: 'FAQ',
+        link: 'https://',
+        to: 'faq',
+        submenu: []
+    },
 ]
 
 export default class Header extends Component {
