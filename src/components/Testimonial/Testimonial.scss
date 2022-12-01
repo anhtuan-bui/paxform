@@ -1,0 +1,112 @@
+@import '../../styles/styles.scss';
+
+.testimonial {
+    position: relative;
+    padding-top: rem(80);
+    padding-bottom: rem(280);
+
+    @include small {
+      padding-bottom: rem(160);
+    }
+
+    &__name {
+      font-size: rem(14);
+      font-weight: 500;
+      color: #2d4bb6;
+      letter-spacing: 1px;
+      margin-bottom: rem(22);
+    }
+
+    &__title {
+      font-size: rem(38);
+      font-weight: 700;
+      margin-bottom: rem(24);
+      width: rem(568);
+      max-width: 100%;
+    }
+  }
+
+  .testimonial_card {
+    border-radius: rem(20);
+    overflow: hidden;
+    background-color: #f6f6f6;
+    padding: rem(25);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: #f0f8ff;
+    }
+
+    &__description {
+      margin: 0;
+      font-size: rem(18);
+    }
+
+    &__name {
+      font-size: rem(24);
+      font-weight: 500;
+      color: #0a61b4;
+      margin-bottom: rem(6);
+    }
+
+    &__position {
+      font-size: rem(14);
+      letter-spacing: 1px;
+      margin: 0;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    border-radius: unset !important;
+    width: rem(24) !important;
+    height: rem(2) !important;
+  }
+
+  .swiper-slide {
+    height: auto !important;
+  }
+
+  .testimonial__slider {
+    position: relative;
+  }
+
+  .testimonial__swiper {
+    position: relative;
+  }
+
+  .slider__buttons {
+    &--left,
+    &--right {
+      position: absolute;
+      top: 50%;
+      z-index: 1200;
+
+      button {
+        cursor: pointer;
+        width: rem(50);
+        height: rem(50);
+        border-radius: 50%;
+        border: none;
+        background-color: white;
+        box-shadow: 1px 0 10px rgba(0, 0, 0, 0.1);
+        transition: 0.25s ease-in-out;
+        &:hover {
+          background-color: #f0f8ff;
+        }
+      }
+    }
+
+    &--left {
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    &--right {
+      transform: translate(50%, -50%);
+      right: 0;
+    }
+  }

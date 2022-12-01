@@ -268,20 +268,20 @@ $color_bg_hero__gradient--first: #059459;
             width: rem(10);
             height: rem(2);
           }
-          
+
           &::-webkit-scrollbar-track {
-            background: #FFFFFF;
+            background: #ffffff;
             opacity: 0.2;
           }
-          
+
           &::-webkit-scrollbar-thumb {
-            background: #0A61B4;
+            background: #0a61b4;
           }
 
           &::-webkit-scrollbar-thumb:hover {
-            background: lighten(#0A61B4, 10%);
+            background: lighten(#0a61b4, 10%);
           }
-          
+
           p {
             margin-top: 0;
             width: 150%;
@@ -294,7 +294,6 @@ $color_bg_hero__gradient--first: #059459;
       flex: 1 1 0;
 
       img {
-
         @include extraLarge {
           width: 100%;
         }
@@ -305,4 +304,200 @@ $color_bg_hero__gradient--first: #059459;
       }
     }
   }
+
+  .plans {
+    position: relative;
+    padding: rem(100) 0;
+
+    &__container {
+      > .button {
+        margin: auto;
+      }
+    }
+
+    &__name {
+      color: #2d4bb6;
+      text-align: center;
+    }
+    &__title {
+      width: rem(469);
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: rem(60);
+    }
+
+    &__pricing {
+      display: flex;
+      align-items: stretch;
+      gap: rem(24);
+      margin-bottom: rem(60);
+    }
+  }
+
+  .pricing_box {
+    padding: rem(40);
+    border-radius: rem(20);
+
+    ul {
+      padding-left: 0;
+
+      li {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+        margin-top: rem(10);
+
+        span {
+          letter-spacing: 0.005rem;
+          line-height: rem(25);
+        }
+
+        svg {
+          width: rem(18);
+          min-width: rem(18);
+        }
+      }
+    }
+
+    &--grey {
+      background-color: #f6f6f6;
+    }
+    &--green {
+      background-color: #def6ec;
+    }
+    &--blue {
+      background-color: #f0f8ff;
+    }
+
+    &__title {
+      margin-top: 0;
+      margin-bottom: rem(14);
+      font-size: rem(28);
+      font-weight: 500;
+    }
+
+    &__description {
+      margin-top: 0;
+      margin-bottom: rem(24);
+    }
+
+    &__price {
+      margin-top: 0;
+      margin-bottom: rem(24);
+
+      &-bt {
+        font-family: GothamRoundedBold, sans-serif;
+        font-size: rem(34);
+      }
+
+      &-sub {
+        text-transform: uppercase;
+        font-size: rem(14);
+        letter-spacing: 0.014rem;
+        margin-top: rem(44);
+      }
+    }
+
+    &__top {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+
+    &__dot {
+      margin: auto;
+      margin-bottom: rem(28);
+      width: rem(25);
+      height: rem(25);
+      border-radius: 50%;
+      background-color: #aeb4ba;
+      outline: rem(12.5) solid hsla(210, 8%, 71%, 0.2);
+
+      &--blue {
+        background-color: #0a61b4;
+        outline: rem(12.5) solid hsla(209, 89%, 37%, 0.2);
+      }
+
+      &--green {
+        background-color: #20976c;
+        outline: rem(12.5) solid hsla(158, 65%, 36%, 0.2);
+      }
+    }
+  }
+
+  .platform {
+    background-color: #031A30;
+    position: relative;
+    z-index: 1000;
+    padding-top: rem(80);
+    padding-bottom: rem(250);
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include small {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      &-left,
+      &-right {
+        flex: 1 1 0;
+      }
+
+      &-left {
+        h2 {
+          margin-bottom: rem(60);
+
+          @include small {
+            margin-bottom: rem(40);
+          }
+        }
+      }
+
+      &-right {
+        display: flex;
+        justify-content: flex-end;
+
+        > .button {
+          border: 1px solid #20976c;
+          color: #20976c;
+
+          @include small {
+            margin-bottom: rem(40);
+          }
+
+          path {
+            stroke: #20976c;
+          }
+        }
+      }
+    }
+
+    &__title {
+      font-size: rem(38);
+      line-height: rem(48);
+      color: white;
+
+      @include medium {
+        font-size: rem(24);
+        line-height: rem(30);
+      }
+    }
+
+    &__name {
+      font-size: rem(14);
+      font-weight: 500;
+      color: white;
+      opacity: 0.5;
+      letter-spacing: 1px;
+      margin-bottom: rem(22);
+    }
+  }
+
+  
 }

@@ -5,6 +5,14 @@ import './Personal.scss';
 
 import personelHero from '../../assets/images/personal-hero.svg';
 import featuresImg from '../../assets/images/feature-organisation.svg';
+import { ReactComponent as Tick } from '../../assets/images/tick.svg';
+import Testimonial from '../../components/Testimonial/Testimonial';
+
+import icon21 from '../../assets/images/icon2-1.svg';
+import icon22 from '../../assets/images/icon2-2.svg';
+import icon23 from '../../assets/images/icon2-3.svg';
+import icon24 from '../../assets/images/icon2-4.svg';
+import icon25 from '../../assets/images/icon2-5.svg';
 
 const features = [
   {
@@ -34,6 +42,35 @@ const features = [
   },
 
 ];
+
+
+const personalPlatform = [
+  {
+    image: icon21,
+    title: 'Capture, save and use personal information to complete forms and applications',
+    description: 'The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.'
+  },
+  {
+    image: icon22,
+    title: 'Share forms and applications with other parties and organizations',
+    description: 'Receive auto-completed electronic forms the moment your customer shares it with your organization - No more waiting for hard copies to arrive because Paxform eliminates.'
+  },
+  {
+    image: icon23,
+    title: 'Complete simple and complex forms',
+    description: 'Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant.'
+  },
+  {
+    image: icon24,
+    title: "Link your family's data",
+    description: 'The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.'
+  },
+  {
+    image: icon25,
+    title: 'Electronically sign documents',
+    description: 'Experience a new level of convenience by using your stored signatures to electronically sign your documents.'
+  },
+]
 
 export default class Personal extends Component {
   position = { top: 0, left: 0, x: 0, y: 0 };
@@ -78,7 +115,7 @@ export default class Personal extends Component {
           document.removeEventListener('mousemove', mouseMoveHandler);
           document.removeEventListener('mousedown', this.descriptionHandler);
           document.removeEventListener('mouseup', mouseUpHandler);
-    
+
           e.target.style.cursor = 'grab';
           e.target.style.removeProperty('user-select');
         };
@@ -166,6 +203,137 @@ export default class Personal extends Component {
           </div>
 
           <div className="bottom_triangle bottom_triangle--white"></div>
+        </section>
+
+        <section className="plans">
+          <div className="container plans__container">
+            <p className='plans__name section_name'>PERSONAL PLANS</p>
+            <h1 className="plans__title section_title">Choose a Plan That’s Right for You</h1>
+            <div className="plans__pricing">
+              <div className="pricing_box pricing_box--grey">
+                <div className="pricing_box__top">
+
+                  <div className="pricing_box__dot"></div>
+                  <h2 className="pricing_box__title">Free</h2>
+                  <p className="pricing_box__description">A simple way to get started for you new to passfolio.</p>
+                  <div className="pricing_box__price"><span className='pricing_box__price-bt'>$0</span><span>/forever</span></div>
+                  <Button text="Get Started" type="outline arrow" color="green" />
+                </div>
+                <p className='pricing_box__price-sub'>What’s included</p>
+                <ul>
+                  <li>
+                    <Tick />
+                    <span>Unlimited data</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>5 Person saved</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>A simple way for you new started to Passfolio.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pricing_box pricing_box--green">
+                <div className="pricing_box__top">
+                  <div className="pricing_box__dot pricing_box__dot--green"></div>
+                  <h2 className="pricing_box__title">Premium</h2>
+                  <p className="pricing_box__description">Best for freelance coders & designers who need.</p>
+                  <div className="pricing_box__price"><span className='pricing_box__price-bt'>$50</span><span>/forever</span></div>
+                  <Button text="Get Started" type="flat arrow" color="white" />
+                </div>
+                <p className='pricing_box__price-sub'>What’s included</p>
+                <ul>
+                  <li>
+                    <Tick />
+                    <span>Unlimited data</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>5 Person saved</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>A simple way for you new started to Passfolio.</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>A simple way for you new started to Passfolio.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pricing_box pricing_box--blue">
+                <div className="pricing_box__top">
+                  <div className="pricing_box__dot pricing_box__dot--blue"></div>
+                  <h2 className="pricing_box__title">Family</h2>
+                  <p className="pricing_box__description">Best for freelance coders & designers who need.</p>
+                  <div className="pricing_box__price"><span className='pricing_box__price-bt'>Custom Pricing</span></div>
+                  <Button text="Get Started" type="outline arrow" color="green" />
+                </div>
+                <p className='pricing_box__price-sub'>What’s included</p>
+                <ul>
+                  <li>
+                    <Tick />
+                    <span>Unlimited data</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>5 Person saved</span>
+                  </li>
+                  <li>
+                    <Tick />
+                    <span>A simple way for you new started to Passfolio.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <Button className="plans__button" text="See full pricing" type="arrow outline" color="green" />
+          </div>
+        </section>
+        <section className="testimonial">
+
+          <Testimonial />
+          <div className="bottom_triangle bottom_triangle--dark-blue"></div>
+        </section>
+
+        <section className="platform background--dark-blue platform__title--white">
+          <div className="container platform__container">
+            <div className="platform__top">
+              <div className="platform__top-left">
+
+                <p className="platform__name platform__name--green">PERSONAL PLATFORM</p>
+                <h2 className='platform__title '>Your personal information at your fingertips</h2>
+              </div>
+              <div className="platform__top-right">
+                <Button type="outline arrow" text="Learn more about Business" />
+              </div>
+
+            </div>
+            <div className="personal_platform__content">
+              <div className="business_platform__content-grid">
+                {personalPlatform.map((item, index) => {
+                  return (
+                    <div className="personal_platform__content-item" key={index}>
+                      <div className="personal_platform__content-item-image">
+
+                        <img src={item.image} alt="icon" />
+                      </div>
+                      <h3 className="personal_platform__content-item-title">{item.title}</h3>
+                      <p className="personal_platform__content-item-description">{item.description}</p>
+                    </div>
+                  )
+                })}
+                <div className="personal_platform__image">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bottom_triangle bottom_triangle--light-blue"></div>
+
         </section>
       </main>
     )
