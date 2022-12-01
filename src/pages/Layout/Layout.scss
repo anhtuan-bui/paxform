@@ -6,17 +6,17 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1200;
+    z-index: 1000;
 
     &__item {
-        border-left: 1px dashed #ccc;
+        border-left: 1px dashed rgb(101, 101, 101);
         flex: 1 1 25%;
         height: 100vh;
         width: 100%;
         &:last-child {
-            border-right: 1px dashed #ccc;
+            border-right: 1px dashed rgb(101, 101, 101);
         }
-        opacity: 0.2;
+        opacity: 0.1;
     }
 }
 
