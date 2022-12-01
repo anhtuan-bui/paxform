@@ -433,6 +433,7 @@ $color_bg_hero__gradient--first: #059459;
     z-index: 1000;
     padding-top: rem(80);
     padding-bottom: rem(250);
+    color: white;
 
     &__top {
       display: flex;
@@ -496,6 +497,11 @@ $color_bg_hero__gradient--first: #059459;
       opacity: 0.5;
       letter-spacing: 1px;
       margin-bottom: rem(22);
+    }
+
+    &__content {
+      display: flex;
+      gap: rem(24);
     }
   }
 

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a7a6b6d8.css",
-    "main.js": "/static/js/main.1a28f0ed.js",
+    "main.css": "/static/css/main.fcd5a948.css",
+    "main.js": "/static/js/main.c7f09173.js",
     "static/js/787.dfd5b70e.chunk.js": "/static/js/787.dfd5b70e.chunk.js",
     "static/media/personal-hero.svg": "/static/media/personal-hero.5f0ee1a6dd163873567103a1eade2f87.svg",
     "static/media/Business Image.svg": "/static/media/Business Image.324d28980088f4b7f7b2951e3daf190e.svg",
@@ -16,6 +16,9 @@
     "static/media/Inter-Regular.ttf": "/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
     "static/media/flowbase.svg": "/static/media/flowbase.44dedd89764e9a1352f01f136f4be13d.svg",
     "static/media/most forms.svg": "/static/media/most forms.d95f23cec7c799c205d2fda4bbc42158.svg",
+    "static/media/card1.png": "/static/media/card1.8c66a19d718174b4b9cc.png",
+    "static/media/card3.png": "/static/media/card3.0d33e41cda190c25c924.png",
+    "static/media/card2.png": "/static/media/card2.0009461724c7fe1945fb.png",
     "static/media/GothamRounded-Medium.otf": "/static/media/GothamRounded-Medium.10d88929ec344e9ef796.otf",
     "static/media/all information.svg": "/static/media/all information.bc33ba09c3198556fead9aa22657b5b1.svg",
     "static/media/GothamRounded-Bold.otf": "/static/media/GothamRounded-Bold.a829ff15fe2b18d9330b.otf",
@@ -54,12 +57,12 @@
     "static/media/arrow-right.svg": "/static/media/arrow-right.1c318de4fcf71ce07bc95ec3a501be1b.svg",
     "static/media/left.svg": "/static/media/left.482b7a8cfb145445f061ba6fd0059559.svg",
     "static/media/right.svg": "/static/media/right.860f22fa1256bcd17b01333cd0b9705b.svg",
-    "main.a7a6b6d8.css.map": "/static/css/main.a7a6b6d8.css.map",
-    "main.1a28f0ed.js.map": "/static/js/main.1a28f0ed.js.map",
+    "main.fcd5a948.css.map": "/static/css/main.fcd5a948.css.map",
+    "main.c7f09173.js.map": "/static/js/main.c7f09173.js.map",
     "787.dfd5b70e.chunk.js.map": "/static/js/787.dfd5b70e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7a6b6d8.css",
-    "static/js/main.1a28f0ed.js"
+    "static/css/main.fcd5a948.css",
+    "static/js/main.c7f09173.js"
   ]
 }

@@ -1,0 +1,20 @@
+@import "../../styles/styles.scss";
+
+.read_article {
+  align-items: center;
+  gap: rem(10);
+
+  text-decoration: none;
+  color: #20976c;
+
+  &::after {
+    background-color: #20976c;
+  }
+  span {
+    margin-right: rem(10);
+  }
+
+  path {
+    stroke: #20976c;
+  }
+}

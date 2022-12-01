@@ -6,6 +6,7 @@ import arrowRight from '../../assets/images/right.svg';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { SCREEN_SIZE } from '../../configurations/configurations';
 
 
 var home = {
@@ -25,8 +26,40 @@ export default class Testimonial extends Component {
     }
 
     async componentDidMount() {
+        this.handleResize();
+        window.addEventListener('resize', this.handleResize);
         this.testimonials = await this.getTestimonials();
         this.setState(this.testimonials);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    }
+
+    handleResize = () => {
+        const screenWidth = window.innerWidth;
+        if (screenWidth >= SCREEN_SIZE.large) {
+            home = {
+                numberOfComapniesPerView: 5,
+                numberOftestimonialsPerView: 3,
+            }
+        } else if (screenWidth < SCREEN_SIZE.large && screenWidth >= SCREEN_SIZE.medium) {
+            home = {
+                numberOfComapniesPerView: 4,
+                numberOftestimonialsPerView: 2,
+            }
+        } else if (screenWidth < SCREEN_SIZE.medium && screenWidth >= SCREEN_SIZE.small) {
+            home = {
+                numberOfComapniesPerView: 3,
+                numberOftestimonialsPerView: 2,
+            }
+        } else if (screenWidth < SCREEN_SIZE.small) {
+            home = {
+                numberOfComapniesPerView: 2,
+                numberOftestimonialsPerView: 1,
+            }
+        }
+        this.setState(home);
     }
 
     async getTestimonials() {

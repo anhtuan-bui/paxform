@@ -8,7 +8,7 @@ import { Autoplay } from "swiper";
 
 import { ReactComponent as HeroRight } from '../../assets/images/large-hero.svg';
 import { ReactComponent as CertificateIllustrator } from '../../assets/images/certificate-illustrator.svg';
-import { ReactComponent as ArrowRight } from '../../assets/images/arrow-right.svg';
+
 
 import flipreach from '../../assets/images/flipreach.svg';
 import amazon from '../../assets/images/amazon.svg';
@@ -34,14 +34,6 @@ import securityPolicy from '../../assets/images/security-policy.svg';
 import information from '../../assets/images/all information.svg';
 import mostForms from '../../assets/images/most forms.svg';
 
-import googlePlay from '../../assets/images/google-play.svg';
-import appstore from '../../assets/images/appstore.svg';
-import getStarted from '../../assets/images/get-started.svg';
-
-import alwaysKnows from '../../assets/images/always-know.svg';
-import startIntegration from '../../assets/images/start-integration.svg';
-
-
 // Import Swiper styles
 import "swiper/scss";
 import "swiper/scss/pagination";
@@ -49,8 +41,8 @@ import "swiper/scss/navigation";
 
 import './Home.scss';
 
-import { SCREEN_SIZE } from '../../configurations/configurations';
 import Testimonial from '../../components/Testimonial/Testimonial';
+import GetStarted from '../../components/GetStarted/GetStarted';
 
 
 const businessPlatform = [
@@ -111,47 +103,6 @@ var home = {
 }
 
 export default class Home extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = home;
-    }
-
-    async componentDidMount() {
-        this.handleResize();
-        window.addEventListener('resize', this.handleResize);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.handleResize);
-    }
-
-    handleResize = () => {
-        const screenWidth = window.innerWidth;
-        if (screenWidth >= SCREEN_SIZE.large) {
-            home = {
-                numberOfComapniesPerView: 5,
-                numberOftestimonialsPerView: 3,
-            }
-        } else if (screenWidth < SCREEN_SIZE.large && screenWidth >= SCREEN_SIZE.medium) {
-            home = {
-                numberOfComapniesPerView: 4,
-                numberOftestimonialsPerView: 2,
-            }
-        } else if (screenWidth < SCREEN_SIZE.medium && screenWidth >= SCREEN_SIZE.small) {
-            home = {
-                numberOfComapniesPerView: 3,
-                numberOftestimonialsPerView: 2,
-            }
-        } else if (screenWidth < SCREEN_SIZE.small) {
-            home = {
-                numberOfComapniesPerView: 2,
-                numberOftestimonialsPerView: 1,
-            }
-        }
-        this.setState(home);
-    }
 
     render() {
         return (
@@ -348,61 +299,7 @@ export default class Home extends Component {
                     <div className="bottom_triangle bottom_triangle--light-blue"></div>
                 </section>
 
-                <section className='get_started'>
-                    <div className="container get_started__container">
-                        <div className="get_started__content">
-                            <h1>Get started for free. <br />
-                                Download from your app store.</h1>
-                            <div className="get_started__buttons">
-                                <img src={googlePlay} alt="google play" />
-                                <img src={appstore} alt="app store" />
-                            </div>
-                        </div>
-                        <div className="get_started__image">
-                            <img src={getStarted} alt="get started" />
-                        </div>
-                    </div>
-                </section>
-
-                <section className="love_to_hear">
-                    <div className="container love_to_hear__container">
-
-                        <div className="love_to_hear__box-left">
-                            <div className="love_to_hear__box-left-item">
-                                <div className="love_to_hear__box-left-item-image">
-
-                                    <img src={alwaysKnows} alt="always know" />
-                                </div>
-                                <h3>Always know what you pay</h3>
-                                <p>Experience a new level of convenience by using your stored signatures to electronically sign your documents.</p>
-                                <a href="https://">
-                                    <span className='span--hover'>Learn more</span><ArrowRight />
-                                </a>
-                            </div>
-                            <div className="love_to_hear__box-left-item">
-                                <div className="love_to_hear__box-left-item-image">
-
-                                    <img src={startIntegration} alt="start integration" />
-                                </div>
-                                <h3>Start your integration</h3>
-                                <p>Experience a new level of convenience by using your stored signatures to electronically sign your documents.</p>
-                                <a href="https://">
-                                    <span className='span--hover'>Learn more</span><ArrowRight />
-                                </a>
-                            </div>
-                        </div>
-                        <div className="love_to_hear__box-right">
-                            <h1>We’d love to hear from you!</h1>
-                            <p>Explore Stripe Payments, or create an account instantly and start accepting payments. You can also contact us to design a custom package for your business.</p>
-
-                            <p>Explore Stripe Payments, or create an account instantly and start accepting payments.</p>
-
-                            <Button type="outline arrow" text="Contact Us" />
-                        </div>
-                    </div>
-
-                    <div className="bottom_triangle bottom_triangle--footer"></div>
-                </section>
+                <GetStarted/>
 
             </main>
 

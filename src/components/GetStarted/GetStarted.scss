@@ -1,0 +1,161 @@
+@import '../../styles/styles.scss';
+
+
+.get_started {
+    background-color: #e1edf9;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: rem(80);
+
+      @include medium {
+        flex-direction: column;
+        gap: rem(20);
+      }
+    }
+
+    &__content,
+    &__image {
+      flex: 1 1 50%;
+    }
+
+    &__content {
+      h1 {
+        font-size: rem(38);
+        font-weight: 700;
+        margin-bottom: rem(60);
+
+        @include medium {
+          margin-top: rem(60);
+          font-size: rem(32);
+        }
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      gap: rem(20);
+
+      @include medium {
+        flex-direction: column;
+
+        img {
+          width: 60%;
+        }
+      }
+    }
+
+    &__image {
+      img {
+        position: relative;
+        bottom: rem(-15);
+
+        @include medium {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .love_to_hear {
+    background-color: white;
+    position: relative;
+    z-index: 1000;
+    padding-top: rem(100);
+    padding-bottom: rem(240);
+
+    @include small {
+      padding-bottom: rem(180);
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: rem(99);
+
+      @include medium {
+        flex-direction: column;
+        gap: rem(40);
+      }
+    }
+
+    &__box-left {
+      display: flex;
+      justify-content: space-between;
+      gap: rem(48);
+
+      @include small {
+        flex-direction: column;
+      }
+
+      &-item {
+        flex: 1 1 0;
+        &-image {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-color: #ddeeff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: rem(20);
+        }
+
+        h3 {
+          font-size: rem(20);
+          font-weight: 700;
+          margin-bottom: rem(20);
+        }
+
+        p {
+          color: #2f4356;
+          line-height: rem(25);
+          margin-bottom: rem(30);
+        }
+
+        a {
+          color: #20976c;
+          font-size: rem(14);
+          font-weight: 500;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: rem(10);
+
+          span {
+            &:after {
+              background-color: #20976c;
+            }
+          }
+
+          path {
+            stroke: #20976c;
+          }
+        }
+      }
+    }
+
+    &__box-right {
+      h1 {
+        margin-bottom: rem(40);
+      }
+
+      p {
+        margin-bottom: rem(30);
+        color: #2f4356;
+      }
+
+      button {
+        margin-top: rem(50);
+        border: 1px solid #20976c;
+        color: #20976c;
+
+        path {
+          stroke: #20976c;
+        }
+      }
+    }
+  }
