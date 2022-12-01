@@ -43,6 +43,7 @@ import './Home.scss';
 
 import Testimonial from '../../components/Testimonial/Testimonial';
 import GetStarted from '../../components/GetStarted/GetStarted';
+import { SCREEN_SIZE } from '../../configurations/configurations';
 
 
 const businessPlatform = [
@@ -103,6 +104,40 @@ var home = {
 }
 
 export default class Home extends Component {
+    componentDidMount() {
+        this.handleResize();
+        window.addEventListener('resize', this.handleResize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    }
+
+    handleResize = () => {
+        const screenWidth = window.innerWidth;
+        if (screenWidth >= SCREEN_SIZE.large) {
+            home = {
+                numberOfComapniesPerView: 5,
+                numberOftestimonialsPerView: 3,
+            }
+        } else if (screenWidth < SCREEN_SIZE.large && screenWidth >= SCREEN_SIZE.medium) {
+            home = {
+                numberOfComapniesPerView: 4,
+                numberOftestimonialsPerView: 2,
+            }
+        } else if (screenWidth < SCREEN_SIZE.medium && screenWidth >= SCREEN_SIZE.small) {
+            home = {
+                numberOfComapniesPerView: 3,
+                numberOftestimonialsPerView: 2,
+            }
+        } else if (screenWidth < SCREEN_SIZE.small) {
+            home = {
+                numberOfComapniesPerView: 2,
+                numberOftestimonialsPerView: 1,
+            }
+        }
+        this.setState(home);
+    }
 
     render() {
         return (
