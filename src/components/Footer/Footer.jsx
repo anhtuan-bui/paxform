@@ -71,17 +71,21 @@ export default class Footer extends Component {
                         </div>
                     </div>
                     {/* </div> */}
-                    <div className="footer__bottom">
-                        <p>© Copyright 2022 Paxform. All rights reserved.</p>
+                </div>
+                <div className="footer__bottom-wrapper">
+                    <div className="container">
+                        <div className="footer__bottom">
+                            <p>© Copyright 2022 Paxform. All rights reserved.</p>
 
-                        <ul>
-                            <li>
-                                <a href="https://"><span className='span--hover'>Privacy Policy</span></a>
-                            </li>
-                            <li>
-                                <a href="https://"><span className='span--hover'>Term of Service</span></a>
-                            </li>
-                        </ul>
+                            <ul>
+                                <li>
+                                    <a href="https://"><span className='span--hover'>Privacy Policy</span></a>
+                                </li>
+                                <li>
+                                    <a href="https://"><span className='span--hover'>Term of Service</span></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </footer>

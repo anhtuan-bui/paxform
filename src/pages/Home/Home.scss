@@ -238,6 +238,7 @@ $color_bg_hero__gradient--first: #0a61b4;
       &-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        row-gap: $row__gap--larger;
 
         @include medium {
           grid-template-columns: 1fr 1fr;
@@ -245,6 +246,7 @@ $color_bg_hero__gradient--first: #0a61b4;
 
         @include small {
           grid-template-columns: 1fr;
+          row-gap: $row__gap--small;
         }
       }
 
@@ -303,6 +305,11 @@ $color_bg_hero__gradient--first: #0a61b4;
       &-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        row-gap: $row__gap--larger;
+
+        @include small {
+          row-gap: $row__gap--small;
+        }
       }
 
       &-item {
