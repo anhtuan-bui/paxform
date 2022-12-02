@@ -2,21 +2,44 @@
 
 .stripe_layout {
     position: fixed;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    pointer-events: none;
+
+    @include medium {
+        grid-template-columns: auto auto;
+        
+    }
+
+    @include small {
+        grid-template-columns: auto;
+        
+    }
 
     &__item {
         border-left: 1px dashed rgb(101, 101, 101);
-        flex: 1 1 25%;
         height: 100vh;
         width: 100%;
+        opacity: 0.075;
         &:last-child {
             border-right: 1px dashed rgb(101, 101, 101);
         }
-        opacity: 0.075;
+
+        @include medium {
+            &:nth-child(2) {
+                border-right: 1px dashed rgb(101, 101, 101);
+            }
+        }
+
+        @include small {
+            &:first-child {
+                border-right: 1px dashed rgb(101, 101, 101);
+            }
+        }
     }
 }
 

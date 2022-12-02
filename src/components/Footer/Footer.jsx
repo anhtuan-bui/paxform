@@ -24,53 +24,53 @@ export default class Footer extends Component {
                                 <img src={discord} alt="discord" />
                             </div>
                         </div>
-                        <div className="footer__top-right">
-                            <div className="footer__top-right-list">
-                                <p>SERVICES</p>
-                                <ul>
-                                    <li><a href="https://">Personal</a></li>
-                                    <li><a href="https://">Business</a></li>
-                                    <li><a href="https://">Security Policy</a></li>
-                                    <li><a href="https://">Personal</a></li>
-                                    <li><a href="https://">Business</a></li>
-                                    <li><a href="https://">Security Policy</a></li>
-                                    <li><a href="https://">Personal</a></li>
-                                    <li><a href="https://">Business</a></li>
-                                    <li><a href="https://">Security Policy</a></li>
-                                    <li><a href="https://">Form Publishing</a></li>
-                                    <li><a href="https://">Security Policy</a></li>
-                                    <li><a href="https://">About</a></li>
-                                    <li><a href="https://">Legal</a></li>
-                                </ul>
-                            </div>
-                            <div className="footer__top-right-list">
-                                <p>CUSTOMER STORIES</p>
-                                <ul>
-                                    <li><a href="https://">See why customers love Paxform</a></li>
-                                    <li><a href="https://">Making the visitor experience seamless at Paxform</a></li>
-                                    <li><a href="https://">The new normal—an automated path—way for policy renewals</a></li>
-                                    <li><a href="https://">Complete simple and complex forms</a></li>
-                                    <li><a href="https://">Share forms and applications with other parties and organizations</a></li>
-                                    <li><a href="https://">Electronically sign documents</a></li>
-                                </ul>
-                            </div>
-                            <div className="footer__top-right-list">
-                                <p>COMPANY</p>
-                                <ul>
-                                    <li><a href="https://">About</a></li>
-                                    <li><a href="https://">Security Policy</a></li>
-                                    <li><a href="https://">Security Policy</a></li>
-                                    <li><a href="https://">Legal</a></li>
-                                    <li><a href="https://">Business</a></li>
-                                    <li><a href="https://">Security Policy</a></li>
-                                    <li><a href="https://">Personal</a></li>
-                                    <li><a href="https://">Business</a></li>
-                                    <li><a href="https://">Security Policy</a></li>
-                                    <li><a href="https://">Form Publishing</a></li>
-                                </ul>
-                            </div>
+                        {/* <div className="footer__top-right"> */}
+                        <div className="footer__top-right-list">
+                            <h1>SERVICES</h1>
+                            <ul>
+                                <li><a href="https://">Personal</a></li>
+                                <li><a href="https://">Business</a></li>
+                                <li><a href="https://">Security Policy</a></li>
+                                <li><a href="https://">Personal</a></li>
+                                <li><a href="https://">Business</a></li>
+                                <li><a href="https://">Security Policy</a></li>
+                                <li><a href="https://">Personal</a></li>
+                                <li><a href="https://">Business</a></li>
+                                <li><a href="https://">Security Policy</a></li>
+                                <li><a href="https://">Form Publishing</a></li>
+                                <li><a href="https://">Security Policy</a></li>
+                                <li><a href="https://">About</a></li>
+                                <li><a href="https://">Legal</a></li>
+                            </ul>
+                        </div>
+                        <div className="footer__top-right-list">
+                            <h1>CUSTOMER STORIES</h1>
+                            <ul>
+                                <li><a href="https://">See why customers love Paxform</a></li>
+                                <li><a href="https://">Making the visitor experience seamless at Paxform</a></li>
+                                <li><a href="https://">The new normal—an automated path—way for policy renewals</a></li>
+                                <li><a href="https://">Complete simple and complex forms</a></li>
+                                <li><a href="https://">Share forms and applications with other parties and organizations</a></li>
+                                <li><a href="https://">Electronically sign documents</a></li>
+                            </ul>
+                        </div>
+                        <div className="footer__top-right-list">
+                            <h1>COMPANY</h1>
+                            <ul>
+                                <li><a href="https://">About</a></li>
+                                <li><a href="https://">Security Policy</a></li>
+                                <li><a href="https://">Security Policy</a></li>
+                                <li><a href="https://">Legal</a></li>
+                                <li><a href="https://">Business</a></li>
+                                <li><a href="https://">Security Policy</a></li>
+                                <li><a href="https://">Personal</a></li>
+                                <li><a href="https://">Business</a></li>
+                                <li><a href="https://">Security Policy</a></li>
+                                <li><a href="https://">Form Publishing</a></li>
+                            </ul>
                         </div>
                     </div>
+                    {/* </div> */}
                     <div className="footer__bottom">
                         <p>© Copyright 2022 Paxform. All rights reserved.</p>
 

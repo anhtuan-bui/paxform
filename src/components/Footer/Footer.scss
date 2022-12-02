@@ -23,11 +23,11 @@
   }
 
   &__top {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-evenly;
     border-bottom: 1px solid #baccde;
     padding-bottom: rem(20);
-    gap: rem(40);
 
     @include medium {
       flex-direction: column;
@@ -38,9 +38,11 @@
       align-items: center;
     }
 
+    &-left {
+      padding: 0 $padding__collumn;
+    }
+
     &-right {
-      display: flex;
-      gap: rem(60);
 
       @include small {
         flex-direction: column;
@@ -51,11 +53,13 @@
 
       &-list {
         max-width: rem(250);
+        padding: 0 $padding__collumn;
 
-        p {
+        h1 {
           font-size: rem(14);
           color: #2d4bb6;
           font-weight: 500;
+          margin-top: 0;
         }
 
         ul {
