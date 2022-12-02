@@ -46,6 +46,7 @@ $color_bg_hero__gradient--first: #0a61b4;
 
     &__content {
       color: white;
+      padding: 0 $padding__collumn;
 
       @include medium {
         margin-top: rem(140);
@@ -151,6 +152,10 @@ $color_bg_hero__gradient--first: #0a61b4;
     display: flex;
     align-items: center;
 
+    &__container {
+      padding: 0 $padding__collumn;
+    }
+
     &__image {
       display: flex;
       justify-content: center;
@@ -168,6 +173,7 @@ $color_bg_hero__gradient--first: #0a61b4;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0 $padding__collumn;
 
       @include small {
         flex-direction: column;
@@ -232,7 +238,6 @@ $color_bg_hero__gradient--first: #0a61b4;
       &-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: rem(48);
 
         @include medium {
           grid-template-columns: 1fr 1fr;
@@ -244,6 +249,7 @@ $color_bg_hero__gradient--first: #0a61b4;
       }
 
       &-item {
+        padding: 0 $padding__collumn;
         &-image {
           display: flex;
           justify-content: center;
@@ -274,8 +280,8 @@ $color_bg_hero__gradient--first: #0a61b4;
 
       img {
         position: absolute;
-        top: rem(-100);
-        left: rem(-80);
+        top: rem(-84);
+        left: rem(-40);
       }
     }
   }
@@ -297,10 +303,10 @@ $color_bg_hero__gradient--first: #0a61b4;
       &-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: rem(48);
       }
 
       &-item {
+        padding: 0 $padding__collumn;
         &-image {
           display: flex;
           justify-content: center;
@@ -409,6 +415,7 @@ $color_bg_hero__gradient--first: #0a61b4;
     }
 
     &__content {
+      padding: 0 $padding__collumn;
       .button {
         border: 1px solid #20976c;
         color: #20976c;
@@ -423,8 +430,6 @@ $color_bg_hero__gradient--first: #0a61b4;
       margin-top: rem(50);
     }
   }
-
-  
 
   .simplify {
     background-color: #0a61b4;
@@ -442,6 +447,7 @@ $color_bg_hero__gradient--first: #0a61b4;
       font-size: rem(38);
       font-weight: 700;
       margin-bottom: rem(40);
+      padding: 0 $padding__collumn;
     }
 
     &_flexbox {
@@ -470,6 +476,7 @@ $color_bg_hero__gradient--first: #0a61b4;
       }
 
       &__content {
+        padding: 0 $padding__collumn;
         &-title {
           font-size: rem(28);
           font-weight: 700;

@@ -4,6 +4,11 @@
   }
 }
 
+@mixin larger {
+  @media (max-width: $width__larger) {
+    @content;
+  }
+}
 @mixin large {
   @media (max-width: $width__large) {
     @content;

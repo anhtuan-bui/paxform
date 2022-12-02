@@ -170,9 +170,9 @@ export default class Header extends Component {
         if (this.app.hamburgerIsOpen) {
             this.app.hamburgerIsOpen = false;
             this.handleHamburger();
-        }
+        }     
         try {
-            if (this.app.width <= SCREEN_SIZE.large) {
+            if (this.app.width <= SCREEN_SIZE.larger) {
                 hamburger.classList.add('hamburger--active');
                 headerRight.classList.remove('header_right--active');
             } else {

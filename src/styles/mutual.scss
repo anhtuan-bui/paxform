@@ -6,11 +6,11 @@
   padding: 0 rem(100);
 
   @include large {
-    padding: 0 rem(32);
+    padding: 0 rem(16);
   }
 
   @include extraSmall {
-    padding: 0 rem(20);
+    padding: 0 rem(4);
   }
 }
 

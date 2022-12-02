@@ -34,7 +34,7 @@ export default class GetStarted extends Component {
                 <section className="love_to_hear">
                     <div className="container love_to_hear__container">
 
-                        <div className="love_to_hear__box-left">
+                        {/* <div className="love_to_hear__box-left"> */}
                             <div className="love_to_hear__box-left-item">
                                 <div className="love_to_hear__box-left-item-image">
 
@@ -57,7 +57,7 @@ export default class GetStarted extends Component {
                                     <span className='span--hover'>Learn more</span><ArrowRight />
                                 </a>
                             </div>
-                        </div>
+                        {/* </div> */}
                         <div className="love_to_hear__box-right">
                             <h1>We’d love to hear from you!</h1>
                             <p>Explore Stripe Payments, or create an account instantly and start accepting payments. You can also contact us to design a custom package for your business.</p>
