@@ -67,6 +67,7 @@ $color_bg_hero__gradient--first: #059459;
     &__content {
       color: white;
       flex: 1 1 40%;
+      padding: 0 $padding__collumn;
 
       @include extraLarge {
         flex: 1 1 50%;
@@ -155,15 +156,25 @@ $color_bg_hero__gradient--first: #059459;
       align-items: center;
       justify-content: space-between;
       position: relative;
-      gap: rem(37);
+
+      @include medium {
+        flex-direction: column;
+      }
     }
 
     &__content,
     &__image {
-      flex: 1 1 0;
+      flex: 1 1 50%;
     }
 
     &__content {
+      padding: 0 $padding__collumn;
+      box-sizing: border-box;
+
+      @include medium {
+        margin-bottom: rem(180);
+      }
+
       &-title {
         font-size: rem(38);
         line-height: rem(48);
@@ -200,6 +211,10 @@ $color_bg_hero__gradient--first: #059459;
         @include large {
           margin-top: rem(20);
         }
+
+        @include medium {
+          margin-top: rem(60);
+        }
       }
     }
   }
@@ -211,6 +226,10 @@ $color_bg_hero__gradient--first: #059459;
     color: white;
     padding-top: rem(80);
     padding-bottom: rem(220);
+
+    @include medium {
+      padding-bottom: rem(120);
+    }
 
     &__title {
       font-size: rem(38);
@@ -234,14 +253,15 @@ $color_bg_hero__gradient--first: #059459;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: rem(58);
 
-      @include extraLarge {
+      @include medium {
+        flex-direction: column;
       }
     }
 
     &__accordion {
-      flex: 1 1 0;
+      flex: 1 1 50%;
+      padding: 0 $padding__collumn;
       &-item {
         &-title {
           font-size: rem(20);
@@ -291,7 +311,7 @@ $color_bg_hero__gradient--first: #059459;
     }
 
     &__image {
-      flex: 1 1 0;
+      flex: 1 1 50%;
 
       img {
         @include extraLarge {
@@ -308,7 +328,7 @@ $color_bg_hero__gradient--first: #059459;
   .plans {
     position: relative;
     padding-top: rem(100);
-    margin-bottom: rem(100);
+    margin-bottom: rem(40);
 
     &__container {
       > .button {
@@ -328,10 +348,21 @@ $color_bg_hero__gradient--first: #059459;
     }
 
     &__pricing {
-      display: flex;
+      display: grid;
       align-items: stretch;
-      gap: rem(24);
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(20);
       margin-bottom: rem(60);
+      padding: 0 $padding__collumn;
+
+      @include larger {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: rem(40);
+      }
+
+      @include medium {
+        grid-template-columns: 1fr;
+      }
     }
   }
 
@@ -429,7 +460,7 @@ $color_bg_hero__gradient--first: #059459;
   }
 
   .platform {
-    background-color: #031A30;
+    background-color: #031a30;
     position: relative;
     z-index: 1000;
     padding-top: rem(80);
@@ -440,6 +471,7 @@ $color_bg_hero__gradient--first: #059459;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0 $padding__collumn;
 
       @include small {
         flex-direction: column;
@@ -501,10 +533,19 @@ $color_bg_hero__gradient--first: #059459;
     }
 
     &__content {
-      display: flex;
-      gap: rem(24);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      @include medium {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: rem(60);
+      }
+
+      @include small {
+        grid-template-columns: 1fr;
+      }
+
+
     }
   }
-
-  
 }
