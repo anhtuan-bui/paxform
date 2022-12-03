@@ -6,7 +6,8 @@
     grid-template-columns: repeat(4,1fr);
     width: 100%;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
     pointer-events: none;
 
