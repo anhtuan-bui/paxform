@@ -3,9 +3,9 @@
   margin: auto;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 0 rem(100);
+  padding: 0 rem(48);
 
-  @include larger {
+  @include large {
     padding: 0 rem(16);
   }
 

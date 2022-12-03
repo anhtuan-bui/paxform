@@ -14,7 +14,6 @@ import card3 from '../../assets/images/card3.png';
 import RelatedCard from '../../components/RelatedCard/RelatedCard';
 import GetStarted from '../../components/GetStarted/GetStarted';
 
-
 const features = [
   {
     title: 'Create Form Templates',
@@ -98,7 +97,6 @@ export default class Personal extends Component {
       }
     });
   }
-
 
   render() {
     return (
