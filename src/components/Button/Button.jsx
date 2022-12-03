@@ -13,14 +13,10 @@ export default class Button extends Component {
         super(props);
         this.state = this.button;
 
-        this.handleClasses();
+        this.handleAttributes();
     }
 
-    componentDidMount() {
-
-    }
-
-    handleClasses = () => {
+    handleAttributes = () => {
 
         if (this.props.color === 'white') {
             this.button.class += ' button--white';

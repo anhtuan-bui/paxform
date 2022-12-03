@@ -391,10 +391,8 @@ $color_bg_hero__gradient--first: #0a61b4;
 
     &__container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       padding-top: rem(20);
-      gap: rem(20);
 
       @include medium {
         flex-direction: column;
@@ -423,6 +421,8 @@ $color_bg_hero__gradient--first: #0a61b4;
 
     &__content {
       padding: 0 $padding__collumn;
+      box-sizing: border-box;
+      
       .button {
         border: 1px solid #20976c;
         color: #20976c;

@@ -119,10 +119,16 @@ export default class Header extends Component {
     }
 
     handleClickOutsideHamburger(e) {
-        if (this.state.hamburgerIsOpen === true
+        if (
+            this.state.hamburgerIsOpen === true
             && !e.target.classList.contains('nav')
             && !e.target.classList.contains('nav__second-level-li-description')
-            && e.target.getAttribute('name') !== 'hamburger' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'SPAN' && e.target.tagName !== 'A') {
+            && e.target.getAttribute('name') !== 'hamburger' 
+            && e.target.tagName !== 'BUTTON' 
+            && e.target.tagName !== 'SPAN' 
+            && e.target.tagName !== 'A'
+            && e.target.tagName !== 'PATH'
+            ) {
             this.app.hamburgerIsOpen = false;
             this.handleHamburger();
         }
