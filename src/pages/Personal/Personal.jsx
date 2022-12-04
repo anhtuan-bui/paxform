@@ -191,7 +191,7 @@ export default class Personal extends Component {
                   <div className="pricing_box__dot"></div>
                   <h2 className="pricing_box__title">Free</h2>
                   <p className="pricing_box__description">A simple way to get started for you new to passfolio.</p>
-                  <div className="pricing_box__price"><span className='pricing_box__price-bt'>$0</span><span>/forever</span></div>
+                  <div className="pricing_box__price"><span className='pricing_box__price-bt'>$0</span><span className='pricing_box__price-forever'>/forever</span></div>
                   <Button text="Get Started" type="outline arrow" color="green" />
                 </div>
                 <p className='pricing_box__price-sub'>What’s included</p>

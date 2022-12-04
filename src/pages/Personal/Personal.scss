@@ -41,12 +41,12 @@ $color_bg_hero__gradient--first: #059459;
       @include medium {
         flex-direction: column;
         padding-bottom: rem(140);
-        height: rem(1200);
+        height: rem(1100);
         padding-top: 0;
       }
 
       @include small {
-        height: rem(1220);
+        height: rem(1170);
       }
     }
 
@@ -66,12 +66,8 @@ $color_bg_hero__gradient--first: #059459;
 
     &__content {
       color: white;
-      flex: 1 1 40%;
+      flex: 1 1 50%;
       padding: 0 $padding__collumn;
-
-      @include extraLarge {
-        flex: 1 1 50%;
-      }
 
       h1,
       p {
@@ -110,11 +106,7 @@ $color_bg_hero__gradient--first: #059459;
 
     &__image {
       position: relative;
-      flex: 1 1 60%;
-
-      @include large {
-        flex: 1 1 50%;
-      }
+      flex: 1 1 50%;
 
       &-large {
         position: absolute;
@@ -157,7 +149,7 @@ $color_bg_hero__gradient--first: #059459;
       justify-content: space-between;
       position: relative;
 
-      @include medium {
+      @include small {
         flex-direction: column;
       }
     }
@@ -254,7 +246,7 @@ $color_bg_hero__gradient--first: #059459;
       align-items: center;
       justify-content: space-between;
 
-      @include medium {
+      @include small {
         flex-direction: column;
       }
     }
@@ -345,6 +337,7 @@ $color_bg_hero__gradient--first: #059459;
       text-align: center;
       margin: 0 auto;
       margin-bottom: rem(60);
+      max-width: 100%;
     }
 
     &__pricing {
@@ -356,11 +349,13 @@ $color_bg_hero__gradient--first: #059459;
       padding: 0 $padding__collumn;
 
       @include larger {
-        grid-template-columns: repeat(2, 1fr);
         row-gap: rem(40);
       }
+      @include large {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-      @include medium {
+      @include small {
         grid-template-columns: 1fr;
       }
     }
@@ -421,6 +416,10 @@ $color_bg_hero__gradient--first: #059459;
       &-bt {
         font-family: GothamRoundedBold, sans-serif;
         font-size: rem(34);
+      }
+
+      &-forever {
+        color: $color_secondary__text;
       }
 
       &-sub {

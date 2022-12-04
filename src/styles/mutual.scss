@@ -1,12 +1,20 @@
 .container {
-  width: $width__extraLarge;
   margin: auto;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 0 rem(48);
+  padding: 0 rem(24);
+  width: $width__extraLarge;
+  
+  // @include extraLarge {
+  //   width: $width__larger;
+  // }
+  // @include larger {
+  //   width: $width__large;
+  // }
 
   @include large {
     padding: 0 rem(16);
+    // width: $width__medium;
   }
 
   @include extraSmall {
