@@ -2,18 +2,18 @@
   margin: auto;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 0 rem(24);
+  padding: 0 rem(100);
   width: $width__extraLarge;
-  
+
   // @include extraLarge {
   //   width: $width__larger;
   // }
-  // @include larger {
-  //   width: $width__large;
-  // }
+  @include larger {
+    padding: 0 2rem;
+  }
 
   @include large {
-    padding: 0 rem(16);
+    padding: 0 1rem;
     // width: $width__medium;
   }
 
@@ -36,7 +36,7 @@
   @include large {
     border-width: rem(60) 50vw;
   }
-  
+
   @include medium {
     border-width: rem(50) 50vw;
   }
@@ -70,7 +70,7 @@
   }
 
   &--light-green {
-    border-color: transparent transparent #DEF6EC #DEF6EC;
+    border-color: transparent transparent #def6ec #def6ec;
   }
   &--green {
     border-color: transparent transparent #059459 #059459;
@@ -101,6 +101,10 @@
     background-color: white;
     transform-origin: bottom left;
     transition: transform 0.25s ease-out;
+
+    @include larger {
+      background-color: $color_main__text;
+    }
 
     @include large {
       background-color: transparent;

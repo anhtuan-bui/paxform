@@ -43,7 +43,7 @@
 
   &--outline {
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid $color_main__text;
     transition: 0.25s ease-in-out;
     border: 1px solid white;
 
@@ -54,7 +54,7 @@
 
   &__arrow {
     path {
-      stroke: black;
+      stroke: $color_main__text;
     }
 
     &--none {
