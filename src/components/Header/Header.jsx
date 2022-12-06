@@ -114,6 +114,10 @@ export default class Header extends Component {
         window.removeEventListener('click', (e) => this.handleClickOutsideHamburger(e));
     }
 
+    componentDidUpdate() {
+        this.handleHeaderColorOnHero();
+    }
+
     clickHamburger() {
         this.app.hamburgerIsOpen = !this.app.hamburgerIsOpen;
         this.handleHamburger();
@@ -127,18 +131,23 @@ export default class Header extends Component {
         if (!hero) {
             return;
         }
-        const backgroundColor = document.defaultView.getComputedStyle(hero).background.split(' none')[0];
+        const background = document.defaultView.getComputedStyle(hero).background.split(' none')[0];
 
-        const color = document.defaultView.getComputedStyle(hero).backgroundColor;
-        const colorArray = color.split('(')[1].split(')')[0].split(',').map(e => e.trim());
+        const backgroundColor = document.defaultView.getComputedStyle(hero).backgroundColor;
+        const colorArray = backgroundColor.split('(')[1].split(')')[0].split(',').map(e => e.trim());
 
         if (colorArray.length !== 4) {
             return;
         }
 
-        if (colorArray[colorArray.length - 1] === '0' && backgroundColor === color){
+        if (colorArray[colorArray.length - 1] === '0' && background === backgroundColor) {
             header.classList.add('header--on-light');
             hamburger__lines.forEach(line => line.classList.add('hamburger__line--on-light'));
+        }else{
+            if (header.classList.contains('header--on-light')) {
+                header.classList.remove('header--on-light');
+                hamburger__lines.forEach(line => line.classList.remove('hamburger__line--on-light'));
+            }
         }
 
         this.setState(this.menu);

@@ -345,7 +345,7 @@ $color_bg_hero__gradient--first: #059459;
       display: grid;
       align-items: stretch;
       grid-template-columns: repeat(3, 1fr);
-      gap: rem(20);
+      gap: $grid__gap;
       margin-bottom: rem(60);
       padding: 0 $padding__collumn;
 
@@ -535,6 +535,7 @@ $color_bg_hero__gradient--first: #059459;
     &__content {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: $grid__gap;
 
       @include medium {
         grid-template-columns: repeat(2, 1fr);
