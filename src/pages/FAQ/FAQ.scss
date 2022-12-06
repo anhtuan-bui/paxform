@@ -118,8 +118,8 @@ $color_blue: #0a61b4;
             @include small {
                 flex: 100%;
                 position: fixed;
-                bottom: rem(100);
-                left: rem(20);
+                bottom: rem(80);
+                left: rem(30);
                 padding: rem(20) 0;
                 z-index: 1001;
                 &::before {
@@ -131,14 +131,15 @@ $color_blue: #0a61b4;
                     width: 100%;
                     height: 100%;
                     content: " ";
-                    transition: all 0.5s;
+                    transition: all 0.25s ease-in-out;
                 }
                 &__list {
-                    display: none;
                     opacity: 0;
+                    position: relative;
+                    top: rem(-40);
                     padding: rem(10) rem(25);
                     margin: 0;
-                    transition: all 1.5s;
+                    transition: all 0.5s;
                     &-title {
                         margin: 0 0 rem(10);
                     }
@@ -165,7 +166,7 @@ $color_blue: #0a61b4;
                         width: 100%;
                         height: 100%;
                         background: url("../../assets/images/arrow-right.svg") center no-repeat;
-                        transition: all 250ms;
+                        transition: all 0.1s;
                     }
                 }
             }
@@ -181,11 +182,11 @@ $color_blue: #0a61b4;
                         z-index: -1;
                     }
                     .flex_box__nav__list {
-                        display: block;
                         opacity: 1;
+                        top: 0;
                         & a {
                             display: inline-block;
-                            min-width: rem(125);
+                            min-width: rem(80s);
                         }
                     }
                     .flex_box__nav-button {
