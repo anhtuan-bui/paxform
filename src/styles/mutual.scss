@@ -1,16 +1,24 @@
 .container {
-  width: $width__extraLarge;
   margin: auto;
   max-width: 100%;
   box-sizing: border-box;
   padding: 0 rem(100);
+  width: $width__extraLarge;
+
+  // @include extraLarge {
+  //   width: $width__larger;
+  // }
+  @include larger {
+    padding: 0 2rem;
+  }
 
   @include large {
-    padding: 0 rem(32);
+    padding: 0 1rem;
+    // width: $width__medium;
   }
 
   @include extraSmall {
-    padding: 0 rem(20);
+    padding: 0 rem(4);
   }
 }
 
@@ -28,7 +36,7 @@
   @include large {
     border-width: rem(60) 50vw;
   }
-  
+
   @include medium {
     border-width: rem(50) 50vw;
   }
@@ -62,7 +70,7 @@
   }
 
   &--light-green {
-    border-color: transparent transparent #DEF6EC #DEF6EC;
+    border-color: transparent transparent #def6ec #def6ec;
   }
   &--green {
     border-color: transparent transparent #059459 #059459;
@@ -94,6 +102,10 @@
     transform-origin: bottom left;
     transition: transform 0.25s ease-out;
 
+    @include larger {
+      background-color: $color_main__text;
+    }
+
     @include large {
       background-color: transparent;
     }
@@ -109,9 +121,11 @@
   font-size: rem(14);
   letter-spacing: 0.014rem;
   font-weight: 600;
+  margin: 0;
 }
 
 .section_title {
   font-size: rem(38);
+  font-weight: 400;
   line-height: rem(48);
 }

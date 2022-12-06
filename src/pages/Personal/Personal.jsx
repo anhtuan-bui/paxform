@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../../components/Button/Button';
-import fillOutForm from '../../assets/images/fill-out-form.svg'
+import fillOutForm from '../../assets/images/fill-out-form.svg';
+import fillOutFormMObile from '../../assets/images/fill-out-form__mobile.svg';
 import './Personal.scss';
 
 import personelHero from '../../assets/images/personal-hero.svg';
@@ -13,7 +14,6 @@ import card2 from '../../assets/images/card2.png';
 import card3 from '../../assets/images/card3.png';
 import RelatedCard from '../../components/RelatedCard/RelatedCard';
 import GetStarted from '../../components/GetStarted/GetStarted';
-
 
 const features = [
   {
@@ -99,7 +99,6 @@ export default class Personal extends Component {
     });
   }
 
-
   render() {
     return (
       <main className='personal'>
@@ -125,7 +124,10 @@ export default class Personal extends Component {
         <section className="flex_box">
           <div className="container flex_box__container">
             <div className="flex_box__image">
-              <img src={fillOutForm} alt="filling out the forms" />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={fillOutFormMObile} />
+                <img src={fillOutForm} alt="fill out form" />
+              </picture>
             </div>
             <div className="flex_box__content">
               <h1 className="flex_box__content-title">Repeatedly Filling Out Forms with the Same Data Requirements?</h1>
@@ -189,7 +191,7 @@ export default class Personal extends Component {
                   <div className="pricing_box__dot"></div>
                   <h2 className="pricing_box__title">Free</h2>
                   <p className="pricing_box__description">A simple way to get started for you new to passfolio.</p>
-                  <div className="pricing_box__price"><span className='pricing_box__price-bt'>$0</span><span>/forever</span></div>
+                  <div className="pricing_box__price"><span className='pricing_box__price-bt'>$0</span><span className='pricing_box__price-forever'>/forever</span></div>
                   <Button text="Get Started" type="outline arrow" color="green" />
                 </div>
                 <p className='pricing_box__price-sub'>What’s included</p>
@@ -277,11 +279,11 @@ export default class Personal extends Component {
             <div className="platform__top">
               <div className="platform__top-left">
 
-                <p className="platform__name platform__name--green">PERSONAL PLATFORM</p>
-                <h2 className='platform__title '>Your personal information at your fingertips</h2>
+                <p className="platform__name platform__name--green">RESOURCES</p>
+                <h2 className='platform__title '>Stories, Updates & Ideas from Paxform.</h2>
               </div>
               <div className="platform__top-right">
-                <Button type="outline arrow" text="Learn more about Business" />
+                <Button type="outline arrow" text="See All Resources" />
               </div>
 
             </div>

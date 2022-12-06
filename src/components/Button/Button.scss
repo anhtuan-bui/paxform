@@ -1,5 +1,25 @@
 @import "../../styles/styles.scss";
 
+@mixin buttonOutline($colorName, $color) {
+  &--#{$colorName} {
+    color: $color;
+
+    .button__text {
+      color: $color;
+    }
+
+    .button__arrow {
+      path {
+        stroke: $color;
+      }
+    }
+
+    &.button--outline {
+      border: 1px solid $color;
+    }
+  }
+}
+
 .button {
   padding: rem(12) rem(26);
   display: flex;
@@ -23,18 +43,18 @@
 
   &--outline {
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid $color_main__text;
     transition: 0.25s ease-in-out;
     border: 1px solid white;
 
     &:hover {
-      background-color: $color_main__dark-gunmetal--opacity-05;
+      background-color: $color_main__dark-gunmetal--opacity-01;
     }
   }
 
   &__arrow {
     path {
-      stroke: black;
+      stroke: $color_main__text;
     }
 
     &--none {
@@ -51,41 +71,8 @@
     }
   }
 
-  &--white {
-    color: white;
-
-    .button__text {
-      color: white;
-    }
-
-    .button__arrow {
-      path {
-        stroke: white;
-      }
-    }
-
-    &.button--outline {
-      border: 1px solid white;
-    }
-  }
-
-  &--green {
-    color: #20976c;
-
-    .button__text {
-      color: #20976c;
-    }
-
-    .button__arrow {
-      path {
-        stroke: #20976c;
-      }
-    }
-
-    &.button--outline {
-      border: 1px solid #20976c;
-    }
-  }
+  @include buttonOutline("white", white);
+  @include buttonOutline("green", #20976c);
 }
 
 .triangle_right {

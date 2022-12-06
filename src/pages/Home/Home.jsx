@@ -161,8 +161,8 @@ export default class Home extends Component {
                     <div className="bottom_triangle"></div>
                 </section>
                 <section className='slider'>
-                    <div className="container slider__container">
-
+                    <div className="container ">
+                        <div className="slider__container">
                         <Swiper
                             spaceBetween={30}
                             slidesPerView={home.numberOfComapniesPerView}
@@ -200,6 +200,7 @@ export default class Home extends Component {
                                 </div>
                             </SwiperSlide>
                         </Swiper>
+                        </div>
                     </div>
                 </section>
 

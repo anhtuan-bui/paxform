@@ -19,7 +19,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 export default class Testimonial extends Component {
     testimonials = [];
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = null;
@@ -82,54 +82,56 @@ const TestimonialSwiper = (data) => {
     const testimonials = data.values;
 
     return (
-        <div className="container testimonial__container">
-            <p className="testimonial__name">TESTIMONIAL</p>
-            <h2 className="testimonial__title">What people are saying about Paxform</h2>
-            <div className="testimonial__swiper">
+        <div className="container">
+            <div className="testimonial__container">
+                <p className="testimonial__name">TESTIMONIAL</p>
+                <h2 className="testimonial__title">What people are saying about Paxform</h2>
+                <div className="testimonial__swiper">
 
-                <Swiper
-                    slidesPerView={home.numberOftestimonialsPerView}
-                    spaceBetween={24}
-                    slidesPerGroup={home.numberOftestimonialsPerView}
-                    loop={true}
-                    autoplay={{
-                        delay: 4000,
-                        disableOnInteraction: false,
-                    }}
-                    autoHeight={false}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    onBeforeInit={(swiper) => {
-                        swiperRef.current = swiper;
-                    }}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="testimonial__slider"
-                >
-                    {testimonials.map((item, index) => {
-                        return (
-                            <SwiperSlide key={index}>
-                                <div className="testimonial_card">
-                                    <div className="testimonial_card__description" dangerouslySetInnerHTML={{ __html: item.content.rendered }}></div>
-                                    <div className="testimonial_card__name-box">
-                                        <h3 className="testimonial_card__name">{item.title.rendered}</h3>
-                                        <p className="testimonial_card__position">{item.acf.client_bio}</p>
+                    <Swiper
+                        slidesPerView={home.numberOftestimonialsPerView}
+                        spaceBetween={24}
+                        slidesPerGroup={home.numberOftestimonialsPerView}
+                        loop={true}
+                        autoplay={{
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        }}
+                        autoHeight={false}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        onBeforeInit={(swiper) => {
+                            swiperRef.current = swiper;
+                        }}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className="testimonial__slider"
+                    >
+                        {testimonials.map((item, index) => {
+                            return (
+                                <SwiperSlide key={index}>
+                                    <div className="testimonial_card">
+                                        <div className="testimonial_card__description" dangerouslySetInnerHTML={{ __html: item.content.rendered }}></div>
+                                        <div className="testimonial_card__name-box">
+                                            <h3 className="testimonial_card__name">{item.title.rendered}</h3>
+                                            <p className="testimonial_card__position">{item.acf.client_bio}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </SwiperSlide>
-                        )
-                    })}
+                                </SwiperSlide>
+                            )
+                        })}
 
-                </Swiper>
-                <div className="slider__buttons--left">
-                    <button onClick={() => swiperRef.current?.slidePrev()}>
-                        <img src={arrowLeft} alt="arrow left" />
-                    </button>
-                </div>
-                <div className="slider__buttons--right">
-                    <button onClick={() => swiperRef.current?.slideNext()}>
-                        <img src={arrowRight} alt="arrow right" />
-                    </button>
+                    </Swiper>
+                    <div className="slider__buttons--left">
+                        <button onClick={() => swiperRef.current?.slidePrev()}>
+                            <img src={arrowLeft} alt="arrow left" />
+                        </button>
+                    </div>
+                    <div className="slider__buttons--right">
+                        <button onClick={() => swiperRef.current?.slideNext()}>
+                            <img src={arrowRight} alt="arrow right" />
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

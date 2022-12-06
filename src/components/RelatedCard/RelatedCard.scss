@@ -26,5 +26,10 @@
     opacity: 0.7;
     line-height: rem(25);
     margin-bottom: rem(40);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

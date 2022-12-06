@@ -14,45 +14,87 @@ $color_bg_hero__gradient--first: #0a61b4;
   z-index: 2000;
   width: 100%;
   height: rem(100);
-  
+
   &--active {
     transition: 0.25s ease-in-out;
     background-color: white;
-    color: black;
+    color: $color_main__text;
     height: rem(80);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
     
-    .span--hover:after {
-      background-color: black;
-    }
-
     .nav__first-level-li-link {
-      color: black;
+      color: $color_main__text;
+
+      .span--hover::after {
+        background-color: $color_main__text;
+      }
 
       svg {
         path {
-          stroke: black;
+          stroke: $color_main__text;
         }
       }
     }
 
     .logo {
       path {
-        fill: #20976c;
+        fill: #065936;
       }
     }
 
     .button--outline {
-      border: 1px solid black;
+      border: 1px solid $color_main__text;
 
       .button__text {
-        color: black;
+        color: $color_main__text;
       }
 
       path {
-        stroke: black;
+        stroke: $color_main__text;
       }
     }
+  }
+
+  &--on-light {
+    transition: 0.25s ease-in-out;
+    color: $color_main__text;
+    height: rem(80);
+    
+    .nav__first-level-li-link {
+      color: $color_main__text;
+
+      .span--hover::after {
+        background-color: $color_main__text;
+      }
+
+      svg {
+        path {
+          stroke: $color_main__text;
+        }
+      }
+    }
+
+    .logo {
+      path {
+        fill: #065936;
+      }
+    }
+
+    .button--outline {
+      border: 1px solid $color_main__text;
+
+      .button__text {
+        color: $color_main__text;
+      }
+
+      path {
+        stroke: $color_main__text;
+      }
+    }
+  }
+
+  .logo {
+    padding: 0 $padding__collumn;
   }
 
   &__container {
@@ -62,6 +104,7 @@ $color_bg_hero__gradient--first: #0a61b4;
   }
 
   &_right {
+    padding: 0 $padding__collumn;
     display: flex;
     align-items: center;
     gap: rem(33);
@@ -69,7 +112,7 @@ $color_bg_hero__gradient--first: #0a61b4;
     opacity: 0;
     visibility: hidden;
 
-    @include large {
+    @include larger {
       flex-direction: column;
       position: absolute;
       background-color: white;
@@ -82,19 +125,21 @@ $color_bg_hero__gradient--first: #0a61b4;
     }
 
     &__wrapper {
-      @include large {
+      @include larger {
         position: relative;
       }
     }
-
     &--active {
       visibility: visible;
       opacity: 1;
       top: rem(50);
+
+      
     }
 
+
     .button {
-      @include large {
+      @include larger {
         &__wrapper,
         &--outline {
           width: 100%;
@@ -133,11 +178,10 @@ $color_bg_hero__gradient--first: #0a61b4;
     display: flex;
     position: relative;
 
-    @include large {
+    @include larger {
       flex-direction: column;
       padding: 0;
       width: rem(300);
-
     }
 
     @include extraSmall {
@@ -158,8 +202,8 @@ $color_bg_hero__gradient--first: #0a61b4;
       a {
         text-decoration: none;
 
-        @include large {
-          color: black;
+        @include larger {
+          color: $color_main__text;
         }
       }
     }
@@ -171,7 +215,7 @@ $color_bg_hero__gradient--first: #0a61b4;
         color: white;
         padding: rem(15) rem(17);
 
-        @include large {
+        @include larger {
           &:hover {
             background-color: $color_one__water;
           }
@@ -181,9 +225,9 @@ $color_bg_hero__gradient--first: #0a61b4;
           transform: rotate(90deg);
           cursor: pointer;
 
-          @include large {
+          @include larger {
             path {
-              stroke: black;
+              stroke: $color_main__text;
             }
           }
         }
@@ -193,9 +237,9 @@ $color_bg_hero__gradient--first: #0a61b4;
         .nav__second-level {
           visibility: visible;
           opacity: 1;
-          top: rem(40);
+          top: rem(48);
 
-          @include large {
+          @include larger {
             height: 100%;
           }
         }
@@ -216,7 +260,7 @@ $color_bg_hero__gradient--first: #0a61b4;
     transition: 0.4s ease-in-out;
     box-shadow: rem(1) rem(1) rem(5) rgba(0, 0, 0, 0.25);
 
-    @include large {
+    @include larger {
       position: static;
       width: 100%;
       height: 0;
@@ -235,12 +279,12 @@ $color_bg_hero__gradient--first: #0a61b4;
       }
 
       &-link {
-        color: black;
+        color: $color_main__text;
         gap: rem(5);
 
         span {
           &:after {
-            background-color: black;
+            background-color: $color_main__text;
           }
         }
       }
@@ -267,6 +311,7 @@ $color_bg_hero__gradient--first: #0a61b4;
   position: relative;
   padding: rem(10);
   box-sizing: border-box;
+  margin-right: $padding__collumn;
 
   svg {
     path {
@@ -282,7 +327,7 @@ $color_bg_hero__gradient--first: #0a61b4;
     position: absolute;
     background-color: white;
     width: 100%;
-    height: rem(3);
+    height: 3px;
     border-radius: rem(15);
     top: 50%;
     left: 50%;
@@ -314,5 +359,8 @@ $color_bg_hero__gradient--first: #0a61b4;
 }
 
 .hamburger__line--scrolled {
-  background-color: black;
+  background-color: $color_main__text;
+}
+.hamburger__line--on-light {
+  background-color: $color_main__text;
 }

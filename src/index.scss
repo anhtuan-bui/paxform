@@ -5,13 +5,18 @@ html {
   margin: 0;
   font-family: $font_family__Inter, sans-serif;
   font-size: $font_size__desktop;
+  color: $color_main__text;
   overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  @include large {
+    font-size: $font_size__tablet;
+  }
+
   @include small {
-    font-size: 14px;
+    font-size: $font_size__mobile;
   }
 }
 
