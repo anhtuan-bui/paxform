@@ -58,7 +58,6 @@ $color_bg_hero__gradient--first: #0a61b4;
   &--on-light {
     transition: 0.25s ease-in-out;
     color: $color_main__text;
-    height: rem(80);
     
     .nav__first-level-li-link {
       color: $color_main__text;

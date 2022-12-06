@@ -1,7 +1,10 @@
 @import "../../styles/styles.scss";
 
 .resources {
+  
   .hero {
+    padding-top: rem(220);
+    padding-bottom: rem(300);
     position: relative;
 
     &__button {
@@ -25,8 +28,6 @@
     &__wrapper {
       display: flex;
       align-items: center;
-      padding-bottom: 280px;
-      padding-top: rem(200);
       box-sizing: border-box;
 
       @include medium {
