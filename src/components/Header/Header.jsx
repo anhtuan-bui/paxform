@@ -111,6 +111,8 @@ export default class Header extends Component {
 		window.addEventListener("click", (e) =>
 			this.handleClickOutsideHamburger(e)
 		);
+
+		this.handleHeaderColorOnHero();
 	}
 
 	componentWillUnmount() {
@@ -121,10 +123,57 @@ export default class Header extends Component {
 		);
 	}
 
+	componentDidUpdate() {
+		this.handleHeaderColorOnHero();
+	}
+
 	clickHamburger() {
 		this.app.hamburgerIsOpen = !this.app.hamburgerIsOpen;
 		this.handleHamburger();
 		this.setState(this.app);
+	}
+
+	handleHeaderColorOnHero() {
+		const header = document.querySelector(".header");
+		const hero = document.querySelector(".hero");
+		const hamburger__lines = document.querySelectorAll(".hamburger__line");
+		if (!hero) {
+			return;
+		}
+		const background = document.defaultView
+			.getComputedStyle(hero)
+			.background.split(" none")[0];
+
+		const backgroundColor =
+			document.defaultView.getComputedStyle(hero).backgroundColor;
+		const colorArray = backgroundColor
+			.split("(")[1]
+			.split(")")[0]
+			.split(",")
+			.map((e) => e.trim());
+
+		if (colorArray.length !== 4) {
+			return;
+		}
+
+		if (
+			colorArray[colorArray.length - 1] === "0" &&
+			background === backgroundColor
+		) {
+			header.classList.add("header--on-light");
+			hamburger__lines.forEach((line) =>
+				line.classList.add("hamburger__line--on-light")
+			);
+		} else {
+			if (header.classList.contains("header--on-light")) {
+				header.classList.remove("header--on-light");
+				hamburger__lines.forEach((line) =>
+					line.classList.remove("hamburger__line--on-light")
+				);
+			}
+		}
+
+		this.setState(this.menu);
 	}
 
 	handleClickOutsideHamburger(e) {
@@ -135,7 +184,8 @@ export default class Header extends Component {
 			e.target.getAttribute("name") !== "hamburger" &&
 			e.target.tagName !== "BUTTON" &&
 			e.target.tagName !== "SPAN" &&
-			e.target.tagName !== "A"
+			e.target.tagName !== "A" &&
+			e.target.tagName !== "PATH"
 		) {
 			this.app.hamburgerIsOpen = false;
 			this.handleHamburger();
@@ -158,7 +208,9 @@ export default class Header extends Component {
 	handleScroll() {
 		const hamburgerLines = document.querySelectorAll(".hamburger__line");
 		const header = document.querySelector(".header");
-		if (window.scrollY >= 100) {
+
+		// The header changes after scrolling down
+		if (window.scrollY >= 20) {
 			header.classList.add("header--active");
 			hamburgerLines.forEach((line) => {
 				line.classList.add("hamburger__line--scrolled");
@@ -186,7 +238,7 @@ export default class Header extends Component {
 			this.handleHamburger();
 		}
 		try {
-			if (this.app.width <= SCREEN_SIZE.large) {
+			if (this.app.width <= SCREEN_SIZE.larger) {
 				hamburger.classList.add("hamburger--active");
 				headerRight.classList.remove("header_right--active");
 			} else {

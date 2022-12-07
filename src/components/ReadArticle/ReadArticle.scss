@@ -7,8 +7,10 @@
   text-decoration: none;
   color: #20976c;
 
-  &::after {
-    background-color: #20976c;
+  &:hover {
+    &::after {
+      background-color: #20976c;
+    }
   }
   span {
     margin-right: rem(10);

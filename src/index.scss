@@ -3,7 +3,8 @@
 body,
 html {
   margin: 0;
-  font-family: $font_family__Inter, sans-serif;
+  font-family: $font_family__Inter, "Roboto", "Franklin Gothic Medium",
+    "Arial Narrow", Arial, sans-serif;
   font-size: $font_size__desktop;
   color: $color_main__text;
   overflow-x: hidden;
@@ -30,7 +31,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font_family__GotamRoundedBold, sans-serif;
+  font-family: $font_family__GotamRoundedBold, "Roboto",
+    "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 p {
