@@ -81,7 +81,7 @@ const menu = [
 	{
 		text: "Global Privacy Policy",
 		link: "https://",
-		to: "globalprivacypolicy",
+		to: "global-privacy-policy",
 		submenu: [],
 	},
 ];

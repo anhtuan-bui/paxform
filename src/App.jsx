@@ -23,7 +23,7 @@ function App() {
 						<Route path="personal" element={<Personal />} />
 						<Route path="faq" element={<FAQ />} />
 						<Route
-							path="globalprivacypolicy"
+							path="global-privacy-policy"
 							element={<GlobalPrivacyPolicy />}
 						/>
 						<Route path="resources" element={<Resources />} />

@@ -156,7 +156,8 @@ $color_green: #20976c;
             position: relative;
             display: flex;
             flex-wrap: wrap;
-            padding: rem(100) 0 rem(120);
+            padding-top: rem(100);
+            padding-bottom: rem(120);
             @include small {
                 padding-top: 0;
             }
