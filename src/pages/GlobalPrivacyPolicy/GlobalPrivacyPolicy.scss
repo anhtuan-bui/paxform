@@ -3,6 +3,7 @@ $color_white: #fff;
 $color_black: #031a30;
 $color_grey: #2f4356;
 $color_blue: #0a61b4;
+$color_green: #20976c;
 .global_privacy {
     .hero {
         position: relative;
@@ -73,6 +74,78 @@ $color_blue: #0a61b4;
         &__description {
             margin-bottom: rem(50);
         }
+        &__download {
+            display: flex;
+            width: rem(568);
+            margin: 0 auto;
+            align-items: center;
+            padding: rem(20);
+            border-radius: rem(20);
+            background: rgba(255, 255, 255, 0.2);
+            box-sizing: border-box;
+            @include small {
+                display: block;
+                width: rem(300);
+            }
+            @include extraSmall {
+                display: block;
+                width: rem(300);
+            }
+            &_name {
+                flex: 70%;
+                margin: 0;
+                font-size: rem(20);
+                text-align: left;
+                @include small {
+                    display: block;
+                    flex: 100%;
+                    text-align: center;
+                    margin-bottom: rem(20);
+                }
+                @include extraSmall {
+                    display: block;
+                    flex: 100%;
+                    text-align: center;
+                    margin-bottom: rem(20);
+                }
+                &-version {
+                    display: block;
+                    font-size: rem(16);
+                    opacity: 0.5;
+                }
+            }
+            &_btn {
+                flex: 30%;
+                position: relative;
+                height: rem(45);
+                line-height: rem(45);
+                border-radius: rem(100);
+                padding: 0 rem(50) 0 rem(24);
+                background: $color_green;
+                background-repeat: no-repeat;
+                text-decoration: none;
+                text-align: center;
+                color: $color_white;
+                &::after {
+                    display: inline-block;
+                    position: absolute;
+                    top: rem(15);
+                    right: rem(22);
+                    width: rem(18);
+                    height: rem(14);
+                    background: url("../../assets/images/icon_download.svg") center no-repeat;
+                    content: "";
+                }
+                @include small {
+                    flex: 100%;
+                    display: block;
+                }
+                @include extraSmall {
+                    flex: 100%;
+                    display: block;
+                }
+            }
+        }
     }
     .flex_box {
         position: relative;
@@ -83,6 +156,13 @@ $color_blue: #0a61b4;
             position: relative;
             display: flex;
             flex-wrap: wrap;
+            padding: rem(100) 0 rem(120);
+            @include small {
+                padding-top: 0;
+            }
+            &-title {
+                margin-top: rem(52);
+            }
         }
         &__nav {
             flex: 25%;
@@ -217,39 +297,16 @@ $color_blue: #0a61b4;
         }
         &__content {
             margin: rem(32) 0;
+            &-highlight {
+                color: $color_green;
+            }
             &-title {
-                margin-bottom: rem(16);
+                margin: rem(52) 0 rem(16);
                 color: $color_grey;
             }
             &-description {
                 color: $color_grey;
             }
         }
-    }
-}
-
-.spin {
-    animation: spin 1s infinite linear;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotate-in-down-left {
-    0% {
-        transform-origin: left bottom;
-        transform: rotate(-90deg);
-        opacity: 0;
-    }
-    100% {
-        transform-origin: left bottom;
-        transform: rotate(0);
-        opacity: 1;
     }
 }

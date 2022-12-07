@@ -77,12 +77,16 @@ $color_blue: #0a61b4;
     .flex_box {
         position: relative;
         min-height: rem(1000);
-        padding-bottom: 200px;
+        padding-bottom: rem(200);
         line-height: rem(25);
         &__container {
             position: relative;
             display: flex;
             flex-wrap: wrap;
+            padding: rem(100) 0 rem(120);
+            @include small {
+                padding-top: 0;
+            }
         }
         &__nav {
             flex: 25%;
@@ -225,31 +229,5 @@ $color_blue: #0a61b4;
                 color: $color_grey;
             }
         }
-    }
-}
-
-.spin {
-    animation: spin 1s infinite linear;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotate-in-down-left {
-    0% {
-        transform-origin: left bottom;
-        transform: rotate(-90deg);
-        opacity: 0;
-    }
-    100% {
-        transform-origin: left bottom;
-        transform: rotate(0);
-        opacity: 1;
     }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
 import "./GlobalPrivacyPolicy.scss";
 
@@ -93,14 +94,19 @@ export default class GlobalPrivacyPolicy extends Component {
 							<h1 className="hero__title">Global Privacy Policy</h1>
 							<p className="hero__description">
 								Paxform will never share your data with anyone. What’s more, no
-								one at Paxform can view
-								<br /> or access your information.
+								one at Paxform can view or access your information.
 							</p>
 							<div className="hero__download">
-								<p>
-									Paxform Privacy Policy <span>v. 1.0</span>
+								<p className="hero__download_name">
+									Paxform Privacy Policy{" "}
+									<span className="hero__download_name-version"> v. 1.0</span>
 								</p>
-								<a href={"#"} download={"LOGO.svg"}>
+
+								<a
+									className="hero__download_btn"
+									href={"#"}
+									download={"LOGO.svg"}
+								>
 									Download as PDF
 								</a>
 							</div>
@@ -215,7 +221,7 @@ export default class GlobalPrivacyPolicy extends Component {
 								Services provides our servers and maintains them in
 								high-security controlled environments pursuant to the
 								<strong className="flex_box__content-highlight">
-									AWS Cloud
+									&nbsp;AWS Cloud
 								</strong>
 							</div>
 
