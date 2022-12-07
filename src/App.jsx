@@ -28,7 +28,7 @@ function App() {
 						/>
 						<Route path="resources" element={<Resources />} />
 						<Route path="not-found" element={<NotFound />} />
-						{/* <Route path="*" element={<NoPage />} /> */}
+						{/* <Route path="*" element={<NotFound />} /> */}
 					</Route>
 				</Routes>
 			</Suspense>
