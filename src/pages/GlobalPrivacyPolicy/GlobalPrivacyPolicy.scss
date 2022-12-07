@@ -3,7 +3,7 @@ $color_white: #fff;
 $color_black: #031a30;
 $color_grey: #2f4356;
 $color_blue: #0a61b4;
-.faq {
+.global_privacy {
     .hero {
         position: relative;
         padding-top: rem(100);
@@ -200,7 +200,7 @@ $color_blue: #0a61b4;
                 }
             }
         }
-        &__faq {
+        &__gp {
             flex: 75%;
             padding: $padding__collumn;
             box-sizing: border-box;

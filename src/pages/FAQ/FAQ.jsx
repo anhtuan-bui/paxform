@@ -48,16 +48,9 @@ export default class FAQ extends Component {
 		this.state = this.app;
 
 		this.navMobileClick = this.navMobileClick.bind(this);
-		//this.handleScroll = this.handleScroll.bind(this);
 	}
 
 	componentDidMount() {
-		//	this.handleResize();
-		//window.addEventListener("resize", this.handleResize);
-
-		//	this.handleScroll();
-		//window.addEventListener("scroll", this.handleScroll);
-
 		window.addEventListener("click", (e) => this.handleClickOutsideNav(e));
 	}
 
