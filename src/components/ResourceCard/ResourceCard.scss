@@ -88,4 +88,8 @@
 
 .weird_card {
   height: rem(396);
+
+  @include small {
+    height: auto;
+  }
 }
