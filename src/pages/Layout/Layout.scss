@@ -1,52 +1,54 @@
-@import '../../styles/styles.scss';
+@import "../../styles/styles.scss";
 
 $stripe_border__color: rgb(101, 101, 101);
 
-
 #root {
-    position: relative;
+  position: relative;
 }
 
 .stripe_layout {
-    position: fixed;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
+  position: fixed;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  pointer-events: none;
+
+  @include medium {
+    grid-template-columns: auto auto;
+  }
+
+  @include small {
+    grid-template-columns: auto;
+  }
+
+  &__item {
+    border-left: 1px dashed rgba(101, 101, 101);
+    height: 100vh;
     width: 100%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    pointer-events: none;
+    opacity: 0.1;
+
+    &:first-child {
+      border-left: 1px solid rgb(101, 101, 101);
+    }
+
+    &:last-child {
+      border-right: 1px solid rgb(101, 101, 101);
+    }
 
     @include medium {
-        grid-template-columns: auto auto;
-        
+      &:nth-child(2) {
+        border-right: 1px solid rgb(101, 101, 101);
+      }
     }
 
     @include small {
-        grid-template-columns: auto;
-        
+      &:first-child {
+        border-right: 1px solid rgb(101, 101, 101);
+      }
     }
-
-    &__item {
-        border-left: 1px dashed rgb(101, 101, 101);
-        height: 100vh;
-        width: 100%;
-        opacity: 0.1;
-        &:last-child {
-            border-right: 1px dashed rgb(101, 101, 101);
-        }
-
-        @include medium {
-            &:nth-child(2) {
-                border-right: 1px dashed rgb(101, 101, 101);
-            }
-        }
-
-        @include small {
-            &:first-child {
-                border-right: 1px dashed rgb(101, 101, 101);
-            }
-        }
-    }
+  }
 }

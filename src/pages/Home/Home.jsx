@@ -99,7 +99,6 @@ const personalPlatform = [
 
 var home = {
     numberOfComapniesPerView: 5,
-    numberOftestimonialsPerView: 3,
     autoplaySpeed: 4000
 }
 
@@ -118,22 +117,18 @@ export default class Home extends Component {
         if (screenWidth >= SCREEN_SIZE.large) {
             home = {
                 numberOfComapniesPerView: 5,
-                numberOftestimonialsPerView: 3,
             }
         } else if (screenWidth < SCREEN_SIZE.large && screenWidth >= SCREEN_SIZE.medium) {
             home = {
                 numberOfComapniesPerView: 4,
-                numberOftestimonialsPerView: 2,
             }
         } else if (screenWidth < SCREEN_SIZE.medium && screenWidth >= SCREEN_SIZE.small) {
             home = {
                 numberOfComapniesPerView: 3,
-                numberOftestimonialsPerView: 2,
             }
         } else if (screenWidth < SCREEN_SIZE.small) {
             home = {
                 numberOfComapniesPerView: 2,
-                numberOftestimonialsPerView: 1,
             }
         }
         this.setState(home);
