@@ -172,8 +172,6 @@ export default class Header extends Component {
 				);
 			}
 		}
-
-		this.setState(this.menu);
 	}
 
 	handleClickOutsideHamburger(e) {
