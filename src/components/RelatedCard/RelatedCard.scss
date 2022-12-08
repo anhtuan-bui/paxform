@@ -17,6 +17,22 @@
     }
   }
 
+  &__category {
+    font-size: rem(14);
+    font-weight: 500;
+    margin-bottom: rem(8);
+    text-transform: uppercase;
+    color: #0a61b4;
+
+    &--blue {
+      color: #0a61b4;
+    }
+
+    &--green {
+      color: #20976c;
+    }
+  }
+
   &__title {
     font-size: rem(20);
     margin-bottom: rem(18);

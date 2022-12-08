@@ -31,7 +31,7 @@ function App() {
 						/>
 						<Route path="security-policy" element={<SecurityPolicy />} />
 						<Route path="not-found" element={<NotFound />} />
-						{/* <Route path="*" element={<NoPage />} /> */}
+						{/* <Route path="*" element={<NotFound />} /> */}
 					</Route>
 				</Routes>
 			</Suspense>
