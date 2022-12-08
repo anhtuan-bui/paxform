@@ -1,0 +1,152 @@
+@import "../../styles/styles.scss";
+$color_white: #fff;
+$color_white-blue: #f0f8ff;
+$color_blue: #0a61b4;
+$color_grey: #2f4356;
+$color_green: #20976c;
+.security_privacy {
+    .hero {
+        position: relative;
+        padding-top: rem(100);
+        background: linear-gradient(90.22deg, $color_blue 0.35%, #074581 99.98%);
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            padding-top: rem(80);
+            padding-bottom: rem(190);
+            text-align: center;
+            box-sizing: border-box;
+            @include medium {
+                flex-direction: column;
+                padding-top: 0;
+                padding-bottom: rem(140);
+            }
+            @include small {
+                padding-top: 0;
+            }
+        }
+        &__name {
+            margin: rem(20) 0;
+            opacity: 50%;
+            letter-spacing: rem(2);
+            font-weight: 600;
+            font-size: rem(14);
+            text-transform: uppercase;
+            @include medium {
+                margin-top: rem(50);
+                margin-bottom: rem(40);
+            }
+            @include small {
+                margin-top: rem(50);
+            }
+        }
+        &__content {
+            color: $color_white;
+            flex: 1 1 40%;
+            @include extraLarge {
+                flex: 1 1 50%;
+            }
+            h1,
+            p {
+                max-width: 100%;
+            }
+        }
+        &__title {
+            font-size: rem(42);
+            margin-bottom: rem(24);
+            margin-top: 0;
+            @include extraLarge {
+                font-size: rem(38);
+            }
+            @include large {
+                font-size: rem(34);
+            }
+            @include medium {
+                font-size: rem(42);
+            }
+            @include small {
+                font-size: rem(36);
+            }
+            @include extraSmall {
+                font-size: rem(28);
+            }
+        }
+        &__description {
+            margin-bottom: rem(50);
+        }
+    }
+    .security_introduction {
+        position: relative;
+        padding: rem(100) 0 rem(130);
+        line-height: rem(25);
+        .flex_box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &__image {
+                flex: 50%;
+            }
+            &__content {
+                flex: 50%;
+                box-sizing: border-box;
+                &-name {
+                    font-size: rem(14);
+                    font-weight: bold;
+                    color: $color_green;
+                    text-transform: uppercase;
+                }
+                &-title {
+                    margin: rem(24) 0;
+                    line-height: rem(29);
+                }
+                &-description {
+                    color: $color_grey;
+                }
+            }
+        }
+    }
+    .security_features {
+        position: relative;
+        padding-bottom: rem(200);
+        .flex_box {
+            padding: rem(24);
+            &-name {
+                font-size: rem(14);
+                font-weight: bold;
+                color: $color_green;
+                text-transform: uppercase;
+                text-align: center;
+            }
+            &-title {
+                margin: rem(24) 0;
+                line-height: rem(29);
+                text-align: center;
+            }
+            &__list {
+                display: flex;
+                justify-content: space-between;
+                padding: 0;
+                &__content {
+                    // flex-basis: 45%;
+                    list-style: none;
+                    padding: rem(32);
+                    background: $color_white-blue;
+                    border-radius: rem(20);
+                    box-sizing: border-box;
+                    &-image {
+                        display: block;
+                    }
+                    &-title {
+                        margin: rem(16) 0;
+                        font-size: rem(16);
+                        font-weight: 600;
+                        color: $color_grey;
+                    }
+                    &-description {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
