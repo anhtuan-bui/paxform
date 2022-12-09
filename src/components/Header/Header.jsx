@@ -7,6 +7,11 @@ import { ReactComponent as Hospitality } from "../../assets/images/hospitality.s
 import { ReactComponent as Medical } from "../../assets/images/medical care.svg";
 import { ReactComponent as Retail } from "../../assets/images/retail.svg";
 
+import { ReactComponent as iconEducation } from "../../assets/images/icon-nav-education.svg";
+import { ReactComponent as iconHospitality } from "../../assets/images/icon-nav-hospitality.svg";
+import { ReactComponent as iconMedical } from "../../assets/images/icon-nav-medical.svg";
+import { ReactComponent as iconRetail } from "../../assets/images/icon-nav-retail.svg";
+
 import "./Header.scss";
 
 import { SCREEN_SIZE } from "../../configurations/configurations";
@@ -41,28 +46,28 @@ const menu = [
 				description: "Lorem Ipsum is simply dummy text",
 				link: "https://",
 				to: "usecases/education",
-				image: <Education />,
+				image: <iconEducation />,
 			},
 			{
 				text: "Hospitality",
 				description: "Lorem Ipsum is simply dummy text",
 				link: "https://",
 				to: "usecases/hospitality",
-				image: <Hospitality />,
+				image: <iconHospitality />,
 			},
 			{
 				text: "Medical Care",
 				description: "Lorem Ipsum is simply dummy text",
 				link: "https://",
 				to: "usecases/medical-care",
-				image: <Medical />,
+				image: <iconMedical />,
 			},
 			{
 				text: "Retail",
 				description: "Lorem Ipsum is simply dummy text",
 				link: "https://",
 				to: "usecases/retail",
-				image: <Retail />,
+				image: <iconRetail />,
 			},
 		],
 	},
@@ -76,12 +81,6 @@ const menu = [
 		text: "FAQ",
 		link: "https://",
 		to: "faq",
-		submenu: [],
-	},
-	{
-		text: "Security Policy",
-		link: "https://",
-		to: "security-policy",
 		submenu: [],
 	},
 ];
@@ -287,7 +286,6 @@ export default class Header extends Component {
 																	key={index}
 																	className="nav__second-level-li"
 																>
-																	{subitem.image}
 																	<div className="nav__second-level-li-text">
 																		<NavLink
 																			to={subitem.to}
@@ -295,9 +293,6 @@ export default class Header extends Component {
 																		>
 																			<span>{subitem.text}</span>
 																		</NavLink>
-																		<p className="nav__second-level-li-description">
-																			{subitem.description}
-																		</p>
 																	</div>
 																</li>
 															);
