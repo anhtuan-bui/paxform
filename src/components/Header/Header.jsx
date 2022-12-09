@@ -2,15 +2,6 @@ import React, { Component } from "react";
 import Button from "../Button/Button";
 import { ReactComponent as Logo } from "../../assets/images/LOGO.svg";
 // import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
-import { ReactComponent as Education } from "../../assets/images/education.svg";
-import { ReactComponent as Hospitality } from "../../assets/images/hospitality.svg";
-import { ReactComponent as Medical } from "../../assets/images/medical care.svg";
-import { ReactComponent as Retail } from "../../assets/images/retail.svg";
-
-import { ReactComponent as iconEducation } from "../../assets/images/icon-nav-education.svg";
-import { ReactComponent as iconHospitality } from "../../assets/images/icon-nav-hospitality.svg";
-import { ReactComponent as iconMedical } from "../../assets/images/icon-nav-medical.svg";
-import { ReactComponent as iconRetail } from "../../assets/images/icon-nav-retail.svg";
 
 import "./Header.scss";
 
@@ -42,18 +33,18 @@ const menu = [
 		to: "usecases",
 		submenu: [
 			{
-				text: "Education",
-				description: "Lorem Ipsum is simply dummy text",
-				link: "https://",
-				to: "usecases/education",
-				image: <iconEducation />,
-			},
-			{
 				text: "Hospitality",
 				description: "Lorem Ipsum is simply dummy text",
 				link: "https://",
 				to: "usecases/hospitality",
 				image: <iconHospitality />,
+			},
+			{
+				text: "Retail",
+				description: "Lorem Ipsum is simply dummy text",
+				link: "https://",
+				to: "usecases/retail",
+				image: <iconRetail />,
 			},
 			{
 				text: "Medical Care",
@@ -63,11 +54,11 @@ const menu = [
 				image: <iconMedical />,
 			},
 			{
-				text: "Retail",
+				text: "Education",
 				description: "Lorem Ipsum is simply dummy text",
 				link: "https://",
-				to: "usecases/retail",
-				image: <iconRetail />,
+				to: "usecases/education",
+				image: <iconEducation />,
 			},
 		],
 	},

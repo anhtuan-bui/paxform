@@ -254,13 +254,13 @@ $color_bg_hero__gradient--first: #0a61b4;
                 background: linear-gradient( 148.44deg, #059459 31.61%, rgba(5, 148, 89, 0) 189.36%);
             }
             &:nth-child(1)::after {
-                background-image: url("../../assets/images/icon-nav-education.svg");
+                background-image: url("../../assets/images/icon-nav-hospitality.svg");
             }
             &:nth-child(2)::before {
                 background: linear-gradient( 148.44deg, #e85d04 31.61%, rgba(232, 93, 4, 0) 189.36%);
             }
             &:nth-child(2)::after {
-                background-image: url("../../assets/images/icon-nav-hospitality.svg");
+                background-image: url("../../assets/images/icon-nav-retail.svg");
             }
             &:nth-child(3)::before {
                 background: linear-gradient( 148.44deg, #d00000 31.61%, rgba(208, 0, 0, 0) 189.36%);
@@ -272,7 +272,7 @@ $color_bg_hero__gradient--first: #0a61b4;
                 background: linear-gradient( 148.44deg, #748c0d 31.61%, rgba(116, 140, 13, 0) 189.36%);
             }
             &:nth-child(4)::after {
-                background-image: url("../../assets/images/icon-nav-retail.svg");
+                background-image: url("../../assets/images/icon-nav-education.svg");
             }
             &-link {
                 color: $color_main__text;

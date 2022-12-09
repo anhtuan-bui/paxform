@@ -8,6 +8,8 @@ import FAQ from "./pages/FAQ/FAQ";
 import GlobalPrivacyPolicy from "./pages/GlobalPrivacyPolicy/GlobalPrivacyPolicy";
 import SecurityPolicy from "./pages/SecurityPolicy/SecurityPolicy";
 import NotFound from "./pages/NotFound/NotFound";
+import Usecases from "./pages/Usecases/Usecases";
+import Education from "./pages/Usecases/Education";
 import { lazy, Suspense } from "react";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
@@ -31,6 +33,8 @@ function App() {
 						/>
 						<Route path="security-policy" element={<SecurityPolicy />} />
 						<Route path="not-found" element={<NotFound />} />
+						<Route path="usecases" element={<Usecases />} />
+						<Route path="usecases/education" element={<Education />} />
 						{/* <Route path="*" element={<NotFound />} /> */}
 					</Route>
 				</Routes>
