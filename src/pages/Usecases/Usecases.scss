@@ -1,6 +1,125 @@
 @import "../../styles/styles.scss";
 $color_white: #fff;
-$color_white-blue: #f0f8ff;
-$color_blue: #0a61b4;
-$color_grey: #2f4356;
+$color_black: #031a30;
 $color_green: #20976c;
+// .header {
+//     .nav__first-level-li-link {
+//         color: $color_black;
+//     }
+//     .hamburger__line {
+//         background-color: $color_black;
+//     }
+// }
+.usecases {
+    .hero {
+        position: relative;
+        background: $color_green;
+        &__button {
+            display: flex;
+            gap: rem(18);
+            .button--flat {
+                background-color: #135f3a;
+                &:hover {
+                    background-color: darken(#135f3a, 5%);
+                }
+            }
+            @include extraSmall {
+                flex-direction: column;
+                gap: rem(10);
+            }
+        }
+        &__wrapper {
+            display: flex;
+            position: relative;
+            align-items: center;
+            height: rem(820);
+            padding-bottom: 280px;
+            padding-top: rem(200);
+            box-sizing: border-box;
+            @include medium {
+                flex-direction: column;
+                padding-bottom: rem(140);
+                height: rem(1100);
+                padding-top: 0;
+            }
+            @include small {
+                height: rem(1170);
+            }
+        }
+        &__name {
+            margin: rem(20) 0;
+            opacity: 50%;
+            letter-spacing: rem(2);
+            font-weight: 600;
+            font-size: rem(14);
+            text-transform: uppercase;
+            @include medium {
+                margin-top: rem(150);
+                margin-bottom: rem(40);
+            }
+        }
+        &__content {
+            color: $color_black;
+            flex: 1 1 50%;
+            padding: 0 $padding__collumn;
+            h1,
+            p {
+                max-width: 100%;
+            }
+        }
+        &__title {
+            font-size: rem(42);
+            margin-bottom: rem(24);
+            margin-top: 0;
+            @include extraLarge {
+                font-size: rem(38);
+            }
+            @include large {
+                font-size: rem(34);
+            }
+            @include medium {
+                font-size: rem(42);
+            }
+            @include small {
+                font-size: rem(36);
+            }
+            @include extraSmall {
+                font-size: rem(28);
+            }
+        }
+        &__description {
+            margin-bottom: rem(50);
+        }
+        &__image {
+            position: relative;
+            flex: 1 1 50%;
+            &-large {
+                position: absolute;
+                bottom: rem(-890);
+                z-index: 800;
+                left: rem(-50);
+                @include medium {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: rem(-400);
+                    width: rem(600);
+                }
+                @include small {
+                    bottom: rem(-420);
+                }
+                @include extraSmall {
+                    width: rem(500);
+                    bottom: rem(-400);
+                }
+            }
+        }
+    }
+    &-hospitality {
+        .hero {
+            background: linear-gradient(328.62deg, #08f794 -120.4%, #f0fff9 75.22%);
+        }
+    }
+    &-Retail {}
+    &-mediacl {}
+    &-education {}
+}
