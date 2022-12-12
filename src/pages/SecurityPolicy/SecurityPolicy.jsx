@@ -56,7 +56,7 @@ export default class SecurityPolicy extends Component {
 					<div className="container">
 						<div className="grid_box">
 							<div className="grid_box__image">
-								<img src={intro} alt="Security policy image" />
+								<img src={intro} alt="Security policy" />
 								<span className="grid_box__image-parall scroll-effect"></span>
 								<span className="grid_box__image-parall scroll-effect"></span>
 							</div>
