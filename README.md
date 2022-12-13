@@ -38,7 +38,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Important notes for macOS
+### Important notes for macOS
 ### `yarn build-mac`
 
 Builds the app for production to the `public_html` folder.\
@@ -48,3 +48,7 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Chaging information of the website
+
+Be aware that there are parts hard coded and parts that information is pulled from Wordpress Rest API. If you want to change information at any part, you may want to **look it up using Visual Studio Code** using **Search** function which can be assessed with shortcut `ctrl + shift + f` in Windows or `command + shift + f` in MacOS. If you can't find it in the code, it's probably pulled from API and you will need to find it there. 
