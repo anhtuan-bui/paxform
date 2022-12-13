@@ -7,6 +7,8 @@ For collaborators, install
 
 ## Installation
 
+To install the project:
+
 1. Create a new folder named e.g: "paxfolio"
 2. Open Git Bash at the folder "paxfolio" - right click on the folder, look for Open Git Bash...
 3. Type command `git init` to initiate git folder
