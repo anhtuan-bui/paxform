@@ -51,4 +51,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Chaging information of the website
 
-Be aware that there are parts hard coded and parts that information is pulled from Wordpress Rest API. If you want to change information at any part, you may want to **look it up using Visual Studio Code** using **Search** function which can be assessed with shortcut `ctrl + shift + f` in Windows or `command + shift + f` in MacOS. If you can't find it in the code, it's probably pulled from API and you will need to find it there. 
+Some of the information in this code is hard-coded, while other parts are pulled from a Wordpress Rest API. If you want to make changes to any of this information, you can use the **Search** function in Visual Studio Code (accessed with the shortcut `ctrl + shift + f` in Windows or `command + shift + f` on MacOS) to locate it in the code. If you can't find it in the code, it's likely pulled from the API, so you will need to look for it there. 
