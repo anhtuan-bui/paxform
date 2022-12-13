@@ -1,8 +1,22 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For collaborators, install
+* [Git CLI](https://git-scm.com/downloads)
+* [Nodejs](https://nodejs.org/en/) - newst LTS version
+* [Yarn](https://yarnpkg.com/getting-started/install) - package manager
 
-## Available Scripts
+## Installation
+
+1. Create a new folder named e.g: "paxfolio"
+2. Open Git Bash at the folder "paxfolio" - right click on the folder, look for Open Git Bash...
+3. Type command `git init` to initiate git folder
+4. Type command `git remote add origin https://github.com/anhtuan-bui/paxfolio.git` to set name for the repository
+5. Type command `git pull origin master` to pull files in the repository to your folder at "paxforlio"
+6. Type command `cd paxfolio` to open the folder
+7. Type command `yarn install` to gather dependencies for the projects.
+8. After finishing installation, type command `yarn start` to view the website locally.
+
+## Available Scripts using Yarn
 
 In the project directory, you can run:
 
