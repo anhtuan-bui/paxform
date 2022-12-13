@@ -63,8 +63,8 @@ export default class Testimonial extends Component {
     }
 
     async getTestimonials() {
-        const response = await fetch(API_URL + 'testimonials2');
-        return await response.json();
+        const data = await fetch(API_URL + 'testimonials');
+        return await data.json();
     }
 
     render() {
@@ -114,7 +114,7 @@ const TestimonialSwiper = (data) => {
                                         <div className="testimonial_card__description" dangerouslySetInnerHTML={{ __html: item.content.rendered }}></div>
                                         <div className="testimonial_card__name-box">
                                             <h3 className="testimonial_card__name">{item.title.rendered}</h3>
-                                            <p className="testimonial_card__position">{item.acf.client_bio}</p>
+                                            <p className="testimonial_card__position">{item.position}</p>
                                         </div>
                                     </div>
                                 </SwiperSlide>
