@@ -28,7 +28,9 @@ export default class Testimonial extends Component {
     async componentDidMount() {
         this.handleResize();
         window.addEventListener('resize', this.handleResize);
+
         this.testimonials = await this.getTestimonials();
+        
         this.setState(this.testimonials);
     }
 
@@ -64,6 +66,10 @@ export default class Testimonial extends Component {
 
     async getTestimonials() {
         const data = await fetch(API_URL + 'testimonials');
+        return await data.json();
+    }
+    async getTestimonials1() {
+        const data = await fetch("https://v1.paxfolio.com/wp-json/wp/v2/testimonials");
         return await data.json();
     }
 
@@ -115,6 +121,7 @@ const TestimonialSwiper = (data) => {
                                         <div className="testimonial_card__name-box">
                                             <h3 className="testimonial_card__name">{item.title.rendered}</h3>
                                             <p className="testimonial_card__position">{item.position}</p>
+                                            
                                         </div>
                                     </div>
                                 </SwiperSlide>
