@@ -208,7 +208,7 @@ export default class Header extends Component {
       this.handleHamburger();
     }
     try {
-      if (this.app.width <= SCREEN_SIZE.larger) {
+      if (this.app.width <= SCREEN_SIZE.large) {
         hamburger.classList.add("hamburger--active");
         headerRight.classList.remove("header_right--active");
       } else {
