@@ -49,7 +49,7 @@ export default class Button extends Component {
 
     render() {
         return (
-            <button className={`button${this.state.class}`}>
+            <button className={`button${this.state.class}`} onClick={this.props.onClick}>
                 <TriangleRight className={`triangle_right ${this.button.triangleRight ? '' : 'triangle_right--none'}`}/>
                 <span className='button__text'>{this.props.text}</span>
                 <ArrowRight className={`button__arrow ${this.button.arrow ? '' : 'button__arrow--none'}`} />

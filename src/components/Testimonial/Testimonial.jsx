@@ -8,6 +8,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { SCREEN_SIZE } from '../../configurations/configurations';
 
+// Import Swiper styles
+import "swiper/scss";
+import "swiper/scss/pagination";
+import "swiper/scss/navigation";
 
 var home = {
     numberOfComapniesPerView: 5,
