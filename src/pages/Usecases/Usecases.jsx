@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import GetStarted from "../../components/GetStarted/GetStarted";
-import "./Usecases.scss";
+import "./UseCases.scss";
 
 import ex from "../../assets/images/usecase-hospitality-ex.jpg";
 import policy from "../../assets/images/usecase-policy.jpg";
