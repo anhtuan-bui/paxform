@@ -8,13 +8,13 @@ import FAQ from "./pages/FAQ/FAQ";
 import GlobalPrivacyPolicy from "./pages/GlobalPrivacyPolicy/GlobalPrivacyPolicy";
 import SecurityPolicy from "./pages/SecurityPolicy/SecurityPolicy";
 import NotFound from "./pages/NotFound/NotFound";
-import Usecases from "./pages/Usecases/Usecases";
 import Hospitality from "./pages/Usecases/Hospitality";
 import { lazy, Suspense } from "react";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
 const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
+const Usecases = lazy(() => import("./pages/Usecases/Usecases"));
 
 function App() {
 	return (
