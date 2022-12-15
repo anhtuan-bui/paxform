@@ -3,7 +3,8 @@ $color_white: #fff;
 $color_black: #031a30;
 $color_grey: #2f4356;
 $color_green: #20976c;
-$color_light-green: #f2fdf9;
+$color_light-green: hsl(158, 73%, 97%);
+$color_light-blue: #e1edf9;
 $color_purple: #2d4bb6;
 .usecases {
     .hero {
@@ -45,7 +46,7 @@ $color_purple: #2d4bb6;
             margin: rem(20) 0;
             letter-spacing: rem(2);
             font-weight: 600;
-            font-size: rem(18);
+            font-size: rem(14);
             color: $color_purple;
             text-transform: uppercase;
             @include medium {
@@ -82,13 +83,17 @@ $color_purple: #2d4bb6;
                 font-size: rem(28);
             }
         }
-        &__description {
+        &__desc {
             margin-bottom: rem(50);
         }
         &__image {
             display: inline-flex;
             flex: 1 1 50%;
             align-self: start;
+            min-height: rem(590);
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
             &-large {
                 z-index: 800;
                 @include medium {
@@ -111,10 +116,12 @@ $color_purple: #2d4bb6;
             }
         }
     }
-    .example {
+    .case {
+        position: relative;
+        padding-bottom: rem(140);
         &__head {
             display: flex;
-            column-gap: rem(50);
+            column-gap: rem(40);
             position: relative;
             margin-bottom: rem(60);
             &-name {
@@ -141,11 +148,105 @@ $color_purple: #2d4bb6;
             }
         }
         &__body {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: rem(40);
             &__box {
+                display: inline-grid;
+                margin-bottom: rem(60);
+                align-items: center;
                 &-title {
                     font-size: rem(20);
                     font-weight: 350;
                     line-height: rem(26);
+                }
+                &__desc {
+                    font-size: rem(16);
+                    line-height: rem(25);
+                    color: $color_grey;
+                }
+                &__list {
+                    margin-top: rem(40);
+                    font-size: rem(16);
+                    padding-left: rem(26);
+                    list-style-image: url("../../assets/images/icon-usecases-list.svg");
+                    &>li {
+                        padding: rem(7) 0;
+                    }
+                }
+                &>img {
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .policy {
+        position: relative;
+        background: $color_light-blue;
+        padding: rem(100) 0 rem(200);
+        .container {
+            display: flex;
+            column-gap: rem(40);
+        }
+        &__content {
+            flex: 50;
+            &-name {
+                margin: 0;
+                letter-spacing: rem(2);
+                font-weight: 600;
+                font-size: rem(14);
+                color: $color_purple;
+                text-transform: uppercase;
+            }
+            &-title {
+                margin: rem(24) 0;
+                font-size: rem(38);
+            }
+            &-desc {
+                font-size: rem(16);
+                line-height: rem(25);
+                color: $color_grey;
+            }
+            >.button {
+                margin-top: rem(60);
+                text-decoration: none;
+                border: 1px solid $color_green;
+                color: $color_green;
+                &>svg path {
+                    stroke: $color_green;
+                }
+            }
+        }
+        &__image {
+            flex: 50;
+            position: relative;
+            &>img {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+    }
+    .article {
+        padding: rem(100) 0 rem(140);
+        &__body {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: rem(40);
+            &__box {
+                &-title {
+                    padding: 0 rem(43) rem(24);
+                    font-size: rem(28);
+                }
+                &__desc {
+                    padding: 0 rem(43);
+                    font-size: rem(16);
+                    line-height: rem(25);
+                    color: $color_grey;
+                }
+                &>img {
+                    display: inline-block;
+                    width: 100%;
                 }
             }
         }
@@ -153,9 +254,33 @@ $color_purple: #2d4bb6;
     &-hospitality {
         .hero {
             background: #f2fdf9;
+            &__image {
+                background-image: url("../../assets/images/usecases-hospitality.svg");
+            }
         }
     }
-    &-Retail {}
-    &-mediacl {}
-    &-education {}
+    &-retail {
+        .hero {
+            background: #f8ece4;
+            &__image {
+                background-image: url("../../assets/images/usecases-retail.jpg");
+            }
+        }
+    }
+    &-medicare {
+        .hero {
+            background: #f9e2e2;
+            &__image {
+                background-image: url("../../assets/images/usecases-medicare.jpg");
+            }
+        }
+    }
+    &-education {
+        .hero {
+            background: #fcfff1;
+            &__image {
+                background-image: url("../../assets/images/usecases-hospitality.svg");
+            }
+        }
+    }
 }
