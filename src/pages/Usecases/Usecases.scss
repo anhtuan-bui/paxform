@@ -1,19 +1,14 @@
 @import "../../styles/styles.scss";
 $color_white: #fff;
 $color_black: #031a30;
+$color_grey: #2f4356;
 $color_green: #20976c;
-// .header {
-//     .nav__first-level-li-link {
-//         color: $color_black;
-//     }
-//     .hamburger__line {
-//         background-color: $color_black;
-//     }
-// }
+$color_light-green: #f2fdf9;
+$color_purple: #2d4bb6;
 .usecases {
     .hero {
         position: relative;
-        background: $color_green;
+        background: $color_white;
         &__button {
             display: flex;
             gap: rem(18);
@@ -48,10 +43,10 @@ $color_green: #20976c;
         }
         &__name {
             margin: rem(20) 0;
-            opacity: 50%;
             letter-spacing: rem(2);
             font-weight: 600;
-            font-size: rem(14);
+            font-size: rem(18);
+            color: $color_purple;
             text-transform: uppercase;
             @include medium {
                 margin-top: rem(150);
@@ -91,13 +86,11 @@ $color_green: #20976c;
             margin-bottom: rem(50);
         }
         &__image {
-            position: relative;
+            display: inline-flex;
             flex: 1 1 50%;
+            align-self: start;
             &-large {
-                position: absolute;
-                bottom: rem(-890);
                 z-index: 800;
-                left: rem(-50);
                 @include medium {
                     left: 50%;
                     transform: translateX(-50%);
@@ -112,11 +105,54 @@ $color_green: #20976c;
                     bottom: rem(-400);
                 }
             }
+            &>img {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+    }
+    .example {
+        &__head {
+            display: flex;
+            column-gap: rem(50);
+            position: relative;
+            margin-bottom: rem(60);
+            &-name {
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: rem(14);
+                font-weight: 600;
+                color: $color_purple;
+                text-transform: uppercase;
+                letter-spacing: 0.14em;
+            }
+            &-title {
+                flex: 50%;
+                margin-top: rem(42);
+                font-size: rem(38);
+            }
+            &-desc {
+                flex: 50%;
+                margin-top: rem(42);
+                font-size: rem(16);
+                line-height: rem(25);
+                color: $color_grey;
+            }
+        }
+        &__body {
+            &__box {
+                &-title {
+                    font-size: rem(20);
+                    font-weight: 350;
+                    line-height: rem(26);
+                }
+            }
         }
     }
     &-hospitality {
         .hero {
-            background: linear-gradient(328.62deg, #08f794 -120.4%, #f0fff9 75.22%);
+            background: #f2fdf9;
         }
     }
     &-Retail {}

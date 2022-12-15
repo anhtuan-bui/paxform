@@ -26,7 +26,7 @@ export default class Resources extends Component {
   render() {
     return (
       <main className="resources">
-        <section className="hero">
+        <section className="hero" background="light">
           <div className="container hero__wrapper">
             <div className="hero__content">
               <p className="hero__name">Paxform Resources</p>

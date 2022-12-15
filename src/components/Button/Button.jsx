@@ -24,19 +24,23 @@ export default class Button extends Component {
         if (this.props.color === 'green') {
             this.button.class += ' button--green';
         }
-
+    
+        // <Button type="arrow"/> the button with arrow icon on the right
         if (this.props.type.includes('arrow')) {
             this.button.arrow = true;
         }
 
+        // <Button type="outline"/> the button with outline
         if (this.props.type.includes('outline')) {
             this.button.class += ' button--outline';
         }
 
+        // <Button type="flat"/> flat button
         if (this.props.type.includes('flat')) {
             this.button.class += ' button--flat';
         }
 
+        // <Button type="triangle-right"/> the button a triangle on the left
         if (this.props.type.includes('triangle-right')) {
             this.button.triangleRight = true
         }
