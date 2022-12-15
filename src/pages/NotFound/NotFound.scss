@@ -1,1 +1,45 @@
 @import '../../styles/styles.scss';
+
+.not_found{
+   
+    color:white;
+    background: linear-gradient(90.15deg, #0A61B4 0.35%, #074581 100.1%);
+    
+    &__code{
+        margin-top: rem(200);
+        margin-bottom: rem(63);
+        font-size: rem(300);
+        font-weight: 400;
+        // line-height: rem(360);
+        text-align: center;
+        span{
+            color:#20976C;
+            ;
+        }
+
+    }
+    &__container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        padding-bottom: rem(108);
+        // padding-top: rem(100);
+        padding-left: rem(40);
+        padding-right: rem(40);
+
+    }
+    &__title{
+        font-size:rem(38);
+        line-height: rem(48);
+        margin-top: rem(0);
+        margin-bottom: rem(20);
+
+    }
+    &__description{
+        font-size: rem(16);
+        margin-top: rem(20); 
+        margin-bottom: rem(26);
+
+    }
+}
