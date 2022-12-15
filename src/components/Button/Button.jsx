@@ -8,6 +8,7 @@ export default class Button extends Component {
         triangleRight: false,
         arrow: false,
         class: '',
+        arrowClass: ''
     }
     constructor(props) {
         super(props);
@@ -17,6 +18,10 @@ export default class Button extends Component {
     }
 
     handleAttributes = () => {
+
+        if(this.props.arrowVariant === "down"){
+            this.button.arrowClass+= 'button__arrow--90deg';
+        }
 
         if (this.props.color === 'white') {
             this.button.class += ' button--white';
@@ -52,7 +57,7 @@ export default class Button extends Component {
             <button className={`button${this.state.class}`} onClick={this.props.onClick}>
                 <TriangleRight className={`triangle_right ${this.button.triangleRight ? '' : 'triangle_right--none'}`}/>
                 <span className='button__text'>{this.props.text}</span>
-                <ArrowRight className={`button__arrow ${this.button.arrow ? '' : 'button__arrow--none'}`} />
+                <ArrowRight className={`button__arrow ${this.button.arrowClass} ${this.button.arrow ? '' : 'button__arrow--none'}`} />
             </button>
         )
     }

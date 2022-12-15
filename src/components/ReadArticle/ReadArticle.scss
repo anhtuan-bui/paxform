@@ -3,15 +3,35 @@
 .read_article {
   align-items: center;
   gap: rem(10);
-
   text-decoration: none;
   color: #20976c;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
 
-  &:hover {
-    &::after {
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #20976c;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+    @include larger {
       background-color: #20976c;
     }
+    @include large {
+      background-color: transparent;
+    }
   }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
   span {
     margin-right: rem(10);
   }

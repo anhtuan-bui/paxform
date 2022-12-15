@@ -5,9 +5,9 @@ import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.sv
 export default class ReadArticle extends Component {
   render() {
     return (
-      <Link className="read_article span--hover" to={this.props.to}>
+      <Link className="read_article" to={this.props.to}>
         <span>Read Article</span>
-        <ArrowRight />
+        <ArrowRight className="read_article__arrow"/>
       </Link>
     );
   }

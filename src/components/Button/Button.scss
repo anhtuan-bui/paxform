@@ -60,6 +60,10 @@
     &--none {
       display: none;
     }
+
+    &--90deg {
+      transform: rotate(90deg);
+    }
   }
 
   &--flat {
