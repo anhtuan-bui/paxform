@@ -130,19 +130,20 @@ $color_purple: #2d4bb6;
             @include medium {
                 display: block;
                 column-gap: 0;
-                padding-top: rem(30);
+                padding-top: rem(60);
                 margin-bottom: 0;
                 &-name {
                     position: relative;
-                    margin-bottom: 0;
+                    margin-bottom: rem(40);
                 }
                 &-title {
                     flex: 100%;
+                    font-size: rem(24);
                     margin-top: rem(16);
                 }
                 &-desc {
                     flex: 100%;
-                    margin-bottom: 0;
+                    margin: 0;
                 }
             }
         }
@@ -166,10 +167,11 @@ $color_purple: #2d4bb6;
                 &__list {
                     margin-top: rem(40);
                     font-size: rem(16);
-                    padding-left: rem(26);
-                    list-style-image: url("../../assets/images/icon-usecases-list.svg");
+                    padding-left: 0;
+                    list-style: none;
                     &>li {
-                        padding: rem(7) 0;
+                        padding: rem(7) 0 rem(7) rem(50);
+                        background: url("../../assets/images/icon-usecases-list.svg") left rem(15) center no-repeat;
                     }
                 }
                 &>img {
@@ -260,7 +262,11 @@ $color_purple: #2d4bb6;
             &__content {
                 flex: 100;
                 >.button {
-                    margin: rem(20) 0;
+                    width: 100%;
+                    margin: rem(30) 0 rem(50);
+                }
+                &-title {
+                    font-size: rem(24);
                 }
             }
             &__image {
@@ -306,6 +312,7 @@ $color_purple: #2d4bb6;
                     @include medium {
                         width: 80%;
                         margin: 0 10%;
+                        padding-top: rem(30);
                     }
                     @include small {
                         width: 100%;
