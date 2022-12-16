@@ -5,7 +5,7 @@ import Layout from "./pages/Layout/Layout";
 // import Personal from "./pages/Personal/Personal";
 import FAQ from "./pages/FAQ/FAQ";
 // import Resources from "./pages/Resources/Resources";
-import GlobalPrivacyPolicy from "./pages/GlobalPrivacyPolicy/GlobalPrivacyPolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import LegalDetail from "./pages/LegalDetail/LegalDetail";
 import NotFound from "./pages/NotFound/NotFound";
 import { lazy, Suspense } from "react";
@@ -28,10 +28,7 @@ function App() {
 
 						<Route path="resources" element={<Resources />} />
 						<Route path="blog" element={<Blogs />} />
-						<Route
-							path="global-privacy-policy"
-							element={<GlobalPrivacyPolicy />}
-						/>
+						<Route path="privacy-policy" element={<PrivacyPolicy />} />
 						<Route path="legal-detail" element={<LegalDetail />} />
 						<Route path="not-found" element={<NotFound />} />
 						<Route path="usecases" element={<UseCases />} />

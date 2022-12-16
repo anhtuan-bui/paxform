@@ -144,7 +144,7 @@ export default class Footer extends Component {
 
 							<ul>
 								<li>
-									<a href="/global-privacy-policy">
+									<a href="/privacy-policy">
 										<span className="span--hover">Privacy Policy</span>
 									</a>
 								</li>
