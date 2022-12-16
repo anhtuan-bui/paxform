@@ -4,14 +4,15 @@
   background-color: $color__gray-blue;
   padding-top: rem(181);
   position: relative;
-  padding-bottom: rem(65);
 }
 
 .hero_blog {
   padding: 0 $padding__collumn;
+  position: relative;
+  height: rem(400);
 
   &__wrapper {
-    position: relative;
+    position: absolute;
     display: flex;
     z-index: 1100;
     padding: 2rem;
@@ -94,7 +95,6 @@
 .posts {
   position: relative;
   padding-top: rem(80);
-  padding-bottom: rem(240);
 }
 
 .chips {
@@ -142,6 +142,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1rem;
   }
 
   &__name {
@@ -183,6 +184,7 @@
   align-items: center;
   border-top: 1px solid #baccde;
   padding-top: rem(20);
+  margin-top: 1rem;
   &__date {
     text-transform: uppercase;
     color: #7d8893;
@@ -194,4 +196,5 @@
   padding: 0 $padding__collumn;
   display: flex;
   justify-content: center;
+  padding-bottom: rem(80);
 }

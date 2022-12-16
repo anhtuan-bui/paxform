@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import "./Blog.scss";
+import "./Blogs.scss";
 import ReadArticle from "../../components/ReadArticle/ReadArticle";
 import blogSampleImg from "../../assets/images/blog-sample-img.png";
 import sampleAuthorAvatar from "../../assets/images/sample-author-avatar.png";
 import Button from "../../components/Button/Button";
+import TriangleRight from "../../components/TriangleRight/TriangleRight";
 
 export default class Blog extends Component {
   blogs = { chip: "all" };
@@ -14,13 +15,29 @@ export default class Blog extends Component {
     this.state = this.blogs;
   }
 
-  handleRadioChange = (event) => {
+  componentDidMount(){
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize() {
+    const heroBlog = document.querySelector(".hero_blog");
+    const heroBlogWrapper = document.querySelector(".hero_blog__wrapper");
+
+    heroBlog.style.height = window.getComputedStyle(heroBlogWrapper).height;
+  }
+
+  handleRadioChange(event) {
     this.blogs.chip = event.target.id;
     this.setState(this.blogs);
-  };
+  }
   render() {
     return (
-      <main className="blog">
+      <main className="blogs">
         <section className="hero" background="light">
           <div className="container">
             <div className="hero_blog">
@@ -56,7 +73,7 @@ export default class Blog extends Component {
               <div className="hero_graphic"></div>
             </div>
           </div>
-          <div className="bottom_triangle bottom_triangle--white"></div>
+          <TriangleRight variant="white" />
         </section>
 
         <section className="posts">
@@ -98,7 +115,9 @@ export default class Blog extends Component {
               <div className="post">
                 <div className="post__content">
                   <div className="post__content-box">
-                    <p className="post__name section_name post__name--blue">Story</p>
+                    <p className="post__name section_name post__name--blue">
+                      Story
+                    </p>
                     <h2 className="post__title">
                       Top 10 Time Management Challenges
                     </h2>
@@ -107,31 +126,34 @@ export default class Blog extends Component {
                       available, but the majority have suffered alteration in
                       some form, by injected humour
                     </p>
-                    <ReadArticle />
                   </div>
+                  <div className="author_box__wrapper">
+                    <ReadArticle />
 
-                  <div className="author_box">
-                    <div className="author">
-                      <div className="author__avatar">
-                        <img src={sampleAuthorAvatar} alt="author avatar" />
+                    <div className="author_box">
+                      <div className="author">
+                        <div className="author__avatar">
+                          <img src={sampleAuthorAvatar} alt="author avatar" />
+                        </div>
+                        <div className="author_info">
+                          <h4 className="author__name">Jane Cooper</h4>
+                          <p className="author__occupation">Marketing</p>
+                        </div>
                       </div>
-                      <div className="author_info">
-                        <h4 className="author__name">Jane Cooper</h4>
-                        <p className="author__occupation">Marketing</p>
-                      </div>
+                      <p className="author_box__date">December 25, 2021</p>
                     </div>
-                    <p className="author_box__date">December 25, 2021</p>
                   </div>
                 </div>
                 <div className="post__image">
-                    <img src={blogSampleImg} alt="blog sample" />
+                  <img src={blogSampleImg} alt="blog sample" />
                 </div>
               </div>
-
               <div className="post">
                 <div className="post__content">
                   <div className="post__content-box">
-                    <p className="post__name section_name post__name--blue">Story</p>
+                    <p className="post__name section_name post__name--blue">
+                      Story
+                    </p>
                     <h2 className="post__title">
                       Top 10 Time Management Challenges
                     </h2>
@@ -140,31 +162,34 @@ export default class Blog extends Component {
                       available, but the majority have suffered alteration in
                       some form, by injected humour
                     </p>
-                    <ReadArticle />
                   </div>
+                  <div className="author_box__wrapper">
+                    <ReadArticle />
 
-                  <div className="author_box">
-                    <div className="author">
-                      <div className="author__avatar">
-                        <img src={sampleAuthorAvatar} alt="author avatar" />
+                    <div className="author_box">
+                      <div className="author">
+                        <div className="author__avatar">
+                          <img src={sampleAuthorAvatar} alt="author avatar" />
+                        </div>
+                        <div className="author_info">
+                          <h4 className="author__name">Jane Cooper</h4>
+                          <p className="author__occupation">Marketing</p>
+                        </div>
                       </div>
-                      <div className="author_info">
-                        <h4 className="author__name">Jane Cooper</h4>
-                        <p className="author__occupation">Marketing</p>
-                      </div>
+                      <p className="author_box__date">December 25, 2021</p>
                     </div>
-                    <p className="author_box__date">December 25, 2021</p>
                   </div>
                 </div>
                 <div className="post__image">
-                    <img src={blogSampleImg} alt="blog sample" />
+                  <img src={blogSampleImg} alt="blog sample" />
                 </div>
               </div>
-
               <div className="post">
                 <div className="post__content">
                   <div className="post__content-box">
-                    <p className="post__name section_name post__name--blue">Story</p>
+                    <p className="post__name section_name post__name--blue">
+                      Story
+                    </p>
                     <h2 className="post__title">
                       Top 10 Time Management Challenges
                     </h2>
@@ -173,36 +198,40 @@ export default class Blog extends Component {
                       available, but the majority have suffered alteration in
                       some form, by injected humour
                     </p>
-                    <ReadArticle />
                   </div>
+                  <div className="author_box__wrapper">
+                    <ReadArticle />
 
-                  <div className="author_box">
-                    <div className="author">
-                      <div className="author__avatar">
-                        <img src={sampleAuthorAvatar} alt="author avatar" />
+                    <div className="author_box">
+                      <div className="author">
+                        <div className="author__avatar">
+                          <img src={sampleAuthorAvatar} alt="author avatar" />
+                        </div>
+                        <div className="author_info">
+                          <h4 className="author__name">Jane Cooper</h4>
+                          <p className="author__occupation">Marketing</p>
+                        </div>
                       </div>
-                      <div className="author_info">
-                        <h4 className="author__name">Jane Cooper</h4>
-                        <p className="author__occupation">Marketing</p>
-                      </div>
+                      <p className="author_box__date">December 25, 2021</p>
                     </div>
-                    <p className="author_box__date">December 25, 2021</p>
                   </div>
                 </div>
                 <div className="post__image">
-                    <img src={blogSampleImg} alt="blog sample" />
+                  <img src={blogSampleImg} alt="blog sample" />
                 </div>
               </div>
-
             </div>
 
             <div className="view_more">
-
-            <Button text="View all posts" type="arrow outline" arrowVariant="down" color="green"/>
+              <Button
+                text="View all posts"
+                type="arrow outline"
+                arrowVariant="down"
+                color="green"
+              />
             </div>
-
           </div>
-          <div className="bottom_triangle bottom_triangle--footer"></div>
+          <TriangleRight variant="footer" />
         </section>
       </main>
     );
