@@ -1,14 +1,15 @@
 @import "../../styles/styles.scss";
 $color_white: #fff;
-$color_white-blue: #f0f8ff;
 $color_blue: #0a61b4;
+$color_purple: #2d4bb6;
+$color_light-grey: #f6f6f6;
 $color_grey: #2f4356;
 $color_green: #20976c;
 .security_privacy {
     .hero {
         position: relative;
         padding-top: rem(100);
-        background: linear-gradient(90.22deg, $color_blue 0.35%, #074581 99.98%);
+        background: linear-gradient(125.24deg, $color_blue 27.35%, #f2f9ff 176.96%);
         &__wrapper {
             display: flex;
             align-items: center;
@@ -23,21 +24,6 @@ $color_green: #20976c;
             }
             @include small {
                 padding-top: 0;
-            }
-        }
-        &__name {
-            margin: rem(20) 0;
-            opacity: 50%;
-            letter-spacing: rem(2);
-            font-weight: 600;
-            font-size: rem(14);
-            text-transform: uppercase;
-            @include medium {
-                margin-top: rem(50);
-                margin-bottom: rem(40);
-            }
-            @include small {
-                margin-top: rem(50);
             }
         }
         &__content {
@@ -71,14 +57,12 @@ $color_green: #20976c;
                 font-size: rem(28);
             }
         }
-        &__description {
-            margin-bottom: rem(50);
-        }
     }
     .security_introduction {
         position: relative;
-        padding: rem(100) 0 rem(130);
+        padding: rem(100) 0 rem(230);
         line-height: rem(25);
+        background: #e1edf9;
         .grid_box {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -97,17 +81,14 @@ $color_green: #20976c;
                 width: 100%;
                 &>img {
                     display: block;
-                    width: 100%;
+                    width: 75%;
                     max-width: rem(363);
                     margin: 0 auto;
                     @include medium {
-                        width: 80%;
+                        width: 55%;
                     }
                     @include small {
-                        width: 80%;
-                    }
-                    @include extraSmall {
-                        width: 80%;
+                        width: 50%;
                     }
                 }
                 &-parall {
@@ -161,6 +142,7 @@ $color_green: #20976c;
                     font-size: rem(14);
                     font-weight: bold;
                     color: $color_green;
+                    letter-spacing: 0.14em;
                     text-transform: uppercase;
                 }
                 &-title {
@@ -181,7 +163,8 @@ $color_green: #20976c;
             &-name {
                 font-size: rem(14);
                 font-weight: bold;
-                color: $color_green;
+                color: $color_purple;
+                letter-spacing: 0.14em;
                 text-transform: uppercase;
                 text-align: center;
             }
@@ -196,10 +179,13 @@ $color_green: #20976c;
                 column-gap: rem(24);
                 row-gap: rem(24);
                 padding: 0;
+                @include small {
+                    grid-template-columns: repeat(1, 1fr);
+                }
                 &__content {
                     list-style: none;
                     padding: rem(32);
-                    background: $color_white-blue;
+                    background: $color_light-grey;
                     border-radius: rem(20);
                     box-sizing: border-box;
                     &-image {
@@ -218,11 +204,4 @@ $color_green: #20976c;
             }
         }
     }
-    /*.scroll-effect {
-        opacity: 0;
-        transition: opacity 3s ease-out;
-        &-active {
-            opacity: 1;
-        }
-    }*/
 }

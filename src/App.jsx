@@ -6,12 +6,12 @@ import Layout from "./pages/Layout/Layout";
 import FAQ from "./pages/FAQ/FAQ";
 // import Resources from "./pages/Resources/Resources";
 import GlobalPrivacyPolicy from "./pages/GlobalPrivacyPolicy/GlobalPrivacyPolicy";
-import SecurityPolicy from "./pages/SecurityPolicy/SecurityPolicy";
+import LegalDetail from "./pages/LegalDetail/LegalDetail";
 import NotFound from "./pages/NotFound/NotFound";
 import { lazy, Suspense } from "react";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
-const Blogs = lazy(() => import("./pages/Blogs/Blogs"))
+const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
 const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
 const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
@@ -32,7 +32,7 @@ function App() {
 							path="global-privacy-policy"
 							element={<GlobalPrivacyPolicy />}
 						/>
-						<Route path="security-policy" element={<SecurityPolicy />} />
+						<Route path="legal-detail" element={<LegalDetail />} />
 						<Route path="not-found" element={<NotFound />} />
 						<Route path="usecases" element={<UseCases />} />
 						{/* <Route path="*" element={<NotFound />} /> */}

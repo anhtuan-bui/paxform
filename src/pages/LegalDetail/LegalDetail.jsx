@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./SecurityPolicy.scss";
+import "./LegalDetail.scss";
 import GetStarted from "../../components/GetStarted/GetStarted";
 
-import intro from "../../assets/images/security-policy1.svg";
+import intro from "../../assets/images/legal-policy-detail.jpg";
 import icon1 from "../../assets/images/icon-security-policy-feature01.svg";
 import icon2 from "../../assets/images/icon-security-policy-feature02.svg";
 import icon3 from "../../assets/images/icon-security-policy-feature03.svg";
@@ -42,15 +42,10 @@ export default class SecurityPolicy extends Component {
 				<section className="hero">
 					<div className="container hero__wrapper">
 						<div className="hero__content">
-							<p className="hero__name">paxform security</p>
-							<h1 className="hero__title">We Protect your Privacy</h1>
-							<p className="hero__description">
-								Paxform will never share your data with anyone. What’s more, no
-								one at Paxform can view or access your information.
-							</p>
+							<h1 className="hero__title">Paxform Legal</h1>
 						</div>
 					</div>
-					<div className="bottom_triangle bottom_triangle--white"></div>
+					<div className="bottom_triangle bottom_triangle--light-blue"></div>
 				</section>
 				<section className="security_introduction">
 					<div className="container">
@@ -61,10 +56,11 @@ export default class SecurityPolicy extends Component {
 								<span className="grid_box__image-parall scroll-effect"></span>
 							</div>
 							<div className="grid_box__content">
+								<h2>Data Security</h2>
 								<p className="grid_box__content-name">Security Policy</p>
-								<h2 className="grid_box__content-title">
+								<h3 className="grid_box__content-title">
 									Only You Can Access Your Data. Not Us - Not Anyone Else.
-								</h2>
+								</h3>
 								<div className="grid_box__content-description">
 									Paxform will never share your data with anyone. What’s more,
 									no one at Paxform can view or access your information. Our
@@ -81,14 +77,13 @@ export default class SecurityPolicy extends Component {
 							</div>
 						</div>
 					</div>
+					<div className="bottom_triangle bottom_triangle--white"></div>
 				</section>
 				<section className="security_features">
 					<div className="container">
 						<div className="grid_box">
-							<p className="grid_box-name">Security Policy</p>
-							<h2 className="grid_box-title">
-								Only You Can Access Your Data. Not Us - Not Anyone Else.
-							</h2>
+							<p className="grid_box-name">Our Vision</p>
+							<h2 className="grid_box-title">Forms without forms.</h2>
 							<div className="grid_box__list">
 								{features.map((feature, index) => (
 									<li className="grid_box__list__content" key={index}>
