@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import { lazy, Suspense } from "react";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
-const Blog = lazy(() => import("./pages/Blog/Blog"))
+const Blogs = lazy(() => import("./pages/Blogs/Blogs"))
 const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
 const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
@@ -27,7 +27,7 @@ function App() {
 						<Route path="faq" element={<FAQ />} />
 
 						<Route path="resources" element={<Resources />} />
-						<Route path="blog" element={<Blog />} />
+						<Route path="blog" element={<Blogs />} />
 						<Route
 							path="global-privacy-policy"
 							element={<GlobalPrivacyPolicy />}
