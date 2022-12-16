@@ -65,7 +65,7 @@ export default class Usecases extends Component {
 								</div>
 							</div>
 							<div className="case__body__box">
-								<img src={ex} alt="image" />
+								<img src={ex} alt="    " />
 							</div>
 							<div className="case__body__box">
 								<h3 className="case__body__box-title">
@@ -110,10 +110,10 @@ export default class Usecases extends Component {
 								</div>
 							</div>
 							<div className="case__body__box">
-								<img src={ex} alt="image" />
+								<img src={ex} alt="    " />
 							</div>
 							<div className="case__body__box">
-								<img src={ex} alt="image" />
+								<img src={ex} alt="    " />
 							</div>
 						</div>
 					</div>
@@ -162,10 +162,10 @@ export default class Usecases extends Component {
 								</div>
 							</div>
 							<div className="article__body__box">
-								<img src={ex} alt="ex image" />
+								<img src={ex} alt="    " />
 							</div>
 							<div className="article__body__box">
-								<img src={ex} alt="ex image" />
+								<img src={ex} alt="    " />
 							</div>
 							<div className="article__body__box">
 								<h3 className="article__body__box-title">
