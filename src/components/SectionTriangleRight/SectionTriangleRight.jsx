@@ -1,5 +1,5 @@
 import React from "react";
-import "./TriangleRight.scss";
+import "./SectionTriangleRight.scss";
 
 export default function TriangleRight(props) {
   let className = '';

@@ -9,9 +9,11 @@
 .hero_blog {
   padding: 0 $padding__collumn;
   position: relative;
-  height: rem(400);
-
+  box-sizing: border-box;
+  
   &__wrapper {
+    box-sizing: border-box;
+    width: calc(100% - $padding__collumn*2);
     position: absolute;
     display: flex;
     z-index: 1100;
@@ -63,35 +65,6 @@
   }
 }
 
-.author {
-  display: flex;
-  align-items: center;
-  gap: rem(10);
-
-  &__avatar {
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-  }
-
-  &__name,
-  &__occupation {
-    margin: 0;
-  }
-
-  &__name {
-    margin-bottom: 3px;
-  }
-
-  &__occupation {
-    font-size: 12px;
-    color: #2f4356;
-  }
-}
-
 .posts {
   position: relative;
   padding-top: rem(80);
@@ -127,56 +100,7 @@
   }
 }
 
-.post {
-  display: flex;
-  margin-bottom: rem(80);
 
-  &__content,
-  &__image {
-    flex: 1 1 50%;
-    box-sizing: border-box;
-  }
-
-  &__content {
-    padding: 0 $padding__collumn;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  &__name {
-    text-transform: uppercase;
-    &--blue {
-      color: $color__primary;
-    }
-    &--green {
-      color: $color__success;
-    }
-  }
-
-  &__title {
-    font-size: rem(28);
-    margin-top: rem(24);
-    margin-bottom: rem(28);
-  }
-
-  &__summary {
-    margin-bottom: rem(40);
-  }
-
-  &__image {
-    padding: 0 $padding__collumn;
-    display: flex;
-    justify-content: flex-end;
-    img {
-      width: 90%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: rem(20);
-    }
-  }
-}
 
 .author_box {
   display: flex;

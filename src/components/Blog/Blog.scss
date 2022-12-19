@@ -1,0 +1,52 @@
+@import '../../styles/styles.scss';
+
+.post {
+    display: flex;
+    margin-bottom: rem(80);
+  
+    &__content,
+    &__image {
+      flex: 1 1 50%;
+      box-sizing: border-box;
+    }
+  
+    &__content {
+      padding: 0 $padding__collumn;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  
+    &__name {
+      text-transform: uppercase;
+      &--blue {
+        color: $color__primary;
+      }
+      &--green {
+        color: $color__success;
+      }
+    }
+  
+    &__title {
+      font-size: rem(28);
+      margin-top: rem(24);
+      margin-bottom: rem(28);
+    }
+  
+    &__summary {
+      margin-bottom: rem(40);
+    }
+  
+    &__image {
+      padding: 0 $padding__collumn;
+      display: flex;
+      justify-content: flex-end;
+      img {
+        width: 90%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: rem(20);
+      }
+    }
+  }

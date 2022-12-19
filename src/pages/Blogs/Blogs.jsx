@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import "./Blogs.scss";
 import ReadArticle from "../../components/ReadArticle/ReadArticle";
 import blogSampleImg from "../../assets/images/blog-sample-img.png";
-import sampleAuthorAvatar from "../../assets/images/sample-author-avatar.png";
 import Button from "../../components/Button/Button";
-import TriangleRight from "../../components/TriangleRight/TriangleRight";
+import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
+import Blog from "../../components/Blog/Blog";
+import Author from "../../components/Author/Author";
 
-export default class Blog extends Component {
+export default class Blogs extends Component {
   blogs = { chip: "all" };
 
   constructor(props) {
@@ -15,26 +16,31 @@ export default class Blog extends Component {
     this.state = this.blogs;
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener("resize", this.handleResize);
   }
 
-  componentWillUnmount(){
-    window.removeEventListener('resize', this.handleResize);
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
   }
 
   handleResize() {
     const heroBlog = document.querySelector(".hero_blog");
     const heroBlogWrapper = document.querySelector(".hero_blog__wrapper");
 
-    heroBlog.style.height = window.getComputedStyle(heroBlogWrapper).height;
+    heroBlog.style.height =
+      parseInt(window.getComputedStyle(heroBlogWrapper).height.split("px")) -
+      92 +
+      "px";
   }
 
   handleRadioChange(event) {
     this.blogs.chip = event.target.id;
     this.setState(this.blogs);
   }
+
+
   render() {
     return (
       <main className="blogs">
@@ -59,21 +65,13 @@ export default class Blog extends Component {
                     <ReadArticle />
                   </div>
 
-                  <div className="author">
-                    <div className="author__avatar">
-                      <img src={sampleAuthorAvatar} alt="author avatar" />
-                    </div>
-                    <div className="author_info">
-                      <h4 className="author__name">Jane Cooper</h4>
-                      <p className="author__occupation">Marketing</p>
-                    </div>
-                  </div>
+                  <Author />
                 </div>
               </div>
               <div className="hero_graphic"></div>
             </div>
           </div>
-          <TriangleRight variant="white" />
+          <SectionTriangleRight variant="white" />
         </section>
 
         <section className="posts">
@@ -112,114 +110,9 @@ export default class Blog extends Component {
             </div>
 
             <div className="posts_view">
-              <div className="post">
-                <div className="post__content">
-                  <div className="post__content-box">
-                    <p className="post__name section_name post__name--blue">
-                      Story
-                    </p>
-                    <h2 className="post__title">
-                      Top 10 Time Management Challenges
-                    </h2>
-                    <p className="post__summary">
-                      There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour
-                    </p>
-                  </div>
-                  <div className="author_box__wrapper">
-                    <ReadArticle />
 
-                    <div className="author_box">
-                      <div className="author">
-                        <div className="author__avatar">
-                          <img src={sampleAuthorAvatar} alt="author avatar" />
-                        </div>
-                        <div className="author_info">
-                          <h4 className="author__name">Jane Cooper</h4>
-                          <p className="author__occupation">Marketing</p>
-                        </div>
-                      </div>
-                      <p className="author_box__date">December 25, 2021</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="post__image">
-                  <img src={blogSampleImg} alt="blog sample" />
-                </div>
-              </div>
-              <div className="post">
-                <div className="post__content">
-                  <div className="post__content-box">
-                    <p className="post__name section_name post__name--blue">
-                      Story
-                    </p>
-                    <h2 className="post__title">
-                      Top 10 Time Management Challenges
-                    </h2>
-                    <p className="post__summary">
-                      There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour
-                    </p>
-                  </div>
-                  <div className="author_box__wrapper">
-                    <ReadArticle />
+              <Blog/>
 
-                    <div className="author_box">
-                      <div className="author">
-                        <div className="author__avatar">
-                          <img src={sampleAuthorAvatar} alt="author avatar" />
-                        </div>
-                        <div className="author_info">
-                          <h4 className="author__name">Jane Cooper</h4>
-                          <p className="author__occupation">Marketing</p>
-                        </div>
-                      </div>
-                      <p className="author_box__date">December 25, 2021</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="post__image">
-                  <img src={blogSampleImg} alt="blog sample" />
-                </div>
-              </div>
-              <div className="post">
-                <div className="post__content">
-                  <div className="post__content-box">
-                    <p className="post__name section_name post__name--blue">
-                      Story
-                    </p>
-                    <h2 className="post__title">
-                      Top 10 Time Management Challenges
-                    </h2>
-                    <p className="post__summary">
-                      There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour
-                    </p>
-                  </div>
-                  <div className="author_box__wrapper">
-                    <ReadArticle />
-
-                    <div className="author_box">
-                      <div className="author">
-                        <div className="author__avatar">
-                          <img src={sampleAuthorAvatar} alt="author avatar" />
-                        </div>
-                        <div className="author_info">
-                          <h4 className="author__name">Jane Cooper</h4>
-                          <p className="author__occupation">Marketing</p>
-                        </div>
-                      </div>
-                      <p className="author_box__date">December 25, 2021</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="post__image">
-                  <img src={blogSampleImg} alt="blog sample" />
-                </div>
-              </div>
             </div>
 
             <div className="view_more">
@@ -231,9 +124,10 @@ export default class Blog extends Component {
               />
             </div>
           </div>
-          <TriangleRight variant="footer" />
+          <SectionTriangleRight variant="footer" />
         </section>
       </main>
     );
   }
 }
+
