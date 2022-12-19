@@ -246,7 +246,7 @@ export default class Home extends Component {
                                 <h2 className='platform__title '>Your personal information at your fingertips</h2>
                             </div>
                             <div className="platform__top-right">
-                                <Button type="outline arrow" text="Learn more about Business" />
+                                <Button type="outline arrow" text="Learn more about Personal" />
                             </div>
 
                         </div>
