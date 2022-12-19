@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import "./GlobalPrivacyPolicy.scss";
+import "./PrivacyPolicy.scss";
 
 export default class GlobalPrivacyPolicy extends Component {
 	app = {
@@ -33,8 +33,8 @@ export default class GlobalPrivacyPolicy extends Component {
 			this.app.navMobileIsOpen === true &&
 			!e.target.classList.contains("flex_box__nav") &&
 			!e.target.classList.contains("flex_box__nav__list") &&
-			!e.target.classList.contains("flex_box__nav__list-link") &&
-			e.target.tagName !== "DT" &&
+			!e.target.classList.contains("flex_box__nav__list-link") &
+				(e.target.tagName !== "DT") &&
 			e.target.tagName !== "DD" &&
 			e.target.tagName !== "A" &&
 			e.target.tagName !== "BUTTON"
@@ -90,18 +90,13 @@ export default class GlobalPrivacyPolicy extends Component {
 				<section className="hero">
 					<div className="container hero__wrapper">
 						<div className="hero__content">
-							<p className="hero__name">Privacy Policy</p>
-							<h1 className="hero__title">Global Privacy Policy</h1>
-							<p className="hero__description">
-								Paxform will never share your data with anyone. What’s more, no
-								one at Paxform can view or access your information.
-							</p>
-							<div className="hero__download">
+							<h1 className="hero__title">Paxform Legal</h1>
+							{/* <div className="hero__download">
 								<p className="hero__download_name">
 									Paxform Privacy Policy{" "}
 									<span className="hero__download_name-version"> v. 1.0</span>
 								</p>
-
+								
 								<a
 									className="hero__download_btn"
 									href={"#"}
@@ -109,7 +104,7 @@ export default class GlobalPrivacyPolicy extends Component {
 								>
 									Download as PDF
 								</a>
-							</div>
+							</div> */}
 						</div>
 					</div>
 					<div className="bottom_triangle bottom_triangle--white"></div>
@@ -159,6 +154,24 @@ export default class GlobalPrivacyPolicy extends Component {
 
 						<div className="flex_box__gp">
 							<div className="flex_box__content">
+								<h3 className="flex_box__content-subject">Privacy Policy</h3>
+								<div className="flex_box__content__download">
+									<p className="flex_box__content__download-name">
+										Paxform Privacy Policy
+										<span className="hero__download-names-version">
+											{" "}
+											v. 1.0
+										</span>
+									</p>
+
+									<a
+										className="flex_box__content__download-btn"
+										href={"#"}
+										download={"LOGO.svg"}
+									>
+										Download as PDF
+									</a>
+								</div>
 								(“Products”) care about how their information is collected,
 								used, processed, transferred, stored, and shared. This Global
 								Privacy Policy describes Bynder’s commitment to protecting your
@@ -193,11 +206,11 @@ export default class GlobalPrivacyPolicy extends Component {
 								sub-processor of data, that activity is generally governed by a
 								Data Processing Agreement.
 							</div>
-							<h2 className="flex_box__container-title">
+							<h3 className="flex_box__content-title">
 								1. What We Collect and How We Use It
-							</h2>
+							</h3>
 
-							<h3 className="flex_box__content-title"> 1.1 website</h3>
+							<h4 className="flex_box__content-sub"> 1.1 website</h4>
 							<div className="flex_box__content-description">
 								This Global Privacy Policy provides information on how Bynder
 								handles data as a data controller, meaning all data we process
@@ -206,13 +219,13 @@ export default class GlobalPrivacyPolicy extends Component {
 								Data Processing Agreement.
 							</div>
 
-							<h2 className="flex_box__container-title">
-								2. Personal Data Retention and Security
-							</h2>
-
 							<h3 className="flex_box__content-title">
-								2.1 Retention of Personal Data
+								2. Personal Data Retention and Security
 							</h3>
+
+							<h4 className="flex_box__content-sub">
+								2.1 Retention of Personal Data
+							</h4>
 							<div className="flex_box__content-description">
 								Data security is a matter of critical importance. Bynder uses a
 								wide range of security measures to safeguard your data against
@@ -225,12 +238,12 @@ export default class GlobalPrivacyPolicy extends Component {
 								</strong>
 							</div>
 
-							<h2 className="flex_box__container-title">
-								3. Your Data and Your Rights
-							</h2>
 							<h3 className="flex_box__content-title">
-								2.1 Retention of Personal Data
+								3. Your Data and Your Rights
 							</h3>
+							<h4 className="flex_box__content-sub">
+								2.1 Retention of Personal Data
+							</h4>
 							<div className="flex_box__content-description">
 								As a general matter, depending on local data protection laws,
 								you have rights that may include: <br />
