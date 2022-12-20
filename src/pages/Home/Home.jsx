@@ -9,7 +9,6 @@ import { Autoplay } from "swiper";
 import { ReactComponent as HeroRight } from '../../assets/images/large-hero.svg';
 import { ReactComponent as CertificateIllustrator } from '../../assets/images/certificate-illustrator.svg';
 
-
 import flipreach from '../../assets/images/flipreach.svg';
 import amazon from '../../assets/images/amazon.svg';
 import flowbase from '../../assets/images/flowbase.svg';
@@ -34,16 +33,15 @@ import securityPolicy from '../../assets/images/security-policy.svg';
 import information from '../../assets/images/all information.svg';
 import mostForms from '../../assets/images/most forms.svg';
 
-// Import Swiper styles
+import Testimonial from '../../components/Testimonial/Testimonial';
+import GetStarted from '../../components/GetStarted/GetStarted';
+import { SCREEN_SIZE } from '../../configurations/configurations';
+
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "swiper/scss/navigation";
 
 import './Home.scss';
-
-import Testimonial from '../../components/Testimonial/Testimonial';
-import GetStarted from '../../components/GetStarted/GetStarted';
-import { SCREEN_SIZE } from '../../configurations/configurations';
 
 
 const businessPlatform = [

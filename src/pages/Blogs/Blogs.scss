@@ -10,10 +10,11 @@
   padding: 0 $padding__collumn;
   position: relative;
   box-sizing: border-box;
-  
+  height: rem(420);
+
   &__wrapper {
     box-sizing: border-box;
-    width: calc(100% - $padding__collumn*2);
+    width: calc(100% - $padding__collumn * 2);
     position: absolute;
     display: flex;
     z-index: 1100;
@@ -62,6 +63,8 @@
   &__summary {
     margin-bottom: rem(40);
     margin-top: 0;
+    
+    @include resetSummary;
   }
 }
 
@@ -99,8 +102,6 @@
     }
   }
 }
-
-
 
 .author_box {
   display: flex;

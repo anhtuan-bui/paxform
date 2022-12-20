@@ -54,3 +54,17 @@
     }
   }
 }
+
+@mixin resetSummary {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: rem(28);
+
+  > * {
+    color: $color_main__text;
+    text-decoration: none;
+    font-weight: normal;
+  }
+}
