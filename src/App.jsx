@@ -30,7 +30,9 @@ function App() {
       getToken();
     }, MINUTE_MS);
   
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [])
 
   return (

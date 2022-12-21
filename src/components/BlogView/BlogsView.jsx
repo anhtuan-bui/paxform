@@ -19,13 +19,13 @@ export default function BlogsView() {
       after: null,
     },
     notifyOnNetworkStatusChange: true,
-    fetchPolicy: "no-cache",
+    fetchPolicy: "cache-and-network",
     nextFetchPolicy: "network-only"
   });
 
   if (!data && loading) return <p>Loading...</p>;
 
-  if (error) return <p>Error: {error}</p>;
+  if (error) return <p>An error occured</p>;
 
   if (!data) {
     return <p>No posts yet</p>;

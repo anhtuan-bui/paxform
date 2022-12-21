@@ -104,7 +104,9 @@ export default class Blogs extends Component {
 
 const HeroBlogInfo = () => {
   const { loading, error, data } = useQuery(GET_POSTS, {
-    variables: {first: 1, after: null}
+    variables: {first: 1, after: null},
+    notifyOnNetworkStatusChange:true,
+    fetchPolicy: "cache-and-network"
   });
 
   if (loading) return <p>Loading...</p>;
