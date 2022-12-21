@@ -6,13 +6,13 @@ import Layout from "./pages/Layout/Layout";
 import FAQ from "./pages/FAQ/FAQ";
 // import Resources from "./pages/Resources/Resources";
 import NotFound from "./pages/NotFound/NotFound";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 
 import { ApolloProvider } from "@apollo/client/react";
 import client from "./configurations/apollo";
 import GlobalPrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import SecurityPolicy from "./pages/LegalDetail/LegalDetail";
-import { LOGIN_CLIENT } from "./lib/graphqlQuery";
+import getToken from "./lib/clientToken";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
 const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
@@ -20,36 +20,18 @@ const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
 const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
 
-const parseJwt = (token) => {
-  try {
-    return JSON.parse(window.atob(token.split(".")[1]));
-  } catch (e) {
-    return null;
-  }
-};
 
-const login = () => {
-  client
-    .mutate({ mutation: LOGIN_CLIENT })
-    .then((result) =>
-      localStorage.setItem("clientToken", result.data.login.authToken)
-    );
-};
-
-const getToken = () => {
-  let token = localStorage.getItem("clientToken");
-  if (token) {
-    const decodedToken = parseJwt(token);
-    if (decodedToken.exp < Date.now() / 1000) {
-      login();
-    }
-  } else {
-    login();
-  }
-};
-
-const App = () => {
+function App() {
+  const MINUTE_MS = 250000;
+  
   getToken();
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getToken();
+    }, MINUTE_MS);
+  
+    return () => clearInterval(interval);
+  }, [])
 
   return (
     <ApolloProvider client={client}>
@@ -61,22 +43,22 @@ const App = () => {
               <Route path="personal" element={<Personal />} />
               <Route path="faq" element={<FAQ />} />
 
-              <Route path="resources" element={<Resources />} />
-              <Route path="blogs" element={<Blogs />} />
-              <Route
-                path="global-privacy-policy"
-                element={<GlobalPrivacyPolicy />}
-              />
-              <Route path="security-policy" element={<SecurityPolicy />} />
-              <Route path="not-found" element={<NotFound />} />
-              <Route path="usecases" element={<UseCases />} />
-              {/* <Route path="*" element={<NotFound />} /> */}
-            </Route>
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
+						<Route path="resources" element={<Resources />} />
+						<Route path="blogs" element={<Blogs />} />
+						<Route
+							path="global-privacy-policy"
+							element={<GlobalPrivacyPolicy />}
+						/>
+						<Route path="security-policy" element={<SecurityPolicy />} />
+						<Route path="not-found" element={<NotFound />} />
+						<Route path="usecases" element={<UseCases />} />
+						{/* <Route path="*" element={<NotFound />} /> */}
+					</Route>
+				</Routes>
+			</Suspense>
+		</BrowserRouter>
     </ApolloProvider>
-  );
-};
+	);
+}
 
 export default App;

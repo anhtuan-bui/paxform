@@ -5,18 +5,18 @@ import BlogCard from "../BlogCard/BlogCard";
 import Button from "../Button/Button";
 import "./BlogsView.scss";
 
-const BATCH_SIZE = 1;
+const BATCH_SIZE = 5;
 
 export default function BlogsView() {
-  const firstPost = useQuery(GET_POSTS, {
-    variables: { first: 1, after: null },
-    notifyOnNetworkStatusChange: true,
-  });
+  // const firstPost = useQuery(GET_POSTS, {
+  //   variables: { first: 1, after: null },
+  //   notifyOnNetworkStatusChange: true,
+  // });
 
   const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
     variables: {
       first: BATCH_SIZE,
-      after: firstPost.data?.posts.pageInfo.endCursor,
+      after: null,
     },
     notifyOnNetworkStatusChange: true,
   });
@@ -34,9 +34,9 @@ export default function BlogsView() {
   return (
     <Fragment>
       <div className="posts_view">
-        {posts.map((post, index) => (
-          <BlogCard key={index} blog={post} />
-        ))}
+        {posts.map(
+          (post, index) => (index !== 0) ? <BlogCard key={index} blog={post} />:''
+        )}
       </div>
       <div className="view_more">
         {hasNextPost ? (
@@ -47,9 +47,7 @@ export default function BlogsView() {
             color="green"
             onClick={(e) => {
               e.preventDefault();
-              fetchMore({
-                variables: { after: data.posts.pageInfo.endCursor },
-              });
+              
             }}
           />
         ) : (

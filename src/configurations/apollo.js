@@ -2,7 +2,6 @@ import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { relayStylePagination } from "@apollo/client/utilities";
 
-
 const httpLink = createHttpLink({
   uri: "https://v1.paxfolio.com/graphql",
 });
@@ -22,7 +21,7 @@ const cache = new InMemoryCache({
   typePolicies: {
     Query: {
       fields: {
-        posts: relayStylePagination(),
+        posts: relayStylePagination()
       },
     },
   },
@@ -31,7 +30,7 @@ const cache = new InMemoryCache({
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: cache,
+  cache: new InMemoryCache(),
 });
 
 export default client;
