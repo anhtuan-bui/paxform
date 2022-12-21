@@ -91,20 +91,6 @@ export default class GlobalPrivacyPolicy extends Component {
 					<div className="container hero__wrapper">
 						<div className="hero__content">
 							<h1 className="hero__title">Paxform Legal</h1>
-							{/* <div className="hero__download">
-								<p className="hero__download_name">
-									Paxform Privacy Policy{" "}
-									<span className="hero__download_name-version"> v. 1.0</span>
-								</p>
-								
-								<a
-									className="hero__download_btn"
-									href={"#"}
-									download={"LOGO.svg"}
-								>
-									Download as PDF
-								</a>
-							</div> */}
 						</div>
 					</div>
 					<div className="bottom_triangle bottom_triangle--white"></div>
