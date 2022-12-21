@@ -5,7 +5,7 @@ import BlogCard from "../BlogCard/BlogCard";
 import Button from "../Button/Button";
 import "./BlogsView.scss";
 
-const BATCH_SIZE = 5;
+const BATCH_SIZE = 2;
 
 export default function BlogsView() {
   // const firstPost = useQuery(GET_POSTS, {
@@ -19,9 +19,12 @@ export default function BlogsView() {
       after: null,
     },
     notifyOnNetworkStatusChange: true,
+    fetchPolicy: "no-cache",
+    nextFetchPolicy: "network-only"
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (!data && loading) return <p>Loading...</p>;
+
   if (error) return <p>Error: {error}</p>;
 
   if (!data) {
@@ -29,25 +32,30 @@ export default function BlogsView() {
   }
 
   const posts = data.posts.edges.map((edge) => edge.node);
-  const hasNextPost = data.posts.pageInfo.hasNextPage;
+  const postInfo = data.posts.pageInfo;
 
   return (
     <Fragment>
       <div className="posts_view">
         {posts.map(
-          (post, index) => (index !== 0) ? <BlogCard key={index} blog={post} />:''
+          (post, index) => index !== 0 && <BlogCard key={index} blog={post} />
         )}
       </div>
       <div className="view_more">
-        {hasNextPost ? (
+        {postInfo.hasNextPage ? (
           <Button
-            text="View all posts"
+            text= {loading? "Loading..." : "View all posts"}
             type="arrow outline"
             arrowVariant="down"
             color="green"
+            disabled={loading}
             onClick={(e) => {
               e.preventDefault();
-              
+              fetchMore({
+                variables: {
+                  after: postInfo.endCursor
+                }
+              })
             }}
           />
         ) : (

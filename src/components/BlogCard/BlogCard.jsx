@@ -3,10 +3,12 @@ import Author from "../Author/Author";
 import ReadArticle from "../ReadArticle/ReadArticle";
 import "./BlogCard.scss";
 
-const Blog = ({ blog }) => {
+const Blog = (props) => {
+  const blog = props.blog
+
   const firstParagraph = blog.content.split("</p>")[0].split("<p>")[1];
   return (
-    <div className="post">
+    <div className={`post ${props.className}`}>
       <div className="post__content">
         <div className="post__content-box">
           <p className="post__name section_name post__name--blue">Story</p>
