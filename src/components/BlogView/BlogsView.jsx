@@ -5,13 +5,9 @@ import BlogCard from "../BlogCard/BlogCard";
 import Button from "../Button/Button";
 import "./BlogsView.scss";
 
-const BATCH_SIZE = 2;
+const BATCH_SIZE = 5;
 
 export default function BlogsView() {
-  // const firstPost = useQuery(GET_POSTS, {
-  //   variables: { first: 1, after: null },
-  //   notifyOnNetworkStatusChange: true,
-  // });
 
   const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
     variables: {
@@ -19,8 +15,6 @@ export default function BlogsView() {
       after: null,
     },
     notifyOnNetworkStatusChange: true,
-    fetchPolicy: "cache-and-network",
-    nextFetchPolicy: "network-only"
   });
 
   if (!data && loading) return <p>Loading...</p>;
