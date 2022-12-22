@@ -11,6 +11,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { ApolloProvider } from "@apollo/client/react";
 import client from "./configurations/apollo";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
+import Legal from "./pages/Legal/Legal";
 import LegalDetail from "./pages/LegalDetail/LegalDetail";
 import getToken from "./lib/clientToken";
 
@@ -45,6 +46,7 @@ function App() {
 							<Route path="resources" element={<Resources />} />
 							<Route path="blogs" element={<Blogs />} />
 							<Route path="privacy-policy" element={<PrivacyPolicy />} />
+							<Route path="legal" element={<Legal />} />
 							<Route path="legal-detail" element={<LegalDetail />} />
 							<Route path="not-found" element={<NotFound />} />
 							<Route path="usecases" element={<UseCases />} />

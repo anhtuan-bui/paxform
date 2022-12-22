@@ -38,7 +38,7 @@ const features = [
 export default class SecurityPolicy extends Component {
 	render() {
 		return (
-			<main className="security_privacy">
+			<main className="legal_detail">
 				<section className="hero">
 					<div className="container hero__wrapper">
 						<div className="hero__content">
