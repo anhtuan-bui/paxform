@@ -11,6 +11,7 @@ export default class Usecases extends Component {
 	render() {
 		return (
 			<main className="usecases usecases-hospitality">
+				{/* usecases-retail, usecases-medicare , usecases-education */}
 				<section className="hero" background="light">
 					<div className="container hero__wrapper">
 						<div className="hero__content">
