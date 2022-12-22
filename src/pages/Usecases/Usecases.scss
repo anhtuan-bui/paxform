@@ -180,10 +180,27 @@ $color_purple: #2d4bb6;
                 }
             }
             @include medium {
-                display: block;
+                grid-template-columns: repeat(1, 1fr);
                 &__box {
-                    display: block;
-                    margin-top: rem(30);
+                    margin: rem(30) auto 0;
+                    &:nth-child(1) {
+                        order: 1;
+                    }
+                    &:nth-child(2) {
+                        order: 2;
+                    }
+                    &:nth-child(3) {
+                        order: 3;
+                    }
+                    &:nth-child(4) {
+                        order: 5;
+                    }
+                    &:nth-child(5) {
+                        order: 4;
+                    }
+                    &:nth-child(6) {
+                        order: 6;
+                    }
                     &-title {
                         margin-top: 0;
                     }
@@ -296,6 +313,20 @@ $color_purple: #2d4bb6;
                 grid-template-columns: repeat(1, 1fr);
             }
             &__box {
+                @include medium {
+                    &:nth-child(1) {
+                        order: 1;
+                    }
+                    &:nth-child(2) {
+                        order: 2;
+                    }
+                    &:nth-child(3) {
+                        order: 4;
+                    }
+                    &:nth-child(4) {
+                        order: 3;
+                    }
+                }
                 &-title {
                     padding: 0 rem(43) rem(24);
                     font-size: rem(28);
