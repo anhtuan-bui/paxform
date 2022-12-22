@@ -8,10 +8,6 @@ import "./BlogsView.scss";
 const BATCH_SIZE = 5;
 
 export default function BlogsView() {
-  // const firstPost = useQuery(GET_POSTS, {
-  //   variables: { first: 1, after: null },
-  //   notifyOnNetworkStatusChange: true,
-  // });
 
   const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
     variables: {
@@ -21,33 +17,39 @@ export default function BlogsView() {
     notifyOnNetworkStatusChange: true,
   });
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (!data && loading) return <p>Loading...</p>;
+
+  if (error) return <p>An error occured</p>;
 
   if (!data) {
     return <p>No posts yet</p>;
   }
 
   const posts = data.posts.edges.map((edge) => edge.node);
-  const hasNextPost = data.posts.pageInfo.hasNextPage;
+  const postInfo = data.posts.pageInfo;
 
   return (
     <Fragment>
       <div className="posts_view">
         {posts.map(
-          (post, index) => (index !== 0) ? <BlogCard key={index} blog={post} />:''
+          (post, index) => index !== 0 && <BlogCard key={index} blog={post} />
         )}
       </div>
       <div className="view_more">
-        {hasNextPost ? (
+        {postInfo.hasNextPage ? (
           <Button
-            text="View all posts"
+            text= {loading? "Loading..." : "View all posts"}
             type="arrow outline"
             arrowVariant="down"
             color="green"
+            disabled={loading}
             onClick={(e) => {
               e.preventDefault();
-              
+              fetchMore({
+                variables: {
+                  after: postInfo.endCursor
+                }
+              })
             }}
           />
         ) : (

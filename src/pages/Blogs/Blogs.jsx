@@ -104,7 +104,7 @@ export default class Blogs extends Component {
 
 const HeroBlogInfo = () => {
   const { loading, error, data } = useQuery(GET_POSTS, {
-    variables: {first: 1, after: null}
+    variables: {first: 1, after: null},
   });
 
   if (loading) return <p>Loading...</p>;

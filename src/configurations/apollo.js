@@ -30,7 +30,7 @@ const cache = new InMemoryCache({
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: cache,
 });
 
 export default client;
