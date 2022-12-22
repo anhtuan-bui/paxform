@@ -29,10 +29,7 @@ export default class Footer extends Component {
 							<h1>SERVICES</h1>
 							<ul>
 								<li>
-									<a href="https://">Personal</a>
-								</li>
-								<li>
-									<a href="https://">Business</a>
+									<a href="/contact-us">Contact Us*</a>
 								</li>
 								<li>
 									<a href="/legal">Legal*</a>

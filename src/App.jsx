@@ -13,6 +13,7 @@ import client from "./configurations/apollo";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import Legal from "./pages/Legal/Legal";
 import LegalDetail from "./pages/LegalDetail/LegalDetail";
+import ContactUs from "./pages/ContactUs/ContactUs";
 import getToken from "./lib/clientToken";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
@@ -49,7 +50,8 @@ function App() {
 							<Route path="legal" element={<Legal />} />
 							<Route path="legal-detail" element={<LegalDetail />} />
 							<Route path="not-found" element={<NotFound />} />
-							<Route path="usecases" element={<UseCases />} />
+							<Route path="use-cases" element={<UseCases />} />
+							<Route path="contact-us" element={<ContactUs />} />
 							{/* <Route path="*" element={<NotFound />} /> */}
 						</Route>
 					</Routes>
