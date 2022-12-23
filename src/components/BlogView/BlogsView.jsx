@@ -5,16 +5,23 @@ import BlogCard from "../BlogCard/BlogCard";
 import Button from "../Button/Button";
 import "./BlogsView.scss";
 
-const BATCH_SIZE = 5;
+const BATCH_SIZE = 1;
 
-export default function BlogsView() {
+export default function BlogsView(props) {
+
+  const firstPost = useQuery(GET_POSTS, {
+    variables: { first: 1, after: null },
+    fetchPolicy: 'no-cache'
+  });
 
   const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
     variables: {
       first: BATCH_SIZE,
-      after: null,
+      after: firstPost.data?.posts?.pageInfo.endCursor,
     },
     notifyOnNetworkStatusChange: true,
+    fetchPolicy: 'network-only',
+    nextFetchPolicy: "cache-first"
   });
 
   if (!data && loading) return <p>Loading...</p>;
@@ -24,21 +31,31 @@ export default function BlogsView() {
   if (!data) {
     return <p>No posts yet</p>;
   }
-
-  const posts = data.posts.edges.map((edge) => edge.node);
+  
+  let posts = data.posts.edges
+    .map((edge) => edge.node);
   const postInfo = data.posts.pageInfo;
+
+  if (props.chip !== "all") {
+    posts = posts.filter(
+      (post) => post.categories.edges[0].node.name.toLowerCase() === props.chip.toLowerCase()
+    );
+
+  } else {
+    posts = data.posts.edges.map((edge) => edge.node);
+  }
 
   return (
     <Fragment>
       <div className="posts_view">
-        {posts.map(
-          (post, index) => index !== 0 && <BlogCard key={index} blog={post} />
-        )}
+        {posts.map((post, index) => (
+          <BlogCard key={index} blog={post} />
+        ))}
       </div>
       <div className="view_more">
         {postInfo.hasNextPage ? (
           <Button
-            text= {loading? "Loading..." : "View all posts"}
+            text={loading ? "Loading..." : "View all posts"}
             type="arrow outline"
             arrowVariant="down"
             color="green"
@@ -47,9 +64,9 @@ export default function BlogsView() {
               e.preventDefault();
               fetchMore({
                 variables: {
-                  after: postInfo.endCursor
-                }
-              })
+                  after: postInfo.endCursor,
+                },
+              });
             }}
           />
         ) : (

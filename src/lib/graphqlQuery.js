@@ -2,43 +2,50 @@ import { gql } from "@apollo/client";
 
 const GET_POSTS = gql`
   query GetPosts($first: Int, $after: String) {
-    posts(first: $first, after: $after) {
-      edges {
-        node {
-          author {
-            node {
-              avatar {
-                url
-              }
-              roles {
-                edges {
-                  node {
-                    displayName
-                  }
+  posts(first: $first, after: $after) {
+    edges {
+      node {
+        author {
+          node {
+            avatar {
+              url
+            }
+            roles {
+              edges {
+                node {
+                  displayName
                 }
               }
-              lastName
-              firstName
-              username
             }
+            lastName
+            firstName
+            username
           }
-          title
-          content
-          date
-          id
-          featuredImage {
+        }
+        title
+        content
+        date
+        id
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        categories {
+          edges {
             node {
-              sourceUrl
+              name
             }
           }
         }
       }
-      pageInfo {
-        endCursor
-        hasNextPage
-      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
     }
   }
+}
 `;
 
 const LOGIN_CLIENT = gql`
