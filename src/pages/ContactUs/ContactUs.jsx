@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./ContactUs.scss";
+import Button from "../../components/Button/Button";
 
 export default class ContactUs extends Component {
 	render() {
@@ -15,31 +16,43 @@ export default class ContactUs extends Component {
 								form beside and we will respond immediately.
 							</p>
 						</div>
-					</div>
-					<div className="form_wrap">
-						<form>
-							<label>
-								<strong>Full name</strong>
-								<input type="text" placeholder="John Doe" />
-							</label>
-							<label>
-								<strong>Email</strong>
-								<input type="text" placeholder="jondoe@email.com" />
-							</label>
-							<label>
-								<strong>Company name</strong>
-								<input type="text" placeholder="acme corp" />
-							</label>
-							<label>
-								<strong>Company size</strong>
-								<input type="text" placeholder="Select a range of employees" />
-							</label>
-							<label>
-								<strong>Message</strong>
-								<textarea placeholder="Tell your project or anything else we can help"></textarea>
-							</label>
-							<button type="submit">Send Messages</button>
-						</form>
+						<div className="form__box">
+							<form>
+								<label>
+									<strong>Full name</strong>
+									<input type="text" placeholder="John Doe" name="" />
+								</label>
+								<label>
+									<strong>Email</strong>
+									<input type="text" placeholder="jondoe@email.com" name="" />
+								</label>
+								<label>
+									<strong>Company name</strong>
+									<input type="text" placeholder="acme corp" name="" />
+								</label>
+								<label>
+									<strong>Company size</strong>
+									<select name="">
+										<option value="" disabled selected>
+											Select a range of employees
+										</option>
+										<option value="100">1 - 100</option>
+										<option value="200">101 - 200</option>
+										<option value="300">201 - 300</option>
+										<option value="400">Over 300</option>
+									</select>
+								</label>
+								<label>
+									<strong>Message</strong>
+									<textarea placeholder="Tell your project or anything else we can help"></textarea>
+								</label>
+								<Button
+									text="Send Message"
+									type="flat arrow submit"
+									color="white"
+								/>
+							</form>
+						</div>
 					</div>
 					<div className="bottom_triangle bottom_triangle--white"></div>
 				</section>
@@ -47,9 +60,9 @@ export default class ContactUs extends Component {
 					<div className="container ">
 						<span className="help-name">GET IN TOUCH</span>
 						<h2 className="help-title">Our teams are here to help</h2>
-						<div className="help__wrap">
+						<div className="help__wrapper">
 							<div className="help__box">
-								<em className="help__box-icon">icon</em>
+								<em className="help__box-icon"></em>
 								<strong className="help__box-title">
 									Text us 309-923-1230
 								</strong>
@@ -61,7 +74,7 @@ export default class ContactUs extends Component {
 								</a>
 							</div>
 							<div className="help__box">
-								<em className="help__box-icon">icon</em>
+								<em className="help__box-icon"></em>
 								<strong className="help__box-title">Send us an email</strong>
 								<p className="help__box-desc">We’d love to hear from you!</p>
 								<a className="help__box-link" href="/">
@@ -69,7 +82,7 @@ export default class ContactUs extends Component {
 								</a>
 							</div>
 							<div className="help__box">
-								<em className="help__box-icon">icon</em>
+								<em className="help__box-icon"></em>
 								<strong className="help__box-title">
 									Call us at 1-893-909-7845
 								</strong>
@@ -81,7 +94,7 @@ export default class ContactUs extends Component {
 								</a>
 							</div>
 							<div className="help__box">
-								<em className="help__box-icon">icon</em>
+								<em className="help__box-icon"></em>
 								<strong className="help__box-title">
 									Chat with a specialist
 								</strong>
