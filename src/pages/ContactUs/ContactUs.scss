@@ -16,6 +16,9 @@ $color_green: #20976c;
             padding-bottom: rem(190);
             text-align: center;
             box-sizing: border-box;
+            @include large {
+                padding-right: 0;
+            }
         }
         &__name {
             margin: rem(20) 0;
@@ -35,6 +38,10 @@ $color_green: #20976c;
         &__content {
             text-align: left;
             color: $color_white;
+            @include large {
+                padding: 0 5%;
+                text-align: center;
+            }
             h1,
             p {
                 max-width: 100%;
@@ -75,7 +82,11 @@ $color_green: #20976c;
             box-shadow: 0px 20px 30px rgba(3, 26, 48, 0.08);
             text-align: left;
             z-index: 1001;
-            @include medium {}
+            @include large {
+                top: 56%;
+                right: 16%;
+                width: 60%;
+            }
             &>form {
                 &>label {
                     display: block;
@@ -124,6 +135,9 @@ $color_green: #20976c;
         position: relative;
         padding: rem(200) 0 rem(170);
         background: $color_white;
+        @include large {
+            padding-top: 47%;
+        }
         &-name {
             display: block;
             font-size: rem(14);
