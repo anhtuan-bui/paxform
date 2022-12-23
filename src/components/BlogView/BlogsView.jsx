@@ -5,7 +5,7 @@ import BlogCard from "../BlogCard/BlogCard";
 import Button from "../Button/Button";
 import "./BlogsView.scss";
 
-const BATCH_SIZE = 5;
+const BATCH_SIZE = 1;
 
 export default function BlogsView() {
   // const firstPost = useQuery(GET_POSTS, {
@@ -34,9 +34,9 @@ export default function BlogsView() {
   return (
     <Fragment>
       <div className="posts_view">
-        {posts.map(
-          (post, index) => (index !== 0) ? <BlogCard key={index} blog={post} />:''
-        )}
+        {posts.map((post, index) => (
+          <BlogCard key={index} blog={post} />
+        ))}
       </div>
       <div className="view_more">
         {hasNextPost ? (
@@ -47,7 +47,12 @@ export default function BlogsView() {
             color="green"
             onClick={(e) => {
               e.preventDefault();
-              
+              fetchMore({
+                variables: {
+                  first: BATCH_SIZE,
+                  after: data.posts.pageInfo.endCursor,
+                },
+              });
             }}
           />
         ) : (
