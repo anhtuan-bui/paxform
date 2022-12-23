@@ -5,9 +5,9 @@ import BlogCard from "../BlogCard/BlogCard";
 import Button from "../Button/Button";
 import "./BlogsView.scss";
 
-const BATCH_SIZE = 1;
+const BATCH_SIZE = 5;
 
-export default function BlogsView() {
+export default function BlogsView(props) {
   const firstPost = useQuery(GET_POSTS, {
     variables: { first: 1, after: null },
     notifyOnNetworkStatusChange: true,
@@ -22,14 +22,26 @@ export default function BlogsView() {
   });
 
   if (!data && loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+
+  if (error) return <p>Error</p>;
 
   if (!data) {
     return <p>No posts yet</p>;
   }
 
-  const posts = data.posts.edges.map((edge) => edge.node);
-  const hasNextPost = data.posts.pageInfo.hasNextPage;
+  let posts = data.posts.edges.map((edge) => edge.node);
+  const postInfo = data.posts.pageInfo;
+
+  if (props.chip.toLowerCase() !== "all") {
+    posts = posts.filter(
+      (post) =>
+        post.categories.edges[0].node.name.toLowerCase() ===
+        props.chip.toLowerCase()
+    );
+  } else {
+    posts = data.posts.edges.map((edge) => edge.node);
+  }
+
 
   return (
     <Fragment>
@@ -39,18 +51,19 @@ export default function BlogsView() {
         ))}
       </div>
       <div className="view_more">
-        {hasNextPost ? (
+        {postInfo.hasNextPage ? (
           <Button
-            text="View all posts"
+            text={loading ? "Loading..." : "View all posts"}
             type="arrow outline"
             arrowVariant="down"
             color="green"
+            disabled={loading}
             onClick={(e) => {
               e.preventDefault();
               fetchMore({
                 variables: {
                   first: BATCH_SIZE,
-                  after: data.posts.pageInfo.endCursor,
+                  after: postInfo.endCursor,
                 },
                 updateQuery: (prev, { fetchMoreResult }) => {
                   if (!fetchMoreResult) return prev;

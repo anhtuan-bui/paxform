@@ -28,9 +28,9 @@ function App() {
     const interval = setInterval(() => {
       getToken();
     }, MINUTE_MS);
-
+  
     return () => clearInterval(interval);
-  }, []);
+  }, [])
 
   return (
     <ApolloProvider client={client}>

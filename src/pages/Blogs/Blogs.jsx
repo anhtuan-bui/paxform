@@ -5,12 +5,11 @@ import SectionTriangleRight from "../../components/SectionTriangleRight/SectionT
 import Author from "../../components/Author/Author";
 import BlogsView from "../../components/BlogView/BlogsView";
 import { useQuery } from "@apollo/client";
-import { GET_POSTS } from "../../lib/graphqlQuery";
-
-var blogEndCursor = null;
+import { GET_CATEGORIES, GET_POSTS } from "../../lib/graphqlQuery";
+import client from "../../configurations/apollo";
 
 export default class Blogs extends Component {
-  blogs = { chip: "all"};
+  blogs = { chip: "all", categories: [] };
 
   constructor(props) {
     super(props);
@@ -20,8 +19,10 @@ export default class Blogs extends Component {
   }
 
   async componentDidMount() {
+    // this.blog.firstBlogEndCursor = this.getFirstBlogEndCursor();
     // this.handleResize();
     // window.addEventListener("resize", this.handleResize);
+    await this.getCategories();
   }
 
   componentWillUnmount() {
@@ -43,6 +44,12 @@ export default class Blogs extends Component {
     this.setState(this.blogs);
   }
 
+  async getCategories() {
+    const categories = await client.query({ query: GET_CATEGORIES });
+    this.blogs.categories = categories.data.categories.edges;
+    this.setState(this.blogs);
+  }
+
   render() {
     return (
       <main className="blogs">
@@ -61,39 +68,23 @@ export default class Blogs extends Component {
         <section className="posts">
           <div className="container">
             <div className="chips">
-              <div className="chip">
-                <input
-                  id="all"
-                  type="radio"
-                  name="radio"
-                  onChange={this.handleRadioChange}
-                  checked={this.state.chip === "all"}
-                />
-                <label htmlFor="all">All</label>
-              </div>
-              <div className="chip">
-                <input
-                  id="insight"
-                  type="radio"
-                  name="radio"
-                  onChange={this.handleRadioChange}
-                  checked={this.state.chip === "insight"}
-                />
-                <label htmlFor="insight">Insight</label>
-              </div>
-              <div className="chip">
-                <input
-                  id="update"
-                  type="radio"
-                  name="radio"
-                  onChange={this.handleRadioChange}
-                  checked={this.state.chip === "update"}
-                />
-                <label htmlFor="update">Update</label>
-              </div>
+              {this.state.categories.map((category, index) => (
+                category.node.name.toLowerCase() !== "uncategorised" && <div className="chip" key={index}>
+                  <input
+                    id={category.node.name}
+                    type="radio"
+                    name="radio"
+                    onChange={this.handleRadioChange}
+                    checked={this.state.chip === category.node.name}
+                  />
+                  <label htmlFor={category.node.name}>
+                    {category.node.name}
+                  </label>
+                </div>
+              ))}
             </div>
 
-            <BlogsView firstPost={blogEndCursor}/>
+            <BlogsView chip={this.state.chip} />
           </div>
           <SectionTriangleRight variant="footer" />
         </section>
@@ -104,7 +95,8 @@ export default class Blogs extends Component {
 
 const HeroBlogInfo = () => {
   const { loading, error, data } = useQuery(GET_POSTS, {
-    variables: {first: 1, after: null}
+    variables: { first: 1, after: null },
+    fetchPolicy: "no-cache",
   });
 
   if (loading) return <p>Loading...</p>;
@@ -114,8 +106,6 @@ const HeroBlogInfo = () => {
 
   // Get the first paragraph of the blog
   const firstParagraph = blog.content.split("</p>")[0].split("<p>")[1];
-
-  blogEndCursor = data.posts.pageInfo.endCursor;
 
   return (
     <Fragment>
