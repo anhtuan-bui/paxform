@@ -5,10 +5,8 @@ import BlogCard from "../BlogCard/BlogCard";
 import Button from "../Button/Button";
 import "./BlogsView.scss";
 
-const BATCH_SIZE = 1;
-
+const BATCH_SIZE = 5;
 export default function BlogsView(props) {
-
   const firstPost = useQuery(GET_POSTS, {
     variables: { first: 1, after: null },
     fetchPolicy: 'no-cache'
@@ -62,11 +60,7 @@ export default function BlogsView(props) {
             disabled={loading}
             onClick={(e) => {
               e.preventDefault();
-              fetchMore({
-                variables: {
-                  after: postInfo.endCursor,
-                },
-              });
+              
             }}
           />
         ) : (
