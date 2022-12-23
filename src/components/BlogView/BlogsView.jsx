@@ -8,20 +8,20 @@ import "./BlogsView.scss";
 const BATCH_SIZE = 1;
 
 export default function BlogsView() {
-  // const firstPost = useQuery(GET_POSTS, {
-  //   variables: { first: 1, after: null },
-  //   notifyOnNetworkStatusChange: true,
-  // });
+  const firstPost = useQuery(GET_POSTS, {
+    variables: { first: 1, after: null },
+    notifyOnNetworkStatusChange: true,
+  });
 
   const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
     variables: {
       first: BATCH_SIZE,
-      after: null,
+      after: firstPost.data?.posts.pageInfo.endCursor,
     },
     notifyOnNetworkStatusChange: true,
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (!data && loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
   if (!data) {
@@ -51,6 +51,20 @@ export default function BlogsView() {
                 variables: {
                   first: BATCH_SIZE,
                   after: data.posts.pageInfo.endCursor,
+                },
+                updateQuery: (prev, { fetchMoreResult }) => {
+                  if (!fetchMoreResult) return prev;
+                  return {
+                    ...prev,
+                    posts: {
+                      ...prev.posts,
+                      ...fetchMoreResult.posts,
+                      edges: [
+                        ...prev.posts.edges,
+                        ...fetchMoreResult.posts.edges,
+                      ],
+                    },
+                  };
                 },
               });
             }}
