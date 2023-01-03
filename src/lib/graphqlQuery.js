@@ -31,6 +31,13 @@ const GET_POSTS = gql`
               sourceUrl
             }
           }
+          categories {
+            edges {
+              node {
+                name
+              }
+            }
+          }
         }
       }
       pageInfo {
@@ -53,43 +60,16 @@ const LOGIN_CLIENT = gql`
   }
 `;
 
-// const GET_POSTS = gql`
-//   query GetPosts($first: Int, $after: String) {
-//     posts(first: $first, after: $after) {
-//       nodes {
-//         id
-//         title
-//         content
-//         date
-//         author {
-//           node {
-//             avatar {
-//               url
-//             }
-//             firstName
-//             lastName
-//             name
-//             roles {
-//               nodes {
-//                 displayName
-//               }
-//             }
-//             username
-//           }
-//         }
-//         featuredImage {
-//           node {
-//             sourceUrl
-//           }
-//         }
-//       }
-//       pageInfo {
-//         hasNextPage
-//         endCursor
-//       }
-//     }
-//   }
-// `;
+const GET_CATEGORIES = gql`
+  query GetCategories {
+    categories {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+  }
+`;
 
-
-export { GET_POSTS, LOGIN_CLIENT };
+export { GET_POSTS, LOGIN_CLIENT, GET_CATEGORIES };

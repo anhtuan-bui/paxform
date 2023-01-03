@@ -11,7 +11,7 @@ const Blog = (props) => {
     <div className={`post ${props.className}`}>
       <div className="post__content">
         <div className="post__content-box">
-          <p className="post__name section_name post__name--blue">Story</p>
+          <p className="post__name section_name post__name--blue">{blog.categories.edges[0].node.name || 'Story'}</p>
           <h2 className="post__title">{blog.title}</h2>
           <p
             className="post__summary"

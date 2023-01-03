@@ -45,10 +45,9 @@ function App() {
 							<Route index element={<Home />} />
 							<Route path="personal" element={<Personal />} />
 							<Route path="faq" element={<FAQ />} />
-
 							<Route path="resources" element={<Resources />} />
 							<Route path="blogs" element={<Blogs />} />
-							<Route path="privacy-policy" element={<PrivacyPolicy />} />
+							<Route path="privacy-policy" element={<PrivacyPolicy />} />{" "}
 							<Route path="legal" element={<Legal />} />
 							<Route path="legal-detail" element={<LegalDetail />} />
 							<Route path="not-found" element={<NotFound />} />
