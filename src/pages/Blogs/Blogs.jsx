@@ -80,7 +80,7 @@ export default class Blogs extends Component {
                   <label htmlFor={category.node.name}>
                     {category.node.name}
                   </label>
-                </div>
+                </div> 
               ))}
             </div>
 
