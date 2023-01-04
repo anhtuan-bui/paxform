@@ -1,0 +1,68 @@
+@import '../../styles/styles.scss';
+
+.resources {
+    &__articles {
+        flex: 1 1 50%;
+        column-count: 2;
+        column-gap: $padding__collumn;
+        height: 100%;
+
+        > :first-child, > :nth-child(3) {
+            margin-bottom: $padding__collumn;
+        }
+    }
+}
+
+.hero {
+    margin-top: rem(150);
+    &__container {
+        padding: 0 $padding__collumn;
+        display: flex;
+        gap: $padding__collumn--x2;
+    }
+
+    &__content {
+        flex: 1 1 50%;
+    }
+
+    &__name {
+        font-size: $font_size__small;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &--blue {
+            color: $color_main__blue;
+        }
+    }
+
+    &__title {
+        font-size: rem(42);
+        margin-bottom: rem(24);
+        margin-top: 0;
+
+        @include extraLarge {
+            font-size: rem(38);
+        }
+
+        @include large {
+            font-size: rem(34);
+        }
+
+        @include medium {
+            font-size: rem(42);
+        }
+
+        @include small {
+            font-size: rem(36);
+        }
+
+        @include extraSmall {
+            font-size: rem(28);
+        }
+    }
+
+    &__description {
+        margin-bottom: rem(60);
+    }
+}
