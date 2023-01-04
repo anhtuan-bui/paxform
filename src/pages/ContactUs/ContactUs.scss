@@ -97,7 +97,7 @@ $color_green: #20976c;
                 width: 60%;
             }
             @include medium {
-                top: 33%;
+                top: 36%;
                 right: 10%;
                 width: 80%;
             }
@@ -153,6 +153,12 @@ $color_green: #20976c;
         position: relative;
         padding: rem(200) 0 rem(170);
         background: $color_white;
+        @include large {
+            padding-top: rem(400);
+        }
+        @include medium {
+            padding-top: rem(100);
+        }
         @include small {}
         &-name {
             display: block;
@@ -167,6 +173,21 @@ $color_green: #20976c;
             margin: rem(24) auto rem(54);
             font-size: rem(38);
             text-align: center;
+            @include extraLarge {
+                font-size: rem(38);
+            }
+            @include large {
+                font-size: rem(34);
+            }
+            @include medium {
+                font-size: rem(42);
+            }
+            @include small {
+                font-size: rem(36);
+            }
+            @include extraSmall {
+                font-size: rem(28);
+            }
         }
         &__wrapper {
             display: grid;
@@ -182,7 +203,7 @@ $color_green: #20976c;
                 width: rem(50);
                 height: rem(50);
                 border-radius: rem(50);
-                background-image: url();
+                // background-image: url("");
                 background-repeat: no-repeat;
                 background-position: center;
                 background-color: #ddeeff;
