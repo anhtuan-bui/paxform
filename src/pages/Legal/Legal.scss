@@ -80,7 +80,7 @@ $color_grey: #2f4356;
         background-color: $color_light-grey;
         &__wrap {
             display: grid;
-            gap: rem(30);
+            // gap: rem(30);
             grid-template-columns: repeat(4, 1fr);
             grid-auto-flow: row dense;
             box-sizing: border-box;
@@ -97,6 +97,7 @@ $color_grey: #2f4356;
             padding: rem(24) rem(20);
             border-radius: rem(20);
             background-color: $color_white;
+            margin: 1rem;
             &:nth-child(1) {
                 order: 2;
             }
