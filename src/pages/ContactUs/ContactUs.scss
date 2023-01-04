@@ -97,7 +97,7 @@ $color_green: #20976c;
                 width: 60%;
             }
             @include medium {
-                top: 36%;
+                top: 40%;
                 right: 10%;
                 width: 80%;
             }
@@ -145,6 +145,11 @@ $color_green: #20976c;
                 }
                 &>.button {
                     margin-top: rem(40);
+                    @include medium {
+                        width: 100%;
+                        margin: rem(40) 0 0;
+                        padding: rem(15) 0;
+                    }
                 }
             }
         }
@@ -157,9 +162,11 @@ $color_green: #20976c;
             padding-top: rem(400);
         }
         @include medium {
-            padding-top: rem(100);
+            padding-top: rem(150);
         }
-        @include small {}
+        @include small {
+            padding-top: rem(300);
+        }
         &-name {
             display: block;
             font-size: rem(14);
@@ -173,26 +180,20 @@ $color_green: #20976c;
             margin: rem(24) auto rem(54);
             font-size: rem(38);
             text-align: center;
-            @include extraLarge {
-                font-size: rem(38);
-            }
             @include large {
                 font-size: rem(34);
             }
-            @include medium {
-                font-size: rem(42);
-            }
             @include small {
-                font-size: rem(36);
-            }
-            @include extraSmall {
-                font-size: rem(28);
+                font-size: rem(30);
             }
         }
         &__wrapper {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: rem(32) rem(30);
+            @include medium {
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
         &__box {
             background: $color_light-grey;
@@ -203,7 +204,6 @@ $color_green: #20976c;
                 width: rem(50);
                 height: rem(50);
                 border-radius: rem(50);
-                // background-image: url("");
                 background-repeat: no-repeat;
                 background-position: center;
                 background-color: #ddeeff;
@@ -231,6 +231,26 @@ $color_green: #20976c;
                 &:hover {
                     transform: all 0.3s ease-out;
                     color: $color_blue;
+                }
+            }
+            &:nth-child(1) {
+                .help__box-icon {
+                    background-image: url("../../assets/images/icon-text.svg");
+                }
+            }
+            &:nth-child(2) {
+                .help__box-icon {
+                    background-image: url("../../assets/images/icon-email.svg");
+                }
+            }
+            &:nth-child(3) {
+                .help__box-icon {
+                    background-image: url("../../assets/images/icon-call.svg");
+                }
+            }
+            &:nth-child(4) {
+                .help__box-icon {
+                    background-image: url("../../assets/images/icon-chat.svg");
                 }
             }
         }

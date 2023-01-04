@@ -91,50 +91,6 @@ $color_green: #20976c;
                         width: 50%;
                     }
                 }
-                &-parall {
-                    display: inline-block;
-                    position: absolute;
-                    transform: skewY(5deg);
-                    z-index: -1;
-                    &:nth-child(2) {
-                        top: rem(-60);
-                        left: rem(25);
-                        width: rem(120);
-                        height: rem(238);
-                        background: linear-gradient( 180deg, rgba(28, 133, 232, 0.53) -135.29%, rgba(28, 133, 232, 0) 188.24%);
-                        @include medium {
-                            top: rem(-102);
-                            left: rem(63);
-                        }
-                        @include small {
-                            top: rem(-60);
-                            left: rem(25);
-                        }
-                        @include extraSmall {
-                            top: rem(-85);
-                            left: rem(0);
-                        }
-                    }
-                    &:nth-child(3) {
-                        bottom: rem(-75);
-                        right: 0;
-                        width: rem(151);
-                        height: rem(343);
-                        background: linear-gradient( 180deg, rgba(5, 148, 89, 0.53) -363.94%, rgba(5, 148, 89, 0) 178.36%);
-                        @include medium {
-                            bottom: rem(-80);
-                            right: rem(50);
-                        }
-                        @include small {
-                            bottom: rem(-80);
-                            right: rem(50);
-                        }
-                        @include extraSmall {
-                            bottom: rem(-60);
-                            right: rem(0);
-                        }
-                    }
-                }
             }
             &__content {
                 box-sizing: border-box;
