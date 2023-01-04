@@ -5,7 +5,6 @@
   border-radius: rem(20);
   overflow: hidden;
   height: calc(100%);
-  margin-bottom: rem(24);
   z-index: 1100;
 
   &:hover {
@@ -60,19 +59,19 @@
 
       &--green {
         background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.2)
-          ),
-          rgba(32, 151, 108, 0.7);
+          180deg,
+          rgba(5, 148, 89, 0) 0%,
+          rgba(5, 148, 89, 0.8) 59.77%,
+          #059459 100%
+        ); 
       }
       &--blue {
         background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.2)
-          ),
-          rgba(10, 97, 180, 0.7);
+          180deg,
+          rgba(45, 75, 182, 0) 0%,
+          rgba(45, 75, 182, 0.8) 59.77%,
+          #2d4bb6 100%
+        );
       }
     }
 
@@ -85,6 +84,7 @@
     }
   }
 }
+
 
 .weird_card {
   height: rem(396);
