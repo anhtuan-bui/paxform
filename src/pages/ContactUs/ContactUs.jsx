@@ -7,53 +7,51 @@ export default class ContactUs extends Component {
 		return (
 			<main className="contact">
 				<section className="hero">
-					<div className="container">
-						<div className="hero__wrapper">
-							<div className="hero__content">
-								<p className="hero__name">Contact Us</p>
-								<h1 className="hero__title">We’d love to hear from you</h1>
-								<p className="hero__description">
-									If you have any questions about Paxdorm please contact us in
-									form beside and we will respond immediately.
-								</p>
-							</div>
-							<div className="form__box">
-								<form>
-									<label>
-										<strong>Full name</strong>
-										<input type="text" placeholder="John Doe" name="" />
-									</label>
-									<label>
-										<strong>Email</strong>
-										<input type="text" placeholder="jondoe@email.com" name="" />
-									</label>
-									<label>
-										<strong>Company name</strong>
-										<input type="text" placeholder="acme corp" name="" />
-									</label>
-									<label>
-										<strong>Company size</strong>
-										<select name="">
-											<option value="" disabled selected>
-												Select a range of employees
-											</option>
-											<option value="100">1 - 100</option>
-											<option value="200">101 - 200</option>
-											<option value="300">201 - 300</option>
-											<option value="400">Over 300</option>
-										</select>
-									</label>
-									<label>
-										<strong>Message</strong>
-										<textarea placeholder="Tell your project or anything else we can help"></textarea>
-									</label>
-									<Button
-										text="Send Message"
-										type="flat arrow submit"
-										color="white"
-									/>
-								</form>
-							</div>
+					<div className="container hero__wrapper">
+						<div className="hero__content">
+							<p className="hero__name">Contact Us</p>
+							<h1 className="hero__title">We’d love to hear from you</h1>
+							<p className="hero__description">
+								If you have any questions about Paxdorm please contact us in
+								form beside and we will respond immediately.
+							</p>
+						</div>
+						<div className="form__box">
+							<form>
+								<label>
+									<strong>Full name</strong>
+									<input type="text" placeholder="John Doe" name="" />
+								</label>
+								<label>
+									<strong>Email</strong>
+									<input type="text" placeholder="jondoe@email.com" name="" />
+								</label>
+								<label>
+									<strong>Company name</strong>
+									<input type="text" placeholder="acme corp" name="" />
+								</label>
+								<label>
+									<strong>Company size</strong>
+									<select name="">
+										<option value="" disabled selected>
+											Select a range of employees
+										</option>
+										<option value="100">1 - 100</option>
+										<option value="200">101 - 200</option>
+										<option value="300">201 - 300</option>
+										<option value="400">Over 300</option>
+									</select>
+								</label>
+								<label>
+									<strong>Message</strong>
+									<textarea placeholder="Tell your project or anything else we can help"></textarea>
+								</label>
+								<Button
+									text="Send Message"
+									type="flat arrow submit"
+									color="white"
+								/>
+							</form>
 						</div>
 					</div>
 					<div className="bottom_triangle bottom_triangle--white"></div>

@@ -44,6 +44,7 @@ $color_green: #20976c;
             }
         }
         &__content {
+            padding: 0 1rem;
             text-align: left;
             color: $color_white;
             @include large {
@@ -82,7 +83,7 @@ $color_green: #20976c;
         .form__box {
             position: absolute;
             top: rem(40);
-            right: rem(20);
+            right: rem(156);
             width: rem(530);
             padding: rem(40);
             border-radius: rem(24);
@@ -189,6 +190,7 @@ $color_green: #20976c;
         }
         &__wrapper {
             display: grid;
+            padding: 0 1rem;
             grid-template-columns: repeat(2, 1fr);
             gap: rem(32) rem(30);
             @include medium {
