@@ -7,7 +7,7 @@ import ex from "../../assets/images/usecase-hospitality-ex.jpg";
 import policy from "../../assets/images/usecase-policy.jpg";
 import Button from "../../components/Button/Button";
 
-export default class Usecases extends Component {
+export default class UseCases extends Component {
 	render() {
 		return (
 			<main className="usecases usecases-hospitality">
