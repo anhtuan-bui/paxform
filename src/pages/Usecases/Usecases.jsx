@@ -4,7 +4,7 @@ import GetStarted from "../../components/GetStarted/GetStarted";
 import "./UseCases.scss";
 
 import ex from "../../assets/images/usecase-hospitality-ex.jpg";
-import policy from "../../assets/images/usecase-policy.jpg";
+import policy from "../../assets/images/usecase-policy.svg";
 import Button from "../../components/Button/Button";
 
 export default class UseCases extends Component {
@@ -141,10 +141,10 @@ export default class UseCases extends Component {
 							<img src={policy} alt="security policy" />
 						</div>
 					</div>
-					<div className="bottom_triangle bottom_triangle--white"></div>
 				</section>
 
 				<section className="article">
+					<div className="bottom_triangle bottom_triangle--white"></div>
 					<div className="container">
 						<div className="article__body">
 							<div className="article__body__box">
