@@ -99,7 +99,6 @@ export default class ContactUs extends Component {
 							</div>
 							<div className="help__box">
 								<div className="help__box__inner">
-									<em className="help__box-icon"></em>
 									<strong className="help__box-title">
 										Chat with a specialist
 									</strong>

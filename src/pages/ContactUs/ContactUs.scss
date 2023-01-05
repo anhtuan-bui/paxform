@@ -146,7 +146,7 @@ $color_green: #20976c;
                 }
                 &>.button {
                     margin-top: rem(40);
-                    @include medium {
+                    @include small {
                         width: 100%;
                         margin: rem(40) 0 0;
                         padding: rem(15) 0;
@@ -186,6 +186,9 @@ $color_green: #20976c;
             @include large {
                 font-size: rem(34);
             }
+            @include medium {
+                font-size: rem(32);
+            }
             @include small {
                 font-size: rem(30);
             }
@@ -194,7 +197,7 @@ $color_green: #20976c;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0;
-            @include medium {
+            @include small {
                 grid-template-columns: repeat(1, 1fr);
             }
         }
@@ -205,21 +208,32 @@ $color_green: #20976c;
                 border-radius: rem(16);
                 background: $color_light-grey;
             }
-            &-icon {
-                display: inline-block;
-                width: rem(50);
-                height: rem(50);
-                border-radius: rem(50);
-                background-repeat: no-repeat;
-                background-position: center;
-                background-color: #ddeeff;
-            }
             &-title {
+                display: block;
                 position: relative;
-                top: rem(-15);
-                left: rem(10);
+                height: rem(50);
+                padding: rem(12) 0 0 rem(70);
                 font-size: rem(20);
                 color: $color_grey;
+                &::before {
+                    display: inline-block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: rem(50);
+                    height: rem(50);
+                    border-radius: rem(50);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-color: #ddeeff;
+                    content: "";
+                }
+                @include medium {
+                    font-size: rem(16);
+                }
+                @include small {
+                    height: rem(32);
+                }
             }
             &-desc {
                 font-size: rem(16);
@@ -240,22 +254,22 @@ $color_green: #20976c;
                 }
             }
             &:nth-child(1) {
-                .help__box-icon {
+                .help__box-title::before {
                     background-image: url("../../assets/images/icon-text.svg");
                 }
             }
             &:nth-child(2) {
-                .help__box-icon {
+                .help__box-title::before {
                     background-image: url("../../assets/images/icon-email.svg");
                 }
             }
             &:nth-child(3) {
-                .help__box-icon {
+                .help__box-title::before {
                     background-image: url("../../assets/images/icon-call.svg");
                 }
             }
             &:nth-child(4) {
-                .help__box-icon {
+                .help__box-title::before {
                     background-image: url("../../assets/images/icon-chat.svg");
                 }
             }
