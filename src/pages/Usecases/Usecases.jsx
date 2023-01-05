@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import GetStarted from "../../components/GetStarted/GetStarted";
 import "./UseCases.scss";
 
-import ex from "../../assets/images/usecase-hospitality-ex.jpg";
+import ex from "../../assets/images/usecase-hospitality-ex.svg";
 import policy from "../../assets/images/usecase-policy.svg";
 import Button from "../../components/Button/Button";
 
@@ -66,7 +66,7 @@ export default class UseCases extends Component {
 								</div>
 							</div>
 							<div className="case__body__box">
-								<img src={ex} alt="    " />
+								<img src={ex} alt="example screen" />
 							</div>
 							<div className="case__body__box">
 								<h3 className="case__body__box-title">
@@ -111,10 +111,10 @@ export default class UseCases extends Component {
 								</div>
 							</div>
 							<div className="case__body__box">
-								<img src={ex} alt="    " />
+								<img src={ex} alt="example screen" />
 							</div>
 							<div className="case__body__box">
-								<img src={ex} alt="    " />
+								<img src={ex} alt="example screen" />
 							</div>
 						</div>
 					</div>
@@ -163,10 +163,10 @@ export default class UseCases extends Component {
 								</div>
 							</div>
 							<div className="article__body__box">
-								<img src={ex} alt="    " />
+								<img src={ex} alt="example screen" />
 							</div>
 							<div className="article__body__box">
-								<img src={ex} alt="    " />
+								<img src={ex} alt="example screen" />
 							</div>
 							<div className="article__body__box">
 								<h3 className="article__body__box-title">
