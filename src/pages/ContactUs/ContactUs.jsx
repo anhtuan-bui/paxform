@@ -62,48 +62,54 @@ export default class ContactUs extends Component {
 						<h2 className="help-title">Our teams are here to help</h2>
 						<div className="help__wrapper container">
 							<div className="help__box">
-								<em className="help__box-icon"></em>
-								<strong className="help__box-title">
-									Text us 309-923-1230
-								</strong>
-								<p className="help__box-desc">
-									Message and data rates may apply
-								</p>
-								<a className="help__box-link" href="/">
-									Message us
-								</a>
+								<div className="help__box__inner">
+									<em className="help__box-icon"></em>
+									<strong className="help__box-title">
+										Text us 309-923-1230
+									</strong>
+									<p className="help__box-desc">
+										Message and data rates may apply
+									</p>
+									<a className="help__box-link" href="/">
+										Message us
+									</a>
+								</div>
 							</div>
 							<div className="help__box">
-								<em className="help__box-icon"></em>
-								<strong className="help__box-title">Send us an email</strong>
-								<p className="help__box-desc">We’d love to hear from you!</p>
-								<a className="help__box-link" href="/">
-									Email us
-								</a>
+								<div className="help__box__inner">
+									<em className="help__box-icon"></em>
+									<strong className="help__box-title">Send us an email</strong>
+									<p className="help__box-desc">We’d love to hear from you!</p>
+									<a className="help__box-link" href="/">
+										Email us
+									</a>
+								</div>
 							</div>
 							<div className="help__box">
-								<em className="help__box-icon"></em>
-								<strong className="help__box-title">
-									Call us at 1-893-909-7845
-								</strong>
-								<p className="help__box-desc">
-									Already using our products and experiencing technical issues?
-								</p>
-								<a className="help__box-link" href="/">
-									Call us
-								</a>
+								<div className="help__box__inner">
+									<em className="help__box-icon"></em>
+									<strong className="help__box-title">
+										Call us at 1-893-909-7845
+									</strong>
+									<p className="help__box-desc">We’d love to hear from you!</p>
+									<a className="help__box-link" href="/">
+										Call us
+									</a>
+								</div>
 							</div>
 							<div className="help__box">
-								<em className="help__box-icon"></em>
-								<strong className="help__box-title">
-									Chat with a specialist
-								</strong>
-								<p className="help__box-desc">
-									Available 7am-11pm CT, 7 days a week
-								</p>
-								<a className="help__box-link" href="/">
-									Chat now
-								</a>
+								<div className="help__box__inner">
+									<em className="help__box-icon"></em>
+									<strong className="help__box-title">
+										Chat with a specialist
+									</strong>
+									<p className="help__box-desc">
+										Available 7am-11pm CT, 7 days a week
+									</p>
+									<a className="help__box-link" href="/">
+										Chat now
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>

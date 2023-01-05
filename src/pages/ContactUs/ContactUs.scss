@@ -44,7 +44,7 @@ $color_green: #20976c;
             }
         }
         &__content {
-            padding: 0 1rem;
+            padding: 0 $padding__collumn;
             text-align: left;
             color: $color_white;
             @include large {
@@ -170,6 +170,7 @@ $color_green: #20976c;
         }
         &-name {
             display: block;
+            padding: 0 $padding__collumn;
             font-size: rem(14);
             font-weight: bold;
             letter-spacing: 0.14em;
@@ -178,6 +179,7 @@ $color_green: #20976c;
             color: $color_blue;
         }
         &-title {
+            padding: 0 $padding__collumn;
             margin: rem(24) auto rem(54);
             font-size: rem(38);
             text-align: center;
@@ -190,17 +192,19 @@ $color_green: #20976c;
         }
         &__wrapper {
             display: grid;
-            padding: 0 1rem;
             grid-template-columns: repeat(2, 1fr);
-            gap: rem(32) rem(30);
+            gap: 0;
             @include medium {
                 grid-template-columns: repeat(1, 1fr);
             }
         }
         &__box {
-            background: $color_light-grey;
-            border-radius: rem(16);
-            padding: rem(24);
+            padding: $padding__collumn;
+            &__inner {
+                padding: rem(24);
+                border-radius: rem(16);
+                background: $color_light-grey;
+            }
             &-icon {
                 display: inline-block;
                 width: rem(50);
