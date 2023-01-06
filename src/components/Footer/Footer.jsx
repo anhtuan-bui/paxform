@@ -38,7 +38,7 @@ export default class Footer extends Component {
 									<a href="/legal-detail">Legal Detail*</a>
 								</li>
 								<li>
-									<a href="https://">Business</a>
+									<a href="/company">Company*</a>
 								</li>
 								<li>
 									<a href="https://">Security Policy</a>

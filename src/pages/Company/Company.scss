@@ -1,0 +1,346 @@
+@import "../../styles/styles.scss";
+$color_white: #fff;
+$color_blue: #0a61b4;
+$color-light-blue: #e1edf9;
+$color_grey: #2f4356;
+$color_purple: #2d4bb6;
+.company {
+    .hero {
+        position: relative;
+        padding-top: rem(100);
+        &__wrapper {
+            display: flex;
+            position: relative;
+            padding-top: rem(100);
+            padding-bottom: rem(160);
+            background-image: url("../../assets/images/company-hero.svg");
+            background-repeat: no-repeat;
+            background-position: center bottom 0;
+            background-size: auto 200px;
+            text-align: center;
+            box-sizing: border-box;
+            @include large {
+                padding-right: 0;
+                padding-bottom: 30%;
+            }
+            @include medium {
+                padding-top: rem(10);
+                padding-bottom: 80%;
+            }
+            @include small {
+                padding-top: 0;
+            }
+        }
+        &__content {
+            flex: 1 1 50%;
+            padding: 0 $padding__collumn;
+            text-align: left;
+            color: $color_grey;
+            box-sizing: border-box;
+            @include large {
+                padding: 0 5%;
+                text-align: center;
+            }
+            h1,
+            p {
+                max-width: 100%;
+            }
+        }
+        &__name {
+            margin: rem(20) 0;
+            font-weight: 600;
+            font-size: rem(14);
+            color: $color_purple;
+            text-transform: uppercase;
+            letter-spacing: rem(2);
+            @include medium {
+                margin-top: rem(50);
+                margin-bottom: rem(40);
+            }
+            @include small {
+                margin-top: rem(50);
+            }
+        }
+        &__title {
+            margin-bottom: rem(24);
+            margin-top: 0;
+            font-size: rem(42);
+            @include extraLarge {
+                font-size: rem(38);
+            }
+            @include large {
+                font-size: rem(34);
+            }
+            @include medium {
+                font-size: rem(42);
+            }
+            @include small {
+                font-size: rem(36);
+            }
+            @include extraSmall {
+                font-size: rem(28);
+            }
+        }
+        &__description {
+            margin-bottom: rem(50);
+            line-height: rem(25);
+        }
+        &__image {
+            flex: 1 1 50%;
+            &>img {
+                display: inline-block;
+                position: relative;
+                top: 10%;
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    }
+    .vision {
+        &__wrapper {
+            display: flex;
+            position: relative;
+            padding-top: rem(100);
+            padding-bottom: rem(160);
+            text-align: center;
+            box-sizing: border-box;
+            @include large {
+                padding-right: 0;
+                padding-bottom: 30%;
+            }
+            @include medium {
+                padding-top: rem(10);
+                padding-bottom: 80%;
+            }
+            @include small {
+                padding-top: 0;
+            }
+        }
+        &__image {
+            flex: 1 1 50%;
+            &>img {
+                display: inline-block;
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+        &__content {
+            flex: 1 1 50%;
+            padding: 0 $padding__collumn;
+            text-align: left;
+            color: $color_grey;
+            box-sizing: border-box;
+            @include large {
+                padding: 0 5%;
+                text-align: center;
+            }
+            h1,
+            p {
+                max-width: 100%;
+            }
+        }
+        &__name {
+            margin: rem(20) 0;
+            font-weight: 600;
+            font-size: rem(14);
+            color: $color_blue;
+            text-transform: uppercase;
+            letter-spacing: rem(2);
+            @include medium {
+                margin-top: rem(50);
+                margin-bottom: rem(40);
+            }
+            @include small {
+                margin-top: rem(50);
+            }
+        }
+        &__title {
+            margin-bottom: rem(24);
+            margin-top: 0;
+            font-size: rem(42);
+            @include extraLarge {
+                font-size: rem(38);
+            }
+            @include large {
+                font-size: rem(34);
+            }
+            @include medium {
+                font-size: rem(42);
+            }
+            @include small {
+                font-size: rem(36);
+            }
+            @include extraSmall {
+                font-size: rem(28);
+            }
+        }
+        &__description {
+            margin-bottom: rem(50);
+            line-height: rem(25);
+        }
+    }
+    .video {
+        .container {
+            position: relative;
+            &::before {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: rem(400);
+                background: $color-light-blue;
+                transform: skewY(6deg);
+                z-index: -1;
+                content: "";
+            }
+        }
+        &__wrapper {
+            padding: rem(180) $padding__collumn rem(100);
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            &-link {
+                display: block;
+                position: relative;
+                height: rem(540);
+                &::before {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $color_grey;
+                    opacity: 0;
+                    border-radius: rem(20);
+                    content: "";
+                    transition: all 0.5s ease-out;
+                }
+                &::after {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: rem(80);
+                    height: rem(80);
+                    border-radius: 100%;
+                    background: url("../../assets/images/icon_play.svg") no-repeat center $color_white;
+                    background-size: rem(45);
+                    content: "";
+                    transition: all 0.2s ease-out;
+                }
+                &:hover {
+                    &::before {
+                        opacity: 0.4;
+                    }
+                    &::after {
+                        background-size: 80%;
+                    }
+                }
+                &>img {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: rem(20);
+                }
+            }
+        }
+    }
+    .team {
+        padding: rem(60) 0 rem(140);
+        position: relative;
+        &__wrapper {}
+        &__title {
+            margin: 0 0 rem(63);
+            font-size: rem(38);
+            text-align: center;
+        }
+        &__box {
+            display: flex;
+            position: relative;
+            padding-left: 0;
+            &-list {
+                flex: 25%;
+                position: relative;
+                padding: 0 $padding__collumn;
+                list-style: none;
+                box-sizing: border-box;
+                &-name {}
+                &-position {}
+                &-link {
+                    display: block;
+                    position: absolute;
+                    top: rem(16);
+                    right: rem(32);
+                    width: rem(35);
+                    height: rem(35);
+                    border-radius: 100%;
+                    z-index: 1001;
+                    &::before {
+                        display: inline-block;
+                        position: relative;
+                        top: 50%;
+                        left: 50%;
+                        width: rem(25);
+                        height: rem(25);
+                        transform: translate(-50%, -50%);
+                        background-color: $color_blue;
+                        border-radius: 100%;
+                        content: "";
+                    }
+                    &::after {
+                        display: inline-block;
+                        position: relative;
+                        top: -74%;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url("../../assets/images/icon_linkedin.svg");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 100%;
+                        content: "";
+                    }
+                }
+            }
+            &-list.green {
+                .team__box__inner::before {
+                    background: linear-gradient(97.09deg, #059459 11.4%, #034228 116.61%);
+                }
+                .team__box-list-link::before {
+                    background-color: #05804d;
+                }
+            }
+            &__inner {
+                position: relative;
+                padding: rem(60) rem(16) 0;
+                background: $color-light-blue;
+                border-radius: rem(16);
+                &::before {
+                    display: block;
+                    position: absolute;
+                    left: rem(16);
+                    bottom: 4%;
+                    width: 92%;
+                    height: rem(80);
+                    background: linear-gradient( 104.14deg, #0a61b4 20.63%, #074581 177.09%);
+                    border-top-left-radius: rem(15);
+                    transform: skewY(6deg);
+                    content: "";
+                }
+                &-img {
+                    display: inline-block;
+                    position: relative;
+                    bottom: rem(-6);
+                    width: 100%;
+                    z-index: 1000;
+                }
+            }
+        }
+    }
+}

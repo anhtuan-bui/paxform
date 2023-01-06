@@ -14,6 +14,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import Legal from "./pages/Legal/Legal";
 import LegalDetail from "./pages/LegalDetail/LegalDetail";
 import ContactUs from "./pages/ContactUs/ContactUs";
+import Company from "./pages/Company/Company";
 import getToken from "./lib/clientToken";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
@@ -53,6 +54,7 @@ function App() {
 							<Route path="not-found" element={<NotFound />} />
 							<Route path="use-cases" element={<UseCases />} />
 							<Route path="contact-us" element={<ContactUs />} />
+							<Route path="company" element={<Company />} />
 							{/* <Route path="*" element={<NotFound />} /> */}
 						</Route>
 					</Routes>
