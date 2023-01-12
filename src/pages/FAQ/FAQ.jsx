@@ -125,12 +125,12 @@ export default class FAQ extends Component {
 				<section className="hero">
 					<div className="container hero__wrapper">
 						<div className="hero__content">
-							<p className="hero__name">paxform FAQS</p>
+							{/* <p className="hero__name">paxform FAQS</p> */}
 							<h1 className="hero__title">Frequently Asked Questions</h1>
-							<p className="hero__description">
+							{/* <p className="hero__description">
 								We’re here to help you make the most of Paxform and reach new
 								levels of efficiency
-							</p>
+							</p> */}
 						</div>
 					</div>
 					<div className="bottom_triangle bottom_triangle--white"></div>

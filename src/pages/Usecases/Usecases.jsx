@@ -3,14 +3,15 @@ import React, { Component } from "react";
 import GetStarted from "../../components/GetStarted/GetStarted";
 import "./UseCases.scss";
 
-import ex from "../../assets/images/usecase-hospitality-ex.jpg";
-import policy from "../../assets/images/usecase-policy.jpg";
+import ex from "../../assets/images/usecase-hospitality-ex.svg";
+import policy from "../../assets/images/usecase-policy.svg";
 import Button from "../../components/Button/Button";
 
-export default class Usecases extends Component {
+export default class UseCases extends Component {
 	render() {
 		return (
 			<main className="usecases usecases-hospitality">
+				{/* usecases-retail, usecases-medicare , usecases-education */}
 				<section className="hero" background="light">
 					<div className="container hero__wrapper">
 						<div className="hero__content">
@@ -65,7 +66,7 @@ export default class Usecases extends Component {
 								</div>
 							</div>
 							<div className="case__body__box">
-								<img src={ex} alt="    " />
+								<img src={ex} alt="example screen" />
 							</div>
 							<div className="case__body__box">
 								<h3 className="case__body__box-title">
@@ -110,10 +111,10 @@ export default class Usecases extends Component {
 								</div>
 							</div>
 							<div className="case__body__box">
-								<img src={ex} alt="    " />
+								<img src={ex} alt="example screen" />
 							</div>
 							<div className="case__body__box">
-								<img src={ex} alt="    " />
+								<img src={ex} alt="example screen" />
 							</div>
 						</div>
 					</div>
@@ -140,10 +141,10 @@ export default class Usecases extends Component {
 							<img src={policy} alt="security policy" />
 						</div>
 					</div>
-					<div className="bottom_triangle bottom_triangle--white"></div>
 				</section>
 
 				<section className="article">
+					<div className="bottom_triangle bottom_triangle--white"></div>
 					<div className="container">
 						<div className="article__body">
 							<div className="article__body__box">
@@ -162,10 +163,10 @@ export default class Usecases extends Component {
 								</div>
 							</div>
 							<div className="article__body__box">
-								<img src={ex} alt="    " />
+								<img src={ex} alt="example screen" />
 							</div>
 							<div className="article__body__box">
-								<img src={ex} alt="    " />
+								<img src={ex} alt="example screen" />
 							</div>
 							<div className="article__body__box">
 								<h3 className="article__body__box-title">

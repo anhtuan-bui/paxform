@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./LegalDetail.scss";
 import GetStarted from "../../components/GetStarted/GetStarted";
 
-import intro from "../../assets/images/legal-policy-detail.jpg";
+import intro from "../../assets/images/legal-policy-detail.svg";
 import icon1 from "../../assets/images/icon-security-policy-feature01.svg";
 import icon2 from "../../assets/images/icon-security-policy-feature02.svg";
 import icon3 from "../../assets/images/icon-security-policy-feature03.svg";
@@ -38,7 +38,7 @@ const features = [
 export default class SecurityPolicy extends Component {
 	render() {
 		return (
-			<main className="security_privacy">
+			<main className="legal_detail">
 				<section className="hero">
 					<div className="container hero__wrapper">
 						<div className="hero__content">
@@ -84,21 +84,23 @@ export default class SecurityPolicy extends Component {
 						<div className="grid_box">
 							<p className="grid_box-name">Our Vision</p>
 							<h2 className="grid_box-title">Forms without forms.</h2>
-							<div className="grid_box__list">
+							<ul className="grid_box__list">
 								{features.map((feature, index) => (
 									<li className="grid_box__list__content" key={index}>
-										<i className="grid_box__list__content-image">
-											<img src={feature.img} alt={feature.title} />
-										</i>
-										<h3 className="grid_box__list__content-title">
-											{feature.title}
-										</h3>
-										<p className="grid_box__list__content-description">
-											{feature.description}
-										</p>
+										<div className="grid_box__list__inner">
+											<i className="grid_box__list__content-image">
+												<img src={feature.img} alt={feature.title} />
+											</i>
+											<h3 className="grid_box__list__content-title">
+												{feature.title}
+											</h3>
+											<p className="grid_box__list__content-description">
+												{feature.description}
+											</p>
+										</div>
 									</li>
 								))}
-							</div>
+							</ul>
 						</div>
 					</div>
 					<div className="bottom_triangle bottom_triangle--light-blue"></div>

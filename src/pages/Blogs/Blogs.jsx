@@ -5,10 +5,11 @@ import SectionTriangleRight from "../../components/SectionTriangleRight/SectionT
 import Author from "../../components/Author/Author";
 import BlogsView from "../../components/BlogView/BlogsView";
 import { useQuery } from "@apollo/client";
-import { GET_POSTS } from "../../lib/graphqlQuery";
+import { GET_CATEGORIES, GET_POSTS } from "../../lib/graphqlQuery";
+import client from "../../configurations/apollo";
 
 export default class Blogs extends Component {
-  blogs = { chip: "all", firstBlogEndCursor: "" };
+  blogs = { chip: "all", categories: [] };
 
   constructor(props) {
     super(props);
@@ -17,10 +18,11 @@ export default class Blogs extends Component {
     this.handleRadioChange = this.handleRadioChange.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     // this.blog.firstBlogEndCursor = this.getFirstBlogEndCursor();
     // this.handleResize();
     // window.addEventListener("resize", this.handleResize);
+    await this.getCategories();
   }
 
   componentWillUnmount() {
@@ -42,8 +44,10 @@ export default class Blogs extends Component {
     this.setState(this.blogs);
   }
 
-  getFirstBlogEndCursor(cursor) {
-    console.log(cursor)
+  async getCategories() {
+    const categories = await client.query({ query: GET_CATEGORIES });
+    this.blogs.categories = categories.data.categories.edges;
+    this.setState(this.blogs);
   }
 
   render() {
@@ -53,7 +57,7 @@ export default class Blogs extends Component {
           <div className="container">
             <div className="hero_blog">
               <div className="hero_blog__wrapper">
-                <HeroBlogInfo firstBlogEndCursor={this.getFirstBlogEndCursor} />
+                <HeroBlogInfo />
               </div>
               <div className="hero_graphic"></div>
             </div>
@@ -64,41 +68,23 @@ export default class Blogs extends Component {
         <section className="posts">
           <div className="container">
             <div className="chips">
-              <div className="chip">
-                <input
-                  id="all"
-                  type="radio"
-                  name="radio"
-                  onChange={this.handleRadioChange}
-                  checked={this.state.chip === "all"}
-                />
-                <label htmlFor="all">All</label>
-              </div>
-              <div className="chip">
-                <input
-                  id="story"
-                  type="radio"
-                  name="radio"
-                  onChange={this.handleRadioChange}
-                  checked={this.state.chip === "story"}
-                />
-                <label htmlFor="story">Story</label>
-              </div>
-              <div className="chip">
-                <input
-                  id="unauthorized"
-                  type="radio"
-                  name="radio"
-                  onChange={this.handleRadioChange}
-                  checked={this.state.chip === "unauthorized"}
-                />
-                <label htmlFor="unauthorized">Unauthorized</label>
-              </div>
+              {this.state.categories.map((category, index) => (
+                category.node.name.toLowerCase() !== "uncategorised" && <div className="chip" key={index}>
+                  <input
+                    id={category.node.name}
+                    type="radio"
+                    name="radio"
+                    onChange={this.handleRadioChange}
+                    checked={this.state.chip === category.node.name}
+                  />
+                  <label htmlFor={category.node.name}>
+                    {category.node.name}
+                  </label>
+                </div> 
+              ))}
             </div>
 
-            <BlogsView
-              chip={this.state.chip}
-            />
+            <BlogsView chip={this.state.chip} />
           </div>
           <SectionTriangleRight variant="footer" />
         </section>
@@ -110,7 +96,7 @@ export default class Blogs extends Component {
 const HeroBlogInfo = () => {
   const { loading, error, data } = useQuery(GET_POSTS, {
     variables: { first: 1, after: null },
-    fetchPolicy: 'no-cache'
+    fetchPolicy: "no-cache",
   });
 
   if (loading) return <p>Loading...</p>;

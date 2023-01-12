@@ -146,6 +146,14 @@
           width: 100%;
         }
 
+        > :first-child {
+          margin-bottom: $grid__gap;
+        }
+
+        > :nth-child(3){
+            margin-bottom: $grid__gap;
+        }
+
         .button {
           padding: rem(8) rem(12);
           &__text {

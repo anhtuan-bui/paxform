@@ -5,7 +5,7 @@ $color_purple: #2d4bb6;
 $color_light-grey: #f6f6f6;
 $color_grey: #2f4356;
 $color_green: #20976c;
-.security_privacy {
+.legal_detail {
     .hero {
         position: relative;
         padding-top: rem(100);
@@ -60,16 +60,22 @@ $color_green: #20976c;
     }
     .security_introduction {
         position: relative;
-        padding: rem(100) 0 rem(230);
-        line-height: rem(25);
+        padding-bottom: rem(50);
         background: #e1edf9;
+        line-height: rem(25);
+        @include large {
+            padding-bottom: rem(80);
+        }
+        @include medium {
+            padding-top: rem(30);
+            padding-bottom: rem(100);
+        }
+        @include small {
+            padding-bottom: rem(160);
+        }
         .grid_box {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            column-gap: rem(100);
-            @include medium {
-                grid-template-columns: 1fr;
-            }
             @include small {
                 grid-template-columns: 1fr;
             }
@@ -78,66 +84,37 @@ $color_green: #20976c;
             }
             &__image {
                 position: relative;
+                top: rem(40);
                 width: 100%;
+                z-index: 1001;
+                @include large {
+                    top: rem(80);
+                }
+                @include medium {
+                    top: 0;
+                }
                 &>img {
                     display: block;
                     width: 75%;
                     max-width: rem(363);
                     margin: 0 auto;
                     @include medium {
-                        width: 55%;
+                        width: 90%;
                     }
                     @include small {
                         width: 50%;
                     }
                 }
-                &-parall {
-                    display: inline-block;
-                    position: absolute;
-                    transform: skewY(5deg);
-                    z-index: -1;
-                    &:nth-child(2) {
-                        top: rem(-60);
-                        left: rem(25);
-                        width: rem(120);
-                        height: rem(238);
-                        background: linear-gradient( 180deg, rgba(28, 133, 232, 0.53) -135.29%, rgba(28, 133, 232, 0) 188.24%);
-                        @include medium {
-                            top: rem(-102);
-                            left: rem(63);
-                        }
-                        @include small {
-                            top: rem(-60);
-                            left: rem(25);
-                        }
-                        @include extraSmall {
-                            top: rem(-85);
-                            left: rem(0);
-                        }
-                    }
-                    &:nth-child(3) {
-                        bottom: rem(-75);
-                        right: 0;
-                        width: rem(151);
-                        height: rem(343);
-                        background: linear-gradient( 180deg, rgba(5, 148, 89, 0.53) -363.94%, rgba(5, 148, 89, 0) 178.36%);
-                        @include medium {
-                            bottom: rem(-80);
-                            right: rem(50);
-                        }
-                        @include small {
-                            bottom: rem(-80);
-                            right: rem(50);
-                        }
-                        @include extraSmall {
-                            bottom: rem(-60);
-                            right: rem(0);
-                        }
-                    }
-                }
             }
             &__content {
+                padding: rem(70) $padding__collumn 0;
                 box-sizing: border-box;
+                @include large {
+                    padding-top: rem(140);
+                }
+                @include medium {
+                    padding-top: 0;
+                }
                 &-name {
                     font-size: rem(14);
                     font-weight: bold;
@@ -159,8 +136,9 @@ $color_green: #20976c;
         position: relative;
         padding-bottom: rem(220);
         .grid_box {
-            padding: rem(24);
+            padding: rem(100) 0 0;
             &-name {
+                padding: 0 $padding__collumn;
                 font-size: rem(14);
                 font-weight: bold;
                 color: $color_purple;
@@ -169,25 +147,28 @@ $color_green: #20976c;
                 text-align: center;
             }
             &-title {
+                padding: 0 $padding__collumn;
                 margin: rem(24) auto rem(32);
                 line-height: rem(29);
+                font-size: rem(38);
                 text-align: center;
             }
             &__list {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                column-gap: rem(24);
-                row-gap: rem(24);
                 padding: 0;
                 @include small {
                     grid-template-columns: repeat(1, 1fr);
                 }
-                &__content {
-                    list-style: none;
+                &__inner {
                     padding: rem(32);
                     background: $color_light-grey;
                     border-radius: rem(20);
                     box-sizing: border-box;
+                }
+                &__content {
+                    padding: $padding__collumn;
+                    list-style: none;
                     &-image {
                         display: block;
                     }

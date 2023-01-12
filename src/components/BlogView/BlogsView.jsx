@@ -5,21 +5,15 @@ import BlogCard from "../BlogCard/BlogCard";
 import Button from "../Button/Button";
 import "./BlogsView.scss";
 
-const BATCH_SIZE = 5;
-export default function BlogsView(props) {
-  const firstPost = useQuery(GET_POSTS, {
-    variables: { first: 1, after: null },
-    fetchPolicy: 'no-cache'
-  });
+const BATCH_SIZE = 2;
 
+export default function BlogsView(props) {
   const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
     variables: {
       first: BATCH_SIZE,
-      after: firstPost.data?.posts?.pageInfo.endCursor,
+      after: null,
     },
     notifyOnNetworkStatusChange: true,
-    fetchPolicy: 'network-only',
-    nextFetchPolicy: "cache-first"
   });
 
   if (!data && loading) return <p>Loading...</p>;
@@ -29,26 +23,28 @@ export default function BlogsView(props) {
   if (!data) {
     return <p>No posts yet</p>;
   }
-  
-  let posts = data.posts.edges
-    .map((edge) => edge.node);
+
+  let posts = data.posts.edges.map((edge) => edge.node);
   const postInfo = data.posts.pageInfo;
 
-  if (props.chip !== "all") {
-    posts = posts.filter(
-      (post) => post.categories.edges[0].node.name.toLowerCase() === props.chip.toLowerCase()
-    );
-
-  } else {
-    posts = data.posts.edges.map((edge) => edge.node);
+  if (props.chip.toLowerCase() !== "all") {
+	posts = posts.filter((post) => {
+	  let found = false;
+	  post.categories.edges.forEach((edge) => {
+		if (edge.node.name.toLowerCase() === props.chip.toLowerCase()) {
+		  found = true;
+		}
+	  });
+	  return found;
+	});
   }
 
   return (
     <Fragment>
       <div className="posts_view">
-        {posts.map((post, index) => (
-          <BlogCard key={index} blog={post} />
-        ))}
+        {posts.map(
+          (post, index) => index !== 0 && <BlogCard key={index} blog={post} />
+        )}
       </div>
       <div className="view_more">
         {postInfo.hasNextPage ? (
@@ -60,7 +56,26 @@ export default function BlogsView(props) {
             disabled={loading}
             onClick={(e) => {
               e.preventDefault();
-              
+              fetchMore({
+                variables: {
+                  first: BATCH_SIZE,
+                  after: data.posts.pageInfo.endCursor,
+                },
+                updateQuery: (prev, { fetchMoreResult }) => {
+                  if (!fetchMoreResult) return prev;
+                  return {
+                    ...prev,
+                    posts: {
+                      ...prev.posts,
+                      ...fetchMoreResult.posts,
+                      edges: [
+                        ...prev.posts.edges,
+                        ...fetchMoreResult.posts.edges,
+                      ],
+                    },
+                  };
+                },
+              });
             }}
           />
         ) : (

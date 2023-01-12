@@ -29,16 +29,13 @@ export default class Footer extends Component {
 							<h1>SERVICES</h1>
 							<ul>
 								<li>
-									<a href="https://">Personal</a>
+									<a href="/contact-us">Contact Us*</a>
 								</li>
 								<li>
-									<a href="https://">Business</a>
+									<a href="/legal">Legal*</a>
 								</li>
 								<li>
 									<a href="/legal-detail">Legal Detail*</a>
-								</li>
-								<li>
-									<a href="https://">Personal</a>
 								</li>
 								<li>
 									<a href="https://">Business</a>
@@ -145,7 +142,7 @@ export default class Footer extends Component {
 							<ul>
 								<li>
 									<a href="/privacy-policy">
-										<span className="span--hover">Privacy Policy</span>
+										<span className="span--hover">Privacy Policy*</span>
 									</a>
 								</li>
 								<li>

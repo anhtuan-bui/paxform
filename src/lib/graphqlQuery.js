@@ -2,50 +2,50 @@ import { gql } from "@apollo/client";
 
 const GET_POSTS = gql`
   query GetPosts($first: Int, $after: String) {
-  posts(first: $first, after: $after) {
-    edges {
-      node {
-        author {
-          node {
-            avatar {
-              url
-            }
-            roles {
-              edges {
-                node {
-                  displayName
+    posts(first: $first, after: $after) {
+      edges {
+        node {
+          author {
+            node {
+              avatar {
+                url
+              }
+              roles {
+                edges {
+                  node {
+                    displayName
+                  }
                 }
               }
+              lastName
+              firstName
+              username
             }
-            lastName
-            firstName
-            username
           }
-        }
-        title
-        content
-        date
-        id
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        categories {
-          edges {
+          title
+          content
+          date
+          id
+          featuredImage {
             node {
-              name
+              sourceUrl
+            }
+          }
+          categories {
+            edges {
+              node {
+                name
+              }
             }
           }
         }
       }
-    }
-    pageInfo {
-      endCursor
-      hasNextPage
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
     }
   }
-}
 `;
 
 const LOGIN_CLIENT = gql`
@@ -60,43 +60,16 @@ const LOGIN_CLIENT = gql`
   }
 `;
 
-// const GET_POSTS = gql`
-//   query GetPosts($first: Int, $after: String) {
-//     posts(first: $first, after: $after) {
-//       nodes {
-//         id
-//         title
-//         content
-//         date
-//         author {
-//           node {
-//             avatar {
-//               url
-//             }
-//             firstName
-//             lastName
-//             name
-//             roles {
-//               nodes {
-//                 displayName
-//               }
-//             }
-//             username
-//           }
-//         }
-//         featuredImage {
-//           node {
-//             sourceUrl
-//           }
-//         }
-//       }
-//       pageInfo {
-//         hasNextPage
-//         endCursor
-//       }
-//     }
-//   }
-// `;
+const GET_CATEGORIES = gql`
+  query GetCategories {
+    categories {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+  }
+`;
 
-
-export { GET_POSTS, LOGIN_CLIENT };
+export { GET_POSTS, LOGIN_CLIENT, GET_CATEGORIES };
