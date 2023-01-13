@@ -1,14 +1,86 @@
 import React, { Component } from "react";
 import "./Company.scss";
 
-// import Button from "../../components/Button/Button";
+import Button from "../../components/Button/Button";
+import ReadyGet from "../../components/ReadyGet/ReadyGet";
 import about from "../../assets/images/company-about.svg";
 import vision from "../../assets/images/company-vision.svg";
 import video from "../../assets/images/company-video.jpg";
 import teamPic1 from "../../assets/images/company-team-pic01.png";
 import teamPic2 from "../../assets/images/company-team-pic02.png";
+import teamPic3 from "../../assets/images/company-team-pic03.png";
+import teamPic4 from "../../assets/images/company-team-pic04.png";
+import teamPic5 from "../../assets/images/company-team-pic05.png";
+import teamPic6 from "../../assets/images/company-team-pic06.png";
+import teamPic7 from "../../assets/images/company-team-pic07.png";
+import teamPic8 from "../../assets/images/company-team-pic08.png";
 import diversity from "../../assets/images/company-diversity.svg";
 
+const teams = [
+	{
+		color: "Blue",
+		name: "Chidi Okechukwu",
+		position: "CEO & Founder",
+		img: teamPic1,
+		linkedin: "http://www.linkedin.com/",
+	},
+	{
+		color: "Blue",
+		name: "Duy Thanh Doan",
+		position: "Engineering",
+		img: teamPic2,
+		linkedin: "http://www.linkedin.com/",
+	},
+	{
+		color: "Blue",
+		name: "Ankur Kadian",
+		position: "Engineering",
+		img: teamPic3,
+		linkedin: "http://www.linkedin.com/",
+	},
+	{
+		color: "Green",
+		name: "Thi Rao",
+		position: "Finance & Operation",
+		img: teamPic4,
+		linkedin: "http://www.linkedin.com/",
+	},
+	{
+		color: "Green",
+		name: "Ericka Rao",
+		position: "Sales",
+		img: teamPic5,
+		linkedin: "http://www.linkedin.com/",
+	},
+	{
+		color: "Green",
+		name: "Phoebe Zeng",
+		position: "Sales",
+		img: teamPic6,
+		linkedin: "http://www.linkedin.com/",
+	},
+	{
+		color: "Blue",
+		name: "Jana Schwikowski",
+		position: "Engineering",
+		img: teamPic7,
+		linkedin: "http://www.linkedin.com/",
+	},
+	{
+		color: "Blue",
+		name: "Boya An",
+		position: "Desginer",
+		img: teamPic8,
+		linkedin: "http://www.linkedin.com/",
+	},
+	{
+		color: "Blue",
+		name: "Amrit Kharel",
+		position: "Engineering",
+		img: teamPic8,
+		linkedin: "http://www.linkedin.com/",
+	},
+];
 export default class Company extends Component {
 	render() {
 		return (
@@ -64,84 +136,54 @@ export default class Company extends Component {
 				</section>
 				<section className="team">
 					<div className="container">
-						<div className="team__wrapper">
-							<h2 className="team__title">Meet The Team</h2>
-							<ul className="team__box">
-								<li className="team__box-list">
+						<h2 className="team__title">Meet The Team</h2>
+						<ul className="team__box">
+							{teams.map((team, index) => (
+								// if({team.color} == "Green"){
+								// 	<li className="team__box-list green" key={index}>
+
+								// }else{
+								// 	<li className="team__box-list" key={index}>
+								// }
+								<li
+									className={`team__box-list ${
+										team.color === "Green" ? "green" : ""
+									}`}
+									key={index}
+								>
 									<div className="team__box__inner">
 										<img
 											className="team__box__inner-img"
-											src={teamPic1}
-											alt="team member"
+											src={team.img}
+											alt={team.name}
 										/>
 									</div>
-									<strong className="team__box-list-name">
-										Chidi Okechukwu
-									</strong>
-									<span className="team__box-list-position">CEO & Founder</span>
-									<a className="team__box-list-link" href="#"></a>
+									<strong className="team__box-list-name">{team.name}</strong>
+									<span className="team__box-list-position">
+										{team.position}
+									</span>
+									<a
+										className="team__box-list-link"
+										href={`${team.linkedin}`}
+										// target="_blank"
+									></a>
 								</li>
-								<li className="team__box-list">
-									<div className="team__box__inner">
-										<img
-											className="team__box__inner-img"
-											src={teamPic2}
-											alt="team member"
-										/>
-									</div>
-									<strong className="team__box-list-name">
-										Chidi Okechukwu
-									</strong>
-									<span className="team__box-list-position">CEO & Founder</span>
-									<a className="team__box-list-link" href="#"></a>
-								</li>
-								<li className="team__box-list">
-									<div className="team__box__inner">
-										<img
-											className="team__box__inner-img"
-											src={teamPic1}
-											alt="team member"
-										/>
-									</div>
-									<strong className="team__box-list-name">
-										Chidi Okechukwu
-									</strong>
-									<span className="team__box-list-position">CEO & Founder</span>
-									<a className="team__box-list-link" href="#"></a>
-								</li>
-								<li className="team__box-list green">
-									<div className="team__box__inner">
-										<img
-											className="team__box__inner-img"
-											src={teamPic2}
-											alt="team member"
-										/>
-									</div>
-									<strong className="team__box-list-name">
-										Chidi Okechukwu
-									</strong>
-									<span className="team__box-list-position">CEO & Founder</span>
-									<a className="team__box-list-link" href="#"></a>
-								</li>
-							</ul>
-						</div>
+							))}
+						</ul>
 					</div>
 					<div className="bottom_triangle bottom_triangle--dark-blue"></div>
 				</section>
 				<section className="diversity">
 					<div className="container">
 						<div className="diversity__wrapper">
+							<h2 className="diversity__title">Diversity & Inclusion</h2>
 							<div className="diversity__content">
-								<h2 className="diversity__content-title">
-									Diversity & Inclusion
-								</h2>
 								<p className="diversity__content-description">
 									At Paxform, we make diversity and inclusion part of everything
 									we do. We are building a culture where one’s unique attributes
 									and differences are part of who we are. Regardless of
 									background or gender, our employees, customers and
 									stakeholders are treated as equals.
-									<br />
 									<br />
 									<br /> As a fast-growing company, we focus on creating a
 									diverse workforce globally and a workplace that welcomes,
@@ -151,55 +193,15 @@ export default class Company extends Component {
 									geographic differences, furthermore, achieving the goals that
 									we have set for ourselves and our stakeholders.
 								</p>
-							</div>
-							<div className="diversity__image">
-								<img src={diversity} alt="diversity pic" />
+								<div className="diversity__content-image">
+									<img className="" src={diversity} alt="diversity pic" />
+								</div>
 							</div>
 						</div>
 					</div>
 					<div className="bottom_triangle bottom_triangle--white"></div>
 				</section>
-				<section className="ready">
-					<div className="container">
-						<div className="ready__wrapper">
-							<div className="ready__contact">
-								<h2 className="ready__contact-title">Ready to get started?</h2>
-								<p className="ready__contact-description">
-									You can also contact us to design a custom package for your
-									business.automatically match that data no matter which form
-									you are filling in. Say goodbye to manually inputting the same
-									data over and over again.
-								</p>
-								<button>Contact Us</button>
-							</div>
-							<div className="ready__content">
-								<div className="ready__content__inner">
-									<em className="ready__content-icon">icon</em>
-									<strong className="ready__content-title">
-										Always know what you pay
-									</strong>
-									<p>
-										Experience a new level of convenience by using your stored
-										signatures to electronically sign your documents.
-									</p>
-									<a href="#">Learn more</a>
-								</div>
-								<div className="ready__content__inner">
-									<em className="ready__content-icon">icon</em>
-									<strong className="ready__content-title">
-										Always know what you pay
-									</strong>
-									<p>
-										Experience a new level of convenience by using your stored
-										signatures to electronically sign your documents.
-									</p>
-									<a href="#">Learn more</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className="bottom_triangle bottom_triangle--footer"></div>
-				</section>
+				<ReadyGet />
 			</main>
 		);
 	}

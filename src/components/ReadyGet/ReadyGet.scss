@@ -1,54 +1,5 @@
 @import "../../styles/styles.scss";
-.get_started {
-    background-color: #e1edf9;
-    &__container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        @include medium {
-            flex-direction: column;
-            gap: rem(20);
-            align-items: unset;
-        }
-    }
-    &__content,
-    &__image {
-        flex: 1 1 50%;
-    }
-    &__content {
-        padding: 0 $padding__collumn;
-        h1 {
-            font-size: rem(38);
-            font-weight: 700;
-            margin-bottom: rem(60);
-            @include medium {
-                margin-top: rem(60);
-                font-size: rem(32);
-            }
-        }
-    }
-    &__buttons {
-        display: flex;
-        gap: rem(20);
-        @include medium {
-            flex-direction: column;
-            img {
-                width: 50%;
-            }
-        }
-    }
-    &__image {
-        img {
-            position: relative;
-            bottom: rem(-15);
-            @include medium {
-                width: 100%;
-            }
-        }
-    }
-}
-
-.love_to_hear {
+.ready_to_get {
     background-color: white;
     position: relative;
     z-index: 1000;

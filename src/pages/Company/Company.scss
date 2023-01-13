@@ -1,6 +1,8 @@
 @import "../../styles/styles.scss";
 $color_white: #fff;
+$color_green: #20976c;
 $color_blue: #0a61b4;
+$color_dark-blue: #031a30;
 $color-light-blue: #e1edf9;
 $color_grey: #2f4356;
 $color_purple: #2d4bb6;
@@ -21,25 +23,27 @@ $color_purple: #2d4bb6;
             box-sizing: border-box;
             @include large {
                 padding-right: 0;
-                padding-bottom: 30%;
+                padding-bottom: 22%;
             }
             @include medium {
                 padding-top: rem(10);
-                padding-bottom: 80%;
+                padding-bottom: 27%;
             }
             @include small {
                 padding-top: 0;
             }
         }
         &__content {
-            flex: 1 1 50%;
+            flex: 50%;
             padding: 0 $padding__collumn;
             text-align: left;
             color: $color_grey;
             box-sizing: border-box;
             @include large {
                 padding: 0 5%;
-                text-align: center;
+            }
+            @include small {
+                flex: 100%;
             }
             h1,
             p {
@@ -86,13 +90,19 @@ $color_purple: #2d4bb6;
             line-height: rem(25);
         }
         &__image {
-            flex: 1 1 50%;
+            flex: 50%;
+            @include small {
+                flex: 100%;
+            }
             &>img {
                 display: inline-block;
                 position: relative;
                 top: 10%;
                 width: 80%;
                 margin: 0 auto;
+                @include medium {
+                    top: 27%;
+                }
             }
         }
     }
@@ -105,15 +115,16 @@ $color_purple: #2d4bb6;
             text-align: center;
             box-sizing: border-box;
             @include large {
+                padding-top: rem(30);
                 padding-right: 0;
-                padding-bottom: 30%;
+                padding-bottom: 10%;
             }
             @include medium {
-                padding-top: rem(10);
-                padding-bottom: 80%;
+                padding-top: 0;
+                padding-bottom: 5%;
             }
             @include small {
-                padding-top: 0;
+                padding-top: rem(10);
             }
         }
         &__image {
@@ -122,6 +133,10 @@ $color_purple: #2d4bb6;
                 display: inline-block;
                 width: 90%;
                 margin: 0 auto;
+                @include medium {
+                    position: relative;
+                    top: 20%;
+                }
             }
         }
         &__content {
@@ -132,7 +147,6 @@ $color_purple: #2d4bb6;
             box-sizing: border-box;
             @include large {
                 padding: 0 5%;
-                text-align: center;
             }
             h1,
             p {
@@ -201,10 +215,16 @@ $color_purple: #2d4bb6;
             width: 100%;
             margin: 0 auto;
             box-sizing: border-box;
+            @include large {
+                padding-top: rem(130);
+            }
             &-link {
                 display: block;
                 position: relative;
                 height: rem(540);
+                @include large {
+                    height: auto;
+                }
                 &::before {
                     display: block;
                     position: absolute;
@@ -252,26 +272,48 @@ $color_purple: #2d4bb6;
         }
     }
     .team {
-        padding: rem(60) 0 rem(140);
+        padding: rem(60) 0 rem(250);
         position: relative;
-        &__wrapper {}
+        @include large {
+            padding-top: 0;
+        }
+        @include small {
+            padding-bottom: rem(140);
+        }
         &__title {
-            margin: 0 0 rem(63);
+            margin: 0 0 rem(23);
             font-size: rem(38);
             text-align: center;
         }
         &__box {
             display: flex;
             position: relative;
+            flex-wrap: wrap;
             padding-left: 0;
             &-list {
                 flex: 25%;
                 position: relative;
+                max-width: 25%;
+                height: auto;
                 padding: 0 $padding__collumn;
+                margin-top: rem(40);
                 list-style: none;
                 box-sizing: border-box;
-                &-name {}
-                &-position {}
+                @include small {
+                    flex: 50%;
+                    max-width: 50%;
+                }
+                &-name {
+                    display: block;
+                    margin-top: rem(20);
+                    font-family: GothamRoundedBold;
+                    font-size: rem(16);
+                }
+                &-position {
+                    padding-top: rem(4);
+                    font-size: rem(12);
+                    color: $color_grey;
+                }
                 &-link {
                     display: block;
                     position: absolute;
@@ -317,30 +359,113 @@ $color_purple: #2d4bb6;
                 }
             }
             &__inner {
+                overflow: hidden;
                 position: relative;
                 padding: rem(60) rem(16) 0;
+                height: rem(210);
                 background: $color-light-blue;
                 border-radius: rem(16);
+                @include large {
+                    height: rem(180);
+                }
+                @include medium {
+                    height: rem(100);
+                }
+                @include small {
+                    height: rem(180);
+                }
+                @include extraSmall {
+                    height: rem(120);
+                }
                 &::before {
                     display: block;
                     position: absolute;
-                    left: rem(16);
-                    bottom: 4%;
+                    left: rem(18);
+                    bottom: -18%;
                     width: 92%;
-                    height: rem(80);
+                    height: rem(150);
                     background: linear-gradient( 104.14deg, #0a61b4 20.63%, #074581 177.09%);
                     border-top-left-radius: rem(15);
                     transform: skewY(6deg);
                     content: "";
+                    @include medium {
+                        height: rem(100);
+                    }
+                    @include small {
+                        bottom: -10%;
+                        height: rem(150);
+                    }
+                    @include extraSmall {
+                        height: rem(70);
+                    }
                 }
                 &-img {
                     display: inline-block;
-                    position: relative;
-                    bottom: rem(-6);
-                    width: 100%;
+                    position: absolute;
+                    left: 10%;
+                    bottom: rem(-5);
+                    width: 80%;
                     z-index: 1000;
                 }
             }
+        }
+    }
+    .diversity {
+        position: relative;
+        background: $color_dark-blue;
+        &__wrapper {
+            color: $color_white;
+            @include large {
+                padding-bottom: rem(100);
+            }
+            @include medium {
+                padding-bottom: rem(140);
+            }
+            @include small {
+                padding-top: rem(80);
+                padding-bottom: 0;
+            }
+        }
+        &__title {
+            margin: 0;
+            padding: 0 $padding__collumn rem(50);
+            font-size: rem(38);
+        }
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+            &-description {
+                flex: 50%;
+                padding: 0 $padding__collumn;
+                margin-top: 0;
+                font-size: rem(16);
+                line-height: rem(25);
+                box-sizing: border-box;
+                @include small {
+                    flex: 100%;
+                }
+            }
+            &-image {
+                flex: 50%;
+                padding: 0 $padding__collumn;
+                box-sizing: border-box;
+                @include small {
+                    flex: 100%;
+                }
+                &>img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .ready_to_get {
+        @include large {
+            padding-top: 0;
+        }
+    }
+    .ready_to_get__box-left {
+        @include large {
+            margin-top: 0;
         }
     }
 }
