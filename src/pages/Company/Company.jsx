@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Company.scss";
 
-import Button from "../../components/Button/Button";
 import ReadyGet from "../../components/ReadyGet/ReadyGet";
 import about from "../../assets/images/company-about.svg";
 import vision from "../../assets/images/company-vision.svg";
@@ -128,8 +127,8 @@ export default class Company extends Component {
 				<section className="video">
 					<div className="container">
 						<div className="video__wrapper">
-							<a className="video__wrapper-link" href="#">
-								<img src={video} alt="video play" />
+							<a className="video__wrapper-link" href="http://v2.paxfolio.com/">
+								<img src={video} alt="Play this video" />
 							</a>
 						</div>
 					</div>
@@ -166,7 +165,10 @@ export default class Company extends Component {
 										className="team__box-list-link"
 										href={`${team.linkedin}`}
 										// target="_blank"
-									></a>
+										content="Go to linkedin Profile"
+									>
+										go to Linkedin Profile
+									</a>
 								</li>
 							))}
 						</ul>

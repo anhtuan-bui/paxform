@@ -316,12 +316,15 @@ $color_purple: #2d4bb6;
                 }
                 &-link {
                     display: block;
+                    overflow: hidden;
                     position: absolute;
                     top: rem(16);
                     right: rem(32);
                     width: rem(35);
                     height: rem(35);
                     border-radius: 100%;
+                    font-size: 0;
+                    color: transparent;
                     z-index: 1001;
                     &::before {
                         display: inline-block;

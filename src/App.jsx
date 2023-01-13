@@ -15,6 +15,7 @@ import Legal from "./pages/Legal/Legal";
 import LegalDetail from "./pages/LegalDetail/LegalDetail";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import Company from "./pages/Company/Company";
+import Pricing from "./pages/Pricing/Pricing";
 import getToken from "./lib/clientToken";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
@@ -22,6 +23,7 @@ const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
 const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
 const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
+//const Pricing = lazy(() => import("./pages/Pricing/Pricing"));
 
 function App() {
 	const MINUTE_MS = 250000;
@@ -45,6 +47,7 @@ function App() {
 						<Route path="/" element={<Layout />}>
 							<Route index element={<Home />} />
 							<Route path="personal" element={<Personal />} />
+							<Route path="pricing" element={<Pricing />} />
 							<Route path="faq" element={<FAQ />} />
 							<Route path="resources" element={<Resources />} />
 							<Route path="blogs" element={<Blogs />} />
