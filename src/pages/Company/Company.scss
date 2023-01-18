@@ -460,19 +460,13 @@ $color_purple: #2d4bb6;
             background-repeat: no-repeat;
             background-size: 100% 100%;
             content: "";
+            @include small {
+                left: 0;
+                height: rem(250);
+            }
         }
         &__wrapper {
             color: $color_white;
-            @include large {
-                padding-bottom: rem(100);
-            }
-            @include medium {
-                padding-bottom: rem(140);
-            }
-            @include small {
-                padding-top: rem(80);
-                padding-bottom: 0;
-            }
         }
         &__title {
             margin: 0;
@@ -485,25 +479,50 @@ $color_purple: #2d4bb6;
             &-description {
                 flex: 50%;
                 padding: 0 $padding__collumn;
-                margin-top: 0;
+                margin: 0;
                 font-size: rem(16);
                 line-height: rem(25);
                 box-sizing: border-box;
+                padding-bottom: rem(150);
+                @include large {
+                    padding-bottom: rem(200);
+                }
                 @include small {
                     flex: 100%;
+                    padding-bottom: 26%;
+                }
+                @include extraSmall {
+                    padding-bottom: 0;
                 }
             }
             &-image {
                 flex: 50%;
-                padding: 0 $padding__collumn;
+                position: relative;
+                width: 100%;
+                height: rem(456);
                 box-sizing: border-box;
-                z-index: 1001;
                 @include small {
                     flex: 100%;
                     padding: 0;
                 }
                 &>img {
-                    width: 100%;
+                    position: absolute;
+                    bottom: rem(-50);
+                    left: 0;
+                    width: auto;
+                    height: 100%;
+                    @include large {
+                        bottom: rem(-100);
+                    }
+                    @include medium {
+                        bottom: -60%;
+                        height: 80%;
+                    }
+                    @include small {
+                        bottom: 0;
+                        width: 100%;
+                        height: auto;
+                    }
                 }
             }
         }
