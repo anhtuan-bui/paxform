@@ -447,6 +447,20 @@ $color_purple: #2d4bb6;
     .diversity {
         position: relative;
         background: $color_dark-blue;
+        &::before {
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 100%;
+            height: rem(170);
+            border-top-left-radius: rem(10);
+            background-image: url("../../assets/images/company-diversity-bg.png");
+            background-position: top 0 right 2px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            content: "";
+        }
         &__wrapper {
             color: $color_white;
             @include large {
@@ -483,6 +497,7 @@ $color_purple: #2d4bb6;
                 flex: 50%;
                 padding: 0 $padding__collumn;
                 box-sizing: border-box;
+                z-index: 1001;
                 @include small {
                     flex: 100%;
                     padding: 0;
