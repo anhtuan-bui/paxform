@@ -8,10 +8,18 @@ import "./BlogsView.scss";
 const BATCH_SIZE = 2;
 
 export default function BlogsView(props) {
+  // get the first post to get the cursor for the first batch of posts
+  const { data: firstPost } = useQuery(GET_POSTS, {
+    variables: {
+      first: 1,
+    },
+  });
+
+  // get the rest of the posts
   const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
     variables: {
       first: BATCH_SIZE,
-      after: null,
+      after: firstPost?.posts?.pageInfo.endCursor,
     },
     notifyOnNetworkStatusChange: true,
   });
@@ -24,27 +32,24 @@ export default function BlogsView(props) {
     return <p>No posts yet</p>;
   }
 
+  // show only posts that have the selected category
   let posts = data.posts.edges.map((edge) => edge.node);
   const postInfo = data.posts.pageInfo;
 
   if (props.chip.toLowerCase() !== "all") {
-	posts = posts.filter((post) => {
-	  let found = false;
-	  post.categories.edges.forEach((edge) => {
-		if (edge.node.name.toLowerCase() === props.chip.toLowerCase()) {
-		  found = true;
-		}
-	  });
-	  return found;
-	});
+    // set posts to only posts that have the selected category
+    posts = posts.filter((post) => {
+      const categories = post.categories.edges.map((edge) => edge.node.name);
+      return categories.includes(props.chip);
+    });
   }
 
   return (
     <Fragment>
       <div className="posts_view">
-        {posts.map(
-          (post, index) => index !== 0 && <BlogCard key={index} blog={post} />
-        )}
+        {posts.map((post, index) => (
+          <BlogCard key={index} blog={post} />
+        ))}
       </div>
       <div className="view_more">
         {postInfo.hasNextPage ? (

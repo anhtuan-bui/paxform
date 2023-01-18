@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Button from "../Button/Button";
 import { ReactComponent as Logo } from "../../assets/images/LOGO.svg";
-// import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
 
 import "./Header.scss";
 
@@ -116,7 +115,7 @@ class Header extends Component {
   }
 
   componentDidUpdate() {
-    this.handleHeaderColorOnHero();
+      this.handleHeaderColorOnHero();
   }
 
   clickHamburger() {
