@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, Suspense } from "react";
 import "./Blogs.scss";
 import ReadArticle from "../../components/ReadArticle/ReadArticle";
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
@@ -19,7 +19,6 @@ export default class Blogs extends Component {
   }
 
   async componentDidMount() {
-    // this.blog.firstBlogEndCursor = this.getFirstBlogEndCursor();
     // this.handleResize();
     // window.addEventListener("resize", this.handleResize);
     await this.getCategories();
@@ -52,43 +51,48 @@ export default class Blogs extends Component {
 
   render() {
     return (
-      <main className="blogs">
-        <section className="hero" background="light">
-          <div className="container">
-            <div className="hero_blog">
-              <div className="hero_blog__wrapper">
-                <HeroBlogInfo />
+      <Suspense>
+        <main className="blogs">
+          <section className="hero" background="light">
+            <div className="container">
+              <div className="hero_blog">
+                <div className="hero_blog__wrapper">
+                  <HeroBlogInfo />
+                </div>
+                <div className="hero_graphic"></div>
               </div>
-              <div className="hero_graphic"></div>
             </div>
-          </div>
-          <SectionTriangleRight variant="white" />
-        </section>
+            <SectionTriangleRight variant="white" />
+          </section>
 
-        <section className="posts">
-          <div className="container">
-            <div className="chips">
-              {this.state.categories.map((category, index) => (
-                category.node.name.toLowerCase() !== "uncategorised" && <div className="chip" key={index}>
-                  <input
-                    id={category.node.name}
-                    type="radio"
-                    name="radio"
-                    onChange={this.handleRadioChange}
-                    checked={this.state.chip === category.node.name}
-                  />
-                  <label htmlFor={category.node.name}>
-                    {category.node.name}
-                  </label>
-                </div> 
-              ))}
+          <section className="posts">
+            <div className="container">
+              <div className="chips">
+                {this.state.categories.map(
+                  (category, index) => 
+                  category.node.name.toLowerCase() !== "uncategorised" && (
+                    <div className="chip" key={index}>
+                        <input
+                          id={category.node.name}
+                          type="radio"
+                          name="radio"
+                          onChange={this.handleRadioChange}
+                          checked={this.state.chip.toLowerCase() === category.node.name.toLowerCase()}
+                        />
+                        <label htmlFor={category.node.name}>
+                          {category.node.name}
+                        </label>
+                      </div>
+                    )
+                )}
+              </div>
+
+              <BlogsView chip={this.state.chip} />
             </div>
-
-            <BlogsView chip={this.state.chip} />
-          </div>
-          <SectionTriangleRight variant="footer" />
-        </section>
-      </main>
+            <SectionTriangleRight variant="footer" />
+          </section>
+        </main>
+      </Suspense>
     );
   }
 }
