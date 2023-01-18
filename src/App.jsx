@@ -17,6 +17,7 @@ import ContactUs from "./pages/ContactUs/ContactUs";
 import Company from "./pages/Company/Company";
 import Pricing from "./pages/Pricing/Pricing";
 import getToken from "./lib/clientToken";
+import GQ from "./pages/GQ/GQ";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
 const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
@@ -58,6 +59,7 @@ function App() {
 							<Route path="use-cases" element={<UseCases />} />
 							<Route path="contact-us" element={<ContactUs />} />
 							<Route path="company" element={<Company />} />
+							<Route path="gq" element={<GQ />} />
 							{/* <Route path="*" element={<NotFound />} /> */}
 						</Route>
 					</Routes>
