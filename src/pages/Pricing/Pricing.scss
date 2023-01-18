@@ -1,1 +1,129 @@
 @import "../../styles/styles.scss";
+$color_white: #fff;
+$color_green: #20976c;
+$color_blue: #0a61b4;
+$color_dark-blue: #031a30;
+.pricing {
+    .hero {
+        position: relative;
+        height: rem(808);
+        padding-bottom: rem(140);
+        background: linear-gradient(90.4deg, #059459 0.35%, #034f2f 99.66%);
+        &::before {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("../../assets/images/pricing-personal-bg.png");
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: contain;
+            content: "";
+        }
+        &__wrapper {
+            padding-top: rem(150);
+        }
+        &__top {
+            padding: 0 $padding__collumn;
+            text-align: center;
+            color: $color_white;
+            &-name {
+                font-size: rem(14);
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 0.14em;
+                opacity: 0.5;
+            }
+            &-title {
+                margin: rem(24) 0 rem(60);
+                font-size: rem(38);
+            }
+            &__tabs {
+                width: rem(278);
+                height: rem(50);
+                margin: 0 auto rem(76);
+                border-radius: rem(25);
+                background: rgba(255, 255, 255, 0.2);
+                align-items: flex-end;
+                &>a {
+                    display: inline-block;
+                    position: relative;
+                    top: rem(2.8);
+                    left: rem(1.5);
+                    width: rem(137);
+                    height: rem(44);
+                    border-radius: rem(22);
+                    font-size: rem(14);
+                    font-weight: 600;
+                    line-height: rem(44);
+                    text-align: center;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    letter-spacing: 0.14em;
+                    &:hover,
+                    focus {
+                        color: $color_dark-blue;
+                        transition: 0.3s all;
+                    }
+                }
+                &-personal {
+                    background: $color_white;
+                    color: $color_green;
+                    pointer-events: none;
+                }
+                &-business {
+                    color: $color_white;
+                }
+            }
+        }
+        &__plans {
+            display: flex;
+            column-count: 3;
+            width: 100%;
+            &>div {
+                flex: calc(100% / 3);
+                position: relative;
+                min-height: rem(400);
+                padding: rem(40) $padding__collumn;
+                border-radius: rem(20);
+                box-sizing: border-box;
+                z-index: 1001;
+            }
+            &__free {
+                top: rem(30);
+                background: #f6f6f6;
+                &__inner {}
+            }
+            &__premium {
+                margin: 0 rem(30);
+                background: #def6ec;
+                &__inner {
+                    height: rem(500);
+                }
+            }
+            &__family {
+                top: rem(30);
+                background: #f0f8ff;
+                &__inner {
+                    height: rem(200);
+                }
+            }
+        }
+    }
+    .data_credit {
+        position: relative;
+        padding-top: rem(140);
+    }
+    .compare_plans {
+        position: relative;
+    }
+    .frequently_ask {
+        position: relative;
+    }
+    .ready_to_get {
+        position: relative;
+    }
+}

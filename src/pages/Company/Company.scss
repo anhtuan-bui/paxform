@@ -194,21 +194,22 @@ $color_purple: #2d4bb6;
         }
     }
     .video {
+        position: relative;
+        &::before {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: rem(400);
+            background: $color-light-blue;
+            transform: skewY(6deg);
+            z-index: -1;
+            content: "";
+        }
         .container {
             position: relative;
-            &::before {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: rem(400);
-                background: $color-light-blue;
-                transform: skewY(6deg);
-                z-index: -1;
-                content: "";
-            }
         }
         &__wrapper {
             padding: rem(180) $padding__collumn rem(100);
