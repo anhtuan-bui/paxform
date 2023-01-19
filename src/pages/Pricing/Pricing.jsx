@@ -149,7 +149,7 @@ export default class Pricing extends Component {
 					<div className="container">
 						<h1 className="compare-title">Compare Plans</h1>
 						<div className="compare__wrapper">
-							<ul className="compare__features">
+							{/* <ul className="compare__features">
 								<li className="compare__features__list">
 									<dl className="compare__features__list__info">
 										<dt className="compare__features__list-title">Features</dt>
@@ -203,13 +203,66 @@ export default class Pricing extends Component {
 										</dd>
 									</dl>
 								</li>
-							</ul>
-							<ul className="compare__flex">
-								<li className="compare__flex__list free">
-									<dl className="compare__list__info">
-										<dt className="compare_plans__list-title">
-											<strong className="compare__list__info-name">Free</strong>
-											<span className="compare__list__info-cost">
+							</ul> */}
+							<ul className="compare__plans">
+								<li className="compare__plans__list features">
+									<dl className="compare__plans__list__info">
+										<dt className="compare__plans__list-title">Features</dt>
+										<dd className="compare__plans__list-text">
+											Price per Admin/month
+										</dd>
+										<dd className="compare__plans__list-text">
+											Number of Admins
+										</dd>
+										<dd className="compare__plans__list-text">
+											Published Forms
+										</dd>
+										<dd className="compare__plans__list-text">
+											Form Templates
+										</dd>
+										<dd className="compare__plans__list-text">
+											Agreement Templates
+										</dd>
+										<dd className="compare__plans__list-text">
+											Survey(monthly)
+										</dd>
+										<dd className="compare__plans__list-text">
+											Monthly Submissions
+										</dd>
+										<dd className="compare__plans__list-text">
+											Storage Space Available
+										</dd>
+										<dt className="compare__plans__list-title">Security</dt>
+										<dd className="compare__plans__list-text">
+											End-to-End-Encryption
+										</dd>
+										<dd className="compare__plans__list-text">40</dd>
+										<dt className="compare__plans__list-title">Support</dt>
+										<dd className="compare__plans__list-text">Generic PDF</dd>
+										<dd className="compare__plans__list-text">
+											Max Questions per Form
+										</dd>
+										<dd className="compare__plans__list-text">
+											Conditional Questions
+										</dd>
+										<dd className="compare__plans__list-text">
+											Electronic Signatures
+										</dd>
+										<dd className="compare__plans__list-text">
+											Attachment (in forms)
+										</dd>
+										<dd className="compare__plans__list-text">
+											Workflow support
+										</dd>
+									</dl>
+								</li>
+								<li className="compare__plans__list free">
+									<dl className="compare__plans__list__info">
+										<dt className="compare__plans__list-title">
+											<strong className="compare__plans__list-title-name">
+												Free
+											</strong>
+											<span className="compare__plans__list-title-cost">
 												$0 <em>/forever</em>
 											</span>
 											<Button
@@ -218,32 +271,32 @@ export default class Pricing extends Component {
 												color="green"
 											/>
 										</dt>
-										<dd className="compare_plans__list-text">$29.90</dd>
-										<dd className="compare_plans__list-text">1 &(max 4)</dd>
-										<dd className="compare_plans__list-text">3</dd>
-										<dd className="compare_plans__list-text">10</dd>
-										<dd className="compare_plans__list-text">2</dd>
-										<dd className="compare_plans__list-text">1</dd>
-										<dd className="compare_plans__list-text">500</dd>
-										<dd className="compare_plans__list-text">10GB</dd>
-										<dt className="compare_plans__list-title">-</dt>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dt className="compare_plans__list-title">-</dt>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">40</dd>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">X</dd>
-										<dd className="compare_plans__list-text">X</dd>
+										<dd className="compare__plans__list-text">$29.90</dd>
+										<dd className="compare__plans__list-text">1 &(max 4)</dd>
+										<dd className="compare__plans__list-text">3</dd>
+										<dd className="compare__plans__list-text">10</dd>
+										<dd className="compare__plans__list-text">2</dd>
+										<dd className="compare__plans__list-text">1</dd>
+										<dd className="compare__plans__list-text">500</dd>
+										<dd className="compare__plans__list-text">10GB</dd>
+										<dt className="compare__plans__list-title">-</dt>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dt className="compare__plans__list-title">-</dt>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">40</dd>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">X</dd>
+										<dd className="compare__plans__list-text">X</dd>
 									</dl>
 								</li>
-								<li className="compare__flex__list premium">
-									<dl className="compare__list__info">
-										<dt className="compare_plans__list-title">
-											<strong className="compare__list__info-name">
+								<li className="compare__plans__list premium">
+									<dl className="compare__plans__list__info">
+										<dt className="compare__plans__list-title">
+											<strong className="compare__plans__list-title-name">
 												Premium
 											</strong>
-											<span className="compare__list__info-cost">
+											<span className="compare__plans__list-title-cost">
 												$50 <em>/forever</em>
 											</span>
 											<Button
@@ -252,57 +305,57 @@ export default class Pricing extends Component {
 												color="white"
 											/>
 										</dt>
-										<dd className="compare_plans__list-text">$39.90</dd>
-										<dd className="compare_plans__list-text">5 (max 9)</dd>
-										<dd className="compare_plans__list-text">30</dd>
-										<dd className="compare_plans__list-text">50</dd>
-										<dd className="compare_plans__list-text">10</dd>
-										<dd className="compare_plans__list-text">3</dd>
-										<dd className="compare_plans__list-text">3,000</dd>
-										<dd className="compare_plans__list-text">100GB</dd>
-										<dt className="compare_plans__list-title">-</dt>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dt className="compare_plans__list-title">-</dt>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">Unlimited</dd>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">$39.90</dd>
+										<dd className="compare__plans__list-text">5 (max 9)</dd>
+										<dd className="compare__plans__list-text">30</dd>
+										<dd className="compare__plans__list-text">50</dd>
+										<dd className="compare__plans__list-text">10</dd>
+										<dd className="compare__plans__list-text">3</dd>
+										<dd className="compare__plans__list-text">3,000</dd>
+										<dd className="compare__plans__list-text">100GB</dd>
+										<dt className="compare__plans__list-title">-</dt>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dt className="compare__plans__list-title">-</dt>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">Unlimited</dd>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">Check</dd>
 									</dl>
 								</li>
-								<li className="compare__flex__list family">
-									<dl className="compare__list__info">
-										<dt className="compare_plans__list-title">
-											<strong className="compare__list__info-name">
+								<li className="compare__plans__list family">
+									<dl className="compare__plans__list__info">
+										<dt className="compare__plans__list-title">
+											<strong className="compare__plans__list-title-name">
 												Family
 											</strong>
-											<span className="compare__list__info-cost">
-												$49.90 <em>/forever</em>
+											<span className="compare__plans__list-title-cost">
+												Custom
 											</span>
 											<Button
 												text="Get started"
-												type="flat outline"
-												color="white"
+												type="arrow outline"
+												color="green"
 											/>
 										</dt>
-										<dd className="compare_plans__list-text">$49.90</dd>
-										<dd className="compare_plans__list-text">30</dd>
-										<dd className="compare_plans__list-text">100</dd>
-										<dd className="compare_plans__list-text">200</dd>
-										<dd className="compare_plans__list-text">20</dd>
-										<dd className="compare_plans__list-text">10</dd>
-										<dd className="compare_plans__list-text">10,000</dd>
-										<dd className="compare_plans__list-text">1TB</dd>
-										<dt className="compare_plans__list-title">-</dt>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dt className="compare_plans__list-title">-</dt>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">Unlimited</dd>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">Check</dd>
-										<dd className="compare_plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">$49.90</dd>
+										<dd className="compare__plans__list-text">30</dd>
+										<dd className="compare__plans__list-text">100</dd>
+										<dd className="compare__plans__list-text">200</dd>
+										<dd className="compare__plans__list-text">20</dd>
+										<dd className="compare__plans__list-text">10</dd>
+										<dd className="compare__plans__list-text">10,000</dd>
+										<dd className="compare__plans__list-text">1TB</dd>
+										<dt className="compare__plans__list-title">-</dt>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dt className="compare__plans__list-title">-</dt>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">Unlimited</dd>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">Check</dd>
 									</dl>
 								</li>
 							</ul>

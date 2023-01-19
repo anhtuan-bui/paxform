@@ -90,8 +90,9 @@ $color_dark-blue: #031a30;
             &__list {
                 flex: calc(100% / 3);
                 position: relative;
-                height: rem(640);
+                min-height: rem(640);
                 padding: rem(40) $padding__collumn;
+                margin: 0 1rem;
                 border-radius: rem(20);
                 text-align: center;
                 box-sizing: border-box;
@@ -178,8 +179,7 @@ $color_dark-blue: #031a30;
                     }
                 }
                 &.premium {
-                    height: rem(675);
-                    margin: 0 rem(30);
+                    min-height: rem(675);
                     background: #def6ec;
                     .hero__plans__list-icon {
                         background-image: url("../../assets/images/pricing-premium-icon.png");
@@ -230,6 +230,7 @@ $color_dark-blue: #031a30;
                 width: 100%;
                 height: rem(230);
                 padding: rem(30);
+                margin: 0 1rem;
                 border-radius: rem(20);
                 color: $color_white;
                 box-sizing: border-box;
@@ -276,7 +277,6 @@ $color_dark-blue: #031a30;
                     background: linear-gradient( 121.56deg, #aeb4ba 23.97%, #959aa0 39.2%, #9ca0a4 45.42%, #858a8f 52.19%, #4f5256 85.28%);
                 }
                 &.two {
-                    margin: 0 rem(30);
                     background: linear-gradient( 121.56deg, #059459 23.97%, #0a9f62 39.2%, #1faf74 45.42%, #0a9f62 52.19%, #034f2f 85.28%);
                 }
                 &.three {
@@ -285,13 +285,57 @@ $color_dark-blue: #031a30;
             }
         }
     }
-    .compare_plans {
+    .compare {
         position: relative;
-    }
-    .frequently_ask {
-        position: relative;
-    }
-    .ready_to_get {
-        position: relative;
+        padding-bottom: rem(140);
+        &-title {
+            text-align: center;
+            margin: 0 auto rem(96);
+        }
+        &__wrapper {
+            position: relative;
+        }
+        &__plans {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            width: 100%;
+            padding-left: 0;
+            list-style: none;
+            box-sizing: border-box;
+            &__list {
+                padding: 0 $padding__collumn;
+                margin: 0 1rem;
+                border: rem(1) solid #baccde;
+                border-radius: rem(20);
+                background: $color_white;
+                &__info {
+                    margin-top: 0;
+                }
+                &-title {
+                    margin-bottom: rem(32);
+                    font-size: rem(28);
+                    font-family: GothamRoundedBold, sans-serif;
+                }
+                &-text {
+                    margin-left: 0;
+                    margin-bottom: rem(24);
+                    font-size: rem(16);
+                }
+                &.features {
+                    border: none;
+                    background: #f6f6f6;
+                    .compare__plans__list-text {
+                        padding-left: rem(30);
+                        background: url("../../assets/images/icon-pricing-premium.svg") left 0 center no-repeat;
+                    }
+                }
+            }
+        }
+        .frequently_ask {
+            position: relative;
+        }
+        .ready_to_get {
+            position: relative;
+        }
     }
 }
