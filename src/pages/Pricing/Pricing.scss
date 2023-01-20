@@ -287,7 +287,7 @@ $color_dark-blue: #031a30;
     }
     .compare {
         position: relative;
-        padding-bottom: rem(140);
+        padding-bottom: rem(180);
         &-title {
             text-align: center;
             margin: 0 auto rem(96);
@@ -303,7 +303,6 @@ $color_dark-blue: #031a30;
             list-style: none;
             box-sizing: border-box;
             &__list {
-                padding: 0 $padding__collumn;
                 margin: 0 1rem;
                 border: rem(1) solid #baccde;
                 border-radius: rem(20);
@@ -312,23 +311,63 @@ $color_dark-blue: #031a30;
                     margin-top: 0;
                 }
                 &-title {
-                    margin-bottom: rem(32);
-                    font-size: rem(28);
+                    height: rem(100);
+                    padding: rem(32) $padding__collumn;
                     font-family: GothamRoundedBold, sans-serif;
+                    font-size: rem(28);
+                    text-align: center;
+                    box-sizing: border-box;
+                    &-name {
+                        display: block;
+                        font-weight: normal;
+                    }
+                    &-cost {
+                        display: block;
+                        font-weight: bolder;
+                        margin: rem(24) auto rem(28);
+                        &>em {
+                            font-size: rem(14);
+                            font-family: Inter;
+                            font-style: normal;
+                            font-weight: 400;
+                        }
+                    }
+                    & .button {
+                        width: 100%;
+                        margin: 0 auto;
+                    }
+                    &.top {
+                        height: rem(220);
+                    }
                 }
                 &-text {
+                    padding: rem(12) $padding__collumn;
                     margin-left: 0;
-                    margin-bottom: rem(24);
                     font-size: rem(16);
+                    text-align: center;
+                    &:nth-child(2n+1) {
+                        background: rgba(3, 26, 48, 0.05);
+                    }
                 }
                 &.features {
                     border: none;
                     background: #f6f6f6;
+                    .compare__plans__list-title {
+                        text-align: left;
+                        white-space: nowrap;
+                    }
+                    .compare__plans__list-title.top {
+                        line-height: rem(250);
+                    }
                     .compare__plans__list-text {
                         padding-left: rem(30);
-                        background: url("../../assets/images/icon-pricing-premium.svg") left 0 center no-repeat;
+                        background: url("../../assets/images/icon-pricing-premium.svg") left rem(8) center no-repeat;
+                        text-align: left;
                     }
                 }
+            }
+            .bottom_triangle {
+                background-color: #f0f5fa;
             }
         }
         .frequently_ask {

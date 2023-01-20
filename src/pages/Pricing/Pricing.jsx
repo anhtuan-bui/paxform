@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import "./Pricing.scss";
 import ReadyGet from "../../components/ReadyGet/ReadyGet";
+import FrequentlyAsk from "../../components/FrequentlyAsk/FrequentlyAsk";
 import Button from "../../components/Button/Button";
+
+import tick from "../../assets/images/icon-tick.svg";
+import none from "../../assets/images/icon-none.svg";
 
 export default class Pricing extends Component {
 	render() {
@@ -16,10 +20,10 @@ export default class Pricing extends Component {
 									Choose a Plan That's Right for You
 								</h1>
 								<div className="hero__top__tabs">
-									<a className="hero__top__tabs-personal" href="#">
+									<a className="hero__top__tabs-personal" href="./">
 										personal
 									</a>
-									<a className="hero__top__tabs-business" href="#">
+									<a className="hero__top__tabs-business" href="./">
 										business
 									</a>
 								</div>
@@ -207,7 +211,7 @@ export default class Pricing extends Component {
 							<ul className="compare__plans">
 								<li className="compare__plans__list features">
 									<dl className="compare__plans__list__info">
-										<dt className="compare__plans__list-title">Features</dt>
+										<dt className="compare__plans__list-title top">Features</dt>
 										<dd className="compare__plans__list-text">
 											Price per Admin/month
 										</dd>
@@ -236,7 +240,6 @@ export default class Pricing extends Component {
 										<dd className="compare__plans__list-text">
 											End-to-End-Encryption
 										</dd>
-										<dd className="compare__plans__list-text">40</dd>
 										<dt className="compare__plans__list-title">Support</dt>
 										<dd className="compare__plans__list-text">Generic PDF</dd>
 										<dd className="compare__plans__list-text">
@@ -258,7 +261,7 @@ export default class Pricing extends Component {
 								</li>
 								<li className="compare__plans__list free">
 									<dl className="compare__plans__list__info">
-										<dt className="compare__plans__list-title">
+										<dt className="compare__plans__list-title top">
 											<strong className="compare__plans__list-title-name">
 												Free
 											</strong>
@@ -272,27 +275,39 @@ export default class Pricing extends Component {
 											/>
 										</dt>
 										<dd className="compare__plans__list-text">$29.90</dd>
-										<dd className="compare__plans__list-text">1 &(max 4)</dd>
+										<dd className="compare__plans__list-text">1 (max 4)</dd>
 										<dd className="compare__plans__list-text">3</dd>
 										<dd className="compare__plans__list-text">10</dd>
 										<dd className="compare__plans__list-text">2</dd>
 										<dd className="compare__plans__list-text">1</dd>
 										<dd className="compare__plans__list-text">500</dd>
 										<dd className="compare__plans__list-text">10GB</dd>
-										<dt className="compare__plans__list-title">-</dt>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dt className="compare__plans__list-title">-</dt>
-										<dd className="compare__plans__list-text">Check</dd>
+										<dt className="compare__plans__list-title">&nbsp;</dt>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dt className="compare__plans__list-title">&nbsp;</dt>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
 										<dd className="compare__plans__list-text">40</dd>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dd className="compare__plans__list-text">X</dd>
-										<dd className="compare__plans__list-text">X</dd>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dd className="compare__plans__list-text">
+											<img src={none} alt="Non-Provide" />
+										</dd>
+										<dd className="compare__plans__list-text">
+											<img src={none} alt="Non-Provide" />
+										</dd>
 									</dl>
 								</li>
 								<li className="compare__plans__list premium">
 									<dl className="compare__plans__list__info">
-										<dt className="compare__plans__list-title">
+										<dt className="compare__plans__list-title top">
 											<strong className="compare__plans__list-title-name">
 												Premium
 											</strong>
@@ -313,20 +328,32 @@ export default class Pricing extends Component {
 										<dd className="compare__plans__list-text">3</dd>
 										<dd className="compare__plans__list-text">3,000</dd>
 										<dd className="compare__plans__list-text">100GB</dd>
-										<dt className="compare__plans__list-title">-</dt>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dt className="compare__plans__list-title">-</dt>
-										<dd className="compare__plans__list-text">Check</dd>
+										<dt className="compare__plans__list-title">&nbsp;</dt>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dt className="compare__plans__list-title">&nbsp;</dt>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
 										<dd className="compare__plans__list-text">Unlimited</dd>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
 									</dl>
 								</li>
 								<li className="compare__plans__list family">
 									<dl className="compare__plans__list__info">
-										<dt className="compare__plans__list-title">
+										<dt className="compare__plans__list-title top">
 											<strong className="compare__plans__list-title-name">
 												Family
 											</strong>
@@ -347,34 +374,35 @@ export default class Pricing extends Component {
 										<dd className="compare__plans__list-text">10</dd>
 										<dd className="compare__plans__list-text">10,000</dd>
 										<dd className="compare__plans__list-text">1TB</dd>
-										<dt className="compare__plans__list-title">-</dt>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dt className="compare__plans__list-title">-</dt>
-										<dd className="compare__plans__list-text">Check</dd>
+										<dt className="compare__plans__list-title">&nbsp;</dt>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dt className="compare__plans__list-title">&nbsp;</dt>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
 										<dd className="compare__plans__list-text">Unlimited</dd>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dd className="compare__plans__list-text">Check</dd>
-										<dd className="compare__plans__list-text">Check</dd>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
+										<dd className="compare__plans__list-text">
+											<img src={tick} alt="Provide" />
+										</dd>
 									</dl>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<div className="bottom_triangle bottom_triangle--white"></div>
+					<div className="bottom_triangle"></div>
 				</section>
-				<section className="frequently_ask">
-					<div className="container">
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-					</div>
-					<div className="bottom_triangle bottom_triangle--white"></div>
-				</section>
+				<FrequentlyAsk />
 				<ReadyGet />
 			</main>
 		);
