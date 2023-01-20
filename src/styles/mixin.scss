@@ -1,32 +1,32 @@
 @mixin extraLarge {
-  @media (max-width: $width__extraLarge) {
+  @media (max-width: ($width__extraLarge - 1)) {
     @content;
   }
 }
 
 @mixin larger {
-  @media (max-width: $width__larger) {
+  @media (max-width: ($width__larger - 1)) {
     @content;
   }
 }
 @mixin large {
-  @media (max-width: $width__large) {
+  @media (max-width: ($width__large - 1)) {
     @content;
   }
 }
 @mixin medium {
-  @media (max-width: $width__medium) {
+  @media (max-width: ($width__medium - 1)) {
     @content;
   }
 }
 
 @mixin small {
-  @media (max-width: $width__small) {
+  @media (max-width: ($width__small - 1)) {
     @content;
   }
 }
 @mixin extraSmall {
-  @media (max-width: $width__extraSmall) {
+  @media (max-width: ($width__extraSmall - 1)) {
     @content;
   }
 }

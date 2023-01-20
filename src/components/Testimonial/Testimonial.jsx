@@ -99,6 +99,8 @@ const TestimonialSwiper = (value) => {
   }
   const testimonials = data.testimonials.nodes;
 
+  // console.log(testimonials)
+
   return (
     <div className="container">
       <div className="testimonial__container">

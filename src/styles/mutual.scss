@@ -22,25 +22,17 @@
 .bottom_triangle {
     position: absolute;
     bottom: -1px;
-    left: 0;
+    right: 0;
     border-color: transparent transparent #f0f8ff #f0f8ff;
     border-style: solid;
     border-width: rem(70) 50vw;
     height: 0px;
     width: 0px;
     z-index: 1000;
-    @include large {
-        border-width: rem(60) 50vw;
+    @include extraLarge {
+        border-width: rem(60) 720px;
     }
-    @include medium {
-        border-width: rem(50) 50vw;
-    }
-    @include small {
-        border-width: rem(40) 50vw;
-    }
-    @include extraSmall {
-        border-width: rem(30) 50vw;
-    }
+
     &--dark-blue {
         border-color: transparent transparent #031a30 #031a30;
     }

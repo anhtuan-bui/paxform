@@ -21,7 +21,8 @@ import GQ from "./pages/GQ/GQ";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
 const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
-const Home = lazy(() => import("./pages/Home/Home"));
+const Home = lazy(() => import("./pages/HomeCl/Home"));
+// const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
 const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
 //const Pricing = lazy(() => import("./pages/Pricing/Pricing"));
@@ -32,6 +33,7 @@ function App() {
 	getToken();
 	useEffect(() => {
 		const interval = setInterval(() => {
+			localStorage.removeItem("clientToken");
 			getToken();
 		}, MINUTE_MS);
 
