@@ -20,9 +20,11 @@ export default class GetStarted extends Component {
         <section className="get_started">
           <div className="container get_started__container">
             <div className="get_started__content">
-				<img src={logo} alt="logo" />
-              <h1>Get started for free. <br />
-				Download from your app store.</h1>
+              <img src={logo} alt="logo" />
+              <h1>
+                Get started for free. <br />
+                Download from your app store.
+              </h1>
               <div className="get_started__buttons">
                 <img src={googlePlay} alt="google play" />
                 <img src={appstore} alt="app store" />
@@ -40,14 +42,10 @@ export default class GetStarted extends Component {
             <div className="love_to_hear__box-left">
               <h1>We’d love to hear from you!</h1>
               <p>
-                Explore Stripe Payments, or create an account instantly and
-                start accepting payments. You can also contact us to design a
-                custom package for your business.
-              </p>
-
-              <p>
-                Explore Stripe Payments, or create an account instantly and
-                start accepting payments.
+                You can also contact us to design a custom package for your
+                business.automatically match that data no matter which form you
+                are filling in. Say goodbye to manually inputting the same data
+                over and over again.
               </p>
 
               <Button type="outline arrow" text="Contact Us" />
