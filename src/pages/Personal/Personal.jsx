@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Button from '../../components/Button/Button';
-import fillOutForm from '../../assets/images/fill-out-form.svg';
-import fillOutFormMObile from '../../assets/images/fill-out-form__mobile.svg';
+// import fillOutForm from '../../assets/images/fill-out-form.svg';
+// import fillOutFormMObile from '../../assets/images/fill-out-form__mobile.svg';
 import './Personal.scss';
 
-import personelHero from '../../assets/images/personal-hero.svg';
+// import personelHero from '../../assets/images/personal-hero.svg';
+import personalIllustration from '../../assets/images/Personal/Hero Illustration.png';
+import repeatlyIllustration from '../../assets/images/Personal/repeatly illustration.svg';
+
 import featuresImg from '../../assets/images/feature-organisation.svg';
 import { ReactComponent as Tick } from '../../assets/images/tick.svg';
 import Testimonial from '../../components/Testimonial/Testimonial';
@@ -14,6 +17,7 @@ import card2 from '../../assets/images/card2.png';
 import card3 from '../../assets/images/card3.png';
 import RelatedCard from '../../components/RelatedCard/RelatedCard';
 import GetStarted from '../../components/GetStarted/GetStarted';
+
 
 const features = [
   {
@@ -115,7 +119,7 @@ export default class Personal extends Component {
 
             </div>
             <div className="hero__image">
-              <img src={personelHero} alt="personal hero" className='hero__image-large' />
+              <img src={personalIllustration} alt="personal hero" className='hero__image-large' />
             </div>
           </div>
           <div className="bottom_triangle bottom_triangle--light-green"></div>
@@ -123,15 +127,12 @@ export default class Personal extends Component {
 
         <section className="flex_box">
           <div className="container flex_box__container">
-            <div className="flex_box__image">
-              <picture>
-                <source media="(max-width: 768px)" srcSet={fillOutFormMObile} />
-                <img src={fillOutForm} alt="fill out form" />
-              </picture>
-            </div>
             <div className="flex_box__content">
               <h1 className="flex_box__content-title">Repeatedly Filling Out Forms with the Same Data Requirements?</h1>
               <div className="flex_box__content-description">Save precious time by having all your information on demand. Autocomplete forms and applications on the go. Only fill in your data once.</div>
+            </div>
+            <div className="flex_box__image">
+                <img src={repeatlyIllustration} alt="fill out form" />
             </div>
           </div>
 

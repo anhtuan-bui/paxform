@@ -34,8 +34,6 @@ $color_bg_hero__gradient--first: #059459;
       display: flex;
       align-items: center;
       height: rem(820);
-      padding-bottom: 280px;
-      padding-top: rem(200);
       box-sizing: border-box;
 
       @include medium {
@@ -107,28 +105,29 @@ $color_bg_hero__gradient--first: #059459;
     &__image {
       position: relative;
       flex: 1 1 50%;
+      align-self: flex-end;
 
       &-large {
         position: absolute;
-        bottom: rem(-890);
+        bottom: 0;
         z-index: 800;
-        left: rem(-50);
+        left: 0;
 
-        @include medium {
-          left: 50%;
-          transform: translateX(-50%);
-          bottom: rem(-400);
-          width: rem(600);
-        }
+        // @include medium {
+        //   left: 50%;
+        //   transform: translateX(-50%);
+        //   bottom: rem(-400);
+        //   width: rem(600);
+        // }
 
-        @include small {
-          bottom: rem(-420);
-        }
+        // @include small {
+        //   bottom: rem(-420);
+        // }
 
-        @include extraSmall {
-          width: rem(500);
-          bottom: rem(-400);
-        }
+        // @include extraSmall {
+        //   width: rem(500);
+        //   bottom: rem(-400);
+        // }
       }
     }
   }
@@ -137,7 +136,6 @@ $color_bg_hero__gradient--first: #059459;
     position: relative;
     background-color: #def6ec;
     z-index: 1000;
-    height: rem(900);
 
     @include extraLarge {
       height: fit-content;
@@ -148,6 +146,8 @@ $color_bg_hero__gradient--first: #059459;
       align-items: center;
       justify-content: space-between;
       position: relative;
+      padding-top: rem(100);
+      padding-bottom: rem(160);
 
       @include small {
         flex-direction: column;
@@ -171,6 +171,7 @@ $color_bg_hero__gradient--first: #059459;
       &-title {
         font-size: rem(38);
         line-height: rem(48);
+        margin-top: 0;
 
         @include large {
           font-size: rem(32);
