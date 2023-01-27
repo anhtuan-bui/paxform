@@ -487,6 +487,14 @@ $color_bg_hero__gradient--first: #059459;
     padding-bottom: rem(250);
     color: white;
 
+    @include medium {
+      padding-bottom: rem(200);
+    }
+
+    @include small {
+      padding-bottom: rem(150);
+    }
+
     &__top {
       display: flex;
       justify-content: space-between;

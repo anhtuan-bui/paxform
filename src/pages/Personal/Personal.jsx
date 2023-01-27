@@ -78,43 +78,6 @@ export default class Personal extends Component {
     });
   };
 
-  // descriptionHandler = (e) => {
-  //   const descriptions = document.querySelectorAll('.features__accordion-item-description');
-
-  //   descriptions.forEach(description => {
-  //     if (e.target.parentElement === description) {
-  //       this.position = {
-  //         left: description.scrollLeft,
-  //         top: description.scrollTop,
-  //         x: e.clientX,
-  //         y: e.clientY,
-  //       };
-
-  //       this.setState(this.position);
-
-  //       description.style.cursor = 'grabbing';
-  //       description.style.userSelect = 'none';
-
-  //       const mouseMoveHandler = (e) => {
-  //         const dx = e.clientX - this.state.x;
-  //         description.scrollLeft = this.state.left - dx;
-  //       }
-
-  //       const mouseUpHandler = () => {
-  //         document.removeEventListener('mousemove', mouseMoveHandler);
-  //         document.removeEventListener('mousedown', this.descriptionHandler);
-  //         document.removeEventListener('mouseup', mouseUpHandler);
-
-  //         e.target.style.cursor = 'grab';
-  //         e.target.style.removeProperty('user-select');
-  //       };
-
-  //       document.addEventListener('mousemove', mouseMoveHandler);
-  //       document.addEventListener('mouseup', mouseUpHandler);
-  //     }
-  //   });
-  // }
-
   render() {
     return (
       <main className="personal">
@@ -340,7 +303,7 @@ export default class Personal extends Component {
             <div className="platform__top">
               <div className="platform__top-left">
                 <p className="platform__name platform__name--green">
-                  RESOURCES
+                  Blog
                 </p>
                 <h2 className="platform__title ">
                   Stories, Updates & Ideas from Paxform.
