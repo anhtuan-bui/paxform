@@ -6,6 +6,7 @@ import Button from "../../components/Button/Button";
 
 import tick from "../../assets/images/icon-tick.svg";
 import none from "../../assets/images/icon-none.svg";
+import features from "../../assets/images/icon-pricing-premium.svg";
 
 export default class Pricing extends Component {
 	render() {
@@ -153,61 +154,6 @@ export default class Pricing extends Component {
 					<div className="container">
 						<h1 className="compare-title">Compare Plans</h1>
 						<div className="compare__wrapper">
-							{/* <ul className="compare__features">
-								<li className="compare__features__list">
-									<dl className="compare__features__list__info">
-										<dt className="compare__features__list-title">Features</dt>
-										<dd className="compare__features__list-text">
-											Price per Admin/month
-										</dd>
-										<dd className="compare__features__list-text">
-											Number of Admins
-										</dd>
-										<dd className="compare__features__list-text">
-											Published Forms
-										</dd>
-										<dd className="compare__features__list-text">
-											Form Templates
-										</dd>
-										<dd className="compare__features__list-text">
-											Agreement Templates
-										</dd>
-										<dd className="compare__features__list-text">
-											Survey(monthly)
-										</dd>
-										<dd className="compare__features__list-text">
-											Monthly Submissions
-										</dd>
-										<dd className="compare__features__list-text">
-											Storage Space Available
-										</dd>
-										<dt className="compare__features__list-title">Security</dt>
-										<dd className="compare__features__list-text">
-											End-to-End-Encryption
-										</dd>
-										<dd className="compare__features__list-text">40</dd>
-										<dt className="compare__features__list-title">Support</dt>
-										<dd className="compare__features__list-te xt">
-											Generic PDF
-										</dd>
-										<dd className="compare__features__list-text">
-											Max Questions per Form
-										</dd>
-										<dd className="compare__features__list-text">
-											Conditional Questions
-										</dd>
-										<dd className="compare__features__list-text">
-											Electronic Signatures
-										</dd>
-										<dd className="compare__features__list-text">
-											Attachment (in forms)
-										</dd>
-										<dd className="compare__features__list-text">
-											Workflow support
-										</dd>
-									</dl>
-								</li>
-							</ul> */}
 							<ul className="compare__plans">
 								<li className="compare__plans__list features">
 									<dl className="compare__plans__list__info">
@@ -316,7 +262,7 @@ export default class Pricing extends Component {
 											</span>
 											<Button
 												text="Get started"
-												type="flat outline"
+												type="flat arrow"
 												color="white"
 											/>
 										</dt>
@@ -399,6 +345,244 @@ export default class Pricing extends Component {
 								</li>
 							</ul>
 						</div>
+					</div>
+					<div className="bottom_triangle"></div>
+				</section>
+				<section className="mobile_compare">
+					<div className="container">
+						<h1 className="mobile_compare-title">Compare Plans</h1>
+						<table className="mobile_compare__tbl">
+							<thead>
+								<tr>
+									<th>Free</th>
+									<th>Premium</th>
+									<th>Family</th>
+								</tr>
+								<tr>
+									<th>
+										<strong>$0</strong>
+										<em>/forever</em>
+									</th>
+									<th>
+										<strong>$50</strong>
+										<em>/forever</em>
+									</th>
+									<th>Custom</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th colSpan="3">Features</th>
+								</tr>
+								<tr>
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Price per Admin/month
+									</td>
+								</tr>
+								<tr>
+									<td>$29.90</td>
+									<td>$39.90</td>
+									<td>$49.90</td>
+								</tr>
+								<tr className="grey">
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Number of Admins
+									</td>
+								</tr>
+								<tr className="grey">
+									<td>3</td>
+									<td>30</td>
+									<td>100</td>
+								</tr>
+								<tr>
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Published Forms
+									</td>
+								</tr>
+								<tr>
+									<td>$29.90</td>
+									<td>$39.90</td>
+									<td>$49.90</td>
+								</tr>
+								<tr className="grey">
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Form Templates
+									</td>
+								</tr>
+								<tr className="grey">
+									<td>10</td>
+									<td>50</td>
+									<td>200</td>
+								</tr>
+								<tr>
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Agreement Templates
+									</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>10</td>
+									<td>20</td>
+								</tr>
+								<tr className="grey">
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Survey(monthly)
+									</td>
+								</tr>
+								<tr className="grey">
+									<td>1</td>
+									<td>3</td>
+									<td>10</td>
+								</tr>
+								<tr>
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Monthly submissions
+									</td>
+								</tr>
+								<tr>
+									<td>500</td>
+									<td>3,000</td>
+									<td>10,000</td>
+								</tr>
+								<tr className="grey">
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Storage Space Available
+									</td>
+								</tr>
+								<tr className="grey">
+									<td>10GB</td>
+									<td>100GB</td>
+									<td>1TB</td>
+								</tr>
+								<tr>
+									<th colSpan="3">Security</th>
+								</tr>
+								<tr className="grey">
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;End-to-End Encryption
+									</td>
+								</tr>
+								<tr className="grey">
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+								</tr>
+								<tr>
+									<th colSpan="3">Support</th>
+								</tr>
+								<tr>
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Generic PDF
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+								</tr>
+								<tr className="grey">
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Max Questions per Form
+									</td>
+								</tr>
+								<tr className="grey">
+									<td>40</td>
+									<td>Unlimited</td>
+									<td>Unlimited</td>
+								</tr>
+								<tr>
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Conditional Questions
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+								</tr>
+								<tr className="grey">
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Electronic Signatures
+									</td>
+								</tr>
+								<tr className="grey">
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+								</tr>
+								<tr>
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Attachments (in forms)
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img src={none} alt="Non-Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+								</tr>
+								<tr className="grey">
+									<td colSpan="3">
+										<img src={features} alt="feature icon" />
+										&nbsp;Workflow support
+									</td>
+								</tr>
+								<tr className="grey">
+									<td>
+										<img src={none} alt="Non-Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+									<td>
+										<img src={tick} alt="Provide" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 					<div className="bottom_triangle"></div>
 				</section>

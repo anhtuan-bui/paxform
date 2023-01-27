@@ -1,4 +1,5 @@
 @import "../../styles/styles.scss";
+$color_white: #fff;
 $color_grey: #2f4356;
 $color_dark-blue: #031a30;
 $color_light-blue: #e1edf9;
@@ -76,6 +77,25 @@ $color_light-blue: #e1edf9;
                 }
                 td {
                     display: block;
+                }
+            }
+        }
+    }
+    @include large {
+        background: $color_dark-blue;
+        color: $color_white;
+        &__wrapper table {
+            border-color: $color_dark-blue;
+            & tr {
+                th {
+                    border-color: $color_dark-blue;
+                    &::before {
+                        background-image: url("../../assets/images/ico-faq-arrow-white.svg");
+                    }
+                }
+                td {
+                    border-color: $color_dark-blue;
+                    color: $color_white;
                 }
             }
         }

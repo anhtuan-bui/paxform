@@ -9,6 +9,10 @@ $color_dark-blue: #031a30;
         height: rem(808);
         padding-bottom: rem(140);
         background: linear-gradient(90.4deg, #059459 0.35%, #034f2f 99.66%);
+        @include large {
+            padding-bottom: rem(300);
+            margin-bottom: rem(0);
+        }
         &::before {
             display: block;
             position: absolute;
@@ -39,7 +43,22 @@ $color_dark-blue: #031a30;
             }
             &-title {
                 margin: rem(24) 0 rem(60);
-                font-size: rem(38);
+                font-size: rem(42);
+                @include extraLarge {
+                    font-size: rem(38);
+                }
+                @include large {
+                    font-size: rem(34);
+                }
+                @include medium {
+                    font-size: rem(42);
+                }
+                @include small {
+                    font-size: rem(36);
+                }
+                @include extraSmall {
+                    font-size: rem(28);
+                }
             }
             &__tabs {
                 width: rem(278);
@@ -67,6 +86,9 @@ $color_dark-blue: #031a30;
                     focus {
                         color: $color_dark-blue;
                         transition: 0.3s all;
+                    }
+                    @include large {
+                        top: rem(3);
                     }
                 }
                 &-personal {
@@ -198,12 +220,121 @@ $color_dark-blue: #031a30;
                     }
                 }
             }
+            @include large {
+                flex-wrap: wrap;
+                column-count: 1;
+                &__list {
+                    flex: 1 100%;
+                    min-height: auto;
+                    padding-bottom: rem(85);
+                    margin-top: rem(26);
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                    &.premium {
+                        min-height: auto;
+                    }
+                    &__inner {
+                        position: relative;
+                        text-align: left;
+                    }
+                    &-text {
+                        display: none;
+                    }
+                    &-icon {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        margin: 0;
+                    }
+                    &-name {
+                        padding: 0 rem(100) 0 rem(70);
+                        margin: 0;
+                        font-size: rem(18);
+                    }
+                    &-description {
+                        padding: 0 rem(100) 0 rem(70);
+                        margin: 0;
+                    }
+                    &-cost {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        margin: 0;
+                        font-size: rem(24);
+                    }
+                    & .button {
+                        position: absolute;
+                        bottom: rem(-65);
+                        left: 0;
+                        right: 0;
+                    }
+                    &-benefits {
+                        width: 100%;
+                        margin-top: rem(24);
+                        & dt {
+                            font-size: rem(11);
+                        }
+                        & dd {
+                            font-size: rem(14);
+                        }
+                    }
+                }
+            }
+            @include small {
+                &__list {
+                    padding-bottom: rem(20);
+                    &__inner {
+                        text-align: center;
+                    }
+                    &-icon {
+                        position: initial;
+                        margin: 0 auto;
+                    }
+                    &-name {
+                        padding: 0;
+                        margin: rem(28) auto rem(14);
+                        font-size: rem(28);
+                    }
+                    &-description {
+                        padding: 0;
+                        margin: 0;
+                    }
+                    &-cost {
+                        position: initial;
+                        margin: rem(24) 0 rem(30);
+                        font-size: rem(34);
+                    }
+                    & .button {
+                        position: initial;
+                    }
+                    &-benefits {
+                        width: 100%;
+                        margin-top: rem(24);
+                        & dt {
+                            font-size: rem(14);
+                        }
+                        & dd {
+                            font-size: rem(15);
+                        }
+                    }
+                }
+            }
         }
     }
     .data_credit {
         position: relative;
-        padding-top: rem(300);
-        padding-bottom: rem(240);
+        padding: rem(300) 0 rem(220);
+        @include large {
+            padding-top: rem(650);
+            padding-bottom: rem(250);
+        }
+        @include medium {
+            padding-top: rem(700);
+        }
+        @include small {
+            padding-top: rem(300);
+        }
         &-name {
             font-size: rem(14);
             font-weight: bold;
@@ -214,8 +345,23 @@ $color_dark-blue: #031a30;
         }
         &-title {
             margin: rem(24) auto rem(60);
-            font-size: rem(38);
+            font-size: rem(42);
             text-align: center;
+            @include extraLarge {
+                font-size: rem(38);
+            }
+            @include large {
+                font-size: rem(34);
+            }
+            @include medium {
+                font-size: rem(42);
+            }
+            @include small {
+                font-size: rem(36);
+            }
+            @include extraSmall {
+                font-size: rem(28);
+            }
         }
         &__cards {
             display: flex;
@@ -225,6 +371,10 @@ $color_dark-blue: #031a30;
             padding-left: 0;
             list-style: none;
             box-sizing: border-box;
+            @include small {
+                flex-wrap: wrap;
+                column-count: 1;
+            }
             &__list {
                 position: relative;
                 width: 100%;
@@ -234,6 +384,15 @@ $color_dark-blue: #031a30;
                 border-radius: rem(20);
                 color: $color_white;
                 box-sizing: border-box;
+                @include large {
+                    height: rem(160);
+                }
+                @include small {
+                    margin-top: rem(20);
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
                 &::before {
                     display: block;
                     position: absolute;
@@ -257,21 +416,32 @@ $color_dark-blue: #031a30;
                 }
                 &-cost {
                     display: block;
+                    margin-bottom: rem(46);
                     text-align: right;
                     font-family: GothamRoundedBold, sans-serif;
                     font-size: rem(34);
-                    margin-bottom: rem(46);
+                    @include large {
+                        margin-bottom: rem(32);
+                        font-size: rem(20);
+                    }
                 }
                 &-point {
                     display: block;
                     text-align: left;
                     font-family: GothamRoundedBold, sans-serif;
                     font-size: rem(42);
+                    @include large {
+                        font-size: rem(26);
+                    }
                 }
                 &-text {
                     display: block;
                     font-size: rem(16);
+                    font-style: normal;
                     text-align: left;
+                    @include large {
+                        font-size: rem(14);
+                    }
                 }
                 &.one {
                     background: linear-gradient( 121.56deg, #aeb4ba 23.97%, #959aa0 39.2%, #9ca0a4 45.42%, #858a8f 52.19%, #4f5256 85.28%);
@@ -288,12 +458,47 @@ $color_dark-blue: #031a30;
     .compare {
         position: relative;
         padding-bottom: rem(180);
+        @include small {
+            display: none;
+        }
+        .container {
+            position: relative;
+            @include large {
+                padding-top: rem(100);
+                padding-left: rem(240);
+            }
+        }
         &-title {
+            margin: 0 auto rem(100);
+            font-size: rem(42);
             text-align: center;
-            margin: 0 auto rem(96);
+            @include extraLarge {
+                font-size: rem(38);
+            }
+            @include large {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                margin: 0;
+                font-size: rem(34);
+                text-align: center;
+            }
+            @include medium {
+                font-size: rem(42);
+            }
+            @include small {
+                font-size: rem(36);
+            }
+            @include extraSmall {
+                font-size: rem(28);
+            }
         }
         &__wrapper {
-            position: relative;
+            @include large {
+                overflow-x: scroll;
+            }
         }
         &__plans {
             display: grid;
@@ -302,11 +507,35 @@ $color_dark-blue: #031a30;
             padding-left: 0;
             list-style: none;
             box-sizing: border-box;
+            @include large {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
             &__list {
                 margin: 0 1rem;
                 border: rem(1) solid #baccde;
                 border-radius: rem(20);
                 background: $color_white;
+                &.premium {
+                    position: relative;
+                    border: none;
+                    background: #def6ec;
+                    &::before {
+                        position: absolute;
+                        top: rem(-35);
+                        left: 0;
+                        width: 100%;
+                        font-size: rem(14);
+                        font-weight: 600;
+                        text-align: center;
+                        text-transform: uppercase;
+                        letter-spacing: 0.14em;
+                        color: $color_green;
+                        content: "most popular";
+                        @include large {
+                            display: none;
+                        }
+                    }
+                }
                 &__info {
                     margin-top: 0;
                 }
@@ -345,6 +574,7 @@ $color_dark-blue: #031a30;
                     margin-left: 0;
                     font-size: rem(16);
                     text-align: center;
+                    white-space: nowrap;
                     &:nth-child(2n+1) {
                         background: rgba(3, 26, 48, 0.05);
                     }
@@ -364,17 +594,81 @@ $color_dark-blue: #031a30;
                         background: url("../../assets/images/icon-pricing-premium.svg") left rem(8) center no-repeat;
                         text-align: left;
                     }
+                    @include large {
+                        position: absolute;
+                        top: rem(110);
+                        left: 0;
+                        padding-bottom: rem(10);
+                    }
                 }
             }
-            .bottom_triangle {
-                background-color: #f0f5fa;
+        }
+        .bottom_triangle {
+            border-color: transparent transparent #f0f5fa #f0f5fa;
+            @include large {
+                border-color: transparent transparent $color_dark-blue $color_dark-blue;
             }
         }
-        .frequently_ask {
+    }
+    .mobile_compare {
+        display: none;
+        @include small {
+            display: block;
             position: relative;
+            width: 100%;
+            padding-bottom: rem(130);
         }
-        .ready_to_get {
-            position: relative;
+        &-title {
+            margin: rem(24) auto rem(60);
+            font-size: rem(24);
+            text-align: center;
         }
+        &__tbl {
+            width: 100%;
+            border-collapse: collapse;
+            vertical-align: middle;
+            & tr th,
+            & tr td {
+                padding: rem(10) $padding__collumn;
+            }
+            & thead tr th {
+                font-size: rem(16);
+                color: $color_dark-blue;
+                & strong {
+                    font-size: rem(18);
+                }
+                & em {
+                    font-size: rem(14);
+                    font-style: normal;
+                    font-weight: 400;
+                    color: #2f4356;
+                }
+            }
+            & tbody tr {
+                &.grey {
+                    background: #f2f4f5;
+                }
+                & th {
+                    padding: rem(30) $padding__collumn;
+                    font-size: rem(18);
+                    text-align: left;
+                }
+                & td {
+                    font-size: rem(16);
+                    text-align: center;
+                    letter-spacing: 0.005em;
+                    color: $color_dark-blue;
+                }
+            }
+        }
+        .bottom_triangle {
+            border-color: transparent transparent $color_dark-blue $color_dark-blue;
+        }
+    }
+    .frequently_ask {
+        position: relative;
+    }
+    .ready_to_get {
+        position: relative;
     }
 }
