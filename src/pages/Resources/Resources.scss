@@ -144,10 +144,13 @@ $color__hero-background: #f0f5fa;
         left: 0;
         transform: translateY(48%);
         z-index: 1000;
+        max-height: rem(209);
+        width: 100%;
+        min-width: 1440px;
 
         @include extraLarge {
           left: 50%;
-          transform: translate(-45%, 48%);
+          transform: translate(-50%, 48%);
         }
 
         @include medium {
@@ -161,7 +164,7 @@ $color__hero-background: #f0f5fa;
     position: relative;
     background-color: white;
     padding-top: rem(200);
-    padding-bottom: rem(200);
+    padding-bottom: 14.5rem;
 
     &__wrapper {
       padding: 0 $padding__collumn;
@@ -224,7 +227,7 @@ $color__hero-background: #f0f5fa;
   .insight_update {
     position: relative;
     padding-top: rem(80);
-    padding-bottom: rem(220);
+    padding-bottom: 14.5rem;
     background-color: $color__secondary;
 
     &__title {
@@ -286,7 +289,7 @@ $color__hero-background: #f0f5fa;
     position: relative;
     background-color: white;
     padding-top: rem(80);
-    padding-bottom: rem(200);
+    padding-bottom: 13.5rem;
 
     &__name {
       color: #0a61b4;
@@ -346,7 +349,7 @@ $color__hero-background: #f0f5fa;
     position: relative;
     z-index: 1000;
     padding-top: rem(80);
-    padding-bottom: rem(200);
+    padding-bottom: 13.5rem;
     color: white;
 
     &__top {

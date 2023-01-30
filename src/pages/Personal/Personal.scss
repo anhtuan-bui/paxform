@@ -340,6 +340,7 @@ $color_bg_hero__gradient--first: #059459;
     &__top {
       display: flex;
       align-items: flex-start;
+      padding: 0 $padding__collumn;
 
       &-title,
       &-button {
