@@ -104,7 +104,7 @@ const TestimonialSwiper = (value) => {
   return (
     <div className="container">
       <div className="testimonial__container">
-        <p className="testimonial__name">TESTIMONIAL</p>
+        <p className="testimonial__name section_name">TESTIMONIAL</p>
         <h2 className="testimonial__title">
           What people are saying about Paxform
         </h2>

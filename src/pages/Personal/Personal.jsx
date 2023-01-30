@@ -51,6 +51,45 @@ const features = [
   },
 ];
 
+const plans = [
+  {
+    mainColor: "grey",
+    title: "Free",
+    price: [0, "forever"],
+    description: "A simple way to get started for you new to passfolio.",
+    features: [
+      "Unlimited data",
+      "5 Person saved",
+      "A simple way for you new started to Passfolio.",
+      "A simple way for you new started to Passfolio.",
+    ],
+  },
+  {
+    mainColor: "green",
+    title: "Premium",
+    price: [50, "forever"],
+    description: "Best for freelance coders & designers who need.",
+    features: [
+      "Unlimited data",
+      "5 Person saved",
+      "A simple way for you new started to Passfolio.",
+      "A simple way for you new started to Passfolio.",
+    ],
+  },
+  {
+    mainColor: "blue",
+    title: "Family",
+    price: ["Custom Pricing", ""],
+    description: "Best for freelance coders & designers who need.",
+    features: [
+      "Unlimited data",
+      "5 Person saved",
+      "A simple way for you new started to Passfolio.",
+      "A simple way for you new started to Passfolio.",
+    ],
+  },
+];
+
 export default class Personal extends Component {
   constructor(props) {
     super(props);
@@ -173,124 +212,98 @@ export default class Personal extends Component {
 
         <section className="plans">
           <div className="container plans__container">
-            <p className="plans__name section_name">PERSONAL PLANS</p>
-            <h1 className="plans__title section_title">
-              Choose a Plan That’s Right for You
-            </h1>
-            <div className="plans__pricing">
-              <div className="pricing_box pricing_box--grey">
-                <div className="pricing_box__top">
-                  <div className="pricing_box__dot"></div>
-                  <h2 className="pricing_box__title">Free</h2>
-                  <p className="pricing_box__description">
-                    A simple way to get started for you new to passfolio.
-                  </p>
-                  <div className="pricing_box__price">
-                    <span className="pricing_box__price-bt">$0</span>
-                    <span className="pricing_box__price-forever">/forever</span>
-                  </div>
-                  <Button
-                    text="Get Started"
-                    type="outline arrow"
-                    color="green"
-                  />
-                </div>
-                <p className="pricing_box__price-sub">What’s included</p>
-                <ul>
-                  <li>
-                    <Tick />
-                    <span>Unlimited data</span>
-                  </li>
-                  <li>
-                    <Tick />
-                    <span>5 Person saved</span>
-                  </li>
-                  <li>
-                    <Tick />
-                    <span>A simple way for you new started to Passfolio.</span>
-                  </li>
-                  <li>
-                    <Tick />
-                    <span>A simple way for you new started to Passfolio.</span>
-                  </li>
-                </ul>
+            <div className="plans__top">
+              <div className="plans__top-title">
+                <p className="plans__name section_name">PERSONAL PLANS</p>
+                <h1 className="plans__title section_title">
+                  Choose a Plan That’s Right for You
+                </h1>
               </div>
-
-              <div className="pricing_box pricing_box--green">
-                <div className="pricing_box__top">
-                  <div className="pricing_box__dot pricing_box__dot--green"></div>
-                  <h2 className="pricing_box__title">Premium</h2>
-                  <p className="pricing_box__description">
-                    Best for freelance coders & designers who need.
-                  </p>
-                  <div className="pricing_box__price">
-                    <span className="pricing_box__price-bt">$50</span>
-                    <span>/forever</span>
-                  </div>
-                  <Button text="Get Started" type="flat arrow" color="white" />
-                </div>
-                <p className="pricing_box__price-sub">What’s included</p>
-                <ul>
-                  <li>
-                    <Tick />
-                    <span>Unlimited data</span>
-                  </li>
-                  <li>
-                    <Tick />
-                    <span>5 Person saved</span>
-                  </li>
-                  <li>
-                    <Tick />
-                    <span>A simple way for you new started to Passfolio.</span>
-                  </li>
-                  <li>
-                    <Tick />
-                    <span>A simple way for you new started to Passfolio.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="pricing_box pricing_box--blue">
-                <div className="pricing_box__top">
-                  <div className="pricing_box__dot pricing_box__dot--blue"></div>
-                  <h2 className="pricing_box__title">Family</h2>
-                  <p className="pricing_box__description">
-                    Best for freelance coders & designers who need.
-                  </p>
-                  <div className="pricing_box__price">
-                    <span className="pricing_box__price-bt">
-                      Custom Pricing
-                    </span>
-                  </div>
-                  <Button
-                    text="Get Started"
-                    type="outline arrow"
-                    color="green"
-                  />
-                </div>
-                <p className="pricing_box__price-sub">What’s included</p>
-                <ul>
-                  <li>
-                    <Tick />
-                    <span>Unlimited data</span>
-                  </li>
-                  <li>
-                    <Tick />
-                    <span>5 Person saved</span>
-                  </li>
-                  <li>
-                    <Tick />
-                    <span>A simple way for you new started to Passfolio.</span>
-                  </li>
-                </ul>
+              <div className="plans__top-button">
+                <Button
+                  className="plans__button"
+                  text="See full pricing"
+                  type="arrow outline"
+                  color="green"
+                />
               </div>
             </div>
-            <Button
-              className="plans__button"
-              text="See full pricing"
-              type="arrow outline"
-              color="green"
-            />
+
+            <div className="plans__pricing">
+              {plans.map((plan, index) => (
+                <div
+                  key={index}
+                  className={`pricing_box ${
+                    plan.mainColor === "green"
+                      ? "pricing_box--green"
+                      : plan.mainColor === "blue"
+                      ? "pricing_box--blue"
+                      : plan.mainColor === "grey"
+                      ? "pricing_box--grey"
+                      : ""
+                  }`}
+                >
+                  <div className="pricing_box__top">
+                    <div
+                      className={`pricing_box__dot ${
+                        plan.mainColor === "green"
+                          ? "pricing_box__dot--green"
+                          : plan.mainColor === "blue"
+                          ? "pricing_box__dot--blue"
+                          : ""
+                      }`}
+                    ></div>
+                    <h2 className="pricing_box__title">{plan.title}</h2>
+                    <p className="pricing_box__description">
+                      {plan.description}
+                    </p>
+                    <div className="pricing_box__price">
+                      <span className="pricing_box__price-bt">
+                        {typeof plan.price[0] === "number"
+                          ? `$${plan.price[0]}`
+                          : plan.price[0]}
+                      </span>
+                      <span className="pricing_box__price-forever">
+                        {plan.price[1] === "forever" ? "/forever" : ""}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="pricing_box__bottom">
+                    {plan.mainColor === "green" ? (
+                      <Button
+                        text="Get Started"
+                        type="flat arrow"
+                        color="white"
+                      />
+                    ) : (
+                      <Button
+                        text="Get Started"
+                        type="outline arrow"
+                        color="green"
+                      />
+                    )}
+
+                    <p className="pricing_box__price-sub">What’s included</p>
+                    <ul>
+                      {plan.features.map((feature, index) => (
+                        <li key={index}>
+                          <Tick
+                            className={`tick ${
+                              plan.mainColor === "green"
+                                ? "tick--green"
+                                : plan.mainColor === "blue"
+                                ? "tick--blue"
+                                : ""
+                            }`}
+                          />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
         <section className="testimonial">
@@ -302,7 +315,7 @@ export default class Personal extends Component {
           <div className="container platform__container">
             <div className="platform__top">
               <div className="platform__top-left">
-                <p className="platform__name platform__name--green">
+                <p className="platform__name platform__name--green section_name">
                   Blog
                 </p>
                 <h2 className="platform__title ">
