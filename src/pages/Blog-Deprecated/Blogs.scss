@@ -1,11 +1,9 @@
 @import "../../styles/styles.scss";
 
-.blogs {
-  .hero {
-    background-color: $color__gray-blue;
-    padding-top: rem(181);
-    position: relative;
-  }
+.hero {
+  background-color: $color__gray-blue;
+  padding-top: rem(181);
+  position: relative;
 }
 
 .hero_blog {
@@ -66,7 +64,7 @@
   &__summary {
     margin-bottom: rem(40);
     margin-top: 0;
-
+    
     @include resetSummary;
   }
 }
