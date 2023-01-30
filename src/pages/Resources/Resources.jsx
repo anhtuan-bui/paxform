@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import ResourceCard from "../../components/ResourceCard/ResourceCard";
 import "./Resources.scss";
 
-import graphic from "../../assets/images/Graphics.svg";
+// import graphic from "../../assets/images/Graphics.svg";
 import RelatedCard from "../../components/RelatedCard/RelatedCard";
 
 import card1 from "../../assets/images/card1.png";
 import card2 from "../../assets/images/card2.png";
 import card3 from "../../assets/images/card3.png";
 import Button from "../../components/Button/Button";
+
+import shapeHeader from "../../assets/images/Reosources/Shape header.svg";
+import ReadyGet from "../../components/ReadyGet/ReadyGet";
 
 export default class Resources extends Component {
   resource = { chip: "all" };
@@ -28,48 +31,64 @@ export default class Resources extends Component {
       <main className="resources">
         <section className="hero" background="light">
           <div className="container hero__wrapper">
+            <div className="hero__articles">
+              <div className="hero__articles-wrapper">
+                <div className="hero__articles-group">
+                  <ResourceCard />
+                  <ResourceCard variant="longer" />
+                </div>
+              </div>
+            </div>
             <div className="hero__content">
-              <p className="hero__name">Paxform Resources</p>
+              <p className="hero__name section_name">Paxform Resources</p>
               <h1 className="hero__title">Guides and resources</h1>
               <p className="hero__description">
                 Paxform will never share your data with anyone. What’s more, no
                 one at Paxform can view or access your information.
               </p>
-            </div>
-            <div className="hero__articles">
-              <div className="hero__articles-wrapper">
-                <div className="hero__articles-group">
-                  <ResourceCard overlay="blue" />
-                  <ResourceCard overlay="green" />
-                  <ResourceCard className="weird_card" overlay="green" />
-                  <ResourceCard overlay="blue" />
-                  <div className="hero__articles-graphic">
-                    <img src={graphic} alt="illustrator graphic" />
-                  </div>
-                </div>
-              </div>
+              <Button
+                type="flat arrow"
+                color="white"
+                text="See all Resources"
+              />
             </div>
           </div>
-          <div className="bottom_triangle bottom_triangle--light-green"></div>
+          <div className="hero__background">
+            <img
+              className="hero__background-image"
+              src={shapeHeader}
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
         </section>
 
         <section className="business_insight">
           <div className="container">
             <div className="business_insight__wrapper">
-              <p className="section_name business_insight__name">
-                BUSINESS INSIGHT HIGHLIGHT
-              </p>
-              <h1 className="section_title business_insight__title">
-                Latest Business Insight Highlight
-              </h1>
+              <div className="business_insight__top">
+                <div className="business_insight__highlight">
+                  <p className="section_name business_insight__name">
+                    BUSINESS INSIGHT HIGHLIGHT
+                  </p>
+                  <h1 className="section_title business_insight__title">
+                    Latest Business Insight Highlight
+                  </h1>
+                </div>
+                <div className="business_insight__button">
+                  <Button type="outline arrow" text="See all" color="green" />
+                </div>
+              </div>
+
               <div className="business_insight__grid">
-                <ResourceCard overlay="green" />
-                <ResourceCard overlay="green" />
-                <ResourceCard overlay="green" />
+                <ResourceCard background="greyish-blue" />
+                <ResourceCard background="greyish-blue" />
+                <ResourceCard background="greyish-blue" />
+                <ResourceCard background="greyish-blue" />
               </div>
             </div>
           </div>
-          <div className="bottom_triangle bottom_triangle--white"></div>
+          <div className="bottom_triangle bottom_triangle--secondary"></div>
         </section>
 
         <section className="insight_update">
@@ -140,26 +159,62 @@ export default class Resources extends Component {
                   description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
                   readLink={true}
                 />
+                <RelatedCard
+                  image={card1}
+                  category="Insight"
+                  title="First Story"
+                  description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
+                  readLink={true}
+                />
+                <RelatedCard
+                  image={card2}
+                  category="Insight"
+                  title="First Story"
+                  description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
+                  readLink={true}
+                />
+                <RelatedCard
+                  image={card3}
+                  category="Insight"
+                  title="First Story"
+                  description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
+                  readLink={true}
+                />
+                <RelatedCard
+                  image={card1}
+                  category="Insight"
+                  title="First Story"
+                  description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
+                  readLink={true}
+                />
               </div>
             </div>
           </div>
-          <div className="bottom_triangle bottom_triangle--light-blue"></div>
+          <div className="bottom_triangle bottom_triangle--white"></div>
         </section>
 
         <section className="latest_update">
           <div className="container">
             <div className="latest_update__wrapper">
-              <p className="latest_update__name section_name">
-                INDUSTRY UPDATES HIGHLIGHT
-              </p>
-              <h1 className="latest_update__title section_title">
-                Latest Industry Updates Highlight
-              </h1>
+              <div className="latest_update__top">
+                <div className="latest_update__highlight">
+                  <p className="latest_update__name section_name">
+                    INDUSTRY UPDATES HIGHLIGHT
+                  </p>
+                  <h1 className="latest_update__title section_title">
+                    Latest Industry Updates Highlight
+                  </h1>
+                </div>
+                <div className="latest_update__button">
+                  <Button type="outline arrow" color="green" text="See all"/>
+                </div>
+              </div>
 
               <div className="latest_update__grid">
-                <ResourceCard overlay="blue" />
-                <ResourceCard overlay="blue" />
-                <ResourceCard overlay="blue" />
+                <ResourceCard background="greyish-blue"/>
+                <ResourceCard background="greyish-blue"/>
+                <ResourceCard background="greyish-blue"/>
+                <ResourceCard background="greyish-blue"/>
               </div>
             </div>
           </div>
@@ -171,38 +226,48 @@ export default class Resources extends Component {
           <div className="container platform__container">
             <div className="platform__top">
               <div className="platform__top-left">
-
-                <p className="platform__name platform__name--green section_name">PAXFORM BLOG</p>
-                <h2 className='platform__title section_title'>Latest Blog’s from Paxform.</h2>
+                <p className="platform__name platform__name--green section_name">
+                  PAXFORM BLOG
+                </p>
+                <h2 className="platform__title section_title">
+                  Latest Blog’s from Paxform.
+                </h2>
               </div>
               <div className="platform__top-right">
                 <Button type="outline arrow" text="See All Blog Post" />
               </div>
-
             </div>
             <div className="platform__content">
-              <RelatedCard 
-              image={card1}
-              title="First Story"
-              description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
-              readLink={true}
+              <RelatedCard
+                image={card1}
+                title="First Story"
+                description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
+                readLink={true}
               />
-              <RelatedCard 
-              image={card2}
-              title="Second Story"
-              description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
-              readLink={true}
+              <RelatedCard
+                image={card2}
+                title="Second Story"
+                description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
+                readLink={true}
               />
-              <RelatedCard 
-              image={card3}
-              title="Third Story"
-              description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
-              readLink={true}
+              <RelatedCard
+                image={card3}
+                title="Third Story"
+                description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
+                readLink={true}
+              />
+              <RelatedCard
+                image={card3}
+                title="Third Story"
+                description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
+                readLink={true}
               />
             </div>
           </div>
-          <div className="bottom_triangle bottom_triangle--light-blue"></div>
+          <div className="bottom_triangle bottom_triangle--white"></div>
         </section>
+
+        <ReadyGet/>
       </main>
     );
   }

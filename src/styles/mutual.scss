@@ -57,6 +57,9 @@
     &--green {
         border-color: transparent transparent #059459 #059459;
     }
+    &--secondary {
+        border-color: transparent transparent $color__secondary $color__secondary;
+    }
 }
 
 .rtl {
@@ -86,9 +89,7 @@
         background-color: white;
         transform-origin: bottom left;
         transition: transform 0.25s ease-out;
-        @include larger {
-            background-color: $color_main__text;
-        }
+        
         @include large {
             background-color: transparent;
         }

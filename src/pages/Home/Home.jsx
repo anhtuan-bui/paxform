@@ -6,8 +6,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
 import { Autoplay } from "swiper";
 
-import { ReactComponent as HeroRight } from "../../assets/images/large-hero.svg";
-import { ReactComponent as CertificateIllustrator } from "../../assets/images/certificate-illustrator.svg";
+import homeHeroIllustrator from "../../assets/images/home/Hero Illustration.png";
+import businessIllustration from "../../assets/images/home/Business Illustration.png";
+
+import bgBusinessIlustration from "../../assets/images/home/Bg-bi.svg";
+
+import personalIllustration from "../../assets/images/home/Personal illustration.png";
+import bgPersonalIlustration from "../../assets/images/home/Bg-personal.svg";
+
+import securityPolicyImage from "../../assets/images/home/security policy.svg";
+import bgSecurityPolicy from "../../assets/images/home/Bg-security.svg";
+
+// import { ReactComponent as HeroRight } from '../../assets/images/large-hero.svg';
+// import { ReactComponent as CertificateIllustrator } from '../../assets/images/certificate-illustrator.svg';
 
 import flipreach from "../../assets/images/flipreach.svg";
 import amazon from "../../assets/images/amazon.svg";
@@ -18,19 +29,21 @@ import paypal from "../../assets/images/paypal.svg";
 import icon11 from "../../assets/images/icon1-1.svg";
 import icon12 from "../../assets/images/icon1-2.svg";
 import icon13 from "../../assets/images/icon1-3.svg";
-import businessImg from "../../assets/images/Business Image.svg";
+// import businessImg from "../../assets/images/Business Image.svg";
 
 import icon21 from "../../assets/images/icon2-1.svg";
 import icon22 from "../../assets/images/icon2-2.svg";
 import icon23 from "../../assets/images/icon2-3.svg";
 import icon24 from "../../assets/images/icon2-4.svg";
 import icon25 from "../../assets/images/icon2-5.svg";
-import personalPlatformImg from "../../assets/images/Personal Platform Image.svg";
+// import personalPlatformImg from "../../assets/images/Personal Platform Image.svg";
 
-import securityPolicy from "../../assets/images/security-policy.svg";
+// import securityPolicy from "../../assets/images/security-policy.svg";
 
-import information from "../../assets/images/all information.svg";
-import mostForms from "../../assets/images/most forms.svg";
+import information from "../../assets/images/home/simplify1.svg";
+// import information from "../../assets/images/all information.svg";
+import mostForms from "../../assets/images/home/simplify2.svg";
+// import mostForms from "../../assets/images/most forms.svg";
 
 import Testimonial from "../../components/Testimonial/Testimonial";
 import GetStarted from "../../components/GetStarted/GetStarted";
@@ -105,11 +118,21 @@ const personalPlatform = [
 ];
 
 var home = {
-  numberOfComapniesPerView: 5,
+  numberOfComapniesPerView: 4,
   autoplaySpeed: 4000,
 };
 
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = home;
+    // bind handleResize to this component
+    this.handleResize = this.handleResize.bind(this);
+
+    //bind handleHeroImageSize to this component
+    this.handleHeroImageSize = this.handleHeroImageSize.bind(this);
+  }
   componentDidMount() {
     this.handleResize();
     window.addEventListener("resize", this.handleResize);
@@ -119,11 +142,11 @@ export default class Home extends Component {
     window.removeEventListener("resize", this.handleResize);
   }
 
-  handleResize = () => {
+  handleResize() {
     const screenWidth = window.innerWidth;
     if (screenWidth >= SCREEN_SIZE.large) {
       home = {
-        numberOfComapniesPerView: 5,
+        numberOfComapniesPerView: 4,
       };
     } else if (
       screenWidth < SCREEN_SIZE.large &&
@@ -137,15 +160,30 @@ export default class Home extends Component {
       screenWidth >= SCREEN_SIZE.small
     ) {
       home = {
-        numberOfComapniesPerView: 3,
+        numberOfComapniesPerView: 2,
       };
     } else if (screenWidth < SCREEN_SIZE.small) {
       home = {
         numberOfComapniesPerView: 2,
       };
     }
+
+    this.handleHeroImageSize();
     this.setState(home);
-  };
+  }
+
+  handleHeroImageSize() {
+    // select hero image, get height and width
+    const heroImage = document.querySelector(".hero__image-large");
+    const heroImageHeight = heroImage.clientHeight;
+    const heroImageWidth = heroImage.clientWidth;
+
+    // select hero empty box and set height and width
+    const heroEmptyBox = document.querySelector(".hero__empty-box");
+    heroEmptyBox.style.minHeight = heroImageHeight + 60 + "px";
+    heroEmptyBox.style.height = heroImageHeight + 60 + "px";
+    heroEmptyBox.style.width = heroImageWidth + "px";
+  }
 
   render() {
     return (
@@ -171,9 +209,13 @@ export default class Home extends Component {
                 />
               </div>
             </div>
+            <div className="hero__empty-box"></div>
             <div className="hero__image">
-              <HeroRight className="hero__image-large" />
-              <CertificateIllustrator className="hero__image-ci" />
+              <img
+                className="hero__image-large"
+                src={homeHeroIllustrator}
+                alt="large hero illustrator"
+              />
             </div>
           </div>
           <div className="bottom_triangle"></div>
@@ -232,7 +274,11 @@ export default class Home extends Component {
                 </h2>
               </div>
               <div className="platform__top-right">
-                <Button type="outline arrow" text="Learn more about Business" />
+                <Button
+                  type="outline flat"
+                  color="white"
+                  text="Learn more about Business"
+                />
               </div>
             </div>
             <div className="business_platform__content">
@@ -256,12 +302,17 @@ export default class Home extends Component {
                   );
                 })}
                 <div className="business_platform__image">
-                  <img src={businessImg} alt="Business" />
+                  <img src={businessIllustration} alt="Business" />
                 </div>
               </div>
             </div>
           </div>
-
+          <img
+            className="image__background"
+            src={bgBusinessIlustration}
+            alt=""
+            aria-hidden="true"
+          />
           <div className="bottom_triangle bottom_triangle--dark-blue"></div>
         </section>
 
@@ -277,7 +328,11 @@ export default class Home extends Component {
                 </h2>
               </div>
               <div className="platform__top-right">
-                <Button type="outline arrow" text="Learn more about Personal" />
+                <Button
+                  type="outline flat"
+                  color="white"
+                  text="Learn more about Personal"
+                />
               </div>
             </div>
             <div className="personal_platform__content">
@@ -301,20 +356,23 @@ export default class Home extends Component {
                   );
                 })}
                 <div className="personal_platform__image">
-                  <img src={personalPlatformImg} alt="Personel" />
+                  <img src={personalIllustration} alt="Personel" />
                 </div>
               </div>
             </div>
           </div>
 
+          <img
+            className="image__background-personal"
+            src={bgPersonalIlustration}
+            alt=""
+            aria-hidden="true"
+          />
           <div className="bottom_triangle bottom_triangle--light-blue"></div>
         </section>
 
         <section className="security_policy">
           <div className="container security_policy__container">
-            <div className="security_policy__image">
-              <img src={securityPolicy} alt="security policy" />
-            </div>
             <div className="security_policy__content">
               <p className="security_policy__name">SECURITY POLICY</p>
               <h2 className="security_policy__title">
@@ -338,7 +396,13 @@ export default class Home extends Component {
                 <Button type="outline arrow" text="Learn more" />
               </div>
             </div>
+
+            <div className="security_policy__image">
+              <img src={securityPolicyImage} alt="security policy" />
+            </div>
           </div>
+
+          <img className="image__background-security" src={bgSecurityPolicy} alt="" aria-hidden="true" />
           <div className="bottom_triangle bottom_triangle--white"></div>
         </section>
 
@@ -349,6 +413,7 @@ export default class Home extends Component {
 
         <section className="simplify">
           <div className="container simplify__container">
+            <p className="simplify__why section_name">WHY PAXFORM</p>
             <h2 className="simplify__title">We simplify your work</h2>
             <div className="simplify_flexbox">
               <div className="simplify_flexbox__content">
