@@ -14,6 +14,7 @@ $color__hero-background: #f0f5fa;
 
     @include medium {
       padding-top: 0;
+      margin-bottom: 0;
     }
 
     @include small {
@@ -28,7 +29,7 @@ $color__hero-background: #f0f5fa;
 
       @include medium {
         flex-direction: column;
-        padding-bottom: rem(140);
+        padding-bottom: rem(100);
         padding-top: 0;
       }
 
@@ -131,10 +132,6 @@ $color__hero-background: #f0f5fa;
         }
 
         > :first-child {
-          margin-bottom: $grid__gap;
-        }
-
-        > :nth-child(3) {
           margin-bottom: $grid__gap;
         }
       }

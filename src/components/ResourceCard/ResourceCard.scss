@@ -1,7 +1,7 @@
 @import "../../styles/styles.scss";
 
 $card_height: rem(200);
-$card_height--large: rem(150);
+$card_height--small: rem(150);
 
 .resource_card {
   border-radius: rem(20);
@@ -19,7 +19,7 @@ $card_height--large: rem(150);
     display: block;
 
     @include large {
-      height: $card_height--large;
+      height: $card_height--small;
     }
 
     @include medium {
@@ -30,7 +30,7 @@ $card_height--large: rem(150);
       height: rem(267);
 
       @include large {
-        height: calc($card_height--large * 1.335);
+        height: calc($card_height--small * 1.335);
       }
 
       @include medium {
