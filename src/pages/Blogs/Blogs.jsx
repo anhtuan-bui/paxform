@@ -140,7 +140,7 @@ const HeroBlogInfo = () => {
 };
 
 const BlogsView = (props) => {
-  const batchSize = 2;
+  const batchSize = 8;
   // get the first post to get the cursor for the first batch of posts
   const { data: firstPost } = useQuery(GET_POSTS, {
     variables: {

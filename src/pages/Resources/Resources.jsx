@@ -47,7 +47,7 @@ export default class Resources extends Component {
                 one at Paxform can view or access your information.
               </p>
               <Button
-                type="flat arrow"
+                type="flat-green arrow"
                 color="white"
                 text="See all Resources"
               />

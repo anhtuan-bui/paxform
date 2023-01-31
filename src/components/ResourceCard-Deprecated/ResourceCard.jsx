@@ -19,7 +19,7 @@ export default class ResourceCard extends Component {
 
           <h2 className="resource_card__content-title">There are many variations of passages</h2>
           <div className="resource_card__content-button">
-            <Button type="flat arrow" text="Read Article" />
+            <Button type="flat-green arrow" text="Read Article" />
 
           </div>
         </div>

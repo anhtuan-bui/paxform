@@ -48,7 +48,7 @@ export default class ContactUs extends Component {
 								</label>
 								<Button
 									text="Send Message"
-									type="flat arrow submit"
+									type="flat-green arrow submit"
 									color="white"
 								/>
 							</form>

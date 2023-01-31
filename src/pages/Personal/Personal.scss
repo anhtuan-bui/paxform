@@ -16,14 +16,6 @@ $color_bg_hero__gradient--first: #059459;
       display: flex;
       gap: rem(18);
 
-      .button--flat {
-        background-color: #135f3a;
-
-        &:hover {
-          background-color: darken(#135f3a, 5%);
-        }
-      }
-
       @include extraSmall {
         flex-direction: column;
         gap: rem(10);

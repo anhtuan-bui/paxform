@@ -68,7 +68,7 @@ export default class Pricing extends Component {
 										</strong>
 										<Button
 											text="Get Started"
-											type="flat arrow"
+											type="flat-green arrow"
 											color="white"
 										/>
 										<dl className="hero__plans__list-benefits">
@@ -262,7 +262,7 @@ export default class Pricing extends Component {
 											</span>
 											<Button
 												text="Get started"
-												type="flat arrow"
+												type="flat-green arrow"
 												color="white"
 											/>
 										</dt>

@@ -24,6 +24,7 @@ const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
 const Home = lazy(() => import("./pages/Home/Home"));
 // const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
+const Business = lazy(() => import("./pages/Business/Business"));
 const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
 //const Pricing = lazy(() => import("./pages/Pricing/Pricing"));
 
@@ -50,6 +51,7 @@ function App() {
 						<Route path="/" element={<Layout />}>
 							<Route index element={<Home />} />
 							<Route path="personal" element={<Personal />} />
+							<Route path="business" element={<Business />} />
 							<Route path="pricing" element={<Pricing />} />
 							<Route path="faq" element={<FAQ />} />
 							<Route path="resources" element={<Resources />} />

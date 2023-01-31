@@ -1,0 +1,597 @@
+@import "../../styles/styles.scss";
+
+.business {
+  .hero {
+    position: relative;
+    background: linear-gradient(90.71deg, #0A61B4 -74.09%, #074581 99.41%);
+
+    &__button {
+      display: flex;
+      gap: rem(18);
+
+      @include extraSmall {
+        flex-direction: column;
+        gap: rem(10);
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      height: rem(820);
+      box-sizing: border-box;
+
+      @include medium {
+        flex-direction: column;
+        padding-top: 0;
+        height: fit-content;
+        padding-bottom: 0;
+      }
+    }
+
+    &__name {
+      margin: rem(20) 0;
+      opacity: 50%;
+      letter-spacing: rem(2);
+      font-weight: 600;
+      font-size: rem(14);
+      text-transform: uppercase;
+
+      @include medium {
+        margin-top: rem(150);
+        margin-bottom: rem(40);
+      }
+    }
+
+    &__content {
+      color: white;
+      flex: 1 1 50%;
+      padding: 0 $padding__collumn;
+
+      h1,
+      p {
+        max-width: 100%;
+      }
+    }
+    &__title {
+      font-size: rem(42);
+      margin-bottom: rem(24);
+      margin-top: 0;
+
+      @include extraLarge {
+        font-size: rem(38);
+      }
+
+      @include large {
+        font-size: rem(34);
+      }
+
+      @include medium {
+        font-size: rem(42);
+      }
+
+      @include small {
+        font-size: rem(36);
+      }
+
+      @include extraSmall {
+        font-size: rem(28);
+      }
+    }
+
+    &__description {
+      margin-bottom: rem(50);
+    }
+
+    &__image {
+      position: relative;
+      flex: 1 1 50%;
+      align-self: flex-end;
+
+      @include medium {
+        align-self: center;
+        width: 100%;
+        flex: none;
+      }
+
+      &-large {
+        position: absolute;
+        bottom: 0;
+        z-index: 800;
+        left: 0;
+
+        @include large {
+          width: rem(900);
+        }
+
+        @include medium {
+          position: relative;
+          width: 80%;
+          margin-top: rem(40);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        @include small {
+          width: 150%;
+          left: 0;
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .flex_box {
+    position: relative;
+    background-color: white;
+    z-index: 1000;
+
+    @include extraLarge {
+      height: fit-content;
+    }
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      padding-top: rem(100);
+      padding-bottom: rem(100);
+
+      @include medium {
+        padding-top: rem(80);
+        padding-bottom: rem(80);
+        flex-direction: column;
+      }
+
+      @include small {
+        padding-top: rem(60);
+        padding-bottom: rem(60);
+      }
+    }
+
+    &__content,
+    &__text {
+      flex: 1 1 50%;
+      box-sizing: border-box;
+
+      @include small {
+        width: 100%;
+        flex: none;
+      }
+    }
+
+    &__content {
+      padding: 0 $padding__collumn;
+      box-sizing: border-box;
+
+      @include medium {
+        // margin-bottom: rem(180);
+      }
+
+      &-title {
+        font-size: rem(38);
+        margin-top: 0;
+        text-transform: capitalize;
+
+        @include large {
+          font-size: rem(32);
+        }
+
+        @include medium {
+          font-size: rem(24);
+        }
+      }
+
+      &-description {
+        line-height: rem(25);
+        letter-spacing: 0.005rem;
+      }
+    }
+
+    &__text {
+        padding: 0 $padding__collumn;
+        p {
+            margin: 0;
+        }
+    }
+
+  }
+
+  .features {
+    position: relative;
+    background-color: #E1EDF9;
+    z-index: 1000;
+    color: $color_main__text;
+    padding-top: rem(80);
+    padding-bottom: rem(220);
+
+    @include medium {
+      padding-bottom: rem(120);
+    }
+
+    &__name {
+      text-transform: uppercase;
+      letter-spacing: rem(2);
+      opacity: 0.8;
+      color: #1C85E8;
+      margin-bottom: rem(20);
+    }
+
+    &__title {
+      font-size: rem(38);
+      line-height: rem(48);
+      margin-bottom: rem(50);
+      margin-top: 0;
+
+      @include large {
+        font-size: rem(32);
+        line-height: rem(42);
+      }
+
+      @include medium {
+        font-size: rem(24);
+        line-height: rem(30);
+      }
+    }
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      direction: rtl;
+
+      @include medium {
+        flex-direction: column;
+      }
+    }
+
+    &__accordion,
+    &__image {
+      flex: 1 1 50%;
+      box-sizing: border-box;
+      direction: ltr;
+    }
+
+    &__accordion {
+      padding: 0 $padding__collumn;
+      &-item {
+        &-title {
+          font-size: rem(20);
+          line-height: rem(26);
+          margin: rem(14) 0;
+          cursor: pointer;
+
+          &--active-blue {
+            color: $color__primary;
+          }
+        }
+        &-panel {
+          max-height: 0;
+          overflow-y: hidden;
+          transition: 0.25s ease-in-out;
+        }
+        &-description {
+          line-height: rem(25);
+          letter-spacing: 0.005rem;
+          opacity: 0.7;
+
+          p {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    &__image {
+      @include medium {
+        width: 60%;
+      }
+
+      @include small {
+        width: 100%;
+      }
+
+      img {
+        @include extraLarge {
+          width: 100%;
+        }
+
+        @include large {
+          margin-top: rem(20);
+        }
+      }
+    }
+  }
+
+  .plans {
+    position: relative;
+    padding-top: rem(100);
+    margin-bottom: rem(40);
+
+    &__container {
+      > .button {
+        margin: auto;
+      }
+    }
+
+    &__top {
+      display: flex;
+      align-items: flex-start;
+      padding: 0 $padding__collumn;
+
+      &-title,
+      &-button {
+        flex: 1 1 50%;
+      }
+
+      &-button {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    &__name {
+      color: #2d4bb6;
+    }
+    &__title {
+      margin-bottom: rem(60);
+      max-width: 100%;
+      margin-top: rem(16);
+    }
+
+    &__pricing {
+      display: grid;
+      align-items: stretch;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $grid__gap;
+      margin-bottom: rem(60);
+      padding: 0 $padding__collumn;
+
+      @include larger {
+        row-gap: rem(40);
+      }
+      @include large {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include small {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  .pricing_box {
+    padding: rem(40);
+    border-radius: rem(20);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    ul {
+      padding-left: 0;
+
+      li {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+        margin-top: rem(10);
+
+        span {
+          letter-spacing: 0.005rem;
+          line-height: rem(25);
+        }
+
+        svg {
+          width: rem(18);
+          min-width: rem(18);
+        }
+      }
+    }
+
+    &--grey {
+      background-color: #f6f6f6;
+      @include large {
+        grid-column: 1 / span 2;
+
+        ul {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: rem(32);
+        }
+      }
+
+      @include small {
+        grid-column: unset;
+        ul {
+          display: block;
+        }
+      }
+    }
+    &--green {
+      background-color: #def6ec;
+    }
+    &--blue {
+      background-color: #f0f8ff;
+    }
+
+    &__bottom {
+      button {
+        width: 100%;
+      }
+    }
+
+    &__title {
+      margin-top: 0;
+      margin-bottom: rem(14);
+      font-size: rem(28);
+      font-weight: 500;
+    }
+
+    &__description {
+      margin-top: 0;
+      margin-bottom: rem(24);
+    }
+
+    &__price {
+      margin-top: 0;
+      margin-bottom: rem(24);
+
+      &-bt {
+        font-family: GothamRoundedBold, sans-serif;
+        font-size: rem(34);
+      }
+
+      &-forever {
+        color: $color_secondary__text;
+      }
+
+      &-sub {
+        text-transform: uppercase;
+        font-size: rem(14);
+        letter-spacing: 0.014rem;
+        margin-top: rem(44);
+      }
+    }
+
+    &__top {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+
+    &__dot {
+      margin: auto;
+      margin-bottom: rem(28);
+      width: rem(25);
+      height: rem(25);
+      border-radius: 50%;
+      background-color: #aeb4ba;
+      outline: rem(12.5) solid hsla(210, 8%, 71%, 0.2);
+
+      &--blue {
+        background-color: #0a61b4;
+        outline: rem(12.5) solid hsla(209, 89%, 37%, 0.2);
+      }
+
+      &--green {
+        background-color: #20976c;
+        outline: rem(12.5) solid hsla(158, 65%, 36%, 0.2);
+      }
+    }
+  }
+
+  .platform {
+    background-color: #031a30;
+    position: relative;
+    z-index: 1000;
+    padding-top: rem(80);
+    padding-bottom: rem(250);
+    color: white;
+
+    @include medium {
+      padding-bottom: rem(200);
+    }
+
+    @include small {
+      padding-bottom: rem(150);
+    }
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 $padding__collumn;
+
+      @include small {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      &-left,
+      &-right {
+        flex: 1 1 50%;
+      }
+
+      &-left {
+        h2 {
+          margin-bottom: rem(60);
+
+          @include small {
+            margin-bottom: rem(40);
+          }
+        }
+      }
+
+      &-right {
+        display: flex;
+        justify-content: flex-end;
+
+        > .button {
+          border: 1px solid #20976c;
+          color: #20976c;
+
+          @include small {
+            margin-bottom: rem(40);
+          }
+
+          path {
+            stroke: #20976c;
+          }
+        }
+      }
+    }
+
+    &__title {
+      font-size: rem(38);
+      line-height: rem(48);
+      color: white;
+
+      @include medium {
+        font-size: rem(24);
+        line-height: rem(30);
+      }
+    }
+
+    &__name {
+      font-size: rem(14);
+      font-weight: 500;
+      color: white;
+      opacity: 0.5;
+      letter-spacing: 1px;
+      margin-bottom: rem(22);
+    }
+
+    &__content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $grid__gap;
+      padding: 0 $padding__collumn;
+
+      @include medium {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: rem(60);
+      }
+
+      @include small {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+.tick {
+  &--green {
+    path {
+      fill: #20976c;
+    }
+  }
+
+  &--blue {
+    path {
+      fill: #0a61b4;
+    }
+  }
+}

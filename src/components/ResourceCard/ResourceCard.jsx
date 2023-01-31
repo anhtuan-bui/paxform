@@ -12,7 +12,6 @@ export default function ResourceCard(props) {
     if (props.variant === 'longer'){
       setVariant('resource_card__image--longer');
     }
-
     if (props.background === "greyish-blue"){
       setBackground('resource_card--greyish-blue')
     }

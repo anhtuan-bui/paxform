@@ -135,7 +135,7 @@ export default class Personal extends Component {
                 encrypts your data to ensure your safety.
               </p>
               <div className="hero__button">
-                <Button text="See Plan" type="flat arrow" color="white" />
+                <Button text="See Plan" type="flat-white arrow" color="green" />
                 <Button
                   text="How it works"
                   type="outline triangle-right"
@@ -272,7 +272,7 @@ export default class Personal extends Component {
                     {plan.mainColor === "green" ? (
                       <Button
                         text="Get Started"
-                        type="flat arrow"
+                        type="flat-green arrow"
                         color="white"
                       />
                     ) : (

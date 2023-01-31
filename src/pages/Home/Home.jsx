@@ -201,7 +201,7 @@ export default class Home extends Component {
                 documents and share information with others.
               </p>
               <div className="hero__button">
-                <Button text="Sign Up" type="flat arrow" color="white" />
+                <Button text="Sign Up" type="flat-green arrow" color="white" />
                 <Button
                   text="How it works"
                   type="outline triangle-right"
@@ -275,7 +275,7 @@ export default class Home extends Component {
               </div>
               <div className="platform__top-right">
                 <Button
-                  type="outline flat"
+                  type="flat-green"
                   color="white"
                   text="Learn more about Business"
                 />
