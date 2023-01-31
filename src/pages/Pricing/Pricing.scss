@@ -171,20 +171,22 @@ $color_dark-blue: #031a30;
                     width: 100%;
                     height: rem(45);
                 }
-                &-benefits {
+                &-inc {
+                    display: block;
                     margin-top: rem(40);
+                    font-size: rem(14);
+                    font-weight: 600;
+                    color: #8594a3;
+                    letter-spacing: 0.14em;
                     text-align: left;
-                    &>dt {
-                        padding-bottom: rem(18);
-                        font-size: rem(14);
-                        font-weight: 600;
-                        color: #8594a3;
-                        letter-spacing: 0.14em;
-                        text-transform: uppercase;
-                    }
-                    &>dd {
-                        margin-left: 0;
-                        margin-bottom: rem(18);
+                    text-transform: uppercase;
+                }
+                &-benefits {
+                    padding-left: 0;
+                    text-align: left;
+                    & li {
+                        list-style: none;
+                        margin: rem(18) 0 rem(18) 0;
                         padding-left: rem(30);
                         background-repeat: no-repeat;
                         background-position: left 0 center;
@@ -196,7 +198,7 @@ $color_dark-blue: #031a30;
                     .hero__plans__list-icon {
                         background-image: url("../../assets/images/pricing-free-icon.png");
                     }
-                    .hero__plans__list-benefits>dd {
+                    .hero__plans__list-benefits li {
                         background-image: url("../../assets/images/icon-pricing-free.svg");
                     }
                 }
@@ -206,7 +208,7 @@ $color_dark-blue: #031a30;
                     .hero__plans__list-icon {
                         background-image: url("../../assets/images/pricing-premium-icon.png");
                     }
-                    .hero__plans__list-benefits>dd {
+                    .hero__plans__list-benefits li {
                         background-image: url("../../assets/images/icon-pricing-premium.svg");
                     }
                 }
@@ -215,7 +217,7 @@ $color_dark-blue: #031a30;
                     .hero__plans__list-icon {
                         background-image: url("../../assets/images/pricing-family-icon.png");
                     }
-                    .hero__plans__list-benefits>dd {
+                    .hero__plans__list-benefits li {
                         background-image: url("../../assets/images/icon-pricing-family.svg");
                     }
                 }
@@ -269,13 +271,17 @@ $color_dark-blue: #031a30;
                         left: 0;
                         right: 0;
                     }
+                    &-inc {
+                        font-size: rem(11);
+                    }
                     &-benefits {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        column-gap: 2rem;
                         width: 100%;
                         margin-top: rem(24);
-                        & dt {
-                            font-size: rem(11);
-                        }
-                        & dd {
+                        & li {
+                            margin: rem(5) 0;
                             font-size: rem(14);
                         }
                     }
@@ -308,13 +314,15 @@ $color_dark-blue: #031a30;
                     & .button {
                         position: initial;
                     }
+                    &-inc {
+                        font-size: rem(14);
+                    }
                     &-benefits {
+                        grid-template-columns: repeat(1, 1fr);
+                        column-gap: 0;
                         width: 100%;
                         margin-top: rem(24);
-                        & dt {
-                            font-size: rem(14);
-                        }
-                        & dd {
+                        & li {
                             font-size: rem(15);
                         }
                     }
@@ -330,10 +338,10 @@ $color_dark-blue: #031a30;
             padding-bottom: rem(250);
         }
         @include medium {
-            padding-top: rem(700);
+            padding-top: rem(340);
         }
         @include small {
-            padding-top: rem(300);
+            padding-top: rem(400);
         }
         &-name {
             font-size: rem(14);

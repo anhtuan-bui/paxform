@@ -45,14 +45,16 @@ export default class Pricing extends Component {
 											type="arrow outline"
 											color="green"
 										/>
-										<dl className="hero__plans__list-benefits">
-											<dt>What's Included</dt>
-											<dd>Unlimited data</dd>
-											<dd>5 Person saved</dd>
-											<dd>
+										<strong className="hero__plans__list-inc">
+											What's Included
+										</strong>
+										<ul className="hero__plans__list-benefits">
+											<li>Unlimited data</li>
+											<li>5 Person saved</li>
+											<li>
 												A Simple way to get started for you new to Passfolio
-											</dd>
-										</dl>
+											</li>
+										</ul>
 									</div>
 								</li>
 								<li className="hero__plans__list premium">
@@ -71,17 +73,19 @@ export default class Pricing extends Component {
 											type="flat-green arrow"
 											color="white"
 										/>
-										<dl className="hero__plans__list-benefits">
-											<dt>What's Included</dt>
-											<dd>Unlimited data</dd>
-											<dd>5 Person saved</dd>
-											<dd>
+										<strong className="hero__plans__list-inc">
+											What's Included
+										</strong>
+										<ul className="hero__plans__list-benefits">
+											<li>Unlimited data</li>
+											<li>5 Person saved</li>
+											<li>
 												A Simple way to get started for you new to Passfolio
-											</dd>
-											<dd>
+											</li>
+											<li>
 												A Simple way to get started for you new to Passfolio
-											</dd>
-										</dl>
+											</li>
+										</ul>
 									</div>
 								</li>
 								<li className="hero__plans__list family">
@@ -97,16 +101,18 @@ export default class Pricing extends Component {
 											type="arrow outline"
 											color="green"
 										/>
+										<strong className="hero__plans__list-inc">
+											What's Included
+										</strong>
 										<dl className="hero__plans__list-benefits">
-											<dt>What's Included</dt>
-											<dd>Unlimited data</dd>
-											<dd>5 Person saved</dd>
-											<dd>
+											<li>Unlimited data</li>
+											<li>5 Person saved</li>
+											<li>
 												A Simple way to get started for you new to Passfolio
-											</dd>
-											<dd>
+											</li>
+											<li>
 												A Simple way to get started for you new to Passfolio
-											</dd>
+											</li>
 										</dl>
 									</div>
 								</li>
