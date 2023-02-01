@@ -101,7 +101,32 @@ $color_dark-blue: #031a30;
                 }
             }
         }
-        &__plans {
+    }
+    .plans {
+        position: relative;
+        min-height: rem(350);
+        @include large {
+            min-height: rem(400);
+        }
+        @include medium {
+            min-height: rem(450);
+        }
+        @include small {
+            min-height: rem(1200);
+        }
+        @include extraSmall {
+            min-height: rem(1400);
+        }
+        .container {
+            position: absolute;
+            top: rem(-500);
+            left: 0;
+            right: 0;
+            @include large {
+                top: rem(-650);
+            }
+        }
+        &__ul {
             display: flex;
             column-count: 3;
             align-items: flex-end;
@@ -332,17 +357,7 @@ $color_dark-blue: #031a30;
     }
     .data_credit {
         position: relative;
-        padding: rem(300) 0 rem(220);
-        @include large {
-            padding-top: rem(650);
-            padding-bottom: rem(250);
-        }
-        @include medium {
-            padding-top: rem(340);
-        }
-        @include small {
-            padding-top: rem(400);
-        }
+        padding-bottom: rem(220);
         &-name {
             font-size: rem(14);
             font-weight: bold;

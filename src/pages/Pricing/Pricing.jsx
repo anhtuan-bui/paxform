@@ -29,97 +29,101 @@ export default class Pricing extends Component {
 									</a>
 								</div>
 							</div>
-							<ul className="hero__plans">
-								<li className="hero__plans__list free">
-									<div className="hero__plans__list__inner">
-										<i className="hero__plans__list-icon">flags</i>
-										<h2 className="hero__plans__list-name">Free</h2>
-										<p className="hero__plans__list-description">
-											A simple way to get started for you new to passfolio.
-										</p>
-										<strong className="hero__plans__list-cost">
-											$0<span> /forever</span>
-										</strong>
-										<Button
-											text="Get started"
-											type="arrow outline"
-											color="green"
-										/>
-										<strong className="hero__plans__list-inc">
-											What's Included
-										</strong>
-										<ul className="hero__plans__list-benefits">
-											<li>Unlimited data</li>
-											<li>5 Person saved</li>
-											<li>
-												A Simple way to get started for you new to Passfolio
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li className="hero__plans__list premium">
-									<div className="hero__plans__list__inner">
-										<em className="hero__plans__list-text">Most Popular</em>
-										<i className="hero__plans__list-icon">Star</i>
-										<h2 className="hero__plans__list-name">Premium</h2>
-										<p className="hero__plans__list-description">
-											Best for freelance coders & designers who need.
-										</p>
-										<strong className="hero__plans__list-cost">
-											$50<span> /forever</span>
-										</strong>
-										<Button
-											text="Get Started"
-											type="flat-green arrow"
-											color="white"
-										/>
-										<strong className="hero__plans__list-inc">
-											What's Included
-										</strong>
-										<ul className="hero__plans__list-benefits">
-											<li>Unlimited data</li>
-											<li>5 Person saved</li>
-											<li>
-												A Simple way to get started for you new to Passfolio
-											</li>
-											<li>
-												A Simple way to get started for you new to Passfolio
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li className="hero__plans__list family">
-									<div className="hero__plans__list__inner">
-										<i className="hero__plans__list-icon">Family</i>
-										<h2 className="hero__plans__list-name">Family</h2>
-										<p className="hero__plans__list-description">
-											A simple way to get started for you new to passfolio.
-										</p>
-										<strong className="hero__plans__list-cost">Custom</strong>
-										<Button
-											text="Get started"
-											type="arrow outline"
-											color="green"
-										/>
-										<strong className="hero__plans__list-inc">
-											What's Included
-										</strong>
-										<dl className="hero__plans__list-benefits">
-											<li>Unlimited data</li>
-											<li>5 Person saved</li>
-											<li>
-												A Simple way to get started for you new to Passfolio
-											</li>
-											<li>
-												A Simple way to get started for you new to Passfolio
-											</li>
-										</dl>
-									</div>
-								</li>
-							</ul>
 						</div>
 					</div>
 					<div className="bottom_triangle bottom_triangle--white"></div>
+				</section>
+				<section className="plans">
+					<div className="container">
+						<ul className="plans__ul">
+							<li className="plans__ul__list free">
+								<div className="plans__ul__list__inner">
+									<i className="plans__ul__list-icon">flags</i>
+									<h2 className="plans__ul__list-name">Free</h2>
+									<p className="plans__ul__list-description">
+										A simple way to get started for you new to passfolio.
+									</p>
+									<strong className="plans__ul__list-cost">
+										$0<span> /forever</span>
+									</strong>
+									<Button
+										text="Get started"
+										type="arrow outline"
+										color="green"
+									/>
+									<strong className="plans__ul__list-inc">
+										What's Included
+									</strong>
+									<ul className="plans__ul__list-benefits">
+										<li>Unlimited data</li>
+										<li>5 Person saved</li>
+										<li>
+											A Simple way to get started for you new to Passfolio
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li className="plans__ul__list premium">
+								<div className="plans__ul__list__inner">
+									<em className="plans__ul__list-text">Most Popular</em>
+									<i className="plans__ul__list-icon">Star</i>
+									<h2 className="plans__ul__list-name">Premium</h2>
+									<p className="plans__ul__list-description">
+										Best for freelance coders & designers who need.
+									</p>
+									<strong className="plans__ul__list-cost">
+										$50<span> /forever</span>
+									</strong>
+									<Button
+										text="Get Started"
+										type="flat-green arrow"
+										color="white"
+									/>
+									<strong className="plans__ul__list-inc">
+										What's Included
+									</strong>
+									<ul className="plans__ul__list-benefits">
+										<li>Unlimited data</li>
+										<li>5 Person saved</li>
+										<li>
+											A Simple way to get started for you new to Passfolio
+										</li>
+										<li>
+											A Simple way to get started for you new to Passfolio
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li className="plans__ul__list family">
+								<div className="plans__ul__list__inner">
+									<i className="plans__ul__list-icon">Family</i>
+									<h2 className="plans__ul__list-name">Family</h2>
+									<p className="plans__ul__list-description">
+										A simple way to get started for you new to passfolio.
+									</p>
+									<strong className="plans__ul__list-cost">Custom</strong>
+									<Button
+										text="Get started"
+										type="arrow outline"
+										color="green"
+									/>
+									<strong className="plans__ul__list-inc">
+										What's Included
+									</strong>
+									<dl className="plans__ul__list-benefits">
+										<li>Unlimited data</li>
+										<li>5 Person saved</li>
+										<li>
+											A Simple way to get started for you new to Passfolio
+										</li>
+										<li>
+											A Simple way to get started for you new to Passfolio
+										</li>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section className="data_credit">
 					<div className="container">
