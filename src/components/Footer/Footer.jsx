@@ -24,6 +24,7 @@ export default class Footer extends Component {
 								<img src={discord} alt="discord" />
 							</div>
 						</div>
+					
 						{/* <div className="footer__top-right"> */}
 						<div className="footer__top-right-list">
 							<h1>SERVICES</h1>

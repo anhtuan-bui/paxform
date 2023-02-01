@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
-import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/FooterV1/FooterV1';
 import Header from '../../components/Header/Header';
 
 import './Layout.scss';
