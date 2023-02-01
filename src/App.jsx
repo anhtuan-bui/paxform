@@ -18,9 +18,11 @@ import Company from "./pages/Company/Company";
 import Pricing from "./pages/Pricing/Pricing";
 import getToken from "./lib/clientToken";
 import GQ from "./pages/GQ/GQ";
+// import BlogDetails from "./blogs/blogs.jsx";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
 const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
+const BlogDetails = lazy(() => import("./pages/BlogDetails/BlogDetails"));
 const Home = lazy(() => import("./pages/HomeCl/Home"));
 // const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
@@ -54,6 +56,7 @@ function App() {
 							<Route path="faq" element={<FAQ />} />
 							<Route path="resources" element={<Resources />} />
 							<Route path="blogs" element={<Blogs />} />
+							<Route path="blog-details" element={<BlogDetails />} />
 							<Route path="privacy-policy" element={<PrivacyPolicy />} />{" "}
 							<Route path="legal" element={<Legal />} />
 							<Route path="legal-detail" element={<LegalDetail />} />
@@ -62,6 +65,7 @@ function App() {
 							<Route path="contact-us" element={<ContactUs />} />
 							<Route path="company" element={<Company />} />
 							<Route path="gq" element={<GQ />} />
+
 							{/* <Route path="*" element={<NotFound />} /> */}
 						</Route>
 					</Routes>
