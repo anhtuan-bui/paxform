@@ -1,38 +1,38 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
+import "./GQ.scss";
 
-const GET_ALL_COMPANIES = gql`
-	query GetAllCompanies {
-		companies {
+const GET_TESTIMONIAL = gql`
+	query getTestimonials {
+		testimonials {
 			nodes {
 				content
-				image {
-					node {
-						mediaItemUrl
-					}
-				}
 				title
-				userdate
 			}
 		}
 	}
 `;
 
 export default function GQ() {
-	const { loading, data } = useQuery(GET_ALL_COMPANIES);
+	const { loading, error, data } = useQuery(GET_TESTIMONIAL);
 	if (loading) return <p>Loading...</p>;
+
 	console.log(data);
-	const companies = data.companies.nodes;
+	const testimonials = data.testimonials.nodes;
+	// const companies = data.companies.nodes;
 	return (
 		<div className="container">
-			{companies.map((company, index) => (
+			{testimonials.map((testimonial, index) => (
 				<div key={index}>
-					<div>{company.title}</div>
-					<div dangerouslySetInnerHTML={{ __html: company.content }}></div>
-					<img src={company.image.node.mediaItemUrl} alt="" />
-					<strong>{company.userdate}</strong>
+					<div>{testimonial.title}</div>
+					<div dangerouslySetInnerHTML={{ __html: testimonial.content }}></div>
+					<div>{testimonial.content}</div>
 				</div>
 			))}
+			<div className="out-box">
+				<div className="first-box">Main content</div>
+				<div className="second-box">Side bar</div>
+			</div>
 		</div>
 	);
 }
