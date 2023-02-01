@@ -28,6 +28,9 @@ export default class Button extends Component {
     if (this.props.color === "green") {
       this.button.class += " button--green";
     }
+    if (this.props.color === "blue") {
+      this.button.class += " button--blue";
+    }
 
     // <Button type="arrow"/> the button with arrow icon on the right
     if (this.props.type.includes("arrow")) {
@@ -42,6 +45,12 @@ export default class Button extends Component {
     // <Button type="flat"/> flat button
     if (this.props.type.includes("flat")) {
       this.button.class += " button--flat";
+    }
+    if (this.props.type.includes("flat-white")) {
+      this.button.class += " button--flat-white";
+    }
+    if (this.props.type.includes("flat-green")) {
+      this.button.class += " button--flat-green";
     }
 
     // <Button type="triangle-right"/> the button a triangle on the left

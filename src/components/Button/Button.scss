@@ -30,6 +30,11 @@
   transition: 0.25s ease-in-out;
   border-radius: rem(100);
 
+  @include medium {
+    padding: rem(12) rem(26);
+    font-size: rem(16);
+  }
+
   &__text {
     display: block;
     font-size: rem(16);
@@ -67,16 +72,28 @@
   }
 
   &--flat {
-    background-color: #20976c;
     border: none;
+    
+    &-green {
+      background-color: #20976c;
 
-    &:hover {
-      background-color: darken(#20976c, 5%);
+      &:hover {
+        background-color: darken(#20976c, 5%);
+      }
+    }
+
+    &-white {
+      background-color: white;
+
+      &:hover {
+        background-color: darken(white, 5%);
+      }
     }
   }
 
   @include buttonOutline("white", white);
   @include buttonOutline("green", #20976c);
+  @include buttonOutline("blue", $color__primary);
 }
 
 .triangle_right {

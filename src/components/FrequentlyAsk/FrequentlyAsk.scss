@@ -1,0 +1,103 @@
+@import "../../styles/styles.scss";
+$color_white: #fff;
+$color_grey: #2f4356;
+$color_dark-blue: #031a30;
+$color_light-blue: #e1edf9;
+.frequently_ask {
+    position: relative;
+    padding-bottom: rem(140);
+    background: #f0f5fa;
+    &__wrapper {
+        padding: rem(100) $padding__collumn;
+        & h1 {
+            margin: 0 auto rem(60);
+            font-size: rem(38);
+            @include extraLarge {
+                font-size: rem(38);
+            }
+            @include large {
+                font-size: rem(34);
+            }
+            @include medium {
+                font-size: rem(42);
+            }
+            @include small {
+                font-size: rem(36);
+            }
+            @include extraSmall {
+                font-size: rem(28);
+            }
+        }
+        & table {
+            width: 100%;
+            margin: 0 auto;
+            border-top: rem(1) solid #baccde;
+            tr {
+                th {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    padding: rem(20) rem(20) rem(20) 0;
+                    border-bottom: rem(1) solid #baccde;
+                    font-size: rem(18);
+                    text-align: left;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                    &::before {
+                        display: inline-block;
+                        position: absolute;
+                        top: 40%;
+                        right: 0;
+                        width: rem(15);
+                        height: rem(15);
+                        background: url("../../assets/images/ico-faq-arrow.svg") center no-repeat;
+                        background-size: 100%;
+                        transform: rotate(-180deg);
+                        transition: 0.1s all ease-in;
+                        content: "";
+                    }
+                }
+                td {
+                    display: none;
+                    width: 100%;
+                    padding-bottom: rem(20);
+                    border-bottom: rem(1) solid #baccde;
+                    font-size: rem(16);
+                    line-height: rem(25);
+                    color: $color_grey;
+                    transition: 0.5s all ease-in;
+                }
+            }
+            tr.on {
+                th {
+                    border-bottom: none;
+                    &::before {
+                        transform: rotate(0deg);
+                    }
+                }
+                td {
+                    display: block;
+                }
+            }
+        }
+    }
+    @include large {
+        background: $color_dark-blue;
+        color: $color_white;
+        &__wrapper table {
+            border-color: $color_dark-blue;
+            & tr {
+                th {
+                    border-color: $color_dark-blue;
+                    &::before {
+                        background-image: url("../../assets/images/ico-faq-arrow-white.svg");
+                    }
+                }
+                td {
+                    border-color: $color_dark-blue;
+                    color: $color_white;
+                }
+            }
+        }
+    }
+}

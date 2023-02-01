@@ -1,11 +1,9 @@
 @import "../../styles/styles.scss";
 
-.blogs {
-  .hero {
-    background-color: $color__gray-blue;
-    padding-top: rem(181);
-    position: relative;
-  }
+.hero {
+  background-color: $color__gray-blue;
+  padding-top: rem(181);
+  position: relative;
 }
 
 .hero_blog {
@@ -66,7 +64,7 @@
   &__summary {
     margin-bottom: rem(40);
     margin-top: 0;
-
+    
     @include resetSummary;
   }
 }
@@ -122,15 +120,7 @@
 
 .view_more {
   padding: 0 $padding__collumn;
-  margin-top: 2rem;
   display: flex;
   justify-content: center;
   padding-bottom: rem(80);
-}
-
-.posts_view {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: $padding__collumn--x2;
-  padding: 0 $padding__collumn;
 }

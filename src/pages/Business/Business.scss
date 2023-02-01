@@ -1,16 +1,9 @@
 @import "../../styles/styles.scss";
 
-$color_bg_hero__gradient--last: #034f2f;
-$color_bg_hero__gradient--first: #059459;
-
-.personal {
+.business {
   .hero {
     position: relative;
-    background: linear-gradient(
-      90deg,
-      $color_bg_hero__gradient--first 0%,
-      $color_bg_hero__gradient--last 100%
-    );
+    background: linear-gradient(90.71deg, #0A61B4 -74.09%, #074581 99.41%);
 
     &__button {
       display: flex;
@@ -130,7 +123,7 @@ $color_bg_hero__gradient--first: #059459;
 
   .flex_box {
     position: relative;
-    background-color: #def6ec;
+    background-color: white;
     z-index: 1000;
 
     @include extraLarge {
@@ -143,26 +136,24 @@ $color_bg_hero__gradient--first: #059459;
       justify-content: space-between;
       position: relative;
       padding-top: rem(100);
-      padding-bottom: 14.75rem;
-      direction: rtl;
+      padding-bottom: rem(100);
 
       @include medium {
         padding-top: rem(80);
-        padding-bottom: rem(120);
+        padding-bottom: rem(80);
         flex-direction: column;
       }
 
       @include small {
         padding-top: rem(60);
-        padding-bottom: rem(100);
+        padding-bottom: rem(60);
       }
     }
 
     &__content,
-    &__image {
+    &__text {
       flex: 1 1 50%;
       box-sizing: border-box;
-      direction: ltr;
 
       @include small {
         width: 100%;
@@ -180,17 +171,15 @@ $color_bg_hero__gradient--first: #059459;
 
       &-title {
         font-size: rem(38);
-        line-height: rem(48);
         margin-top: 0;
+        text-transform: capitalize;
 
         @include large {
           font-size: rem(32);
-          line-height: rem(42);
         }
 
         @include medium {
           font-size: rem(24);
-          line-height: rem(30);
         }
       }
 
@@ -200,29 +189,20 @@ $color_bg_hero__gradient--first: #059459;
       }
     }
 
-    &__image {
-      position: relative;
-
-      @include medium {
-        width: 60%;
-      }
-
-      @include small {
-        width: 100%;
-      }
-      img {
-        position: relative;
-        object-fit: cover;
-        width: 100%;
-      }
+    &__text {
+        padding: 0 $padding__collumn;
+        p {
+            margin: 0;
+        }
     }
+
   }
 
   .features {
     position: relative;
-    background-color: #059459;
+    background-color: #E1EDF9;
     z-index: 1000;
-    color: white;
+    color: $color_main__text;
     padding-top: rem(80);
     padding-bottom: rem(220);
 
@@ -234,6 +214,8 @@ $color_bg_hero__gradient--first: #059459;
       text-transform: uppercase;
       letter-spacing: rem(2);
       opacity: 0.8;
+      color: #1C85E8;
+      margin-bottom: rem(20);
     }
 
     &__title {
@@ -279,6 +261,10 @@ $color_bg_hero__gradient--first: #059459;
           line-height: rem(26);
           margin: rem(14) 0;
           cursor: pointer;
+
+          &--active-blue {
+            color: $color__primary;
+          }
         }
         &-panel {
           max-height: 0;

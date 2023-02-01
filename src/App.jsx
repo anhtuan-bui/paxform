@@ -15,17 +15,19 @@ import Legal from "./pages/Legal/Legal";
 import LegalDetail from "./pages/LegalDetail/LegalDetail";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import Company from "./pages/Company/Company";
-import Pricing from "./pages/Pricing/Pricing";
+// import Pricing from "./pages/Pricing/Pricing";
 import getToken from "./lib/clientToken";
 import GQ from "./pages/GQ/GQ";
 // import BlogDetails from "./blogs/blogs.jsx";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
+const Pricing = lazy(() => import("./pages/Pricing/Pricing"));
 const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
 const BlogDetails = lazy(() => import("./pages/BlogDetails/BlogDetails"));
-const Home = lazy(() => import("./pages/HomeCl/Home"));
+const Home = lazy(() => import("./pages/Home/Home"));
 // const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
+const Business = lazy(() => import("./pages/Business/Business"));
 const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
 //const Pricing = lazy(() => import("./pages/Pricing/Pricing"));
 
@@ -52,6 +54,7 @@ function App() {
 						<Route path="/" element={<Layout />}>
 							<Route index element={<Home />} />
 							<Route path="personal" element={<Personal />} />
+							<Route path="business" element={<Business />} />
 							<Route path="pricing" element={<Pricing />} />
 							<Route path="faq" element={<FAQ />} />
 							<Route path="resources" element={<Resources />} />

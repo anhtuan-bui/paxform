@@ -1,14 +1,10 @@
 import React, { Component } from "react";
-import Button from "../../components/Button/Button";
-// import fillOutForm from '../../assets/images/fill-out-form.svg';
-// import fillOutFormMObile from '../../assets/images/fill-out-form__mobile.svg';
-import "./Personal.scss";
 
-// import personelHero from '../../assets/images/personal-hero.svg';
+import Button from "../../components/Button/Button";
+import "./Business.scss";
+
 import personalIllustration from "../../assets/images/Personal/Hero Illustration.png";
 import repeatlyIllustration from "../../assets/images/Personal/repeatly illustration.svg";
-
-// import featuresImg from '../../assets/images/feature-organisation.svg';
 import { ReactComponent as Tick } from "../../assets/images/tick.svg";
 import Testimonial from "../../components/Testimonial/Testimonial";
 
@@ -90,10 +86,12 @@ const plans = [
   },
 ];
 
-export default class Personal extends Component {
+export default class Business extends Component {
   constructor(props) {
     super(props);
-    this.state = this.position;
+    this.state = { features: features };
+
+    this.handleAccorionTitleClick = this.handleAccorionTitleClick.bind(this);
   }
 
   componentDidMount() {
@@ -101,7 +99,7 @@ export default class Personal extends Component {
     panel.style.maxHeight = panel.scrollHeight + "px";
   }
 
-  handleAccorionTitleClick = (e) => {
+  handleAccorionTitleClick = (e, index) => {
     const panel = e.target.nextElementSibling;
 
     if (panel.style.maxHeight) {
@@ -115,15 +113,25 @@ export default class Personal extends Component {
         item.lastChild.style.maxHeight = null;
       }
     });
+
+    features.forEach((feature, i) => {
+      if (index === i) {
+        feature.isOpened = true;
+      } else {
+        feature.isOpened = false;
+      }
+    });
+
+    this.setState({ features: features });
   };
 
   render() {
     return (
-      <main className="personal">
+      <main className="business">
         <section className="hero">
           <div className="container hero__wrapper">
             <div className="hero__content">
-              <p className="hero__name">PERSONAL</p>
+              <p className="hero__name section_name">Business</p>
               <h1 className="hero__title">
                 Your Personal Information in One Place Fill Any Form, Anywhere
               </h1>
@@ -135,7 +143,7 @@ export default class Personal extends Component {
                 encrypts your data to ensure your safety.
               </p>
               <div className="hero__button">
-                <Button text="See Plan" type="flat-white arrow" color="green" />
+                <Button text="See Plan" type="flat-white arrow" color="blue" />
                 <Button
                   text="How it works"
                   type="outline triangle-right"
@@ -151,27 +159,25 @@ export default class Personal extends Component {
               />
             </div>
           </div>
-          <div className="bottom_triangle bottom_triangle--light-green"></div>
+          <div className="bottom_triangle bottom_triangle--white"></div>
         </section>
 
         <section className="flex_box">
           <div className="container flex_box__container">
-            <div className="flex_box__image">
-              <img src={repeatlyIllustration} alt="fill out form" />
-            </div>
             <div className="flex_box__content">
               <h1 className="flex_box__content-title">
-                Repeatedly Filling Out Forms with the Same Data Requirements?
+                Paper work was yesterday - Go digital today
               </h1>
-              <div className="flex_box__content-description">
-                Save precious time by having all your information on demand.
-                Autocomplete forms and applications on the go. Only fill in your
-                data once.
-              </div>
+            </div>
+            <div className="flex_box__text">
+              <p>
+                Eliminate the lengthy process of administrative rework while
+                leaving no environmental footprint.
+              </p>
             </div>
           </div>
 
-          <div className="bottom_triangle bottom_triangle--green"></div>
+          {/* <div className="bottom_triangle bottom_triangle--green"></div> */}
         </section>
 
         <section className="features">
@@ -188,8 +194,12 @@ export default class Personal extends Component {
                 {features.map((feature, index) => (
                   <div className="features__accordion-item" key={index}>
                     <h2
-                      className="features__accordion-item-title"
-                      onClick={(e) => this.handleAccorionTitleClick(e)}
+                      className={`features__accordion-item-title ${
+                        feature.isOpened
+                          ? "features__accordion-item-title--active-blue"
+                          : ""
+                      }`}
+                      onClick={(e) => this.handleAccorionTitleClick(e, index)}
                     >
                       {feature.title}
                     </h2>

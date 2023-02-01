@@ -13,7 +13,7 @@ import teamPic5 from "../../assets/images/company-team-pic05.png";
 import teamPic6 from "../../assets/images/company-team-pic06.png";
 import teamPic7 from "../../assets/images/company-team-pic07.png";
 import teamPic8 from "../../assets/images/company-team-pic08.png";
-import diversity from "../../assets/images/company-diversity.svg";
+import diversity from "../../assets/images/company-diversity.png";
 
 const teams = [
 	{

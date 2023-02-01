@@ -24,7 +24,7 @@ export default class NotFound extends Component {
 						</p>
 						<Button
 							text="Go back to home"
-							type="flat arrow"
+							type="flat-green arrow"
 							color="white"
 							onClick={this.backToHome}
 						/>
