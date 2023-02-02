@@ -10,6 +10,8 @@ import retail from "../../assets/images/usecases-retail.png";
 import medical from "../../assets/images/usecases-medical.png";
 
 import bgHospitality from "../../assets/images/usecases-bg-hospitality.svg";
+// import bgRetail from "../../assets/images/usecases-bg-retail.svg";
+// import bgMedical from "../../assets/images/usecases-bg-medical.svg";
 
 const usecases = [
 	{
@@ -18,6 +20,7 @@ const usecases = [
 		description:
 			"Practical guides, resources, templates and advice. Whether you're starting a business or growing an existing one, we're here to lend a helping hand as you navigate this unforgettable journey.",
 		image: hospitality,
+		bg: bgHospitality,
 	},
 	{
 		name: "retail",

@@ -96,6 +96,8 @@ $color_purple: #2d4bb6;
     .case {
         position: relative;
         padding-bottom: rem(140);
+        background: $color_white;
+        z-index: 1000;
         &__head {
             display: flex;
             position: relative;
@@ -224,6 +226,7 @@ $color_purple: #2d4bb6;
         position: relative;
         padding: rem(100) 0;
         background-color: $color_white;
+        z-index: 1000;
         @include medium {
             padding-top: rem(40);
         }
