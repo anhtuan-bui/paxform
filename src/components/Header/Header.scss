@@ -230,54 +230,9 @@ $header__font-size: $font_size__mobile;
             display: block;
             position: relative;
             cursor: pointer;
-            // &::before {
-            //     display: block;
-            //     position: absolute;
-            //     top: rem(12);
-            //     left: rem(20);
-            //     width: rem(20);
-            //     height: rem(20);
-            //     content: "";
-            //     border-radius: rem(100);
-            // }
-            // &::after {
-            //     display: block;
-            //     position: absolute;
-            //     top: rem(12);
-            //     left: rem(24);
-            //     width: rem(20);
-            //     height: rem(20);
-            //     content: "";
-            //     background-repeat: no-repeat;
-            //     background-position: 0 center;
-            // }
             &:hover {
                 background-color: $color_one__water;
             }
-            // &:nth-child(1)::before {
-            //     background: linear-gradient( 148.44deg, #059459 31.61%, rgba(5, 148, 89, 0) 189.36%);
-            // }
-            // &:nth-child(1)::after {
-            //     background-image: url("../../assets/images/icon-nav-hospitality.svg");
-            // }
-            // &:nth-child(2)::before {
-            //     background: linear-gradient( 148.44deg, #e85d04 31.61%, rgba(232, 93, 4, 0) 189.36%);
-            // }
-            // &:nth-child(2)::after {
-            //     background-image: url("../../assets/images/icon-nav-retail.svg");
-            // }
-            // &:nth-child(3)::before {
-            //     background: linear-gradient( 148.44deg, #d00000 31.61%, rgba(208, 0, 0, 0) 189.36%);
-            // }
-            // &:nth-child(3)::after {
-            //     background-image: url("../../assets/images/icon-nav-medical.svg");
-            // }
-            // &:nth-child(4)::before {
-            //     background: linear-gradient( 148.44deg, #748c0d 31.61%, rgba(116, 140, 13, 0) 189.36%);
-            // }
-            // &:nth-child(4)::after {
-            //     background-image: url("../../assets/images/icon-nav-education.svg");
-            // }
             &-link {
                 display: block;
                 padding: rem(12) rem(20);

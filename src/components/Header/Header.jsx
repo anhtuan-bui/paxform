@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import Button from "../Button/Button";
 import { ReactComponent as Logo } from "../../assets/images/LOGO.svg";
 
-import Icon1 from "../../assets/images/icon-nav-hospitality.png";
-// import Icon2 from "../../assets/images/icon-nav-retail.png";
-// import Icon3 from "../../assets/images/icon-nav-education.png";
-// import Icon4 from "../../assets/images/icon-nav-medical.png";
+import icon1 from "../../assets/images/icon-nav-hospitality.png";
+import icon2 from "../../assets/images/icon-nav-retail.png";
+import icon3 from "../../assets/images/icon-nav-education.png";
+import icon4 from "../../assets/images/icon-nav-medical.png";
 
 import "./Header.scss";
 import { SCREEN_SIZE } from "../../configurations/configurations";
@@ -42,28 +42,28 @@ const menu = [
 				description: "Lorem Ipsum is simply dummy text",
 				link: "https://",
 				to: "use-cases",
-				image: { Icon1 },
+				image: icon1,
 			},
 			{
 				text: "Retail",
 				description: "Lorem Ipsum is simply dummy text",
 				link: "https://",
 				to: "use-cases",
-				image: { Icon1 },
+				image: icon2,
 			},
 			{
 				text: "Medical Care",
 				description: "Lorem Ipsum is simply dummy text",
 				link: "https://",
 				to: "use-cases",
-				image: { Icon1 },
+				image: icon3,
 			},
 			{
 				text: "Education",
 				description: "Lorem Ipsum is simply dummy text",
 				link: "https://",
 				to: "use-cases",
-				image: { Icon1 },
+				image: icon4,
 			},
 		],
 	},
@@ -270,7 +270,7 @@ class Header extends Component {
 																			className="nav__second-level-li-link"
 																		>
 																			<img
-																				src={subitem.image.Icon1}
+																				src={subitem.image}
 																				alt={subitem.text}
 																			/>
 																			<span>{subitem.text}</span>
