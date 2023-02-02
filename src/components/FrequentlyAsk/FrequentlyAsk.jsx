@@ -41,7 +41,7 @@ export default class FrequentlyAsk extends Component {
 		let el = e.target.parentElement;
 		el.classList.toggle("on");
 
-		console.log(el);
+		// console.log(el);
 
 		// if (el.classList.contains("on")) {
 		// 	el.classList.remove("on");
