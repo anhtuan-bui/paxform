@@ -35,6 +35,16 @@
         align-items: center;
         justify-content: center;
         gap: $row__gap--larger;
+        @include medium {
+            flex-direction: column;
+            padding-bottom: rem(100);
+        }
+        @include small {
+            padding-bottom: rem(70);
+        }
+        @include extraSmall {
+            padding-bottom: rem(40);
+        }
     }
     &__name {
         font-size: rem(14);

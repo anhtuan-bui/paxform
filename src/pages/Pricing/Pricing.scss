@@ -9,6 +9,10 @@ $color_dark-blue: #031a30;
         height: rem(808);
         padding-bottom: rem(140);
         background: linear-gradient(90.4deg, #059459 0.35%, #034f2f 99.66%);
+
+        &--business {
+            background: linear-gradient(90.32deg, #0A61B4 0.35%, #074581 99.81%);
+        }
         @include large {
             padding-bottom: rem(300);
             margin-bottom: rem(0);
