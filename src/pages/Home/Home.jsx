@@ -275,7 +275,7 @@ export default class Home extends Component {
               </div>
               <div className="platform__top-right">
                 <Button
-                  type="flat-green"
+                  type="flat-green arrow"
                   color="white"
                   text="Learn more about Business"
                 />
@@ -329,7 +329,7 @@ export default class Home extends Component {
               </div>
               <div className="platform__top-right">
                 <Button
-                  type="outline flat"
+                  type="flat-green arrow"
                   color="white"
                   text="Learn more about Personal"
                 />
