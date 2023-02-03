@@ -9,6 +9,10 @@ $color_dark-blue: #031a30;
         height: rem(808);
         padding-bottom: rem(140);
         background: linear-gradient(90.4deg, #059459 0.35%, #034f2f 99.66%);
+
+        &--business {
+            background: linear-gradient(90.32deg, #0A61B4 0.35%, #074581 99.81%);
+        }
         @include large {
             padding-bottom: rem(300);
             margin-bottom: rem(0);
@@ -101,7 +105,32 @@ $color_dark-blue: #031a30;
                 }
             }
         }
-        &__plans {
+    }
+    .plans {
+        position: relative;
+        min-height: rem(350);
+        @include large {
+            min-height: rem(400);
+        }
+        @include medium {
+            min-height: rem(500);
+        }
+        @include small {
+            min-height: rem(1200);
+        }
+        @include extraSmall {
+            min-height: rem(1400);
+        }
+        .container {
+            position: absolute;
+            top: rem(-500);
+            left: 0;
+            right: 0;
+            @include large {
+                top: rem(-650);
+            }
+        }
+        &__ul {
             display: flex;
             column-count: 3;
             align-items: flex-end;
@@ -171,20 +200,22 @@ $color_dark-blue: #031a30;
                     width: 100%;
                     height: rem(45);
                 }
-                &-benefits {
+                &-inc {
+                    display: block;
                     margin-top: rem(40);
+                    font-size: rem(14);
+                    font-weight: 600;
+                    color: #8594a3;
+                    letter-spacing: 0.14em;
                     text-align: left;
-                    &>dt {
-                        padding-bottom: rem(18);
-                        font-size: rem(14);
-                        font-weight: 600;
-                        color: #8594a3;
-                        letter-spacing: 0.14em;
-                        text-transform: uppercase;
-                    }
-                    &>dd {
-                        margin-left: 0;
-                        margin-bottom: rem(18);
+                    text-transform: uppercase;
+                }
+                &-benefits {
+                    padding-left: 0;
+                    text-align: left;
+                    & li {
+                        list-style: none;
+                        margin: rem(18) 0 rem(18) 0;
                         padding-left: rem(30);
                         background-repeat: no-repeat;
                         background-position: left 0 center;
@@ -196,7 +227,7 @@ $color_dark-blue: #031a30;
                     .hero__plans__list-icon {
                         background-image: url("../../assets/images/pricing-free-icon.png");
                     }
-                    .hero__plans__list-benefits>dd {
+                    .hero__plans__list-benefits li {
                         background-image: url("../../assets/images/icon-pricing-free.svg");
                     }
                 }
@@ -206,7 +237,7 @@ $color_dark-blue: #031a30;
                     .hero__plans__list-icon {
                         background-image: url("../../assets/images/pricing-premium-icon.png");
                     }
-                    .hero__plans__list-benefits>dd {
+                    .hero__plans__list-benefits li {
                         background-image: url("../../assets/images/icon-pricing-premium.svg");
                     }
                 }
@@ -215,7 +246,7 @@ $color_dark-blue: #031a30;
                     .hero__plans__list-icon {
                         background-image: url("../../assets/images/pricing-family-icon.png");
                     }
-                    .hero__plans__list-benefits>dd {
+                    .hero__plans__list-benefits li {
                         background-image: url("../../assets/images/icon-pricing-family.svg");
                     }
                 }
@@ -269,13 +300,17 @@ $color_dark-blue: #031a30;
                         left: 0;
                         right: 0;
                     }
+                    &-inc {
+                        font-size: rem(11);
+                    }
                     &-benefits {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        column-gap: 2rem;
                         width: 100%;
                         margin-top: rem(24);
-                        & dt {
-                            font-size: rem(11);
-                        }
-                        & dd {
+                        & li {
+                            margin: rem(5) 0;
                             font-size: rem(14);
                         }
                     }
@@ -308,13 +343,15 @@ $color_dark-blue: #031a30;
                     & .button {
                         position: initial;
                     }
+                    &-inc {
+                        font-size: rem(14);
+                    }
                     &-benefits {
+                        grid-template-columns: repeat(1, 1fr);
+                        column-gap: 0;
                         width: 100%;
                         margin-top: rem(24);
-                        & dt {
-                            font-size: rem(14);
-                        }
-                        & dd {
+                        & li {
                             font-size: rem(15);
                         }
                     }
@@ -324,17 +361,7 @@ $color_dark-blue: #031a30;
     }
     .data_credit {
         position: relative;
-        padding: rem(300) 0 rem(220);
-        @include large {
-            padding-top: rem(650);
-            padding-bottom: rem(250);
-        }
-        @include medium {
-            padding-top: rem(700);
-        }
-        @include small {
-            padding-top: rem(300);
-        }
+        padding-bottom: rem(220);
         &-name {
             font-size: rem(14);
             font-weight: bold;
