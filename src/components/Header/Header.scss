@@ -33,7 +33,7 @@ $header__font-size: $font_size__mobile;
         }
         .logo {
             path {
-                fill: #065936;
+                fill: $color__primary;
             }
         }
         .button--outline {
