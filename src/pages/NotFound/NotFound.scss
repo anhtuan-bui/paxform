@@ -4,7 +4,7 @@
   color: white;
   position: relative;
   top: 0px;
-  background: linear-gradient(90.15deg, #0a61b4 0.35%, #074581 100.1%);
+  background: linear-gradient(90.15deg, $color__primary 0.35%, #074581 100.1%);
   min-height: 100vh;
   padding: 3rem 0;
   box-sizing: border-box;
@@ -19,7 +19,7 @@
     // line-height: rem(360);
     text-align: center;
     span {
-      color: #20976c;
+      color: $color__success;
     }
 
     @include larger {

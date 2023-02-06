@@ -22,14 +22,14 @@
     font-weight: 500;
     margin-bottom: rem(8);
     text-transform: uppercase;
-    color: #0a61b4;
+    color: $color__primary;
 
     &--blue {
-      color: #0a61b4;
+      color: $color__primary;
     }
 
     &--green {
-      color: #20976c;
+      color: $color__success;
     }
   }
 

@@ -67,10 +67,10 @@
         padding: 0 $padding__collumn;
         box-sizing: border-box;
         .button {
-            border: 1px solid #20976c;
-            color: #20976c;
+            border: 1px solid $color__success;
+            color: $color__success;
             path {
-                stroke: #20976c;
+                stroke: $color__success;
             }
         }
     }

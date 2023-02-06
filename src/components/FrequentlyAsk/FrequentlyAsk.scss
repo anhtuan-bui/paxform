@@ -6,7 +6,7 @@ $color_light-blue: #e1edf9;
 .frequently_ask {
     position: relative;
     padding-bottom: rem(140);
-    background: #f0f5fa;
+    background: $color__secondary;
     &__wrapper {
         padding: rem(100) $padding__collumn;
         & h1 {

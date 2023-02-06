@@ -1,6 +1,6 @@
 @import "../../styles/styles.scss";
 $color_bg_hero__gradient--last: #074581;
-$color_bg_hero__gradient--first: #0a61b4;
+$color_bg_hero__gradient--first: $color__primary;
 $header__font-size: $font_size__mobile;
 .header {
     display: flex;

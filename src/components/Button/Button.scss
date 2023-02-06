@@ -76,10 +76,10 @@
     border: none;
     
     &-green {
-      background-color: #20976c;
+      background-color: $color__success;
 
       &:hover {
-        background-color: darken(#20976c, 5%);
+        background-color: darken($color__success, 5%);
       }
     }
 
@@ -93,7 +93,7 @@
   }
 
   @include buttonColor("white", white);
-  @include buttonColor("green", #20976c);
+  @include buttonColor("green", $color__success);
   @include buttonColor("blue", $color__primary);
 }
 

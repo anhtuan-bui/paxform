@@ -1,6 +1,6 @@
 @import "../../styles/styles.scss";
 
-$color__hero-background: #f0f5fa;
+$color__hero-background: $color__secondary;
 
 .resources {
   .hero {
@@ -39,7 +39,7 @@ $color__hero-background: #f0f5fa;
     }
 
     &__name {
-      color: #0a61b4;
+      color: $color__primary;
       margin-bottom: rem(20);
       letter-spacing: rem(2);
       font-weight: 600;
@@ -209,7 +209,7 @@ $color__hero-background: #f0f5fa;
     }
 
     &__name {
-      color: #20976c;
+      color: $color__success;
       opacity: 1;
     }
 
@@ -267,9 +267,9 @@ $color__hero-background: #f0f5fa;
           display: none;
 
           &:checked + label {
-            background-color: #20976c;
+            background-color: $color__success;
             color: #fff;
-            border: 1px solid #20976c;
+            border: 1px solid $color__success;
           }
         }
 
@@ -292,7 +292,7 @@ $color__hero-background: #f0f5fa;
     padding-bottom: 13.5rem;
 
     &__name {
-      color: #0a61b4;
+      color: $color__primary;
     }
 
     &__wrapper {
@@ -344,93 +344,4 @@ $color__hero-background: #f0f5fa;
     }
   }
 
-  .platform {
-    background-color: #031a30;
-    position: relative;
-    z-index: 1000;
-    padding-top: rem(80);
-    padding-bottom: 13.5rem;
-    color: white;
-
-    &__top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 0 $padding__collumn;
-
-      @include small {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      &-left,
-      &-right {
-        flex: 1 1 50%;
-      }
-
-      &-left {
-        h2 {
-          margin-bottom: rem(60);
-
-          @include small {
-            margin-bottom: rem(40);
-          }
-        }
-      }
-
-      &-right {
-        display: flex;
-        justify-content: flex-end;
-
-        > .button {
-          border: 1px solid #20976c;
-          color: #20976c;
-
-          @include small {
-            margin-bottom: rem(40);
-          }
-
-          path {
-            stroke: #20976c;
-          }
-        }
-      }
-    }
-
-    &__title {
-      font-size: rem(38);
-      line-height: rem(48);
-      color: white;
-
-      @include medium {
-        font-size: rem(24);
-        line-height: rem(30);
-      }
-    }
-
-    &__name {
-      font-size: rem(14);
-      font-weight: 500;
-      color: white;
-      opacity: 0.5;
-      letter-spacing: 1px;
-      margin-bottom: rem(22);
-    }
-
-    &__content {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: $grid__gap;
-      padding: 0 $padding__collumn;
-
-      @include medium {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: rem(60);
-      }
-
-      @include small {
-        grid-template-columns: 1fr;
-      }
-    }
-  }
 }

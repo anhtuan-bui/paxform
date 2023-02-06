@@ -1,7 +1,7 @@
 @import "../../styles/styles.scss";
 $color_white: #fff;
-$color_green: #20976c;
-$color_blue: #0a61b4;
+$color_green: $color__success;
+$color_blue: $color__primary;
 $color_dark-blue: #031a30;
 .pricing {
     .hero {
@@ -11,7 +11,7 @@ $color_dark-blue: #031a30;
         background: linear-gradient(90.4deg, #059459 0.35%, #034f2f 99.66%);
 
         &--business {
-            background: linear-gradient(90.32deg, #0A61B4 0.35%, #074581 99.81%);
+            background: linear-gradient(90.32deg, $color__primary 0.35%, #074581 99.81%);
         }
         @include large {
             padding-bottom: rem(300);
@@ -365,7 +365,7 @@ $color_dark-blue: #031a30;
         &-name {
             font-size: rem(14);
             font-weight: bold;
-            color: #0a61b4;
+            color: $color__primary;
             text-align: center;
             text-transform: uppercase;
             letter-spacing: 0.14em;
@@ -477,7 +477,7 @@ $color_dark-blue: #031a30;
                     background: linear-gradient( 121.56deg, #059459 23.97%, #0a9f62 39.2%, #1faf74 45.42%, #0a9f62 52.19%, #034f2f 85.28%);
                 }
                 &.three {
-                    background: linear-gradient( 121.56deg, #0a61b4 23.97%, #1972c8 39.2%, #3289de 45.42%, #1972c8 52.19%, #074581 85.28%);
+                    background: linear-gradient( 121.56deg, $color__primary 23.97%, #1972c8 39.2%, #3289de 45.42%, #1972c8 52.19%, #074581 85.28%);
                 }
             }
         }
@@ -631,7 +631,7 @@ $color_dark-blue: #031a30;
             }
         }
         .bottom_triangle {
-            border-color: transparent transparent #f0f5fa #f0f5fa;
+            border-color: transparent transparent $color__secondary $color__secondary;
             @include large {
                 border-color: transparent transparent $color_dark-blue $color_dark-blue;
             }
