@@ -13,12 +13,64 @@ export default class Pricing extends Component {
 		pricing: [
 			{
 				title: "Free",
+				description: "A simple way to get started for you new to passfolio.",
+				cost: "$0",
+				period: "/forever",
+				features: [
+					"1.Unlimited data",
+					"5 Person saved",
+					"A simple way for you new started to Passfolio.",
+					"A simple way for you new started to Passfolio.",
+				],
 			},
 			{
 				title: "Premium",
+				description: "Best for freelance coders & designers who need",
+				cost: "$50",
+				period: "/forever",
+				features: [
+					"2.Unlimited data",
+					"5 Person saved",
+					"A simple way for you new started to Passfolio.",
+					"A simple way for you new started to Passfolio.",
+				],
 			},
 			{
 				title: "Family",
+				description: "Best for freelance coders & designers who need",
+				cost: "Custom",
+				period: "",
+				features: [
+					"3. Unlimited data",
+					"5 Person saved",
+					"A simple way for you new started to Passfolio.",
+					"A simple way for you new started to Passfolio.",
+				],
+			},
+		],
+		compares: [
+			{
+				features: [
+					"Pricing par Admin/month",
+					"Number of Admins",
+					"Published Forms",
+					"Form template",
+					"Agreement Templates",
+					"Survey(monthly)",
+					"Monthly Submissions",
+					"Storage Space Available",
+				],
+			},
+			{ securities: ["End-to-End Encryption"] },
+			{
+				supports: [
+					"Generic PDF",
+					"Max Questions per Form",
+					"Conditional Questions",
+					"Electronic Signatures",
+					"Attachments(in forms)",
+					"Workflow support",
+				],
 			},
 		],
 	};
@@ -26,12 +78,64 @@ export default class Pricing extends Component {
 		pricing: [
 			{
 				title: "Essential",
+				description: "A simple way to get started for you new to passfolio.",
+				cost: "$29.90",
+				period: "/month",
+				features: [
+					"Unlimited data",
+					"5 Person saved",
+					"A simple way for you new started to Passfolio.",
+					"A simple way for you new started to Passfolio.",
+				],
 			},
 			{
 				title: "Standard",
+				description: "Best for freelance coders & designers who need",
+				cost: "$39.90",
+				period: "/month",
+				features: [
+					"Unlimited data",
+					"5 Person saved",
+					"A simple way for you new started to Passfolio.",
+					"A simple way for you new started to Passfolio.",
+				],
 			},
 			{
 				title: "Plus",
+				description: "Best for freelance coders & designers who need",
+				cost: "$49.90",
+				period: "/month",
+				features: [
+					"Unlimited data",
+					"5 Person saved",
+					"A simple way for you new started to Passfolio.",
+					"A simple way for you new started to Passfolio.",
+				],
+			},
+		],
+		compares: [
+			{
+				features: [
+					"1 Pricing par Admin/month",
+					"1 Number of Admins",
+					"1 Published Forms",
+					"1 Form template",
+					"1 Agreement Templates",
+					"1 Survey(monthly)",
+					"1 Monthly Submissions",
+					"1 Storage Space Available",
+				],
+			},
+			{ securities: "1 End-to-End Encryption" },
+			{
+				supports: [
+					"1 Generic PDF",
+					"1 Max Questions per Form",
+					"1 Conditional Questions",
+					"1 Electronic Signatures",
+					"1 Attachments(in forms)",
+					"1 Workflow support",
+				],
 			},
 		],
 	};
@@ -45,22 +149,38 @@ export default class Pricing extends Component {
 		this.onPersonalBtnClick = this.onPersonalBtnClick.bind(this);
 	}
 
+	componentDidMount() {
+		console.log(this.state.tap.compares[2]);
+	}
+
 	onPersonalBtnClick = () => {
 		// get hero class
 		const main = document.querySelector(".pricing");
+		const tap = document.querySelector(".hero__top__tabs");
 		// add class hero--business to hero
 		if (main.classList.contains("pricing--business")) {
 			main.classList.remove("pricing--business");
 		}
 		this.setState({ tap: this.personal });
+
+		tap.classList.add("personal");
+		if (tap.classList.contains("business")) {
+			tap.classList.remove("business");
+		}
 	};
 
 	onBusinessBtnClick = () => {
 		// get hero class
-		const hero = document.querySelector(".pricing");
+		const main = document.querySelector(".pricing");
+		const tap = document.querySelector(".hero__top__tabs");
 		// add class hero--business to hero
-		hero.classList.add("pricing--business");
+		main.classList.add("pricing--business");
 		this.setState({ tap: this.business });
+
+		tap.classList.add("business");
+		if (tap.classList.contains("personal")) {
+			tap.classList.remove("personal");
+		}
 	};
 
 	render() {
@@ -74,7 +194,7 @@ export default class Pricing extends Component {
 								<h1 className="hero__top-title">
 									Choose a Plan That's Right for You
 								</h1>
-								<div className="hero__top__tabs">
+								<div className="hero__top__tabs personal">
 									<a
 										className="hero__top__tabs-personal"
 										href="#personal"
@@ -105,10 +225,11 @@ export default class Pricing extends Component {
 										{this.state.tap.pricing[0].title}
 									</h2>
 									<p className="plans__ul__list-description">
-										A simple way to get started for you new to passfolio.
+										{this.state.tap.pricing[0].description}
 									</p>
 									<strong className="plans__ul__list-cost">
-										$0<span> /forever</span>
+										{this.state.tap.pricing[0].cost}
+										<span>{this.state.tap.pricing[0].period}</span>
 									</strong>
 									<Button
 										text="Get started"
@@ -135,10 +256,11 @@ export default class Pricing extends Component {
 										{this.state.tap.pricing[1].title}
 									</h2>
 									<p className="plans__ul__list-description">
-										Best for freelance coders & designers who need.
+										{this.state.tap.pricing[1].description}
 									</p>
 									<strong className="plans__ul__list-cost">
-										$50<span> /forever</span>
+										{this.state.tap.pricing[1].cost}
+										<span>{this.state.tap.pricing[1].period}</span>
 									</strong>
 									<Button
 										text="Get Started"
@@ -149,14 +271,11 @@ export default class Pricing extends Component {
 										What's Included
 									</strong>
 									<ul className="plans__ul__list-benefits">
-										<li>Unlimited data</li>
-										<li>5 Person saved</li>
-										<li>
-											A Simple way to get started for you new to Passfolio
-										</li>
-										<li>
-											A Simple way to get started for you new to Passfolio
-										</li>
+										{this.state.tap.pricing[1].features.map(
+											(feature, index) => {
+												return <li key={index}>{feature}</li>;
+											}
+										)}
 									</ul>
 								</div>
 							</li>
@@ -167,9 +286,12 @@ export default class Pricing extends Component {
 										{this.state.tap.pricing[2].title}
 									</h2>
 									<p className="plans__ul__list-description">
-										A simple way to get started for you new to passfolio.
+										{this.state.tap.pricing[2].description}
 									</p>
-									<strong className="plans__ul__list-cost">Custom</strong>
+									<strong className="plans__ul__list-cost">
+										{this.state.tap.pricing[2].cost}
+										<span>{this.state.tap.pricing[2].period}</span>
+									</strong>
 									<Button
 										text="Get started"
 										type="arrow outline"
@@ -236,8 +358,18 @@ export default class Pricing extends Component {
 								<li className="compare__plans__list features">
 									<dl className="compare__plans__list__info">
 										<dt className="compare__plans__list-title top">Features</dt>
+
+										{/* {this.state.tap.compares[0].features.map(
+											(feature, index) => {
+												return (
+													<dd className="compare__plans__list-text" key={index}>
+														{feature}
+													</dd>
+												);
+											}
+										)} */}
 										<dd className="compare__plans__list-text">
-											Price per Admin/month
+											Pricing par Admin/month
 										</dd>
 										<dd className="compare__plans__list-text">
 											Number of Admins
@@ -245,9 +377,7 @@ export default class Pricing extends Component {
 										<dd className="compare__plans__list-text">
 											Published Forms
 										</dd>
-										<dd className="compare__plans__list-text">
-											Form Templates
-										</dd>
+										<dd className="compare__plans__list-text">Form template</dd>
 										<dd className="compare__plans__list-text">
 											Agreement Templates
 										</dd>
@@ -260,11 +390,24 @@ export default class Pricing extends Component {
 										<dd className="compare__plans__list-text">
 											Storage Space Available
 										</dd>
+
 										<dt className="compare__plans__list-title">Security</dt>
 										<dd className="compare__plans__list-text">
 											End-to-End-Encryption
 										</dd>
+
 										<dt className="compare__plans__list-title">Support</dt>
+
+										{/* {this.state.tap.compares[0].supports.map(
+											(support, index) => {
+												return (
+													<dd className="compare__plans__list-text" key={index}>
+														{support}
+													</dd>
+												);
+											}
+										)} */}
+
 										<dd className="compare__plans__list-text">Generic PDF</dd>
 										<dd className="compare__plans__list-text">
 											Max Questions per Form
@@ -287,10 +430,11 @@ export default class Pricing extends Component {
 									<dl className="compare__plans__list__info">
 										<dt className="compare__plans__list-title top">
 											<strong className="compare__plans__list-title-name">
-												Free
+												{this.state.tap.pricing[0].title}
 											</strong>
 											<span className="compare__plans__list-title-cost">
-												$0 <em>/forever</em>
+												{this.state.tap.pricing[0].cost}{" "}
+												<em>{this.state.tap.pricing[0].period}</em>
 											</span>
 											<Button
 												text="Get started"
@@ -333,10 +477,11 @@ export default class Pricing extends Component {
 									<dl className="compare__plans__list__info">
 										<dt className="compare__plans__list-title top">
 											<strong className="compare__plans__list-title-name">
-												Premium
+												{this.state.tap.pricing[1].title}
 											</strong>
 											<span className="compare__plans__list-title-cost">
-												$50 <em>/forever</em>
+												{this.state.tap.pricing[1].cost}{" "}
+												<em>{this.state.tap.pricing[1].period}</em>
 											</span>
 											<Button
 												text="Get started"
@@ -379,10 +524,11 @@ export default class Pricing extends Component {
 									<dl className="compare__plans__list__info">
 										<dt className="compare__plans__list-title top">
 											<strong className="compare__plans__list-title-name">
-												Family
+												{this.state.tap.pricing[2].title}
 											</strong>
 											<span className="compare__plans__list-title-cost">
-												Custom
+												{this.state.tap.pricing[2].cost}{" "}
+												<em>{this.state.tap.pricing[2].period}</em>
 											</span>
 											<Button
 												text="Get started"

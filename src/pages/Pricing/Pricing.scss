@@ -61,43 +61,57 @@ $color_dark-blue: #031a30;
 				}
 			}
 			&__tabs {
+				position: relative;
 				width: rem(278);
 				height: rem(50);
 				margin: 0 auto rem(76);
 				border-radius: rem(25);
 				background: rgba(255, 255, 255, 0.2);
 				align-items: flex-end;
+				&::before {
+					display: inline-block;
+					position: absolute;
+					top: 6%;
+					left: 0;
+					width: rem(137);
+					height: 90%;
+					background: $color_white;
+					border-radius: rem(22);
+					content: "";
+					transition: 0.3s all;
+				}
+				&.personal {
+					&::before {
+						left: 0;
+						content: "Personal";
+					}
+					.hero__top__tabs-personal {
+						color: $color_green;
+					}
+				}
+				&.business {
+					&::before {
+						left: 50%;
+						content: "Business";
+					}
+					.hero__top__tabs-business {
+						color: $color_blue;
+					}
+				}
 				& > a {
 					display: inline-block;
 					position: relative;
-					top: rem(2.8);
-					left: rem(1.5);
+					top: 6%;
 					width: rem(137);
 					height: rem(44);
-					border-radius: rem(22);
 					font-size: rem(14);
 					font-weight: 600;
 					line-height: rem(44);
+					color: $color_white;
 					text-align: center;
 					text-decoration: none;
 					text-transform: uppercase;
 					letter-spacing: 0.14em;
-					&:hover,
-					focus {
-						color: $color_dark-blue;
-						transition: 0.3s all;
-					}
-					@include large {
-						top: rem(3);
-					}
-				}
-				&-personal {
-					background: $color_white;
-					color: $color_green;
-					//pointer-events: none;
-				}
-				&-business {
-					color: $color_white;
 				}
 			}
 		}
@@ -726,8 +740,30 @@ $color_dark-blue: #031a30;
 .pricing--business {
 	.hero {
 		background: linear-gradient(90.32deg, #0a61b4 0.35%, #074581 99.81%);
+		transition: all 0.5s ease;
 		&::before {
 			background-image: url("../../assets/images/pricing-business-bg.png");
+		}
+	}
+	.plans {
+		&__ul {
+			&__list {
+				&.list1 {
+					.plans__ul__list-icon {
+						background-image: url("../../assets/images/pricing-Essential-icon.png") !important;
+					}
+				}
+				&.list2 {
+					.plans__ul__list-icon {
+						background-image: url("../../assets/images/pricing-standard-icon.png");
+					}
+				}
+				&.list3 {
+					.plans__ul__list-icon {
+						background-image: url("../../assets/images/pricing-plus-icon.png");
+					}
+				}
+			}
 		}
 	}
 }
