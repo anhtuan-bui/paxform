@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/scss";
 import "./Pricing.scss";
 import ReadyGet from "../../components/ReadyGet/ReadyGet";
 import FrequentlyAsk from "../../components/FrequentlyAsk/FrequentlyAsk";
@@ -7,6 +11,7 @@ import Button from "../../components/Button/Button";
 import tick from "../../assets/images/icon-tick.svg";
 import none from "../../assets/images/icon-none.svg";
 import features from "../../assets/images/icon-pricing-premium.svg";
+import { SCREEN_SIZE } from "../../configurations/configurations";
 
 export default class Pricing extends Component {
 	personal = {
@@ -140,17 +145,53 @@ export default class Pricing extends Component {
 		],
 	};
 
+	swiperAttribute = {
+		slidesPerView: 3,
+		center: false,
+		gap: 32,
+		grasp: false,
+	};
+
 	constructor(props) {
 		super(props);
 		this.state = {
 			tap: this.personal,
+			swiper: this.swiperAttribute,
 		};
 		this.onBusinessBtnClick = this.onBusinessBtnClick.bind(this);
 		this.onPersonalBtnClick = this.onPersonalBtnClick.bind(this);
+		this.resizeHandler = this.resizeHandler.bind(this);
 	}
 
 	componentDidMount() {
 		console.log(this.state.tap.compares[2]);
+		window.addEventListener("resize", this.resizeHandler);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("resize", this.resizeHandler);
+	}
+
+	resizeHandler() {
+		if (window.innerWidth < SCREEN_SIZE.large) {
+			this.swiperAttribute = {
+				slidesPerView: 2,
+				center: true,
+				gap: 28,
+				grasp: true,
+			};
+
+			this.setState(this.swiperAttribute);
+		} else {
+			this.swiperAttribute = {
+				slidesPerView: 3,
+				center: false,
+				gap: 32,
+				grasp: true,
+			};
+
+			this.setState(this.swiperAttribute);
+		}
 	}
 
 	onPersonalBtnClick = () => {
@@ -354,12 +395,12 @@ export default class Pricing extends Component {
 					<div className="container">
 						<h1 className="compare-title">Compare Plans</h1>
 						<div className="compare__wrapper">
-							<ul className="compare__plans">
-								<li className="compare__plans__list features">
+							<div className="compare__plans">
+								<div className="compare__plans__list features">
 									<dl className="compare__plans__list__info">
 										<dt className="compare__plans__list-title top">Features</dt>
 
-										{/* {this.state.tap.compares[0].features.map(
+										{this.state.tap.compares[0].features.map(
 											(feature, index) => {
 												return (
 													<dd className="compare__plans__list-text" key={index}>
@@ -367,29 +408,7 @@ export default class Pricing extends Component {
 													</dd>
 												);
 											}
-										)} */}
-										<dd className="compare__plans__list-text">
-											Pricing par Admin/month
-										</dd>
-										<dd className="compare__plans__list-text">
-											Number of Admins
-										</dd>
-										<dd className="compare__plans__list-text">
-											Published Forms
-										</dd>
-										<dd className="compare__plans__list-text">Form template</dd>
-										<dd className="compare__plans__list-text">
-											Agreement Templates
-										</dd>
-										<dd className="compare__plans__list-text">
-											Survey(monthly)
-										</dd>
-										<dd className="compare__plans__list-text">
-											Monthly Submissions
-										</dd>
-										<dd className="compare__plans__list-text">
-											Storage Space Available
-										</dd>
+										)}
 
 										<dt className="compare__plans__list-title">Security</dt>
 										<dd className="compare__plans__list-text">
@@ -397,17 +416,6 @@ export default class Pricing extends Component {
 										</dd>
 
 										<dt className="compare__plans__list-title">Support</dt>
-
-										{/* {this.state.tap.compares[0].supports.map(
-											(support, index) => {
-												return (
-													<dd className="compare__plans__list-text" key={index}>
-														{support}
-													</dd>
-												);
-											}
-										)} */}
-
 										<dd className="compare__plans__list-text">Generic PDF</dd>
 										<dd className="compare__plans__list-text">
 											Max Questions per Form
@@ -425,149 +433,163 @@ export default class Pricing extends Component {
 											Workflow support
 										</dd>
 									</dl>
-								</li>
-								<li className="compare__plans__list free">
-									<dl className="compare__plans__list__info">
-										<dt className="compare__plans__list-title top">
-											<strong className="compare__plans__list-title-name">
-												{this.state.tap.pricing[0].title}
-											</strong>
-											<span className="compare__plans__list-title-cost">
-												{this.state.tap.pricing[0].cost}{" "}
-												<em>{this.state.tap.pricing[0].period}</em>
-											</span>
-											<Button
-												text="Get started"
-												type="arrow outline"
-												color="green"
-											/>
-										</dt>
-										<dd className="compare__plans__list-text">$29.90</dd>
-										<dd className="compare__plans__list-text">1 (max 4)</dd>
-										<dd className="compare__plans__list-text">3</dd>
-										<dd className="compare__plans__list-text">10</dd>
-										<dd className="compare__plans__list-text">2</dd>
-										<dd className="compare__plans__list-text">1</dd>
-										<dd className="compare__plans__list-text">500</dd>
-										<dd className="compare__plans__list-text">10GB</dd>
-										<dt className="compare__plans__list-title">&nbsp;</dt>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dt className="compare__plans__list-title">&nbsp;</dt>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">40</dd>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">
-											<img src={none} alt="Non-Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">
-											<img src={none} alt="Non-Provide" />
-										</dd>
-									</dl>
-								</li>
-								<li className="compare__plans__list premium">
-									<dl className="compare__plans__list__info">
-										<dt className="compare__plans__list-title top">
-											<strong className="compare__plans__list-title-name">
-												{this.state.tap.pricing[1].title}
-											</strong>
-											<span className="compare__plans__list-title-cost">
-												{this.state.tap.pricing[1].cost}{" "}
-												<em>{this.state.tap.pricing[1].period}</em>
-											</span>
-											<Button
-												text="Get started"
-												type="flat-green arrow"
-												color="white"
-											/>
-										</dt>
-										<dd className="compare__plans__list-text">$39.90</dd>
-										<dd className="compare__plans__list-text">5 (max 9)</dd>
-										<dd className="compare__plans__list-text">30</dd>
-										<dd className="compare__plans__list-text">50</dd>
-										<dd className="compare__plans__list-text">10</dd>
-										<dd className="compare__plans__list-text">3</dd>
-										<dd className="compare__plans__list-text">3,000</dd>
-										<dd className="compare__plans__list-text">100GB</dd>
-										<dt className="compare__plans__list-title">&nbsp;</dt>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dt className="compare__plans__list-title">&nbsp;</dt>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">Unlimited</dd>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-									</dl>
-								</li>
-								<li className="compare__plans__list family">
-									<dl className="compare__plans__list__info">
-										<dt className="compare__plans__list-title top">
-											<strong className="compare__plans__list-title-name">
-												{this.state.tap.pricing[2].title}
-											</strong>
-											<span className="compare__plans__list-title-cost">
-												{this.state.tap.pricing[2].cost}{" "}
-												<em>{this.state.tap.pricing[2].period}</em>
-											</span>
-											<Button
-												text="Get started"
-												type="arrow outline"
-												color="green"
-											/>
-										</dt>
-										<dd className="compare__plans__list-text">$49.90</dd>
-										<dd className="compare__plans__list-text">30</dd>
-										<dd className="compare__plans__list-text">100</dd>
-										<dd className="compare__plans__list-text">200</dd>
-										<dd className="compare__plans__list-text">20</dd>
-										<dd className="compare__plans__list-text">10</dd>
-										<dd className="compare__plans__list-text">10,000</dd>
-										<dd className="compare__plans__list-text">1TB</dd>
-										<dt className="compare__plans__list-title">&nbsp;</dt>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dt className="compare__plans__list-title">&nbsp;</dt>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">Unlimited</dd>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-										<dd className="compare__plans__list-text">
-											<img src={tick} alt="Provide" />
-										</dd>
-									</dl>
-								</li>
-							</ul>
+								</div>
+								<Swiper
+									slidesPerView={this.swiperAttribute.slidesPerView}
+									spaceBetween={this.swiperAttribute.gap}
+									initialSlide={1}
+									centeredSlides={this.swiperAttribute.center}
+									grabCursor={this.swiperAttribute.grasp}
+								>
+									<SwiperSlide>
+										<div className="compare__plans__list free">
+											<dl className="compare__plans__list__info">
+												<dt className="compare__plans__list-title top">
+													<strong className="compare__plans__list-title-name">
+														{this.state.tap.pricing[0].title}
+													</strong>
+													<span className="compare__plans__list-title-cost">
+														{this.state.tap.pricing[0].cost}{" "}
+														<em>{this.state.tap.pricing[0].period}</em>
+													</span>
+													<Button
+														text="Get started"
+														type="arrow outline"
+														color="green"
+													/>
+												</dt>
+												<dd className="compare__plans__list-text">$29.90</dd>
+												<dd className="compare__plans__list-text">1 (max 4)</dd>
+												<dd className="compare__plans__list-text">3</dd>
+												<dd className="compare__plans__list-text">10</dd>
+												<dd className="compare__plans__list-text">2</dd>
+												<dd className="compare__plans__list-text">1</dd>
+												<dd className="compare__plans__list-text">500</dd>
+												<dd className="compare__plans__list-text">10GB</dd>
+												<dt className="compare__plans__list-title">&nbsp;</dt>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dt className="compare__plans__list-title">&nbsp;</dt>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">40</dd>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">
+													<img src={none} alt="Non-Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">
+													<img src={none} alt="Non-Provide" />
+												</dd>
+											</dl>
+										</div>
+									</SwiperSlide>
+									<SwiperSlide>
+										<div className="compare__plans__list premium">
+											<dl className="compare__plans__list__info">
+												<dt className="compare__plans__list-title top">
+													<strong className="compare__plans__list-title-name">
+														{this.state.tap.pricing[1].title}
+													</strong>
+													<span className="compare__plans__list-title-cost">
+														{this.state.tap.pricing[1].cost}{" "}
+														<em>{this.state.tap.pricing[1].period}</em>
+													</span>
+													<Button
+														text="Get started"
+														type="flat-green arrow"
+														color="white"
+													/>
+												</dt>
+												<dd className="compare__plans__list-text">$39.90</dd>
+												<dd className="compare__plans__list-text">5 (max 9)</dd>
+												<dd className="compare__plans__list-text">30</dd>
+												<dd className="compare__plans__list-text">50</dd>
+												<dd className="compare__plans__list-text">10</dd>
+												<dd className="compare__plans__list-text">3</dd>
+												<dd className="compare__plans__list-text">3,000</dd>
+												<dd className="compare__plans__list-text">100GB</dd>
+												<dt className="compare__plans__list-title">&nbsp;</dt>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dt className="compare__plans__list-title">&nbsp;</dt>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">Unlimited</dd>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+											</dl>
+										</div>
+									</SwiperSlide>
+									<SwiperSlide>
+										<div className="compare__plans__list family">
+											<dl className="compare__plans__list__info">
+												<dt className="compare__plans__list-title top">
+													<strong className="compare__plans__list-title-name">
+														{this.state.tap.pricing[2].title}
+													</strong>
+													<span className="compare__plans__list-title-cost">
+														{this.state.tap.pricing[2].cost}{" "}
+														<em>{this.state.tap.pricing[2].period}</em>
+													</span>
+													<Button
+														text="Get started"
+														type="arrow outline"
+														color="green"
+													/>
+												</dt>
+												<dd className="compare__plans__list-text">$49.90</dd>
+												<dd className="compare__plans__list-text">30</dd>
+												<dd className="compare__plans__list-text">100</dd>
+												<dd className="compare__plans__list-text">200</dd>
+												<dd className="compare__plans__list-text">20</dd>
+												<dd className="compare__plans__list-text">10</dd>
+												<dd className="compare__plans__list-text">10,000</dd>
+												<dd className="compare__plans__list-text">1TB</dd>
+												<dt className="compare__plans__list-title">&nbsp;</dt>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dt className="compare__plans__list-title">&nbsp;</dt>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">Unlimited</dd>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+												<dd className="compare__plans__list-text">
+													<img src={tick} alt="Provide" />
+												</dd>
+											</dl>
+										</div>
+									</SwiperSlide>
+								</Swiper>
+							</div>
 						</div>
 					</div>
 					<div className="bottom_triangle"></div>

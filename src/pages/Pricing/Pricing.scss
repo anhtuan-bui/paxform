@@ -372,7 +372,7 @@ $color_dark-blue: #031a30;
 	}
 	.data_credit {
 		position: relative;
-		padding-bottom: rem(200);
+		padding-bottom: rem(120);
 		&-name {
 			font-size: rem(14);
 			font-weight: bold;
@@ -528,7 +528,6 @@ $color_dark-blue: #031a30;
 			position: relative;
 			@include large {
 				padding-top: rem(100);
-				padding-left: rem(240);
 			}
 		}
 		&-title {
@@ -558,23 +557,12 @@ $color_dark-blue: #031a30;
 				font-size: rem(28);
 			}
 		}
-		&__wrapper {
-			@include large {
-				overflow-x: scroll;
-			}
-		}
 		&__plans {
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
+			display: flex;
 			width: 100%;
-			padding-left: 0;
 			list-style: none;
 			box-sizing: border-box;
-			@include large {
-				grid-template-columns: 1fr 1fr 1fr;
-			}
 			&__list {
-				margin: 0 1rem;
 				border: rem(1) solid #baccde;
 				border-radius: rem(20);
 				background: $color_white;
@@ -582,25 +570,27 @@ $color_dark-blue: #031a30;
 					position: relative;
 					border: none;
 					background: #def6ec;
-					&::before {
-						position: absolute;
-						top: rem(-35);
-						left: 0;
-						width: 100%;
-						font-size: rem(14);
-						font-weight: 600;
-						text-align: center;
-						text-transform: uppercase;
-						letter-spacing: 0.14em;
-						color: $color_green;
-						content: "most popular";
-						@include large {
-							display: none;
-						}
-					}
+					// &::before {
+					// 	 position: absolute;
+					// 	 top: rem(-35);
+					// 	left: 0;
+					// 	width: 100%;
+					// 	font-size: rem(14);
+					// 	font-weight: 600;
+					// 	text-align: center;
+					// 	text-transform: uppercase;
+					// 	letter-spacing: 0.14em;
+					// 	color: $color_green;
+					// 	content: "most popular";
+					// 	@include large {
+					// 		display: none;
+					// 	}
+					// }
 				}
 				&__info {
 					margin-top: 0;
+					margin-bottom: 0;
+					padding-bottom: rem(10);
 				}
 				&-title {
 					height: rem(100);
@@ -643,6 +633,7 @@ $color_dark-blue: #031a30;
 					}
 				}
 				&.features {
+					margin: 0 $padding__collumn;
 					border: none;
 					background: #f6f6f6;
 					.compare__plans__list-title {
@@ -658,11 +649,13 @@ $color_dark-blue: #031a30;
 							rem(8) center no-repeat;
 						text-align: left;
 					}
+				}
+			}
+			.swiper {
+				padding: 0 $padding__collumn;
+				&-slide {
 					@include large {
-						position: absolute;
-						top: rem(110);
-						left: 0;
-						padding-bottom: rem(10);
+						min-width: rem(180);
 					}
 				}
 			}
