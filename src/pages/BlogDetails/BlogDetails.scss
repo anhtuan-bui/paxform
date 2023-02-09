@@ -1,31 +1,43 @@
 @import "../../styles/styles.scss";
 
-.container {
-    margin-top: 100px;
-    padding: 0 1rem;
+.wrapper {
+
+    @include minMedium {
+        display: grid;
+        grid-template-columns: 1fr 3fr;    
+        column-gap: 20px;
+    }
 }
 
-#article {
-
-    &-info {
-        display: grid;
-        margin-top: 80px;
+.article {
+    
+    display: grid;
+    margin-top: 80px;
+    
+    @include minMedium {
+        grid-column: 2;
+        margin-top: 0;
     }
 
     &-img {
         width: 100%;
-        border-radius: 20px;
+    }
+
+    &-snippet {
+        margin: 30px 0;
     }
 }
 
 .author {
 
-    &-container {
-        display: flex;
-        align-items: center;
-        height: 86px;
-        background-color: #F6F6F6;
-        border-radius: 20px;
+    display: flex;
+    align-items: center;
+    height: 86px;
+    background-color: #F6F6F6;
+
+    @include minMedium {
+        grid-column: 1;
+        grid-row: 1;
     }
 
     &-wrapper {
@@ -40,7 +52,6 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background-image: url(../../assets/images/sample-author-avatar.png);
     }
 
     &-info {
@@ -60,30 +71,32 @@
     }
 }
 
-.article-snippet {
-    margin: 30px 0;
+
+
+article {
+    @include minMedium {
+        grid-column: 2;
+    }
 }
 
-#quote-wrapper {
+.quote {
+    
     display: flex;
-    margin-top: 30px;
     background-color: #E1EDF9;
     padding: 15px;
-    border-radius: 20px;
-}
 
-#quote-sign {
-    width: 100px;
-    height: 20px;
-    margin-right: 12px;
-    background-image: url(../../assets/images/“.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+
+    &-sign {
+        align-self: flex-start;
+        margin-right: 10px;
+        object-fit: contain;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }
 
 #company-video {
     width: 100%;
-    border-radius: 20px;
 }
 
 hr {
@@ -91,6 +104,9 @@ hr {
     background-color: #BACCDE;
     border: none;
     margin-bottom: 30px;
+    @include minMedium {
+            display: none;
+    }
 }
 
 .uppercase {
@@ -124,9 +140,16 @@ hr {
     margin-bottom: 30px;
 }
 
+#social-links-container {
+    @include minMedium {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 100px;
+    }
+}
+
 .icon-container {
     height: 40px;
-    border-radius: 20px;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -135,37 +158,114 @@ hr {
     justify-content: center;
 }
 
-.recommended-article {
+.recommended {
+
+    @include minMedium {
+        grid-row: 1;
+        grid-column: 1;
+        margin-top: 300px;
+    }
 
     &-container {
+
+        & :nth-child(1) {
+            @include minMedium {
+                grid-column: span 2;
+            }
+        }
+
+        & :nth-last-child(1) {
+            @include minMedium {
+                display: none;
+            }
+        }
+
         display: grid;
         column-gap: 12px;
         grid-template-columns: repeat(2, 1fr);
     }
 
-    &-img {
-        object-fit: cover;
-        width: 100%;
-        border-radius: 20px;
-    }
+    &-article {
 
-    &-link {
-
-        all: unset;
-        color: $color_main__green-05;
-        cursor: pointer;
-
-        &-wrapper {
-            display: flex;
+        &-img {
+            object-fit: cover;
+            width: 100%;
         }
-        
-        &-arrow {
-            margin: 3px 0 0 10px;
+
+        &-link {
+
+            all: unset;
+            color: $color_main__green-05;
+            cursor: pointer;
+
+            &-wrapper {
+                display: flex;
+            }
+            
+            &-arrow {
+                margin: 3px 0 0 10px;
+            }
         }
     }
 }
 
-#relative {
+#triangle-container {
+    grid-column: span 2;
+    margin-top: 100px;
     position: relative;
-    padding-bottom: 100px;
+}
+
+.latest-blog {
+
+    display: none;
+    
+    @include minLarge {
+        display: block;
+    }
+
+    &-title {
+        text-transform: uppercase;
+        padding-top: 140px;
+        font-size: 14px;
+        font-weight: 600;
+        color: hsla(0, 0%, 100%, 0.5);
+    }
+
+    &-wrapper {
+        background-color: #031a30;
+    }
+
+    &-container {
+        color: white;
+    }
+
+    &-header {
+
+        margin: 24px 0 45px 0;
+        &-title {
+            font-size: 24px;
+            font-weight: bold;
+            align-self: center;
+        }
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-blogs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 30px;
+        padding-bottom: 140px;
+
+        * {
+            object-fit: cover;
+        }
+    }
+}
+
+#footer-triangle {
+
+    @include minLarge {
+        display: none;
+    }
 }
