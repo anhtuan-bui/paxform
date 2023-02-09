@@ -17,7 +17,7 @@ export default class Footer extends Component {
     render() {
         return (
             <footer className="footer">
-                <div className="container footer_container">
+                <div className="footer_container">
                     <div className="footer_top">
                         <div className="footer__top-left">
                             {/*<div className="footer__temp">*/}

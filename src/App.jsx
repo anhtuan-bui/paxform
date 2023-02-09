@@ -22,6 +22,7 @@ const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
 const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
 const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
+const ResourceDetails = lazy(() => import("./pages/ResourceDetails/ResourceDetails"))
 
 function App() {
 	const MINUTE_MS = 250000;
@@ -56,6 +57,7 @@ function App() {
 							<Route path="contact-us" element={<ContactUs />} />
 							<Route path="company" element={<Company />} />
 							{/* <Route path="*" element={<NotFound />} /> */}
+							<Route path="resource-details" element={<ResourceDetails />} /> 
 						</Route>
 					</Routes>
 				</Suspense>

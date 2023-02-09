@@ -1,0 +1,48 @@
+
+    &__top-right-list {
+        display: grid;
+
+        grid-template-areas: 
+        'paxform use resources company'
+        'business use security legal'
+        'consumer use forms legal';
+    }
+    
+    
+
+    &-paxform{
+        grid-area: paxform;
+    }
+
+    &-business-features{
+        grid-area: business;
+    }
+
+    &-consumer-features{
+        grid-area: consumer;
+    }
+
+    &-use-cases{
+        grid-area: use;
+    }
+
+    &-resources{
+        grid-area: resources;
+    }
+
+    &-security{
+        grid-area: security;
+    }
+    
+    &-forms{
+        grid-area: forms;
+    }
+
+    &-company{
+        grid-area: company;
+    }
+
+    &-legal{
+        grid-area: legal;
+    }
+
