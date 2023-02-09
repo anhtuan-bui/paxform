@@ -1,37 +1,76 @@
+// Extra Large = 1440px
 @mixin extraLarge {
   @media (max-width: ($width__extraLarge - 1)) {
     @content;
   }
 }
 
+@mixin minExtraLarge {
+  @media (min-width: ($width__extraLarge + 1)) {
+    @content;
+  }
+}
+
+// Larger = 1200px
 @mixin larger {
   @media (max-width: ($width__larger - 1)) {
     @content;
   }
 }
+
+@mixin minLarger {
+  @media (min-width: ($width__larger + 1)) {
+    @content;
+  }
+}
+
+// Large = 1024px
 @mixin large {
   @media (max-width: ($width__large - 1)) {
     @content;
   }
 }
 
+@mixin minLarge {
+  @media (min-width: ($width__large + 1)) {
+    @content;
+  }
+}
+
+// Medium = 768px
 @mixin medium {
   @media (max-width: ($width__medium - 1)) {
     @content;
   }
 }
 
+@mixin minMedium {
+  @media (min-width: ($width__medium + 1)) {
+    @content;
+  }
+}
 
+// Small = 576px
 @mixin small {
   @media (max-width: ($width__small - 1)) {
     @content;
   }
 }
+
+@mixin minSmall {
+  @media (min-width: ($width__small + 1)) {
+    @content;
+  }
+}
+
+// Extrasmall = 375px
 @mixin extraSmall {
   @media (max-width: ($width__extraSmall - 1)) {
     @content;
   }
 }
+
+
 
 @function rem($value) {
   $remValue: calc($value / 16) + rem;
