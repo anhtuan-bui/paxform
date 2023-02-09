@@ -1,7 +1,7 @@
 @import "../../styles/styles.scss";
 $color_white: #fff;
-$color_green: #20976c;
-$color_blue: #0a61b4;
+$color_green: $color__success;
+$color_blue: $color__primary;
 $color_dark-blue: #031a30;
 $color-light-blue: #e1edf9;
 $color_grey: #2f4356;
@@ -418,7 +418,7 @@ $color_purple: #2d4bb6;
                     bottom: -18%;
                     width: 92%;
                     height: rem(150);
-                    background: linear-gradient( 104.14deg, #0a61b4 20.63%, #074581 177.09%);
+                    background: linear-gradient( 104.14deg, $color__primary 20.63%, #074581 177.09%);
                     border-top-left-radius: rem(15);
                     transform: skewY(6deg);
                     content: "";

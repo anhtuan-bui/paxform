@@ -14,8 +14,8 @@ import bgBusinessIlustration from "../../assets/images/home/Bg-bi.svg";
 import personalIllustration from "../../assets/images/home/Personal illustration.png";
 import bgPersonalIlustration from "../../assets/images/home/Bg-personal.svg";
 
-import securityPolicyImage from "../../assets/images/home/security policy.svg";
-import bgSecurityPolicy from "../../assets/images/home/Bg-security.svg";
+// import securityPolicyImage from "../../assets/images/home/security policy.svg";
+// import bgSecurityPolicy from "../../assets/images/home/Bg-security.svg";
 
 // import { ReactComponent as HeroRight } from '../../assets/images/large-hero.svg';
 // import { ReactComponent as CertificateIllustrator } from '../../assets/images/certificate-illustrator.svg';
@@ -276,7 +276,7 @@ export default class Home extends Component {
 							</div>
 							<div className="platform__top-right">
 								<Button
-									type="flat-green"
+									type="flat-green arrow"
 									color="white"
 									text="Learn more about Business"
 								/>
@@ -330,8 +330,8 @@ export default class Home extends Component {
 							</div>
 							<div className="platform__top-right">
 								<Button
-									type="outline flat"
-									color="white"
+									type="outline arrow"
+									color="green"
 									text="Learn more about Personal"
 								/>
 							</div>

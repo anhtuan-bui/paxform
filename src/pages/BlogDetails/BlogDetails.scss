@@ -107,11 +107,11 @@ hr {
     }
 
     &.blue {
-        color:#0A61B4;
+        color:$color__primary;
     }
 
     &.green {
-        color: #20976C;
+        color: $color__success;
     }
 }
 

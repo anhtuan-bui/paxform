@@ -1,0 +1,134 @@
+@import "../../styles/styles.scss";
+
+$color_white: #fff;
+$color_black: #031a30;
+$color_grey: #2f4356;
+$color_blue: #0a61b4;
+
+.ResourceDetails {
+    .hero {
+        position: relative;
+        padding-top: rem(100);
+        background: linear-gradient(125.24deg, #0a61b4 27.35%, #f2f9ff 176.96%);
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            padding-top: rem(80);
+            padding-bottom: rem(190);
+            text-align: center;
+            box-sizing: border-box;
+            @include medium {
+                flex-direction: column;
+                padding-top: 0;
+                padding-bottom: rem(140);
+            }
+            @include small {
+                padding-top: 0;
+            }
+        }
+        &__name {
+            margin: rem(20) 0;
+            opacity: 50%;
+            letter-spacing: rem(2);
+            font-weight: 600;
+            font-size: rem(14);
+            text-transform: uppercase;
+            @include medium {
+                margin-top: rem(50);
+                margin-bottom: rem(40);
+            }
+            @include small {
+                margin-top: rem(50);
+            }
+        }
+        &__content {
+            color: $color_white;
+            flex: 1 1 40%;
+            @include extraLarge {
+                flex: 1 1 50%;
+            }
+            h1,
+            p {
+                max-width: 100%;
+            }
+        }
+        &__title {
+            font-size: rem(42);
+            margin-bottom: rem(24);
+            margin-top: 0;
+            @include extraLarge {
+                font-size: rem(38);
+            }
+            @include large {
+                font-size: rem(34);
+            }
+            @include medium {
+                font-size: rem(42);
+            }
+            @include small {
+                font-size: rem(36);
+            }
+            @include extraSmall {
+                font-size: rem(28);
+            }
+        }
+        &__description {
+            margin-bottom: rem(50);
+        }
+    }
+
+
+
+
+    //display: grid;
+    //grid-template-columns:  1fr 3fr;
+    //grid-template-columns: repeat(2, 1fr);
+    //grid-template-columns: 200px 1fr 2fr;
+    //gap: 100px;
+    //grid-auto-rows: minmax(100px, auto);
+    //padding-top: rem(64);
+    //position: relative;
+    //min-height: rem(1000);
+    //padding-bottom: rem(200);
+    //line-height: rem(25);
+
+    .flex_box{ 
+        position: relative;
+        min-height: rem(1000);
+        padding-bottom: rem(200);
+        line-height: rem(25);
+
+        &__container {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: rem(100);
+            padding-bottom: rem(120);
+        }       
+    }
+
+    .leftBox {
+        //display: grid;
+        //display: flex;
+        //flex-direction: column;
+        //align-items: flex-start;
+        //grid-column: 1;
+        //width: 100%;    
+        flex: 25%;
+        padding: $padding__collumn;
+        box-sizing: border-box;
+
+        //&__social {
+            //display: flex;
+            //flex-direction: column;
+            //align-items: flex-start;
+        //}
+    }
+
+    .RightBox {
+        flex: 75%;
+        padding: $padding__collumn;
+        box-sizing: border-box;
+    }
+
+}

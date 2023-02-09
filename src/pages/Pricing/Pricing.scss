@@ -1,7 +1,7 @@
 @import "../../styles/styles.scss";
 $color_white: #fff;
-$color_green: #20976c;
-$color_blue: #0a61b4;
+$color_green: $color__success;
+$color_blue: $color__primary;
 $color_dark-blue: #031a30;
 .pricing {
 	.hero {

@@ -1,14 +1,14 @@
 @import "../../styles/styles.scss";
 $color_white: #fff;
-$color_blue: #0a61b4;
+$color_blue: $color__primary;
 $color_light-grey: #f6f6f6;
 $color_grey: #2f4356;
-$color_green: #20976c;
+$color_green: $color__success;
 .contact {
     .hero {
         position: relative;
         padding-top: rem(100);
-        background: linear-gradient(125.24deg, #0a61b4 27.35%, #f2f9ff 176.96%);
+        background: linear-gradient(125.24deg, $color__primary 27.35%, #f2f9ff 176.96%);
         &__wrapper {
             position: relative;
             padding-top: rem(80);
