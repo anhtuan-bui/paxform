@@ -8,11 +8,54 @@ import ReadyGet from "../../components/ReadyGet/ReadyGet";
 import FrequentlyAsk from "../../components/FrequentlyAsk/FrequentlyAsk";
 import Button from "../../components/Button/Button";
 
-import tick from "../../assets/images/icon-tick.svg";
-import none from "../../assets/images/icon-none.svg";
+import { ReactComponent as Tick } from "../../assets/images/icon-tick.svg";
+import { ReactComponent as Eks } from "../../assets/images/icon-none.svg";
 import features from "../../assets/images/icon-pricing-premium.svg";
 import { SCREEN_SIZE } from "../../configurations/configurations";
 
+const credits = [
+	{
+		cost: "$19.90",
+		point: "500",
+		descriptions: "Additional Submissions",
+	},
+	{
+		cost: "$99.90",
+		point: "3,000",
+		descriptions: "Additional Submissions",
+	},
+	{
+		cost: "$299.90",
+		point: "10,000",
+		descriptions: "Additional Submissions",
+	},
+];
+
+// const comparePlans = [
+// 	{
+// 		features: [
+// 			"Pricing per Admin/month",
+// 			"Number of Admins",
+// 			"Published Forms",
+// 			"Form template",
+// 			"Agreement Templates",
+// 			"Survey(monthly)",
+// 			"Monthly Submissions",
+// 			"Storage Space Available",
+// 		],
+// 	},
+// 	{ securities: "End-to-End Encryption" },
+// 	{
+// 		supports: [
+// 			"Generic PDF",
+// 			"Max Questions per Form",
+// 			"Conditional Questions",
+// 			"Electronic Signatures",
+// 			"Attachments(in forms)",
+// 			"Workflow support",
+// 		],
+// 	},
+// ];
 export default class Pricing extends Component {
 	personal = {
 		pricing: [
@@ -27,6 +70,11 @@ export default class Pricing extends Component {
 					"A simple way for you new started to Passfolio.",
 					"A simple way for you new started to Passfolio.",
 				],
+				compares: {
+					features: ["$29.90", "1(max 4)", "3", "10", "2", "1", "500", "10GB"],
+					securities: [<Tick />],
+					supports: [<Tick />, "40", <Tick />, <Tick />, <Eks />, <Eks />],
+				},
 			},
 			{
 				title: "Premium",
@@ -39,6 +87,28 @@ export default class Pricing extends Component {
 					"A simple way for you new started to Passfolio.",
 					"A simple way for you new started to Passfolio.",
 				],
+
+				compares: {
+					features: [
+						"$39.90",
+						"5(max 9)",
+						"30",
+						"50",
+						"10",
+						"3",
+						"3,000",
+						"100GB",
+					],
+					securities: [<Tick />],
+					supports: [
+						<Tick />,
+						"Unlimited",
+						<Tick />,
+						<Tick />,
+						<Tick />,
+						<Tick />,
+					],
+				},
 			},
 			{
 				title: "Family",
@@ -51,31 +121,18 @@ export default class Pricing extends Component {
 					"A simple way for you new started to Passfolio.",
 					"A simple way for you new started to Passfolio.",
 				],
-			},
-		],
-		compares: [
-			{
-				features: [
-					"Pricing par Admin/month",
-					"Number of Admins",
-					"Published Forms",
-					"Form template",
-					"Agreement Templates",
-					"Survey(monthly)",
-					"Monthly Submissions",
-					"Storage Space Available",
-				],
-			},
-			{ securities: ["End-to-End Encryption"] },
-			{
-				supports: [
-					"Generic PDF",
-					"Max Questions per Form",
-					"Conditional Questions",
-					"Electronic Signatures",
-					"Attachments(in forms)",
-					"Workflow support",
-				],
+				compares: {
+					features: ["$49.90", "30", "100", "200", "20", "10", "10,000", "1TB"],
+					securities: [<Tick />],
+					supports: [
+						<Tick />,
+						"Unlimited",
+						<Tick />,
+						<Tick />,
+						<Tick />,
+						<Tick />,
+					],
+				},
 			},
 		],
 	};
@@ -92,6 +149,11 @@ export default class Pricing extends Component {
 					"A simple way for you new started to Passfolio.",
 					"A simple way for you new started to Passfolio.",
 				],
+				compares: {
+					features: ["$29.90", "1(max 4)", "3", "10", "2", "1", "500", "10GB"],
+					securities: [<Tick />],
+					supports: [<Tick />, "40", <Tick />, <Tick />, <Eks />, <Eks />],
+				},
 			},
 			{
 				title: "Standard",
@@ -104,6 +166,18 @@ export default class Pricing extends Component {
 					"A simple way for you new started to Passfolio.",
 					"A simple way for you new started to Passfolio.",
 				],
+				compares: {
+					features: ["$49.90", "30", "100", "200", "20", "10", "10,000", "1TB"],
+					securities: [<Tick />],
+					supports: [
+						<Tick />,
+						"Unlimited",
+						<Tick />,
+						<Tick />,
+						<Tick />,
+						<Tick />,
+					],
+				},
 			},
 			{
 				title: "Plus",
@@ -116,31 +190,18 @@ export default class Pricing extends Component {
 					"A simple way for you new started to Passfolio.",
 					"A simple way for you new started to Passfolio.",
 				],
-			},
-		],
-		compares: [
-			{
-				features: [
-					"1 Pricing par Admin/month",
-					"1 Number of Admins",
-					"1 Published Forms",
-					"1 Form template",
-					"1 Agreement Templates",
-					"1 Survey(monthly)",
-					"1 Monthly Submissions",
-					"1 Storage Space Available",
-				],
-			},
-			{ securities: "1 End-to-End Encryption" },
-			{
-				supports: [
-					"1 Generic PDF",
-					"1 Max Questions per Form",
-					"1 Conditional Questions",
-					"1 Electronic Signatures",
-					"1 Attachments(in forms)",
-					"1 Workflow support",
-				],
+				compares: {
+					features: ["$49.90", "30", "100", "200", "20", "10", "10,000", "1TB"],
+					securities: [<Tick />],
+					supports: [
+						<Tick />,
+						"Unlimited",
+						<Tick />,
+						<Tick />,
+						<Tick />,
+						<Tick />,
+					],
+				},
 			},
 		],
 	};
@@ -164,7 +225,7 @@ export default class Pricing extends Component {
 	}
 
 	componentDidMount() {
-		console.log(this.state.tap.compares[2]);
+		this.resizeHandler();
 		window.addEventListener("resize", this.resizeHandler);
 	}
 
@@ -259,100 +320,34 @@ export default class Pricing extends Component {
 				<section className="plans">
 					<div className="container">
 						<ul className="plans__ul">
-							<li className="plans__ul__list list1">
-								<div className="plans__ul__list__inner">
-									<i className="plans__ul__list-icon">flags</i>
-									<h2 className="plans__ul__list-name">
-										{this.state.tap.pricing[0].title}
-									</h2>
-									<p className="plans__ul__list-description">
-										{this.state.tap.pricing[0].description}
-									</p>
-									<strong className="plans__ul__list-cost">
-										{this.state.tap.pricing[0].cost}
-										<span>{this.state.tap.pricing[0].period}</span>
-									</strong>
-									<Button
-										text="Get started"
-										type="arrow outline"
-										color="green"
-									/>
-									<strong className="plans__ul__list-inc">
-										What's Included
-									</strong>
-									<ul className="plans__ul__list-benefits">
-										<li>Unlimited data</li>
-										<li>5 Person saved</li>
-										<li>
-											A Simple way to get started for you new to Passfolio
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li className="plans__ul__list list2">
-								<div className="plans__ul__list__inner">
-									<em className="plans__ul__list-text">Most Popular</em>
-									<i className="plans__ul__list-icon">Star</i>
-									<h2 className="plans__ul__list-name">
-										{this.state.tap.pricing[1].title}
-									</h2>
-									<p className="plans__ul__list-description">
-										{this.state.tap.pricing[1].description}
-									</p>
-									<strong className="plans__ul__list-cost">
-										{this.state.tap.pricing[1].cost}
-										<span>{this.state.tap.pricing[1].period}</span>
-									</strong>
-									<Button
-										text="Get Started"
-										type="flat-green arrow"
-										color="white"
-									/>
-									<strong className="plans__ul__list-inc">
-										What's Included
-									</strong>
-									<ul className="plans__ul__list-benefits">
-										{this.state.tap.pricing[1].features.map(
-											(feature, index) => {
-												return <li key={index}>{feature}</li>;
-											}
-										)}
-									</ul>
-								</div>
-							</li>
-							<li className="plans__ul__list list3">
-								<div className="plans__ul__list__inner">
-									<i className="plans__ul__list-icon">Family</i>
-									<h2 className="plans__ul__list-name">
-										{this.state.tap.pricing[2].title}
-									</h2>
-									<p className="plans__ul__list-description">
-										{this.state.tap.pricing[2].description}
-									</p>
-									<strong className="plans__ul__list-cost">
-										{this.state.tap.pricing[2].cost}
-										<span>{this.state.tap.pricing[2].period}</span>
-									</strong>
-									<Button
-										text="Get started"
-										type="arrow outline"
-										color="green"
-									/>
-									<strong className="plans__ul__list-inc">
-										What's Included
-									</strong>
-									<ul className="plans__ul__list-benefits">
-										<li>Unlimited data</li>
-										<li>5 Person saved</li>
-										<li>
-											A Simple way to get started for you new to Passfolio
-										</li>
-										<li>
-											A Simple way to get started for you new to Passfolio
-										</li>
-									</ul>
-								</div>
-							</li>
+							{this.state.tap.pricing.map((price, index) => (
+								<li className={`plans__ul__list list${index + 1}`} key={index}>
+									<div className="plans__ul__list__inner">
+										<i className="plans__ul__list-icon">flags</i>
+										<h2 className="plans__ul__list-name">{price.title}</h2>
+										<p className="plans__ul__list-description">
+											{price.description}
+										</p>
+										<strong className="plans__ul__list-cost">
+											{price.cost}
+											<span>{price.period}</span>
+										</strong>
+										<Button
+											text="Get started"
+											type="arrow outline"
+											color="green"
+										/>
+										<strong className="plans__ul__list-inc">
+											What's Included
+										</strong>
+										<ul className="plans__ul__list-benefits">
+											{price.features.map((feature, index) => (
+												<li key={index}>{feature}</li>
+											))}
+										</ul>
+									</div>
+								</li>
+							))}
 						</ul>
 					</div>
 				</section>
@@ -363,31 +358,22 @@ export default class Pricing extends Component {
 							Data Credits can be purchased in blocks.
 						</h1>
 						<ul className="data_credit__cards">
-							<li className="data_credit__cards__list one">
-								<span className="data_credit__cards__list-cost">$19.90</span>
-								<strong className="data_credit__cards__list-point">500</strong>
-								<em className="data_credit__cards__list-text">
-									Additional Submissions
-								</em>
-							</li>
-							<li className="data_credit__cards__list two">
-								<span className="data_credit__cards__list-cost">$99.90</span>
-								<strong className="data_credit__cards__list-point">
-									3,000
-								</strong>
-								<em className="data_credit__cards__list-text">
-									Additional Submissions
-								</em>
-							</li>
-							<li className="data_credit__cards__list three">
-								<span className="data_credit__cards__list-cost">$299.90</span>
-								<strong className="data_credit__cards__list-point">
-									10,000
-								</strong>
-								<em className="data_credit__cards__list-text">
-									Additional Submissions
-								</em>
-							</li>
+							{credits.map((credit, index) => (
+								<li
+									className={`data_credit__cards__list list${index + 1}`}
+									key={index}
+								>
+									<span className="data_credit__cards__list-cost">
+										{credit.cost}
+									</span>
+									<strong className="data_credit__cards__list-point">
+										{credit.point}
+									</strong>
+									<em className="data_credit__cards__list-text">
+										{credit.descriptions}
+									</em>
+								</li>
+							))}
 						</ul>
 					</div>
 				</section>
@@ -400,15 +386,28 @@ export default class Pricing extends Component {
 									<dl className="compare__plans__list__info">
 										<dt className="compare__plans__list-title top">Features</dt>
 
-										{this.state.tap.compares[0].features.map(
-											(feature, index) => {
-												return (
-													<dd className="compare__plans__list-text" key={index}>
-														{feature}
-													</dd>
-												);
-											}
-										)}
+										<dd className="compare__plans__list-text">
+											Pricing per Admin/month
+										</dd>
+										<dd className="compare__plans__list-text">
+											Number of Admins
+										</dd>
+										<dd className="compare__plans__list-text">
+											Published Forms
+										</dd>
+										<dd className="compare__plans__list-text">Form template</dd>
+										<dd className="compare__plans__list-text">
+											Agreement Templates
+										</dd>
+										<dd className="compare__plans__list-text">
+											Survey(monthly)
+										</dd>
+										<dd className="compare__plans__list-text">
+											Monthly Submissions
+										</dd>
+										<dd className="compare__plans__list-text">
+											Storage Space Available
+										</dd>
 
 										<dt className="compare__plans__list-title">Security</dt>
 										<dd className="compare__plans__list-text">
@@ -416,6 +415,7 @@ export default class Pricing extends Component {
 										</dd>
 
 										<dt className="compare__plans__list-title">Support</dt>
+
 										<dd className="compare__plans__list-text">Generic PDF</dd>
 										<dd className="compare__plans__list-text">
 											Max Questions per Form
@@ -440,154 +440,58 @@ export default class Pricing extends Component {
 									initialSlide={1}
 									centeredSlides={this.swiperAttribute.center}
 									grabCursor={this.swiperAttribute.grasp}
+									centeredSlidesBounds={true}
 								>
-									<SwiperSlide>
-										<div className="compare__plans__list free">
-											<dl className="compare__plans__list__info">
-												<dt className="compare__plans__list-title top">
-													<strong className="compare__plans__list-title-name">
-														{this.state.tap.pricing[0].title}
-													</strong>
-													<span className="compare__plans__list-title-cost">
-														{this.state.tap.pricing[0].cost}{" "}
-														<em>{this.state.tap.pricing[0].period}</em>
-													</span>
-													<Button
-														text="Get started"
-														type="arrow outline"
-														color="green"
-													/>
-												</dt>
-												<dd className="compare__plans__list-text">$29.90</dd>
-												<dd className="compare__plans__list-text">1 (max 4)</dd>
-												<dd className="compare__plans__list-text">3</dd>
-												<dd className="compare__plans__list-text">10</dd>
-												<dd className="compare__plans__list-text">2</dd>
-												<dd className="compare__plans__list-text">1</dd>
-												<dd className="compare__plans__list-text">500</dd>
-												<dd className="compare__plans__list-text">10GB</dd>
-												<dt className="compare__plans__list-title">&nbsp;</dt>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dt className="compare__plans__list-title">&nbsp;</dt>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">40</dd>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">
-													<img src={none} alt="Non-Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">
-													<img src={none} alt="Non-Provide" />
-												</dd>
-											</dl>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className="compare__plans__list premium">
-											<dl className="compare__plans__list__info">
-												<dt className="compare__plans__list-title top">
-													<strong className="compare__plans__list-title-name">
-														{this.state.tap.pricing[1].title}
-													</strong>
-													<span className="compare__plans__list-title-cost">
-														{this.state.tap.pricing[1].cost}{" "}
-														<em>{this.state.tap.pricing[1].period}</em>
-													</span>
-													<Button
-														text="Get started"
-														type="flat-green arrow"
-														color="white"
-													/>
-												</dt>
-												<dd className="compare__plans__list-text">$39.90</dd>
-												<dd className="compare__plans__list-text">5 (max 9)</dd>
-												<dd className="compare__plans__list-text">30</dd>
-												<dd className="compare__plans__list-text">50</dd>
-												<dd className="compare__plans__list-text">10</dd>
-												<dd className="compare__plans__list-text">3</dd>
-												<dd className="compare__plans__list-text">3,000</dd>
-												<dd className="compare__plans__list-text">100GB</dd>
-												<dt className="compare__plans__list-title">&nbsp;</dt>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dt className="compare__plans__list-title">&nbsp;</dt>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">Unlimited</dd>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-											</dl>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className="compare__plans__list family">
-											<dl className="compare__plans__list__info">
-												<dt className="compare__plans__list-title top">
-													<strong className="compare__plans__list-title-name">
-														{this.state.tap.pricing[2].title}
-													</strong>
-													<span className="compare__plans__list-title-cost">
-														{this.state.tap.pricing[2].cost}{" "}
-														<em>{this.state.tap.pricing[2].period}</em>
-													</span>
-													<Button
-														text="Get started"
-														type="arrow outline"
-														color="green"
-													/>
-												</dt>
-												<dd className="compare__plans__list-text">$49.90</dd>
-												<dd className="compare__plans__list-text">30</dd>
-												<dd className="compare__plans__list-text">100</dd>
-												<dd className="compare__plans__list-text">200</dd>
-												<dd className="compare__plans__list-text">20</dd>
-												<dd className="compare__plans__list-text">10</dd>
-												<dd className="compare__plans__list-text">10,000</dd>
-												<dd className="compare__plans__list-text">1TB</dd>
-												<dt className="compare__plans__list-title">&nbsp;</dt>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dt className="compare__plans__list-title">&nbsp;</dt>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">Unlimited</dd>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-												<dd className="compare__plans__list-text">
-													<img src={tick} alt="Provide" />
-												</dd>
-											</dl>
-										</div>
-									</SwiperSlide>
+									{this.state.tap.pricing.map((price, index) => (
+										<SwiperSlide key={index}>
+											<div className={`compare__plans__list list${index + 1}`}>
+												<dl className="compare__plans__list__info">
+													<dt className="compare__plans__list-title top">
+														<strong className="compare__plans__list-title-name">
+															{price.title}
+														</strong>
+														<span className="compare__plans__list-title-cost">
+															{price.cost}
+															<em>{price.period}</em>
+														</span>
+														<Button
+															text="Get started"
+															type={`arrow ${
+																index === 1 ? "flat-green" : "outline"
+															}`}
+															color={`${index === 1 ? "white" : "green"}`}
+														/>
+													</dt>
+													{price.compares.features.map((feature, index) => (
+														<dd
+															className="compare__plans__list-text"
+															key={index}
+														>
+															{feature}
+														</dd>
+													))}
+													<dt className="compare__plans__list-title">&nbsp;</dt>
+													{price.compares.securities.map((security, index) => (
+														<dd
+															className="compare__plans__list-text"
+															key={index}
+														>
+															{security}
+														</dd>
+													))}
+													<dt className="compare__plans__list-title">&nbsp;</dt>
+													{price.compares.supports.map((support, index) => (
+														<dd
+															className="compare__plans__list-text"
+															key={index}
+														>
+															{support}
+														</dd>
+													))}
+												</dl>
+											</div>
+										</SwiperSlide>
+									))}
 								</Swiper>
 							</div>
 						</div>
@@ -600,20 +504,23 @@ export default class Pricing extends Component {
 						<table className="mobile_compare__tbl">
 							<thead>
 								<tr>
-									<th>Free</th>
-									<th>Premium</th>
-									<th>Family</th>
+									<th>{this.state.tap.pricing[0].title}</th>
+									<th>{this.state.tap.pricing[1].title}</th>
+									<th>{this.state.tap.pricing[2].title}</th>
 								</tr>
 								<tr>
 									<th>
-										<strong>$0</strong>
-										<em>/forever</em>
+										<strong>{this.state.tap.pricing[0].cost}</strong>
+										<em>{this.state.tap.pricing[0].period}</em>
 									</th>
 									<th>
-										<strong>$50</strong>
-										<em>/forever</em>
+										<strong>{this.state.tap.pricing[1].cost}</strong>
+										<em>{this.state.tap.pricing[1].period}</em>
 									</th>
-									<th>Custom</th>
+									<th>
+										<strong>{this.state.tap.pricing[2].cost}</strong>
+										<em>{this.state.tap.pricing[2].period}</em>
+									</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -719,13 +626,13 @@ export default class Pricing extends Component {
 								</tr>
 								<tr className="grey">
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 								</tr>
 								<tr>
@@ -739,13 +646,13 @@ export default class Pricing extends Component {
 								</tr>
 								<tr>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 								</tr>
 								<tr className="grey">
@@ -767,13 +674,13 @@ export default class Pricing extends Component {
 								</tr>
 								<tr>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 								</tr>
 								<tr className="grey">
@@ -784,13 +691,13 @@ export default class Pricing extends Component {
 								</tr>
 								<tr className="grey">
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 								</tr>
 								<tr>
@@ -801,13 +708,13 @@ export default class Pricing extends Component {
 								</tr>
 								<tr>
 									<td>
-										<img src={none} alt="Non-Provide" />
+										<Eks />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 								</tr>
 								<tr className="grey">
@@ -818,13 +725,13 @@ export default class Pricing extends Component {
 								</tr>
 								<tr className="grey">
 									<td>
-										<img src={none} alt="Non-Provide" />
+										<Eks />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 									<td>
-										<img src={tick} alt="Provide" />
+										<Tick />
 									</td>
 								</tr>
 							</tbody>

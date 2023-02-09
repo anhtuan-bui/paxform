@@ -485,7 +485,7 @@ $color_dark-blue: #031a30;
 						font-size: rem(14);
 					}
 				}
-				&.one {
+				&.list1 {
 					background: linear-gradient(
 						121.56deg,
 						#aeb4ba 23.97%,
@@ -495,7 +495,7 @@ $color_dark-blue: #031a30;
 						#4f5256 85.28%
 					);
 				}
-				&.two {
+				&.list2 {
 					background: linear-gradient(
 						121.56deg,
 						#059459 23.97%,
@@ -505,7 +505,7 @@ $color_dark-blue: #031a30;
 						#034f2f 85.28%
 					);
 				}
-				&.three {
+				&.list3 {
 					background: linear-gradient(
 						121.56deg,
 						#0a61b4 23.97%,
@@ -566,10 +566,15 @@ $color_dark-blue: #031a30;
 				border: rem(1) solid #baccde;
 				border-radius: rem(20);
 				background: $color_white;
-				&.premium {
+				&.list2 {
 					position: relative;
 					border: none;
 					background: #def6ec;
+					& > button {
+						background: $color_green;
+						color: $color_white;
+						border: none;
+					}
 					// &::before {
 					// 	 position: absolute;
 					// 	 top: rem(-35);
@@ -655,7 +660,7 @@ $color_dark-blue: #031a30;
 				padding: 0 $padding__collumn;
 				&-slide {
 					@include large {
-						min-width: rem(180);
+						min-width: rem(200);
 					}
 				}
 			}
