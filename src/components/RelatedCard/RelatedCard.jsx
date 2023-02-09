@@ -1,30 +1,31 @@
-import React, { Component } from "react";
 import ReadArticle from "../ReadArticle/ReadArticle";
 import "./RelatedCard.scss";
 
-export default class RelatedCard extends Component {
-  render() {
+const RelatedCard = (props) => {
+
     return (
       <div className="related_card">
         <div className="related_card__top">
-          {this.props.image ? (
+          {props.image ? (
             <div className="related_card__image">
-              <img src={this.props.image} alt="first story" />
+              <img src={props.image} alt="first story" />
             </div>
           ) : (
             ""
           )}
-          {this.props.category ? (
-            <p className="related_card__category">Insight</p>
+
+          {props.category ? (
+            <p className="related_card__category">{props.category}</p>
+          ) : ( 
+            ""
+          )}
+
+          {props.title ? (
+            <h2 className="related_card__title">{props.title}</h2>
           ) : (
             ""
           )}
-          {this.props.title ? (
-            <h2 className="related_card__title">First Story</h2>
-          ) : (
-            ""
-          )}
-          {this.props.description ? (
+          {props.description ? (
             <p className="related_card__description">
               There are many variations of passages of Lorem Ipsum available,
               but the majority have suffered alteration in some form, by
@@ -35,9 +36,10 @@ export default class RelatedCard extends Component {
           )}
         </div>
         <div className="related_card__bottom">
-          {this.props.readLink ? <ReadArticle to="related" /> : ""}
+          {props.readLink ? <ReadArticle to="related" /> : ""}
         </div>
       </div>
     );
-  }
 }
+
+export default RelatedCard;
