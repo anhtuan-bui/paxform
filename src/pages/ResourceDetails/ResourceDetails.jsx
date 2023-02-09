@@ -9,10 +9,9 @@ export default class ResourceDetails extends Component {
     render() {
         return (
             <main className="ResourceDetails">
-                <section className="hero">
 
-                </section>
-                <section className="body">
+                <section className="body hero" background="light">
+                    
                     <div className="container body__container">
                         {/*<div className="body_box">*/}
                             <div className="=body_box-left">

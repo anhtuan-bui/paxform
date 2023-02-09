@@ -15,12 +15,19 @@ import Legal from "./pages/Legal/Legal";
 import LegalDetail from "./pages/LegalDetail/LegalDetail";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import Company from "./pages/Company/Company";
+// import Pricing from "./pages/Pricing/Pricing";
 import getToken from "./lib/clientToken";
+import GQ from "./pages/GQ/GQ";
+// import BlogDetails from "./blogs/blogs.jsx";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
+const Pricing = lazy(() => import("./pages/Pricing/Pricing"));
 const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
+const BlogDetails = lazy(() => import("./pages/BlogDetails/BlogDetails"));
 const Home = lazy(() => import("./pages/Home/Home"));
+// const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
+const Business = lazy(() => import("./pages/Business/Business"));
 const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
 const ResourceDetails = lazy(() => import("./pages/ResourceDetails/ResourceDetails"))
 
@@ -30,6 +37,7 @@ function App() {
 	getToken();
 	useEffect(() => {
 		const interval = setInterval(() => {
+			localStorage.removeItem("clientToken");
 			getToken();
 		}, MINUTE_MS);
 
@@ -46,9 +54,12 @@ function App() {
 						<Route path="/" element={<Layout />}>
 							<Route index element={<Home />} />
 							<Route path="personal" element={<Personal />} />
+							<Route path="business" element={<Business />} />
+							<Route path="pricing" element={<Pricing />} />
 							<Route path="faq" element={<FAQ />} />
 							<Route path="resources" element={<Resources />} />
 							<Route path="blogs" element={<Blogs />} />
+							<Route path="blog-details" element={<BlogDetails />} />
 							<Route path="privacy-policy" element={<PrivacyPolicy />} />{" "}
 							<Route path="legal" element={<Legal />} />
 							<Route path="legal-detail" element={<LegalDetail />} />
@@ -56,6 +67,8 @@ function App() {
 							<Route path="use-cases" element={<UseCases />} />
 							<Route path="contact-us" element={<ContactUs />} />
 							<Route path="company" element={<Company />} />
+							<Route path="gq" element={<GQ />} />
+
 							{/* <Route path="*" element={<NotFound />} /> */}
 							<Route path="resource-details" element={<ResourceDetails />} /> 
 						</Route>

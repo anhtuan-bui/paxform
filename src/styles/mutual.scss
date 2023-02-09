@@ -2,7 +2,7 @@
     margin: auto;
     max-width: 100%;
     box-sizing: border-box;
-    padding: 0 rem(140);
+    padding: 0 calc(rem(140) - 2rem);
     width: $width__extraLarge;
     // @include extraLarge {
     //   width: $width__larger;
@@ -15,32 +15,24 @@
         // width: $width__medium;
     }
     @include extraSmall {
-        padding: 0 rem(4);
+        padding: 0;
     }
 }
 
 .bottom_triangle {
     position: absolute;
     bottom: -1px;
-    left: 0;
+    right: 0;
     border-color: transparent transparent #f0f8ff #f0f8ff;
     border-style: solid;
     border-width: rem(70) 50vw;
     height: 0px;
     width: 0px;
     z-index: 1000;
-    @include large {
-        border-width: rem(60) 50vw;
+    @include extraLarge {
+        border-width: rem(60) 720px;
     }
-    @include medium {
-        border-width: rem(50) 50vw;
-    }
-    @include small {
-        border-width: rem(40) 50vw;
-    }
-    @include extraSmall {
-        border-width: rem(30) 50vw;
-    }
+
     &--dark-blue {
         border-color: transparent transparent #031a30 #031a30;
     }
@@ -54,7 +46,7 @@
         border-color: transparent transparent white white;
     }
     &--blue {
-        border-color: transparent transparent #0a61b4 #0a61b4;
+        border-color: transparent transparent $color__primary $color__primary;
     }
     &--footer {
         border-color: transparent transparent #e1edf9 #e1edf9;
@@ -64,6 +56,9 @@
     }
     &--green {
         border-color: transparent transparent #059459 #059459;
+    }
+    &--secondary {
+        border-color: transparent transparent $color__secondary $color__secondary;
     }
 }
 
@@ -94,9 +89,7 @@
         background-color: white;
         transform-origin: bottom left;
         transition: transform 0.25s ease-out;
-        @include larger {
-            background-color: $color_main__text;
-        }
+        
         @include large {
             background-color: transparent;
         }
@@ -112,6 +105,7 @@
     letter-spacing: 0.014rem;
     font-weight: 600;
     margin: 0;
+    text-transform: uppercase;
 }
 
 .section_title {

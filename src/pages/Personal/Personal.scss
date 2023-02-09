@@ -16,14 +16,6 @@ $color_bg_hero__gradient--first: #059459;
       display: flex;
       gap: rem(18);
 
-      .button--flat {
-        background-color: #135f3a;
-
-        &:hover {
-          background-color: darken(#135f3a, 5%);
-        }
-      }
-
       @include extraSmall {
         flex-direction: column;
         gap: rem(10);
@@ -34,19 +26,13 @@ $color_bg_hero__gradient--first: #059459;
       display: flex;
       align-items: center;
       height: rem(820);
-      padding-bottom: 280px;
-      padding-top: rem(200);
       box-sizing: border-box;
 
       @include medium {
         flex-direction: column;
-        padding-bottom: rem(140);
-        height: rem(1100);
         padding-top: 0;
-      }
-
-      @include small {
-        height: rem(1170);
+        height: fit-content;
+        padding-bottom: 0;
       }
     }
 
@@ -107,27 +93,36 @@ $color_bg_hero__gradient--first: #059459;
     &__image {
       position: relative;
       flex: 1 1 50%;
+      align-self: flex-end;
+
+      @include medium {
+        align-self: center;
+        width: 100%;
+        flex: none;
+      }
 
       &-large {
         position: absolute;
-        bottom: rem(-890);
+        bottom: 0;
         z-index: 800;
-        left: rem(-50);
+        left: 0;
+
+        @include large {
+          width: rem(900);
+        }
 
         @include medium {
+          position: relative;
+          width: 80%;
+          margin-top: rem(40);
           left: 50%;
           transform: translateX(-50%);
-          bottom: rem(-400);
-          width: rem(600);
         }
 
         @include small {
-          bottom: rem(-420);
-        }
-
-        @include extraSmall {
-          width: rem(500);
-          bottom: rem(-400);
+          width: 150%;
+          left: 0;
+          transform: none;
         }
       }
     }
@@ -137,7 +132,6 @@ $color_bg_hero__gradient--first: #059459;
     position: relative;
     background-color: #def6ec;
     z-index: 1000;
-    height: rem(900);
 
     @include extraLarge {
       height: fit-content;
@@ -148,9 +142,19 @@ $color_bg_hero__gradient--first: #059459;
       align-items: center;
       justify-content: space-between;
       position: relative;
+      padding-top: rem(100);
+      padding-bottom: 14.75rem;
+      direction: rtl;
+
+      @include medium {
+        padding-top: rem(80);
+        padding-bottom: rem(120);
+        flex-direction: column;
+      }
 
       @include small {
-        flex-direction: column;
+        padding-top: rem(60);
+        padding-bottom: rem(100);
       }
     }
 
@@ -158,6 +162,12 @@ $color_bg_hero__gradient--first: #059459;
     &__image {
       flex: 1 1 50%;
       box-sizing: border-box;
+      direction: ltr;
+
+      @include small {
+        width: 100%;
+        flex: none;
+      }
     }
 
     &__content {
@@ -165,12 +175,13 @@ $color_bg_hero__gradient--first: #059459;
       box-sizing: border-box;
 
       @include medium {
-        margin-bottom: rem(180);
+        // margin-bottom: rem(180);
       }
 
       &-title {
         font-size: rem(38);
         line-height: rem(48);
+        margin-top: 0;
 
         @include large {
           font-size: rem(32);
@@ -192,22 +203,17 @@ $color_bg_hero__gradient--first: #059459;
     &__image {
       position: relative;
 
+      @include medium {
+        width: 60%;
+      }
+
+      @include small {
+        width: 100%;
+      }
       img {
         position: relative;
-        height: 80%;
         object-fit: cover;
-
-        @include extraLarge {
-          width: 100%;
-        }
-
-        @include large {
-          margin-top: rem(20);
-        }
-
-        @include medium {
-          margin-top: rem(60);
-        }
+        width: 100%;
       }
     }
   }
@@ -224,11 +230,16 @@ $color_bg_hero__gradient--first: #059459;
       padding-bottom: rem(120);
     }
 
+    &__name {
+      text-transform: uppercase;
+      letter-spacing: rem(2);
+      opacity: 0.8;
+    }
+
     &__title {
       font-size: rem(38);
       line-height: rem(48);
       margin-bottom: rem(50);
-      text-align: center;
       margin-top: 0;
 
       @include large {
@@ -246,14 +257,21 @@ $color_bg_hero__gradient--first: #059459;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      direction: rtl;
 
-      @include small {
+      @include medium {
         flex-direction: column;
       }
     }
 
-    &__accordion {
+    &__accordion,
+    &__image {
       flex: 1 1 50%;
+      box-sizing: border-box;
+      direction: ltr;
+    }
+
+    &__accordion {
       padding: 0 $padding__collumn;
       &-item {
         &-title {
@@ -271,40 +289,22 @@ $color_bg_hero__gradient--first: #059459;
           line-height: rem(25);
           letter-spacing: 0.005rem;
           opacity: 0.7;
-          height: rem(90);
-          overflow-x: scroll;
-          overflow-y: hidden;
-
-          cursor: grab;
-
-          &::-webkit-scrollbar {
-            width: rem(10);
-            height: rem(2);
-          }
-
-          &::-webkit-scrollbar-track {
-            background: #ffffff;
-            opacity: 0.2;
-          }
-
-          &::-webkit-scrollbar-thumb {
-            background: #0a61b4;
-          }
-
-          &::-webkit-scrollbar-thumb:hover {
-            background: lighten(#0a61b4, 10%);
-          }
 
           p {
             margin-top: 0;
-            width: 150%;
           }
         }
       }
     }
 
     &__image {
-      flex: 1 1 50%;
+      @include medium {
+        width: 60%;
+      }
+
+      @include small {
+        width: 100%;
+      }
 
       img {
         @include extraLarge {
@@ -329,226 +329,31 @@ $color_bg_hero__gradient--first: #059459;
       }
     }
 
-    &__name {
-      color: #2d4bb6;
-      text-align: center;
-    }
-    &__title {
-      width: rem(469);
-      text-align: center;
-      margin: 0 auto;
-      margin-bottom: rem(60);
-      max-width: 100%;
-    }
-
-    &__pricing {
-      display: grid;
-      align-items: stretch;
-      grid-template-columns: repeat(3, 1fr);
-      gap: $grid__gap;
-      margin-bottom: rem(60);
-      padding: 0 $padding__collumn;
-
-      @include larger {
-        row-gap: rem(40);
-      }
-      @include large {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @include small {
-        grid-template-columns: 1fr;
-      }
-    }
-  }
-
-  .pricing_box {
-    padding: rem(40);
-    border-radius: rem(20);
-
-    ul {
-      padding-left: 0;
-
-      li {
-        list-style-type: none;
-        display: flex;
-        align-items: center;
-        gap: rem(10);
-        margin-top: rem(10);
-
-        span {
-          letter-spacing: 0.005rem;
-          line-height: rem(25);
-        }
-
-        svg {
-          width: rem(18);
-          min-width: rem(18);
-        }
-      }
-    }
-
-    &--grey {
-      background-color: #f6f6f6;
-    }
-    &--green {
-      background-color: #def6ec;
-    }
-    &--blue {
-      background-color: #f0f8ff;
-    }
-
-    &__title {
-      margin-top: 0;
-      margin-bottom: rem(14);
-      font-size: rem(28);
-      font-weight: 500;
-    }
-
-    &__description {
-      margin-top: 0;
-      margin-bottom: rem(24);
-    }
-
-    &__price {
-      margin-top: 0;
-      margin-bottom: rem(24);
-
-      &-bt {
-        font-family: GothamRoundedBold, sans-serif;
-        font-size: rem(34);
-      }
-
-      &-forever {
-        color: $color_secondary__text;
-      }
-
-      &-sub {
-        text-transform: uppercase;
-        font-size: rem(14);
-        letter-spacing: 0.014rem;
-        margin-top: rem(44);
-      }
-    }
-
     &__top {
       display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      text-align: center;
-    }
-
-    &__dot {
-      margin: auto;
-      margin-bottom: rem(28);
-      width: rem(25);
-      height: rem(25);
-      border-radius: 50%;
-      background-color: #aeb4ba;
-      outline: rem(12.5) solid hsla(210, 8%, 71%, 0.2);
-
-      &--blue {
-        background-color: #0a61b4;
-        outline: rem(12.5) solid hsla(209, 89%, 37%, 0.2);
-      }
-
-      &--green {
-        background-color: #20976c;
-        outline: rem(12.5) solid hsla(158, 65%, 36%, 0.2);
-      }
-    }
-  }
-
-  .platform {
-    background-color: #031a30;
-    position: relative;
-    z-index: 1000;
-    padding-top: rem(80);
-    padding-bottom: rem(250);
-    color: white;
-
-    &__top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       padding: 0 $padding__collumn;
 
-      @include small {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      &-left,
-      &-right {
+      &-title,
+      &-button {
         flex: 1 1 50%;
       }
 
-      &-left {
-        h2 {
-          margin-bottom: rem(60);
-
-          @include small {
-            margin-bottom: rem(40);
-          }
-        }
-      }
-
-      &-right {
+      &-button {
         display: flex;
         justify-content: flex-end;
-
-        > .button {
-          border: 1px solid #20976c;
-          color: #20976c;
-
-          @include small {
-            margin-bottom: rem(40);
-          }
-
-          path {
-            stroke: #20976c;
-          }
-        }
-      }
-    }
-
-    &__title {
-      font-size: rem(38);
-      line-height: rem(48);
-      color: white;
-
-      @include medium {
-        font-size: rem(24);
-        line-height: rem(30);
       }
     }
 
     &__name {
-      font-size: rem(14);
-      font-weight: 500;
-      color: white;
-      opacity: 0.5;
-      letter-spacing: 1px;
-      margin-bottom: rem(22);
+      color: #2d4bb6;
     }
-
-    &__content {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: $grid__gap;
-      padding: 0 $padding__collumn;
-
-      @include medium {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: rem(60);
-      }
-
-      @include small {
-        grid-template-columns: 1fr;
-      }
-
-
+    &__title {
+      margin-bottom: rem(60);
+      max-width: 100%;
+      margin-top: rem(16);
     }
   }
+
 
 }

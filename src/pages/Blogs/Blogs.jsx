@@ -3,10 +3,11 @@ import "./Blogs.scss";
 import ReadArticle from "../../components/ReadArticle/ReadArticle";
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
 import Author from "../../components/Author/Author";
-import BlogsView from "../../components/BlogView/BlogsView";
 import { useQuery } from "@apollo/client";
 import { GET_CATEGORIES, GET_POSTS } from "../../lib/graphqlQuery";
 import client from "../../configurations/apollo";
+import Button from "../../components/Button/Button";
+import BlogCard from "../../components/BlogCard/BlogCard";
 
 export default class Blogs extends Component {
   blogs = { chip: "all", categories: [] };
@@ -69,15 +70,18 @@ export default class Blogs extends Component {
             <div className="container">
               <div className="chips">
                 {this.state.categories.map(
-                  (category, index) => 
-                  category.node.name.toLowerCase() !== "uncategorised" && (
-                    <div className="chip" key={index}>
+                  (category, index) =>
+                    category.node.name.toLowerCase() !== "uncategorised" && (
+                      <div className="chip" key={index}>
                         <input
                           id={category.node.name}
                           type="radio"
                           name="radio"
                           onChange={this.handleRadioChange}
-                          checked={this.state.chip.toLowerCase() === category.node.name.toLowerCase()}
+                          checked={
+                            this.state.chip.toLowerCase() ===
+                            category.node.name.toLowerCase()
+                          }
                         />
                         <label htmlFor={category.node.name}>
                           {category.node.name}
@@ -130,6 +134,91 @@ const HeroBlogInfo = () => {
         </div>
 
         <Author author={blog.author} />
+      </div>
+    </Fragment>
+  );
+};
+
+const BlogsView = (props) => {
+  const batchSize = 8;
+  // get the first post to get the cursor for the first batch of posts
+  const { data: firstPost } = useQuery(GET_POSTS, {
+    variables: {
+      first: 1,
+    },
+  });
+
+  // get the rest of the posts
+  const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
+    variables: {
+      first: batchSize,
+      after: firstPost?.posts?.pageInfo.endCursor,
+    },
+    notifyOnNetworkStatusChange: true,
+  });
+
+  if (!data && loading) return <p>Loading...</p>;
+
+  if (error) return <p>An error occured</p>;
+
+  if (!data) {
+    return <p>No posts yet</p>;
+  }
+
+  // show only posts that have the selected category
+  let posts = data.posts.edges.map((edge) => edge.node);
+  const postInfo = data.posts.pageInfo;
+
+  if (props.chip.toLowerCase() !== "all") {
+    // set posts to only posts that have the selected category
+    posts = posts.filter((post) => {
+      const categories = post.categories.edges.map((edge) => edge.node.name);
+      return categories.includes(props.chip);
+    });
+  }
+
+  return (
+    <Fragment>
+      <div className="posts_view">
+        {posts.map((post, index) => (
+          <BlogCard key={index} blog={post} />
+        ))}
+      </div>
+      <div className="view_more">
+        {postInfo.hasNextPage ? (
+          <Button
+            text={loading ? "Loading..." : "View all posts"}
+            type="arrow outline"
+            arrowVariant="down"
+            color="green"
+            disabled={loading}
+            onClick={(e) => {
+              e.preventDefault();
+              fetchMore({
+                variables: {
+                  first: batchSize,
+                  after: data.posts.pageInfo.endCursor,
+                },
+                updateQuery: (prev, { fetchMoreResult }) => {
+                  if (!fetchMoreResult) return prev;
+                  return {
+                    ...prev,
+                    posts: {
+                      ...prev.posts,
+                      ...fetchMoreResult.posts,
+                      edges: [
+                        ...prev.posts.edges,
+                        ...fetchMoreResult.posts.edges,
+                      ],
+                    },
+                  };
+                },
+              });
+            }}
+          />
+        ) : (
+          <p>All posts loaded.</p>
+        )}
       </div>
     </Fragment>
   );

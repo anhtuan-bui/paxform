@@ -3,7 +3,7 @@
 For collaborators, install
 * [Git CLI](https://git-scm.com/downloads)
 * [Nodejs](https://nodejs.org/en/) - newst LTS version
-* [Yarn](https://yarnpkg.com/getting-started/install) - package manager
+* [Yarn](https://classic.yarnpkg.com/en/) - package manager
 
 ## Installation
 

@@ -1,0 +1,344 @@
+@import "../../styles/styles.scss";
+
+.business {
+  .hero {
+    position: relative;
+    background: linear-gradient(90.71deg, $color__primary -74.09%, #074581 99.41%);
+
+    &__button {
+      display: flex;
+      gap: rem(18);
+
+      @include extraSmall {
+        flex-direction: column;
+        gap: rem(10);
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      height: rem(820);
+      box-sizing: border-box;
+
+      @include medium {
+        flex-direction: column;
+        padding-top: 0;
+        height: fit-content;
+        padding-bottom: 0;
+      }
+    }
+
+    &__name {
+      margin: rem(20) 0;
+      opacity: 50%;
+      letter-spacing: rem(2);
+      font-weight: 600;
+      font-size: rem(14);
+      text-transform: uppercase;
+
+      @include medium {
+        margin-top: rem(150);
+        margin-bottom: rem(40);
+      }
+    }
+
+    &__content {
+      color: white;
+      flex: 1 1 50%;
+      padding: 0 $padding__collumn;
+
+      h1,
+      p {
+        max-width: 100%;
+      }
+    }
+    &__title {
+      font-size: rem(42);
+      margin-bottom: rem(24);
+      margin-top: 0;
+
+      @include extraLarge {
+        font-size: rem(38);
+      }
+
+      @include large {
+        font-size: rem(34);
+      }
+
+      @include medium {
+        font-size: rem(42);
+      }
+
+      @include small {
+        font-size: rem(36);
+      }
+
+      @include extraSmall {
+        font-size: rem(28);
+      }
+    }
+
+    &__description {
+      margin-bottom: rem(50);
+    }
+
+    &__image {
+      position: relative;
+      flex: 1 1 50%;
+      align-self: flex-end;
+
+      @include medium {
+        align-self: center;
+        width: 100%;
+        flex: none;
+      }
+
+      &-large {
+        position: absolute;
+        bottom: 0;
+        z-index: 800;
+        left: 0;
+
+        @include large {
+          width: rem(900);
+        }
+
+        @include medium {
+          position: relative;
+          width: 80%;
+          margin-top: rem(40);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        @include small {
+          width: 150%;
+          left: 0;
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .flex_box {
+    position: relative;
+    background-color: white;
+    z-index: 1000;
+
+    @include extraLarge {
+      height: fit-content;
+    }
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      padding-top: rem(100);
+      padding-bottom: rem(100);
+
+      @include medium {
+        padding-top: rem(80);
+        padding-bottom: rem(80);
+        flex-direction: column;
+      }
+
+      @include small {
+        padding-top: rem(60);
+        padding-bottom: rem(60);
+      }
+    }
+
+    &__content,
+    &__text {
+      flex: 1 1 50%;
+      box-sizing: border-box;
+
+      @include small {
+        width: 100%;
+        flex: none;
+      }
+    }
+
+    &__content {
+      padding: 0 $padding__collumn;
+      box-sizing: border-box;
+
+      @include medium {
+        // margin-bottom: rem(180);
+      }
+
+      &-title {
+        font-size: rem(38);
+        margin-top: 0;
+        text-transform: capitalize;
+
+        @include large {
+          font-size: rem(32);
+        }
+
+        @include medium {
+          font-size: rem(24);
+        }
+      }
+
+      &-description {
+        line-height: rem(25);
+        letter-spacing: 0.005rem;
+      }
+    }
+
+    &__text {
+        padding: 0 $padding__collumn;
+        p {
+            margin: 0;
+        }
+    }
+
+  }
+
+  .features {
+    position: relative;
+    background-color: #E1EDF9;
+    z-index: 1000;
+    color: $color_main__text;
+    padding-top: rem(80);
+    padding-bottom: rem(220);
+
+    @include medium {
+      padding-bottom: rem(120);
+    }
+
+    &__name {
+      text-transform: uppercase;
+      letter-spacing: rem(2);
+      opacity: 0.8;
+      color: #1C85E8;
+      margin-bottom: rem(20);
+    }
+
+    &__title {
+      font-size: rem(38);
+      line-height: rem(48);
+      margin-bottom: rem(50);
+      margin-top: 0;
+
+      @include large {
+        font-size: rem(32);
+        line-height: rem(42);
+      }
+
+      @include medium {
+        font-size: rem(24);
+        line-height: rem(30);
+      }
+    }
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      direction: rtl;
+
+      @include medium {
+        flex-direction: column;
+      }
+    }
+
+    &__accordion,
+    &__image {
+      flex: 1 1 50%;
+      box-sizing: border-box;
+      direction: ltr;
+    }
+
+    &__accordion {
+      padding: 0 $padding__collumn;
+      &-item {
+        &-title {
+          font-size: rem(20);
+          line-height: rem(26);
+          margin: rem(14) 0;
+          cursor: pointer;
+
+          &--active-blue {
+            color: $color__primary;
+          }
+        }
+        &-panel {
+          max-height: 0;
+          overflow-y: hidden;
+          transition: 0.25s ease-in-out;
+        }
+        &-description {
+          line-height: rem(25);
+          letter-spacing: 0.005rem;
+          opacity: 0.7;
+
+          p {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    &__image {
+      @include medium {
+        width: 60%;
+      }
+
+      @include small {
+        width: 100%;
+      }
+
+      img {
+        @include extraLarge {
+          width: 100%;
+        }
+
+        @include large {
+          margin-top: rem(20);
+        }
+      }
+    }
+  }
+
+  .plans {
+    position: relative;
+    padding-top: rem(100);
+    margin-bottom: rem(40);
+
+    &__container {
+      > .button {
+        margin: auto;
+      }
+    }
+
+    &__top {
+      display: flex;
+      align-items: flex-start;
+      padding: 0 $padding__collumn;
+
+      &-title,
+      &-button {
+        flex: 1 1 50%;
+      }
+
+      &-button {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    &__name {
+      color: #2d4bb6;
+    }
+    &__title {
+      margin-bottom: rem(60);
+      max-width: 100%;
+      margin-top: rem(16);
+    }
+
+  }
+}

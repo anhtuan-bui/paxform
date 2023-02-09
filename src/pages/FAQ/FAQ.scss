@@ -2,12 +2,12 @@
 $color_white: #fff;
 $color_black: #031a30;
 $color_grey: #2f4356;
-$color_blue: #0a61b4;
+$color_blue: $color__primary;
 .faq {
     .hero {
         position: relative;
         padding-top: rem(100);
-        background: linear-gradient(125.24deg, #0a61b4 27.35%, #f2f9ff 176.96%);
+        background: linear-gradient(125.24deg, $color__primary 27.35%, #f2f9ff 176.96%);
         &__wrapper {
             display: flex;
             align-items: center;

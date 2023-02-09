@@ -1,46 +1,35 @@
 @import "../../styles/styles.scss";
 
+$color__hero-background: $color__secondary;
+
 .resources {
   .hero {
-    padding-top: rem(220);
-    padding-bottom: rem(300);
+    padding-top: rem(180);
     position: relative;
+    background-color: $color__hero-background;
+
+    @include large {
+      padding-bottom: rem(60);
+    }
 
     @include medium {
       padding-top: 0;
-      padding-bottom: rem(250);
+      margin-bottom: 0;
     }
+
     @include small {
-      padding-top: 0;
-      padding-bottom: rem(200);
-    }
-
-    &__button {
-      display: flex;
-      gap: rem(18);
-
-      .button--flat {
-        background-color: #135f3a;
-
-        &:hover {
-          background-color: darken(#135f3a, 5%);
-        }
-      }
-
-      @include extraSmall {
-        flex-direction: column;
-        gap: rem(10);
-      }
+      padding: rem(120) 0;
     }
 
     &__wrapper {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       box-sizing: border-box;
+      direction: rtl;
 
       @include medium {
         flex-direction: column;
-        padding-bottom: rem(140);
+        padding-bottom: rem(100);
         padding-top: 0;
       }
 
@@ -50,23 +39,27 @@
     }
 
     &__name {
-      color: #0a61b4;
-      margin: rem(20) 0;
+      color: $color__primary;
+      margin-bottom: rem(20);
       letter-spacing: rem(2);
       font-weight: 600;
       font-size: rem(14);
       text-transform: uppercase;
 
       @include medium {
-        margin-top: rem(150);
+        margin-top: rem(50);
         margin-bottom: rem(40);
       }
     }
 
-    &__content {
+    &__content, &__articles {
       flex: 1 1 50%;
-      padding: 0 $padding__collumn;
       box-sizing: border-box;
+      direction: ltr;
+    }
+
+    &__content {
+      padding: 0 $padding__collumn;
 
       h1,
       p {
@@ -87,7 +80,7 @@
       }
 
       @include medium {
-        font-size: rem(42);
+        font-size: rem(24);
       }
 
       @include small {
@@ -105,11 +98,10 @@
 
     &__articles {
       position: relative;
-      flex: 1 1 50%;
+      width: 100%;
 
       @include medium {
-        width: 75%;
-        margin-top: rem(200);
+        margin-top: rem(150);
       }
 
       @include small {
@@ -117,25 +109,18 @@
       }
 
       &-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        position: absolute;
+        position: relative;
         z-index: 1100;
-        top: -180px;
-        right: 0;
-
-        @include small {
-          position: static;
-        }
       }
 
       &-group {
         position: relative;
+        padding: 0 $padding__collumn;
         column-count: 2;
-        column-gap: $grid__gap;
-        width: 92%;
-        margin-right: rem(16);
+        column-gap: $padding__collumn--x2;
+        box-sizing: border-box;
+
+        width: 100%;
 
         @include medium {
           margin-right: 0;
@@ -149,39 +134,27 @@
         > :first-child {
           margin-bottom: $grid__gap;
         }
-
-        > :nth-child(3){
-            margin-bottom: $grid__gap;
-        }
-
-        .button {
-          padding: rem(8) rem(12);
-          &__text {
-            font-size: rem(14);
-          }
-        }
       }
+    }
 
-      &-graphic {
-        width: 100%;
-        height: 100%;
+    &__background {
+      &-image {
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
-        z-index: 600;
+        transform: translateY(48%);
+        z-index: 1000;
+        max-height: rem(209);
+        width: 100%;
+        min-width: 1440px;
 
-        img {
-          position: absolute;
-          top: -30px;
-          left: -100px;
+        @include extraLarge {
+          left: 50%;
+          transform: translate(-50%, 47%);
+        }
 
-          width: 135%;
-
-          @include small {
-            width: 145%;
-            left: 50%;
-            transform: translateX(-50%);
-          }
+        @include medium {
+          transform: translate(-32%, 48%);
         }
       }
     }
@@ -189,18 +162,42 @@
 
   .business_insight {
     position: relative;
-    background-color: #def6ec;
-    padding-top: rem(280);
-    padding-bottom: rem(240);
+    background-color: white;
+    padding-top: rem(200);
+    padding-bottom: 14.5rem;
 
     &__wrapper {
       padding: 0 $padding__collumn;
     }
 
+    &__top {
+      display: flex;
+      justify-content: space-between;
+
+      @include medium {
+        flex-direction: column;
+        margin-bottom: 3rem;
+      }
+    }
+
+    &__highlight, &__button {
+      flex: 1 1 50%;
+    }
+
+    &__button {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+
+      @include medium {
+        justify-content: start;
+      }
+    }
+
     &__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: $grid__gap;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $padding__collumn--x2;
 
       @include medium {
         grid-template-columns: repeat(2, 1fr);
@@ -212,43 +209,42 @@
     }
 
     &__name {
-      color: #20976c;
+      color: $color__success;
       opacity: 1;
     }
 
     &__title {
       margin-top: rem(24);
-      margin-bottom: rem(60);
       font-weight: 700;
-      width: 568px;
       max-width: 100%;
+
+      @include medium {
+        margin-bottom: 1rem;
+      }
     }
   }
 
   .insight_update {
     position: relative;
     padding-top: rem(80);
-    padding-bottom: rem(240);
+    padding-bottom: 14.5rem;
+    background-color: $color__secondary;
 
     &__title {
       width: rem(469);
       max-width: 100%;
-      text-align: center;
       margin-bottom: rem(40);
     }
 
     &__wrapper {
       padding: 0 $padding__collumn;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     &__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       row-gap: rem(54);
-      column-gap: $grid__gap;
+      column-gap: $padding__collumn--x2;
 
       @include medium {
         grid-template-columns: repeat(2, 1fr);
@@ -271,9 +267,9 @@
           display: none;
 
           &:checked + label {
-            background-color: #20976c;
+            background-color: $color__success;
             color: #fff;
-            border: 1px solid #20976c;
+            border: 1px solid $color__success;
           }
         }
 
@@ -291,115 +287,55 @@
 
   .latest_update {
     position: relative;
-    background-color: #e1edf9;
+    background-color: white;
     padding-top: rem(80);
-    padding-bottom: rem(240);
+    padding-bottom: 13.5rem;
 
     &__name {
-      color: #0a61b4;
+      color: $color__primary;
     }
 
     &__wrapper {
       padding: 0 $padding__collumn;
     }
 
-    &__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: $grid__gap;
-
-      @include medium {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @include small {
-        grid-template-columns: 1fr;
-      }
-    }
-  }
-
-  .platform {
-    background-color: #031a30;
-    position: relative;
-    z-index: 1000;
-    padding-top: rem(80);
-    padding-bottom: rem(250);
-    color: white;
-
+    
     &__top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 0 $padding__collumn;
 
-      @include small {
+      @include medium {
         flex-direction: column;
-        align-items: flex-start;
+        margin-bottom: 3rem;
       }
+    }
 
-      &-left,
-      &-right {
-        flex: 1 1 50%;
-      }
+    &__highlight, &__button {
+      flex: 1 1 50%;
+    }
+    &__button {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
 
-      &-left {
-        h2 {
-          margin-bottom: rem(60);
-
-          @include small {
-            margin-bottom: rem(40);
-          }
-        }
-      }
-
-      &-right {
-        display: flex;
-        justify-content: flex-end;
-
-        > .button {
-          border: 1px solid #20976c;
-          color: #20976c;
-
-          @include small {
-            margin-bottom: rem(40);
-          }
-
-          path {
-            stroke: #20976c;
-          }
-        }
+      @include medium {
+        justify-content: start;
       }
     }
 
     &__title {
-      font-size: rem(38);
-      line-height: rem(48);
-      color: white;
-
       @include medium {
-        font-size: rem(24);
-        line-height: rem(30);
+        margin-bottom: 1rem;
       }
     }
 
-    &__name {
-      font-size: rem(14);
-      font-weight: 500;
-      color: white;
-      opacity: 0.5;
-      letter-spacing: 1px;
-      margin-bottom: rem(22);
-    }
-
-    &__content {
+    &__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: $grid__gap;
-      padding: 0 $padding__collumn;
 
       @include medium {
         grid-template-columns: repeat(2, 1fr);
-        row-gap: rem(60);
       }
 
       @include small {
@@ -407,4 +343,5 @@
       }
     }
   }
+
 }

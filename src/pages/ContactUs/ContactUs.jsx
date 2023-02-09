@@ -48,7 +48,7 @@ export default class ContactUs extends Component {
 								</label>
 								<Button
 									text="Send Message"
-									type="flat arrow submit"
+									type="flat-green arrow submit"
 									color="white"
 								/>
 							</form>
@@ -80,7 +80,7 @@ export default class ContactUs extends Component {
 									<em className="help__box-icon"></em>
 									<strong className="help__box-title">Send us an email</strong>
 									<p className="help__box-desc">We’d love to hear from you!</p>
-									<a className="help__box-link" href="/">
+									<a className="help__box-link" href="mailto:cs@paxform.com">
 										Email us
 									</a>
 								</div>
@@ -92,7 +92,7 @@ export default class ContactUs extends Component {
 										Call us at 1-893-909-7845
 									</strong>
 									<p className="help__box-desc">We’d love to hear from you!</p>
-									<a className="help__box-link" href="/">
+									<a className="help__box-link" href="tel:18939097845">
 										Call us
 									</a>
 								</div>

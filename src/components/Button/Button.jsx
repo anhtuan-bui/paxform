@@ -28,6 +28,9 @@ export default class Button extends Component {
     if (this.props.color === "green") {
       this.button.class += " button--green";
     }
+    if (this.props.color === "blue") {
+      this.button.class += " button--blue";
+    }
 
     // <Button type="arrow"/> the button with arrow icon on the right
     if (this.props.type.includes("arrow")) {
@@ -43,6 +46,12 @@ export default class Button extends Component {
     if (this.props.type.includes("flat")) {
       this.button.class += " button--flat";
     }
+    if (this.props.type.includes("flat-white")) {
+      this.button.class += " button--flat-white";
+    }
+    if (this.props.type.includes("flat-green")) {
+      this.button.class += " button--flat-green";
+    }
 
     // <Button type="triangle-right"/> the button a triangle on the left
     if (this.props.type.includes("triangle-right")) {
@@ -51,6 +60,27 @@ export default class Button extends Component {
   };
 
   render() {
+    if (this.props.href) {
+      return (
+        <a
+          href={this.props.href}
+          className={`button${this.state.class}`}
+          disabled={this.props.disabled}
+        >
+          <TriangleRight
+          className={`triangle_right ${
+            this.button.triangleRight ? "" : "triangle_right--none"
+          }`}
+        />
+        <span className="button__text">{this.props.text}</span>
+        <ArrowRight
+          className={`button__arrow ${this.button.arrowClass} ${
+            this.button.arrow ? "" : "button__arrow--none"
+          }`}
+        />
+        </a>
+      );
+    }
     return (
       <button
         className={`button${this.state.class}`}

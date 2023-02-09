@@ -1,6 +1,8 @@
 @import "../../styles/styles.scss";
 $color_white: #fff;
-$color_blue: #0a61b4;
+$color_green: $color__success;
+$color_blue: $color__primary;
+$color_dark-blue: #031a30;
 $color-light-blue: #e1edf9;
 $color_grey: #2f4356;
 $color_purple: #2d4bb6;
@@ -8,38 +10,58 @@ $color_purple: #2d4bb6;
     .hero {
         position: relative;
         padding-top: rem(100);
+        &::before {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("../../assets/images/company-hero.svg");
+            background-repeat: no-repeat;
+            background-position: center bottom 0;
+            background-size: 100%;
+            content: "";
+            @include small {
+                bottom: rem(-65);
+                background-position: bottom rem(50) left rem(-400);
+                background-size: auto rem(200);
+            }
+        }
         &__wrapper {
             display: flex;
             position: relative;
             padding-top: rem(100);
-            padding-bottom: rem(160);
-            background-image: url("../../assets/images/company-hero.svg");
-            background-repeat: no-repeat;
-            background-position: center bottom 0;
-            background-size: auto 200px;
+            padding-bottom: rem(200);
             text-align: center;
             box-sizing: border-box;
             @include large {
                 padding-right: 0;
-                padding-bottom: 30%;
+                padding-bottom: 22%;
             }
             @include medium {
                 padding-top: rem(10);
-                padding-bottom: 80%;
+                padding-bottom: 7%;
             }
             @include small {
                 padding-top: 0;
+                padding-bottom: 35%;
+                flex-direction: column;
             }
         }
         &__content {
-            flex: 1 1 50%;
+            flex: 50%;
             padding: 0 $padding__collumn;
             text-align: left;
             color: $color_grey;
             box-sizing: border-box;
             @include large {
                 padding: 0 5%;
-                text-align: center;
+            }
+            @include small {
+                flex: 100%;
+                order: 2;
             }
             h1,
             p {
@@ -86,13 +108,24 @@ $color_purple: #2d4bb6;
             line-height: rem(25);
         }
         &__image {
-            flex: 1 1 50%;
+            flex: 50%;
+            @include small {
+                flex: 100%;
+            }
             &>img {
                 display: inline-block;
                 position: relative;
                 top: 10%;
                 width: 80%;
                 margin: 0 auto;
+                @include medium {
+                    width: 70%;
+                    top: 27%;
+                }
+                @include small {
+                    order: 1;
+                    width: 90%;
+                }
             }
         }
     }
@@ -105,23 +138,32 @@ $color_purple: #2d4bb6;
             text-align: center;
             box-sizing: border-box;
             @include large {
+                padding-top: rem(30);
                 padding-right: 0;
-                padding-bottom: 30%;
+                padding-bottom: 10%;
             }
             @include medium {
-                padding-top: rem(10);
-                padding-bottom: 80%;
+                padding-top: 0;
+                padding-bottom: 5%;
             }
             @include small {
-                padding-top: 0;
+                padding: 15% 0;
+                flex-direction: column;
             }
         }
         &__image {
             flex: 1 1 50%;
+            @include small {
+                flex: 100%;
+            }
             &>img {
                 display: inline-block;
                 width: 90%;
                 margin: 0 auto;
+                @include medium {
+                    position: relative;
+                    top: 20%;
+                }
             }
         }
         &__content {
@@ -132,7 +174,9 @@ $color_purple: #2d4bb6;
             box-sizing: border-box;
             @include large {
                 padding: 0 5%;
-                text-align: center;
+            }
+            @include small {
+                flex: 100%;
             }
             h1,
             p {
@@ -180,31 +224,38 @@ $color_purple: #2d4bb6;
         }
     }
     .video {
+        position: relative;
+        &::before {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: rem(400);
+            background: $color-light-blue;
+            transform: skewY(6deg);
+            z-index: -1;
+            content: "";
+        }
         .container {
             position: relative;
-            &::before {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: rem(400);
-                background: $color-light-blue;
-                transform: skewY(6deg);
-                z-index: -1;
-                content: "";
-            }
         }
         &__wrapper {
             padding: rem(180) $padding__collumn rem(100);
             width: 100%;
             margin: 0 auto;
             box-sizing: border-box;
+            @include large {
+                padding-top: rem(130);
+            }
             &-link {
                 display: block;
                 position: relative;
                 height: rem(540);
+                @include large {
+                    height: auto;
+                }
                 &::before {
                     display: block;
                     position: absolute;
@@ -252,34 +303,59 @@ $color_purple: #2d4bb6;
         }
     }
     .team {
-        padding: rem(60) 0 rem(140);
+        padding: rem(60) 0 rem(250);
         position: relative;
-        &__wrapper {}
+        @include large {
+            padding-top: 0;
+        }
+        @include small {
+            padding-bottom: rem(140);
+        }
         &__title {
-            margin: 0 0 rem(63);
+            margin: 0 0 rem(23);
             font-size: rem(38);
             text-align: center;
         }
         &__box {
             display: flex;
             position: relative;
+            flex-wrap: wrap;
             padding-left: 0;
             &-list {
                 flex: 25%;
                 position: relative;
+                max-width: 25%;
+                height: auto;
                 padding: 0 $padding__collumn;
+                margin-top: rem(40);
                 list-style: none;
                 box-sizing: border-box;
-                &-name {}
-                &-position {}
+                @include small {
+                    flex: 50%;
+                    max-width: 50%;
+                }
+                &-name {
+                    display: block;
+                    margin-top: rem(20);
+                    font-family: GothamRoundedBold;
+                    font-size: rem(16);
+                }
+                &-position {
+                    padding-top: rem(4);
+                    font-size: rem(12);
+                    color: $color_grey;
+                }
                 &-link {
                     display: block;
+                    overflow: hidden;
                     position: absolute;
                     top: rem(16);
                     right: rem(32);
                     width: rem(35);
                     height: rem(35);
                     border-radius: 100%;
+                    font-size: 0;
+                    color: transparent;
                     z-index: 1001;
                     &::before {
                         display: inline-block;
@@ -317,30 +393,148 @@ $color_purple: #2d4bb6;
                 }
             }
             &__inner {
+                overflow: hidden;
                 position: relative;
                 padding: rem(60) rem(16) 0;
+                height: rem(210);
                 background: $color-light-blue;
                 border-radius: rem(16);
+                @include large {
+                    height: rem(180);
+                }
+                @include medium {
+                    height: rem(100);
+                }
+                @include small {
+                    height: rem(180);
+                }
+                @include extraSmall {
+                    height: rem(120);
+                }
                 &::before {
                     display: block;
                     position: absolute;
-                    left: rem(16);
-                    bottom: 4%;
+                    left: rem(18);
+                    bottom: -18%;
                     width: 92%;
-                    height: rem(80);
-                    background: linear-gradient( 104.14deg, #0a61b4 20.63%, #074581 177.09%);
+                    height: rem(150);
+                    background: linear-gradient( 104.14deg, $color__primary 20.63%, #074581 177.09%);
                     border-top-left-radius: rem(15);
                     transform: skewY(6deg);
                     content: "";
+                    @include medium {
+                        height: rem(100);
+                    }
+                    @include small {
+                        bottom: -10%;
+                        height: rem(150);
+                    }
+                    @include extraSmall {
+                        height: rem(70);
+                    }
                 }
                 &-img {
                     display: inline-block;
-                    position: relative;
-                    bottom: rem(-6);
-                    width: 100%;
+                    position: absolute;
+                    left: 10%;
+                    bottom: rem(-5);
+                    width: 80%;
                     z-index: 1000;
                 }
             }
+        }
+    }
+    .diversity {
+        position: relative;
+        background: $color_dark-blue;
+        &::before {
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 100%;
+            height: rem(170);
+            border-top-left-radius: rem(10);
+            background-image: url("../../assets/images/company-diversity-bg.png");
+            background-position: top 0 right 2px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            content: "";
+            @include small {
+                left: 0;
+                height: rem(250);
+            }
+        }
+        &__wrapper {
+            color: $color_white;
+        }
+        &__title {
+            margin: 0;
+            padding: 0 $padding__collumn rem(50);
+            font-size: rem(38);
+        }
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+            &-description {
+                flex: 50%;
+                padding: 0 $padding__collumn;
+                margin: 0;
+                font-size: rem(16);
+                line-height: rem(25);
+                box-sizing: border-box;
+                padding-bottom: rem(150);
+                @include large {
+                    padding-bottom: rem(200);
+                }
+                @include small {
+                    flex: 100%;
+                    padding-bottom: 26%;
+                }
+                @include extraSmall {
+                    padding-bottom: 0;
+                }
+            }
+            &-image {
+                flex: 50%;
+                position: relative;
+                width: 100%;
+                height: rem(456);
+                box-sizing: border-box;
+                @include small {
+                    flex: 100%;
+                    padding: 0;
+                }
+                &>img {
+                    position: absolute;
+                    bottom: rem(-50);
+                    left: 0;
+                    width: auto;
+                    height: 100%;
+                    @include large {
+                        bottom: rem(-100);
+                    }
+                    @include medium {
+                        bottom: -60%;
+                        height: 80%;
+                    }
+                    @include small {
+                        bottom: 0;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+    .ready_to_get {
+        @include large {
+            padding-top: 0;
+        }
+    }
+    .ready_to_get__box-left {
+        @include large {
+            margin-top: 0;
         }
     }
 }
