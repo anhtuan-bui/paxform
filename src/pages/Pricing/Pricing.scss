@@ -244,6 +244,22 @@ $color_dark-blue: #031a30;
 				&.list2 {
 					min-height: rem(720);
 					background: #def6ec;
+					&::before {
+						position: relative;
+						display: block;
+						width: 100%;
+						margin-bottom: rem(22);
+						font-size: rem(14);
+						font-weight: 600;
+						text-align: center;
+						text-transform: uppercase;
+						letter-spacing: 0.14em;
+						color: $color_green;
+						content: "most popular";
+						@include large {
+							display: none;
+						}
+					}
 					.plans__ul__list-icon {
 						background-image: url("../../assets/images/pricing-premium-icon.png");
 					}
@@ -274,6 +290,9 @@ $color_dark-blue: #031a30;
 					}
 					&.list2 {
 						min-height: auto;
+						&::before {
+							display: none;
+						}
 					}
 					&__inner {
 						position: relative;
