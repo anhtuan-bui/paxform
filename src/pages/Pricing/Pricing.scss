@@ -710,16 +710,30 @@ $color_dark-blue: #031a30;
 				&.grey {
 					background: #f2f4f5;
 				}
-				& th {
+				& > th {
 					padding: rem(30) $padding__collumn;
 					font-size: rem(18);
 					text-align: left;
 				}
-				& td {
+				& > td {
 					font-size: rem(16);
 					text-align: center;
 					letter-spacing: 0.005em;
 					color: $color_dark-blue;
+				}
+				& > td[colspan="3"] {
+					&::before {
+						display: inline-block;
+						position: relative;
+						top: rem(2);
+						width: 16px;
+						height: 16px;
+						padding-right: rem(10);
+						background-image: url("../../assets/images/icon-pricing-premium.svg");
+						background-repeat: no-repeat;
+						background-position: center left;
+						content: "";
+					}
 				}
 			}
 		}

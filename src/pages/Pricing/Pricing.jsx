@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,7 +10,6 @@ import Button from "../../components/Button/Button";
 
 import { ReactComponent as Tick } from "../../assets/images/icon-tick.svg";
 import { ReactComponent as Eks } from "../../assets/images/icon-none.svg";
-import features from "../../assets/images/icon-pricing-premium.svg";
 import { SCREEN_SIZE } from "../../configurations/configurations";
 
 const credits = [
@@ -31,31 +30,27 @@ const credits = [
 	},
 ];
 
-// const comparePlans = [
-// 	{
-// 		features: [
-// 			"Pricing per Admin/month",
-// 			"Number of Admins",
-// 			"Published Forms",
-// 			"Form template",
-// 			"Agreement Templates",
-// 			"Survey(monthly)",
-// 			"Monthly Submissions",
-// 			"Storage Space Available",
-// 		],
-// 	},
-// 	{ securities: "End-to-End Encryption" },
-// 	{
-// 		supports: [
-// 			"Generic PDF",
-// 			"Max Questions per Form",
-// 			"Conditional Questions",
-// 			"Electronic Signatures",
-// 			"Attachments(in forms)",
-// 			"Workflow support",
-// 		],
-// 	},
-// ];
+const compareList = {
+	features: [
+		"Pricing per Admin/month",
+		"Number of Admins",
+		"Published Forms",
+		"Form template",
+		"Agreement Templates",
+		"Survey(monthly)",
+		"Monthly Submissions",
+		"Storage Space Available",
+	],
+	securities: ["End-to-End Encryption"],
+	supports: [
+		"Generic PDF",
+		"Max Questions per Form",
+		"Conditional Questions",
+		"Electronic Signatures",
+		"Attachments(in forms)",
+		"Workflow support",
+	],
+};
 export default class Pricing extends Component {
 	personal = {
 		pricing: [
@@ -65,7 +60,7 @@ export default class Pricing extends Component {
 				cost: "$0",
 				period: "/forever",
 				features: [
-					"1.Unlimited data",
+					"**Unlimited data",
 					"5 Person saved",
 					"A simple way for you new started to Passfolio.",
 					"A simple way for you new started to Passfolio.",
@@ -334,8 +329,8 @@ export default class Pricing extends Component {
 										</strong>
 										<Button
 											text="Get started"
-											type="arrow outline"
-											color="green"
+											type={`arrow ${index === 1 ? "flat-green" : "outline"}`}
+											color={`${index === 1 ? "white" : "green"}`}
 										/>
 										<strong className="plans__ul__list-inc">
 											What's Included
@@ -385,53 +380,25 @@ export default class Pricing extends Component {
 								<div className="compare__plans__list features">
 									<dl className="compare__plans__list__info">
 										<dt className="compare__plans__list-title top">Features</dt>
-
-										<dd className="compare__plans__list-text">
-											Pricing per Admin/month
-										</dd>
-										<dd className="compare__plans__list-text">
-											Number of Admins
-										</dd>
-										<dd className="compare__plans__list-text">
-											Published Forms
-										</dd>
-										<dd className="compare__plans__list-text">Form template</dd>
-										<dd className="compare__plans__list-text">
-											Agreement Templates
-										</dd>
-										<dd className="compare__plans__list-text">
-											Survey(monthly)
-										</dd>
-										<dd className="compare__plans__list-text">
-											Monthly Submissions
-										</dd>
-										<dd className="compare__plans__list-text">
-											Storage Space Available
-										</dd>
+										{compareList.features.map((feature, index) => (
+											<dd className="compare__plans__list-text" key={index}>
+												{feature}
+											</dd>
+										))}
 
 										<dt className="compare__plans__list-title">Security</dt>
-										<dd className="compare__plans__list-text">
-											End-to-End-Encryption
-										</dd>
+										{compareList.securities.map((security, index) => (
+											<dd className="compare__plans__list-text" key={index}>
+												{security}
+											</dd>
+										))}
 
 										<dt className="compare__plans__list-title">Support</dt>
-
-										<dd className="compare__plans__list-text">Generic PDF</dd>
-										<dd className="compare__plans__list-text">
-											Max Questions per Form
-										</dd>
-										<dd className="compare__plans__list-text">
-											Conditional Questions
-										</dd>
-										<dd className="compare__plans__list-text">
-											Electronic Signatures
-										</dd>
-										<dd className="compare__plans__list-text">
-											Attachment (in forms)
-										</dd>
-										<dd className="compare__plans__list-text">
-											Workflow support
-										</dd>
+										{compareList.supports.map((support, index) => (
+											<dd className="compare__plans__list-text" key={index}>
+												{support}
+											</dd>
+										))}
 									</dl>
 								</div>
 								<Swiper
@@ -504,236 +471,83 @@ export default class Pricing extends Component {
 						<table className="mobile_compare__tbl">
 							<thead>
 								<tr>
-									<th>{this.state.tap.pricing[0].title}</th>
-									<th>{this.state.tap.pricing[1].title}</th>
-									<th>{this.state.tap.pricing[2].title}</th>
+									{this.state.tap.pricing.map((price, index) => (
+										<th key={index}>{price.title}</th>
+									))}
 								</tr>
 								<tr>
-									<th>
-										<strong>{this.state.tap.pricing[0].cost}</strong>
-										<em>{this.state.tap.pricing[0].period}</em>
-									</th>
-									<th>
-										<strong>{this.state.tap.pricing[1].cost}</strong>
-										<em>{this.state.tap.pricing[1].period}</em>
-									</th>
-									<th>
-										<strong>{this.state.tap.pricing[2].cost}</strong>
-										<em>{this.state.tap.pricing[2].period}</em>
-									</th>
+									{this.state.tap.pricing.map((price, index) => (
+										<th key={index}>
+											<strong> {price.cost}</strong>
+											<em>{price.period}</em>
+										</th>
+									))}
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<th colSpan="3">Features</th>
 								</tr>
-								<tr>
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Price per Admin/month
-									</td>
-								</tr>
-								<tr>
-									<td>$29.90</td>
-									<td>$39.90</td>
-									<td>$49.90</td>
-								</tr>
-								<tr className="grey">
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Number of Admins
-									</td>
-								</tr>
-								<tr className="grey">
-									<td>3</td>
-									<td>30</td>
-									<td>100</td>
-								</tr>
-								<tr>
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Published Forms
-									</td>
-								</tr>
-								<tr>
-									<td>$29.90</td>
-									<td>$39.90</td>
-									<td>$49.90</td>
-								</tr>
-								<tr className="grey">
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Form Templates
-									</td>
-								</tr>
-								<tr className="grey">
-									<td>10</td>
-									<td>50</td>
-									<td>200</td>
-								</tr>
-								<tr>
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Agreement Templates
-									</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>10</td>
-									<td>20</td>
-								</tr>
-								<tr className="grey">
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Survey(monthly)
-									</td>
-								</tr>
-								<tr className="grey">
-									<td>1</td>
-									<td>3</td>
-									<td>10</td>
-								</tr>
-								<tr>
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Monthly submissions
-									</td>
-								</tr>
-								<tr>
-									<td>500</td>
-									<td>3,000</td>
-									<td>10,000</td>
-								</tr>
-								<tr className="grey">
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Storage Space Available
-									</td>
-								</tr>
-								<tr className="grey">
-									<td>10GB</td>
-									<td>100GB</td>
-									<td>1TB</td>
-								</tr>
+								{compareList.features.map((feature, index) => {
+									let grey = "grey";
+									if (index % 2 === 0) {
+										grey = "";
+									}
+									return (
+										<Fragment key={index}>
+											<tr className={grey}>
+												<td colSpan="3">{feature}</td>
+											</tr>
+											<tr className={grey}>
+												{this.state.tap.pricing.map((price, idx) => (
+													<td key={idx}>{price.compares.features[index]}</td>
+												))}
+											</tr>
+										</Fragment>
+									);
+								})}
 								<tr>
 									<th colSpan="3">Security</th>
 								</tr>
-								<tr className="grey">
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;End-to-End Encryption
-									</td>
-								</tr>
-								<tr className="grey">
-									<td>
-										<Tick />
-									</td>
-									<td>
-										<Tick />
-									</td>
-									<td>
-										<Tick />
-									</td>
-								</tr>
+								{compareList.securities.map((security, index) => {
+									let grey = "grey";
+									if (index % 2 === 1) {
+										grey = "";
+									}
+									return (
+										<Fragment key={index}>
+											<tr className={grey}>
+												<td colSpan="3">{security}</td>
+											</tr>
+											<tr className={grey}>
+												{this.state.tap.pricing.map((price, idx) => (
+													<td key={idx}>{price.compares.securities[index]}</td>
+												))}
+											</tr>
+										</Fragment>
+									);
+								})}
 								<tr>
 									<th colSpan="3">Support</th>
 								</tr>
-								<tr>
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Generic PDF
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<Tick />
-									</td>
-									<td>
-										<Tick />
-									</td>
-									<td>
-										<Tick />
-									</td>
-								</tr>
-								<tr className="grey">
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Max Questions per Form
-									</td>
-								</tr>
-								<tr className="grey">
-									<td>40</td>
-									<td>Unlimited</td>
-									<td>Unlimited</td>
-								</tr>
-								<tr>
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Conditional Questions
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<Tick />
-									</td>
-									<td>
-										<Tick />
-									</td>
-									<td>
-										<Tick />
-									</td>
-								</tr>
-								<tr className="grey">
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Electronic Signatures
-									</td>
-								</tr>
-								<tr className="grey">
-									<td>
-										<Tick />
-									</td>
-									<td>
-										<Tick />
-									</td>
-									<td>
-										<Tick />
-									</td>
-								</tr>
-								<tr>
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Attachments (in forms)
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<Eks />
-									</td>
-									<td>
-										<Tick />
-									</td>
-									<td>
-										<Tick />
-									</td>
-								</tr>
-								<tr className="grey">
-									<td colSpan="3">
-										<img src={features} alt="feature icon" />
-										&nbsp;Workflow support
-									</td>
-								</tr>
-								<tr className="grey">
-									<td>
-										<Eks />
-									</td>
-									<td>
-										<Tick />
-									</td>
-									<td>
-										<Tick />
-									</td>
-								</tr>
+								{compareList.supports.map((support, index) => {
+									let grey = "grey";
+									if (index % 2 === 0) {
+										grey = "";
+									}
+									return (
+										<Fragment key={index}>
+											<tr className={grey}>
+												<td colSpan="3">{support}</td>
+											</tr>
+											<tr className={grey}>
+												{this.state.tap.pricing.map((price, idx) => (
+													<td key={idx}>{price.compares.supports[index]}</td>
+												))}
+											</tr>
+										</Fragment>
+									);
+								})}
 							</tbody>
 						</table>
 					</div>
