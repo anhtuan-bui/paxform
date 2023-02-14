@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import './BlogDetails.scss';
 import RelatedCard from '../../components/RelatedCard/RelatedCard';
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
+import LatestBlogs from "../../components/LatestBlogs/LatestBlogs"
 import CardResource1 from "../../assets/images/card-resource-1.png";
 import CardResource2 from "../../assets/images/card-resource-2.png";
 import CardResource3 from "../../assets/images/card-resource-3.png";
@@ -17,18 +19,19 @@ import PinterestIcon from "../../assets/icons/pinterest.png";
 import WhatsAppIcon from "../../assets/icons/whatsapp.png";
 import ShareIcon from "../../assets/icons/share.png";
 import Button from '../../components/Button/Button';
+import TriangleRight from '../../components/SectionTriangleRight/SectionTriangleRight';
 
 const BlogDetails = () => {
     return (
         <main>
-            <section className="hero" background="light">
+            {/* <section className="hero" >
                 <SectionTriangleRight variant="white" />
-            </section>
-            <div className="container">
+            </section> */}
+            <div className="container hero" background="light">
                 <div className="wrapper">
                     <section className="article-info">
-                        <p className="article-info-date section_name">December 25, 2021</p>
-                        <div className="section_title">How FedRAMP Tailored helps quickly obtain cloud-based services</div>
+                        <div className="article-info-date">December 25, 2021</div>
+                        <h1>How FedRAMP Tailored helps quickly obtain cloud-based services</h1>
                         <img className="article-info-img rounded-20" src={Card2} alt="Article"></img>
                         <h2>The printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy the 1500s</h2>
                     </section>
@@ -67,22 +70,34 @@ const BlogDetails = () => {
                         <p className="social-title section_name">Share</p>
                         <div className="social-icons">
                             <div className="social-icons-wrapper rounded-20">
-                                <img src={FacebookIcon} alt="" />
+                                <a href="#">
+                                    <img src={FacebookIcon} alt="" />
+                                </a>
                             </div>
                             <div className="social-icons-wrapper rounded-20">
-                                <img src={LinkedinIcon} alt="" />
+                                <a href="#">
+                                    <img src={LinkedinIcon} alt="" />
+                                </a>
                             </div>
                             <div className="social-icons-wrapper rounded-20">
-                                <img src={TwitterIcon} alt="" />
+                                <a href="#">
+                                    <img src={TwitterIcon} alt="" />
+                                </a>
                             </div>
                             <div className="social-icons-wrapper rounded-20">
-                                <img src={PinterestIcon} alt="" />
+                                <a href="#">
+                                    <img src={PinterestIcon} alt="" />
+                                </a>
                             </div>
                             <div className="social-icons-wrapper rounded-20">
-                                <img src={WhatsAppIcon} alt="" />
+                                <a href="#">
+                                    <img src={WhatsAppIcon} alt="" />
+                                </a>
                             </div>
                             <div className="social-icons-wrapper rounded-20">
-                                <img src={ShareIcon} alt="" />
+                                <a href="#">
+                                    <img src={ShareIcon} alt="" />
+                                </a>
                             </div>
                         </div>
                     </section>
@@ -99,30 +114,13 @@ const BlogDetails = () => {
                     </section>
                 </div>            
             </div>
-            <div className="latest-blog">
+            <div id="blogs">
                 <SectionTriangleRight variant="dark-blue" />
-                <div className="latest-blog-container">
-                    <div className="container">
-                        <div className="latest-blog-container-inside">
-                            <div className="latest-blog-title section_name">Blog</div>
-                            <div className="latest-blog-header">
-                                <div className="latest-blog-header-title">Latest Blog’s from Paxform.</div>
-                                <Button text="See all Blog" color="green" type="outline arrow" />
-                            </div>
-                            <div className="latest-blog-blogs">
-                                <RelatedCard image={CardResource2} title="Work Together" description readLink />
-                                <RelatedCard image={CardResource4} title="Second Heading" description readLink />
-                                <RelatedCard image={CardResource3} title="First Heading" description readLink />
-                                <RelatedCard image={CardResource1} title="Third Heading" description readLink />
-                            </div>
-                        </div>
-                    </div>
-                    <SectionTriangleRight variant="light-blue" />
-                </div>  
+                <LatestBlogs triangleColor="light-blue" />
             </div>
             <div id="footer-triangle">
                 <SectionTriangleRight variant="light-blue" />
-            </div>
+            </div>      
         </main>
     )
 }
