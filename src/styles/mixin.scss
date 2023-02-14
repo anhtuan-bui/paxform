@@ -6,7 +6,7 @@
 }
 
 @mixin minExtraLarge {
-  @media (min-width: ($width__extraLarge + 1)) {
+  @media (min-width: ($width__extraLarge)) {
     @content;
   }
 }
@@ -19,7 +19,7 @@
 }
 
 @mixin minLarger {
-  @media (min-width: ($width__larger + 1)) {
+  @media (min-width: ($width__larger)) {
     @content;
   }
 }
@@ -32,7 +32,7 @@
 }
 
 @mixin minLarge {
-  @media (min-width: ($width__large + 1)) {
+  @media (min-width: ($width__large)) {
     @content;
   }
 }
@@ -45,7 +45,7 @@
 }
 
 @mixin minMedium {
-  @media (min-width: ($width__medium + 1)) {
+  @media (min-width: ($width__medium)) {
     @content;
   }
 }
@@ -58,7 +58,7 @@
 }
 
 @mixin minSmall {
-  @media (min-width: ($width__small + 1)) {
+  @media (min-width: ($width__small)) {
     @content;
   }
 }
