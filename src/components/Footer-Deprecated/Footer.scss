@@ -1,0 +1,154 @@
+@import "../../styles/styles.scss";
+
+.footer {
+  background-color: #e1edf8;
+  padding: rem(80) 0;
+
+  &__logo {
+    margin-bottom: rem(20);
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: rem(24);
+
+    @include small {
+      justify-content: center;
+    }
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  &__container {
+    @include extraSmall {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: rem(20);
+
+    @include larger {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: $row__gap--larger;
+    }
+
+    @include medium {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: $row__gap--small;
+    }
+
+    @include extraSmall {
+      grid-template-columns: 1fr;
+      align-items: center;
+      text-align: center;
+    }
+
+    &-left {
+      padding: 0 $padding__collumn;
+
+      @include larger {
+        grid-column: 1 / span 3;
+      }
+
+      @include medium {
+        grid-column: 1;
+      }
+    }
+
+    &-right {
+      @include small {
+        flex-direction: column;
+        gap: rem(40);
+        align-items: center;
+        text-align: center;
+      }
+
+      &-list {
+        max-width: rem(250);
+        padding: 0 $padding__collumn;
+
+        h1 {
+          font-size: rem(14);
+          color: #2d4bb6;
+          font-weight: 500;
+          margin-top: 0;
+        }
+
+        ul {
+          list-style: none;
+          padding-left: 0;
+          display: flex;
+          flex-direction: column;
+          gap: rem(12);
+
+          li {
+            font-size: rem(14);
+
+            a {
+              color: #2f4356;
+              text-decoration: none;
+              line-height: rem(24);
+
+              &:hover {
+                color: $color__success;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: rem(15);
+    color: #2f4356;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include medium {
+      flex-direction: column;
+      text-align: center;
+      gap: rem(0);
+    }
+
+    &-wrapper {
+      border-top: 1px solid #BACCDE;
+    }
+
+    p,
+    ul {
+      margin-bottom: 0;
+      padding: 0 $padding__collumn;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      gap: rem(20);
+
+      li {
+        font-size: rem(14);
+
+        a {
+          color: #2f4356;
+          text-decoration: none;
+          line-height: rem(24);
+
+          span:after {
+            background-color: #2f4356;
+          }
+        }
+      }
+    }
+  }
+}

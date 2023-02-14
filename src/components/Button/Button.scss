@@ -1,6 +1,6 @@
 @import "../../styles/styles.scss";
 
-@mixin buttonOutline($colorName, $color) {
+@mixin buttonColor($colorName, $color) {
   &--#{$colorName} {
     color: $color;
 
@@ -29,6 +29,7 @@
   cursor: pointer;
   transition: 0.25s ease-in-out;
   border-radius: rem(100);
+  text-decoration: none;
 
   @include medium {
     padding: rem(12) rem(26);
@@ -75,10 +76,10 @@
     border: none;
     
     &-green {
-      background-color: #20976c;
+      background-color: $color__success;
 
       &:hover {
-        background-color: darken(#20976c, 5%);
+        background-color: darken($color__success, 5%);
       }
     }
 
@@ -91,9 +92,9 @@
     }
   }
 
-  @include buttonOutline("white", white);
-  @include buttonOutline("green", #20976c);
-  @include buttonOutline("blue", $color__primary);
+  @include buttonColor("white", white);
+  @include buttonColor("green", $color__success);
+  @include buttonColor("blue", $color__primary);
 }
 
 .triangle_right {

@@ -1,0 +1,20 @@
+@import "../../styles/styles.scss";
+
+$color_white: #fff;
+$color_black: #031a30;
+$color_grey: #2f4356;
+$color_blue: #0a61b4;
+
+.body {
+    padding-top: rem(100);
+    //display: grid; 
+    //grid-template-columns: repeat(2, 1fr);
+    //position: relative;
+    &__container {
+        
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+    
+
+}
