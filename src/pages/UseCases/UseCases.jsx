@@ -6,39 +6,39 @@ import "./UseCases.scss";
 
 import ex from "../../assets/images/usecase-hospitality-ex.svg";
 import hospitality from "../../assets/images/usecases-hospitality.png";
-import retail from "../../assets/images/usecases-retail.png";
-import medical from "../../assets/images/usecases-medical.png";
+// import retail from "../../assets/images/usecases-retail.png";
+// import medical from "../../assets/images/usecases-medical.png";
 
 import bgHospitality from "../../assets/images/usecases-bg-hospitality.svg";
-import bgRetail from "../../assets/images/usecases-bg-retail.svg";
-import bgMedical from "../../assets/images/usecases-bg-medical.svg";
+// import bgRetail from "../../assets/images/usecases-bg-retail.svg";
+// import bgMedical from "../../assets/images/usecases-bg-medical.svg";
 
-const usecases = [
-	{
-		name: "hospitality",
-		title: "Your Personal Information in One Place Fill Any Form, Anywhere",
-		description:
-			"Practical guides, resources, templates and advice. Whether you're starting a business or growing an existing one, we're here to lend a helping hand as you navigate this unforgettable journey.",
-		image: hospitality,
-		bg: bgHospitality,
-	},
-	{
-		name: "retail",
-		title: "Your Personal Information in One Place Fill Any Form, Anywhere",
-		description:
-			"Practical guides, resources, templates and advice. Whether you're starting a business or growing an existing one, we're here to lend a helping hand as you navigate this unforgettable journey.",
-		image: retail,
-		bg: bgRetail,
-	},
-	{
-		name: "medical",
-		title: "Your Personal Information in One Place Fill Any Form, Anywhere",
-		description:
-			"Practical guides, resources, templates and advice. Whether you're starting a business or growing an existing one, we're here to lend a helping hand as you navigate this unforgettable journey.",
-		image: medical,
-		bg: bgMedical,
-	},
-];
+// const usecases = [
+// 	{
+// 		name: "hospitality",
+// 		title: "Your Personal Information in One Place Fill Any Form, Anywhere",
+// 		description:
+// 			"Practical guides, resources, templates and advice. Whether you're starting a business or growing an existing one, we're here to lend a helping hand as you navigate this unforgettable journey.",
+// 		image: hospitality,
+// 		bg: bgHospitality,
+// 	},
+// 	{
+// 		name: "retail",
+// 		title: "Your Personal Information in One Place Fill Any Form, Anywhere",
+// 		description:
+// 			"Practical guides, resources, templates and advice. Whether you're starting a business or growing an existing one, we're here to lend a helping hand as you navigate this unforgettable journey.",
+// 		image: retail,
+// 		bg: bgRetail,
+// 	},
+// 	{
+// 		name: "medical",
+// 		title: "Your Personal Information in One Place Fill Any Form, Anywhere",
+// 		description:
+// 			"Practical guides, resources, templates and advice. Whether you're starting a business or growing an existing one, we're here to lend a helping hand as you navigate this unforgettable journey.",
+// 		image: medical,
+// 		bg: bgMedical,
+// 	},
+// ];
 
 export default class UseCases extends Component {
 	render() {
