@@ -44,25 +44,29 @@ export default class ResourceDetails extends Component {
                             <div className="body__left-caseStudy">
                                 <p1>IN THIS CASE STUDY</p1>
                             </div>
-                            <div className="body__left-hyperlink">
-                                <ul>
-                                    <li className="list-item">
-                                        <div className="blue-bar"></div>
-                                        <div className="list-item-text">Changing the process</div>    
-                                    </li>
-                                    <li className="list-item">
-                                        <div className="blue-bar"></div>
-                                        <div className="list-item-text">Growing quickly</div>
-                                    </li>
-                                    <li className="list-item">
-                                        <div className="blue-bar"></div>
-                                        <div className="list-item-text">Needing a solution</div>
-                                    </li>
-                                    <li className="list-item">
-                                        <div className="blue-bar"></div>
-                                        <div className="list-item-text">Simple data form</div>
-                                    </li>
-                                </ul>
+                            <div className="dropdown">
+                                {/* <div className="hyperlink-dropdown"> */}
+                                    <button className="dropbtn">Changing the process</button>
+                                    <div className="dropdown-content">
+                                            {/*<li className="list-item">
+                                                <div className="blue-bar"></div>
+                                                <div className="list-item-text">Changing the process</div>    
+                                            </li>*/}
+
+{/*                                             <div className="list-item">
+                                                <div className="blue-bar"></div> */}
+                                                <a href="#">Growing quickly</a>
+                                            {/* </div> */}
+                                            {/* <div className="list-item">
+                                                <div className="blue-bar"></div> */}
+                                                <a href="#">Needing a solution</a>
+                                           {/*  </div> */}
+                                            {/* <div className="list-item">
+                                                <div className="blue-bar"></div> */}
+                                                <a href="#">Simple data form</a>
+                                           {/*  </div>   */}                                 
+                                    </div>
+                                {/* <div> */}
                             </div>
                         </div>
                         <div className="body_box-right">
