@@ -38,6 +38,26 @@ export default class ResourceDetails extends Component {
                                     </div>
                                 </div>
                             </div>
+                            <div className="dropdown-table">
+                                <ul>
+                                    <li className="list-item">
+                                        <div className="blue-bar"></div>
+                                        <div className="list-item-text">Changing the process</div>    
+                                    </li>
+                                    <li className="list-item">
+                                        <div className="blue-bar"></div>
+                                        <div className="list-item-text">Growing quickly</div>
+                                    </li>
+                                    <li className="list-item">
+                                        <div className="blue-bar"></div>
+                                        <div className="list-item-text">Needing a solution</div>
+                                    </li>
+                                    <li className="list-item">
+                                        <div className="blue-bar"></div>
+                                        <div className="list-item-text">Simple data form</div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <section className="article">
                             <div className="article__heading">
@@ -77,9 +97,7 @@ export default class ResourceDetails extends Component {
                             </div>
                         </section>
                         <hr className="black-bar"/>
-                            <SocialIcons className="whatever"/>
-                       
-
+                            <SocialIcons className="social-margin-update"/>
                     </div>
                 </div>
             
