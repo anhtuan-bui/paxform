@@ -3,18 +3,13 @@ import React from 'react'
 import './BlogDetails.scss';
 import RelatedCard from '../../components/RelatedCard/RelatedCard';
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
+import SocialIcons from '../../components/SocialIcons/SocialIcons';
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs"
 import CardResource1 from "../../assets/images/card-resource-1.png";
 import CardResource3 from "../../assets/images/card-resource-3.png";
 import Card2 from "../../assets/images/card2.png";
 import VideoPoster from "../../assets/images/company-video.png";
 import SampleAuthorAvatar from "../../assets/images/sample-author-avatar.png";
-import FacebookIcon from "../../assets/icons/facebook.png";
-import LinkedinIcon from "../../assets/icons/linkedin.png";
-import TwitterIcon from "../../assets/icons/twitter.png";
-import PinterestIcon from "../../assets/icons/pinterest.png";
-import WhatsAppIcon from "../../assets/icons/whatsapp.png";
-import ShareIcon from "../../assets/icons/share.png";
 
 const BlogDetails = () => {
     return (
@@ -57,41 +52,7 @@ const BlogDetails = () => {
                         </div>
                         <hr className="hr"/>
                     </article>
-                    <section className="social">
-                        <p className="social__title section_name">Share</p>
-                        <div className="social_icons">
-                            <div className="social_icons__wrapper rounded_20">
-                                <a href="#">
-                                    <img src={FacebookIcon} alt="" />
-                                </a>
-                            </div>
-                            <div className="social_icons__wrapper rounded_20">
-                                <a href="#">
-                                    <img src={LinkedinIcon} alt="" />
-                                </a>
-                            </div>
-                            <div className="social_icons__wrapper rounded_20">
-                                <a href="#">
-                                    <img src={TwitterIcon} alt="" />
-                                </a>
-                            </div>
-                            <div className="social_icons__wrapper rounded_20">
-                                <a href="#">
-                                    <img src={PinterestIcon} alt="" />
-                                </a>
-                            </div>
-                            <div className="social_icons__wrapper rounded_20">
-                                <a href="#">
-                                    <img src={WhatsAppIcon} alt="" />
-                                </a>
-                            </div>
-                            <div className="social_icons__wrapper rounded_20">
-                                <a href="#">
-                                    <img src={ShareIcon} alt="" />
-                                </a>
-                            </div>
-                        </div>
-                    </section>
+                    <SocialIcons />
                     <section className="recommended">   
                         <p className="recommended__title section_name"></p>
                         <div className="recommended_container">

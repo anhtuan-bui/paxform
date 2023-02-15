@@ -1,0 +1,64 @@
+@import '../../styles/styles.scss';
+
+.social {
+
+    padding: 0 1rem;
+
+    @include minMedium {
+
+        grid-column: 1;
+        grid-row: 1 / 3;
+        margin-top: 125px;
+
+    }
+
+    &__title {
+
+        color: #7D8893;
+
+    }
+
+    &_icons {
+
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 12px;
+        column-gap: 10px;
+        margin: 24px 0;
+
+        @include minLarge {
+
+            grid-template-columns: repeat(6, 1fr);
+            column-gap: 4px;
+
+        }
+
+        &__wrapper {
+
+            height: 40px;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            width: 100%;
+            background-color: #F6F6F6;
+
+            @include minLarge {
+
+                padding-top: 4px;
+                height: 35px;
+                background-color: #FFF;
+                
+            }
+
+            &:hover {
+
+                background-color: #F6F6F6;
+
+            }
+
+        }
+
+    }
+
+}
