@@ -2,12 +2,13 @@
 
 .wrapper {
 
+    margin-top: 125px;
+
     @include minMedium {
 
         display: grid;
         grid-template-columns: 1fr 3fr;   
         grid-template-rows: min-content; 
-        margin-top: 125px;
 
     }
     
@@ -23,7 +24,7 @@
 
     }
 
-    &-info {
+    &_info {
         
         padding: 0 1rem;
         display: grid;
@@ -37,13 +38,13 @@
 
         }
 
-        &-date {
+        &__date {
 
             color: $color_main__blue;
 
         }
 
-        &-img {
+        &__img {
 
             width: 100%;
 
@@ -51,7 +52,7 @@
 
     }
 
-    &-snippet {
+    &__snippet {
         
         margin: 30px 0;
 
@@ -86,7 +87,7 @@
 
     }
 
-    &-wrapper {
+    &__wrapper {
 
         display: flex;
         width: 100%;
@@ -95,7 +96,7 @@
 
     }
 
-    &-photo {
+    &__photo {
 
         width: 50px;
         height: 50px;
@@ -104,7 +105,7 @@
 
     }
 
-    &-info {
+    &__info {
 
         display: flex;
         flex-direction: column;
@@ -112,14 +113,14 @@
 
     }
 
-    &-name {
+    &__name {
 
         font-size: rem(14);
         font-weight: bold;
 
     }
 
-    &-title {
+    &__title {
 
         font-size: rem(14);
         
@@ -131,10 +132,10 @@
     
     display: flex;
     background-color: #E1EDF9;
-    padding: 15px;
+    position: relative;
+    padding: 10px;
 
-
-    &-sign {
+    &__sign {
 
         align-self: flex-start;
         margin-right: 10px;
@@ -144,15 +145,30 @@
 
     }
 
+    &__text {
+
+        &::before {
+
+            content: url("../../assets/images/“.png");
+            margin-right: 10px;
+            display: block;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+
+        }
+
+    }
+
 }
 
-#company-video {
+.company_video {
 
     width: 100%;
     
 }
 
-hr {
+.hr {
 
     height: 1px;
     background-color: #BACCDE;
@@ -179,13 +195,13 @@ hr {
 
     }
 
-    &-title {
+    &__title {
 
         color: #7D8893;
 
     }
 
-    &-icons {
+    &_icons {
 
         width: 100%;
         display: grid;
@@ -201,7 +217,7 @@ hr {
         
         }
 
-        &-wrapper {
+        &__wrapper {
 
             height: 40px;
             display: grid;
@@ -219,6 +235,7 @@ hr {
             }
                         
             &:hover {
+                
                 background-color: #F6F6F6;
                 
             }
@@ -248,7 +265,7 @@ hr {
 
     }
 
-    &-title {
+    &__title {
         
         margin: 24px 0;
         color: #7D8893; 
@@ -271,7 +288,7 @@ hr {
 
     }
 
-    &-container {
+    &_container {
      
         display: grid;
         row-gap: 50px;
@@ -286,7 +303,7 @@ hr {
         }
     }
 
-    &-article {
+    &__article {
 
         &:nth-child(1) {
 
@@ -311,15 +328,7 @@ hr {
     }
 }
 
-#triangle-container {
-
-    grid-column: span 2;
-    margin-top: 100px;
-    position: relative;
-
-}
-
-#blogs {
+.blogs {
 
     display: none;
 
@@ -330,7 +339,7 @@ hr {
     }
 }
 
-#footer-triangle {
+.footer_triangle {
 
     @include minLarge {
 
