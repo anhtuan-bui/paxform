@@ -8,9 +8,9 @@ import PinterestIcon from "../../assets/icons/pinterest.png";
 import WhatsAppIcon from "../../assets/icons/whatsapp.png";
 import ShareIcon from "../../assets/icons/share.png";
 
-const SocialIcons = () => {
+const SocialIcons = ({className}) => {
     return (
-        <section className="social">
+        <section className={`social ${className}`}>
             <p className="social__title section_name">Share</p>
             <div className="social_icons">
                 <div className="social_icons__wrapper rounded_20">
