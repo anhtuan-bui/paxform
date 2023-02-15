@@ -38,6 +38,12 @@
 
         }
 
+        &__title {
+
+            font-size: rem(36);
+
+        }
+
         &__date {
 
             color: $color_main__blue;
@@ -46,6 +52,8 @@
 
         &__img {
 
+            height: rem(400);
+            margin: 35px 0;
             width: 100%;
 
         }
@@ -187,7 +195,7 @@
 
     margin-bottom: 50px;
     padding: 0 1rem;
-
+    
     @include minMedium {
     
         grid-column: 1;
@@ -229,15 +237,10 @@
      
         display: grid;
         row-gap: 50px;
-        // grid-template-columns: repeat(2, 1fr);
         margin-top: 24px;
-        
-        @include minSmall {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        column-gap: 12px;
 
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: 12px;
-
-        }
     }
 
     &__article {
@@ -271,12 +274,15 @@
 
     @include minLarge {
 
+        margin-top: 100px;
         display: block;
 
     }
 }
 
 .footer_triangle {
+
+    margin-top: 100px;
 
     @include minLarge {
 
