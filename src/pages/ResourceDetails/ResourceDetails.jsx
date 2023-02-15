@@ -1,6 +1,7 @@
 import React,  { Component } from "react";
 import SocialIcons from "../../components/SocialIcons/SocialIcons";
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
+import arrowDown from "../../assets/images/arrowDown.svg"
 
 import "./ResourceDetails.scss";
 
@@ -21,7 +22,10 @@ export default class ResourceDetails extends Component {
                         <div className="content__info">
                             <p className="content__info-caseStudy">IN THIS CASE STUDY</p>
                             <div className="dropdown">
-                                <button className="dropbtn">Changing the process</button>
+                                <div className="button">
+                                    <button className="dropbtn">Changing the process <img src={arrowDown} alt="arrow"/></button>
+                                    
+                                </div>
                                 <div className="dropdown-content">
                                     <div className="list-item">
                                         <div className="blue-bar"></div>
@@ -29,12 +33,12 @@ export default class ResourceDetails extends Component {
                                     </div>
                                     <div className="list-item">
                                         <div className="blue-bar"></div>
-                                        <a href="#">Needing a solution</a>
+                                        <a href="">Needing a solution</a>
                                     </div>
                                         
                                     <div className="list-item">
                                         <div className="blue-bar"></div>
-                                        <a href="#">Simple data form</a>
+                                        <a href="">Simple data form</a>
                                     </div>
                                 </div>
                             </div>
@@ -73,16 +77,18 @@ export default class ResourceDetails extends Component {
                                     packages and web page editors now use Lorem Ipsum as their default model text, anda  search for 'lorem ipsum' 
                                     will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by 
                                     accident, sometimes on purpose (injected humour and the like).</p1>
-                                <br></br>
-                                <br></br>
+                                <br/>
+                                <br/>
                                 <p1>Lorem Ipsum is simply dummy trext of the printing and typesetting industry. Lorem Ipsum has been the industry's 
                                     standard dummy text ever since the 1500's, when an unkown printer took a galley of type and scrambled it to make 
                                     a type specimen book. it has survived not only five centuries, but also the leap into electronic typesetting, 
                                     remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
                                     Lorem Ipsum passages, and more recentyl with desktop publishing software like Aldus.</p1>
-                                <br></br>
-                                <br></br>
+                                <br/>
+                                <br/>
                                 <img src={dentistImage2} alt="dentistImage2"/>
+                                <br/>
+                                <br/>
                                 <p1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique, lorem in accusmsan molestie, tellus 
                                     quam lobortis arcu, in lacinia metus magna vitae nunc. Quisque scelerisqu turpis dolor, id auctor nulla condimentum 
                                     id. Maecenas luctus cursus tortor, in vetibulum nisl congue sit amet. Orci varius natoque penatibus et magnis dis 
@@ -100,9 +106,11 @@ export default class ResourceDetails extends Component {
                             <SocialIcons className="social-margin-update"/>
                     </div>
                 </div>
+                <br/>
+                <br/>
             
                 <SectionTriangleRight variant="light-blue" />
-            
+                
                         
                     
             </main>

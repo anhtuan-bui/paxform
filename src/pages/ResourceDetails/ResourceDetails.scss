@@ -34,11 +34,16 @@
     font-size: 14px; 
     border: none;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
 
     cursor: pointer; 
     @include minMedium {
        /*  visibility:hidden; */
        display: none;
+    }
+    img {
+        align-self: center;
     }
 }
 .dropdown-table {
@@ -73,10 +78,16 @@
         border-radius: 20px;
     }
 }
+.button {
+    //display:flex;
+}
 .dropdown {
     position: relative; 
     display: inline-block;
     width: 100%;
+    @include minMedium {
+        display: none;
+    }
 }
 .dropdown-content  {
     display: none; 
@@ -93,16 +104,20 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    width: 100;
 }
 .dropdown-content a:hover {
     background-color: #f1f1f1;
     color: #0A61B4;
+    width: 100%;
 }
 .dropdown:hover .dropdown-content {
     display:block;
+    width: 100%;
 }
 .list-item {
     display: flex; 
+    width: 100%;
     &:hover {
         .blue-bar {
             background-color: #0A61B4;
