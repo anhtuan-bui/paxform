@@ -1,5 +1,8 @@
 @import "../../styles/styles.scss";
 
+.container {
+    display: flex; 
+}
 .wrapper {
 
     @include minMedium {
@@ -15,29 +18,40 @@
     margin-top: 1rem;
 
     @include minMedium {
+        display: flex;
+        flex-direction: column;
         grid-column: 1;
         padding: 0;
+        grid-row: 1 / 6;
+        //grid-row-start: 1;
+        margin-top: 8rem;
+        //position: sticky; 
+        //top: 0;
     }
     
     &-caseStudy {
         font-size: 14px;
         letter-spacing: 0.14em;
         color: #7D8893;
+        padding: 0 1rem; 
     }
 } 
 // DROPDOWN MENU CODE ˇˇ 
 .dropbtn {
     background-color: #F6F6F6;
-    color: #0A61B4;
+    color: black;
     width:100%;
     padding: 16px; 
-    font-size: 14px; 
+    font-size: rem(14); 
     border: none;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 
     cursor: pointer; 
+    //color: #0A61B4;
+
     @include minMedium {
        /*  visibility:hidden; */
        display: none;
@@ -45,13 +59,86 @@
     img {
         align-self: center;
     }
+    .blue-bar {
+        //position: absolute; 
+        //height: 20px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        z-index: 11000;
+        transform: translateY(-50%);
+    } 
+    &:hover {
+        color: #0a61b4;
+         .blue-bar {
+            //position: absolute;
+            background-color: #0A61B4;
+        } 
+        
+        
+    }
+    .button_div {
+        //display: flex;
+        //&:hover { 
+        
+            /* .blue-bar {
+                
+                position: absolute;
+                left: 0;
+                top: 50%;
+                z-index: 11000;
+                transform: translateY(-50%);
+                //color: pink;
+                //display: flex;
+                //color:#0A61B4;
+                
+            } */
+    //}
+        /* display: flex;
+        align-items: center;
+        &:hover {
+            /* .dropdown {
+                .blue-bar {
+                    background-color: #0A61B4;
+                }
+            } 
+             .blue-bar {
+                background-color: #0A61B4;
+            } 
+        }*/
+    }
+}
+
+/* .main_img {
+    padding: 2rem 0;
+} */
+.table-wrapper {
+    padding: 0 1rem; 
+    //display: flex; 
+    //grid-row: 1 / 6;
+    //position: sticky; 
+    //top: 0;
+    //position: absolute; 
+    height: 100%;
+    display: flex; 
+    @include minMedium {
+        //display: flex; 
+        //grid-row: 1 / 6;
+        //position: sticky; 
+        //top: 0;
+        //grid-row: 2 / 6;
+    }
 }
 .dropdown-table {
     display: none;
+    //padding: 0 1rem;
     @include minMedium {
+        position: sticky;
+        top: 0rem;
         display: inline-block;
         //max-width: rem(250);
         width: 100%;
+        height: 11%;
         break-inside: avoid-column;
         ul {
             padding: 0 1rem;
@@ -63,8 +150,8 @@
             li {
                 //display: flex;
                 cursor: pointer;
-                font-family: "Gotham Rounded";
-                font-style: "normal";
+                //font-family: "Gotham Rounded";
+                //font-style: "normal";
                 font-weight: 350px;
                 font-size: 16px;
                 //width: 100%;
@@ -78,9 +165,12 @@
         border-radius: 20px;
     }
 }
-.button {
+/* .button {
     //display:flex;
-}
+} */
+
+
+
 .dropdown {
     position: relative; 
     display: inline-block;
@@ -92,12 +182,14 @@
 .dropdown-content  {
     display: none; 
     position: abosolute;
-    background-color: #F6F6F6;
-    min-width: 160px;
+     background-color: #F6F6F6; 
+    //background-color: pink;
+
+    //min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    font-size: 14px;
-    width: 100%;
+    font-size: rem(14);
+    //width: 100%;
 }
 .dropdown-content a {
     color: black; 
@@ -117,8 +209,13 @@
 }
 .list-item {
     display: flex; 
-    width: 100%;
+    //width: 100%;
+    a {
+        width: 100%;
+    }
     &:hover {
+    //color: #0A61B4;
+    background-color: #f1f1f1;
         .blue-bar {
             background-color: #0A61B4;
         }
@@ -129,12 +226,13 @@
     //margin-left: 22px;
     padding-left: 10px;
     align-self: center;
-    //color:pink;
+   // color:pink;
 }
 .blue-bar {
     width: 2px; 
     height: 40px; 
     background-color: #F6F6F6;
+    //position: absolute;
 }
 // DROPDOWN MENU CODE ^^
 
@@ -143,10 +241,11 @@
     @include minMedium {
         grid-column: 2;
         //grid-row-start: 1;
+        grid-row: 1 / 6;
     }
     padding: 0 1rem;
     &-date {
-        font-size: 14px; 
+        font-size: rem(14); 
         color: #0A61B4;
         line-height: 18px; 
         letter-spacing: 0.14em;
@@ -159,7 +258,12 @@
     img {
         border-radius: 20px;
         width: 100%;
+        margin: 2rem 0;
+        //padding: 2rem 0;
     } 
+    &-title {
+        font-size: rem(42);
+    }
 }
 .black-bar {
     margin: 1rem;

@@ -214,5 +214,13 @@
                 }
             }
         }
+        &-languages {
+            display: flex; 
+            align-items: center;
+            //flex-direction: row;
+            /* img {
+                align-self: center;
+            } */
+        }
     }
 }

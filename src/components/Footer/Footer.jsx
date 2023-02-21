@@ -257,9 +257,11 @@ export default class Footer extends Component {
                                     </a>
                                 </li>
                             </ul>
-                            <img src={flag} alt="American Flag"/>
-                            <p>US English</p>
-                            <img src={arrowDown} alt="Arrow down"/>
+                            <div className="footer__bottom-languages">
+                                <img src={flag} alt="American Flag"/>
+                                <p>US English</p>
+                                <img src={arrowDown} alt="Arrow down"/>
+                            </div>
                         </div>
                     </div>
 
