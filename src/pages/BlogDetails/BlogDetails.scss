@@ -208,7 +208,7 @@
         margin: 300px 0 0 0;    
 
     }
-
+    
     @include minLarge {
 
         margin: 240px 0 0 0;
@@ -245,6 +245,12 @@
         margin-top: 24px;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         column-gap: 12px;
+
+        @include minMedium {
+
+            grid-template-columns: 1fr;
+
+        }
 
     }
 
