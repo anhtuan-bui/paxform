@@ -10,7 +10,7 @@ For collaborators, install
 To install the project:
 
 1. Create a new folder named e.g: "paxfolio"
-2. Open Git Bash at the folder "paxfolio" - right click on the folder, look for Open Git Bash... Or `New Terminal at Folder` on MacOS
+2. Open Git Bash at the folder "paxfolio" - right click on the folder, look for `Open Git Bash` on Windows... Or `New Terminal at Folder` on MacOS
 3. Type command `git init` to initiate git folder
 4. Type command `git remote add origin https://github.com/anhtuan-bui/paxfolio.git` to set name for the repository
 5. Type command `git pull origin master` to pull files in the repository to your folder at "paxforlio"
