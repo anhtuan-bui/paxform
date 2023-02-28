@@ -10,6 +10,7 @@ import Testimonial from "../../components/Testimonial/Testimonial";
 import GetStarted from "../../components/GetStarted/GetStarted";
 import PlanPricing from "../../components/PlanPricing/PlanPricing";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
+import Accordion from "../../components/Accordion/Accordion";
 
 const features = [
   {
@@ -87,40 +88,12 @@ export default class Business extends Component {
   constructor(props) {
     super(props);
     this.state = { features: features };
-
-    this.handleAccorionTitleClick = this.handleAccorionTitleClick.bind(this);
   }
 
   componentDidMount() {
-    const panel = document.querySelector(".features__accordion-item-panel");
+    const panel = document.querySelector(".accordion__item-panel");
     panel.style.maxHeight = panel.scrollHeight + "px";
   }
-
-  handleAccorionTitleClick = (e, index) => {
-    const panel = e.target.nextElementSibling;
-
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-
-    document.querySelectorAll(".features__accordion-item").forEach((item) => {
-      if (item !== e.target.parentElement) {
-        item.lastChild.style.maxHeight = null;
-      }
-    });
-
-    features.forEach((feature, i) => {
-      if (index === i) {
-        feature.isOpened = true;
-      } else {
-        feature.isOpened = false;
-      }
-    });
-
-    this.setState({ features: features });
-  };
 
   render() {
     return (
@@ -188,28 +161,7 @@ export default class Business extends Component {
                 <h1 className="features__title">
                   Features For Your Organisation
                 </h1>
-                {features.map((feature, index) => (
-                  <div className="features__accordion-item" key={index}>
-                    <h2
-                      className={`features__accordion-item-title ${
-                        feature.isOpened
-                          ? "features__accordion-item-title--active-blue"
-                          : ""
-                      }`}
-                      onClick={(e) => this.handleAccorionTitleClick(e, index)}
-                    >
-                      {feature.title}
-                    </h2>
-                    <div className={`features__accordion-item-panel`}>
-                      <div
-                        className="features__accordion-item-description"
-                        key={`description-${index}`}
-                      >
-                        <p>{feature.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                <Accordion list={features} />
               </div>
             </div>
           </div>
@@ -236,8 +188,7 @@ export default class Business extends Component {
               </div>
             </div>
 
-            <PlanPricing plans={plans}/>
-
+            <PlanPricing plans={plans} />
           </div>
         </section>
         <section className="testimonial">
@@ -245,7 +196,7 @@ export default class Business extends Component {
           <div className="bottom_triangle bottom_triangle--dark-blue"></div>
         </section>
 
-        <LatestBlogs triangleColor={"footer"}/>
+        <LatestBlogs triangleColor={"footer"} />
 
         <GetStarted />
       </main>

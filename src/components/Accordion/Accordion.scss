@@ -1,0 +1,70 @@
+@import "../../styles/styles.scss";
+
+.accordion {
+  padding: 0 $padding__collumn;
+  &__item {
+    &--white {
+      color: white;
+      opacity: 0.8;
+    }
+    &-title {
+      font-size: rem(20);
+      line-height: rem(26);
+      margin: rem(14) 0;
+      cursor: pointer;
+
+      &--active-blue {
+        color: $color__primary;
+      }
+
+      &--active-green {
+        color: $color__success;
+      }
+      &--active-white {
+        color: white;
+        opacity: 1;
+      }
+    }
+    &-panel {
+      max-height: 0;
+      overflow-y: hidden;
+      transition: 0.25s ease-in-out;
+    }
+    &-description {
+      line-height: rem(25);
+      letter-spacing: 0.005rem;
+      opacity: 0.7;
+
+      &--white {
+        opacity: 0.7;
+      }
+
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__progress {
+    height: 2px;
+    width: 100%;
+    background-color: $color__progress-background;
+
+    &-bar {
+      height: 100%;
+      width: 0px;
+
+      &--blue {
+        background-color: $color__primary;
+      }
+
+      &--green {
+        background-color: $color__success;
+      }
+
+      &--dark-green {
+        background-color: $color__dark-green;
+      }
+    }
+  }
+}

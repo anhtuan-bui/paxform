@@ -14,6 +14,7 @@ import Testimonial from "../../components/Testimonial/Testimonial";
 import GetStarted from "../../components/GetStarted/GetStarted";
 import PlanPricing from "../../components/PlanPricing/PlanPricing";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
+import Accordion from "../../components/Accordion/Accordion";
 
 const features = [
   {
@@ -94,25 +95,9 @@ export default class Personal extends Component {
   }
 
   componentDidMount() {
-    const panel = document.querySelector(".features__accordion-item-panel");
+    const panel = document.querySelector(".accordion__item-panel");
     panel.style.maxHeight = panel.scrollHeight + "px";
   }
-
-  handleAccorionTitleClick = (e) => {
-    const panel = e.target.nextElementSibling;
-
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-
-    document.querySelectorAll(".features__accordion-item").forEach((item) => {
-      if (item !== e.target.parentElement) {
-        item.lastChild.style.maxHeight = null;
-      }
-    });
-  };
 
   render() {
     return (
@@ -182,24 +167,12 @@ export default class Personal extends Component {
                 <h1 className="features__title">
                   Features For Your Organisation
                 </h1>
-                {features.map((feature, index) => (
-                  <div className="features__accordion-item" key={index}>
-                    <h2
-                      className="features__accordion-item-title"
-                      onClick={(e) => this.handleAccorionTitleClick(e)}
-                    >
-                      {feature.title}
-                    </h2>
-                    <div className={`features__accordion-item-panel`}>
-                      <div
-                        className="features__accordion-item-description"
-                        key={`description-${index}`}
-                      >
-                        <p>{feature.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                <Accordion
+                  list={features}
+                  fontColor="white"
+                  progressBarColor="dark-green"
+                  titleHighlight="white"
+                />
               </div>
             </div>
           </div>
@@ -226,7 +199,7 @@ export default class Personal extends Component {
               </div>
             </div>
 
-            <PlanPricing plans={plans}/>
+            <PlanPricing plans={plans} />
           </div>
         </section>
         <section className="testimonial">
@@ -234,7 +207,7 @@ export default class Personal extends Component {
           <div className="bottom_triangle bottom_triangle--dark-blue"></div>
         </section>
 
-        <LatestBlogs triangleColor={"footer"}/>
+        <LatestBlogs triangleColor={"footer"} />
 
         <GetStarted />
       </main>
