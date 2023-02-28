@@ -31,7 +31,7 @@ $color_dark-blue: #031a30;
 			padding-top: rem(150);
 		}
 		&__top {
-			padding: 0 $padding__collumn;
+			padding: 0 $padding__column;
 			text-align: center;
 			color: $color_white;
 			&-name {
@@ -152,7 +152,7 @@ $color_dark-blue: #031a30;
 				flex: calc(100% / 3);
 				position: relative;
 				height: rem(680);
-				padding: rem(40) $padding__collumn;
+				padding: rem(40) $padding__column;
 				margin: 0 1rem;
 				border-radius: rem(20);
 				text-align: center;
@@ -618,7 +618,7 @@ $color_dark-blue: #031a30;
 				}
 				&-title {
 					height: rem(100);
-					padding: rem(32) $padding__collumn;
+					padding: rem(32) $padding__column;
 					font-family: GothamRoundedBold, sans-serif;
 					font-size: rem(28);
 					text-align: center;
@@ -647,7 +647,7 @@ $color_dark-blue: #031a30;
 					}
 				}
 				&-text {
-					padding: rem(12) $padding__collumn;
+					padding: rem(12) $padding__column;
 					margin-left: 0;
 					font-size: rem(16);
 					text-align: center;
@@ -657,7 +657,7 @@ $color_dark-blue: #031a30;
 					}
 				}
 				&.features {
-					margin: 0 $padding__collumn;
+					margin: 0 $padding__column;
 					border: none;
 					background: #f6f6f6;
 					.compare__plans__list-title {
@@ -676,7 +676,7 @@ $color_dark-blue: #031a30;
 				}
 			}
 			.swiper {
-				padding: 0 $padding__collumn;
+				padding: 0 $padding__column;
 				&-slide {
 					@include large {
 						min-width: rem(200);
@@ -710,7 +710,7 @@ $color_dark-blue: #031a30;
 			vertical-align: middle;
 			& tr th,
 			& tr td {
-				padding: rem(10) $padding__collumn;
+				padding: rem(10) $padding__column;
 			}
 			& thead tr th {
 				font-size: rem(16);
@@ -730,7 +730,7 @@ $color_dark-blue: #031a30;
 					background: #f2f4f5;
 				}
 				& > th {
-					padding: rem(30) $padding__collumn;
+					padding: rem(30) $padding__column;
 					font-size: rem(18);
 					text-align: left;
 				}

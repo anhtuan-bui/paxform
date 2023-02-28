@@ -85,16 +85,7 @@ const plans = [
 ];
 
 export default class Business extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { features: features };
-  }
-
-  componentDidMount() {
-    const panel = document.querySelector(".accordion__item-panel");
-    panel.style.maxHeight = panel.scrollHeight + "px";
-  }
-
+ 
   render() {
     return (
       <main className="business">

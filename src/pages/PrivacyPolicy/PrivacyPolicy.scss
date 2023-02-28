@@ -75,7 +75,7 @@ $color_green: $color__success;
         }
         &__nav {
             flex: 25%;
-            padding: $padding__collumn;
+            padding: $padding__column;
             box-sizing: border-box;
             &__list {
                 margin-bottom: rem(52);
@@ -191,7 +191,7 @@ $color_green: $color__success;
         }
         &__gp {
             flex: 75%;
-            padding: $padding__collumn;
+            padding: $padding__column;
             box-sizing: border-box;
             &-title {
                 padding-bottom: rem(24);

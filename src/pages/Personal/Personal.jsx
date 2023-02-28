@@ -89,16 +89,7 @@ const plans = [
 ];
 
 export default class Personal extends Component {
-  constructor(props) {
-    super(props);
-    this.state = this.position;
-  }
-
-  componentDidMount() {
-    const panel = document.querySelector(".accordion__item-panel");
-    panel.style.maxHeight = panel.scrollHeight + "px";
-  }
-
+  
   render() {
     return (
       <main className="personal">

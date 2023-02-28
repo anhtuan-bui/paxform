@@ -10,16 +10,28 @@ const Accordion = (props) => {
   const handleAccordionTitleClick = (e, index) => {
     progressTime = 0;
 
-    e.target.classList.add(`accordion__item-title--active-${props.titleHighlight ? props.titleHighlight : 'blue'}`);
+    e.target.classList.add(
+      `accordion__item-title--active-${
+        props.titleHighlight ? props.titleHighlight : "blue"
+      }`
+    );
 
     const panel = e.target.nextElementSibling;
 
     document.querySelectorAll(".accordion__item-title").forEach((element) => {
       if (
-        element.classList.contains(`accordion__item-title--active-${props.titleHighlight ? props.titleHighlight : 'blue'}`) &&
+        element.classList.contains(
+          `accordion__item-title--active-${
+            props.titleHighlight ? props.titleHighlight : "blue"
+          }`
+        ) &&
         element !== e.target
       ) {
-        element.classList.remove(`accordion__item-title--active-${props.titleHighlight ? props.titleHighlight : 'blue'}`);
+        element.classList.remove(
+          `accordion__item-title--active-${
+            props.titleHighlight ? props.titleHighlight : "blue"
+          }`
+        );
       }
     });
 
@@ -47,7 +59,8 @@ const Accordion = (props) => {
   };
 
   const handleAccordionAutomation = async () => {
-    const speed = 2000;
+    let length = props.length ? props.length : 4000;
+    const speed = length / 4;
     let index = 0;
     const accordionProgresses = document.querySelectorAll(
       ".accordion__progress-bar"
@@ -61,7 +74,7 @@ const Accordion = (props) => {
       featureList.forEach((feature, i) => {
         if (feature.isOpened === true) {
           index = i;
-          accordionProgresses[i].style.width =
+          accordionProgresses[index].style.width =
             (progressTime / speed) * 100 + "%";
         }
       });
@@ -98,6 +111,9 @@ const Accordion = (props) => {
   };
 
   useEffect(() => {
+    const firstPanel = document.querySelector(".accordion__item-panel");
+    firstPanel.style.maxHeight = firstPanel.scrollHeight + "px";
+
     handleAccordionAutomation();
     return () => {
       clearInterval(progressInterval);

@@ -76,7 +76,7 @@ $header__font-size: $font_size__mobile;
         }
     }
     .logo {
-        padding: 0 $padding__collumn;
+        padding: 0 $padding__column;
     }
     &__container {
         display: flex;
@@ -84,7 +84,7 @@ $header__font-size: $font_size__mobile;
         align-items: center;
     }
     &_right {
-        padding: 0 $padding__collumn;
+        padding: 0 $padding__column;
         display: flex;
         align-items: center;
         gap: rem(33);
@@ -284,7 +284,7 @@ $header__font-size: $font_size__mobile;
     position: relative;
     padding: rem(10);
     box-sizing: border-box;
-    margin-right: $padding__collumn;
+    margin-right: $padding__column;
     svg {
         path {
             fill: white;

@@ -111,7 +111,7 @@
             justify-content: space-between;
             margin-bottom: rem(64);
 
-            padding: 0 $padding__collumn;
+            padding: 0 $padding__column;
 
            // @include larger {
            //     grid-column: 1 / span 3;
@@ -136,7 +136,7 @@
 
             &-list {
                 max-width: rem(250);
-                padding: 0 $padding__collumn;
+                padding: 0 $padding__column;
                 break-inside: avoid-column;
 
                 h1 {
@@ -191,7 +191,7 @@
         p,
         ul {
             margin-bottom: 0;
-            padding: 0 $padding__collumn;
+            padding: 0 $padding__column;
         }
 
         ul {

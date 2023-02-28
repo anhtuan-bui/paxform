@@ -44,7 +44,7 @@ $color_purple: #2d4bb6;
         &__content {
             color: $color_black;
             flex: 1 1 50%;
-            padding: 0 $padding__collumn;
+            padding: 0 $padding__column;
             box-sizing: border-box;
             h1,
             p {
@@ -105,7 +105,7 @@ $color_purple: #2d4bb6;
             &-name {
                 position: absolute;
                 top: 0;
-                left: $padding__collumn;
+                left: $padding__column;
                 font-size: rem(14);
                 font-weight: 600;
                 color: $color_purple;
@@ -114,13 +114,13 @@ $color_purple: #2d4bb6;
             }
             &-title {
                 flex: 50%;
-                padding: 0 $padding__collumn;
+                padding: 0 $padding__column;
                 margin-top: rem(42);
                 font-size: rem(38);
             }
             &-desc {
                 flex: 50%;
-                padding: 0 $padding__collumn;
+                padding: 0 $padding__column;
                 margin-top: rem(42);
                 font-size: rem(16);
                 line-height: rem(25);
@@ -152,7 +152,7 @@ $color_purple: #2d4bb6;
             &__box {
                 display: inline-grid;
                 margin-bottom: rem(60);
-                padding: 0 $padding__collumn;
+                padding: 0 $padding__column;
                 align-items: center;
                 &-title {
                     font-size: rem(20);
@@ -249,7 +249,7 @@ $color_purple: #2d4bb6;
                 grid-template-columns: repeat(1, 1fr);
             }
             &__box {
-                padding: 0 $padding__collumn;
+                padding: 0 $padding__column;
                 @include medium {
                     &:nth-child(1) {
                         order: 1;
