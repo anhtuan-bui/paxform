@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "./Pricing.scss";
 import ReadyGet from "../../components/ReadyGet/ReadyGet";
-import FrequentlyAsk from "../../components/FrequentlyAsk/FrequentlyAsk";
+import FrequentlyAskAccordion from "../../components/FrequentlyAskAccordion/FrequentlyAskAccordion";
 import Button from "../../components/Button/Button";
 
 import { ReactComponent as Tick } from "../../assets/images/icon-tick.svg";
@@ -463,7 +463,7 @@ export default class Pricing extends Component {
 							</div>
 						</div>
 					</div>
-					<div className="bottom_triangle"></div>
+					<div className="bottom_triangle bottom_triangle--grey-blue"></div>
 				</section>
 				<section className="mobile_compare">
 					<div className="container">
@@ -553,7 +553,7 @@ export default class Pricing extends Component {
 					</div>
 					<div className="bottom_triangle"></div>
 				</section>
-				<FrequentlyAsk />
+				<FrequentlyAskAccordion />
 				<ReadyGet />
 			</main>
 		);

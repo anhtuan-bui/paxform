@@ -11,7 +11,7 @@
   }
 
   &__content {
-    padding: 0 $padding__collumn;
+    padding: 0 $padding__column;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -41,7 +41,7 @@
   }
 
   &__image {
-    padding: 0 $padding__collumn;
+    padding: 0 $padding__column;
     display: flex;
     justify-content: flex-end;
     max-height: rem(400);

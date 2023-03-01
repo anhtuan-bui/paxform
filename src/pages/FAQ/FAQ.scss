@@ -91,7 +91,7 @@ $color_blue: $color__primary;
         }
         &__nav {
             flex: 25%;
-            padding: $padding__collumn;
+            padding: $padding__column;
             box-sizing: border-box;
             &__list {
                 margin-bottom: rem(52);
@@ -207,7 +207,7 @@ $color_blue: $color__primary;
         }
         &__faq {
             flex: 75%;
-            padding: $padding__collumn;
+            padding: $padding__column;
             box-sizing: border-box;
             &-title {
                 padding-bottom: rem(24);

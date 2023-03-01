@@ -92,7 +92,7 @@ $color_grey: #2f4356;
         }
         &__box {
             display: inline-grid;
-            padding: $padding__collumn;
+            padding: $padding__column;
             &:nth-child(1) {
                 order: 2;
             }
