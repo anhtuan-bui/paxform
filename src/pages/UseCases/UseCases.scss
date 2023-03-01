@@ -1,332 +1,131 @@
 @import "../../styles/styles.scss";
-$color_white: #fff;
-$color_black: #031a30;
-$color_grey: #2f4356;
-$color_green: $color__success;
-$color_light-green: hsl(158, 73%, 97%);
-$color_light-blue: #e1edf9;
-$color_purple: #2d4bb6;
-.usecases {
-    .hero {
-        position: relative;
-        background: $color_white;
-        @include medium {
-            padding-bottom: rem(50);
-        }
-        @include small {
-            padding-bottom: 0;
-        }
-        &__wrapper {
-            display: flex;
-            position: relative;
-            align-items: center;
-            min-height: rem(500);
-            padding-top: rem(85);
-            gap: $row__gap--larger;
-            box-sizing: border-box;
-            @include medium {
-                flex-direction: column;
-                gap: 0;
-                padding: 0;
-            }
-        }
-        &__name {
-            margin: rem(20) 0;
-            letter-spacing: rem(2);
-            font-weight: 600;
-            font-size: rem(14);
-            color: $color_purple;
-            text-transform: uppercase;
-            @include medium {
-                margin-top: rem(150);
-            }
-        }
-        &__content {
-            color: $color_black;
-            flex: 1 1 50%;
-            padding: 0 $padding__column;
-            box-sizing: border-box;
-            h1,
-            p {
-                max-width: 100%;
-            }
-        }
-        &__title {
-            font-size: rem(42);
-            margin-bottom: rem(24);
-            margin-top: 0;
-            @include extraLarge {
-                font-size: rem(38);
-            }
-            @include large {
-                font-size: rem(34);
-            }
-            @include medium {
-                font-size: rem(42);
-            }
-            @include small {
-                font-size: rem(36);
-            }
-            @include extraSmall {
-                font-size: rem(28);
-            }
-        }
-        &__description {
-            margin-bottom: rem(50);
-        }
-        &__image {
-            display: inline-flex;
-            position: relative;
-            flex: 1 1 50%;
-            align-self: start;
-            width: 100%;
-            height: rem(590);
-            & img {
-                position: absolute;
-                left: rem(-50);
-                z-index: 800;
-                @include medium {
-                    position: relative;
-                    left: 5%;
-                    width: 95%;
-                }
-            }
-        }
+
+$color__section-name: #2d4bb6;
+
+.use_cases {
+  .hero {
+    background-color: #f2fdf9;
+    position: relative;
+    padding-top: rem(150);
+    &__wrapper {
+      display: flex;
+
+      @include medium {
+        display: block;
+      }
     }
-    .case {
-        position: relative;
-        padding-bottom: rem(140);
-        background: $color_white;
-        z-index: 1000;
-        &__head {
-            display: flex;
-            position: relative;
-            margin-bottom: rem(60);
-            &-name {
-                position: absolute;
-                top: 0;
-                left: $padding__column;
-                font-size: rem(14);
-                font-weight: 600;
-                color: $color_purple;
-                text-transform: uppercase;
-                letter-spacing: 0.14em;
-            }
-            &-title {
-                flex: 50%;
-                padding: 0 $padding__column;
-                margin-top: rem(42);
-                font-size: rem(38);
-            }
-            &-desc {
-                flex: 50%;
-                padding: 0 $padding__column;
-                margin-top: rem(42);
-                font-size: rem(16);
-                line-height: rem(25);
-                color: $color_grey;
-            }
-            @include medium {
-                display: block;
-                column-gap: 0;
-                padding-top: rem(60);
-                margin-bottom: 0;
-                &-name {
-                    position: relative;
-                    margin-bottom: rem(40);
-                }
-                &-title {
-                    flex: 100%;
-                    font-size: rem(24);
-                    margin-top: rem(16);
-                }
-                &-desc {
-                    flex: 100%;
-                    margin: 0;
-                }
-            }
-        }
-        &__body {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            &__box {
-                display: inline-grid;
-                margin-bottom: rem(60);
-                padding: 0 $padding__column;
-                align-items: center;
-                &-title {
-                    font-size: rem(20);
-                    line-height: rem(26);
-                }
-                &__desc {
-                    font-size: rem(16);
-                    line-height: rem(25);
-                    color: $color_grey;
-                }
-                &__list {
-                    margin-top: rem(40);
-                    font-size: rem(16);
-                    padding-left: 0;
-                    list-style: none;
-                    &>li {
-                        padding: rem(7) 0 rem(7) rem(50);
-                        background: url("../../assets/images/icon-usecases-list.svg") left rem(15) center no-repeat;
-                    }
-                }
-                &>img {
-                    display: inline-block;
-                    width: 100%;
-                }
-            }
-            @include medium {
-                grid-template-columns: repeat(1, 1fr);
-                &__box {
-                    margin: rem(30) auto 0;
-                    &:nth-child(1) {
-                        order: 1;
-                    }
-                    &:nth-child(2) {
-                        order: 2;
-                    }
-                    &:nth-child(3) {
-                        order: 3;
-                    }
-                    &:nth-child(4) {
-                        order: 5;
-                    }
-                    &:nth-child(5) {
-                        order: 4;
-                    }
-                    &:nth-child(6) {
-                        order: 6;
-                    }
-                    &-title {
-                        margin-top: 0;
-                    }
-                    &__list {
-                        margin-top: rem(24);
-                    }
-                    &>img {
-                        display: block;
-                        width: 80%;
-                        margin: 0 auto;
-                    }
-                }
-            }
-            @include small {
-                &__box {
-                    &>img {
-                        width: 100%;
-                    }
-                }
-            }
-        }
+
+    &__image,
+    &__content {
+      flex: 1 1 50%;
+      padding: 0 $padding__column;
     }
-    .article {
-        position: relative;
-        padding: rem(100) 0;
-        background-color: $color_white;
-        z-index: 1000;
-        @include medium {
-            padding-top: rem(40);
-        }
-        &>.bottom_triangle {
-            top: rem(-140);
-            @include large {
-                top: rem(-111);
-            }
-            @include medium {
-                top: rem(-94);
-            }
-            @include small {
-                top: rem(-68);
-            }
-        }
-        &__body {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            @include medium {
-                grid-template-columns: repeat(1, 1fr);
-            }
-            &__box {
-                padding: 0 $padding__column;
-                @include medium {
-                    &:nth-child(1) {
-                        order: 1;
-                    }
-                    &:nth-child(2) {
-                        order: 2;
-                    }
-                    &:nth-child(3) {
-                        order: 4;
-                    }
-                    &:nth-child(4) {
-                        order: 3;
-                    }
-                }
-                &-title {
-                    padding-bottom: rem(24);
-                    font-size: rem(28);
-                }
-                &__desc {
-                    font-size: rem(16);
-                    line-height: rem(25);
-                    color: $color_grey;
-                }
-                &>img {
-                    display: inline-block;
-                    width: 100%;
-                    @include medium {
-                        width: 80%;
-                        margin: 0 10%;
-                        padding-top: rem(30);
-                    }
-                    @include small {
-                        width: 100%;
-                        margin: 0;
-                    }
-                }
-            }
-        }
+
+    &__content {
+      margin-bottom: rem(40);
+
+      &-name {
+        color: $color__section-name;
+      }
+
+      &-title {
+        margin: rem(24) 0;
+      }
     }
-    &-hospitality {
-        .hero {
-            background: #f2fdf9;
-        }
-    }
-    &-retail {
-        .hero {
-            background: #f8ece4;
-        }
-    }
-    &-medicare {
-        .hero {
-            background: #f9e2e2;
-        }
-    }
-    &-education {
-        .hero {
-            background: #fcfff1;
-        }
-    }
-    .image__background {
+
+    &__image {
+      position: relative;
+      min-height: 100%;
+      width: 100%;
+      height: 556px;
+
+      @include medium {
+        height: fit-content;
+      }
+
+      &-foreground {
         position: absolute;
-        right: 0;
-        bottom: -60px;
-        width: 52%;
-        max-height: 300px;
-        max-width: calc(50vw + 550px);
-        @include extraLarge {
-            width: 55%;
-        }
-        @include larger {
-            bottom: -30px;
-        }
+        left: 0;
+        top: 0;
+        z-index: 1200;
+
         @include medium {
-            width: 95%;
+          width: 110%;
+          position: relative;
         }
-        @include small {
-            bottom: -20px;
+      }
+      &-background {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50vw;
+        max-height: 223px;
+
+        @include medium {
+          width: 100vw;
         }
+      }
     }
+  }
+}
+
+.case_info {
+  position: relative;
+  padding-top: rem(80);
+  padding-bottom: rem(160);
+  &__summary {
+    display: flex;
+    align-items: center;
+
+    @include medium {
+      display: block;
+    }
+  }
+
+  &__name {
+    padding: 0 $padding__column;
+    color: $color__section-name;
+  }
+
+  &__title,
+  &__description {
+    flex: 1 1 50%;
+    padding: 0 $padding__column;
+  }
+
+  &__content {
+    padding: 0 $padding__column;
+    column-count: 2;
+    gap: $padding__column--x2;
+    column-fill: balance;
+
+    @include medium {
+      column-count: 1;
+    }
+
+    img {
+      width: 100%;
+
+      @include medium {
+        width: 80%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @include small {
+        width: 100%;
+      }
+    }
+
+    li {
+      list-style-image: url("../../assets/images/UseCases/green\ tick.svg");
+      padding-left: 1px;
+      line-height: 1.8;
+    }
+  }
+}
+
+.flex_cards {
+  padding: rem(60) 0;
 }

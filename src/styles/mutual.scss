@@ -30,7 +30,7 @@
     width: 0px;
     z-index: 1000;
     @include extraLarge {
-        border-width: rem(60) 720px;
+        border-width: rem(70) 720px;
     }
 
     &--dark-blue {
@@ -115,8 +115,9 @@
     font-size: rem(38);
     font-weight: 700;
     line-height: rem(48);
-    margin-top: rem(24);
-    margin-bottom: rem(60);
+    @include extraLarge {
+        font-size: rem(36);
+    }
     @include large {
         font-size: rem(34);
     }
@@ -129,4 +130,10 @@
     @include extraSmall {
         font-size: rem(28);
     }
+}
+
+.section__description {
+    line-height: rem(25);
+    letter-spacing: 0.005;
+    font-weight: 400;
 }

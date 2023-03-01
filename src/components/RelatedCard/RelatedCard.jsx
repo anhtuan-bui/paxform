@@ -7,7 +7,7 @@ const RelatedCard = (props) => {
       <div className="related_card">
         <div className="related_card__top">
           {props.image ? (
-            <div className={`${props.className} related_card__image`}>
+            <div className={`${props.className ? props.className : ''} related_card__image`}>
               <img src={props.image} alt="first story" />
             </div>
           ) : (

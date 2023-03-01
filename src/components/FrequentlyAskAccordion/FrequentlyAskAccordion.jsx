@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./FrequentlyAskAccordion.scss";
 import { ReactComponent as ArrowDown } from "../../assets/icons/arrowDown.svg";
 const faqs = [
@@ -30,68 +30,67 @@ const faqs = [
   },
 ];
 export default function FrequentlyAsk() {
-  const handleItemClick = (e) => {
+  const handleAccordionItemClick = (e) => {
     const accordionItems = document.querySelectorAll(
       ".frequently_ask__accordion-item"
     );
 
-    const closeItem = (item) => {
+    const closeAccordionItem = (item) => {
       item.lastElementChild.style.maxHeight = null;
       item.querySelector("svg").style.transform = "rotate(360deg)";
       item.lastElementChild.style.marginTop = 0;
     };
 
-    const openItem = (item) => {
+    const openAccordionItem = (item) => {
       item.lastElementChild.style.maxHeight =
         item.lastElementChild.scrollHeight + "px";
       item.lastElementChild.style.marginTop = "0.825rem";
       item.querySelector("svg").style.transform = "rotate(180deg)";
     };
+
     accordionItems.forEach((item) => {
       if (item.contains(e.target)) {
         if (item.lastElementChild.style.maxHeight) {
-          closeItem(item);
+          closeAccordionItem(item);
         } else {
-          openItem(item);
+          openAccordionItem(item);
         }
       } else {
-        closeItem(item);
+        closeAccordionItem(item);
       }
     });
   };
   return (
-    <Fragment>
-      <section className="frequently_ask">
-        <div className="container">
-          <div className="frequently_ask__wrapper">
-            <h1 className="frequently_ask__title section_title">
-              Frequently asked questions
-            </h1>
-            <div className="frequently_ask__accordion">
-              {faqs.map((faq, index) => (
+    <section className="frequently_ask">
+      <div className="container">
+        <div className="frequently_ask__wrapper">
+          <h1 className="frequently_ask__title section_title">
+            Frequently asked questions
+          </h1>
+          <div className="frequently_ask__accordion">
+            {faqs.map((faq, index) => (
+              <div
+                className="frequently_ask__accordion-item"
+                key={`frequently_ask__accordion-item-${index}`}
+              >
                 <div
-                  className="frequently_ask__accordion-item"
-                  key={`frequently_ask__accordion-item-${index}`}
+                  className="frequently_ask__accordion-box"
+                  onClick={(e) => handleAccordionItemClick(e)}
                 >
-                  <div
-                    className="frequently_ask__accordion-box"
-                    onClick={(e) => handleItemClick(e)}
-                  >
-                    <h2 className="frequently_ask__accordion-title">
-                      {faq.title}
-                    </h2>
-                    <ArrowDown className="frequently_ask__accordion-arrow" />
-                  </div>
-                  <p className="frequently_ask__accordion-content">
-                    {faq.content}
-                  </p>
+                  <h2 className="frequently_ask__accordion-title">
+                    {faq.title}
+                  </h2>
+                  <ArrowDown className="frequently_ask__accordion-arrow" />
                 </div>
-              ))}
-            </div>
+                <p className="frequently_ask__accordion-content">
+                  {faq.content}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="bottom_triangle bottom_triangle--white"></div>
-      </section>
-    </Fragment>
+      </div>
+      <div className="bottom_triangle bottom_triangle--white"></div>
+    </section>
   );
 }
