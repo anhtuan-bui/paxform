@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout/Layout";
 // import Personal from "./pages/Personal/Personal";
 import FAQ from "./pages/FAQ/FAQ";
+import FAQV1 from "./pages/FAQV1/FAQV1";
 // import Resources from "./pages/Resources/Resources";
 import NotFound from "./pages/NotFound/NotFound";
 import { lazy, Suspense, useEffect } from "react";
@@ -57,6 +58,7 @@ function App() {
 							<Route path="business" element={<Business />} />
 							<Route path="pricing" element={<Pricing />} />
 							<Route path="faq" element={<FAQ />} />
+							<Route path="faqv1" element={<FAQV1 />} />
 							<Route path="resources" element={<Resources />} />
 							<Route path="blogs" element={<Blogs />} />
 							<Route path="blog-details" element={<BlogDetails />} />
