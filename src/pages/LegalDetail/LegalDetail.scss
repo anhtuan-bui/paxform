@@ -107,7 +107,7 @@ $color_green: $color__success;
                 }
             }
             &__content {
-                padding: rem(70) $padding__collumn 0;
+                padding: rem(70) $padding__column 0;
                 box-sizing: border-box;
                 @include large {
                     padding-top: rem(140);
@@ -138,7 +138,7 @@ $color_green: $color__success;
         .grid_box {
             padding: rem(100) 0 0;
             &-name {
-                padding: 0 $padding__collumn;
+                padding: 0 $padding__column;
                 font-size: rem(14);
                 font-weight: bold;
                 color: $color_purple;
@@ -147,7 +147,7 @@ $color_green: $color__success;
                 text-align: center;
             }
             &-title {
-                padding: 0 $padding__collumn;
+                padding: 0 $padding__column;
                 margin: rem(24) auto rem(32);
                 line-height: rem(29);
                 font-size: rem(38);
@@ -167,7 +167,7 @@ $color_green: $color__success;
                     box-sizing: border-box;
                 }
                 &__content {
-                    padding: $padding__collumn;
+                    padding: $padding__column;
                     list-style: none;
                     &-image {
                         display: block;

@@ -3,31 +3,7 @@ import Button from "../../components/Button/Button";
 import "./NotFound.scss";
 
 export default class NotFound extends Component {
-  componentDidMount() {
-    this.setPageAlignHeight();
-    window.addEventListener("resize", this.setPageAlignHeight);
-  }
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.setPageAlignHeight);
-  }
-
-  setPageAlignHeight = () => {
-    // get page align element height
-    const notFound = document.querySelector(".not_found__container");
-    const pageAlignHeight = notFound.offsetHeight;
-
-    // get window height
-    const windowHeight = window.innerHeight;
-
-    // get header height
-    const header = document.querySelector(".header");
-    const headerHeight = header.offsetHeight;
-
-    if (pageAlignHeight < windowHeight - headerHeight) {
-      notFound.style.minHeight = `${windowHeight - headerHeight}px`;
-    }
-  };
   render() {
     return (
       <main className="not_found">
@@ -49,7 +25,7 @@ export default class NotFound extends Component {
                 text="Go back to home"
                 type="flat-green arrow"
                 color="white"
-                href="/"
+                href='/'
               />
             </div>
           </div>

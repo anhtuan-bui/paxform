@@ -1,118 +1,94 @@
 @import "../../styles/styles.scss";
 .security_policy {
-    background-color: #e1edf9;
-    position: relative;
-    padding-top: rem(80);
-    padding-bottom: rem(120);
-    z-index: 1000;
+  background-color: #e1edf9;
+  position: relative;
+  z-index: 1000;
+  @include medium {
+    flex-direction: column;
+    padding-top: rem(100);
+  }
+  &__content,
+  &__image {
+    flex: 1 1 50%;
+    padding: 0 $padding__column;
+    padding-top: rem(100);
+    padding-bottom: rem(140);
+    box-sizing: border-box;
+
     @include medium {
-        flex-direction: column;
-        padding-bottom: rem(100);
+        padding-top: 0;
+        padding-bottom: 0;
     }
-    @include small {
-        padding-bottom: rem(70);
+  }
+  &__content {
+    box-sizing: border-box;
+    .button {
+      border: 1px solid $color__success;
+      color: $color__success;
+      path {
+        stroke: $color__success;
+      }
     }
-    @include extraSmall {
-        padding-bottom: rem(40);
+  }
+  &__image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &-illustration {
+      position: relative;
+      z-index: 1200;
+      @include medium {
+        width: 50%;
+        margin-top: rem(40);
+        margin-bottom: rem(100);
+      }
     }
-    &__content,
-    &__image {
-        flex: 1 1 50%;
-    }
-    &__image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 900;
-        img {
-            @include medium {
-                width: 60%;
-            }
-        }
-    }
-    &__container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: $row__gap--larger;
-        @include medium {
-            flex-direction: column;
-            padding-bottom: rem(100);
-        }
-        @include small {
-            padding-bottom: rem(70);
-        }
-        @include extraSmall {
-            padding-bottom: rem(40);
-        }
-    }
-    &__name {
-        font-size: rem(14);
-        font-weight: 500;
-        color: #2d4bb6;
-        letter-spacing: 1px;
-        margin-bottom: rem(22);
-    }
-    &__title {
-        font-size: rem(38);
-        font-weight: 700;
-        margin-bottom: rem(24);
-    }
-    &__description {
-        color: #2f4356;
-        margin-bottom: rem(22);
-        line-height: 1.75;
-    }
-    &__content {
-        padding: 0 $padding__collumn;
-        box-sizing: border-box;
-        .button {
-            border: 1px solid $color__success;
-            color: $color__success;
-            path {
-                stroke: $color__success;
-            }
-        }
-    }
-    &__button {
-        margin-top: rem(50);
-    }
-    .image__background {
+
+    &-background {
         position: absolute;
-        right: 0;
-        bottom: -60px;
-        width: calc(50vw + 720px);
-        max-height: 300px;
-        max-width: calc(50vw + 550px);
-        @include extraLarge {
-            width: 85%;
+        left: 0;
+        bottom: 0;
+        max-height: rem(224);
+        width: 50vw;
+        min-width: min-content;
+        z-index: 1000;
+  
+        @include medium{
+          width: 100vw;
         }
-        @include larger {
-            width: 97%;
-            bottom: -30px;
-        }
-        @include small {
-            bottom: -20px;
-        }
-        &-security {
-            position: absolute;
-            left: 50%;
-            bottom: -40px;
-            width: 65%;
-            max-height: 300px;
-            width: 50vw;
-            min-width: min-content;
-            @include medium {
-                left: 2rem;
-                min-height: auto;
-                bottom: -30px;
-                min-width: auto;
-                width: 100%;
-            }
-            @include small {
-                bottom: -20px;
-                left: 1rem;
-            }
-        }
+      }
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include medium {
+      flex-direction: column;
     }
+  }
+  &__name {
+    font-size: rem(14);
+    font-weight: 500;
+    color: #2d4bb6;
+    letter-spacing: 1px;
+    margin-bottom: rem(22);
+  }
+  &__title {
+    font-size: rem(38);
+    font-weight: 700;
+    margin-bottom: rem(24);
+  }
+  &__description {
+    color: #2f4356;
+    margin-bottom: rem(22);
+    line-height: 1.75;
+  }
+  
+  &__button {
+    margin-top: rem(50);
+  }
+  
 }

@@ -46,7 +46,7 @@ $color_bg_hero__gradient--first: $color__primary;
 
     &__content {
       color: white;
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
 
       @include medium {
         margin-top: rem(140);
@@ -153,7 +153,7 @@ $color_bg_hero__gradient--first: $color__primary;
     align-items: center;
 
     &__container {
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
     }
 
     &__image {
@@ -173,7 +173,7 @@ $color_bg_hero__gradient--first: $color__primary;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
 
       @include small {
         flex-direction: column;
@@ -251,7 +251,7 @@ $color_bg_hero__gradient--first: $color__primary;
       }
 
       &-item {
-        padding: 0 $padding__collumn;
+        padding: 0 $padding__column;
         &-image {
           display: flex;
           justify-content: center;
@@ -313,7 +313,7 @@ $color_bg_hero__gradient--first: $color__primary;
       }
 
       &-item {
-        padding: 0 $padding__collumn;
+        padding: 0 $padding__column;
         &-image {
           display: flex;
           justify-content: center;
@@ -420,7 +420,7 @@ $color_bg_hero__gradient--first: $color__primary;
     }
 
     &__content {
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
       box-sizing: border-box;
       
       .button {
@@ -454,7 +454,7 @@ $color_bg_hero__gradient--first: $color__primary;
       font-size: rem(38);
       font-weight: 700;
       margin-bottom: rem(40);
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
     }
 
     &_flexbox {
@@ -483,7 +483,7 @@ $color_bg_hero__gradient--first: $color__primary;
       }
 
       &__content {
-        padding: 0 $padding__collumn;
+        padding: 0 $padding__column;
         &-title {
           font-size: rem(28);
           font-weight: 700;

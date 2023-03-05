@@ -52,7 +52,7 @@
     }
 
     &-left {
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
 
       @include larger {
         grid-column: 1 / span 3;
@@ -73,7 +73,7 @@
 
       &-list {
         max-width: rem(250);
-        padding: 0 $padding__collumn;
+        padding: 0 $padding__column;
 
         h1 {
           font-size: rem(14);
@@ -127,7 +127,7 @@
     p,
     ul {
       margin-bottom: 0;
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
     }
 
     ul {

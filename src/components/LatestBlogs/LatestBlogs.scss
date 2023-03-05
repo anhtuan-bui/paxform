@@ -13,7 +13,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
 
       @include small {
         flex-direction: column;
@@ -78,7 +78,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: $grid__gap;
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
 
       @include medium {
         grid-template-columns: repeat(2, 1fr);

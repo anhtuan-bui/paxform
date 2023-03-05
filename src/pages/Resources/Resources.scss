@@ -59,7 +59,7 @@ $color__hero-background: $color__secondary;
     }
 
     &__content {
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
 
       h1,
       p {
@@ -115,9 +115,9 @@ $color__hero-background: $color__secondary;
 
       &-group {
         position: relative;
-        padding: 0 $padding__collumn;
+        padding: 0 $padding__column;
         column-count: 2;
-        column-gap: $padding__collumn--x2;
+        column-gap: $padding__column--x2;
         box-sizing: border-box;
 
         width: 100%;
@@ -167,7 +167,7 @@ $color__hero-background: $color__secondary;
     padding-bottom: 14.5rem;
 
     &__wrapper {
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
     }
 
     &__top {
@@ -197,7 +197,7 @@ $color__hero-background: $color__secondary;
     &__grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: $padding__collumn--x2;
+      gap: $padding__column--x2;
 
       @include medium {
         grid-template-columns: repeat(2, 1fr);
@@ -237,14 +237,14 @@ $color__hero-background: $color__secondary;
     }
 
     &__wrapper {
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
     }
 
     &__grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       row-gap: rem(54);
-      column-gap: $padding__collumn--x2;
+      column-gap: $padding__column--x2;
 
       @include medium {
         grid-template-columns: repeat(2, 1fr);
@@ -296,7 +296,7 @@ $color__hero-background: $color__secondary;
     }
 
     &__wrapper {
-      padding: 0 $padding__collumn;
+      padding: 0 $padding__column;
     }
 
     

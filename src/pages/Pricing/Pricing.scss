@@ -4,797 +4,791 @@ $color_green: $color__success;
 $color_blue: $color__primary;
 $color_dark-blue: #031a30;
 .pricing {
-	.hero {
-		position: relative;
-		height: rem(808);
-		padding-bottom: rem(140);
-		background: linear-gradient(90.4deg, #059459 0.35%, #034f2f 99.66%);
-		@include large {
-			padding-bottom: rem(300);
-			margin-bottom: rem(0);
-		}
-		&::before {
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-			background-image: url("../../assets/images/pricing-personal-bg.png");
-			background-repeat: no-repeat;
-			background-position: center bottom;
-			background-size: contain;
-			content: "";
-		}
-		&__wrapper {
-			padding-top: rem(150);
-		}
-		&__top {
-			padding: 0 $padding__collumn;
-			text-align: center;
-			color: $color_white;
-			&-name {
-				font-size: rem(14);
-				font-weight: bold;
-				text-transform: uppercase;
-				letter-spacing: 0.14em;
-				opacity: 0.5;
-			}
-			&-title {
-				margin: rem(24) 0 rem(60);
-				font-size: rem(42);
-				@include extraLarge {
-					font-size: rem(38);
-				}
-				@include large {
-					font-size: rem(34);
-				}
-				@include medium {
-					font-size: rem(42);
-				}
-				@include small {
-					font-size: rem(36);
-				}
-				@include extraSmall {
-					font-size: rem(28);
-				}
-			}
-			&__tabs {
-				position: relative;
-				width: rem(278);
-				height: rem(50);
-				margin: 0 auto rem(76);
-				border-radius: rem(25);
-				background: rgba(255, 255, 255, 0.2);
-				align-items: flex-end;
-				&::before {
-					display: inline-block;
-					position: absolute;
-					top: 6%;
-					left: 0;
-					width: rem(137);
-					height: 90%;
-					background: $color_white;
-					border-radius: rem(22);
-					content: "";
-					transition: 0.3s all;
-				}
-				&.personal {
-					&::before {
-						left: 0;
-						content: "Personal";
-					}
-					.hero__top__tabs-personal {
-						color: $color_green;
-					}
-				}
-				&.business {
-					&::before {
-						left: 50%;
-						content: "Business";
-					}
-					.hero__top__tabs-business {
-						color: $color_blue;
-					}
-				}
-				& > a {
-					display: inline-block;
-					position: relative;
-					top: 6%;
-					width: rem(137);
-					height: rem(44);
-					font-size: rem(14);
-					font-weight: 600;
-					line-height: rem(44);
-					color: $color_white;
-					text-align: center;
-					text-decoration: none;
-					text-transform: uppercase;
-					letter-spacing: 0.14em;
-				}
-			}
-		}
-	}
-	.plans {
-		position: relative;
-		min-height: rem(350);
-		@include large {
-			min-height: rem(400);
-		}
-		@include medium {
-			min-height: rem(500);
-		}
-		@include small {
-			min-height: rem(1200);
-		}
-		@include extraSmall {
-			min-height: rem(1400);
-		}
-		.container {
-			position: absolute;
-			top: rem(-500);
-			left: 0;
-			right: 0;
-			@include large {
-				top: rem(-650);
-			}
-		}
-		&__ul {
-			display: flex;
-			column-count: 3;
-			align-items: flex-end;
-			width: 100%;
-			margin: 0;
-			padding-left: 0;
-			list-style: none;
-			&__list {
-				flex: calc(100% / 3);
-				position: relative;
-				height: rem(680);
-				padding: rem(40) $padding__collumn;
-				margin: 0 1rem;
-				border-radius: rem(20);
-				text-align: center;
-				box-sizing: border-box;
-				z-index: 1001;
-				&__inner {
-					width: 90%;
-					margin: 0 auto;
-				}
-				&-text {
-					display: block;
-					margin-bottom: rem(18);
-					font-size: rem(14);
-					font-weight: 600;
-					font-style: normal;
-					color: $color_green;
-					text-transform: uppercase;
-					letter-spacing: 0.14em;
-				}
-				&-icon {
-					display: block;
-					overflow: hidden;
-					width: rem(50);
-					height: rem(50);
-					border-radius: 100%;
-					margin: 0 auto;
-					text-indent: -99999em;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					background-position: center;
-				}
-				&-name {
-					font-size: rem(28);
-				}
-				&-description {
-					margin: rem(14) 0 rem(24);
-					font-size: rem(16);
-					line-height: rem(25);
-					color: #2f4356;
-				}
-				&-cost {
-					display: block;
-					margin-bottom: rem(28);
-					font-family: GothamRoundedBold, sans-serif;
-					font-size: rem(34);
-					> span {
-						font-size: rem(16);
-						font-family: Inter, sans-serif;
-						font-weight: normal;
-						font-style: normal;
-						color: #2f4356;
-					}
-				}
-				.button {
-					width: 100%;
-					height: rem(45);
-				}
-				&-inc {
-					display: block;
-					margin-top: rem(40);
-					font-size: rem(14);
-					font-weight: 600;
-					color: #8594a3;
-					letter-spacing: 0.14em;
-					text-align: left;
-					text-transform: uppercase;
-				}
-				&-benefits {
-					padding-left: 0;
-					text-align: left;
-					& li {
-						list-style: none;
-						margin: rem(18) 0 rem(18) 0;
-						padding-left: rem(30);
-						background-repeat: no-repeat;
-						background-position: left 0 center;
-						font-size: rem(16);
-					}
-				}
-				&.list1 {
-					background: #f6f6f6;
-					.plans__ul__list-icon {
-						background-image: url("../../assets/images/pricing-free-icon.png");
-					}
-					.plans__ul__list li {
-						background-image: url("../../assets/images/icon-pricing-free.svg");
-					}
-				}
-				&.list2 {
-					min-height: rem(720);
-					background: #def6ec;
-					&::before {
-						position: relative;
-						display: block;
-						width: 100%;
-						margin-bottom: rem(22);
-						font-size: rem(14);
-						font-weight: 600;
-						text-align: center;
-						text-transform: uppercase;
-						letter-spacing: 0.14em;
-						color: $color_green;
-						content: "most popular";
-						@include large {
-							display: none;
-						}
-					}
-					.plans__ul__list-icon {
-						background-image: url("../../assets/images/pricing-premium-icon.png");
-					}
-					.plans__ul__list li {
-						background-image: url("../../assets/images/icon-pricing-premium.svg");
-					}
-				}
-				&.list3 {
-					background: #f0f8ff;
-					.plans__ul__list-icon {
-						background-image: url("../../assets/images/pricing-family-icon.png");
-					}
-					.plans__ul__list li {
-						background-image: url("../../assets/images/icon-pricing-family.svg");
-					}
-				}
-			}
-			@include large {
-				flex-wrap: wrap;
-				column-count: 1;
-				&__list {
-					flex: 1 100%;
-					height: auto;
-					padding-bottom: rem(85);
-					margin-top: rem(26);
-					&:first-child {
-						margin-top: 0;
-					}
-					&.list2 {
-						min-height: auto;
-						&::before {
-							display: none;
-						}
-					}
-					&__inner {
-						position: relative;
-						text-align: left;
-					}
-					&-text {
-						display: none;
-					}
-					&-icon {
-						position: absolute;
-						top: 0;
-						left: 0;
-						margin: 0;
-					}
-					&-name {
-						padding: 0 rem(100) 0 rem(70);
-						margin: 0;
-						font-size: rem(18);
-					}
-					&-description {
-						padding: 0 rem(100) 0 rem(70);
-						margin: 0;
-					}
-					&-cost {
-						position: absolute;
-						top: 0;
-						right: 0;
-						margin: 0;
-						font-size: rem(24);
-					}
-					& .button {
-						position: absolute;
-						bottom: rem(-65);
-						left: 0;
-						right: 0;
-					}
-					&-inc {
-						font-size: rem(11);
-					}
-					&-benefits {
-						display: grid;
-						grid-template-columns: repeat(2, 1fr);
-						column-gap: 2rem;
-						width: 100%;
-						margin-top: rem(24);
-						& li {
-							margin: rem(5) 0;
-							font-size: rem(14);
-						}
-					}
-				}
-			}
-			@include small {
-				&__list {
-					height: auto;
-					padding-bottom: rem(20);
-					&__inner {
-						text-align: center;
-					}
-					&-icon {
-						position: initial;
-						margin: 0 auto;
-					}
-					&-name {
-						padding: 0;
-						margin: rem(28) auto rem(14);
-						font-size: rem(28);
-					}
-					&-description {
-						padding: 0;
-						margin: 0;
-					}
-					&-cost {
-						position: initial;
-						margin: rem(24) 0 rem(30);
-						font-size: rem(34);
-					}
-					& .button {
-						position: initial;
-					}
-					&-inc {
-						font-size: rem(14);
-					}
-					&-benefits {
-						grid-template-columns: repeat(1, 1fr);
-						column-gap: 0;
-						width: 100%;
-						margin-top: rem(24);
-						& li {
-							font-size: rem(15);
-						}
-					}
-				}
-			}
-		}
-	}
-	.data_credit {
-		position: relative;
-		padding-bottom: rem(120);
-		&-name {
-			font-size: rem(14);
-			font-weight: bold;
-			color: #0a61b4;
-			text-align: center;
-			text-transform: uppercase;
-			letter-spacing: 0.14em;
-		}
-		&-title {
-			margin: rem(24) auto rem(60);
-			font-size: rem(42);
-			text-align: center;
-			@include extraLarge {
-				font-size: rem(38);
-			}
-			@include large {
-				font-size: rem(34);
-			}
-			@include medium {
-				font-size: rem(42);
-			}
-			@include small {
-				font-size: rem(36);
-			}
-			@include extraSmall {
-				font-size: rem(28);
-			}
-		}
-		&__cards {
-			display: flex;
-			flex: 100%/3;
-			column-count: 3;
-			margin: 0;
-			padding-left: 0;
-			list-style: none;
-			box-sizing: border-box;
-			@include small {
-				flex-wrap: wrap;
-				column-count: 1;
-			}
-			&__list {
-				position: relative;
-				width: 100%;
-				height: rem(230);
-				padding: rem(30);
-				margin: 0 1rem;
-				border-radius: rem(20);
-				color: $color_white;
-				box-sizing: border-box;
-				@include large {
-					height: rem(160);
-				}
-				@include small {
-					margin-top: rem(20);
-					&:first-child {
-						margin-top: 0;
-					}
-				}
-				&::before {
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					background: linear-gradient(
-						151.18deg,
-						rgba(255, 255, 255, 0.19) 10.04%,
-						rgba(255, 255, 255, 0) 82.26%
-					);
-					content: "";
-				}
-				&::after {
-					display: block;
-					position: absolute;
-					top: rem(30);
-					left: rem(30);
-					width: rem(48);
-					height: rem(48);
-					border-radius: 100%;
-					background: rgba(217, 217, 217, 0.4);
-					content: "";
-				}
-				&-cost {
-					display: block;
-					margin-bottom: rem(46);
-					text-align: right;
-					font-family: GothamRoundedBold, sans-serif;
-					font-size: rem(34);
-					@include large {
-						margin-bottom: rem(32);
-						font-size: rem(20);
-					}
-				}
-				&-point {
-					display: block;
-					text-align: left;
-					font-family: GothamRoundedBold, sans-serif;
-					font-size: rem(42);
-					@include large {
-						font-size: rem(26);
-					}
-				}
-				&-text {
-					display: block;
-					font-size: rem(16);
-					font-style: normal;
-					text-align: left;
-					@include large {
-						font-size: rem(14);
-					}
-				}
-				&.list1 {
-					background: linear-gradient(
-						121.56deg,
-						#aeb4ba 23.97%,
-						#959aa0 39.2%,
-						#9ca0a4 45.42%,
-						#858a8f 52.19%,
-						#4f5256 85.28%
-					);
-				}
-				&.list2 {
-					background: linear-gradient(
-						121.56deg,
-						#059459 23.97%,
-						#0a9f62 39.2%,
-						#1faf74 45.42%,
-						#0a9f62 52.19%,
-						#034f2f 85.28%
-					);
-				}
-				&.list3 {
-					background: linear-gradient(
-						121.56deg,
-						#0a61b4 23.97%,
-						#1972c8 39.2%,
-						#3289de 45.42%,
-						#1972c8 52.19%,
-						#074581 85.28%
-					);
-				}
-			}
-		}
-	}
-	.compare {
-		position: relative;
-		padding-bottom: rem(180);
-		@include small {
-			display: none;
-		}
-		.container {
-			position: relative;
-			@include large {
-				padding-top: rem(100);
-			}
-		}
-		&-title {
-			margin: 0 auto rem(100);
-			font-size: rem(42);
-			text-align: center;
-			@include extraLarge {
-				font-size: rem(38);
-			}
-			@include large {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				width: 100%;
-				margin: 0;
-				font-size: rem(34);
-				text-align: center;
-			}
-			@include medium {
-				font-size: rem(42);
-			}
-			@include small {
-				font-size: rem(36);
-			}
-			@include extraSmall {
-				font-size: rem(28);
-			}
-		}
-		&__plans {
-			display: flex;
-			width: 100%;
-			list-style: none;
-			box-sizing: border-box;
-			&__list {
-				border: rem(1) solid #baccde;
-				border-radius: rem(20);
-				background: $color_white;
-				&.list2 {
-					position: relative;
-					border: none;
-					background: #def6ec;
-					& > button {
-						background: $color_green;
-						color: $color_white;
-						border: none;
-					}
-					// &::before {
-					// 	 position: absolute;
-					// 	 top: rem(-35);
-					// 	left: 0;
-					// 	width: 100%;
-					// 	font-size: rem(14);
-					// 	font-weight: 600;
-					// 	text-align: center;
-					// 	text-transform: uppercase;
-					// 	letter-spacing: 0.14em;
-					// 	color: $color_green;
-					// 	content: "most popular";
-					// 	@include large {
-					// 		display: none;
-					// 	}
-					// }
-				}
-				&__info {
-					margin-top: 0;
-					margin-bottom: 0;
-					padding-bottom: rem(10);
-				}
-				&-title {
-					height: rem(100);
-					padding: rem(32) $padding__collumn;
-					font-family: GothamRoundedBold, sans-serif;
-					font-size: rem(28);
-					text-align: center;
-					box-sizing: border-box;
-					&-name {
-						display: block;
-						font-weight: normal;
-					}
-					&-cost {
-						display: block;
-						font-weight: bolder;
-						margin: rem(24) auto rem(28);
-						& > em {
-							font-size: rem(14);
-							font-family: Inter;
-							font-style: normal;
-							font-weight: 400;
-						}
-					}
-					& .button {
-						width: 100%;
-						margin: 0 auto;
-					}
-					&.top {
-						height: rem(220);
-					}
-				}
-				&-text {
-					padding: rem(12) $padding__collumn;
-					margin-left: 0;
-					font-size: rem(16);
-					text-align: center;
-					white-space: nowrap;
-					&:nth-child(2n + 1) {
-						background: rgba(3, 26, 48, 0.05);
-					}
-				}
-				&.features {
-					margin: 0 $padding__collumn;
-					border: none;
-					background: #f6f6f6;
-					.compare__plans__list-title {
-						text-align: left;
-						white-space: nowrap;
-					}
-					.compare__plans__list-title.top {
-						line-height: rem(250);
-					}
-					.compare__plans__list-text {
-						padding-left: rem(30);
-						background: url("../../assets/images/icon-pricing-premium.svg") left
-							rem(8) center no-repeat;
-						text-align: left;
-					}
-				}
-			}
-			.swiper {
-				padding: 0 $padding__collumn;
-				&-slide {
-					@include large {
-						min-width: rem(200);
-					}
-				}
-			}
-		}
-		.bottom_triangle {
-			border-color: transparent transparent #f0f5fa #f0f5fa;
-			@include large {
-				border-color: transparent transparent $color_dark-blue $color_dark-blue;
-			}
-		}
-	}
-	.mobile_compare {
-		display: none;
-		@include small {
-			display: block;
-			position: relative;
-			width: 100%;
-			padding-bottom: rem(130);
-		}
-		&-title {
-			margin: rem(24) auto rem(60);
-			font-size: rem(24);
-			text-align: center;
-		}
-		&__tbl {
-			width: 100%;
-			border-collapse: collapse;
-			vertical-align: middle;
-			& tr th,
-			& tr td {
-				padding: rem(10) $padding__collumn;
-			}
-			& thead tr th {
-				font-size: rem(16);
-				color: $color_dark-blue;
-				& strong {
-					font-size: rem(18);
-				}
-				& em {
-					font-size: rem(14);
-					font-style: normal;
-					font-weight: 400;
-					color: #2f4356;
-				}
-			}
-			& tbody tr {
-				&.grey {
-					background: #f2f4f5;
-				}
-				& > th {
-					padding: rem(30) $padding__collumn;
-					font-size: rem(18);
-					text-align: left;
-				}
-				& > td {
-					font-size: rem(16);
-					text-align: center;
-					letter-spacing: 0.005em;
-					color: $color_dark-blue;
-				}
-				& > td[colspan="3"] {
-					&::before {
-						display: inline-block;
-						position: relative;
-						top: rem(2);
-						width: 16px;
-						height: 16px;
-						padding-right: rem(10);
-						background-image: url("../../assets/images/icon-pricing-premium.svg");
-						background-repeat: no-repeat;
-						background-position: center left;
-						content: "";
-					}
-				}
-			}
-		}
-		.bottom_triangle {
-			border-color: transparent transparent $color_dark-blue $color_dark-blue;
-		}
-	}
-	.frequently_ask {
-		position: relative;
-	}
-	.ready_to_get {
-		position: relative;
-	}
+  .hero {
+    position: relative;
+    height: rem(808);
+    padding-bottom: rem(140);
+    background: linear-gradient(90.4deg, #059459 0.35%, #034f2f 99.66%);
+    @include large {
+      padding-bottom: rem(300);
+      margin-bottom: rem(0);
+    }
+    &::before {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../../assets/images/pricing-personal-bg.png");
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: contain;
+      content: "";
+    }
+    &__wrapper {
+      padding-top: rem(150);
+    }
+    &__top {
+      padding: 0 $padding__column;
+      text-align: center;
+      color: $color_white;
+      &-name {
+        font-size: rem(14);
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        opacity: 0.5;
+      }
+      &-title {
+        margin: rem(24) 0 rem(60);
+        font-size: rem(42);
+        @include extraLarge {
+          font-size: rem(38);
+        }
+        @include large {
+          font-size: rem(34);
+        }
+        @include medium {
+          font-size: rem(42);
+        }
+        @include small {
+          font-size: rem(36);
+        }
+        @include extraSmall {
+          font-size: rem(28);
+        }
+      }
+      &__tabs {
+        position: relative;
+        width: rem(278);
+        height: rem(50);
+        margin: 0 auto rem(76);
+        border-radius: rem(25);
+        background: rgba(255, 255, 255, 0.2);
+        align-items: flex-end;
+        &::before {
+          display: inline-block;
+          position: absolute;
+          top: 6%;
+          left: 0;
+          width: rem(137);
+          height: 90%;
+          background: $color_white;
+          border-radius: rem(22);
+          content: "";
+          transition: 0.3s all;
+        }
+        &.personal {
+          &::before {
+            left: 0;
+            content: "Personal";
+          }
+          .hero__top__tabs-personal {
+            color: $color_green;
+          }
+        }
+        &.business {
+          &::before {
+            left: 50%;
+            content: "Business";
+          }
+          .hero__top__tabs-business {
+            color: $color_blue;
+          }
+        }
+        & > a {
+          display: inline-block;
+          position: relative;
+          top: 6%;
+          width: rem(137);
+          height: rem(44);
+          font-size: rem(14);
+          font-weight: 600;
+          line-height: rem(44);
+          color: $color_white;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          letter-spacing: 0.14em;
+        }
+      }
+    }
+  }
+  .plans {
+    position: relative;
+    min-height: rem(350);
+    @include large {
+      min-height: rem(400);
+    }
+    @include medium {
+      min-height: rem(500);
+    }
+    @include small {
+      min-height: rem(1200);
+    }
+    @include extraSmall {
+      min-height: rem(1400);
+    }
+    .container {
+      position: absolute;
+      top: rem(-500);
+      left: 0;
+      right: 0;
+      @include large {
+        top: rem(-650);
+      }
+    }
+    &__ul {
+      display: flex;
+      column-count: 3;
+      align-items: flex-end;
+      width: 100%;
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      &__list {
+        flex: calc(100% / 3);
+        position: relative;
+        height: rem(680);
+        padding: rem(40) $padding__column;
+        margin: 0 1rem;
+        border-radius: rem(20);
+        text-align: center;
+        box-sizing: border-box;
+        z-index: 1001;
+        &__inner {
+          width: 90%;
+          margin: 0 auto;
+        }
+        &-text {
+          display: block;
+          margin-bottom: rem(18);
+          font-size: rem(14);
+          font-weight: 600;
+          font-style: normal;
+          color: $color_green;
+          text-transform: uppercase;
+          letter-spacing: 0.14em;
+        }
+        &-icon {
+          display: block;
+          overflow: hidden;
+          width: rem(50);
+          height: rem(50);
+          border-radius: 100%;
+          margin: 0 auto;
+          text-indent: -99999em;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        &-name {
+          font-size: rem(28);
+        }
+        &-description {
+          margin: rem(14) 0 rem(24);
+          font-size: rem(16);
+          line-height: rem(25);
+          color: #2f4356;
+        }
+        &-cost {
+          display: block;
+          margin-bottom: rem(28);
+          font-family: GothamRoundedBold, sans-serif;
+          font-size: rem(34);
+          > span {
+            font-size: rem(16);
+            font-family: Inter, sans-serif;
+            font-weight: normal;
+            font-style: normal;
+            color: #2f4356;
+          }
+        }
+        .button {
+          width: 100%;
+          height: rem(45);
+        }
+        &-inc {
+          display: block;
+          margin-top: rem(40);
+          font-size: rem(14);
+          font-weight: 600;
+          color: #8594a3;
+          letter-spacing: 0.14em;
+          text-align: left;
+          text-transform: uppercase;
+        }
+        &-benefits {
+          padding-left: 0;
+          text-align: left;
+          & li {
+            list-style: none;
+            margin: rem(18) 0 rem(18) 0;
+            padding-left: rem(30);
+            background-repeat: no-repeat;
+            background-position: left 0 center;
+            font-size: rem(16);
+          }
+        }
+        &.list1 {
+          background: #f6f6f6;
+          .plans__ul__list-icon {
+            background-image: url("../../assets/images/pricing-free-icon.png");
+          }
+          .plans__ul__list li {
+            background-image: url("../../assets/images/icon-pricing-free.svg");
+          }
+        }
+        &.list2 {
+          min-height: rem(720);
+          background: #def6ec;
+          &::before {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin-bottom: rem(22);
+            font-size: rem(14);
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: $color_green;
+            content: "most popular";
+            @include large {
+              display: none;
+            }
+          }
+          .plans__ul__list-icon {
+            background-image: url("../../assets/images/pricing-premium-icon.png");
+          }
+          .plans__ul__list li {
+            background-image: url("../../assets/images/icon-pricing-premium.svg");
+          }
+        }
+        &.list3 {
+          background: #f0f8ff;
+          .plans__ul__list-icon {
+            background-image: url("../../assets/images/pricing-family-icon.png");
+          }
+          .plans__ul__list li {
+            background-image: url("../../assets/images/icon-pricing-family.svg");
+          }
+        }
+      }
+      @include large {
+        flex-wrap: wrap;
+        column-count: 1;
+        &__list {
+          flex: 1 100%;
+          height: auto;
+          padding-bottom: rem(85);
+          margin-top: rem(26);
+          &:first-child {
+            margin-top: 0;
+          }
+          &.list2 {
+            min-height: auto;
+            &::before {
+              display: none;
+            }
+          }
+          &__inner {
+            position: relative;
+            text-align: left;
+          }
+          &-text {
+            display: none;
+          }
+          &-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+          }
+          &-name {
+            padding: 0 rem(100) 0 rem(70);
+            margin: 0;
+            font-size: rem(18);
+          }
+          &-description {
+            padding: 0 rem(100) 0 rem(70);
+            margin: 0;
+          }
+          &-cost {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            font-size: rem(24);
+          }
+          & .button {
+            position: absolute;
+            bottom: rem(-65);
+            left: 0;
+            right: 0;
+          }
+          &-inc {
+            font-size: rem(11);
+          }
+          &-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2rem;
+            width: 100%;
+            margin-top: rem(24);
+            & li {
+              margin: rem(5) 0;
+              font-size: rem(14);
+            }
+          }
+        }
+      }
+      @include small {
+        &__list {
+          height: auto;
+          padding-bottom: rem(20);
+          &__inner {
+            text-align: center;
+          }
+          &-icon {
+            position: initial;
+            margin: 0 auto;
+          }
+          &-name {
+            padding: 0;
+            margin: rem(28) auto rem(14);
+            font-size: rem(28);
+          }
+          &-description {
+            padding: 0;
+            margin: 0;
+          }
+          &-cost {
+            position: initial;
+            margin: rem(24) 0 rem(30);
+            font-size: rem(34);
+          }
+          & .button {
+            position: initial;
+          }
+          &-inc {
+            font-size: rem(14);
+          }
+          &-benefits {
+            grid-template-columns: repeat(1, 1fr);
+            column-gap: 0;
+            width: 100%;
+            margin-top: rem(24);
+            & li {
+              font-size: rem(15);
+            }
+          }
+        }
+      }
+    }
+  }
+  .data_credit {
+    position: relative;
+    padding-bottom: rem(120);
+    &-name {
+      font-size: rem(14);
+      font-weight: bold;
+      color: #0a61b4;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+    &-title {
+      margin: rem(24) auto rem(60);
+      font-size: rem(42);
+      text-align: center;
+      @include extraLarge {
+        font-size: rem(38);
+      }
+      @include large {
+        font-size: rem(34);
+      }
+      @include medium {
+        font-size: rem(42);
+      }
+      @include small {
+        font-size: rem(36);
+      }
+      @include extraSmall {
+        font-size: rem(28);
+      }
+    }
+    &__cards {
+      display: flex;
+      flex: 100%/3;
+      column-count: 3;
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      box-sizing: border-box;
+      @include small {
+        flex-wrap: wrap;
+        column-count: 1;
+      }
+      &__list {
+        position: relative;
+        width: 100%;
+        height: rem(230);
+        padding: rem(30);
+        margin: 0 1rem;
+        border-radius: rem(20);
+        color: $color_white;
+        box-sizing: border-box;
+        @include large {
+          height: rem(160);
+        }
+        @include small {
+          margin-top: rem(20);
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        &::before {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            151.18deg,
+            rgba(255, 255, 255, 0.19) 10.04%,
+            rgba(255, 255, 255, 0) 82.26%
+          );
+          content: "";
+        }
+        &::after {
+          display: block;
+          position: absolute;
+          top: rem(30);
+          left: rem(30);
+          width: rem(48);
+          height: rem(48);
+          border-radius: 100%;
+          background: rgba(217, 217, 217, 0.4);
+          content: "";
+        }
+        &-cost {
+          display: block;
+          margin-bottom: rem(46);
+          text-align: right;
+          font-family: GothamRoundedBold, sans-serif;
+          font-size: rem(34);
+          @include large {
+            margin-bottom: rem(32);
+            font-size: rem(20);
+          }
+        }
+        &-point {
+          display: block;
+          text-align: left;
+          font-family: GothamRoundedBold, sans-serif;
+          font-size: rem(42);
+          @include large {
+            font-size: rem(26);
+          }
+        }
+        &-text {
+          display: block;
+          font-size: rem(16);
+          font-style: normal;
+          text-align: left;
+          @include large {
+            font-size: rem(14);
+          }
+        }
+        &.list1 {
+          background: linear-gradient(
+            121.56deg,
+            #aeb4ba 23.97%,
+            #959aa0 39.2%,
+            #9ca0a4 45.42%,
+            #858a8f 52.19%,
+            #4f5256 85.28%
+          );
+        }
+        &.list2 {
+          background: linear-gradient(
+            121.56deg,
+            #059459 23.97%,
+            #0a9f62 39.2%,
+            #1faf74 45.42%,
+            #0a9f62 52.19%,
+            #034f2f 85.28%
+          );
+        }
+        &.list3 {
+          background: linear-gradient(
+            121.56deg,
+            #0a61b4 23.97%,
+            #1972c8 39.2%,
+            #3289de 45.42%,
+            #1972c8 52.19%,
+            #074581 85.28%
+          );
+        }
+      }
+    }
+  }
+  .compare {
+    position: relative;
+    padding-bottom: rem(180);
+    @include small {
+      display: none;
+    }
+    .container {
+      position: relative;
+      @include large {
+        padding-top: rem(100);
+      }
+    }
+    &-title {
+      margin: 0 auto rem(100);
+      font-size: rem(42);
+      text-align: center;
+      @include extraLarge {
+        font-size: rem(38);
+      }
+      @include large {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: 0;
+        font-size: rem(34);
+        text-align: center;
+      }
+      @include medium {
+        font-size: rem(42);
+      }
+      @include small {
+        font-size: rem(36);
+      }
+      @include extraSmall {
+        font-size: rem(28);
+      }
+    }
+    &__plans {
+      display: flex;
+      width: 100%;
+      list-style: none;
+      box-sizing: border-box;
+      &__list {
+        border: rem(1) solid #baccde;
+        border-radius: rem(20);
+        background: $color_white;
+        &.list2 {
+          position: relative;
+          border: none;
+          background: #def6ec;
+          & > button {
+            background: $color_green;
+            color: $color_white;
+            border: none;
+          }
+          // &::before {
+          // 	 position: absolute;
+          // 	 top: rem(-35);
+          // 	left: 0;
+          // 	width: 100%;
+          // 	font-size: rem(14);
+          // 	font-weight: 600;
+          // 	text-align: center;
+          // 	text-transform: uppercase;
+          // 	letter-spacing: 0.14em;
+          // 	color: $color_green;
+          // 	content: "most popular";
+          // 	@include large {
+          // 		display: none;
+          // 	}
+          // }
+        }
+        &__info {
+          margin-top: 0;
+          margin-bottom: 0;
+          padding-bottom: rem(10);
+        }
+        &-title {
+          height: rem(100);
+          padding: rem(32) $padding__column;
+          font-family: GothamRoundedBold, sans-serif;
+          font-size: rem(28);
+          text-align: center;
+          box-sizing: border-box;
+          &-name {
+            display: block;
+            font-weight: normal;
+          }
+          &-cost {
+            display: block;
+            font-weight: bolder;
+            margin: rem(24) auto rem(28);
+            & > em {
+              font-size: rem(14);
+              font-family: Inter;
+              font-style: normal;
+              font-weight: 400;
+            }
+          }
+          & .button {
+            width: 100%;
+            margin: 0 auto;
+          }
+          &.top {
+            height: rem(220);
+          }
+        }
+        &-text {
+          padding: rem(12) $padding__column;
+          margin-left: 0;
+          font-size: rem(16);
+          text-align: center;
+          white-space: nowrap;
+          &:nth-child(2n + 1) {
+            background: rgba(3, 26, 48, 0.05);
+          }
+        }
+        &.features {
+          margin: 0 $padding__column;
+          border: none;
+          background: #f6f6f6;
+          .compare__plans__list-title {
+            text-align: left;
+            white-space: nowrap;
+          }
+          .compare__plans__list-title.top {
+            line-height: rem(250);
+          }
+          .compare__plans__list-text {
+            padding-left: rem(30);
+            background: url("../../assets/images/icon-pricing-premium.svg") left
+              rem(8) center no-repeat;
+            text-align: left;
+          }
+        }
+      }
+      .swiper {
+        padding: 0 $padding__column;
+        &-slide {
+          @include large {
+            min-width: rem(200);
+          }
+        }
+      }
+    }
+  }
+  .mobile_compare {
+    display: none;
+    @include small {
+      display: block;
+      position: relative;
+      width: 100%;
+      padding-bottom: rem(130);
+    }
+    &-title {
+      margin: rem(24) auto rem(60);
+      font-size: rem(24);
+      text-align: center;
+    }
+    &__tbl {
+      width: 100%;
+      border-collapse: collapse;
+      vertical-align: middle;
+      & tr th,
+      & tr td {
+        padding: rem(10) $padding__column;
+      }
+      & thead tr th {
+        font-size: rem(16);
+        color: $color_dark-blue;
+        & strong {
+          font-size: rem(18);
+        }
+        & em {
+          font-size: rem(14);
+          font-style: normal;
+          font-weight: 400;
+          color: #2f4356;
+        }
+      }
+      & tbody tr {
+        &.grey {
+          background: #f2f4f5;
+        }
+        & > th {
+          padding: rem(30) $padding__column;
+          font-size: rem(18);
+          text-align: left;
+        }
+        & > td {
+          font-size: rem(16);
+          text-align: center;
+          letter-spacing: 0.005em;
+          color: $color_dark-blue;
+        }
+        & > td[colspan="3"] {
+          &::before {
+            display: inline-block;
+            position: relative;
+            top: rem(2);
+            width: 16px;
+            height: 16px;
+            padding-right: rem(10);
+            background-image: url("../../assets/images/icon-pricing-premium.svg");
+            background-repeat: no-repeat;
+            background-position: center left;
+            content: "";
+          }
+        }
+      }
+    }
+    .bottom_triangle {
+      border-color: transparent transparent $color_dark-blue $color_dark-blue;
+    }
+  }
+  .frequently_ask {
+    position: relative;
+  }
+  .ready_to_get {
+    position: relative;
+  }
 }
 
 .pricing--business {
-	.hero {
-		background: linear-gradient(90.32deg, #0a61b4 0.35%, #074581 99.81%);
-		transition: all 0.5s ease;
-		&::before {
-			background-image: url("../../assets/images/pricing-business-bg.png");
-		}
-	}
-	.plans {
-		&__ul {
-			&__list {
-				&.list1 {
-					.plans__ul__list-icon {
-						background-image: url("../../assets/images/pricing-Essential-icon.png") !important;
-					}
-				}
-				&.list2 {
-					.plans__ul__list-icon {
-						background-image: url("../../assets/images/pricing-standard-icon.png");
-					}
-				}
-				&.list3 {
-					.plans__ul__list-icon {
-						background-image: url("../../assets/images/pricing-plus-icon.png");
-					}
-				}
-			}
-		}
-	}
+  .hero {
+    background: linear-gradient(90.32deg, #0a61b4 0.35%, #074581 99.81%);
+    transition: all 0.5s ease;
+    &::before {
+      background-image: url("../../assets/images/pricing-business-bg.png");
+    }
+  }
+  .plans {
+    &__ul {
+      &__list {
+        &.list1 {
+          .plans__ul__list-icon {
+            background-image: url("../../assets/images/pricing-Essential-icon.png") !important;
+          }
+        }
+        &.list2 {
+          .plans__ul__list-icon {
+            background-image: url("../../assets/images/pricing-standard-icon.png");
+          }
+        }
+        &.list3 {
+          .plans__ul__list-icon {
+            background-image: url("../../assets/images/pricing-plus-icon.png");
+          }
+        }
+      }
+    }
+  }
 }

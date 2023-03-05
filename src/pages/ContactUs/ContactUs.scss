@@ -44,7 +44,7 @@ $color_green: $color__success;
             }
         }
         &__content {
-            padding: 0 $padding__collumn;
+            padding: 0 $padding__column;
             text-align: left;
             color: $color_white;
             @include large {
@@ -170,7 +170,7 @@ $color_green: $color__success;
         }
         &-name {
             display: block;
-            padding: 0 $padding__collumn;
+            padding: 0 $padding__column;
             font-size: rem(14);
             font-weight: bold;
             letter-spacing: 0.14em;
@@ -179,7 +179,7 @@ $color_green: $color__success;
             color: $color_blue;
         }
         &-title {
-            padding: 0 $padding__collumn;
+            padding: 0 $padding__column;
             margin: rem(24) auto rem(54);
             font-size: rem(38);
             text-align: center;
@@ -202,7 +202,7 @@ $color_green: $color__success;
             }
         }
         &__box {
-            padding: $padding__collumn;
+            padding: $padding__column;
             &__inner {
                 padding: rem(24);
                 border-radius: rem(16);

@@ -9,6 +9,18 @@
     height: rem(280);
     margin-bottom: rem(28);
 
+    @include large {
+      height: rem(200);
+    }
+
+    @include medium {
+      height: rem(280);
+    }
+
+    &--smaller {
+      height: rem(200);
+    }
+    
     img {
       border-radius: rem(20);
       width: 100%;

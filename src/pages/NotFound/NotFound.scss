@@ -2,24 +2,21 @@
 
 .not_found {
   color: white;
-  position: relative;
-  top: 0px;
-  background: linear-gradient(90.15deg, $color__primary 0.35%, #074581 100.1%);
+  background: linear-gradient(90.15deg, #0a61b4 0.35%, #074581 100.1%);
   min-height: 100vh;
-  padding: 3rem 0;
-  box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding: rem(120) 0;
+  box-sizing: border-box;
   &__code {
     margin-top: 0;
-    margin-bottom: rem(0);
+    margin-bottom: 0;
     font-size: rem(300);
     font-weight: 400;
     // line-height: rem(360);
     text-align: center;
     span {
-      color: $color__success;
+      color: #20976c;
     }
 
     @include larger {
@@ -43,6 +40,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 $padding__column;
   }
 
   &__content {

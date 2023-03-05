@@ -47,6 +47,15 @@
   &__video {
     width: 100%;
     border-radius: 20px;
+    height: 360px;
+
+    @include minMedium {
+      height: 460px;
+    }
+
+    @include minLarge {
+      height: 600px;
+    }
   }
 
   &__snippet {
@@ -219,4 +228,8 @@
   @include minLarge {
     display: none;
   }
+}
+
+.smallerImage {
+  height: rem(200);
 }
