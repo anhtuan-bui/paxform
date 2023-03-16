@@ -165,7 +165,7 @@ export default class Legal extends Component {
 							</p>
 						</div>
 					</div>
-					<div className="bottom_triangle bottom_triangle--light-grey"></div>
+					<div className="bottom_triangle bottom_triangle--white"></div>
 				</section>
 				<section className="category">
 					<div className="container category__wrap">

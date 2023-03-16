@@ -1,0 +1,8 @@
+@import '../../styles/styles.scss';
+
+.background_gradient {
+    position: absolute;
+      left: $padding__column;
+      transform: skewY(6.5deg);
+      border-top-left-radius: rem(20);
+  }
