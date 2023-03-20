@@ -10,9 +10,8 @@ import twitter from "../../assets/images/socialMedia/twitter-icon.svg";
 import instagram from "../../assets/images/socialMedia/instagram-icon.svg";
 import wechat from "../../assets/images/socialMedia/wechat-icon.svg";
 import whatsapp from "../../assets/images/socialMedia/whatsapp-icon.svg";
-import flag from "../../assets/images/flag.svg";
-import arrowDown from "../../assets/images/arrowDown.svg";
 import { useLocation } from "react-router-dom";
+import countries from "../../lib/countries";
 
 export default function Footer() {
   const location = useLocation();
@@ -24,7 +23,6 @@ export default function Footer() {
       <div className="container footer_container">
         <div className="footer_top">
           <div className="footer__top-left">
-            {/*<div className="footer__temp">*/}
             <div className="footer__logo">
               <img src={footerLogo} alt="logo footer" />
             </div>
@@ -38,13 +36,10 @@ export default function Footer() {
               <img src={wechat} alt="wechat" />
               <img src={whatsapp} alt="whatsapp" />
             </div>
-            {/*</div>*/}
           </div>
 
-          {/* <div className="footer__top-right"> */}
           <div className="footer__top-right">
             <div className="footer__top-right-list">
-              {/*<div className="footer__top-right-list footer-paxform">*/}
               <h1>PAXFORM</h1>
               <ul>
                 <li>
@@ -60,8 +55,6 @@ export default function Footer() {
                   <a href="https://">Integrations</a>
                 </li>
               </ul>
-              {/*</div> 
-                            <div className="footer__top-right-list footer-business-features"> */}
               <br />
               <h1>BUSINESS FEATURES</h1>
               <ul>
@@ -84,8 +77,6 @@ export default function Footer() {
                   <a href="https://">Custom Statuses</a>
                 </li>
               </ul>
-              {/* </div>
-                            <div className="footer__top-right-list footer-consumer-features"> */}
               <br />
               <h1>CONSUMER FEATURES</h1>
               <ul>
@@ -108,7 +99,6 @@ export default function Footer() {
                   <a href="https://">Chat & Notifications</a>
                 </li>
               </ul>
-              {/*</div> */}
             </div>
             <div className="footer__top-right-list footer-use-case">
               <h1>USE CASES</h1>
@@ -155,8 +145,6 @@ export default function Footer() {
                   <a href="https://">Help Center</a>
                 </li>
               </ul>
-              {/*</div>   
-                            <div className="footer__top-right-list footer-security"> */}
               <br />
               <h1>SECURITY</h1>
               <ul>
@@ -179,8 +167,6 @@ export default function Footer() {
                   <a href="https://">Auto Timeout</a>
                 </li>
               </ul>
-              {/* </div>
-                            <div className="footer__top-right-list footer-forms"> */}
               <br />
               <h1>FORMS</h1>
               <ul>
@@ -223,8 +209,6 @@ export default function Footer() {
                   <a href="https://">Brand kit</a>
                 </li>
               </ul>
-              {/* </div>
-                            <div className="footer__top-right-list footer-legal"> */}
               <br />
               <h1>LEGAL</h1>
               <ul>
@@ -262,9 +246,13 @@ export default function Footer() {
               </li>
             </ul>
             <div className="footer__bottom-languages">
-              <img src={flag} alt="American Flag" />
-              <p>US English</p>
-              <img src={arrowDown} alt="Arrow down" />
+              <select name="country" defaultValue={`AU`}>
+                {countries.map((country, index) => (
+                  <option value={country.sortname} key={index}>
+                    {`${country.emoji} ${country.country_name}`}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
         </div>

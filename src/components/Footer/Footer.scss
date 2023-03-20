@@ -1,226 +1,186 @@
 @import "../../styles/styles.scss";
 
 .footer {
-    background-color: #e1edf8;
-    padding: rem(80) 0;
+  background-color: #e1edf8;
+  padding: rem(80) 0;
 
-    &__top-right {
-        display: grid;
+  &__top-right {
+    display: grid;
 
-        grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
-        @include medium {
-            display: block;
-            column-count: 2;
-            gap: 0;
-        }
-
-        @include extraSmall {
-            column-count: 2;
-        }
+    @include medium {
+      display: block;
+      column-count: 2;
+      gap: 0;
     }
 
-    /*&__temp {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between
-    }*/
-    &__logo {
-        //display: grid;
-        @include small {
-            display: grid;
-            grid-column: 1 / span 2;
-            margin-bottom: rem(10);
-        }
-        //align-items: center;
-        //gap: rem(550);
-        //margin-bottom: rem(50);
+    @include extraSmall {
+      column-count: 2;
+    }
+  }
 
-        /*@include larger {
-            gap: rem(350);
-        }
-        @include medium {
-            gap: rem(172);
-        }
-        @include extraSmall {
-            white-space: pre;
-        }*/
-        
+  &__logo {
+    @include small {
+      display: grid;
+      grid-column: 1 / span 2;
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(24);
+
+    @include small {
+      justify-content: center;
+    }
+    @include extraSmall {
+      justify-content: left;
     }
 
-    /*&__social {
-        margin-bottom: rem(20);
-    }*/
-    &__social {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: rem(24);
-        //margin-bottom: rem
-
-        @include small {
-            justify-content: center;
-        }
-        @include extraSmall {
-            justify-content: left; 
-
-        }
-
-        img {
-            cursor: pointer;
-        }
+    img {
+      cursor: pointer;
     }
-    /*&__social{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        padding-bottom: rem(20)
-    } */
+  }
 
+  &__container {
+    @include extraSmall {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 
-    &__container {
-        @include extraSmall {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: rem(20);
+
+    @include larger {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: $row__gap--larger;
     }
 
-    &__top {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        padding-bottom: rem(20);
+    @include medium {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: $row__gap--small;
+    }
 
-        @include larger {
-            grid-template-columns: repeat(3, 1fr);
-            row-gap: $row__gap--larger;
+    &-left {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+      margin-bottom: rem(64);
+
+      padding: 0 $padding__column;
+
+      @include small {
+        grid-template-rows: repeat(2, 1fr);
+      }
+    }
+
+    &-right {
+      @include small {
+        flex-direction: column;
+        gap: rem(40);
+        align-items: left;
+        text-align: left;
+      }
+
+      &-list {
+        max-width: rem(250);
+        padding: 0 $padding__column;
+        break-inside: avoid-column;
+
+        h1 {
+          font-size: rem(14);
+          color: #021527;
+          font-weight: 500;
+          margin-top: 0;
         }
 
-        @include medium {
-            grid-template-columns: repeat(2, 1fr);
-            row-gap: $row__gap--small;
-        }
+        ul {
+          list-style: none;
+          padding-left: 0;
+          display: flex;
+          flex-direction: column;
+          gap: rem(12);
 
-//        @include extraSmall {
-//            grid-template-columns: repeat(2, 1fr);
-//            row-gap: $row__gap--small;
-//        }
+          li {
+            font-size: rem(14);
 
-        &-left {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            justify-content: space-between;
-            margin-bottom: rem(64);
+            a {
+              color: #2f4356;
+              text-decoration: none;
+              line-height: rem(24);
 
-            padding: 0 $padding__column;
-
-           // @include larger {
-           //     grid-column: 1 / span 3;
-           // }
-
-            //@include medium {
-            //    grid-column: 1;
-            //}
-            @include small {
-                //grid-template-columns: 1;
-                grid-template-rows: repeat(2, 1fr);
+              &:hover {
+                color: #20976c;
+              }
             }
+          }
         }
+      }
+    }
+  }
 
-        &-right {
-            @include small {
-                flex-direction: column;
-                gap: rem(40);
-                align-items: left;
-                text-align: left;
-            }
+  &__bottom {
+    margin-top: rem(24);
+    color: #2f4356;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-            &-list {
-                max-width: rem(250);
-                padding: 0 $padding__column;
-                break-inside: avoid-column;
-
-                h1 {
-                    font-size: rem(14);
-                    color: #021527;
-                    font-weight: 500;
-                    margin-top: 0;
-                }
-
-                ul {
-                    list-style: none;
-                    padding-left: 0;
-                    display: flex;
-                    flex-direction: column;
-                    gap: rem(12);
-
-                    li {
-                        font-size: rem(14);
-
-                        a {
-                            color: #2f4356;
-                            text-decoration: none;
-                            line-height: rem(24);
-
-                            &:hover {
-                                color: #20976c;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    @include medium {
+      flex-direction: column;
+      text-align: center;
+      gap: rem(0);
     }
 
-    &__bottom {
-        margin-top: rem(15);
+    &-wrapper {
+      border-top: 1px solid #baccde;
+    }
+
+    p,
+    ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0 $padding__column;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      gap: rem(20);
+
+      li {
+        font-size: rem(14);
+
+        a {
+          color: #2f4356;
+          text-decoration: none;
+          line-height: rem(24);
+
+          span:after {
+            background-color: #2f4356;
+          }
+        }
+      }
+    }
+    &-languages {
+      display: flex;
+      align-items: center;
+
+      select {
+        border: none;
+        background-color: transparent;
+        font-size: 1rem;
         color: #2f4356;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        @include medium {
-            flex-direction: column;
-            text-align: center;
-            gap: rem(0);
-        }
-
-        &-wrapper {
-            border-top: 1px solid #BACCDE;
-        }
-
-        p,
-        ul {
-            margin-bottom: 0;
-            padding: 0 $padding__column;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-            display: flex;
-            gap: rem(20);
-
-            li {
-                font-size: rem(14);
-
-                a {
-                    color: #2f4356;
-                    text-decoration: none;
-                    line-height: rem(24);
-
-                    span:after {
-                        background-color: #2f4356;
-                    }
-                }
-            }
-        }
-         &-languages {
-             display: flex; 
-             align-items: center;
-            //flex-direction: row;
-            /* img {
-                align-self: center;
-            } */
-        }
+      }
     }
+  }
 }
