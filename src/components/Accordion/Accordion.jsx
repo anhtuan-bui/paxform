@@ -111,8 +111,12 @@ const Accordion = (props) => {
   };
 
   useEffect(() => {
-    const firstPanel = document.querySelector(".accordion__item-panel");
-    firstPanel.style.maxHeight = firstPanel.scrollHeight + "px";
+    const panels = document.querySelectorAll(".accordion__item-panel");
+    features.forEach((feature, index) => {
+      if (feature.isOpened) {
+        panels[index].style.maxHeight = panels[index].scrollHeight + "px";
+      }
+    });
 
     handleAccordionAutomation();
     return () => {
