@@ -79,15 +79,15 @@
   &__container {
     display: grid;
 
-    padding-bottom: rem(240);
+    padding-bottom: rem(200);
     grid-template-columns: 2fr 1fr 1fr;
     @include medium {
-      padding-bottom: rem(200);
       grid-template-columns: repeat(2, 1fr);
     }
     @include small {
       grid-template-columns: 1fr;
-      gap: rem(200);
+
+      padding-bottom: rem(120);
     }
   }
   &__box-left {

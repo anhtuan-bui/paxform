@@ -1,23 +1,142 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.scss";
 
 import footerLogo from "../../assets/images/LOGO-footer.svg";
-import facebook from "../../assets/images/bxl-facebook-circle.svg.svg";
-import linkedin from "../../assets/images/socialMedia/bxl-linkedin.svg.svg";
-import youtube from "../../assets/images/socialMedia/bxl-youtube.svg.svg";
-import discord from "../../assets/images/socialMedia/discord-fill.svg";
-import twitter from "../../assets/images/socialMedia/twitter-icon.svg";
-import instagram from "../../assets/images/socialMedia/instagram-icon.svg";
-import wechat from "../../assets/images/socialMedia/wechat-icon.svg";
-import whatsapp from "../../assets/images/socialMedia/whatsapp-icon.svg";
 import { useLocation } from "react-router-dom";
 import countries from "../../lib/countries";
+import arrowDown from "../../assets/icons/arrowDown.svg";
+import searchIcon from "../../assets/icons/search.svg";
+
+import { ReactComponent as LinkedIn } from "../../assets/icons/linkedin.svg";
+import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
+import { ReactComponent as Twitter } from "../../assets/icons/twitter.svg";
+import { ReactComponent as Instagram } from "../../assets/icons/instagram.svg";
+import { ReactComponent as YouTube } from "../../assets/icons/youtube.svg";
+import { ReactComponent as Discord } from "../../assets/icons/discord.svg";
+import { ReactComponent as WeChat } from "../../assets/icons/wechat.svg";
+import { ReactComponent as WhatsApp } from "../../assets/icons/whatsapp.svg";
+
+const socialMedias = [
+  {
+    name: "linkedin",
+    icon: <LinkedIn />,
+    link: "https://www.linkedin.com/company/paxform/",
+  },
+  {
+    name: "facebook",
+    icon: <Facebook />,
+    link: "https://www.facebook.com/profile.php?id=100064254243686",
+  },
+  {
+    name: "twitter",
+    icon: <Twitter />,
+    link: "https://twitter.com/paxform",
+  },
+  {
+    name: "instagram",
+    icon: <Instagram />,
+    link: "https://www.instagram.com/pax.form/",
+  },
+  {
+    name: "youtube",
+    icon: <YouTube />,
+    link: "",
+  },
+  {
+    name: "discord",
+    icon: <Discord />,
+    link: "",
+  },
+  {
+    name: "wechat",
+    icon: <WeChat />,
+    link: "",
+  },
+  {
+    name: "whatsapp",
+    icon: <WhatsApp />,
+    link: "",
+  },
+];
 
 export default function Footer() {
+  const [emoji, setEmoji] = useState("🇦🇺");
+  const [sortName, setSortName] = useState("AU");
+  const [countryName, setCountryName] = useState("Australia");
+  const [filteredCountries, setFilteredCountries] = useState(countries);
   const location = useLocation();
+
   if (location.pathname === "/not-found") {
     return;
   }
+
+  const openSelectorOptions = () => {
+    const languageOptions = document.querySelector(
+      ".languages_selector__options"
+    );
+    languageOptions.classList.add("languages_selector__options--display-block");
+  };
+
+  const closeSelectorOptions = () => {
+    const languageOptions = document.querySelector(
+      ".languages_selector__options"
+    );
+    languageOptions.classList.remove(
+      "languages_selector__options--display-block"
+    );
+  };
+
+  const openFooterOverlay = () => {
+    const footerOverlay = document.querySelector(".footer__overlay");
+    footerOverlay.classList.add("footer__overlay--display-block");
+  };
+
+  const closeFooterOverlay = () => {
+    const footerOverlay = document.querySelector(".footer__overlay");
+    footerOverlay.classList.remove("footer__overlay--display-block");
+  };
+
+  const handleLanguageSelectorClick = () => {
+    openSelectorOptions();
+    openFooterOverlay();
+  };
+
+  const handleLanguageOptionClick = (e) => {
+    const optionClassName = "languages_selector__option";
+
+    closeSelectorOptions();
+    closeFooterOverlay();
+
+    if (e.target.classList.contains(optionClassName)) {
+      setEmoji(e.target.getAttribute("emoji"));
+      setSortName(e.target.getAttribute("sortname"));
+      setCountryName(e.target.getAttribute("countryname"));
+    } else if (e.target.parentElement.classList.contains(optionClassName)) {
+      setEmoji(e.target.parentElement.getAttribute("emoji"));
+      setSortName(e.target.parentElement.getAttribute("sortname"));
+      setCountryName(e.target.parentElement.getAttribute("countryname"));
+    }
+  };
+
+  const handleFooterOverlayClick = () => {
+    closeFooterOverlay();
+    closeSelectorOptions();
+  };
+
+  const handleSearchInputChange = (e) => {
+    if (e.target.value) {
+      setFilteredCountries(
+        countries.filter((country) =>
+          country.country_name
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase())
+        )
+      );
+    } else {
+      setFilteredCountries(countries);
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="container footer_container">
@@ -27,14 +146,19 @@ export default function Footer() {
               <img src={footerLogo} alt="logo footer" />
             </div>
             <div className="footer__social">
-              <img src={linkedin} alt="linkedin" />
-              <img src={youtube} alt="youtube" />
-              <img src={facebook} alt="facebook" />
-              <img src={discord} alt="discord" />
-              <img src={twitter} alt="twitter" />
-              <img src={instagram} alt="instagram" />
-              <img src={wechat} alt="wechat" />
-              <img src={whatsapp} alt="whatsapp" />
+              {socialMedias.map((socialMedia, index) =>
+                socialMedia.link ? (
+                  <a
+                    className="footer__social-item"
+                    key={index}
+                    href={socialMedia.link}
+                  >
+                    {socialMedia.icon}
+                  </a>
+                ) : (
+                  ""
+                )
+              )}
             </div>
           </div>
 
@@ -55,7 +179,6 @@ export default function Footer() {
                   <a href="https://">Integrations</a>
                 </li>
               </ul>
-              <br />
               <h1>BUSINESS FEATURES</h1>
               <ul>
                 <li>
@@ -77,7 +200,6 @@ export default function Footer() {
                   <a href="https://">Custom Statuses</a>
                 </li>
               </ul>
-              <br />
               <h1>CONSUMER FEATURES</h1>
               <ul>
                 <li>
@@ -145,7 +267,6 @@ export default function Footer() {
                   <a href="https://">Help Center</a>
                 </li>
               </ul>
-              <br />
               <h1>SECURITY</h1>
               <ul>
                 <li>
@@ -167,7 +288,6 @@ export default function Footer() {
                   <a href="https://">Auto Timeout</a>
                 </li>
               </ul>
-              <br />
               <h1>FORMS</h1>
               <ul>
                 <li>
@@ -209,7 +329,6 @@ export default function Footer() {
                   <a href="https://">Brand kit</a>
                 </li>
               </ul>
-              <br />
               <h1>LEGAL</h1>
               <ul>
                 <li>
@@ -246,17 +365,65 @@ export default function Footer() {
               </li>
             </ul>
             <div className="footer__bottom-languages">
-              <select name="country" defaultValue={`AU`}>
-                {countries.map((country, index) => (
-                  <option value={country.sortname} key={index}>
-                    {`${country.emoji} ${country.country_name}`}
-                  </option>
-                ))}
-              </select>
+              <div className="languages">
+                <div
+                  className="languages_selector"
+                  onClick={handleLanguageSelectorClick}
+                >
+                  <span className="languages_selector__emoji">{emoji}</span>
+                  <span>{countryName}</span>
+                  <img
+                    className="languages_selector__arrow-down"
+                    src={arrowDown}
+                    alt="arrow down"
+                  />
+                </div>
+                <div className="languages_selector__options">
+                  <div className="languages_selector__search">
+                    <input
+                      className="languages_selector__search-input"
+                      type="text"
+                      placeholder="Search"
+                      onChange={handleSearchInputChange}
+                    />
+                    <div className="languages_selector__search-button">
+                      <img
+                        className="languages_selector__search-icon"
+                        src={searchIcon}
+                        alt=""
+                        aria-hidden={true}
+                      />
+                    </div>
+                  </div>
+                  <div className="languages_selector__option-box">
+                    {filteredCountries.map((country, index) => (
+                      <div
+                        className="languages_selector__option"
+                        key={index}
+                        sortname={country.sortname}
+                        countryname={country.country_name}
+                        emoji={country.emoji}
+                        onClick={(e) => handleLanguageOptionClick(e)}
+                      >
+                        <span className="languages_selector__emoji">
+                          {country.emoji}
+                        </span>
+                        <span className="languages_selector__country-name">
+                          {country.country_name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div
+        className="footer__overlay"
+        onClick={(e) => handleFooterOverlayClick(e)}
+      ></div>
     </footer>
   );
 }
