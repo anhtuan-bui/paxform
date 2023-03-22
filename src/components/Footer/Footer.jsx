@@ -3,9 +3,9 @@ import "./Footer.scss";
 
 import footerLogo from "../../assets/images/LOGO-footer.svg";
 import { useLocation } from "react-router-dom";
-import countries from "../../lib/countries";
-import arrowDown from "../../assets/icons/arrowDown.svg";
-import searchIcon from "../../assets/icons/search.svg";
+import languages from "../../assets/json/languages.json";
+// import arrowDown from "../../assets/icons/arrowDown.svg";
+// import searchIcon from "../../assets/icons/search.svg";
 
 import { ReactComponent as LinkedIn } from "../../assets/icons/linkedin.svg";
 import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
@@ -60,82 +60,84 @@ const socialMedias = [
 ];
 
 export default function Footer() {
-  const [emoji, setEmoji] = useState("🇦🇺");
-  const [sortName, setSortName] = useState("AU");
-  const [countryName, setCountryName] = useState("Australia");
-  const [filteredCountries, setFilteredCountries] = useState(countries);
+  // const [emoji, setEmoji] = useState("🇦🇺");
+  // const [shortName, setShortName] = useState("AU");
+  // const [countryName, setCountryName] = useState("Australia");
+  // const [filteredCountries, setFilteredCountries] = useState(languages);
+
+  const [languageCode, setLanguageCode] = useState("en-AU");
   const location = useLocation();
 
   if (location.pathname === "/not-found") {
     return;
   }
 
-  const openSelectorOptions = () => {
-    const languageOptions = document.querySelector(
-      ".languages_selector__options"
-    );
-    languageOptions.classList.add("languages_selector__options--display-block");
-  };
+  // const openSelectorOptions = () => {
+  //   const languageOptions = document.querySelector(
+  //     ".languages_selector__options"
+  //   );
+  //   languageOptions.classList.add("languages_selector__options--display-block");
+  // };
 
-  const closeSelectorOptions = () => {
-    const languageOptions = document.querySelector(
-      ".languages_selector__options"
-    );
-    languageOptions.classList.remove(
-      "languages_selector__options--display-block"
-    );
-  };
+  // const closeSelectorOptions = () => {
+  //   const languageOptions = document.querySelector(
+  //     ".languages_selector__options"
+  //   );
+  //   languageOptions.classList.remove(
+  //     "languages_selector__options--display-block"
+  //   );
+  // };
 
-  const openFooterOverlay = () => {
-    const footerOverlay = document.querySelector(".footer__overlay");
-    footerOverlay.classList.add("footer__overlay--display-block");
-  };
+  // const openFooterOverlay = () => {
+  //   const footerOverlay = document.querySelector(".footer__overlay");
+  //   footerOverlay.classList.add("footer__overlay--display-block");
+  // };
 
-  const closeFooterOverlay = () => {
-    const footerOverlay = document.querySelector(".footer__overlay");
-    footerOverlay.classList.remove("footer__overlay--display-block");
-  };
+  // const closeFooterOverlay = () => {
+  //   const footerOverlay = document.querySelector(".footer__overlay");
+  //   footerOverlay.classList.remove("footer__overlay--display-block");
+  // };
 
-  const handleLanguageSelectorClick = () => {
-    openSelectorOptions();
-    openFooterOverlay();
-  };
+  // const handleLanguageSelectorClick = () => {
+  //   openSelectorOptions();
+  //   openFooterOverlay();
+  // };
 
-  const handleLanguageOptionClick = (e) => {
-    const optionClassName = "languages_selector__option";
+  // const handleLanguageOptionClick = (e) => {
+  //   const optionClassName = "languages_selector__option";
 
-    closeSelectorOptions();
-    closeFooterOverlay();
+  //   closeSelectorOptions();
+  //   closeFooterOverlay();
 
-    if (e.target.classList.contains(optionClassName)) {
-      setEmoji(e.target.getAttribute("emoji"));
-      setSortName(e.target.getAttribute("sortname"));
-      setCountryName(e.target.getAttribute("countryname"));
-    } else if (e.target.parentElement.classList.contains(optionClassName)) {
-      setEmoji(e.target.parentElement.getAttribute("emoji"));
-      setSortName(e.target.parentElement.getAttribute("sortname"));
-      setCountryName(e.target.parentElement.getAttribute("countryname"));
-    }
-  };
+  //   if (e.target.classList.contains(optionClassName)) {
+  //     setEmoji(e.target.getAttribute("emoji"));
+  //     setShortName(e.target.getAttribute("sortname"));
+  //     setCountryName(e.target.getAttribute("countryname"));
+  //   } else if (e.target.parentElement.classList.contains(optionClassName)) {
+  //     setEmoji(e.target.parentElement.getAttribute("emoji"));
+  //     setShortName(e.target.parentElement.getAttribute("sortname"));
+  //     setCountryName(e.target.parentElement.getAttribute("countryname"));
+  //   }
+  // };
 
-  const handleFooterOverlayClick = () => {
-    closeFooterOverlay();
-    closeSelectorOptions();
-  };
+  // const handleFooterOverlayClick = () => {
+  //   closeFooterOverlay();
+  //   closeSelectorOptions();
+  // };
 
-  const handleSearchInputChange = (e) => {
-    if (e.target.value) {
-      setFilteredCountries(
-        countries.filter((country) =>
-          country.country_name
-            .toLowerCase()
-            .includes(e.target.value.toLowerCase())
-        )
-      );
-    } else {
-      setFilteredCountries(countries);
-    }
-  };
+  // const handleSearchInputChange = (e) => {
+  //   if (e.target.value) {
+  //     setFilteredCountries(
+  //       languages.filter((country) =>
+  //         country.country_name
+  //           .toLowerCase()
+  //           .includes(e.target.value.toLowerCase())
+  //       )
+  //     );
+  //   } else {
+  //     setFilteredCountries(languages);
+  //   }
+  // };
 
   return (
     <footer className="footer">
@@ -143,7 +145,9 @@ export default function Footer() {
         <div className="footer_top">
           <div className="footer__top-left">
             <div className="footer__logo">
-              <img src={footerLogo} alt="logo footer" />
+              <a href="/">
+                <img src={footerLogo} alt="logo footer" />
+              </a>
             </div>
             <div className="footer__social">
               {socialMedias.map((socialMedia, index) =>
@@ -365,10 +369,27 @@ export default function Footer() {
               </li>
             </ul>
             <div className="footer__bottom-languages">
-              <div className="languages">
+              <select
+                className="footer__bottom-languages-selector"
+                name="language"
+                defaultValue={languageCode}
+              >
+                {languages.map((language, index) => (
+                  <option
+                    className="footer__bottom-languages-option"
+                    value={language.code}
+                    key={index}
+                    onChange={(e) => setLanguageCode(language.code)}
+                  >
+                    {`${language.emoji} ${language.name} - ${language.country}`}
+                  </option>
+                ))}
+              </select>
+              {/* <div className="languages">
                 <div
                   className="languages_selector"
                   onClick={handleLanguageSelectorClick}
+                  sortname={sortName}
                 >
                   <span className="languages_selector__emoji">{emoji}</span>
                   <span>{countryName}</span>
@@ -415,15 +436,15 @@ export default function Footer() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </div>
-      <div
+      {/* <div
         className="footer__overlay"
         onClick={(e) => handleFooterOverlayClick(e)}
-      ></div>
+      ></div> */}
     </footer>
   );
 }

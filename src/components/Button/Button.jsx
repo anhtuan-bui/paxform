@@ -64,7 +64,7 @@ export default class Button extends Component {
       return (
         <a
           href={this.props.href}
-          className={`button${this.state.class}`}
+          className={`button${this.state.class} ${this.props.className}`}
           disabled={this.props.disabled}
         >
           <TriangleRight
@@ -83,7 +83,7 @@ export default class Button extends Component {
     }
     return (
       <button
-        className={`button${this.state.class}`}
+        className={`button${this.state.class}  ${this.props.className}`}
         onClick={this.props.onClick}
         disabled={this.props.disabled}
       >

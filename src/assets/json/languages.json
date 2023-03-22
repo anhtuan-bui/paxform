@@ -1,0 +1,16 @@
+[
+    {
+        "name": "English",
+        "code": "en-US",
+        "short": "en",
+        "country": "United States",
+        "emoji": "🇺🇸"
+    },
+    {
+        "name": "English",
+        "code": "en-AU",
+        "short": "en",
+        "country": "Australia",
+        "emoji": "🇦🇺"
+    }
+]

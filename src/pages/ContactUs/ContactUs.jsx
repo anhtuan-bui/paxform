@@ -140,7 +140,7 @@ const ContactForm = () => {
     };
 
     const res = await fetch(
-      `https://wp.paxform.com/wp-json/recaptcha/v2/verification`,
+      `${process.env.REACT_APP_WP_API_URL}recaptcha/v2/verification`,
       options
     );
     const data = await res.json();
@@ -208,6 +208,11 @@ const ContactForm = () => {
         }
       };
     }
+  };
+
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value);
+    e.target.style.height = e.target.scrollHeight + 'px';
   };
 
   useEffect(() => {
@@ -283,7 +288,7 @@ const ContactForm = () => {
           <strong>Message</strong>
           <textarea
             placeholder="Message"
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={(e) => handleMessageChange(e)}
             value={message}
             required
           ></textarea>
@@ -323,18 +328,31 @@ const ContactForm = () => {
         ariaHideApp={false}
         style={{
           content: {
-            width: "60%",
-            height: '300px',
+            display: "flex",
+            flexDirection: "column",
+            width: "600px",
+            maxWidth: "calc(100% - 2rem)",
+            height: "300px",
             left: "50%",
-            top: '50%',
+            top: "50%",
             transform: "translate(-50%, -50%)",
-            padding: '2rem',
-            boxSizing: 'border-box'
+            padding: "2rem",
+            boxSizing: "border-box",
+            justifyContent: "space-between",
           },
         }}
       >
-        <h1>Your message has been sent!</h1>
-        <p>We will contact you shortly. Thank you!</p>
+        <div className="contact_modal__message">
+          <h1>Your message has been sent!</h1>
+          <p>We will contact you shortly. Thank you!</p>
+        </div>
+        <Button
+          className="contact_modal__button"
+          text="Close"
+          type="flat-green"
+          color="white"
+          onClick={handleModalClose}
+        />
       </Modal>
     </Fragment>
   );
