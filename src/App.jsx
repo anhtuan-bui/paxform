@@ -64,6 +64,7 @@ function App() {
 							<Route path="blog-details" element={<BlogDetails />} />
 							<Route path="privacy-policy" element={<PrivacyPolicy />} />{" "}
 							<Route path="legal" element={<Legal />} />
+							<Route path="legal/:slug/:slug" element={<LegalDetail />} />
 							<Route path="legal-detail" element={<LegalDetail />} />
 							<Route path="not-found" element={<NotFound />} />
 							<Route path="use-cases" element={<UseCases />} />

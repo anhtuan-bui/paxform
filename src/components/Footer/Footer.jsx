@@ -379,7 +379,7 @@ export default function Footer() {
                     className="footer__bottom-languages-option"
                     value={language.code}
                     key={index}
-                    onChange={(e) => setLanguageCode(language.code)}
+                    onChange={() => setLanguageCode(language.code)}
                   >
                     {`${language.emoji} ${language.name} - ${language.country}`}
                   </option>

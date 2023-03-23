@@ -1,4 +1,5 @@
 @import "../../styles/styles.scss";
+
 $color_white: #fff;
 $color_blue: $color__primary;
 $color_purple: #2d4bb6;
@@ -6,183 +7,168 @@ $color_light-grey: #f6f6f6;
 $color_grey: #2f4356;
 $color_green: $color__success;
 .legal_detail {
-    .hero {
-        position: relative;
-        padding-top: rem(100);
-        background: linear-gradient(125.24deg, $color_blue 27.35%, #f2f9ff 176.96%);
-        &__wrapper {
-            display: flex;
-            align-items: center;
-            padding-top: rem(80);
-            padding-bottom: rem(190);
-            text-align: center;
-            box-sizing: border-box;
-            @include medium {
-                flex-direction: column;
-                padding-top: 0;
-                padding-bottom: rem(140);
-            }
-            @include small {
-                padding-top: 0;
-            }
-        }
-        &__content {
-            color: $color_white;
-            flex: 1 1 40%;
-            @include extraLarge {
-                flex: 1 1 50%;
-            }
-            h1,
-            p {
-                max-width: 100%;
-            }
-        }
-        &__title {
-            font-size: rem(42);
-            margin-bottom: rem(24);
-            margin-top: 0;
-            @include extraLarge {
-                font-size: rem(38);
-            }
-            @include large {
-                font-size: rem(34);
-            }
-            @include medium {
-                font-size: rem(42);
-            }
-            @include small {
-                font-size: rem(36);
-            }
-            @include extraSmall {
-                font-size: rem(28);
-            }
-        }
+  .hero {
+    position: relative;
+    padding-top: rem(100);
+    background: linear-gradient(90.32deg, #0a61b4 0.35%, #074581 99.81%);
+    &__wrapper {
+      padding-top: rem(40);
+      padding-bottom: rem(180);
+      box-sizing: border-box;
+      @include medium {
+        padding-top: 0;
+        padding-bottom: rem(140);
+      }
+      @include small {
+        padding-top: 0;
+      }
     }
-    .security_introduction {
-        position: relative;
-        padding-bottom: rem(50);
-        background: #e1edf9;
-        line-height: rem(25);
-        @include large {
-            padding-bottom: rem(80);
-        }
-        @include medium {
-            padding-top: rem(30);
-            padding-bottom: rem(100);
-        }
-        @include small {
-            padding-bottom: rem(160);
-        }
-        .grid_box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            @include small {
-                grid-template-columns: 1fr;
-            }
-            @include extraSmall {
-                grid-template-columns: 1fr;
-            }
-            &__image {
-                position: relative;
-                top: rem(40);
-                width: 100%;
-                z-index: 1001;
-                @include large {
-                    top: rem(80);
-                }
-                @include medium {
-                    top: 0;
-                }
-                &>img {
-                    display: block;
-                    width: 75%;
-                    max-width: rem(363);
-                    margin: 0 auto;
-                    @include medium {
-                        width: 90%;
-                    }
-                    @include small {
-                        width: 50%;
-                    }
-                }
-            }
-            &__content {
-                padding: rem(70) $padding__column 0;
-                box-sizing: border-box;
-                @include large {
-                    padding-top: rem(140);
-                }
-                @include medium {
-                    padding-top: 0;
-                }
-                &-name {
-                    font-size: rem(14);
-                    font-weight: bold;
-                    color: $color_green;
-                    letter-spacing: 0.14em;
-                    text-transform: uppercase;
-                }
-                &-title {
-                    margin: rem(24) 0;
-                    line-height: rem(29);
-                }
-                &-description {
-                    color: $color_grey;
-                }
-            }
-        }
+    &__title {
+      font-size: rem(42);
+      color: white;
+      padding: 0 $padding__column;
+      @include extraLarge {
+        font-size: rem(38);
+      }
+      @include large {
+        font-size: rem(34);
+      }
+      @include medium {
+        font-size: rem(42);
+      }
+      @include small {
+        font-size: rem(36);
+      }
+      @include extraSmall {
+        font-size: rem(28);
+      }
     }
-    .security_features {
-        position: relative;
-        padding-bottom: rem(220);
-        .grid_box {
-            padding: rem(100) 0 0;
-            &-name {
-                padding: 0 $padding__column;
-                font-size: rem(14);
-                font-weight: bold;
-                color: $color_purple;
-                letter-spacing: 0.14em;
-                text-transform: uppercase;
-                text-align: center;
-            }
-            &-title {
-                padding: 0 $padding__column;
-                margin: rem(24) auto rem(32);
-                line-height: rem(29);
-                font-size: rem(38);
-                text-align: center;
-            }
-            &__list {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                padding: 0;
-                @include small {
-                    grid-template-columns: repeat(1, 1fr);
-                }
-                &__inner {
-                    padding: rem(32);
-                    background: $color_light-grey;
-                    border-radius: rem(20);
-                    box-sizing: border-box;
-                }
-                &__content {
-                    padding: $padding__column;
-                    list-style: none;
-                    &-image {
-                        display: block;
-                    }
-                    &-title {
-                        margin: rem(16) 0;
-                        font-size: rem(16);
-                        font-weight: 600;
-                        color: $color_grey;
-                    }
-                    &-description {
-                        margin-bottom: 0;
-                    }
-                }
-            }
-        }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 3rem 0;
+
+    @include small {
+      grid-template-columns: 1fr;
     }
+  }
+
+  &__sidebar {
+    padding: 0 $padding__column;
+
+    @include small {
+      display: none;
+    }
+  }
+
+  &__group {
+    margin-bottom: rem(24);
+    &-title {
+      margin: 0;
+    }
+
+    &-items {
+      padding-left: rem(6);
+      margin: 0;
+      border-left: 1px solid $border__color;
+    }
+
+    &-item {
+      list-style-type: none;
+      margin: rem(12) 0;
+      text-transform: capitalize;
+
+      &-link {
+        text-decoration: none;
+        color: $color_main__text;
+
+        &:hover {
+          color: lighten($color_main__text, 20%);
+        }
+      }
+    }
+  }
+
+  &__legal {
+    padding: 0 $padding__column;
+  }
+
+  &__breadscrumb {
+    display: flex;
+    align-items: center;
+    gap: rem(6);
+    flex-wrap: wrap;
+    text-transform: capitalize;
+    margin-bottom: rem(36);
+    svg {
+      path {
+        stroke: #537698;
+      }
+    }
+  }
+
+  &__detail {
+    &-content {
+      h1 {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 2rem;
+      }
+
+      h2 {
+        font-size: 18px;
+        line-height: 25px;
+        margin-top: 1.75rem;
+      }
+
+      h3 {
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 1.5rem;
+      }
+
+      p {
+        line-height: 1.8;
+      }
+
+      li {
+        line-height: 2.2;
+      }
+
+      a {
+        color: $color__success;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          color: lighten($color__success, 20%);
+        }
+      }
+    }
+  }
+}
+
+.breadscrumb {
+  &__arrow-right {
+    color: #537698;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #537698;
+
+    &:hover {
+      color: darken(#537698, 20%);
+    }
+
+    &-skeleton {
+      min-width: rem(80);
+    }
+  }
+
+  &__page-title-skeleton {
+    min-width: rem(80);
+  }
 }

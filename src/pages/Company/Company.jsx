@@ -4,101 +4,20 @@ import "./Company.scss";
 import ReadyGet from "../../components/ReadyGet/ReadyGet";
 import about from "../../assets/images/card3.png";
 import vision from "../../assets/images/card1.png";
-import teamPic1 from "../../assets/images/company-team-pic01.png";
-import teamPic2 from "../../assets/images/company-team-pic02.png";
-import teamPic3 from "../../assets/images/company-team-pic03.png";
-import teamPic4 from "../../assets/images/company-team-pic04.png";
-import teamPic5 from "../../assets/images/company-team-pic05.png";
-import teamPic6 from "../../assets/images/company-team-pic06.png";
-import teamPic7 from "../../assets/images/company-team-pic07.png";
-import teamPic8 from "../../assets/images/company-team-pic08.png";
 import diversity from "../../assets/images/diversity.png";
+
+import sampleAvatar from "../../assets/images/sample-avatar.png";
+
+import "react-loading-skeleton/dist/skeleton.css";
 
 // import { ReactComponent as LinkedIn } from "../../assets/icons/linkedin.svg";
 
 import { SCREEN_SIZE } from "../../configurations/configurations";
+import { useQuery } from "@apollo/client";
+import { GET_TEAM_MEMBERS } from "../../lib/graphqlQuery";
+import Skeleton from "react-loading-skeleton";
 
-const teams = [
-  {
-    color: "#0a61b4",
-    backgroundGradient:["#0a61b4", "#074581"],
-    name: "Chidi Okechukwu",
-    position: "CEO & Founder",
-    img: teamPic1,
-    linkedin: "http://www.linkedin.com/",
-  },
-  {
-    color: "#0a61b4",
-    backgroundGradient:["#0a61b4", "#074581"],
-    name: "Duy Thanh Doan",
-    position: "Engineering",
-    img: teamPic2,
-    linkedin: "http://www.linkedin.com/",
-  },
-  {
-    color: "#0a61b4",
-    backgroundGradient:["#0a61b4", "#074581"],
-    name: "Ankur Kadian",
-    position: "Engineering",
-    img: teamPic3,
-    linkedin: "http://www.linkedin.com/",
-  },
-  {
-    color: "#20976c",
-    backgroundGradient: ["#20976c", "#034228"],
-    name: "Thi Rao",
-    position: "Finance & Operation",
-    img: teamPic4,
-    linkedin: "http://www.linkedin.com/",
-  },
-  {
-    color: "#20976c",
-    backgroundGradient: ["#20976c", "#034228"],
-    name: "Ericka Rao",
-    position: "Sales",
-    img: teamPic5,
-    linkedin: "http://www.linkedin.com/",
-  },
-  {
-    color: "#20976c",
-    backgroundGradient: ["#20976c", "#034228"],
-    name: "Phoebe Zeng",
-    position: "Sales",
-    img: teamPic6,
-    linkedin: "http://www.linkedin.com/",
-  },
-  {
-    color: "#0a61b4",
-    backgroundGradient:["#0a61b4", "#074581"],
-    name: "Jana Schwikowski",
-    position: "Engineering",
-    img: teamPic7,
-    linkedin: "http://www.linkedin.com/",
-  },
-  {
-    color: "#0a61b4",
-    backgroundGradient:["#0a61b4", "#074581"],
-    name: "Boya An",
-    position: "Desginer",
-    img: teamPic8,
-    linkedin: "http://www.linkedin.com/",
-  },
-  {
-    color: "#0a61b4",
-    backgroundGradient:["#0a61b4", "#074581"],
-    name: "Amrit Kharel",
-    position: "Engineering",
-    img: teamPic8,
-    linkedin: "http://www.linkedin.com/",
-  },
-];
 export default class Company extends Component {
-  blue = "#0a61b4";
-  // const green = "#20976c";
-
-  backgroundGradientBlue = [this.blue, "#074581"];
-  // const backgroundGradientGreen = [green, "#034228"];
-
   componentDidMount() {
     this.handleResize();
     window.addEventListener("resize", this.handleResize);
@@ -211,46 +130,41 @@ export default class Company extends Component {
           <div className="company_video__background"></div>
         </section>
 
-        <section className="meet">
-          <div className="container">
-            <h1 className="meet__title section__title">Meet The Team</h1>
-            <div className="meet__grid">
-              {teams.map((info, index) => (
-                <MeetItem info={info} key={index} />
-              ))}
-            </div>
-          </div>
-        </section>
+        <Meet />
 
         <section className="diversity">
           <div className="container diversity__wrapper">
-              <div className="diversity__content">
-                <h1 className="diversity__title section__title">
-                  Diversity & Inclusion
-                </h1>
-                <p className="diversity__description section__description">
-                  At Paxform, we make diversity and inclusion part of everything
-                  we do. We are building a culture where one’s unique attributes
-                  and differences are part of who we are. Regardless of
-                  background or gender, our employees, customers and
-                  stakeholders are treated as equals.
-                </p>
-                <p className="diversity__description section__description">
-                  As a fast-growing company, we focus on creating a diverse
-                  workforce globally and a workplace that welcomes, nurtures and
-                  celebrates camaraderie, initiative, leadership and innovation.
-                  We strive to build innovative products that can be used by
-                  everyone despite their cultural, language or geographic
-                  differences, furthermore, achieving the goals that we have set
-                  for ourselves and our stakeholders.
-                </p>
-              </div>
-              <div className="diversity__image">
-                <img className="diversity__illustration" src={diversity} alt="diversity" />
-                {/* <BackgroundGradient className="diversity__background-gradient"/> */}
-              </div>
+            <div className="diversity__content">
+              <h1 className="diversity__title section__title">
+                Diversity & Inclusion
+              </h1>
+              <p className="diversity__description section__description">
+                At Paxform, we make diversity and inclusion part of everything
+                we do. We are building a culture where one’s unique attributes
+                and differences are part of who we are. Regardless of background
+                or gender, our employees, customers and stakeholders are treated
+                as equals.
+              </p>
+              <p className="diversity__description section__description">
+                As a fast-growing company, we focus on creating a diverse
+                workforce globally and a workplace that welcomes, nurtures and
+                celebrates camaraderie, initiative, leadership and innovation.
+                We strive to build innovative products that can be used by
+                everyone despite their cultural, language or geographic
+                differences, furthermore, achieving the goals that we have set
+                for ourselves and our stakeholders.
+              </p>
             </div>
-            <div className="diversity__background-gradient"></div>
+            <div className="diversity__image">
+              <img
+                className="diversity__illustration"
+                src={diversity}
+                alt="diversity"
+              />
+              {/* <BackgroundGradient className="diversity__background-gradient"/> */}
+            </div>
+          </div>
+          <div className="diversity__background-gradient"></div>
         </section>
 
         <ReadyGet />
@@ -259,13 +173,40 @@ export default class Company extends Component {
   }
 }
 
-const MeetItem = ({ info }) => {
+const Meet = () => {
+  const { loading, error, data } = useQuery(GET_TEAM_MEMBERS);
 
-  const iconColor = info.color;
-  const picture = info.img;
-  const backgroundGradient = info.backgroundGradient;
-  const name = info.name;
-  const position = info.position;
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  let teamMembers = !loading
+    ? [...data.teamMembers.nodes]
+    : Array.from({ length: 8 }, (i = 0) => i++);
+  teamMembers = teamMembers.sort((a, b) => a.orderNumber - b.orderNumber);
+
+  return (
+    <section className="meet">
+      <div className="container">
+        <h1 className="meet__title section__title">Meet The Team</h1>
+        <div className="meet__grid">
+          {teamMembers.map((info, index) => (
+            <MeetItem info={info} key={index} loading={loading} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const MeetItem = ({ info }) => {
+  const iconColor = info.color ? info.color : "#0a61b4";
+  const picture = info.picture ? info.picture.node.sourceUrl : sampleAvatar;
+  const backgroundGradient = info.color
+    ? [info.color, info.gradientEndColor]
+    : ["#0a61b4", "#074581"];
+  const name = info.fullName ? info.fullName : <Skeleton />;
+  const position = info.position ? info.position : <Skeleton />;
 
   return (
     <div className="meet_item">
@@ -276,7 +217,13 @@ const MeetItem = ({ info }) => {
             color={iconColor}
           />
         </div>
-        <img className="meet_item__picture" src={picture} alt={name} />
+
+        <img
+          className="meet_item__picture"
+          src={picture}
+          alt={!info.loading ? name : ""}
+        />
+
         <div
           className="meet_item__background"
           style={{
