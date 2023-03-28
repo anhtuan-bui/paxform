@@ -3,11 +3,20 @@ import Button from "../Button/Button";
 import RelatedCard from "../RelatedCard/RelatedCard";
 import "./LatestBlogs.scss";
 
-import card1 from "../../assets/images/card1.png";
-import card2 from "../../assets/images/card2.png";
-import card3 from "../../assets/images/card3.png";
+// import card1 from "../../assets/images/card1.png";
+// import card2 from "../../assets/images/card2.png";
+// import card3 from "../../assets/images/card3.png";
+import { useQuery } from "@apollo/client";
+import { GET_BLOGS } from "../../lib/graphqlQuery";
 
-export default function LatestBlogs({triangleColor}) {
+export default function LatestBlogs({ triangleColor }) {
+  const { loading, data } = useQuery(GET_BLOGS, {
+    variables: {
+      first: 4,
+    },
+  });
+
+  const blogs = !loading ? data?.posts?.nodes : Array.from({ length: 4 });
   return (
     <section className="platform background--dark-blue platform__title--white">
       <div className="container platform__container">
@@ -25,33 +34,21 @@ export default function LatestBlogs({triangleColor}) {
           </div>
         </div>
         <div className="platform__content">
-          <RelatedCard
-            image={card1}
-            title="First Story"
-            description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
-            readLink={true}
-          />
-          <RelatedCard
-            image={card2}
-            title="Second Story"
-            description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
-            readLink={true}
-          />
-          <RelatedCard
-            image={card3}
-            title="Third Story"
-            description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
-            readLink={true}
-          />
-          <RelatedCard
-            image={card3}
-            title="Third Story"
-            description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour"
-            readLink={true}
-          />
+          {blogs.map((blog, index) => (
+            <RelatedCard
+              key={index}
+              data={blog}
+              readLink={true}
+              background="dark"
+              term="blogs"
+              loading={loading}
+            />
+          ))}
         </div>
       </div>
-      <div className={`bottom_triangle bottom_triangle--${triangleColor}`}></div>
+      <div
+        className={`bottom_triangle bottom_triangle--${triangleColor}`}
+      ></div>
     </section>
   );
 }

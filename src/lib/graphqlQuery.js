@@ -1,5 +1,166 @@
 import { gql } from "@apollo/client";
 
+const GET_BLOGS = gql`
+  query GetBlogs($first: Int) {
+    posts(first: $first) {
+      nodes {
+        id
+        slug
+        title
+        content
+        featuredImage {
+          node {
+            sourceUrl
+            id
+          }
+        }
+        categories {
+          nodes {
+            name
+            id
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GET_RESOURCES_CATEGORIES = gql`
+  query GetResourcesCategories {
+    resourceCategories {
+      nodes {
+        id
+        name
+        slug
+        count
+      }
+    }
+  }
+`;
+
+const GET_RESOURCES = gql`
+  query GetResources($cursor: String, $first: Int) {
+    resources(first: $first, after: $cursor) {
+      nodes {
+        id
+        slug
+        title
+        content
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        resourceCategories {
+          nodes {
+            id
+            name
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GET_RESOURCES_BY_CATEGORY = gql`
+  query GetIndustryResources($cursor: String, $id: ID!) {
+    resourceCategory(id: $id, idType: SLUG) {
+      id
+      name
+      resources(first: 4, after: $cursor) {
+        nodes {
+          id
+          slug
+          title
+          content
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GET_FIRST_TWO_RESOURCES = gql`
+  query GetFirstTwoResources {
+    resources(first: 2) {
+      nodes {
+        id
+        slug
+        title
+        content
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        startCursor
+      }
+    }
+  }
+`;
+
+const GET_USE_CASES = gql`
+  query GetUseCases {
+    useCases {
+      nodes {
+        slug
+        heroName
+        heroImageBackgroundGradientStart
+        headerIcon {
+          node {
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GET_USE_CASE = gql`
+  query GetUseCases($id: ID!) {
+    useCase(id: $id, idType: SLUG) {
+      heroName
+      heroTitle
+      heroDescription
+      heroImage {
+        node {
+          sourceUrl
+        }
+      }
+      heroBackgroundColor
+      heroImageBackgroundGradientStart
+      heroImageBackgroundGradientStop
+      infoName
+      infoTitle
+      infoDescription
+      infoContent
+      additionalInfoTitle
+      additionalInfoDescription
+      additionalInfoImage {
+        node {
+          sourceUrl
+        }
+      }
+      additionalInfoTitle2
+      additionalInfoDescription2
+      additionalInfoImage2 {
+        node {
+          sourceUrl
+        }
+      }
+    }
+  }
+`;
+
 const GET_LEGAL_BY_SLUG = gql`
   query GetLegalBySlug($slug: String!) {
     legalBy(slug: $slug) {
@@ -135,5 +296,12 @@ export {
   GET_TEAM_MEMBERS,
   GET_LEGAL_BY_SLUG,
   GET_LEGAL_CATEGORIES,
-  GET_LEGAL_BY_SLUG_TYPE
+  GET_LEGAL_BY_SLUG_TYPE,
+  GET_USE_CASE,
+  GET_USE_CASES,
+  GET_FIRST_TWO_RESOURCES,
+  GET_RESOURCES_BY_CATEGORY,
+  GET_RESOURCES,
+  GET_RESOURCES_CATEGORIES,
+  GET_BLOGS
 };

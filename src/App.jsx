@@ -29,7 +29,7 @@ const Home = lazy(() => import("./pages/Home/Home"));
 // const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
 const Business = lazy(() => import("./pages/Business/Business"));
-const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
+const UseCase = lazy(() => import("./pages/UseCase/UseCase"));
 const ResourceDetails = lazy(() => import("./pages/ResourceDetails/ResourceDetails"))
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
 							<Route path="legal/:slug/:slug" element={<LegalDetail />} />
 							<Route path="legal-detail" element={<LegalDetail />} />
 							<Route path="not-found" element={<NotFound />} />
-							<Route path="use-cases" element={<UseCases />} />
+							<Route path="use-cases/:slug" element={<UseCase />} />
 							<Route path="contact-us" element={<ContactUs />} />
 							<Route path="company" element={<Company />} />
 							<Route path="gq" element={<GQ />} />

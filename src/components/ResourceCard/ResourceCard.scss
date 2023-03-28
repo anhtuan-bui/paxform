@@ -7,6 +7,9 @@ $card_height--small: rem(150);
   border-radius: rem(20);
   overflow: hidden;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &--greyish-blue {
     background-color: $color__secondary;
@@ -52,7 +55,18 @@ $card_height--small: rem(150);
   }
 
   &__title {
-    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 $padding__column;
+
+
+    &-link {
+      text-decoration: none;
+      color: $color_main__text;
+
+      &:hover {
+        color: lighten($color_main__text, 20%);
+      }
+    }
 
     @include large {
       font-size: rem(16);

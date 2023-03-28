@@ -12,6 +12,7 @@
 
     @include medium {
       grid-template-columns: repeat(2, 1fr);
+      row-gap: 2rem;
       padding-bottom: rem(80);
       padding-top: rem(80);
     }

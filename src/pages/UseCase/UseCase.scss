@@ -2,7 +2,7 @@
 
 $color__section-name: #2d4bb6;
 
-.use_cases {
+.use_case {
   .hero {
     background-color: #f2fdf9;
     position: relative;
@@ -60,6 +60,7 @@ $color__section-name: #2d4bb6;
         bottom: 0;
         width: 50vw;
         max-height: 223px;
+        min-height: 150px;
 
         @include medium {
           width: 100vw;
