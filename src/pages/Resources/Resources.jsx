@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import ResourceCard from "../../components/ResourceCard/ResourceCard";
 import "./Resources.scss";
 
@@ -25,6 +25,9 @@ import Skeleton from "react-loading-skeleton";
 
 export default function Resources() {
   const [chip, setChip] = useState("all");
+  const [resourceCategories, setResourceCategories] = useState([]);
+  const [colorMap] = useState(new Map());
+  const colors = ["#20976c", "#0a61b4", "#A8CA13", "#F48C06"];
 
   const { loading, data } = useQuery(GET_FIRST_TWO_RESOURCES);
 
@@ -37,6 +40,16 @@ export default function Resources() {
   const loadChip = (chip) => {
     setChip(chip);
   };
+
+  const loadResourceCategories = (resourceCategories) => {
+    setResourceCategories(resourceCategories);
+  };
+
+  if (resourceCategories) {
+    resourceCategories.forEach((category, index) => {
+      colorMap.set(category.name, colors[index % colors.length]);
+    });
+  }
 
   return (
     <main className="resources">
@@ -109,9 +122,16 @@ export default function Resources() {
             <h1 className="insight_update__title section_title">
               Business Insight and Industry Updates
             </h1>
-            <UpdateRadios loadChip={loadChip} />
+            <UpdateRadios
+              loadChip={loadChip}
+              loadResourceCategories={loadResourceCategories}
+            />
 
-            <LatestUpdates chip={chip} endCursor={endCursor} />
+            <LatestUpdates
+              chip={chip}
+              endCursor={endCursor}
+              colorMap={colorMap}
+            />
           </div>
         </div>
         <div className="bottom_triangle bottom_triangle--white"></div>
@@ -173,7 +193,7 @@ const FourResources = ({ slug, endCursor }) => {
   );
 };
 
-const LatestUpdates = ({ chip, endCursor }) => {
+const LatestUpdates = ({ chip, endCursor, colorMap }) => {
   const { loading, data } = useQuery(GET_RESOURCES, {
     variables: {
       first: 8,
@@ -204,15 +224,17 @@ const LatestUpdates = ({ chip, endCursor }) => {
           data={resource}
           readLink={true}
           loading={loading}
-          term='resources'
+          term="resources"
+          colorMap={colorMap}
         />
       ))}
     </div>
   );
 };
 
-const UpdateRadios = ({ loadChip }) => {
+const UpdateRadios = ({ loadChip, loadResourceCategories }) => {
   const [chip, setChip] = useState("all");
+  const [load, setLoad] = useState(false);
 
   const handleRadioChange = (event) => {
     loadChip(event.target.id);
@@ -224,6 +246,13 @@ const UpdateRadios = ({ loadChip }) => {
   const resourceCategories = !loading
     ? data?.resourceCategories?.nodes.filter((node) => node.count > 0)
     : Array.from({ length: 3 });
+
+  useEffect(() => {
+    if (!loading && load === false) {
+      loadResourceCategories(resourceCategories);
+      setLoad(true);
+    }
+  }, [load, loading, loadResourceCategories, resourceCategories]);
   return (
     <div className="insight_update__radios">
       {!loading ? (

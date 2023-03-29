@@ -2,7 +2,15 @@ import Skeleton from "react-loading-skeleton";
 import ReadArticle from "../ReadArticle/ReadArticle";
 import "./RelatedCard.scss";
 
-const RelatedCard = ({ data, readLink, className, loading, term , background}) => {
+const RelatedCard = ({
+  data,
+  readLink,
+  className,
+  loading,
+  term,
+  background,
+  colorMap,
+}) => {
   const parser = new DOMParser();
 
   const category = data ? (
@@ -29,23 +37,27 @@ const RelatedCard = ({ data, readLink, className, loading, term , background}) =
     <Skeleton width={"75%"} />
   );
 
-  const titleVariant = background  ? `related_card__title--${background}` : ''
+  const categoryColor = data ? colorMap?.get(category) : "";
+
+  const titleVariant = background ? `related_card__title--${background}` : "";
   return (
     <div className="related_card">
       <div className="related_card__top">
         {image ? (
           <div className={`${className ? className : ""} related_card__image`}>
-            <img src={image} alt="first story" />
+            <a href={to}><img src={image} alt="first story" /></a>
           </div>
         ) : (
           <Skeleton height={180} style={{ borderRadius: "20px" }} />
         )}
 
-        {category ? <p className="related_card__category">{category}</p> : ""}
+        {category ? <p className="related_card__category" style={{color: categoryColor}}>{category}</p> : ""}
 
         {title ? (
           <h2 className={`related_card__title ${titleVariant}`}>
-            <a className="related_card__title-link" href={to}>{title}</a>
+            <a className="related_card__title-link" href={to}>
+              {title}
+            </a>
           </h2>
         ) : (
           ""

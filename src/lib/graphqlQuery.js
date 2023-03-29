@@ -1,5 +1,22 @@
 import { gql } from "@apollo/client";
 
+const GET_RESOURCE_BY_SLUG = gql`
+  query GetResourceBySlug($id: ID!) {
+    resource(id: $id, idType: SLUG) {
+      id
+      slug
+      title
+      content
+      date
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+    }
+  }
+`;
+
 const GET_BLOGS = gql`
   query GetBlogs($first: Int) {
     posts(first: $first) {
@@ -303,5 +320,6 @@ export {
   GET_RESOURCES_BY_CATEGORY,
   GET_RESOURCES,
   GET_RESOURCES_CATEGORIES,
-  GET_BLOGS
+  GET_BLOGS,
+  GET_RESOURCE_BY_SLUG
 };

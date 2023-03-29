@@ -209,8 +209,9 @@
     left: 0;
     display: none;
     z-index: 1400;
+    background-color: black;
 
-    &--display-block {
+    &--display {
       display: block;
     }
   }

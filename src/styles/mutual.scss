@@ -137,3 +137,12 @@
     letter-spacing: 0.005;
     font-weight: 400;
 }
+
+.link--black {
+    color: $color_main__text;
+    text-decoration: none;
+
+    &:hover {
+        color: lighten($color_main__text, 20%);
+    }
+}

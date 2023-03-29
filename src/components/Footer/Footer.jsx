@@ -90,12 +90,17 @@ export default function Footer() {
 
   // const openFooterOverlay = () => {
   //   const footerOverlay = document.querySelector(".footer__overlay");
-  //   footerOverlay.classList.add("footer__overlay--display-block");
+  //   footerOverlay.classList.add("footer__overlay--display");
   // };
 
   // const closeFooterOverlay = () => {
   //   const footerOverlay = document.querySelector(".footer__overlay");
-  //   footerOverlay.classList.remove("footer__overlay--display-block");
+  //   footerOverlay.classList.remove("footer__overlay--display");
+  // };
+
+  // const handleFooterOverlayClick = () => {
+  //   console.log('clicked')
+  //   closeFooterOverlay();
   // };
 
   // const handleLanguageSelectorClick = () => {
@@ -120,10 +125,7 @@ export default function Footer() {
   //   }
   // };
 
-  // const handleFooterOverlayClick = () => {
-  //   closeFooterOverlay();
-  //   closeSelectorOptions();
-  // };
+  
 
   // const handleSearchInputChange = (e) => {
   //   if (e.target.value) {
