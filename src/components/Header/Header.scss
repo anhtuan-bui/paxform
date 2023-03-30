@@ -156,6 +156,7 @@ $header__font-size: $font_size__mobile;
       flex-direction: column;
       padding: 0;
       width: rem(300);
+      margin-bottom: 1rem;
     }
     @include extraSmall {
       width: rem(280);
