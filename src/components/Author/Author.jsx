@@ -1,18 +1,20 @@
 import React from "react";
 import './Author.scss';
 
-export default function Author(props) {
-  const author = props.author?.node;
-
+const Author = props => {
+  console.log(props)
   return (
     <div className="author">
-      <div className="author__avatar">
-        <img src={author?.avatar.url} alt="author avatar" />
-      </div>
-      <div className="author_info">
-        <h4 className="author__name">{author?.firstName || author?.lastName ? `${author.firstName ? author.firstName : ''} ${author.lastName? author.lastName : ''}` : `@${author?.username}`}</h4>
-        <p className="author__occupation">{author?.roles?.edges[0]?.node?.displayName}</p>
+      <div className="author__wrapper">
+        {/* props.avatar accepts an image tag <img /> */}
+        {props.avatar}
+        <div className="author__info">
+          <div className="author__name">{props.name}</div>
+          <div className="author__title">{props.displayName}</div>
+        </div>
       </div>
     </div>
   );
 }
+
+export default Author
