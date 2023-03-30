@@ -72,4 +72,92 @@ const GET_CATEGORIES = gql`
   }
 `;
 
-export { GET_POSTS, LOGIN_CLIENT, GET_CATEGORIES };
+const GET_RECOMMENDED_POSTS = gql`
+  query getRecommendedPosts {
+    posts(first: 4) {
+      nodes {
+        id
+        date
+        title
+        content
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        categories {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GET_BLOG_DETAILS = gql`
+  query GetBlogDetails($slug: ID!) {
+    post(id: $slug, idType: SLUG) {
+      title
+      content
+      date
+      author {
+        node {
+          firstName
+          lastName
+          avatar {
+            url
+          }
+          roles {
+              nodes {
+                displayName
+              }
+          }
+        }
+      }
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+      categories {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+`;
+
+const GET_RELATED_POST = gql`
+  query getPosts {
+    posts {
+      nodes {
+        id
+        content
+        slug
+        title
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        categories {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+
+export {
+  GET_POSTS,
+  LOGIN_CLIENT,
+  GET_CATEGORIES,
+  GET_RECOMMENDED_POSTS,
+  GET_BLOG_DETAILS,
+  GET_RELATED_POST,
+};
