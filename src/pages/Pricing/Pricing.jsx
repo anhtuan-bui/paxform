@@ -86,7 +86,7 @@ export default class Pricing extends Component {
         compares: {
           features: [
             "$39.90",
-            "5(max 9)",
+            "5 (max 9)",
             "30",
             "50",
             "10",
@@ -145,7 +145,7 @@ export default class Pricing extends Component {
           "A simple way for you new started to Passfolio.",
         ],
         compares: {
-          features: ["$29.90", "1(max 4)", "3", "10", "2", "1", "500", "10GB"],
+          features: ["$29.90", "1 (max 4)", "3", "10", "2", "1", "500", "10GB"],
           securities: [<Tick />],
           supports: [<Tick />, "40", <Tick />, <Tick />, <Eks />, <Eks />],
         },

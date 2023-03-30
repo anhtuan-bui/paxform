@@ -49,7 +49,11 @@ export default function UseCase() {
 
   const useCase = loadingFinished ? data.useCase : "";
 
-  const heroName = loadingFinished ? useCase.heroName : <Skeleton />;
+  const heroName = loadingFinished ? (
+    useCase.heroName
+  ) : (
+    <Skeleton width={120} />
+  );
   const heroTitle = loadingFinished ? useCase.heroTitle : <Skeleton />;
   const heroDescription = useCase?.heroDescription;
   const heroImageUrl = useCase?.heroImage?.node?.sourceUrl;
@@ -71,12 +75,14 @@ export default function UseCase() {
   const heroBackgroundColor = useCase.heroBackgroundColor
     ? useCase.heroBackgroundColor
     : "#f2fdf9";
-  const heroImageBackgroundGradientStart = useCase.heroImageBackgroundGradientStart
-    ? useCase.heroImageBackgroundGradientStart
-    : "#06945A";
-  const heroImageBackgroundGradientStop = useCase.heroImageBackgroundGradientStop
-    ? useCase.heroImageBackgroundGradientStop
-    : "#045333";
+  const heroImageBackgroundGradientStart =
+    useCase.heroImageBackgroundGradientStart
+      ? useCase.heroImageBackgroundGradientStart
+      : "#06945A";
+  const heroImageBackgroundGradientStop =
+    useCase.heroImageBackgroundGradientStop
+      ? useCase.heroImageBackgroundGradientStop
+      : "#045333";
 
   const nameStyle = {
     color: nameColor,
@@ -102,7 +108,10 @@ export default function UseCase() {
                 }}
               ></p>
             ) : (
-              <Skeleton count={3} />
+              <p>
+                <Skeleton count={2} />
+                <Skeleton width={"75%"} />
+              </p>
             )}
           </div>
           <div className="hero__image">
@@ -113,7 +122,7 @@ export default function UseCase() {
                 alt="hero illustration"
               />
             ) : (
-              <Skeleton height={500}/>
+              <Skeleton height={500} style={{ borderRadius: "20px" }} />
             )}
 
             <svg
@@ -137,7 +146,10 @@ export default function UseCase() {
                   gradientUnits="userSpaceOnUse"
                 >
                   <stop stopColor={heroImageBackgroundGradientStart} />
-                  <stop offset="1" stopColor={heroImageBackgroundGradientStop} />
+                  <stop
+                    offset="1"
+                    stopColor={heroImageBackgroundGradientStop}
+                  />
                 </linearGradient>
               </defs>
             </svg>
@@ -178,7 +190,7 @@ export default function UseCase() {
                   <p>
                     <Skeleton count={5} />
                   </p>
-                  <Skeleton height={300} />
+                  <Skeleton height={300} style={{ borderRadius: "20px" }} />
                 </Fragment>
               ))}
             </div>

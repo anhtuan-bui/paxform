@@ -28,7 +28,7 @@ export default function ResourceCard(props) {
             className={`resource_card__image ${variant}`}
           />
         ) : (
-          <Skeleton height={props.variant === "longer" ? 200 : 150} />
+          <Skeleton height={props.variant === "longer" ? 267 : 200} />
         )}
         <h3 className="resource_card__title">
           <a className="resource_card__title-link" href={`/resources/${slug}`}>
