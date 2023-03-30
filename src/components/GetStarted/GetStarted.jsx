@@ -37,48 +37,50 @@ export default class GetStarted extends Component {
         </section>
 
         <section className="love_to_hear">
-          <div className="container love_to_hear__container">
-            {/* <div className="love_to_hear__box-left"> */}
-            <div className="love_to_hear__box-left">
-              <h1>We’d love to hear from you!</h1>
-              <p>
-                You can also contact us to design a custom package for your
-                business.automatically match that data no matter which form you
-                are filling in. Say goodbye to manually inputting the same data
-                over and over again.
-              </p>
+          <div className="container ">
+            <div className="love_to_hear__container">
+              {/* <div className="love_to_hear__box-left"> */}
+              <div className="love_to_hear__box-left">
+                <h1>We’d love to hear from you!</h1>
+                <p>
+                  You can also contact us to design a custom package for your
+                  business.automatically match that data no matter which form
+                  you are filling in. Say goodbye to manually inputting the same
+                  data over and over again.
+                </p>
 
-              <Button type="outline arrow" text="Contact Us" />
-            </div>
-            <div className="love_to_hear__box-right-item">
-              <div className="love_to_hear__box-right-item-image">
-                <img src={alwaysKnows} alt="always know" />
+                <Button type="outline arrow" text="Contact Us" />
               </div>
-              <h3>Always know what you pay</h3>
-              <p>
-                Experience a new level of convenience by using your stored
-                signatures to electronically sign your documents.
-              </p>
-              <a href="https://">
-                <span className="span--hover">Learn more</span>
-                <ArrowRight />
-              </a>
-            </div>
-            <div className="love_to_hear__box-right-item">
-              <div className="love_to_hear__box-right-item-image">
-                <img src={startIntegration} alt="start integration" />
+              <div className="love_to_hear__box-right-item">
+                <div className="love_to_hear__box-right-item-image">
+                  <img src={alwaysKnows} alt="always know" />
+                </div>
+                <h3>Always know what you pay</h3>
+                <p>
+                  Experience a new level of convenience by using your stored
+                  signatures to electronically sign your documents.
+                </p>
+                <a href="https://">
+                  <span className="span--hover">Learn more</span>
+                  <ArrowRight />
+                </a>
               </div>
-              <h3>Start your integration</h3>
-              <p>
-                Experience a new level of convenience by using your stored
-                signatures to electronically sign your documents.
-              </p>
-              <a href="https://">
-                <span className="span--hover">Learn more</span>
-                <ArrowRight />
-              </a>
+              <div className="love_to_hear__box-right-item">
+                <div className="love_to_hear__box-right-item-image">
+                  <img src={startIntegration} alt="start integration" />
+                </div>
+                <h3>Start your integration</h3>
+                <p>
+                  Experience a new level of convenience by using your stored
+                  signatures to electronically sign your documents.
+                </p>
+                <a href="https://">
+                  <span className="span--hover">Learn more</span>
+                  <ArrowRight />
+                </a>
+              </div>
+              {/* </div> */}
             </div>
-            {/* </div> */}
           </div>
 
           <div className="bottom_triangle bottom_triangle--footer"></div>

@@ -1,0 +1,132 @@
+@import "../../styles/styles.scss";
+
+$color__section-name: #2d4bb6;
+
+.use_case {
+  .hero {
+    background-color: #f2fdf9;
+    position: relative;
+    padding-top: rem(150);
+    &__wrapper {
+      display: flex;
+
+      @include medium {
+        display: block;
+      }
+    }
+
+    &__image,
+    &__content {
+      flex: 1 1 50%;
+      padding: 0 $padding__column;
+    }
+
+    &__content {
+      margin-bottom: rem(40);
+
+      &-name {
+        color: $color__section-name;
+      }
+
+      &-title {
+        margin: rem(24) 0;
+      }
+    }
+
+    &__image {
+      position: relative;
+      min-height: 100%;
+      width: 100%;
+      height: 556px;
+
+      @include medium {
+        height: fit-content;
+      }
+
+      &-foreground {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1200;
+
+        @include medium {
+          width: 110%;
+          position: relative;
+        }
+      }
+      &-background {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50vw;
+        max-height: 223px;
+        min-height: 150px;
+
+        @include medium {
+          width: 100vw;
+        }
+      }
+    }
+  }
+}
+
+.case_info {
+  position: relative;
+  padding-top: rem(80);
+  padding-bottom: rem(160);
+  &__summary {
+    display: flex;
+    align-items: center;
+
+    @include medium {
+      display: block;
+    }
+  }
+
+  &__name {
+    padding: 0 $padding__column;
+    color: $color__section-name;
+  }
+
+  &__title,
+  &__description {
+    flex: 1 1 50%;
+    padding: 0 $padding__column;
+  }
+
+  &__content {
+    padding: 0 $padding__column;
+    column-count: 2;
+    gap: $padding__column--x2;
+    column-fill: balance;
+
+    @include medium {
+      column-count: 1;
+    }
+
+    img {
+      width: 100%;
+
+      @include medium {
+        width: 80%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @include small {
+        width: 100%;
+      }
+    }
+
+    li {
+      list-style-image: url("../../assets/images/UseCases/green\ tick.svg");
+      padding-left: 1px;
+      line-height: 1.8;
+    }
+  }
+}
+
+.flex_cards {
+  padding: rem(60) 0;
+}

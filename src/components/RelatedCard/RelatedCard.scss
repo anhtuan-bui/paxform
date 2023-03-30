@@ -2,17 +2,24 @@
 
 .related_card {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   
   &__image {
     height: rem(280);
     margin-bottom: rem(28);
 
+    @include large {
+      height: rem(200);
+    }
+
+    @include medium {
+      height: rem(280);
+    }
+
     &--smaller {
       height: rem(200);
     }
-    
+
     img {
       border-radius: rem(20);
       width: 100%;
@@ -40,6 +47,24 @@
   &__title {
     font-size: rem(20);
     margin-bottom: rem(18);
+
+    &--dark {
+      a {
+       color: white;
+
+       &:hover {
+         color: darken(white, 20%);
+       }
+     }
+   }
+    &-link {
+      text-decoration: none;
+      color: $color_main__text;
+
+      &:hover {
+        color: lighten($color_main__text, 20%);
+      }
+    }
   }
 
   &__description {

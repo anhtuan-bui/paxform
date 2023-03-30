@@ -1,0 +1,37 @@
+@import "../../styles/styles.scss";
+
+.flex_card {
+  padding: rem(16) 0;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    @include medium {
+      display: block;
+    }
+  }
+
+  &__content,
+  &__image {
+    flex: 1 1 50%;
+    padding: 0 $padding__column;
+    box-sizing: border-box;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-illustration {
+        width: 100%;
+        
+        @include medium {
+        width: 80%;
+      }
+
+      @include small {
+        width: 100%;
+      }
+    }
+  }
+}

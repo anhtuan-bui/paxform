@@ -1,30 +1,52 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import card1 from "../../assets/images/card-resource-1.png";
+import React from "react";
+import Skeleton from "react-loading-skeleton";
+// import card1 from "../../assets/images/card-resource-1.png";
 import Button from "../Button/Button";
 import "./ResourceCard.scss";
 
 export default function ResourceCard(props) {
-  const [variant, setVariant] = useState("");
-  const [background, setBackground] = useState("");
+  const variant = props.variant ? `resource_card__image--${props.variant}` : "";
+  const background = props.background
+    ? `resource_card--${props.background}`
+    : "";
 
-  useEffect(() => {
-    if (props.variant === 'longer'){
-      setVariant('resource_card__image--longer');
-    }
-    if (props.background === "greyish-blue"){
-      setBackground('resource_card--greyish-blue')
-    }
-  }, [props.variant, props.background])
+  const loading = props.loading;
+
+  const resource = props.data;
+
+  const title = resource?.title ? resource?.title : <Skeleton count={2} />;
+  const imageUrl = resource?.featuredImage?.node?.sourceUrl;
+  const slug = resource?.slug;
 
   return (
     <div className={`resource_card ${background}`}>
-      <img src={card1} alt="card1" className={`resource_card__image ${variant}`} />
-      <div className="resource_card__content">
+      <div className="resource_card__image-box">
+        {imageUrl ? (
+          <img
+            src={imageUrl}
+            alt="card1"
+            className={`resource_card__image ${variant}`}
+          />
+        ) : (
+          <Skeleton height={props.variant === "longer" ? 200 : 150} />
+        )}
         <h3 className="resource_card__title">
-          There are many variations of passages
+          <a className="resource_card__title-link" href={`/resources/${slug}`}>
+            {title}
+          </a>
         </h3>
-        <Button type="arrow outline" color="green" text="Read More" />
+      </div>
+      <div className="resource_card__content">
+        {!loading ? (
+          <Button
+            type="arrow outline"
+            color="green"
+            text="Read More"
+            href={`/resources/${slug}`}
+          />
+        ) : (
+          <Skeleton height={40} style={{ borderRadius: "25px" }} />
+        )}
       </div>
     </div>
   );

@@ -1,27 +1,42 @@
-@import '../../styles/styles.scss';
+@import "../../styles/styles.scss";
 
 .section_triangle_right {
-    display: block;
-    &--white {
-        fill: white;
-    }
+  display: block;
+  &--white {
+    fill: white;
+  }
 
-    &--dark-blue {
-        fill: #031a30;
-    }
-    &--light-blue {
-        fill: #e1edf9;
-    }
-    &--blue {
-        fill: $color__primary;
-    }
-    &--footer {
-        fill: #e1edf9;
-    }
-    &--light-green {
-        fill: #def6ec;
-    }
-    &--green {
-        fill:#059459;
-    }
+  &--dark-blue {
+    fill: #031a30;
+  }
+
+  &--blue {
+    fill: $color__primary;
+  }
+  &--secondary {
+    fill: $color__secondary;
+  }
+  &--grey-blue {
+    fill: $color__gray-blue;
+  }
+  &--footer {
+    fill: #e1edf9;
+  }
+  &--light-green {
+    fill: #def6ec;
+  }
+  &--green {
+    fill: #059459;
+  }
+
+  &--light-blue {
+    fill: #f0f8ff;
+  }
+
+  &--absolute {
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    z-index: 1000;
+  }
 }

@@ -1,0 +1,15 @@
+@import '../../styles/styles.scss';
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 1400;
+
+    &--display {
+      display: block;
+    }
+  }

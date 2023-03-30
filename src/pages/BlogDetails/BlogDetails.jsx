@@ -17,20 +17,25 @@ const BlogDetails = () => {
   const { loading, error, data } = useQuery(GET_BLOG_DETAILS, {
     variables: { slug },
   });
-  console.log(error);
+  if(!loading){
+
+    console.log(data);
+  }
   // Querying other posts to get related blogs
   const {
     loading: loadingPosts,
     error: errorPosts,
     data: dataPosts,
-  } = useQuery(GET_RELATED_POST);
-  console.log(errorPosts);
+  } = useQuery(GET_RELATED_POST, {variables: {
+    categoryName: 'story'
+  }});
+
 
   // -> Extracting the related blogs
   // Displaying 2 skeletons while loading
   const relatedBlogsLoading = () => {
     let relatedBlogs = [];
-    for (let i = 0; i <= 1; i++) {
+    for (let i = 0; i < 1; i++) {
       relatedBlogs.push(
         <div key={i} style={{ display: "flex", flexDirection: "column" }}>
           <Skeleton height="250px" borderRadius="20px" />
@@ -65,10 +70,11 @@ const BlogDetails = () => {
         node?.categories?.nodes[0]?.name === currentCategory
       );
     });
+
     // Shuffling the posts to pick random ones
     const shuffledBlogs = [...categoryBlogs].sort(() => 0.5 - Math.random());
     // Picking 2 random posts
-    const recommendedBlogs = shuffledBlogs.slice(0, 2);
+    const recommendedBlogs = shuffledBlogs.slice(0, 1);
     // Looping through the recommended blogs array to pass the props to RealtedCard Component
     recommendedBlogs.forEach((blog) => {
       let recommendedCategory = blog?.categories?.nodes[0]?.name ?? "";
@@ -81,11 +87,13 @@ const BlogDetails = () => {
       relatedBlogs.push(
         <RelatedCard
           key={blog.id}
-          image={blogImage}
-          category={recommendedCategory}
-          title={blogTitle}
-          description={description}
-          readLink
+          // image={blogImage}
+          // category={recommendedCategory}
+          // title={blogTitle}
+          // description={description}
+          term='blogs'
+          data={blog}
+          readLink={true}
         />
       );
     });
@@ -164,6 +172,7 @@ const BlogDetails = () => {
     </div>
   ) : (
     <div
+      className="resource__detail"
       style={{ marginTop: "35px" }}
       dangerouslySetInnerHTML={{ __html: post?.content }}
     ></div>
@@ -185,6 +194,7 @@ const BlogDetails = () => {
             avatar={authorAvatar}
             name={authorName}
             displayName={displayName}
+            author={post?.author}
           />
           <div className="article">
             {article}

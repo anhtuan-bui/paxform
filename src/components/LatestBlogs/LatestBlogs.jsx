@@ -7,60 +7,19 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { GET_RECOMMENDED_POSTS } from '../../lib/graphqlQuery'
 
+// import card1 from "../../assets/images/card1.png";
+// import card2 from "../../assets/images/card2.png";
+// import card3 from "../../assets/images/card3.png";
+import { GET_BLOGS } from "../../lib/graphqlQuery";
+
 export default function LatestBlogs({ triangleColor }) {
+  const { loading, data } = useQuery(GET_BLOGS, {
+    variables: {
+      first: 4,
+    },
+  });
 
-  const { loading, error, data } = useQuery(GET_RECOMMENDED_POSTS);
-  console.log(error);
-
-  let recentPosts = [];
-  let latestBlogs = [];
-  
-  // Display skeletons while loading
-  if (loading) {
-    for (let i = 0; i <= 3; i++) {
-      latestBlogs.push(
-        <div key={i}>
-          <Skeleton height="250px" borderRadius="20px" />
-          <div>
-            <p>
-              <Skeleton count={1} width="50%" />
-            </p>
-            <h2>
-              <Skeleton count={1} />
-            </h2>
-            <p>
-              <Skeleton count={2} />
-            </p>
-          </div>
-        </div>
-      );
-    }
-  }
-  // When loading is finished 
-  else {
-    let postsNodes = data?.posts?.nodes;
-    // Sort the posts by dates and get the latest 4 posts
-    recentPosts = [...postsNodes];
-    // Creating an array of the latest 4 blogs in RelatedCard Components
-    
-    recentPosts.forEach((recentPost) => {
-      // Extracting the <p> tag from blog's content
-      const description = new DOMParser()
-        .parseFromString(recentPost.content, "text/html")
-        .getElementsByTagName("p")[0].innerText;
-      latestBlogs.push(
-        <RelatedCard
-          key={recentPost.id}
-          image={recentPost.featuredImage?.node?.sourceUrl ?? ""}
-          category={recentPost.categories?.nodes[0]?.name ?? ""}
-          description={description ?? ""}
-          title={recentPost.title}
-          readLink
-        />
-      );
-    });
-  }
-
+  const blogs = !loading ? data?.posts?.nodes : Array.from({ length: 4 });
   return (
     <section className="platform background--dark-blue platform__title--white">
       <div className="container platform__container">
@@ -78,7 +37,16 @@ export default function LatestBlogs({ triangleColor }) {
           </div>
         </div>
         <div className="platform__content">
-          {latestBlogs}
+          {blogs.map((blog, index) => (
+            <RelatedCard
+              key={index}
+              data={blog}
+              readLink={true}
+              background="dark"
+              term="blogs"
+              loading={loading}
+            />
+          ))}
         </div>
       </div>
       <div
