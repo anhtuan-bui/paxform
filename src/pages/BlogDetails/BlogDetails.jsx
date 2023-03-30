@@ -1,101 +1,210 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react'
-import { useEffect } from 'react';
-import './BlogDetails.scss';
-import RelatedCard from '../../components/RelatedCard/RelatedCard';
+import "./BlogDetails.scss";
+import { useLocation } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { GET_BLOG_DETAILS, GET_RELATED_POST } from "../../lib/graphqlQuery";
+import Author from "../../components/Author/Author";
+import RelatedCard from "../../components/RelatedCard/RelatedCard";
+import SocialIcons from "../../components/SocialIcons/SocialIcons";
+import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
-import SocialIcons from '../../components/SocialIcons/SocialIcons';
-import LatestBlogs from "../../components/LatestBlogs/LatestBlogs"
-import CardResource1 from "../../assets/images/card-resource-1.png";
-import CardResource3 from "../../assets/images/card-resource-3.png";
-import Card2 from "../../assets/images/card2.png";
-// import Video from "https://www.youtube.com/embed/tgbNymZ7vqY";
-import SampleAuthorAvatar from "../../assets/images/sample-author-avatar.png";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const BlogDetails = () => {
+  // Current Blog Slug
+  const slug = useLocation().pathname.split("/").pop();
+  // Querying Current Blog
+  const { loading, error, data } = useQuery(GET_BLOG_DETAILS, {
+    variables: { slug },
+  });
+  console.log(error);
+  // Querying other posts to get related blogs
+  const {
+    loading: loadingPosts,
+    error: errorPosts,
+    data: dataPosts,
+  } = useQuery(GET_RELATED_POST);
+  console.log(errorPosts);
 
-    let [smallerImage, setSmallerImage] = useState("");
-    const smallImage = () => {
-        if (window.innerWidth >= 768) {
-            setSmallerImage("related_card__image--smaller")
-        } else {
-            setSmallerImage("");
-        }
+  // -> Extracting the related blogs
+  // Displaying 2 skeletons while loading
+  const relatedBlogsLoading = () => {
+    let relatedBlogs = [];
+    for (let i = 0; i <= 1; i++) {
+      relatedBlogs.push(
+        <div key={i} style={{ display: "flex", flexDirection: "column" }}>
+          <Skeleton height="250px" borderRadius="20px" />
+          <div>
+            <p>
+              <Skeleton count={1} width="50%" />
+            </p>
+            <h2>
+              <Skeleton count={1} />
+            </h2>
+            <p>
+              <Skeleton count={2} />
+            </p>
+          </div>
+        </div>
+      );
     }
+    return relatedBlogs;
+  };
 
-    useEffect(() => {
-        smallImage()
-        window.addEventListener('resize', smallImage);
-        return () => {
-            window.removeEventListener("resize", smallImage)
-        }
+  // Posts finished loading
+  const relatedBlogsLoaded = () => {
+    let relatedBlogs = [];
+    // All the posts nodes
+    const postsNodes = dataPosts?.posts?.nodes;
+    // Current post category
+    const currentCategory = data?.post?.categories?.nodes[0]?.name ?? "";
+    // Filtering all the posts to get posts from the same category as the current post
+    const categoryBlogs = postsNodes?.filter((node) => {
+      return (
+        node?.slug !== slug &&
+        node?.categories?.nodes[0]?.name === currentCategory
+      );
     });
+    // Shuffling the posts to pick random ones
+    const shuffledBlogs = [...categoryBlogs].sort(() => 0.5 - Math.random());
+    // Picking 2 random posts
+    const recommendedBlogs = shuffledBlogs.slice(0, 2);
+    // Looping through the recommended blogs array to pass the props to RealtedCard Component
+    recommendedBlogs.forEach((blog) => {
+      let recommendedCategory = blog?.categories?.nodes[0]?.name ?? "";
+      let blogTitle = blog?.title ?? "";
+      let blogImage = blog?.featuredImage?.node?.sourceUrl ?? "";
+      // Extracting the <p> tag from blog's content
+      const description = new DOMParser()
+        .parseFromString(blog.content, "text/html")
+        .getElementsByTagName("p")[0].innerText;
+      relatedBlogs.push(
+        <RelatedCard
+          key={blog.id}
+          image={blogImage}
+          category={recommendedCategory}
+          title={blogTitle}
+          description={description}
+          readLink
+        />
+      );
+    });
+    return relatedBlogs;
+  };
 
-    return (
+  // -> Current Blog Details
+  let authorNode, imgSrc, post;
+  if (!loading) {
+    post = data?.post;
+    authorNode = post?.author?.node;
+    imgSrc = post?.featuredImage?.node?.sourceUrl ?? "";
+  }
+
+  // Converting date format
+  const blogDate = () => {
+    let postDate = new Date(post?.date);
+    postDate = postDate.toLocaleString("en-US", {
+      month: "long",
+      day: "2-digit",
+      year: "numeric",
+    });
+    return postDate;
+  };
+
+  const postDate = loading ? <Skeleton width="45%" /> : blogDate();
+  const title = loading ? <Skeleton width="75%" /> : post?.title ?? "";
+  const authorName = loading ? (
+    <Skeleton />
+  ) : (
+    `${authorNode?.firstName ?? ""} ${authorNode?.lastName ?? ""}`
+  );
+  const displayName = loading ? (
+    <Skeleton />
+  ) : (
+    authorNode?.roles?.nodes[0]?.displayName ?? ""
+  );
+  const authorAvatar = loading ? (
+    <Skeleton height="50px" width="50px" borderRadius="50%" />
+  ) : (
+    <img
+      className="author__photo"
+      src={authorNode?.avatar?.url}
+      alt="Author Avatar"
+    />
+  );
+
+  const articleImage = loading ? (
+    <div className="article_info__img">
+      <Skeleton height="100%" borderRadius="20px" />
+    </div>
+  ) : (
+    <img className="article_info__img" src={imgSrc} alt="Article" />
+  );
+
+  const article = loading ? (
+    <div style={{ marginTop: "35px" }}>
+      <h2>
+        <Skeleton count={1} width="75%" />
+      </h2>
+      <p>
+        <Skeleton count={5} />
+      </p>
+      <p>
+        <Skeleton count={5} />
+      </p>
+      <p>
+        <Skeleton count={5} />
+      </p>
+      <p>
+        <Skeleton count={5} />
+      </p>
+      <p>
+        <Skeleton count={5} />
+      </p>
+    </div>
+  ) : (
+    <div
+      style={{ marginTop: "35px" }}
+      dangerouslySetInnerHTML={{ __html: post?.content }}
+    ></div>
+  );
+
+  const relatedPosts =
+    !loading && !loadingPosts ? relatedBlogsLoaded() : relatedBlogsLoading();
+
+  return (
+    <>
+      <div className="container hero" background="light">
         <main>
-            <div className="container hero" background="light">
-                <div className="wrapper">
-                    <section className="article_info">
-                        <div className="article_info__date section_name">December 25, 2021</div>
-                        <h1 className="article_info__title">How FedRAMP Tailored helps quickly obtain cloud-based services</h1>
-                        <img className="article_info__img" src={Card2} alt="Article"></img>
-                        <h2>The printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy the 1500s</h2>
-                    </section>
-                    <div className="author">
-                        <div className="author__wrapper">
-                            <img className="author__photo" src={SampleAuthorAvatar} alt="Author Avatar" />
-                            <div className="author__info">
-                                <div className="author__name">Jane Cooper</div>
-                                <div className="author__title">Marketing</div>
-                            </div>
-                        </div>
-                    </div>
-                    <article className="article">
-                        <div className="article__snippet">
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus .
-                        </div>
-                        <div className="quote">
-                            <blockquote className="quote__text">
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </blockquote>
-                        </div>
-                        <div className="article__snippet">
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus .
-                        </div>
-                        <iframe title="Article Video" className="article__video"
-                            src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                        </iframe>
-                        <div className="article__snippet">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique, lorem in accumsan molestie, tellus quam lobortis arcu, in lacinia metus magna vitae nunc. Quisque scelerisque turpis dolor, id auctor nulla condimentum id. Maecenas luctus cursus tortor, in vestibulum nisl congue sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Aenean ornare magna at urna porttitor, eget dapibus quam convallis. Nam tincidunt pellentesque pharetra. Proin tincidunt velit non mauris semper porttitor. Nam nec sollicitudin leo. Curabitur tempor sed quam eget hendrerit. In consequat dolor at dui pharetra bibendum. Etiam ullamcorper feugiat mauris id pulvinar. Donec maximus lectus mauris, sit amet placerat mauris gravida sit amet. Nam elementum turpis a mi tincidunt, nec accumsan ipsum bibendum. Phasellus malesuada viverra quam eu laoreet. Curabitur non aliquet odio, et malesuada lorem.
-                        </div>
-                        <hr className="hr"/>
-                    </article>
-                    <SocialIcons />
-                    <section className="recommended">   
-                        <p className="recommended__title section_name"></p>
-                        <div className="recommended_container">
-                            <div className="recommended__article">
-                                <RelatedCard className={smallerImage} image={CardResource3} title="First Heading" description readLink />
-                            </div>
-                            <div className="recommended__article">   
-                                <RelatedCard image={CardResource1} title="Third Heading" description readLink />    
-                            </div>
-                        </div>
-                    </section>
-                </div>            
-            </div>
-            <div className="blogs">
-                <SectionTriangleRight variant="dark-blue" />
-                <LatestBlogs triangleColor="light-blue" />
-            </div>
-            <div className="footer_triangle">
-                <SectionTriangleRight variant="light-blue" />
-            </div>      
+          <section className="article_info">
+            <div className="article_info__date section_name">{postDate}</div>
+            <h1 className="article_info__title">{title}</h1>
+            {articleImage}
+          </section>
+          <Author
+            avatar={authorAvatar}
+            name={authorName}
+            displayName={displayName}
+          />
+          <div className="article">
+            {article}
+          </div>
+          <SocialIcons />
+          <section className="recommended">
+            <p className="recommended__title section_name">Recommended</p>
+            <div className="recommended_container">{relatedPosts}</div>
+          </section>
         </main>
-    )
-}
+      </div>
+      <div className="blogs">
+        <SectionTriangleRight variant="dark-blue" />
+        <LatestBlogs triangleColor="light-blue" />
+      </div>
+      <div className="footer_triangle">
+        <SectionTriangleRight variant="light-blue" />
+      </div>
+    </>
+  );
+};
 
 export default BlogDetails;
