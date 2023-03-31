@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import { GET_BLOG_DETAILS, GET_RELATED_POST } from "../../lib/graphqlQuery";
 import Author from "../../components/Author/Author";
 import RelatedCard from "../../components/RelatedCard/RelatedCard";
-import SocialIcons from "../../components/SocialIcons/SocialIcons";
+import ShareToSocialMedias from "../../components/ShareToSocialMedias/ShareToSocialMedias";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
 import Skeleton from "react-loading-skeleton";
@@ -194,7 +194,7 @@ const BlogDetails = () => {
             author={post?.author}
           />
           <div className="article">{article}</div>
-          <SocialIcons />
+          <ShareToSocialMedias slug={slug} title={title} term="blogs"/>
           <section className="recommended">
             <p className="recommended__title section_name">Recommended</p>
             <div className="recommended_container">{relatedPosts}</div>

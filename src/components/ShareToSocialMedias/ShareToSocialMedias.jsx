@@ -38,7 +38,7 @@ const socialMedias = {
   },
 };
 
-export default function ShareToSocialMedias({ headings, slug, title, term }) {
+export default function ShareToSocialMedias({ headings=[], slug, title, term }) {
   return (
     <div
       className={`resource__share ${
