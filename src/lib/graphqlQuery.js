@@ -129,6 +129,7 @@ const GET_USE_CASES = gql`
   query GetUseCases {
     useCases {
       nodes {
+        id
         slug
         heroName
         heroImageBackgroundGradientStart
@@ -145,6 +146,7 @@ const GET_USE_CASES = gql`
 const GET_USE_CASE = gql`
   query GetUseCases($id: ID!) {
     useCase(id: $id, idType: SLUG) {
+      id
       heroName
       heroTitle
       heroDescription
@@ -181,6 +183,7 @@ const GET_USE_CASE = gql`
 const GET_LEGAL_BY_SLUG = gql`
   query GetLegalBySlug($slug: String!) {
     legalBy(slug: $slug) {
+      id
       title
       content
     }
@@ -189,6 +192,7 @@ const GET_LEGAL_BY_SLUG = gql`
 const GET_LEGAL_BY_SLUG_TYPE = gql`
   query GetLegalBySlug($slug: String!) {
     legalBy(slug: $slug, idType: SLUG) {
+      id
       title
       content
     }
@@ -216,40 +220,37 @@ const GET_LEGAL_CATEGORIES = gql`
 const GET_POSTS = gql`
   query GetPosts($first: Int, $after: String) {
     posts(first: $first, after: $after) {
-      edges {
-        node {
-          author {
-            node {
-              avatar {
-                url
-              }
-              roles {
-                edges {
-                  node {
-                    displayName
-                  }
+      nodes {
+        author {
+          node {
+            avatar {
+              url
+            }
+            roles {
+                nodes {
+                  id
+                  displayName
                 }
-              }
-              lastName
-              firstName
-              username
             }
+            lastName
+            firstName
+            username
           }
-          title
-          content
-          date
-          id
-          featuredImage {
-            node {
-              sourceUrl
-            }
+        }
+        title
+        content
+        date
+        id
+        featuredImage {
+          node {
+            sourceUrl
           }
-          categories {
-            edges {
-              node {
-                name
-              }
-            }
+        }
+        categories {
+          nodes {
+            id
+            slug
+            name
           }
         }
       }
@@ -277,10 +278,10 @@ const LOGIN_CLIENT = gql`
 const GET_CATEGORIES = gql`
   query GetCategories {
     categories {
-      edges {
-        node {
-          name
-        }
+      nodes {
+        id
+        slug
+        name
       }
     }
   }
@@ -290,6 +291,7 @@ const GET_TEAM_MEMBERS = gql`
   query getTeamMembers {
     teamMembers {
       nodes {
+        id
         fullName
         position
         linkedin
@@ -321,5 +323,5 @@ export {
   GET_RESOURCES,
   GET_RESOURCES_CATEGORIES,
   GET_BLOGS,
-  GET_RESOURCE_BY_SLUG
+  GET_RESOURCE_BY_SLUG,
 };

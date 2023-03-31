@@ -114,7 +114,7 @@
 .section_title {
     font-size: rem(38);
     font-weight: 700;
-    line-height: rem(48);
+    line-height: 1.3;
     @include extraLarge {
         font-size: rem(36);
     }
