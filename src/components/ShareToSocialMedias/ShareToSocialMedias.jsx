@@ -38,7 +38,7 @@ const socialMedias = {
   },
 };
 
-export default function ShareToSocialMedias({ headings=[], slug, title, term }) {
+export default function ShareToSocialMedias({ headings=[] , slug, title, term , imageUrl}) {
   return (
     <div
       className={`resource__share ${
@@ -56,7 +56,7 @@ export default function ShareToSocialMedias({ headings=[], slug, title, term }) 
             <img
               className="resource__social-media-img"
               src={socialMedias.facebook.icon}
-              alt={"facebook"}
+              alt={"social media icon"}
             />
           </FacebookShareButton>
         </div>
@@ -70,7 +70,7 @@ export default function ShareToSocialMedias({ headings=[], slug, title, term }) 
             <img
               className="resource__social-media-img"
               src={socialMedias.twitter.icon}
-              alt={"facebook"}
+              alt={"social media icon"}
             />
           </TwitterShareButton>
         </div>
@@ -78,13 +78,14 @@ export default function ShareToSocialMedias({ headings=[], slug, title, term }) 
         <div className="resource__social-media">
           <PinterestShareButton
             className="resource__social-media-link"
+            media={imageUrl}
             url={`${url}${term}/${slug}`}
-            title={title}
+            description={title}
           >
             <img
               className="resource__social-media-img"
               src={socialMedias.pinterest.icon}
-              alt={"facebook"}
+              alt={"social media icon"}
             />
           </PinterestShareButton>
         </div>
@@ -98,7 +99,7 @@ export default function ShareToSocialMedias({ headings=[], slug, title, term }) 
             <img
               className="resource__social-media-img"
               src={socialMedias.linkedin.icon}
-              alt={"facebook"}
+              alt={"social media icon"}
             />
           </LinkedinShareButton>
         </div>
@@ -112,7 +113,7 @@ export default function ShareToSocialMedias({ headings=[], slug, title, term }) 
             <img
               className="resource__social-media-img"
               src={socialMedias.whatsapp.icon}
-              alt={"facebook"}
+              alt={"social media icon"}
             />
           </WhatsappShareButton>
         </div>
@@ -125,7 +126,7 @@ export default function ShareToSocialMedias({ headings=[], slug, title, term }) 
             <img
               className="resource__social-media-img"
               src={socialMedias.link.icon}
-              alt={"facebook"}
+              alt={"social media icon"}
             />
           </a>
         </div>

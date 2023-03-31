@@ -251,6 +251,7 @@ export default function ResourceDetail() {
               slug={slug}
               title={title}
               term="resources"
+              imageUrl={imageUrl}
             />
             {tableOfContent}
           </section>
