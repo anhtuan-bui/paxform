@@ -41,90 +41,90 @@ const socialMedias = {
 export default function ShareToSocialMedias({ headings=[] , slug, title, term , imageUrl}) {
   return (
     <div
-      className={`resource__share ${
-        headings.length > 0 ? "" : "resource__share--sticky"
+      className={`social_media__share ${
+        headings.length > 0 ? "" : "social_media__share--sticky"
       }`}
     >
-      <p className="resource__share-name">Share</p>
-      <div className="resource__social-medias">
-        <div className="resource__social-media">
+      <p className="social_media__share-name">Share</p>
+      <div className="social_media__social-medias">
+        <div className="social_media__social-media">
           <FacebookShareButton
-            className="resource__social-media-link"
+            className="social_media__social-media-link"
             url={`${url}${term}/${slug}`}
             title={title}
           >
             <img
-              className="resource__social-media-img"
+              className="social_media__social-media-img"
               src={socialMedias.facebook.icon}
               alt={"social media icon"}
             />
           </FacebookShareButton>
         </div>
 
-        <div className="resource__social-media">
+        <div className="social_media__social-media">
           <TwitterShareButton
-            className="resource__social-media-link"
+            className="social_media__social-media-link"
             url={`${url}${term}/${slug}`}
             title={title}
           >
             <img
-              className="resource__social-media-img"
+              className="social_media__social-media-img"
               src={socialMedias.twitter.icon}
               alt={"social media icon"}
             />
           </TwitterShareButton>
         </div>
 
-        <div className="resource__social-media">
+        <div className="social_media__social-media">
           <PinterestShareButton
-            className="resource__social-media-link"
+            className="social_media__social-media-link"
             media={imageUrl}
             url={`${url}${term}/${slug}`}
             description={title}
           >
             <img
-              className="resource__social-media-img"
+              className="social_media__social-media-img"
               src={socialMedias.pinterest.icon}
               alt={"social media icon"}
             />
           </PinterestShareButton>
         </div>
 
-        <div className="resource__social-media">
+        <div className="social_media__social-media">
           <LinkedinShareButton
-            className="resource__social-media-link"
+            className="social_media__social-media-link"
             url={`${url}${term}/${slug}`}
             title={title}
           >
             <img
-              className="resource__social-media-img"
+              className="social_media__social-media-img"
               src={socialMedias.linkedin.icon}
               alt={"social media icon"}
             />
           </LinkedinShareButton>
         </div>
 
-        <div className="resource__social-media">
+        <div className="social_media__social-media">
           <WhatsappShareButton
-            className="resource__social-media-link"
+            className="social_media__social-media-link"
             url={`${url}${term}/${slug}`}
             title={title}
           >
             <img
-              className="resource__social-media-img"
+              className="social_media__social-media-img"
               src={socialMedias.whatsapp.icon}
               alt={"social media icon"}
             />
           </WhatsappShareButton>
         </div>
-        <div className="resource__social-media">
+        <div className="social_media__social-media">
           <a
-            className="resource__social-media-link"
+            className="social_media__social-media-link"
             href={`${url}${term}/${slug}`}
             title={title}
           >
             <img
-              className="resource__social-media-img"
+              className="social_media__social-media-img"
               src={socialMedias.link.icon}
               alt={"social media icon"}
             />

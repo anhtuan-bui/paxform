@@ -3,7 +3,6 @@ import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout/Layout";
 // import Personal from "./pages/Personal/Personal";
-import FAQ from "./pages/FAQ/FAQ";
 import FAQV1 from "./pages/FAQV1/FAQV1";
 // import Resources from "./pages/Resources/Resources";
 import NotFound from "./pages/NotFound/NotFound";
@@ -29,6 +28,7 @@ const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
 const Business = lazy(() => import("./pages/Business/Business"));
 const UseCase = lazy(() => import("./pages/UseCase/UseCase"));
+const FAQs = lazy(() => import("./pages/FAQs/FAQs"));
 const ResourceDetail = lazy(() => import("./pages/ResourceDetail/ResourceDetail"))
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
 							<Route path="personal" element={<Personal />} />
 							<Route path="business" element={<Business />} />
 							<Route path="pricing" element={<Pricing />} />
-							<Route path="faq" element={<FAQ />} />
+							<Route path="faqs" element={<FAQs />} />
 							<Route path="faqv1" element={<FAQV1 />} />
 							<Route path="resources" element={<Resources />} />
 							<Route path="resources/:slug" element={<ResourceDetail />} />
