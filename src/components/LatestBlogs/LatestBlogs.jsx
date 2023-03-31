@@ -2,11 +2,14 @@ import React from "react";
 import Button from "../Button/Button";
 import RelatedCard from "../RelatedCard/RelatedCard";
 import "./LatestBlogs.scss";
+import { useQuery } from "@apollo/client";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { GET_RECOMMENDED_POSTS } from '../../lib/graphqlQuery'
 
 // import card1 from "../../assets/images/card1.png";
 // import card2 from "../../assets/images/card2.png";
 // import card3 from "../../assets/images/card3.png";
-import { useQuery } from "@apollo/client";
 import { GET_BLOGS } from "../../lib/graphqlQuery";
 
 export default function LatestBlogs({ triangleColor }) {

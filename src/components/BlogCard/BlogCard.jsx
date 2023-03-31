@@ -76,7 +76,7 @@ const Blog = ({ blog, className, loading }) => {
         )}
         <p className="post__author-name">{authorName}</p>
       </div>
-      <ReadArticle loading={loading}/>
+      <ReadArticle loading={loading} to={`/blogs/${blog?.slug}`}/>
     </div>
   );
 };

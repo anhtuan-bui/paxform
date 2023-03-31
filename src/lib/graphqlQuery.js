@@ -241,6 +241,7 @@ const GET_POSTS = gql`
         content
         date
         id
+        slug
         featuredImage {
           node {
             sourceUrl
@@ -287,6 +288,29 @@ const GET_CATEGORIES = gql`
   }
 `;
 
+const GET_RECOMMENDED_POSTS = gql`
+  query getRecommendedPosts {
+    posts(first: 4) {
+      nodes {
+        id
+        date
+        title
+        content
+        featuredImage {
+           node {
+            sourceUrl
+          }
+        }
+        categories {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+
 const GET_TEAM_MEMBERS = gql`
   query getTeamMembers {
     teamMembers {
@@ -300,9 +324,72 @@ const GET_TEAM_MEMBERS = gql`
             sourceUrl
           }
         }
-        color
-        gradientEndColor
-        orderNumber
+        categories {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GET_BLOG_DETAILS = gql`
+  query GetBlogDetails($slug: ID!) {
+    post(id: $slug, idType: SLUG) {
+      title
+      content
+      date
+      author {
+        node {
+          firstName
+          lastName
+          avatar {
+            url
+          }
+          roles {
+              nodes {
+                displayName
+              }
+          }
+        }
+      }
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+      categories {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+`;
+
+const GET_RELATED_POST = gql`
+  query getPosts($categoryName: String = "") {
+    posts(first: 4, where: { categoryName: $categoryName }) {
+      nodes {
+        id
+        date
+        slug
+        title
+        content
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        categories {
+          nodes {
+            name
+            slug
+            id
+          }
+        }
       }
     }
   }
@@ -312,6 +399,9 @@ export {
   GET_POSTS,
   LOGIN_CLIENT,
   GET_CATEGORIES,
+  GET_RECOMMENDED_POSTS,
+  GET_BLOG_DETAILS,
+  GET_RELATED_POST,
   GET_TEAM_MEMBERS,
   GET_LEGAL_BY_SLUG,
   GET_LEGAL_CATEGORIES,

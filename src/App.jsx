@@ -8,7 +8,6 @@ import FAQV1 from "./pages/FAQV1/FAQV1";
 // import Resources from "./pages/Resources/Resources";
 import NotFound from "./pages/NotFound/NotFound";
 import { lazy, Suspense, useEffect } from "react";
-
 import { ApolloProvider } from "@apollo/client/react";
 import client from "./configurations/apollo";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
@@ -62,6 +61,7 @@ function App() {
 							<Route path="resources" element={<Resources />} />
 							<Route path="resources/:slug" element={<ResourceDetail />} />
 							<Route path="blogs" element={<Blogs />} />
+							<Route path="blogs/:slug" element={<BlogDetails />} />
 							<Route path="blog-details" element={<BlogDetails />} />
 							<Route path="privacy-policy" element={<PrivacyPolicy />} />{" "}
 							<Route path="legal" element={<Legal />} />
