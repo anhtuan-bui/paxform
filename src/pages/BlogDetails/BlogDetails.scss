@@ -1,6 +1,6 @@
 @import "../../styles/styles.scss";
 
-main {
+.blog_detail__main {
   margin-top: 125px;
 
   @include minMedium {
@@ -50,35 +50,9 @@ main {
     }
   }
 
-  iframe {
-    width: 100%;
-    border-radius: 20px;
-    height: 360px;
+  
 
-    @include minMedium {
-      height: 460px;
-    }
-
-    @include minLarge {
-      height: 600px;
-    }
-  }
-
-  blockquote {
-    margin: 20px 0;
-    background-color: #e1edf9;
-    border-radius: 20px;
-    position: relative;
-    padding: 25px 50px;
-    &::before {
-      content: url("../../assets/images/“.png");
-      margin-right: 10px;
-      display: block;
-      position: absolute;
-      top: 25px;
-      left: 20px;
-    }
-  }
+  
 }
 
 .hr {

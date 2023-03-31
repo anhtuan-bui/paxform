@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./ResourceDetail.scss";
-import facebookIcon from "../../assets/icons/facebook.svg";
-import linkedinIcon from "../../assets/icons/linkedin.svg";
-import twitterIcon from "../../assets/icons/twitter.svg";
-import pinterestIcon from "../../assets/icons/pinterest.svg";
-import whatsappIcon from "../../assets/icons/whatsapp.svg";
-import linkIcon from "../../assets/icons/share.svg";
 
 import { ReactComponent as ArrowDown } from "../../assets/icons/arrowDown.svg";
 
@@ -17,39 +11,7 @@ import { useQuery } from "@apollo/client";
 import { GET_RESOURCE_BY_SLUG } from "../../lib/graphqlQuery";
 import { useLocation } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-
-const socialMedias = [
-  {
-    name: "facebook",
-    icon: facebookIcon,
-    link: "https://",
-  },
-  {
-    name: "facebook",
-    icon: linkedinIcon,
-    link: "https://",
-  },
-  {
-    name: "facebook",
-    icon: twitterIcon,
-    link: "https://",
-  },
-  {
-    name: "facebook",
-    icon: pinterestIcon,
-    link: "https://",
-  },
-  {
-    name: "facebook",
-    icon: whatsappIcon,
-    link: "https://",
-  },
-  {
-    name: "facebook",
-    icon: linkIcon,
-    link: "https://",
-  },
-];
+import ShareToSocialMedias from "../../components/ShareToSocialMedias/ShareToSocialMedias";
 
 export default function ResourceDetail() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -66,7 +28,7 @@ export default function ResourceDetail() {
   });
 
   const resource = data?.resource;
-  const title = !loading ? resource?.title : <Skeleton width={'85%'}/>;
+  const title = !loading ? resource?.title : <Skeleton width={"85%"} />;
   const content = resource?.content;
   const date = !loading ? (
     new Date(resource?.date).toLocaleDateString("en-US", {
@@ -78,6 +40,7 @@ export default function ResourceDetail() {
     <Skeleton width={120} />
   );
   const imageUrl = resource?.featuredImage.node.sourceUrl;
+  const slug = resource?.slug;
 
   if (headings[0] && !dropdownSelected) {
     setDropdownSelected(headings[0]);
@@ -275,7 +238,7 @@ export default function ResourceDetail() {
             )}
             {content ? (
               <div
-                className="resource__detail"
+                className="resource__detail article_detail"
                 dangerouslySetInnerHTML={{ __html: content }}
               ></div>
             ) : (
@@ -283,26 +246,12 @@ export default function ResourceDetail() {
             )}
           </section>
           <section className="resource__sidebar">
-            <div className={`resource__share ${headings.length > 0 ? '' : 'resource__share--sticky'}`}>
-              <p className="resource__share-name">Share</p>
-              <div className="resource__social-medias">
-                {socialMedias.map((socialMedia, index) => (
-                  <div className="resource__social-media" key={index}>
-                    <a
-                      className="resource__social-media-link"
-                      href={socialMedia.link}
-                    >
-                      <img
-                        className="resource__social-media-img"
-                        src={socialMedia.icon}
-                        alt={socialMedia.name}
-                      />
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-
+            <ShareToSocialMedias
+              headings={headings}
+              slug={slug}
+              title={title}
+              term="resources"
+            />
             {tableOfContent}
           </section>
         </div>
@@ -317,33 +266,33 @@ const LoadingContent = () => {
     <div className="loading resource__detail">
       <p>
         <Skeleton count={5} />
-        <Skeleton width={'75%'}/>
+        <Skeleton width={"75%"} />
       </p>
       <p>
         <Skeleton count={5} />
-        <Skeleton width={'75%'}/>
+        <Skeleton width={"75%"} />
       </p>
       <p>
         <Skeleton height={400} style={{ borderRadius: "20px" }} />
       </p>
       <p>
         <Skeleton count={5} />
-        <Skeleton width={'75%'}/>
+        <Skeleton width={"75%"} />
       </p>
       <p>
         <Skeleton count={5} />
-        <Skeleton width={'75%'}/>
+        <Skeleton width={"75%"} />
       </p>
       <p>
         <Skeleton height={400} style={{ borderRadius: "20px" }} />
       </p>
       <p>
         <Skeleton count={5} />
-        <Skeleton width={'75%'}/>
+        <Skeleton width={"75%"} />
       </p>
       <p>
         <Skeleton count={5} />
-        <Skeleton width={'75%'}/>
+        <Skeleton width={"75%"} />
       </p>
     </div>
   );

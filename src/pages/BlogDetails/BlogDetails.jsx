@@ -73,13 +73,13 @@ const BlogDetails = () => {
     const recommendedBlogs = shuffledBlogs.slice(0, 1);
     // Looping through the recommended blogs array to pass the props to RealtedCard Component
     recommendedBlogs.forEach((blog) => {
-      let recommendedCategory = blog?.categories?.nodes[0]?.name ?? "";
-      let blogTitle = blog?.title ?? "";
-      let blogImage = blog?.featuredImage?.node?.sourceUrl ?? "";
-      // Extracting the <p> tag from blog's content
-      const description = new DOMParser()
-        .parseFromString(blog.content, "text/html")
-        .getElementsByTagName("p")[0].innerText;
+      // let recommendedCategory = blog?.categories?.nodes[0]?.name ?? "";
+      // let blogTitle = blog?.title ?? "";
+      // let blogImage = blog?.featuredImage?.node?.sourceUrl ?? "";
+      // // Extracting the <p> tag from blog's content
+      // const description = new DOMParser()
+      //   .parseFromString(blog.content, "text/html")
+      //   .getElementsByTagName("p")[0].innerText;
       relatedBlogs.push(
         <RelatedCard
           key={blog.id}
@@ -168,7 +168,7 @@ const BlogDetails = () => {
     </div>
   ) : (
     <div
-      className="resource__detail"
+      className="article_detail"
       style={{ marginTop: "35px" }}
       dangerouslySetInnerHTML={{ __html: post?.content }}
     ></div>
@@ -180,7 +180,7 @@ const BlogDetails = () => {
   return (
     <>
       <div className="container hero" background="light">
-        <main>
+        <main className="blog_detail__main">
           <section className="article_info">
             <div className="article_info__date section_name">{postDate}</div>
             <h1 className="article_info__title">{title}</h1>
