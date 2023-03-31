@@ -1,0 +1,46 @@
+@import "../../styles/styles.scss";
+
+.article {
+  padding: 0 1rem;
+
+  @include minMedium {
+    grid-column: 2;
+  }
+
+  &_info {
+    padding: 0 1rem;
+    display: grid;
+    grid-auto-rows: min-content;
+    margin-top: 80px;
+
+    @include minMedium {
+      grid-column: 2;
+      margin-top: 0;
+    }
+
+    &__title {
+      font-size: rem(36);
+      margin-bottom: 35px;
+    }
+
+    &__date {
+      color: $color_main__blue;
+    }
+
+    &__img {
+      width: 100%;
+      margin-bottom: 30px;
+      border-radius: 20px;
+      height: 200px;
+      object-fit: cover;
+      max-height: rem(400);
+      @include minMedium {
+        height: 360px;
+      }
+    }
+  }
+
+  &-content {
+    margin-top: 35px;
+  }
+}
