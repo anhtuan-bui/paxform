@@ -41,14 +41,18 @@ export default function Blogs() {
       <section className="posts">
         <div className="container">
           <div className="chips">
-            {categories.map((category, index) => (
-              <Chip
-                category={category}
-                key={index}
-                onChange={handleRadioChange}
-                checked={chip.toLowerCase() === category?.slug}
-              />
-            ))}
+            {categories.map((category, index) =>
+              category?.slug !== "uncategorised" ? (
+                <Chip
+                  category={category}
+                  key={index}
+                  onChange={handleRadioChange}
+                  checked={chip.toLowerCase() === category?.slug}
+                />
+              ) : (
+                ""
+              )
+            )}
           </div>
 
           <BlogsView chip={chip} />
