@@ -12,6 +12,7 @@ import { GET_RESOURCE_BY_SLUG } from "../../lib/graphqlQuery";
 import { useLocation } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import ShareToSocialMedias from "../../components/ShareToSocialMedias/ShareToSocialMedias";
+import { convertToSlug, scrollIntoViewWithOffset } from "../../lib/util";
 
 export default function ResourceDetail() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -46,19 +47,8 @@ export default function ResourceDetail() {
     setDropdownSelected(headings[0]);
   }
 
-  const convertToSlug = (text) => {
-    return text.toLowerCase().split(" ").join("-");
-  };
 
-  const scrollIntoViewWithOffset = (element, offset) => {
-    window.scrollTo({
-      behavior: "smooth",
-      top:
-        element.getBoundingClientRect().top -
-        document.body.getBoundingClientRect().top -
-        offset,
-    });
-  };
+
 
   const handleDropdownClick = () => {
     if (dropdownOpen) {
