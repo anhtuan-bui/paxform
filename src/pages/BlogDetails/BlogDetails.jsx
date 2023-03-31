@@ -22,7 +22,7 @@ const BlogDetails = () => {
     GET_RELATED_POST,
     {
       variables: {
-        categoryName: "story",
+        categoryName: data?.post?.categories?.nodes[0]?.name ?? "",
       },
     }
   );
@@ -31,7 +31,7 @@ const BlogDetails = () => {
   // Displaying 2 skeletons while loading
   const relatedBlogsLoading = () => {
     let relatedBlogs = [];
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 2; i++) {
       relatedBlogs.push(
         <div key={i} style={{ display: "flex", flexDirection: "column" }}>
           <Skeleton height="250px" borderRadius="20px" />
@@ -70,27 +70,11 @@ const BlogDetails = () => {
     // Shuffling the posts to pick random ones
     const shuffledBlogs = [...categoryBlogs].sort(() => 0.5 - Math.random());
     // Picking 2 random posts
-    const recommendedBlogs = shuffledBlogs.slice(0, 1);
+    const recommendedBlogs = shuffledBlogs.slice(0, 2);
     // Looping through the recommended blogs array to pass the props to RealtedCard Component
     recommendedBlogs.forEach((blog) => {
-      // let recommendedCategory = blog?.categories?.nodes[0]?.name ?? "";
-      // let blogTitle = blog?.title ?? "";
-      // let blogImage = blog?.featuredImage?.node?.sourceUrl ?? "";
-      // // Extracting the <p> tag from blog's content
-      // const description = new DOMParser()
-      //   .parseFromString(blog.content, "text/html")
-      //   .getElementsByTagName("p")[0].innerText;
       relatedBlogs.push(
-        <RelatedCard
-          key={blog.id}
-          // image={blogImage}
-          // category={recommendedCategory}
-          // title={blogTitle}
-          // description={description}
-          term="blogs"
-          data={blog}
-          readLink={true}
-        />
+        <RelatedCard key={blog.id} term="blogs" data={blog} readLink={true} />
       );
     });
     return relatedBlogs;
@@ -180,7 +164,7 @@ const BlogDetails = () => {
   return (
     <>
       <div className="container hero" background="light">
-        <main className="blog_detail__main">
+        <main className="blog_details__main">
           <section className="article_info">
             <div className="article_info__date section_name">{postDate}</div>
             <h1 className="article_info__title">{title}</h1>
@@ -194,7 +178,15 @@ const BlogDetails = () => {
             author={post?.author}
           />
           <div className="article">{article}</div>
-          <ShareToSocialMedias slug={slug} title={title} term="blogs"/>
+          <div className="share">
+            <ShareToSocialMedias
+              slug={slug}
+              title={title}
+              term="blogs"
+              imageUrl={articleImage}
+              className="blog-details-social"
+            />
+          </div>
           <section className="recommended">
             <p className="recommended__title section_name">Recommended</p>
             <div className="recommended_container">{relatedPosts}</div>

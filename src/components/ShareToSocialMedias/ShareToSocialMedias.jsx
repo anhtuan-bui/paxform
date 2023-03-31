@@ -38,10 +38,18 @@ const socialMedias = {
   },
 };
 
-export default function ShareToSocialMedias({ headings=[] , slug, title, term , imageUrl}) {
+export default function ShareToSocialMedias({
+  headings = [],
+  slug,
+  title,
+  term,
+  imageUrl,
+  className,
+}) {
+  
   return (
     <div
-      className={`resource__share ${
+      className={`resource__share ${className} ${
         headings.length > 0 ? "" : "resource__share--sticky"
       }`}
     >
