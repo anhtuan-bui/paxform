@@ -12,24 +12,32 @@ export default function Author(props) {
       ? `${author?.firstName ? author?.firstName : ""} ${
           author?.lastName ? author?.lastName : ""
         }`
-      : author?.name !== undefined ? `@${author?.username}` : '';
+      : author?.name
+      ? `@${author?.username}`
+      : "";
 
   const authorAvatarUrl = author?.avatar.url;
-  const authorName = author ? authorNameString : <Skeleton width={100}/>;
+
+  const authorName = authorNameString ? (
+    authorNameString
+  ) : (
+    <Skeleton width={100} />
+  );
+
   const authorTitle = author ? (
     author?.roles?.nodes[0]?.displayName
   ) : (
-    <Skeleton width={60}/>
+    <Skeleton width={75} />
   );
   return (
-    <div className="author">
-      <div className="author__avatar">
-        {author ? (
+    <div className={`author ${props.className ? props.className : ""}`}>
+      {author ? (
+        <div className="author__avatar">
           <img src={authorAvatarUrl} alt="author avatar" />
-        ) : (
-          <Skeleton height="50px" width="50px" borderRadius="50%" />
-        )}
-      </div>
+        </div>
+      ) : (
+        <Skeleton width={50} height={50} style={{ borderRadius: "50%" }} />
+      )}
       <div className="author_info">
         <h4 className="author__name">{authorName}</h4>
         <p className="author__occupation">{authorTitle}</p>

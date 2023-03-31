@@ -14,22 +14,18 @@ const BlogDetails = () => {
   // Current Blog Slug
   const slug = useLocation().pathname.split("/").pop();
   // Querying Current Blog
-  const { loading, error, data } = useQuery(GET_BLOG_DETAILS, {
+  const { loading, data } = useQuery(GET_BLOG_DETAILS, {
     variables: { slug },
   });
-  if(!loading){
-
-    console.log(data);
-  }
   // Querying other posts to get related blogs
-  const {
-    loading: loadingPosts,
-    error: errorPosts,
-    data: dataPosts,
-  } = useQuery(GET_RELATED_POST, {variables: {
-    categoryName: 'story'
-  }});
-
+  const { loading: loadingPosts, data: dataPosts } = useQuery(
+    GET_RELATED_POST,
+    {
+      variables: {
+        categoryName: "story",
+      },
+    }
+  );
 
   // -> Extracting the related blogs
   // Displaying 2 skeletons while loading
@@ -91,7 +87,7 @@ const BlogDetails = () => {
           // category={recommendedCategory}
           // title={blogTitle}
           // description={description}
-          term='blogs'
+          term="blogs"
           data={blog}
           readLink={true}
         />
@@ -191,14 +187,13 @@ const BlogDetails = () => {
             {articleImage}
           </section>
           <Author
+            className="author--blog-detail"
             avatar={authorAvatar}
             name={authorName}
             displayName={displayName}
             author={post?.author}
           />
-          <div className="article">
-            {article}
-          </div>
+          <div className="article">{article}</div>
           <SocialIcons />
           <section className="recommended">
             <p className="recommended__title section_name">Recommended</p>
@@ -206,7 +201,7 @@ const BlogDetails = () => {
           </section>
         </main>
       </div>
-      <div className="blogs">
+      <div className="latest_blogs__container">
         <SectionTriangleRight variant="dark-blue" />
         <LatestBlogs triangleColor="light-blue" />
       </div>

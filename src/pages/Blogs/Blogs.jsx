@@ -1,145 +1,143 @@
-import React, { Component, Fragment, Suspense } from "react";
+import React, { Fragment, Suspense, useState } from "react";
 import "./Blogs.scss";
 import ReadArticle from "../../components/ReadArticle/ReadArticle";
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
 import Author from "../../components/Author/Author";
 import { useQuery } from "@apollo/client";
 import { GET_CATEGORIES, GET_POSTS } from "../../lib/graphqlQuery";
-import client from "../../configurations/apollo";
 import Button from "../../components/Button/Button";
 import BlogCard from "../../components/BlogCard/BlogCard";
+import Skeleton from "react-loading-skeleton";
 
-export default class Blogs extends Component {
-  blogs = { chip: "all", categories: [] };
+export default function Blogs() {
+  const [chip, setChip] = useState("all");
 
-  constructor(props) {
-    super(props);
+  const { loading, data } = useQuery(GET_CATEGORIES);
 
-    this.state = this.blogs;
-    this.handleRadioChange = this.handleRadioChange.bind(this);
-  }
+  const categories = !loading
+    ? data?.categories?.nodes
+    : Array.from({ length: 3 });
 
-  async componentDidMount() {
-    // this.handleResize();
-    // window.addEventListener("resize", this.handleResize);
-    await this.getCategories();
-  }
+  const handleRadioChange = (event) => {
+    setChip(event.target.id);
+  };
 
-  componentWillUnmount() {
-    // window.removeEventListener("resize", this.handleResize);
-  }
-
-  // handleResize() {
-  //   const heroBlog = document.querySelector(".hero_blog");
-  //   const heroBlogWrapper = document.querySelector(".hero_blog__wrapper");
-
-  //   heroBlog.style.height =
-  //     parseInt(window.getComputedStyle(heroBlogWrapper).height.split("px")) -
-  //     92 +
-  //     "px";
-  // }
-
-  handleRadioChange(event) {
-    this.blogs.chip = event.target.id;
-    this.setState(this.blogs);
-  }
-
-  async getCategories() {
-    const categories = await client.query({ query: GET_CATEGORIES });
-    this.blogs.categories = categories.data.categories.edges;
-    this.setState(this.blogs);
-  }
-
-  render() {
-    return (
-      <Suspense>
-        <main className="blogs">
-          <section className="hero" background="light">
-            <div className="container">
-              <div className="hero_blog">
-                <div className="hero_blog__wrapper">
-                  <HeroBlogInfo />
-                </div>
-                <div className="hero_graphic"></div>
-              </div>
+  return (
+    <main className="blogs">
+      <section className="hero" background="light">
+        <div className="container">
+          <div className="hero_blog">
+            <div className="hero_blog__wrapper">
+              <HeroBlogInfo />
             </div>
-            <SectionTriangleRight variant="white" />
-          </section>
+          </div>
+        </div>
+        <div className="hero_graphic">
+          <div className="hero_graphic__item hero_graphic__item--blue"></div>
+          <div className="hero_graphic__item hero_graphic__item--green"></div>
+        </div>
+      </section>
 
-          <section className="posts">
-            <div className="container">
-              <div className="chips">
-                {this.state.categories.map(
-                  (category, index) =>
-                    category.node.name.toLowerCase() !== "uncategorised" && (
-                      <div className="chip" key={index}>
-                        <input
-                          id={category.node.name}
-                          type="radio"
-                          name="radio"
-                          onChange={this.handleRadioChange}
-                          checked={
-                            this.state.chip.toLowerCase() ===
-                            category.node.name.toLowerCase()
-                          }
-                        />
-                        <label htmlFor={category.node.name}>
-                          {category.node.name}
-                        </label>
-                      </div>
-                    )
-                )}
-              </div>
+      <section className="posts">
+        <div className="container">
+          <div className="chips">
+            {categories.map((category, index) => (
+              <Chip
+                category={category}
+                key={index}
+                onChange={handleRadioChange}
+                checked={chip.toLowerCase() === category?.slug}
+              />
+            ))}
+          </div>
 
-              <BlogsView chip={this.state.chip} />
-            </div>
-            <SectionTriangleRight variant="footer" />
-          </section>
-        </main>
-      </Suspense>
-    );
-  }
+          <BlogsView chip={chip} />
+        </div>
+        <SectionTriangleRight variant="footer" />
+      </section>
+    </main>
+  );
 }
 
+const Chip = ({ category, onChange, checked }) => {
+  return category ? (
+    category?.node?.slug !== "uncategorised" && (
+      <div className="chip">
+        <input
+          id={category?.name}
+          type="radio"
+          name="radio"
+          onChange={onChange}
+          checked={checked}
+        />
+        <label htmlFor={category?.name}>{category?.name}</label>
+      </div>
+    )
+  ) : (
+    <Fragment>
+      <Skeleton width={100} height={33} style={{ borderRadius: "20px" }} />
+    </Fragment>
+  );
+};
+
 const HeroBlogInfo = () => {
-  const { loading, error, data } = useQuery(GET_POSTS, {
+  const { loading, data } = useQuery(GET_POSTS, {
     variables: { first: 1, after: null },
     fetchPolicy: "no-cache",
   });
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>ErrorL {error}</p>;
+  const blog = data?.posts?.nodes[0];
 
-  const blog = data.posts.edges[0].node;
+  const headline = !loading ? "BLOG TODAYS" : <Skeleton width={100} />;
+  const title = !loading ? (
+    blog?.title
+  ) : (
+    <Fragment>
+      <Skeleton />
+      <Skeleton width={"75%"} />
+    </Fragment>
+  );
 
   // Get the first paragraph of the blog
-  const firstParagraph = blog.content.split("</p>")[0].split("<p>")[1];
+  const parser = new DOMParser();
+  const firstParagraph = blog ? (
+    parser.parseFromString(blog?.content, "text/html").querySelector("p")
+      .innerText
+  ) : (
+    <Fragment>
+      <Skeleton count={2} />
+      <Skeleton width={"75%"} />
+    </Fragment>
+  );
 
   return (
     <Fragment>
       <div className="hero_blog__image">
-        <img src={blog.featuredImage.node.sourceUrl} alt="blog hero" />
+        {!loading ? (
+          <img src={blog?.featuredImage?.node?.sourceUrl} alt="blog hero" />
+        ) : (
+          <Skeleton height={380} style={{ borderRadius: "20px" }} />
+        )}
       </div>
       <div className="hero_blog__content">
         <div className="hero_blog__content-box">
-          <p className="section_name hero_blog__name">BLOG TODAYS</p>
-          <h1 className="hero_blog__title">{blog.title}</h1>
-          <p
-            className="hero_blog__summary"
-            dangerouslySetInnerHTML={{
-              __html: firstParagraph,
-            }}
-          ></p>
-          <ReadArticle id={blog.id} />
+          <p className="section_name hero_blog__name">{headline}</p>
+          <h1 className="hero_blog__title section_title">{title}</h1>
+
+          <p className="hero_blog__summary section__description">
+            {firstParagraph}
+          </p>
+
+          <ReadArticle id={blog?.id} loading={loading} />
         </div>
 
-        <Author author={blog.author} />
+        <Author author={blog?.author} />
       </div>
     </Fragment>
   );
 };
 
-const BlogsView = (props) => {
+const BlogsView = ({ chip }) => {
   const batchSize = 8;
   // get the first post to get the cursor for the first batch of posts
   const { data: firstPost } = useQuery(GET_POSTS, {
@@ -149,7 +147,7 @@ const BlogsView = (props) => {
   });
 
   // get the rest of the posts
-  const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
+  const { loading, data, fetchMore } = useQuery(GET_POSTS, {
     variables: {
       first: batchSize,
       after: firstPost?.posts?.pageInfo.endCursor,
@@ -157,23 +155,15 @@ const BlogsView = (props) => {
     notifyOnNetworkStatusChange: true,
   });
 
-  if (!data && loading) return <p>Loading...</p>;
-
-  if (error) return <p>An error occured</p>;
-
-  if (!data) {
-    return <p>No posts yet</p>;
-  }
-
   // show only posts that have the selected category
-  let posts = data.posts.edges.map((edge) => edge.node);
-  const postInfo = data.posts.pageInfo;
+  let posts = !loading ? data?.posts?.nodes : Array.from({ length: 8 });
+  const postInfo = data?.posts?.pageInfo;
 
-  if (props.chip.toLowerCase() !== "all") {
+  if (chip.toLowerCase() !== "all") {
     // set posts to only posts that have the selected category
-    posts = posts.filter((post) => {
-      const categories = post.categories.edges.map((edge) => edge.node.name);
-      return categories.includes(props.chip);
+    posts = posts?.filter((post) => {
+      const categories = post?.categories?.nodes.map((node) => node.name);
+      return categories.includes(chip);
     });
   }
 
@@ -181,11 +171,11 @@ const BlogsView = (props) => {
     <Fragment>
       <div className="posts_view">
         {posts.map((post, index) => (
-          <BlogCard key={index} blog={post} />
+          <BlogCard key={index} blog={post} loading={loading} />
         ))}
       </div>
       <div className="view_more">
-        {postInfo.hasNextPage ? (
+        {postInfo?.hasNextPage ? (
           <Button
             text={loading ? "Loading..." : "View all posts"}
             type="arrow outline"
@@ -197,18 +187,18 @@ const BlogsView = (props) => {
               fetchMore({
                 variables: {
                   first: batchSize,
-                  after: data.posts.pageInfo.endCursor,
+                  after: data?.posts?.pageInfo?.endCursor,
                 },
                 updateQuery: (prev, { fetchMoreResult }) => {
                   if (!fetchMoreResult) return prev;
                   return {
                     ...prev,
                     posts: {
-                      ...prev.posts,
-                      ...fetchMoreResult.posts,
-                      edges: [
-                        ...prev.posts.edges,
-                        ...fetchMoreResult.posts.edges,
+                      ...prev?.posts,
+                      ...fetchMoreResult?.posts,
+                      nodes: [
+                        ...prev?.posts?.nodes,
+                        ...fetchMoreResult.posts.nodes,
                       ],
                     },
                   };

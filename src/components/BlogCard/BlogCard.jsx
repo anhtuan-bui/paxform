@@ -1,50 +1,82 @@
 import React from "react";
+import Skeleton from "react-loading-skeleton";
 import ReadArticle from "../ReadArticle/ReadArticle";
 import "./BlogCard.scss";
 
-const Blog = (props) => {
-  const blog = props.blog;
-  const authorImage = blog.author.node.avatar.url;
-  const authorName =
-    blog.author.node.firstName +
-    (blog.author.node.lastName ? " " + blog.author.node.lastName : "");
+const Blog = ({ blog, className, loading }) => {
+  const author = blog?.author?.node;
+  const authorNameString =
+    author?.firstName || author?.lastName
+      ? `${author?.firstName ? author?.firstName : ""} ${
+          author?.lastName ? author?.lastName : ""
+        }`
+      : author?.name
+      ? `@${author?.username}`
+      : "";
 
-  const firstParagraph = blog.content.split("</p>")[0].split("<p>")[1];
+  const authorImage = author?.avatar?.url;
+
+  const authorName = blog ? (
+    authorNameString
+  ) : (
+    <Skeleton width={100} />
+  );
+
+  const firstParagraph = blog?.content?.split("</p>")[0].split("<p>")[1];
+  const story = blog ? blog?.categories?.nodes[0].name : <Skeleton width={75} />;
+  const time = blog ? (
+    new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      year: "numeric",
+      day: "2-digit",
+    }).format(new Date(blog?.date))
+  ) : (
+    <Skeleton width={80} />
+  );
+  const title = blog ? blog?.title : <Skeleton width={"75%"} />;
+
   return (
-    <div className={`post ${props.className}`}>
-      <img
-        className="post__image"
-        src={blog.featuredImage.node.sourceUrl}
-        alt="blog sample"
-      />
+    <div className={`post ${className}`}>
+      {blog ? (
+        <img
+          className="post__image"
+          src={blog?.featuredImage?.node?.sourceUrl}
+          alt="blog sample"
+        />
+      ) : (
+        <Skeleton className="post__image" />
+      )}
       <div className="post__category-box">
-        <p className="post__name section_name post__name--blue">
-          {blog.categories.edges[0].node.name || "Story"}
-        </p>
-        <p className="post__date">
-          {new Intl.DateTimeFormat("en-US", {
-            month: "short",
-            year: "numeric",
-            day: "2-digit",
-          }).format(new Date(blog.date))}
-        </p>
+        <p className="post__name section_name post__name--blue">{story}</p>
+        <p className="post__date">{time}</p>
       </div>
-      <h2 className="post__title">{blog.title}</h2>
+      <h2 className="post__title">{title}</h2>
 
-      <p
-        className="post__summary"
-        dangerouslySetInnerHTML={{ __html: firstParagraph }}
-      ></p>
+      {blog ? (
+        <p
+          className="post__summary"
+          dangerouslySetInnerHTML={{ __html: firstParagraph }}
+        ></p>
+      ) : (
+        <p className="post__summary">
+          <Skeleton />
+          <Skeleton width={"75%"} />
+        </p>
+      )}
 
       <div className="post__author">
-        <img
-          className="post__author-image"
-          src={authorImage}
-          alt={authorName}
-        />
+        {blog ? (
+          <img
+            className="post__author-image"
+            src={authorImage}
+            alt={authorName}
+          />
+        ) : (
+          <Skeleton className="post__author-image" />
+        )}
         <p className="post__author-name">{authorName}</p>
       </div>
-      <ReadArticle />
+      <ReadArticle loading={loading} to={`/blogs/${blog?.slug}`}/>
     </div>
   );
 };
