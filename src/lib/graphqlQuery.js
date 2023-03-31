@@ -1,5 +1,25 @@
 import { gql } from "@apollo/client";
 
+const GET_FAQS = gql`
+  query GetFAQs {
+    faqCategories {
+      nodes {
+        id
+        name
+        slug
+        faqs {
+          nodes {
+            id
+            slug
+            title
+            content
+          }
+        }
+      }
+    }
+  }
+`;
+
 const GET_RESOURCE_BY_SLUG = gql`
   query GetResourceBySlug($id: ID!) {
     resource(id: $id, idType: SLUG) {
@@ -416,4 +436,5 @@ export {
   GET_RESOURCES_CATEGORIES,
   GET_BLOGS,
   GET_RESOURCE_BY_SLUG,
+  GET_FAQS
 };
