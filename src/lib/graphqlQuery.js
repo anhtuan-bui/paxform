@@ -357,6 +357,8 @@ const GET_TEAM_MEMBERS = gql`
 const GET_BLOG_DETAILS = gql`
   query GetBlogDetails($slug: ID!) {
     post(id: $slug, idType: SLUG) {
+      id
+      databaseId
       title
       content
       date
@@ -390,8 +392,8 @@ const GET_BLOG_DETAILS = gql`
 `;
 
 const GET_RELATED_POST = gql`
-  query getPosts($categoryName: String = "") {
-    posts(first: 4, where: { categoryName: $categoryName }) {
+  query getPosts($categoryName: String = "", $id: [ID]) {
+    posts(first: 4, where: { categoryName: $categoryName, notIn: $id}) {
       nodes {
         id
         date
