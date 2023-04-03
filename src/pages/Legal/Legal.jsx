@@ -18,7 +18,7 @@ export default function Legal() {
         <div className="container ">
           <div className="hero__wrapper">
             <div className="hero__content">
-              <h1 className="hero__title">Paxfrom Legal</h1>
+              <h1 className="hero__title">Paxform Legal</h1>
               <p className="hero__description">
                 Find legal information and resources for our products and
                 services, including our policies and terms.

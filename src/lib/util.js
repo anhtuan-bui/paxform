@@ -15,4 +15,8 @@ const scrollIntoViewWithOffset = (element, offset) => {
   const convertToSlug = (text) => {
     return text.toLowerCase().split(" ").join("-");
   };
-export {navigateToHomePage, scrollIntoViewWithOffset, convertToSlug};
+
+  const scrollTop = () => {
+    window.scrollTo(0, 0);
+  };
+export {navigateToHomePage, scrollIntoViewWithOffset, convertToSlug, scrollTop};

@@ -1,5 +1,7 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
+import { Link } from "react-router-dom";
+import { scrollTop } from "../../lib/util";
 import ReadArticle from "../ReadArticle/ReadArticle";
 import "./BlogCard.scss";
 
@@ -16,14 +18,14 @@ const Blog = ({ blog, className, loading }) => {
 
   const authorImage = author?.avatar?.url;
 
-  const authorName = blog ? (
-    authorNameString
-  ) : (
-    <Skeleton width={100} />
-  );
+  const authorName = blog ? authorNameString : <Skeleton width={100} />;
 
   const firstParagraph = blog?.content?.split("</p>")[0].split("<p>")[1];
-  const story = blog ? blog?.categories?.nodes[0].name : <Skeleton width={75} />;
+  const story = blog ? (
+    blog?.categories?.nodes[0].name
+  ) : (
+    <Skeleton width={75} />
+  );
   const time = blog ? (
     new Intl.DateTimeFormat("en-US", {
       month: "short",
@@ -35,14 +37,18 @@ const Blog = ({ blog, className, loading }) => {
   );
   const title = blog ? blog?.title : <Skeleton width={"75%"} />;
 
+  const link = `/blogs/${blog?.slug}`;
+
   return (
     <div className={`post ${className}`}>
       {blog ? (
-        <img
-          className="post__image"
-          src={blog?.featuredImage?.node?.sourceUrl}
-          alt="blog sample"
-        />
+        <Link to={link} onClick={scrollTop}>
+          <img
+            className="post__image"
+            src={blog?.featuredImage?.node?.sourceUrl}
+            alt="blog sample"
+          />
+        </Link>
       ) : (
         <Skeleton className="post__image" />
       )}
@@ -50,7 +56,11 @@ const Blog = ({ blog, className, loading }) => {
         <p className="post__name section_name post__name--blue">{story}</p>
         <p className="post__date">{time}</p>
       </div>
-      <h2 className="post__title">{title}</h2>
+      <h2 className="post__title">
+        <Link className="link--black" to={link} onClick={scrollTop}>
+          {title}
+        </Link>
+      </h2>
 
       {blog ? (
         <p
@@ -76,7 +86,7 @@ const Blog = ({ blog, className, loading }) => {
         )}
         <p className="post__author-name">{authorName}</p>
       </div>
-      <ReadArticle loading={loading} to={`/blogs/${blog?.slug}`}/>
+      <ReadArticle loading={loading} to={link} />
     </div>
   );
 };

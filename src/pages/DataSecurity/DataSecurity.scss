@@ -1,11 +1,11 @@
-@import "../../styles/styles.scss";
+@import "../../styles//styles.scss";
 
 $color_white: #fff;
 $color_blue: $color__primary;
 $color_light-grey: #f6f6f6;
 $color_grey: #2f4356;
 
-.faqs {
+.data_security {
   .hero {
     position: relative;
     padding-top: rem(100);
@@ -38,8 +38,7 @@ $color_grey: #2f4356;
     &__content {
       color: $color_white;
 
-      h1,
-      p {
+      h1 {
         max-width: 100%;
       }
     }
@@ -64,55 +63,91 @@ $color_grey: #2f4356;
       }
     }
   }
-  &__content-wrapper {
+  &__data {
+    background-color: $color__light-blue;
+    &-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+
+      @include medium {
+        padding-top: rem(60);
+        padding-bottom: rem(60);
+      }
+
+      @include small {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &-illustration {
+      position: relative;
+      bottom: -120px;
+      margin: auto;
+
+      @include medium {
+        bottom: 0;
+      }
+
+      &-img {
+        max-width: 100%;
+      }
+    }
+
+    &-illustration,
+    &-security {
+      padding: 0 $padding__column;
+    }
+
+    &-name {
+      color: $color__success;
+    }
+  }
+}
+
+.data_access {
+  &__wrapper {
+    padding: rem(120) $padding__column;
+  }
+
+  &__name {
+    color: $color__success;
+    text-align: center;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__grid {
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    padding: rem(70) 0;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(30);
+    margin: 0 rem(65);
+    margin-top: rem(60);
+
+    @include medium {
+      $margin: 0;
+      margin-left: $margin;
+      margin-right: $margin;
+    }
 
     @include small {
-        display: block;
+      grid-template-columns: 1fr;
     }
   }
 
-  &__section {
-    margin-bottom: 3rem;
-    &-title {
-      text-transform: capitalize;
-      margin-top: 0;
-    }
-  }
-  &__faqs,
-  &__sidebar {
-    padding: 0 $padding__column;
-  }
+  &__item {
+    padding: rem(40);
+    background-color: #f6f6f6;
+    border-radius: rem(20);
 
-  &__sidebar {
-    @include small {
-      display: none;
+    @include medium {
+        padding: rem(30);
     }
-    &-list {
-      position: sticky;
-      top: 85px;
-      padding: 0;
-      text-transform: capitalize;
-      margin-top: 0;
-    }
-    &-item {
-      list-style-type: none;
-      padding: rem(9) 0;
-      width: 100%;
-      cursor: pointer;
 
-      &:hover {
-        color: #6b6b6b;
-      }
-
-      &:first-child {
-        padding-top: 0;
-      }
-      &--active {
-        color: $color__primary;
-      }
+    &-description {
+      margin-bottom: 0;
     }
   }
 }

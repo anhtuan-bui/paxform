@@ -1,4 +1,4 @@
-import React, { Fragment, Suspense, useState } from "react";
+import React, { Fragment, useState } from "react";
 import "./Blogs.scss";
 import ReadArticle from "../../components/ReadArticle/ReadArticle";
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
@@ -8,6 +8,8 @@ import { GET_CATEGORIES, GET_POSTS } from "../../lib/graphqlQuery";
 import Button from "../../components/Button/Button";
 import BlogCard from "../../components/BlogCard/BlogCard";
 import Skeleton from "react-loading-skeleton";
+import { Link } from "react-router-dom";
+import { scrollTop } from "../../lib/util";
 
 export default function Blogs() {
   const [chip, setChip] = useState("all");
@@ -102,6 +104,9 @@ const HeroBlogInfo = () => {
     </Fragment>
   );
 
+  const slug = blog?.slug;
+  const link = `/blogs/${slug}`;
+
   // Get the first paragraph of the blog
   const parser = new DOMParser();
   const firstParagraph = blog ? (
@@ -118,7 +123,9 @@ const HeroBlogInfo = () => {
     <Fragment>
       <div className="hero_blog__image">
         {!loading ? (
-          <img src={blog?.featuredImage?.node?.sourceUrl} alt="blog hero" />
+          <Link to={link} onClick={scrollTop}>
+            <img src={blog?.featuredImage?.node?.sourceUrl} alt="blog hero" />
+          </Link>
         ) : (
           <Skeleton height={380} style={{ borderRadius: "20px" }} />
         )}
@@ -126,13 +133,17 @@ const HeroBlogInfo = () => {
       <div className="hero_blog__content">
         <div className="hero_blog__content-box">
           <p className="section_name hero_blog__name">{headline}</p>
-          <h1 className="hero_blog__title section_title">{title}</h1>
+          <h1 className="hero_blog__title section_title">
+            <Link className="link--black" to={link} onClick={scrollTop}>
+              {title}
+            </Link>
+          </h1>
 
           <p className="hero_blog__summary section__description">
             {firstParagraph}
           </p>
 
-          <ReadArticle id={blog?.id} loading={loading} />
+          <ReadArticle id={blog?.id} loading={loading} to={link} />
         </div>
 
         <Author author={blog?.author} />

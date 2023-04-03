@@ -30,6 +30,7 @@ const Business = lazy(() => import("./pages/Business/Business"));
 const UseCase = lazy(() => import("./pages/UseCase/UseCase"));
 const FAQs = lazy(() => import("./pages/FAQs/FAQs"));
 const ResourceDetail = lazy(() => import("./pages/ResourceDetail/ResourceDetail"))
+const DataSecurity = lazy(() => import("./pages/DataSecurity/DataSecurity"))
 
 function App() {
 	const MINUTE_MS = 250000;
@@ -71,6 +72,7 @@ function App() {
 							<Route path="use-cases/:slug" element={<UseCase />} />
 							<Route path="contact-us" element={<ContactUs />} />
 							<Route path="company" element={<Company />} />
+							<Route path="data-security" element={<DataSecurity />} />
 							<Route path="gq" element={<GQ />} />
 
 							{/* <Route path="*" element={<NotFound />} /> */}

@@ -55,9 +55,9 @@ class Header extends Component {
       submenu: [],
     },
     {
-      text: "FAQ",
+      text: "FAQs",
       link: "https://",
-      to: "faq",
+      to: "faqs",
       submenu: [],
     },
   ];

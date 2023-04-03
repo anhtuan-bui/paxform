@@ -13,18 +13,18 @@ export default function FAQs() {
 
   const faqCategories = !loading
     ? data?.faqCategories?.nodes
-    : Array.from({ length: 3 });
+    : Array.from({ length: 5 });
 
   const handleListItemClick = (e) => {
     const element = document.getElementById(convertToSlug(e.target.innerText));
-    scrollIntoViewWithOffset(element, 100)
-  }
+    scrollIntoViewWithOffset(element, 100);
+  };
 
   useEffect(() => {
     const categories = document.querySelectorAll(".faqs__section-title");
-    categories.forEach(category => {
-      category.setAttribute('id', convertToSlug(category.innerText))
-    })
+    categories.forEach((category) => {
+      category.setAttribute("id", convertToSlug(category.innerText));
+    });
     setHeadings(Array.from(categories, (category) => category.innerText));
   }, [loading]);
   return (
@@ -51,9 +51,12 @@ export default function FAQs() {
             <div className="faqs__sidebar">
               <ul className="faqs__sidebar-list">
                 {headings.map((heading, index) => (
-                  <li className="faqs__sidebar-item" key={index} onClick={(e) => handleListItemClick(e)}>
-                    {heading}
-                  </li>
+                  <SidebarItem
+                    data={heading}
+                    onClick={(e) => handleListItemClick(e)}
+                    key={index}
+                    loading={loading}
+                  />
                 ))}
               </ul>
             </div>
@@ -64,6 +67,15 @@ export default function FAQs() {
     </main>
   );
 }
+
+const SidebarItem = ({ onClick, data, loading }) => {
+  const heading = !loading ? data : <Skeleton />;
+  return (
+    <li className="faqs__sidebar-item" onClick={onClick}>
+      {heading}
+    </li>
+  );
+};
 
 const FAQSection = ({ category }) => {
   const title = category ? category?.name : <Skeleton width={"55%"} />;
