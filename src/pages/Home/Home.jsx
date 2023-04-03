@@ -124,6 +124,7 @@ var home = {
 };
 
 export default class Home extends Component {
+	registerLink = process.env.REACT_APP_REGISTER_LINK;
 	constructor(props) {
 		super(props);
 
@@ -202,7 +203,7 @@ export default class Home extends Component {
 								documents and share information with others.
 							</p>
 							<div className="hero__button">
-								<Button text="Sign Up" type="flat-green arrow" color="white" />
+								<Button text="Sign Up" type="flat-green arrow" color="white" href={this.registerLink}/>
 								<Button
 									text="How it works"
 									type="outline triangle-right"
@@ -279,6 +280,7 @@ export default class Home extends Component {
 									type="flat-green arrow"
 									color="white"
 									text="Learn more about Business"
+									href='/business'
 								/>
 							</div>
 						</div>
@@ -333,6 +335,7 @@ export default class Home extends Component {
 									type="outline arrow"
 									color="green"
 									text="Learn more about Personal"
+									href='/personal'
 								/>
 							</div>
 						</div>

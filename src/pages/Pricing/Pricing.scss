@@ -206,10 +206,6 @@ $color_dark-blue: #031a30;
             color: #2f4356;
           }
         }
-        .button {
-          width: 100%;
-          height: rem(45);
-        }
         &-inc {
           display: block;
           margin-top: rem(40);
@@ -578,7 +574,7 @@ $color_dark-blue: #031a30;
     }
     &__plans {
       display: grid;
-      grid-template-columns: minmax(0,1fr) 3fr;
+      grid-template-columns: minmax(0, 1fr) 3fr;
       list-style: none;
       box-sizing: border-box;
       .swiper {
@@ -641,10 +637,6 @@ $color_dark-blue: #031a30;
               font-style: normal;
               font-weight: 400;
             }
-          }
-          & .button {
-            width: 100%;
-            margin: 0 auto;
           }
           &.top {
             height: rem(220);

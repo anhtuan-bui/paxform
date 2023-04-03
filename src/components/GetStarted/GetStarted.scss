@@ -43,11 +43,8 @@
     @include medium {
       flex-wrap: wrap;
     }
-    img {
-      width: rem(200);
-      max-width: 50%;
-    }
   }
+
   &__image {
     img {
       position: relative;
@@ -116,6 +113,10 @@
         stroke: $color__success;
       }
     }
+  }
+
+  &__button {
+    max-width: rem(150);
   }
   &__box-right {
     &-item {

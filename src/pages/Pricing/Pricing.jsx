@@ -52,6 +52,7 @@ const compareList = {
   ],
 };
 export default class Pricing extends Component {
+  registerLink = process.env.REACT_APP_REGISTER_LINK;
   personal = {
     pricing: [
       {
@@ -331,6 +332,7 @@ export default class Pricing extends Component {
                       text="Get started"
                       type={`arrow ${index === 1 ? "flat-green" : "outline"}`}
                       color={`${index === 1 ? "white" : "green"}`}
+                      href={this.registerLink}
                     />
                     <strong className="plans__ul__list-inc">
                       What's Included
@@ -427,6 +429,7 @@ export default class Pricing extends Component {
                                 index === 1 ? "flat-green" : "outline"
                               }`}
                               color={`${index === 1 ? "white" : "green"}`}
+                              href={this.registerLink}
                             />
                           </dt>
                           {price.compares.features.map((feature, index) => (

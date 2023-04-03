@@ -3,9 +3,7 @@ import Button from "../Button/Button";
 import RelatedCard from "../RelatedCard/RelatedCard";
 import "./LatestBlogs.scss";
 import { useQuery } from "@apollo/client";
-import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { GET_RECOMMENDED_POSTS } from '../../lib/graphqlQuery'
 
 // import card1 from "../../assets/images/card1.png";
 // import card2 from "../../assets/images/card2.png";
@@ -33,7 +31,7 @@ export default function LatestBlogs({ triangleColor }) {
             </h2>
           </div>
           <div className="platform__top-right">
-            <Button type="outline arrow" text="See All Blog Post" />
+            <Button type="outline arrow" text="See All Blog Post" href='/blogs'/>
           </div>
         </div>
         <div className="platform__content">

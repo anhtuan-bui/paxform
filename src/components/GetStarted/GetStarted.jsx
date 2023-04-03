@@ -14,6 +14,9 @@ import logo from "../../assets/icons/logo.svg";
 import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
 
 export default class GetStarted extends Component {
+  googlePlayLink =
+    "https://play.google.com/store/apps/details?id=com.paxform&hl=en_AU&gl=US";
+  appleStoreLink = "https://apps.apple.com/app/paxform/id1565492350";
   render() {
     return (
       <Fragment>
@@ -26,8 +29,22 @@ export default class GetStarted extends Component {
                 Download from your app store.
               </h1>
               <div className="get_started__buttons">
-                <img src={googlePlay} alt="google play" />
-                <img src={appstore} alt="app store" />
+                <a
+                  className="get_started__button"
+                  href={this.googlePlayLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={googlePlay} alt="google play" />
+                </a>
+                <a
+                  className="get_started__button"
+                  href={this.appleStoreLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={appstore} alt="app store" />
+                </a>
               </div>
             </div>
             <div className="get_started__image">
@@ -49,7 +66,13 @@ export default class GetStarted extends Component {
                   data over and over again.
                 </p>
 
-                <Button type="outline arrow" text="Contact Us" />
+                <Button
+                  className="love_to_hear__button"
+                  type="outline arrow"
+                  color="green"
+                  text="Contact Us"
+                  href="/contact-us"
+                />
               </div>
               <div className="love_to_hear__box-right-item">
                 <div className="love_to_hear__box-right-item-image">

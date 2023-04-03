@@ -23,6 +23,8 @@ class Header extends Component {
     useCase: [],
   };
 
+  registerLink = process.env.REACT_APP_REGISTER_LINK;
+
   menu = [
     {
       text: "Business",
@@ -294,7 +296,7 @@ class Header extends Component {
                 </ul>
               </nav>
               <div className="button__wrapper">
-                <Button type="arrow outline" text="Sign Up" color="white" />
+                <Button type="arrow outline" text="Sign Up" color="white" href={this.registerLink}/>
               </div>
             </div>
             <div
