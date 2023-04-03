@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./Footer.scss";
 
 import footerLogo from "../../assets/images/LOGO-footer.svg";
-import { useLocation } from "react-router-dom";
 import languages from "../../assets/json/languages.json";
 // import arrowDown from "../../assets/icons/arrowDown.svg";
 // import searchIcon from "../../assets/icons/search.svg";
@@ -59,18 +58,287 @@ const socialMedias = [
   },
 ];
 
+const footerItems = [
+  [
+    {
+      group: "PAXFORM",
+      items: [
+        {
+          title: "Business",
+          to: "/business",
+        },
+        {
+          title: "Personal",
+          to: "/personal",
+        },
+        {
+          title: "Security",
+          to: "/data-security",
+        },
+        {
+          title: "Pricing",
+          to: "/pricing",
+        },
+        {
+          title: "Template",
+          to: "",
+        },
+        {
+          title: "Integrations",
+          to: "",
+        },
+      ],
+    },
+    {
+      group: "BUSINESS FEATURES",
+      items: [
+        {
+          title: "Form Designer",
+          to: "",
+        },
+        {
+          title: "Chat",
+          to: "",
+        },
+        {
+          title: "Disclosures",
+          to: "",
+        },
+        {
+          title: "Electronic Signatures",
+          to: "",
+        },
+        {
+          title: "Additional Questions",
+          to: "",
+        },
+        {
+          title: "Custom Statuses",
+          to: "",
+        },
+      ],
+    },
+    {
+      group: "CONSUMER FEATURES",
+      items: [
+        {
+          title: "Password Manager",
+          to: "",
+        },
+        {
+          title: "Password Generator",
+          to: "",
+        },
+        {
+          title: "Secret",
+          to: "",
+        },
+        {
+          title: "Electronic Signatures",
+          to: "",
+        },
+        {
+          title: "Disclosures",
+          to: "",
+        },
+        {
+          title: "Chat & Notifications",
+          to: "",
+        },
+      ],
+    },
+  ],
+  [
+    {
+      group: "USE CASES",
+      items: [
+        {
+          title: "Hospitality",
+          to: "/hospitality",
+        },
+        {
+          title: "Education",
+          to: "",
+        },
+        {
+          title: "Transportation",
+          to: "",
+        },
+        {
+          title: "Real Estate",
+          to: "",
+        },
+        {
+          title: "Government",
+          to: "",
+        },
+        {
+          title: "Construction",
+          to: "",
+        },
+        {
+          title: "Health and Aged Care",
+          to: "",
+        },
+        {
+          title: "Retail",
+          to: "",
+        },
+      ],
+    },
+  ],
+  [
+    {
+      group: "Support",
+      items: [
+        {
+          title: "Blog",
+          to: "/blogs",
+        },
+        {
+          title: "FAQs",
+          to: "/faqs",
+        },
+        {
+          title: "Resources",
+          to: "/resources",
+        },
+        {
+          title: "Help Center",
+          to: "",
+        },
+      ],
+    },
+    {
+      group: "SECURITY",
+      items: [
+        {
+          title: "Encryption",
+          to: "",
+        },
+        {
+          title: "Biometric",
+          to: "",
+        },
+        {
+          title: "File Storage",
+          to: "",
+        },
+        {
+          title: "Data Storage",
+          to: "",
+        },
+        {
+          title: "Password",
+          to: "",
+        },
+        {
+          title: "Auto Timeout",
+          to: "",
+        },
+      ],
+    },
+    {
+      group: "FORMS",
+      items: [
+        {
+          title: "Contact Form",
+          to: "",
+        },
+        {
+          title: "Feedback Form",
+          to: "",
+        },
+        {
+          title: "Security Form",
+          to: "",
+        },
+        {
+          title: "Copyright Form",
+          to: "",
+        },
+        {
+          title: "GDPR Form",
+          to: "",
+        },
+      ],
+    },
+  ],
+  [
+    {
+      group: "COMPANY",
+      items: [
+        {
+          title: "About Us",
+          to: "/company",
+        },
+        {
+          title: "Contact Us",
+          to: "/contact-us",
+        },
+        {
+          title: "Request a Demo",
+          to: "",
+        },
+        {
+          title: "Partner Program",
+          to: "",
+        },
+        {
+          title: "Careers",
+          to: "",
+        },
+        {
+          title: "Newsroom",
+          to: "",
+        },
+        {
+          title: "Brand kit",
+          to: "",
+        },
+      ],
+    },
+    {
+      group: "LEGAL",
+      items: [
+        {
+          title: "Legal",
+          to: "/legal",
+        },
+        {
+          title: "Data Security Policy",
+          to: "",
+        },
+        {
+          title: "Website Terms of Use",
+          to: "/legal/website/terms-of-use",
+        },
+        {
+          title: "Website Privacy Policy",
+          to: "/legal/website/website-privacy-policy",
+        },
+      ],
+    },
+  ],
+];
+
 export default function Footer() {
   // const [emoji, setEmoji] = useState("🇦🇺");
   // const [shortName, setShortName] = useState("AU");
   // const [countryName, setCountryName] = useState("Australia");
   // const [filteredCountries, setFilteredCountries] = useState(languages);
 
-  const [languageCode, setLanguageCode] = useState("en-AU");
-  const location = useLocation();
+  const [footer, setFooter] = useState(true);
 
-  if (location.pathname === "/not-found") {
-    return;
-  }
+  const [languageCode, setLanguageCode] = useState("en-AU");
+
+  useEffect(() => {
+    const notFound = document.querySelector(".not_found");
+
+    if (notFound) {
+      setFooter(false);
+    }
+  }, []);
 
   // const openSelectorOptions = () => {
   //   const languageOptions = document.querySelector(
@@ -125,8 +393,6 @@ export default function Footer() {
   //   }
   // };
 
-  
-
   // const handleSearchInputChange = (e) => {
   //   if (e.target.value) {
   //     setFilteredCountries(
@@ -141,7 +407,7 @@ export default function Footer() {
   //   }
   // };
 
-  return (
+  return footer ? (
     <footer className="footer">
       <div className="container footer_container">
         <div className="footer_top">
@@ -169,188 +435,28 @@ export default function Footer() {
           </div>
 
           <div className="footer__top-right">
-            <div className="footer__top-right-list">
-              <h1>PAXFORM</h1>
-              <ul>
-                <li>
-                  <a href="https://">Security</a>
-                </li>
-                <li>
-                  <a href="https://">Pricing</a>
-                </li>
-                <li>
-                  <a href="https://">Templates </a>
-                </li>
-                <li>
-                  <a href="https://">Integrations</a>
-                </li>
-              </ul>
-              <h1>BUSINESS FEATURES</h1>
-              <ul>
-                <li>
-                  <a href="https://">Form Designer</a>
-                </li>
-                <li>
-                  <a href="https://">Chat</a>
-                </li>
-                <li>
-                  <a href="https://">Disclosures</a>
-                </li>
-                <li>
-                  <a href="https://">Electronic Signatures</a>
-                </li>
-                <li>
-                  <a href="https://">Additional Questions</a>
-                </li>
-                <li>
-                  <a href="https://">Custom Statuses</a>
-                </li>
-              </ul>
-              <h1>CONSUMER FEATURES</h1>
-              <ul>
-                <li>
-                  <a href="https://">Password Manager</a>
-                </li>
-                <li>
-                  <a href="https://">Password Generator</a>
-                </li>
-                <li>
-                  <a href="https://">Secret</a>
-                </li>
-                <li>
-                  <a href="https://">Electronic Signatures</a>
-                </li>
-                <li>
-                  <a href="https://">Disclosures</a>
-                </li>
-                <li>
-                  <a href="https://">Chat & Notifications</a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer__top-right-list footer-use-case">
-              <h1>USE CASES</h1>
-              <ul>
-                <li>
-                  <a href="https://">Hospitality</a>
-                </li>
-                <li>
-                  <a href="https://">Education</a>
-                </li>
-                <li>
-                  <a href="https://">Transportation</a>
-                </li>
-                <li>
-                  <a href="https://">Real Estate</a>
-                </li>
-                <li>
-                  <a href="https://">Government</a>
-                </li>
-                <li>
-                  <a href="https://">Construction</a>
-                </li>
-                <li>
-                  <a href="https://">Health and Aged Care</a>
-                </li>
-                <li>
-                  <a href="https://">Retail</a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer__top-right-list footer-resources">
-              <h1>RESOURCES</h1>
-              <ul>
-                <li>
-                  <a href="https://">Blog</a>
-                </li>
-                <li>
-                  <a href="https://">FAQs</a>
-                </li>
-                <li>
-                  <a href="https://">Newsletter</a>
-                </li>
-                <li>
-                  <a href="https://">Help Center</a>
-                </li>
-              </ul>
-              <h1>SECURITY</h1>
-              <ul>
-                <li>
-                  <a href="https://">Encryption</a>
-                </li>
-                <li>
-                  <a href="https://">Biometric</a>
-                </li>
-                <li>
-                  <a href="https://">File Storage</a>
-                </li>
-                <li>
-                  <a href="https://">Data Storage</a>
-                </li>
-                <li>
-                  <a href="https://">Password</a>
-                </li>
-                <li>
-                  <a href="https://">Auto Timeout</a>
-                </li>
-              </ul>
-              <h1>FORMS</h1>
-              <ul>
-                <li>
-                  <a href="https://">Contact Form</a>
-                </li>
-                <li>
-                  <a href="https://">Feedback Form</a>
-                </li>
-                <li>
-                  <a href="https://">Security Form</a>
-                </li>
-                <li>
-                  <a href="https://">Copyright Form</a>
-                </li>
-                <li>
-                  <a href="https://">GDPR Form</a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer__top-right-list footer-company">
-              <h1>COMPANY</h1>
-              <ul>
-                <li>
-                  <a href="https://">About Us</a>
-                </li>
-                <li>
-                  <a href="https://">Request a Demo</a>
-                </li>
-                <li>
-                  <a href="https://">Partner Program</a>
-                </li>
-                <li>
-                  <a href="https://">Careers</a>
-                </li>
-                <li>
-                  <a href="https://">Newsroom</a>
-                </li>
-                <li>
-                  <a href="https://">Brand kit</a>
-                </li>
-              </ul>
-              <h1>LEGAL</h1>
-              <ul>
-                <li>
-                  <a href="https://">Data Security Policy</a>
-                </li>
-                <li>
-                  <a href="https://">Website Terms of Use</a>
-                </li>
-                <li>
-                  <a href="https://">Website Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="https://">Website Cookie Policy</a>
-                </li>
-              </ul>
-            </div>
+            {footerItems.map((footerItem, i) => (
+              <div className="footer__top-right-list" key={i}>
+                {footerItem.map(
+                  (list, j) =>
+                    list.items.filter(item => item.to.length > 0).length > 0 && (
+                      <Fragment key={j}>
+                        <h1>{list.group}</h1>
+                        <ul>
+                          {list.items.map(
+                            (listItem, k) =>
+                              listItem.to && (
+                                <li key={k}>
+                                  <a href={listItem.to}>{listItem.title}</a>
+                                </li>
+                              )
+                          )}
+                        </ul>
+                      </Fragment>
+                    )
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -448,5 +554,7 @@ export default function Footer() {
         onClick={(e) => handleFooterOverlayClick(e)}
       ></div> */}
     </footer>
+  ) : (
+    ""
   );
 }

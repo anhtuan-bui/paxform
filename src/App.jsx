@@ -68,14 +68,14 @@ function App() {
 							<Route path="legal" element={<Legal />} />
 							<Route path="legal/:slug/:slug" element={<LegalDetail />} />
 							<Route path="legal-detail" element={<LegalDetail />} />
-							<Route path="not-found" element={<NotFound />} />
+							{/* <Route path="not-found" element={<NotFound />} /> */}
 							<Route path="use-cases/:slug" element={<UseCase />} />
 							<Route path="contact-us" element={<ContactUs />} />
 							<Route path="company" element={<Company />} />
 							<Route path="data-security" element={<DataSecurity />} />
 							<Route path="gq" element={<GQ />} />
 
-							{/* <Route path="*" element={<NotFound />} /> */}
+							<Route path="*" element={<NotFound />} />
 							<Route path="resource-details" element={<ResourceDetail />} /> 
 						</Route>
 					</Routes>

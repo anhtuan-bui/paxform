@@ -344,11 +344,6 @@ const GET_TEAM_MEMBERS = gql`
             sourceUrl
           }
         }
-        categories {
-          nodes {
-            name
-          }
-        }
       }
     }
   }
@@ -393,7 +388,7 @@ const GET_BLOG_DETAILS = gql`
 
 const GET_RELATED_POST = gql`
   query getPosts($categoryName: String = "", $id: [ID]) {
-    posts(first: 4, where: { categoryName: $categoryName, notIn: $id}) {
+    posts(first: 4, where: { categoryName: $categoryName, notIn: $id }) {
       nodes {
         id
         date
@@ -436,5 +431,5 @@ export {
   GET_RESOURCES_CATEGORIES,
   GET_BLOGS,
   GET_RESOURCE_BY_SLUG,
-  GET_FAQS
+  GET_FAQS,
 };

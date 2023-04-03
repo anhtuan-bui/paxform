@@ -26,39 +26,45 @@ class Header extends Component {
   menu = [
     {
       text: "Business",
-      link: "https://",
       to: "business",
       submenu: [],
     },
     {
       text: "Personal",
-      link: "https://",
       to: "personal",
       submenu: [],
     },
     {
       text: "Pricing",
-      link: "https://",
       to: "pricing",
       submenu: [],
     },
     {
       text: "Use Cases",
-      link: "https://",
       to: "use-cases",
       submenu: this.app.useCase,
     },
+
     {
-      text: "Resources",
-      link: "https://",
-      to: "resources",
-      submenu: [],
-    },
-    {
-      text: "FAQs",
-      link: "https://",
-      to: "faqs",
-      submenu: [],
+      text: "Support",
+      to: "use-cases",
+      submenu: [
+        {
+          text: "Resources",
+          to: "resources",
+          submenu: [],
+        },
+        {
+          text: "Blogs",
+          to: "blogs",
+          submenu: [],
+        },
+        {
+          text: "FAQs",
+          to: "faqs",
+          submenu: [],
+        },
+      ],
     },
   ];
 
@@ -265,13 +271,15 @@ class Header extends Component {
                                       to={subitem.to}
                                       className="nav__second-level-li-link"
                                     >
-                                      <img
-                                        src={subitem.icon}
-                                        alt={subitem.text}
-                                        style={{
-                                          backgroundColor: subitem.color,
-                                        }}
-                                      />
+                                      {subitem.icon && (
+                                        <img
+                                          src={subitem.icon}
+                                          alt={subitem.text}
+                                          style={{
+                                            backgroundColor: subitem.color,
+                                          }}
+                                        />
+                                      )}
                                       <span>{subitem.text}</span>
                                     </NavLink>
                                   </div>

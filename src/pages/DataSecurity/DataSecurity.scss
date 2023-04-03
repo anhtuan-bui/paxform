@@ -146,6 +146,16 @@ $color_grey: #2f4356;
         padding: rem(30);
     }
 
+    &-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50% ;
+        width: 60px;
+        height: 60px;
+        background-color: white;
+    }
+
     &-description {
       margin-bottom: 0;
     }
