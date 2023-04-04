@@ -1,5 +1,6 @@
 [
     {
+        "Language": "English",
         "name": "English",
         "code": "en-US",
         "short": "en",
@@ -7,10 +8,19 @@
         "emoji": "🇺🇸"
     },
     {
+        "Language": "English",
         "name": "English",
         "code": "en-AU",
         "short": "en",
         "country": "Australia",
         "emoji": "🇦🇺"
+    },
+    {
+        "Language": "Vietnamese",
+        "name": "Tiếng Việt",
+        "code": "vi-VN",
+        "short": "vi",
+        "country": "Vietnam",
+        "emoji": "🇻🇳"
     }
 ]

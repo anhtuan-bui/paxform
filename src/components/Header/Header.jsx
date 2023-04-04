@@ -15,6 +15,7 @@ import withRouter from "../../lib/helper";
 
 import client from "../../configurations/apollo";
 import { GET_USE_CASES } from "../../lib/graphqlQuery";
+import { withTranslation } from "react-i18next";
 
 class Header extends Component {
   app = {
@@ -24,51 +25,6 @@ class Header extends Component {
   };
 
   registerLink = process.env.REACT_APP_REGISTER_LINK;
-
-  menu = [
-    {
-      text: "Business",
-      to: "business",
-      submenu: [],
-    },
-    {
-      text: "Personal",
-      to: "personal",
-      submenu: [],
-    },
-    {
-      text: "Pricing",
-      to: "pricing",
-      submenu: [],
-    },
-    {
-      text: "Use Cases",
-      to: "use-cases",
-      submenu: this.app.useCase,
-    },
-
-    {
-      text: "Support",
-      to: "use-cases",
-      submenu: [
-        {
-          text: "Resources",
-          to: "resources",
-          submenu: [],
-        },
-        {
-          text: "Blogs",
-          to: "blogs",
-          submenu: [],
-        },
-        {
-          text: "FAQs",
-          to: "faqs",
-          submenu: [],
-        },
-      ],
-    },
-  ];
 
   constructor(props) {
     super(props);
@@ -233,6 +189,51 @@ class Header extends Component {
   };
 
   render() {
+    const { t } = this.props;
+    const menu = [
+      {
+        text: t("business"),
+        to: "business",
+        submenu: [],
+      },
+      {
+        text: t("personal"),
+        to: "personal",
+        submenu: [],
+      },
+      {
+        text: t("pricing"),
+        to: "pricing",
+        submenu: [],
+      },
+      {
+        text: t("useCases"),
+        to: "use-cases",
+        submenu: this.app.useCase,
+      },
+
+      {
+        text: t("support"),
+        to: "use-cases",
+        submenu: [
+          {
+            text: t("resources"),
+            to: "resources",
+            submenu: [],
+          },
+          {
+            text: t("blogs"),
+            to: "blogs",
+            submenu: [],
+          },
+          {
+            text: t("faqs"),
+            to: "faqs",
+            submenu: [],
+          },
+        ],
+      },
+    ];
     return (
       <header className="header">
         <div className="container header__container">
@@ -246,7 +247,7 @@ class Header extends Component {
             <div className="header_right header_right--active">
               <nav className="nav">
                 <ul className="nav__first-level">
-                  {this.menu.map((item, index) => {
+                  {menu.map((item, index) => {
                     return (
                       <li key={index} className="nav__first-level-li">
                         <NavLink
@@ -296,7 +297,12 @@ class Header extends Component {
                 </ul>
               </nav>
               <div className="button__wrapper">
-                <Button type="arrow outline" text="Sign Up" color="white" href={this.registerLink}/>
+                <Button
+                  type="arrow outline"
+                  text="Sign Up"
+                  color="white"
+                  href={this.registerLink}
+                />
               </div>
             </div>
             <div
@@ -318,4 +324,4 @@ class Header extends Component {
   }
 }
 
-export default withRouter(Header);
+export default withTranslation()(withRouter(Header));

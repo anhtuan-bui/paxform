@@ -100,11 +100,12 @@
         padding: 0 $padding__column;
         break-inside: avoid-column;
 
-        h1 {
+        h4 {
           font-size: rem(14);
           color: #021527;
           font-weight: 500;
           margin-top: 0;
+          text-transform: uppercase;
         }
 
         ul {
@@ -170,7 +171,6 @@
         a {
           color: #2f4356;
           text-decoration: none;
-          line-height: rem(24);
 
           span:after {
             background-color: #2f4356;

@@ -1,5 +1,17 @@
 import { gql } from "@apollo/client";
 
+const GET_ALL_TESTIMONIALS = gql`
+  query GetAllTestimonials {
+    testimonials {
+      nodes {
+        title
+        content
+        position
+      }
+    }
+  }
+`;
+
 const GET_FAQS = gql`
   query GetFAQs {
     faqCategories {
@@ -432,4 +444,5 @@ export {
   GET_BLOGS,
   GET_RESOURCE_BY_SLUG,
   GET_FAQS,
+  GET_ALL_TESTIMONIALS
 };

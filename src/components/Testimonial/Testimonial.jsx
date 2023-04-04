@@ -13,20 +13,10 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 import "swiper/scss/navigation";
 
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import Skeleton from "react-loading-skeleton";
-
-const GetAllTestimonials = gql`
-  query GetAllTestimonials {
-    testimonials {
-      nodes {
-        title
-        content
-        position
-      }
-    }
-  }
-`;
+import { GET_ALL_TESTIMONIALS } from "../../lib/graphqlQuery";
+import { useTranslation } from "react-i18next";
 
 var home = {
   numberOftestimonialsPerView: 3,
@@ -89,7 +79,8 @@ export default class Testimonial extends Component {
 const TestimonialSwiper = (value) => {
   const swiperRef = useRef();
 
-  const { loading, data } = useQuery(GetAllTestimonials);
+  const { loading, data } = useQuery(GET_ALL_TESTIMONIALS);
+  const { t } = useTranslation();
 
   const testimonials = !loading
     ? data?.testimonials?.nodes
@@ -98,10 +89,10 @@ const TestimonialSwiper = (value) => {
   return (
     <div className="container">
       <div className="testimonial__container">
-        <p className="testimonial__name section_name">TESTIMONIAL</p>
-        <h2 className="testimonial__title">
-          What people are saying about Paxform
-        </h2>
+        <p className="testimonial__name section_name">
+          {t("testimonial.name")}
+        </p>
+        <h2 className="testimonial__title">{t("testimonial.title")}</h2>
         <div className="testimonial__swiper">
           <Swiper
             slidesPerView={home.numberOftestimonialsPerView}

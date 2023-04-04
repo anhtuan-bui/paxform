@@ -3,8 +3,6 @@ import "./Footer.scss";
 
 import footerLogo from "../../assets/images/LOGO-footer.svg";
 import languages from "../../assets/json/languages.json";
-// import arrowDown from "../../assets/icons/arrowDown.svg";
-// import searchIcon from "../../assets/icons/search.svg";
 
 import { ReactComponent as LinkedIn } from "../../assets/icons/linkedin.svg";
 import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
@@ -14,6 +12,7 @@ import { ReactComponent as YouTube } from "../../assets/icons/youtube.svg";
 import { ReactComponent as Discord } from "../../assets/icons/discord.svg";
 import { ReactComponent as WeChat } from "../../assets/icons/wechat.svg";
 import { ReactComponent as WhatsApp } from "../../assets/icons/whatsapp.svg";
+import { useTranslation } from "react-i18next";
 
 const socialMedias = [
   {
@@ -58,279 +57,287 @@ const socialMedias = [
   },
 ];
 
-const footerItems = [
-  [
-    {
-      group: "PAXFORM",
-      items: [
-        {
-          title: "Business",
-          to: "/business",
-        },
-        {
-          title: "Personal",
-          to: "/personal",
-        },
-        {
-          title: "Security",
-          to: "/data-security",
-        },
-        {
-          title: "Pricing",
-          to: "/pricing",
-        },
-        {
-          title: "Template",
-          to: "",
-        },
-        {
-          title: "Integrations",
-          to: "",
-        },
-      ],
-    },
-    {
-      group: "BUSINESS FEATURES",
-      items: [
-        {
-          title: "Form Designer",
-          to: "",
-        },
-        {
-          title: "Chat",
-          to: "",
-        },
-        {
-          title: "Disclosures",
-          to: "",
-        },
-        {
-          title: "Electronic Signatures",
-          to: "",
-        },
-        {
-          title: "Additional Questions",
-          to: "",
-        },
-        {
-          title: "Custom Statuses",
-          to: "",
-        },
-      ],
-    },
-    {
-      group: "CONSUMER FEATURES",
-      items: [
-        {
-          title: "Password Manager",
-          to: "",
-        },
-        {
-          title: "Password Generator",
-          to: "",
-        },
-        {
-          title: "Secret",
-          to: "",
-        },
-        {
-          title: "Electronic Signatures",
-          to: "",
-        },
-        {
-          title: "Disclosures",
-          to: "",
-        },
-        {
-          title: "Chat & Notifications",
-          to: "",
-        },
-      ],
-    },
-  ],
-  [
-    {
-      group: "USE CASES",
-      items: [
-        {
-          title: "Hospitality",
-          to: "/hospitality",
-        },
-        {
-          title: "Education",
-          to: "",
-        },
-        {
-          title: "Transportation",
-          to: "",
-        },
-        {
-          title: "Real Estate",
-          to: "",
-        },
-        {
-          title: "Government",
-          to: "",
-        },
-        {
-          title: "Construction",
-          to: "",
-        },
-        {
-          title: "Health and Aged Care",
-          to: "",
-        },
-        {
-          title: "Retail",
-          to: "",
-        },
-      ],
-    },
-  ],
-  [
-    {
-      group: "Support",
-      items: [
-        {
-          title: "Blog",
-          to: "/blogs",
-        },
-        {
-          title: "FAQs",
-          to: "/faqs",
-        },
-        {
-          title: "Resources",
-          to: "/resources",
-        },
-        {
-          title: "Help Center",
-          to: "",
-        },
-      ],
-    },
-    {
-      group: "SECURITY",
-      items: [
-        {
-          title: "Encryption",
-          to: "",
-        },
-        {
-          title: "Biometric",
-          to: "",
-        },
-        {
-          title: "File Storage",
-          to: "",
-        },
-        {
-          title: "Data Storage",
-          to: "",
-        },
-        {
-          title: "Password",
-          to: "",
-        },
-        {
-          title: "Auto Timeout",
-          to: "",
-        },
-      ],
-    },
-    {
-      group: "FORMS",
-      items: [
-        {
-          title: "Contact Form",
-          to: "",
-        },
-        {
-          title: "Feedback Form",
-          to: "",
-        },
-        {
-          title: "Security Form",
-          to: "",
-        },
-        {
-          title: "Copyright Form",
-          to: "",
-        },
-        {
-          title: "GDPR Form",
-          to: "",
-        },
-      ],
-    },
-  ],
-  [
-    {
-      group: "COMPANY",
-      items: [
-        {
-          title: "About Us",
-          to: "/company",
-        },
-        {
-          title: "Contact Us",
-          to: "/contact-us",
-        },
-        {
-          title: "Request a Demo",
-          to: "",
-        },
-        {
-          title: "Partner Program",
-          to: "",
-        },
-        {
-          title: "Careers",
-          to: "",
-        },
-        {
-          title: "Newsroom",
-          to: "",
-        },
-        {
-          title: "Brand kit",
-          to: "",
-        },
-      ],
-    },
-    {
-      group: "LEGAL",
-      items: [
-        {
-          title: "Legal",
-          to: "/legal",
-        },
-        {
-          title: "Data Security Policy",
-          to: "",
-        },
-        {
-          title: "Website Terms of Use",
-          to: "/legal/website/terms-of-use",
-        },
-        {
-          title: "Website Privacy Policy",
-          to: "/legal/website/website-privacy-policy",
-        },
-      ],
-    },
-  ],
-];
-
 export default function Footer() {
   // const [emoji, setEmoji] = useState("🇦🇺");
   // const [shortName, setShortName] = useState("AU");
   // const [countryName, setCountryName] = useState("Australia");
   // const [filteredCountries, setFilteredCountries] = useState(languages);
 
+  const { t, i18n } = useTranslation();
+
+  const footerItems = [
+    [
+      {
+        group: "PAXFORM",
+        items: [
+          {
+            title: t("business"),
+            to: "/business",
+          },
+          {
+            title: t("personal"),
+            to: "/personal",
+          },
+          {
+            title: t("security"),
+            to: "/data-security",
+          },
+          {
+            title: t("pricing"),
+            to: "/pricing",
+          },
+          {
+            title: t("template"),
+            to: "",
+          },
+          {
+            title: t("integrations"),
+            to: "",
+          },
+        ],
+      },
+      {
+        group: t("businessFeatures"),
+        items: [
+          {
+            title: t("formDesigner"),
+            to: "",
+          },
+          {
+            title: t("chat"),
+            to: "",
+          },
+          {
+            title: t("disclosures"),
+            to: "",
+          },
+          {
+            title: t("electronicSignatures"),
+            to: "",
+          },
+          {
+            title: t("additionalQuestions"),
+            to: "",
+          },
+          {
+            title: t("customStatuses"),
+            to: "",
+          },
+        ],
+      },
+      {
+        group: t("consumerFeatures"),
+        items: [
+          {
+            title: t("passwordManager"),
+            to: "",
+          },
+          {
+            title: t("passwordGenerator"),
+            to: "",
+          },
+          {
+            title: t("secret"),
+            to: "",
+          },
+          {
+            title: t("electronicSignatures"),
+            to: "",
+          },
+          {
+            title: t("disclosures"),
+            to: "",
+          },
+          {
+            title: t("chatNotifications"),
+            to: "",
+          },
+        ],
+      },
+    ],
+    [
+      {
+        group: t("useCases"),
+        items: [
+          {
+            title: "Hospitality",
+            to: "/hospitality",
+          },
+          {
+            title: "Education",
+            to: "",
+          },
+          {
+            title: "Transportation",
+            to: "",
+          },
+          {
+            title: "Real Estate",
+            to: "",
+          },
+          {
+            title: "Government",
+            to: "",
+          },
+          {
+            title: "Construction",
+            to: "",
+          },
+          {
+            title: "Health and Aged Care",
+            to: "",
+          },
+          {
+            title: "Retail",
+            to: "",
+          },
+        ],
+      },
+    ],
+    [
+      {
+        group: t("support"),
+        items: [
+          {
+            title: t("blogs"),
+            to: "/blogs",
+          },
+          {
+            title: t("faqs"),
+            to: "/faqs",
+          },
+          {
+            title: t("resources"),
+            to: "/resources",
+          },
+          {
+            title: t("helpCenter"),
+            to: "",
+          },
+        ],
+      },
+      {
+        group: t("security"),
+        items: [
+          {
+            title: t("encryption"),
+            to: "",
+          },
+          {
+            title: t("biometric"),
+            to: "",
+          },
+          {
+            title: t("fileStorage"),
+            to: "",
+          },
+          {
+            title: t("dataStorage"),
+            to: "",
+          },
+          {
+            title: t("password"),
+            to: "",
+          },
+          {
+            title: t("autoTimeout"),
+            to: "",
+          },
+        ],
+      },
+      {
+        group: t("forms"),
+        items: [
+          {
+            title: t("contactForm"),
+            to: "",
+          },
+          {
+            title: t("feedbackForm"),
+            to: "",
+          },
+          {
+            title: t("securityForm"),
+            to: "",
+          },
+          {
+            title: t("copyrightForm"),
+            to: "",
+          },
+          {
+            title: t("gdprForm"),
+            to: "",
+          },
+        ],
+      },
+    ],
+    [
+      {
+        group: t("company"),
+        items: [
+          {
+            title: t("aboutUs"),
+            to: "/company",
+          },
+          {
+            title: t("contactUs"),
+            to: "/contact-us",
+          },
+          {
+            title: t("requestDemo"),
+            to: "",
+          },
+          {
+            title: t("partnerProgram"),
+            to: "",
+          },
+          {
+            title: t("careers"),
+            to: "",
+          },
+          {
+            title: t("newsroom"),
+            to: "",
+          },
+          {
+            title: t("brandKit"),
+            to: "",
+          },
+        ],
+      },
+      {
+        group: t("legal"),
+        items: [
+          {
+            title: t("legal"),
+            to: "/legal",
+          },
+          {
+            title: "Data Security Policy",
+            to: "",
+          },
+          {
+            title: t("websiteTermsOfUse"),
+            to: "/legal/website/terms-of-use",
+          },
+          {
+            title: t("websitePrivacyPolicy"),
+            to: "/legal/website/website-privacy-policy",
+          },
+        ],
+      },
+    ],
+  ];
+
   const [footer, setFooter] = useState(true);
 
   const [languageCode, setLanguageCode] = useState("en-AU");
+
+  const handleLanguageChange = (e) => {
+    const short = e.target.value.split("-")[0];
+    setLanguageCode(e.target.value);
+    i18n.changeLanguage(short);
+  };
 
   useEffect(() => {
     const notFound = document.querySelector(".not_found");
@@ -340,6 +347,9 @@ export default function Footer() {
     }
   }, []);
 
+  if (!footer) {
+    return;
+  }
   // const openSelectorOptions = () => {
   //   const languageOptions = document.querySelector(
   //     ".languages_selector__options"
@@ -407,7 +417,7 @@ export default function Footer() {
   //   }
   // };
 
-  return footer ? (
+  return (
     <footer className="footer">
       <div className="container footer_container">
         <div className="footer_top">
@@ -439,9 +449,10 @@ export default function Footer() {
               <div className="footer__top-right-list" key={i}>
                 {footerItem.map(
                   (list, j) =>
-                    list.items.filter(item => item.to.length > 0).length > 0 && (
+                    list.items.filter((item) => item.to.length > 0).length >
+                      0 && (
                       <Fragment key={j}>
-                        <h1>{list.group}</h1>
+                        <h4>{list.group}</h4>
                         <ul>
                           {list.items.map(
                             (listItem, k) =>
@@ -463,16 +474,16 @@ export default function Footer() {
       <div className="footer__bottom-wrapper">
         <div className="container">
           <div className="footer__bottom">
-            <p>© Copyright 2022 Paxform. All rights reserved.</p>
+            <p>{t("copyrightPaxform")}</p>
             <ul>
               <li>
                 <a href="/privacy-policy">
-                  <span className="span--hover">Privacy Policy*</span>
+                  <span className="span--hover">{t("privacyPolicy")}</span>
                 </a>
               </li>
               <li>
                 <a href="https://">
-                  <span className="span--hover">Terms of Service</span>
+                  <span className="span--hover">{t("termOfService")}</span>
                 </a>
               </li>
             </ul>
@@ -481,13 +492,13 @@ export default function Footer() {
                 className="footer__bottom-languages-selector"
                 name="language"
                 defaultValue={languageCode}
+                onChange={(e) => handleLanguageChange(e)}
               >
                 {languages.map((language, index) => (
                   <option
                     className="footer__bottom-languages-option"
                     value={language.code}
                     key={index}
-                    onChange={() => setLanguageCode(language.code)}
                   >
                     {`${language.emoji} ${language.name} - ${language.country}`}
                   </option>
@@ -554,7 +565,5 @@ export default function Footer() {
         onClick={(e) => handleFooterOverlayClick(e)}
       ></div> */}
     </footer>
-  ) : (
-    ""
   );
 }
