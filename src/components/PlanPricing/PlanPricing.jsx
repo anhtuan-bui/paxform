@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import { ReactComponent as Tick } from "../../assets/images/tick.svg";
 import "./PlanPricing.scss";
+import { t } from "i18next";
 
 export default function PlanPricing({ plans }) {
   const registerLink = process.env.REACT_APP_REGISTER_LINK;
@@ -36,7 +37,7 @@ export default function PlanPricing({ plans }) {
           <div className="pricing_box__bottom">
             {plan.mainColor === "green" ? (
               <Button
-                text="Get Started"
+                text={t("getStartedBtn")}
                 type="flat-green arrow"
                 color="white"
                 href='/pricing'
@@ -45,7 +46,7 @@ export default function PlanPricing({ plans }) {
               <Button text="Get Started" type="outline arrow" color="green" href={registerLink}/>
             )}
 
-            <p className="pricing_box__price-sub">What’s included</p>
+            <p className="pricing_box__price-sub">{t("plans.included")}</p>
             <ul>
               {plan.features.map((feature, index) => (
                 <li key={index}>

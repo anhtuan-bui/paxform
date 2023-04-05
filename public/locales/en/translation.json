@@ -52,6 +52,7 @@
   "copyrightPaxform": "© Copyright 2022 Paxform. All rights reserved.",
   "privacyPolicy": "Privacy Policy",
   "termOfService": "Terms of Service",
+  "getStartedBtn": "Get Started",
 
   "securityPolicy": {
     "name": "SECURITY POLICY",
@@ -154,6 +155,7 @@
     "sectionName": "Personal Plans",
     "sectionTitle": "Choose a Plan That’s Right for You",
     "fullPricingButton": "See full pricing",
+    "included": "What’s included",
     "free": {
       "title": "Free",
       "price": "forever",
