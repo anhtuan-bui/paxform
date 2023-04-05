@@ -16,28 +16,28 @@ import { t } from "i18next";
 
 const features = [
   {
-    title: t("businessPage.features.firstFeatureTitle"),
-    description: t("businessPage.features.firstFeatureDescription"),
+    title: t("businessPage.features.first.title"),
+    description: t("businessPage.features.first.description"),
     isOpened: true,
   },
   {
-    title: t("businessPage.features.secondFeatureTitle"),
-    description: t("businessPage.features.secondFeatureDescription"),
+    title: t("businessPage.features.second.title"),
+    description: t("businessPage.features.second.description"),
     isOpened: false,
   },
   {
-    title: t("businessPage.features.thirdFeatureTitle"),
-    description: t("businessPage.features.thirdFeatureDescription"),
+    title: t("businessPage.features.third.title"),
+    description: t("businessPage.features.third.description"),
     isOpened: false,
   },
   {
-    title: t("businessPage.features.fourthFeatureTitle"),
-    description: t("businessPage.features.fourthFeatureDescription"),
+    title: t("businessPage.features.fourth.title"),
+    description: t("businessPage.features.fourth.description"),
     isOpened: false,
   },
   {
-    title: t("businessPage.features.fifthFeatureTitle"),
-    description: t("businessPage.features.fifthFeatureDescription"),
+    title: t("businessPage.features.fifth.title"),
+    description: t("businessPage.features.fifth.description"),
     isOpened: false,
   },
 ];
@@ -45,38 +45,38 @@ const features = [
 const plans = [
   {
     mainColor: "grey",
-    title: "Free",
-    price: [0, "forever"],
-    description: "A simple way to get started for you new to passfolio.",
+    title: t("plans.free.title"),
+    price: [0, t("plans.free.price")],
+    description: t("plans.free.description"),
     features: [
-      "Unlimited data",
-      "5 Person saved",
-      "A simple way for you new started to Passfolio.",
-      "A simple way for you new started to Passfolio.",
+      t("plans.free.features.first"),
+      t("plans.free.features.second"),
+      t("plans.free.features.third"),
+      t("plans.free.features.fourth"),
     ],
   },
   {
     mainColor: "green",
-    title: "Premium",
-    price: [50, "forever"],
-    description: "Best for freelance coders & designers who need.",
+    title: t("plans.premium.title"),
+    price: [50, t("plans.premium.price")],
+    description: t("plans.premium.description"),
     features: [
-      "Unlimited data",
-      "5 Person saved",
-      "A simple way for you new started to Passfolio.",
-      "A simple way for you new started to Passfolio.",
+      t("plans.premium.features.first"),
+      t("plans.premium.features.second"),
+      t("plans.premium.features.third"),
+      t("plans.premium.features.fourth"),
     ],
   },
   {
     mainColor: "blue",
-    title: "Family",
-    price: ["Custom Pricing", ""],
-    description: "Best for freelance coders & designers who need.",
+    title: t("plans.family.title"),
+    price: [t("plans.family.price"), ""],
+    description: t("plans.family.description"),
     features: [
-      "Unlimited data",
-      "5 Person saved",
-      "A simple way for you new started to Passfolio.",
-      "A simple way for you new started to Passfolio.",
+      t("plans.family.features.first"),
+      t("plans.family.features.second"),
+      t("plans.family.features.third"),
+      t("plans.family.features.fourth"),
     ],
   },
 ];
@@ -161,16 +161,16 @@ const plans = [
             <div className="plans__top">
               <div className="plans__top-title">
                 <p className="plans__name section_name">
-                  {t("businessPage.plans.name")}
+                  {t("plans.sectionName")}
                 </p>
                 <h1 className="plans__title section_title">
-                  {t("businessPage.plans.title")}
+                  {t("plans.sectionTitle")}
                 </h1>
               </div>
               <div className="plans__top-button">
                 <Button
                   className="plans__button"
-                  text={t("businessPage.plans.fullPricingButton")}
+                  text={t("plans.fullPricingButton")}
                   type="arrow outline"
                   color="green"
                   href="/pricing"
