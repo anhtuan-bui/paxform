@@ -113,6 +113,27 @@
             "cardDescription1": "<p>It can be a hassle looking for where you have stored different information. With Paxform, you can keep all your information like biodatas, signatures and documents, including your contacts, all in one app. </p> <p> Better yet, all the data is encrypted and only you and the person you share it with can have access to it.</p>",
             "cardDescription2": "<p>Completing forms manually is an incredibly long process, prone to typos and form abandonment that often result in delays. To make matters worse, nearly 30% of people have difficulties understanding basic forms.</p> <p> With Paxform, you fill in your data once and it will automatically match that data no matter which form you are filling in. Say goodbye to manually inputting the same data over and over again.</p>"
         }
+    },
+    "businessPage": {
+        "hero": {
+            "title": "Your Personal Information in One Place Fill Any Form, Anywhere",
+            "description": "Paxform’s function is simple: it completely fills any form anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety.",
+            "planButton": "See Plan",
+            "howButton": "How it works"
+        },
+        "flexbox": {
+            "heading": "Paper work was yesterday - Go digital today",
+            "text": "Eliminate the lengthy process of administrative rework while leaving no environmental footprint."
+        },
+        "features": {
+            "name": "feature",
+            "title": "Features For Your Organisation"
+        },
+        "plans": {
+            "name": "Personal Plans",
+            "title": "Choose a Plan That’s Right for You",
+            "fullPricingButton": "See full pricing"
+        }
     }
-   
 }
+
