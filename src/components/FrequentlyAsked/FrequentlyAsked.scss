@@ -36,6 +36,7 @@
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
+      //max-height: 0;
       
     }
     &-title {
@@ -52,7 +53,7 @@
 
     &-content {
       margin: 0;
-      max-height: -30; //changed from -30 to 0 but no change. 
+      //max-height: 0; //changed from -30 to 0 but no change. 
       overflow: hidden;
       transition: 0.25s ease-in-out;
       
