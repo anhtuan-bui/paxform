@@ -83,6 +83,7 @@
     }
     @include small {
       grid-template-columns: 1fr;
+      gap: 3rem;
 
       padding-bottom: rem(120);
     }
@@ -91,12 +92,12 @@
     padding: 0 $padding__column;
     @include medium {
       grid-column: 1 / span 2;
-      margin-top: rem(60);
-      margin-bottom: rem(60);
+      margin-bottom: 3rem;
     }
     @include small {
       grid-column: 1;
       margin-top: 0;
+      margin-bottom: 0;
     }
     h1 {
       margin-bottom: rem(40);

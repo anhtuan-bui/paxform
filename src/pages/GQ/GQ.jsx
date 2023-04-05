@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-import React, { useEffect } from "react";
+import React from "react";
 import "./GQ.scss";
 
 const GET_FAQS = gql`

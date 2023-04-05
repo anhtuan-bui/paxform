@@ -4,7 +4,6 @@ import "./FAQV1.scss";
 import arrowDown from "../../assets/images/arrowDown.svg"
 
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
-import { forwardRef } from "react";
 
 
 const information = [

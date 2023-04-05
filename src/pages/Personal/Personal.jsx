@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Button from "../../components/Button/Button";
 // import fillOutForm from '../../assets/images/fill-out-form.svg';
 // import fillOutFormMObile from '../../assets/images/fill-out-form__mobile.svg';
@@ -15,194 +15,190 @@ import GetStarted from "../../components/GetStarted/GetStarted";
 import PlanPricing from "../../components/PlanPricing/PlanPricing";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import Accordion from "../../components/Accordion/Accordion";
+import { useTranslation } from "react-i18next";
 
-const features = [
-  {
-    title: "Create Form Templates",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    isOpened: true,
-  },
-  {
-    title: "Multiple Admins",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    isOpened: false,
-  },
-  {
-    title: "View and Procees Applications",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    isOpened: false,
-  },
-  {
-    title: "Use API",
-    description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
-    isOpened: false,
-  },
-  {
-    title: "Request Information",
-    description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
-    isOpened: false,
-  },
-];
+export default function Personal() {
+  const { t } = useTranslation();
 
-const plans = [
-  {
-    mainColor: "grey",
-    title: "Free",
-    price: [0, "forever"],
-    description: "A simple way to get started for you new to passfolio.",
-    features: [
-      "Unlimited data",
-      "5 Person saved",
-      "A simple way for you new started to Passfolio.",
-      "A simple way for you new started to Passfolio.",
-    ],
-  },
-  {
-    mainColor: "green",
-    title: "Premium",
-    price: [50, "forever"],
-    description: "Best for freelance coders & designers who need.",
-    features: [
-      "Unlimited data",
-      "5 Person saved",
-      "A simple way for you new started to Passfolio.",
-      "A simple way for you new started to Passfolio.",
-    ],
-  },
-  {
-    mainColor: "blue",
-    title: "Family",
-    price: ["Custom Pricing", ""],
-    description: "Best for freelance coders & designers who need.",
-    features: [
-      "Unlimited data",
-      "5 Person saved",
-      "A simple way for you new started to Passfolio.",
-      "A simple way for you new started to Passfolio.",
-    ],
-  },
-];
+  const features = [
+    {
+      title: t("personalPage.features.title1"),
+      description: t("personalPage.features.description1"),
 
-export default class Personal extends Component {
-  
-  render() {
-    return (
-      <main className="personal">
-        <section className="hero">
-          <div className="container hero__wrapper">
-            <div className="hero__content">
-              <p className="hero__name">PERSONAL</p>
-              <h1 className="hero__title">
-                Your Personal Information in One Place Fill Any Form, Anywhere
-              </h1>
-              <p className="hero__description">
-                Paxform’s function is simple: it completely fills any form,
-                anytime. You can manage and save your personal data, allowing
-                you to sign documents and send them to organisations with ease.
-                No need to worry about security and privacy—Paxform fully
-                encrypts your data to ensure your safety.
-              </p>
-              <div className="hero__button">
-                <Button text="See Plan" type="flat-white arrow" color="green" />
-                <Button
-                  text="How it works"
-                  type="outline triangle-right"
-                  color="white"
-                />
-              </div>
-            </div>
-            <div className="hero__image">
-              <img
-                src={personalIllustration}
-                alt="personal hero"
-                className="hero__image-large"
+      isOpened: true,
+    },
+    {
+      title: t("personalPage.features.title2"),
+      description: t("personalPage.features.description2"),
+      isOpened: false,
+    },
+    {
+      title: t("personalPage.features.title3"),
+      description: t("personalPage.features.description3"),
+      isOpened: false,
+    },
+    {
+      title: t("personalPage.features.title4"),
+      description: t("personalPage.features.description4"),
+      isOpened: false,
+    },
+    {
+      title: t("personalPage.features.title5"),
+      description: t("personalPage.features.description5"),
+      isOpened: false,
+    },
+  ];
+
+  const plans = [
+    {
+      mainColor: "grey",
+      title: t("free"),
+      price: [0, t("forever")],
+      description: "A simple way to get started for you new to passfolio.",
+      features: [
+        t("personalPage.plans.freeFeatures.feature1"),
+        t("personalPage.plans.freeFeatures.feature2"),
+        t("personalPage.plans.freeFeatures.feature3"),
+        t("personalPage.plans.freeFeatures.feature4"),
+      ],
+    },
+    {
+      mainColor: "green",
+      title: t("premium"),
+      price: [50, t("forever")],
+      description: "Best for freelance coders & designers who need.",
+      features: [
+        t("personalPage.plans.premiumFeatures.feature1"),
+        t("personalPage.plans.premiumFeatures.feature2"),
+        t("personalPage.plans.premiumFeatures.feature3"),
+        t("personalPage.plans.premiumFeatures.feature4"),
+      ],
+    },
+    {
+      mainColor: "blue",
+      title: t("family"),
+      price: [t("customPricing"), ""],
+      description: "Best for freelance coders & designers who need.",
+      features: [
+        t("personalPage.plans.familyFeatures.feature1"),
+        t("personalPage.plans.familyFeatures.feature2"),
+        t("personalPage.plans.familyFeatures.feature3"),
+        t("personalPage.plans.familyFeatures.feature4"),
+      ],
+    },
+  ];
+
+  return (
+    <main className="personal">
+      <section className="hero">
+        <div className="container hero__wrapper">
+          <div className="hero__content">
+            <p className="hero__name">PERSONAL</p>
+            <h1 className="hero__title">
+              Your Personal Information in One Place Fill Any Form, Anywhere
+            </h1>
+            <p className="hero__description">
+              Paxform’s function is simple: it completely fills any form,
+              anytime. You can manage and save your personal data, allowing you
+              to sign documents and send them to organisations with ease. No
+              need to worry about security and privacy—Paxform fully encrypts
+              your data to ensure your safety.
+            </p>
+            <div className="hero__button">
+              <Button text="See Plan" type="flat-white arrow" color="green" />
+              <Button
+                text="How it works"
+                type="outline triangle-right"
+                color="white"
               />
             </div>
           </div>
-          <div className="bottom_triangle bottom_triangle--light-green"></div>
-        </section>
+          <div className="hero__image">
+            <img
+              src={personalIllustration}
+              alt="personal hero"
+              className="hero__image-large"
+            />
+          </div>
+        </div>
+        <div className="bottom_triangle bottom_triangle--light-green"></div>
+      </section>
 
-        <section className="flex_box">
-          <div className="container flex_box__container">
-            <div className="flex_box__image">
-              <img src={repeatlyIllustration} alt="fill out form" />
+      <section className="flex_box">
+        <div className="container flex_box__container">
+          <div className="flex_box__image">
+            <img src={repeatlyIllustration} alt="fill out form" />
+          </div>
+          <div className="flex_box__content">
+            <h1 className="flex_box__content-title">
+              Repeatedly Filling Out Forms with the Same Data Requirements?
+            </h1>
+            <div className="flex_box__content-description">
+              Save precious time by having all your information on demand.
+              Autocomplete forms and applications on the go. Only fill in your
+              data once.
             </div>
-            <div className="flex_box__content">
-              <h1 className="flex_box__content-title">
-                Repeatedly Filling Out Forms with the Same Data Requirements?
+          </div>
+        </div>
+
+        <div className="bottom_triangle bottom_triangle--green"></div>
+      </section>
+
+      <section className="features">
+        <div className="container">
+          <div className="features__container">
+            <div className="features__image">
+              <img src={repeatlyIllustration} alt="forms from Paxform" />
+            </div>
+            <div className="features__accordion">
+              <p className="features__name section_name">Features</p>
+              <h1 className="features__title">
+                Features For Your Organisation
               </h1>
-              <div className="flex_box__content-description">
-                Save precious time by having all your information on demand.
-                Autocomplete forms and applications on the go. Only fill in your
-                data once.
-              </div>
+              <Accordion
+                list={features}
+                fontColor="white"
+                progressBarColor="dark-green"
+                titleHighlight="white"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="bottom_triangle bottom_triangle--white"></div>
+      </section>
+
+      <section className="plans">
+        <div className="container plans__container">
+          <div className="plans__top">
+            <div className="plans__top-title">
+              <p className="plans__name section_name">PERSONAL PLANS</p>
+              <h1 className="plans__title section_title">
+                Choose a Plan That’s Right for You
+              </h1>
+            </div>
+            <div className="plans__top-button">
+              <Button
+                className="plans__button"
+                text="See full pricing"
+                type="arrow outline"
+                color="green"
+                href="/pricing"
+              />
             </div>
           </div>
 
-          <div className="bottom_triangle bottom_triangle--green"></div>
-        </section>
+          <PlanPricing plans={plans} />
+        </div>
+      </section>
+      <section className="testimonial">
+        <Testimonial />
+        <div className="bottom_triangle bottom_triangle--dark-blue"></div>
+      </section>
 
-        <section className="features">
-          <div className="container">
-            <div className="features__container">
-              <div className="features__image">
-                <img src={repeatlyIllustration} alt="forms from Paxform" />
-              </div>
-              <div className="features__accordion">
-                <p className="features__name section_name">Features</p>
-                <h1 className="features__title">
-                  Features For Your Organisation
-                </h1>
-                <Accordion
-                  list={features}
-                  fontColor="white"
-                  progressBarColor="dark-green"
-                  titleHighlight="white"
-                />
-              </div>
-            </div>
-          </div>
+      <LatestBlogs triangleColor={"footer"} />
 
-          <div className="bottom_triangle bottom_triangle--white"></div>
-        </section>
-
-        <section className="plans">
-          <div className="container plans__container">
-            <div className="plans__top">
-              <div className="plans__top-title">
-                <p className="plans__name section_name">PERSONAL PLANS</p>
-                <h1 className="plans__title section_title">
-                  Choose a Plan That’s Right for You
-                </h1>
-              </div>
-              <div className="plans__top-button">
-                <Button
-                  className="plans__button"
-                  text="See full pricing"
-                  type="arrow outline"
-                  color="green"
-                  href='/pricing'
-                />
-              </div>
-            </div>
-
-            <PlanPricing plans={plans} />
-          </div>
-        </section>
-        <section className="testimonial">
-          <Testimonial />
-          <div className="bottom_triangle bottom_triangle--dark-blue"></div>
-        </section>
-
-        <LatestBlogs triangleColor={"footer"} />
-
-        <GetStarted />
-      </main>
-    );
-  }
+      <GetStarted />
+    </main>
+  );
 }

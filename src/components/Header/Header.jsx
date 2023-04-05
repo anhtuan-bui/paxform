@@ -299,7 +299,7 @@ class Header extends Component {
               <div className="button__wrapper">
                 <Button
                   type="arrow outline"
-                  text="Sign Up"
+                  text={t("signUp")}
                   color="white"
                   href={this.registerLink}
                 />

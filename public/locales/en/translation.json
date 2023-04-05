@@ -27,7 +27,7 @@
     "secret": "Secret",
     "chatNotifications": "Chat & Notifications",
     "helpCenter": "Help Center",
-    "encryption":"Encryption",
+    "encryption": "Encryption",
     "biometric": "Biometric",
     "fileStorage": "File Storage",
     "dataStorage": "Data Storage",
@@ -50,9 +50,13 @@
     "websiteTermsOfUse": "Website Terms of Use",
     "websitePrivacyPolicy": "Website Privacy Policy",
     "copyrightPaxform": "© Copyright 2022 Paxform. All rights reserved.",
-    "privacyPolicy":"Privacy Policy",
+    "privacyPolicy": "Privacy Policy",
     "termOfService": "Terms of Service",
-
+    "forever": "forever",
+    "free": "Free",
+    "premium": "Premium",
+    "family": "Family",
+    "customPricing": "Custom Pricing",
     "securityPolicy": {
         "name": "SECURITY POLICY",
         "title": "Only you can access your data. Not us—Not anyone else.",
@@ -71,7 +75,11 @@
         "cardDescription2": "Experience a new level of convenience by using your stored signatures to electronically sign your documents.",
         "cardDescription3": "Experience a new level of convenience by using your stored signatures to electronically sign your documents."
     },
-
+    "latestBlogs": {
+        "name": "PAXFORM BLOG",
+        "title": "Latest Blog’s from Paxform",
+        "button": "See All Blog Post"
+    },
     "home": {
         "hero": {
             "title": "Forms <br /> without forms",
@@ -113,6 +121,42 @@
             "cardDescription1": "<p>It can be a hassle looking for where you have stored different information. With Paxform, you can keep all your information like biodatas, signatures and documents, including your contacts, all in one app. </p> <p> Better yet, all the data is encrypted and only you and the person you share it with can have access to it.</p>",
             "cardDescription2": "<p>Completing forms manually is an incredibly long process, prone to typos and form abandonment that often result in delays. To make matters worse, nearly 30% of people have difficulties understanding basic forms.</p> <p> With Paxform, you fill in your data once and it will automatically match that data no matter which form you are filling in. Say goodbye to manually inputting the same data over and over again.</p>"
         }
+    },
+    "personalPage": {
+        "features": {
+            "title1": "Create Form Templates",
+            "title2": "Multiple Admins",
+            "title3": "View and Procees Applications",
+            "title4": "Use API",
+            "title5": "Request Information",
+            "description1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+            "description2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+            "description3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+            "description4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+            "description5": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        },
+        "plans": {
+            "description1": "A simple way to get started for you new to passfolio.",
+            "description2": "Best for freelance coders & designers who need.",
+            "description3": "Best for freelance coders & designers who need.",
+            "freeFeatures": {
+                "feature1": "Unlimited data",
+                "feature2": "5 Person saved",
+                "feature3": "A simple way for you new started to Passfolio.",
+                "feature4": "A simple way for you new started to Passfolio."
+            },
+            "premiumFeatures": {
+                "feature1": "Unlimited data",
+                "feature2": "5 Person saved",
+                "feature3": "A simple way for you new started to Passfolio.",
+                "feature4": "A simple way for you new started to Passfolio."
+            },
+            "familyFeatures": {
+                "feature1": "Unlimited data",
+                "feature2": "5 Person saved",
+                "feature3": "A simple way for you new started to Passfolio.",
+                "feature4": "A simple way for you new started to Passfolio."
+            }
+        }
     }
-   
 }

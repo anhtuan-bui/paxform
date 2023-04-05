@@ -27,7 +27,6 @@
     padding: 0 $padding__column;
     @include medium {
       grid-column: 1 / span 2;
-      margin-top: rem(60);
     }
     @include small {
       grid-column: 1;

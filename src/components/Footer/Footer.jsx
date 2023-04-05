@@ -500,7 +500,7 @@ export default function Footer() {
                     value={language.code}
                     key={index}
                   >
-                    {`${language.emoji} ${language.name} - ${language.country}`}
+                    {`${language.emoji} ${language.name} - ${language.native}`}
                   </option>
                 ))}
               </select>
