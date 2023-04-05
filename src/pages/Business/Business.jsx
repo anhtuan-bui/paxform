@@ -12,36 +12,32 @@ import PlanPricing from "../../components/PlanPricing/PlanPricing";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import Accordion from "../../components/Accordion/Accordion";
 import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 
 const features = [
   {
-    title: "Create Form Templates",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    title: t("businessPage.features.firstFeatureTitle"),
+    description: t("businessPage.features.firstFeatureDescription"),
     isOpened: true,
   },
   {
-    title: "Multiple Admins",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    title: t("businessPage.features.secondFeatureTitle"),
+    description: t("businessPage.features.secondFeatureDescription"),
     isOpened: false,
   },
   {
-    title: "View and Procees Applications",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    title: t("businessPage.features.thirdFeatureTitle"),
+    description: t("businessPage.features.thirdFeatureDescription"),
     isOpened: false,
   },
   {
-    title: "Use API",
-    description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    title: t("businessPage.features.fourthFeatureTitle"),
+    description: t("businessPage.features.fourthFeatureDescription"),
     isOpened: false,
   },
   {
-    title: "Request Information",
-    description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    title: t("businessPage.features.fifthFeatureTitle"),
+    description: t("businessPage.features.fifthFeatureDescription"),
     isOpened: false,
   },
 ];
@@ -147,10 +143,10 @@ const plans = [
               </div>
               <div className="features__accordion">
                 <p className="features__name section_name">
-                  {t("businessPage.features.name")}
+                  {t("businessPage.features.sectionName")}
                 </p>
                 <h1 className="features__title">
-                  {t("businessPage.features.title")}
+                  {t("businessPage.features.sectionTitle")}
                 </h1>
                 <Accordion list={features} />
               </div>

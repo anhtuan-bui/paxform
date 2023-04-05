@@ -126,8 +126,18 @@
             "text": "Eliminate the lengthy process of administrative rework while leaving no environmental footprint."
         },
         "features": {
-            "name": "feature",
-            "title": "Features For Your Organisation"
+          "sectionName": "feature",
+          "sectionTitle": "Features For Your Organisation",
+          "firstFeatureTitle": "Create Form Templates",
+          "firstFeatureDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+          "secondFeatureTitle": "Multiple Admins",
+          "secondFeatureDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+          "thirdFeatureTitle": "View and Procees Applications",
+          "thirdFeatureDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+          "fourthFeatureTitle": "Use APIs",
+          "fourthFeatureDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+          "fifthFeatureTitle": "Request Information",
+          "fifthFeatureDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
         },
         "plans": {
             "name": "Personal Plans",
