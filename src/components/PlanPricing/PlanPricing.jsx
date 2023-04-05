@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Button from "../Button/Button";
 import { ReactComponent as Tick } from "../../assets/images/tick.svg";
 import "./PlanPricing.scss";
+import { t } from "i18next";
 
 export default function PlanPricing({ plans }) {
   const registerLink = process.env.REACT_APP_REGISTER_LINK;
@@ -42,7 +43,7 @@ export default function PlanPricing({ plans }) {
           >
             {plan.mainColor === "green" ? (
               <Button
-                text="Get Started"
+                text={t("getStartedBtn")}
                 type="flat-green arrow"
                 color="white"
                 href="/pricing"

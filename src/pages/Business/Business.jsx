@@ -11,36 +11,33 @@ import GetStarted from "../../components/GetStarted/GetStarted";
 import PlanPricing from "../../components/PlanPricing/PlanPricing";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import Accordion from "../../components/Accordion/Accordion";
+import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 
 const features = [
   {
-    title: "Create Form Templates",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    title: t("businessPage.features.first.title"),
+    description: t("businessPage.features.first.description"),
     isOpened: true,
   },
   {
-    title: "Multiple Admins",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    title: t("businessPage.features.second.title"),
+    description: t("businessPage.features.second.description"),
     isOpened: false,
   },
   {
-    title: "View and Procees Applications",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    title: t("businessPage.features.third.title"),
+    description: t("businessPage.features.third.description"),
     isOpened: false,
   },
   {
-    title: "Use API",
-    description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    title: t("businessPage.features.fourth.title"),
+    description: t("businessPage.features.fourth.description"),
     isOpened: false,
   },
   {
-    title: "Request Information",
-    description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't",
+    title: t("businessPage.features.fifth.title"),
+    description: t("businessPage.features.fifth.description"),
     isOpened: false,
   },
 ];
@@ -48,69 +45,65 @@ const features = [
 const plans = [
   {
     mainColor: "grey",
-    title: "Free",
-    price: [0, "forever"],
-    description: "A simple way to get started for you new to passfolio.",
+    title: t("plans.free.title"),
+    price: [0, t("plans.free.price")],
+    description: t("plans.free.description"),
     features: [
-      "Unlimited data",
-      "5 Person saved",
-      "A simple way for you new started to Passfolio.",
-      "A simple way for you new started to Passfolio.",
+      t("plans.free.features.first"),
+      t("plans.free.features.second"),
+      t("plans.free.features.third"),
+      t("plans.free.features.fourth"),
     ],
   },
   {
     mainColor: "green",
-    title: "Premium",
-    price: [50, "forever"],
-    description: "Best for freelance coders & designers who need.",
+    title: t("plans.premium.title"),
+    price: [50, t("plans.premium.price")],
+    description: t("plans.premium.description"),
     features: [
-      "Unlimited data",
-      "5 Person saved",
-      "A simple way for you new started to Passfolio.",
-      "A simple way for you new started to Passfolio.",
+      t("plans.premium.features.first"),
+      t("plans.premium.features.second"),
+      t("plans.premium.features.third"),
+      t("plans.premium.features.fourth"),
     ],
   },
   {
     mainColor: "blue",
-    title: "Family",
-    price: ["Custom Pricing", ""],
-    description: "Best for freelance coders & designers who need.",
+    title: t("plans.family.title"),
+    price: [t("plans.family.price"), ""],
+    description: t("plans.family.description"),
     features: [
-      "Unlimited data",
-      "5 Person saved",
-      "A simple way for you new started to Passfolio.",
-      "A simple way for you new started to Passfolio.",
+      t("plans.family.features.first"),
+      t("plans.family.features.second"),
+      t("plans.family.features.third"),
+      t("plans.family.features.fourth"),
     ],
   },
 ];
 
-export default class Business extends Component {
-  render() {
+ const Business = () => {
+
+  const {t} = useTranslation();
+
     return (
       <main className="business">
         <section className="hero">
           <div className="container hero__wrapper">
             <div className="hero__content">
-              <p className="hero__name section_name">Business</p>
-              <h1 className="hero__title">
-                Your Personal Information in One Place Fill Any Form, Anywhere
-              </h1>
+              <p className="hero__name section_name">{t("business")}</p>
+              <h1 className="hero__title">{t("businessPage.hero.title")}</h1>
               <p className="hero__description">
-                Paxform’s function is simple: it completely fills any form,
-                anytime. You can manage and save your personal data, allowing
-                you to sign documents and send them to organisations with ease.
-                No need to worry about security and privacy—Paxform fully
-                encrypts your data to ensure your safety.
+                {t("businessPage.hero.description")}
               </p>
               <div className="hero__button">
                 <Button
-                  text="See Plan"
+                  text={t("businessPage.hero.planButton")}
                   type="flat-white arrow"
                   color="blue"
                   href="/pricing"
                 />
                 <Button
-                  text="How it works"
+                  text={t("businessPage.hero.howButton")}
                   type="outline triangle-right"
                   color="white"
                 />
@@ -131,14 +124,11 @@ export default class Business extends Component {
           <div className="container flex_box__container">
             <div className="flex_box__content">
               <h1 className="flex_box__content-title">
-                Paper work was yesterday - Go digital today
+                {t("businessPage.flexbox.heading")}
               </h1>
             </div>
             <div className="flex_box__text">
-              <p>
-                Eliminate the lengthy process of administrative rework while
-                leaving no environmental footprint.
-              </p>
+              <p>{t("businessPage.flexbox.text")}</p>
             </div>
           </div>
 
@@ -152,9 +142,11 @@ export default class Business extends Component {
                 <img src={repeatlyIllustration} alt="forms from Paxform" />
               </div>
               <div className="features__accordion">
-                <p className="features__name section_name">Features</p>
+                <p className="features__name section_name">
+                  {t("businessPage.features.sectionName")}
+                </p>
                 <h1 className="features__title">
-                  Features For Your Organisation
+                  {t("businessPage.features.sectionTitle")}
                 </h1>
                 <Accordion list={features} />
               </div>
@@ -168,22 +160,23 @@ export default class Business extends Component {
           <div className="container plans__container">
             <div className="plans__top">
               <div className="plans__top-title">
-                <p className="plans__name section_name">PERSONAL PLANS</p>
+                <p className="plans__name section_name">
+                  {t("plans.sectionName")}
+                </p>
                 <h1 className="plans__title section_title">
-                  Choose a Plan That’s Right for You
+                  {t("plans.sectionTitle")}
                 </h1>
               </div>
               <div className="plans__top-button">
                 <Button
                   className="plans__button"
-                  text="See full pricing"
+                  text={t("plans.fullPricingButton")}
                   type="arrow outline"
                   color="green"
-                  href='/pricing'
+                  href="/pricing"
                 />
               </div>
             </div>
-
             <PlanPricing plans={plans} />
           </div>
         </section>
@@ -197,5 +190,6 @@ export default class Business extends Component {
         <GetStarted />
       </main>
     );
-  }
 }
+
+export default Business;

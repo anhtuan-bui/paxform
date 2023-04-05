@@ -52,6 +52,7 @@
     "copyrightPaxform": "© Copyright 2022 Paxform. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termOfService": "Terms of Service",
+    "getStartedBtn": "Get Started",
     "forever": "forever",
     "free": "Free",
     "premium": "Premium",
@@ -120,6 +121,81 @@
             "cardTitle2": "Most forms are too complex",
             "cardDescription1": "<p>It can be a hassle looking for where you have stored different information. With Paxform, you can keep all your information like biodatas, signatures and documents, including your contacts, all in one app. </p> <p> Better yet, all the data is encrypted and only you and the person you share it with can have access to it.</p>",
             "cardDescription2": "<p>Completing forms manually is an incredibly long process, prone to typos and form abandonment that often result in delays. To make matters worse, nearly 30% of people have difficulties understanding basic forms.</p> <p> With Paxform, you fill in your data once and it will automatically match that data no matter which form you are filling in. Say goodbye to manually inputting the same data over and over again.</p>"
+        }
+    },
+    "businessPage": {
+        "hero": {
+            "title": "Your Personal Information in One Place Fill Any Form, Anywhere",
+            "description": "Paxform’s function is simple: it completely fills any form anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety.",
+            "planButton": "See Plan",
+            "howButton": "How it works"
+        },
+        "flexbox": {
+            "heading": "Paper work was yesterday - Go digital today",
+            "text": "Eliminate the lengthy process of administrative rework while leaving no environmental footprint."
+        },
+        "features": {
+            "sectionName": "feature",
+            "sectionTitle": "Features For Your Organisation",
+            "first": {
+                "title": "Create Form Templates",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+            },
+            "second": {
+                "title": "Multiple Admins",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+            },
+            "third": {
+                "title": "View and Procees Applications",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+            },
+            "fourth": {
+                "title": "Use APIs",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+            },
+            "fifth": {
+                "title": "Request Information",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+            }
+        }
+    },
+    "plans": {
+        "sectionName": "Personal Plans",
+        "sectionTitle": "Choose a Plan That’s Right for You",
+        "fullPricingButton": "See full pricing",
+        "included": "What’s included",
+        "free": {
+            "title": "Free",
+            "price": "forever",
+            "description": "A simple way to get started for you new to passfolio.",
+            "features": {
+                "first": "Unlimited data",
+                "second": "5 Person saved",
+                "third": "A simple way for you new started to Passfolio.",
+                "fourth": "A simple way for you new started to Passfolio."
+            }
+        },
+        "premium": {
+            "title": "Premium",
+            "price": "forever",
+            "description": "Best for freelance coders & designers who need.",
+            "features": {
+                "first": "Unlimited data",
+                "second": "5 Person saved",
+                "third": "A simple way for you new started to Passfolio.",
+                "fourth": "A simple way for you new started to Passfolio."
+            }
+        },
+        "family": {
+            "title": "Family",
+            "price": "Custom Pricing",
+            "description": "Best for freelance coders & designers who need.",
+            "features": {
+                "first": "Unlimited data",
+                "second": "5 Person saved",
+                "third": "A simple way for you new started to Passfolio.",
+                "fourth": "A simple way for you new started to Passfolio."
+            }
         }
     },
     "personalPage": {
