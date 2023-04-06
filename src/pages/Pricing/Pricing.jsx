@@ -11,83 +11,55 @@ import Button from "../../components/Button/Button";
 import { ReactComponent as Tick } from "../../assets/images/icon-tick.svg";
 import { ReactComponent as Eks } from "../../assets/images/icon-none.svg";
 import { SCREEN_SIZE } from "../../configurations/configurations";
+import { withTranslation } from "react-i18next";
 
-const credits = [
-  {
-    cost: "$19.90",
-    point: "500",
-    descriptions: "Additional Submissions",
-  },
-  {
-    cost: "$99.90",
-    point: "3,000",
-    descriptions: "Additional Submissions",
-  },
-  {
-    cost: "$299.90",
-    point: "10,000",
-    descriptions: "Additional Submissions",
-  },
-];
-
-const compareList = {
-  features: [
-    "Pricing per Admin/month",
-    "Number of Admins",
-    "Published Forms",
-    "Form template",
-    "Agreement Templates",
-    "Survey(monthly)",
-    "Monthly Submissions",
-    "Storage Space Available",
-  ],
-  securities: ["End-to-End Encryption"],
-  supports: [
-    "Generic PDF",
-    "Max Questions per Form",
-    "Conditional Questions",
-    "Electronic Signatures",
-    "Attachments(in forms)",
-    "Workflow support",
-  ],
-};
-export default class Pricing extends Component {
+class Pricing extends Component {
+  t = this.props.t;
   registerLink = process.env.REACT_APP_REGISTER_LINK;
   personal = {
     pricing: [
       {
-        title: "Free",
-        description: "A simple way to get started for you new to passfolio.",
+        title: this.t("free"),
+        description: this.t("pricingPage.free.description"),
         cost: "$0",
-        period: "/forever",
+        period: `/${this.t("forever")}`,
         features: [
-          "**Unlimited data",
-          "5 Person saved",
-          "A simple way for you new started to Passfolio.",
-          "A simple way for you new started to Passfolio.",
+          this.t("pricingPage.free.features.first"),
+          this.t("pricingPage.free.features.second"),
+          this.t("pricingPage.free.features.third"),
+          this.t("pricingPage.free.features.fourth"),
         ],
         compares: {
-          features: ["$29.90", "1(max 4)", "3", "10", "2", "1", "500", "10GB"],
+          features: [
+            "$29.90",
+            `1 (${this.t("max")} 4)`,
+            "3",
+            "10",
+            "2",
+            "1",
+            "500",
+            "10GB",
+          ],
           securities: [<Tick />],
           supports: [<Tick />, "40", <Tick />, <Tick />, <Eks />, <Eks />],
         },
       },
       {
-        title: "Premium",
-        description: "Best for freelance coders & designers who need",
+        title: this.t("premium"),
+        description: this.t("pricingPage.premium.description"),
         cost: "$50",
-        period: "/forever",
+        period: `/${this.t("forever")}`,
         features: [
-          "2.Unlimited data",
-          "5 Person saved",
-          "A simple way for you new started to Passfolio.",
-          "A simple way for you new started to Passfolio.",
+          this.t("pricingPage.premium.features.first"),
+          this.t("pricingPage.premium.features.second"),
+          this.t("pricingPage.premium.features.third"),
+          this.t("pricingPage.premium.features.fourth"),
         ],
 
         compares: {
           features: [
             "$39.90",
-            "5 (max 9)",
+            `5 (${this.t("max")} 9)`,
             "30",
             "50",
             "10",
@@ -98,7 +70,7 @@ export default class Pricing extends Component {
           securities: [<Tick />],
           supports: [
             <Tick />,
-            "Unlimited",
+            this.t("unlimited"),
             <Tick />,
             <Tick />,
             <Tick />,
@@ -107,22 +79,22 @@ export default class Pricing extends Component {
         },
       },
       {
-        title: "Family",
-        description: "Best for freelance coders & designers who need",
+        title: this.t("family"),
+        description: this.t("pricingPage.family.description"),
         cost: "Custom",
         period: "",
         features: [
-          "3. Unlimited data",
-          "5 Person saved",
-          "A simple way for you new started to Passfolio.",
-          "A simple way for you new started to Passfolio.",
+          this.t("pricingPage.family.features.first"),
+          this.t("pricingPage.family.features.second"),
+          this.t("pricingPage.family.features.third"),
+          this.t("pricingPage.family.features.fourth"),
         ],
         compares: {
           features: ["$49.90", "30", "100", "200", "20", "10", "10,000", "1TB"],
           securities: [<Tick />],
           supports: [
             <Tick />,
-            "Unlimited",
+            this.t("unlimited"),
             <Tick />,
             <Tick />,
             <Tick />,
@@ -135,39 +107,48 @@ export default class Pricing extends Component {
   business = {
     pricing: [
       {
-        title: "Essential",
-        description: "A simple way to get started for you new to passfolio.",
+        title: this.t("essential"),
+        description: this.t("pricingPage.essential.description"),
         cost: "$29.90",
-        period: "/month",
+        period: `/${this.t("month")}`,
         features: [
-          "Unlimited data",
-          "5 Person saved",
-          "A simple way for you new started to Passfolio.",
-          "A simple way for you new started to Passfolio.",
+          this.t("pricingPage.essential.features.first"),
+          this.t("pricingPage.essential.features.second"),
+          this.t("pricingPage.essential.features.third"),
+          this.t("pricingPage.essential.features.fourth"),
         ],
         compares: {
-          features: ["$29.90", "1 (max 4)", "3", "10", "2", "1", "500", "10GB"],
+          features: [
+            "$29.90",
+            `1 (${this.t("max")} 4)`,
+            "3",
+            "10",
+            "2",
+            "1",
+            "500",
+            "10GB",
+          ],
           securities: [<Tick />],
           supports: [<Tick />, "40", <Tick />, <Tick />, <Eks />, <Eks />],
         },
       },
       {
-        title: "Standard",
-        description: "Best for freelance coders & designers who need",
+        title: this.t("standard"),
+        description: this.t("pricingPage.standard.description"),
         cost: "$39.90",
-        period: "/month",
+        period: `/${this.t("month")}`,
         features: [
-          "Unlimited data",
-          "5 Person saved",
-          "A simple way for you new started to Passfolio.",
-          "A simple way for you new started to Passfolio.",
+          this.t("pricingPage.standard.features.first"),
+          this.t("pricingPage.standard.features.second"),
+          this.t("pricingPage.standard.features.third"),
+          this.t("pricingPage.standard.features.fourth"),
         ],
         compares: {
           features: ["$49.90", "30", "100", "200", "20", "10", "10,000", "1TB"],
           securities: [<Tick />],
           supports: [
             <Tick />,
-            "Unlimited",
+            this.t("unlimited"),
             <Tick />,
             <Tick />,
             <Tick />,
@@ -176,22 +157,22 @@ export default class Pricing extends Component {
         },
       },
       {
-        title: "Plus",
-        description: "Best for freelance coders & designers who need",
+        title: this.t("plus"),
+        description: this.t("pricingPage.plus.description"),
         cost: "$49.90",
-        period: "/month",
+        period: `/${this.t("month")}`,
         features: [
-          "Unlimited data",
-          "5 Person saved",
-          "A simple way for you new started to Passfolio.",
-          "A simple way for you new started to Passfolio.",
+          this.t("pricingPage.plus.features.first"),
+          this.t("pricingPage.plus.features.second"),
+          this.t("pricingPage.plus.features.third"),
+          this.t("pricingPage.plus.features.fourth"),
         ],
         compares: {
           features: ["$49.90", "30", "100", "200", "20", "10", "10,000", "1TB"],
           securities: [<Tick />],
           supports: [
             <Tick />,
-            "Unlimited",
+            this.t("unlimited"),
             <Tick />,
             <Tick />,
             <Tick />,
@@ -282,15 +263,54 @@ export default class Pricing extends Component {
   };
 
   render() {
+    const credits = [
+      {
+        cost: "$19.90",
+        point: "500",
+        descriptions: this.t("pricingPage.silver.description"),
+      },
+      {
+        cost: "$99.90",
+        point: "3,000",
+        descriptions: this.t("pricingPage.green.description"),
+      },
+      {
+        cost: "$299.90",
+        point: "10,000",
+        descriptions: this.t("pricingPage.blue.description"),
+      },
+    ];
+
+    const compareList = {
+      features: [
+        this.t("pricingPage.compareList.features.first"),
+        this.t("pricingPage.compareList.features.second"),
+        this.t("pricingPage.compareList.features.third"),
+        this.t("pricingPage.compareList.features.fourth"),
+        this.t("pricingPage.compareList.features.fifth"),
+        this.t("pricingPage.compareList.features.sixth"),
+        this.t("pricingPage.compareList.features.seventh"),
+        this.t("pricingPage.compareList.features.eight"),
+      ],
+      securities: [this.t("pricingPage.compareList.security")],
+      supports: [
+        this.t("pricingPage.compareList.supports.first"),
+        this.t("pricingPage.compareList.supports.second"),
+        this.t("pricingPage.compareList.supports.third"),
+        this.t("pricingPage.compareList.supports.fourth"),
+        this.t("pricingPage.compareList.supports.fifth"),
+        this.t("pricingPage.compareList.supports.sixth"),
+      ],
+    };
     return (
       <main className="pricing">
         <section className="hero">
           <div className="container">
             <div className="hero__wrapper">
               <div className="hero__top">
-                <p className="hero__top-name">Pricing</p>
+                <p className="hero__top-name">{this.t("pricingPage.hero.name")}</p>
                 <h1 className="hero__top-title">
-                  Choose a Plan That's Right for You
+                {this.t("pricingPage.hero.title")}
                 </h1>
                 <div className="hero__top__tabs personal">
                   <a
@@ -298,14 +318,14 @@ export default class Pricing extends Component {
                     href="#personal"
                     onClick={this.onPersonalBtnClick}
                   >
-                    personal
+                    {this.t("personal")}
                   </a>
                   <a
                     className="hero__top__tabs-business"
                     href="#business"
                     onClick={this.onBusinessBtnClick}
                   >
-                    business
+                    {this.t("business")}
                   </a>
                 </div>
               </div>
@@ -335,7 +355,7 @@ export default class Pricing extends Component {
                       href={this.registerLink}
                     />
                     <strong className="plans__ul__list-inc">
-                      What's Included
+                     {this.t("plans.included")}
                     </strong>
                     <ul className="plans__ul__list-benefits">
                       {price.features.map((feature, index) => (
@@ -350,9 +370,9 @@ export default class Pricing extends Component {
         </section>
         <section className="data_credit">
           <div className="container">
-            <p className="data_credit-name">Data Credit</p>
+            <p className="data_credit-name">{this.t("pricingPage.dataCredit.name")}</p>
             <h1 className="data_credit-title">
-              Data Credits can be purchased in blocks.
+            {this.t("pricingPage.dataCredit.title")}
             </h1>
             <ul className="data_credit__cards">
               {credits.map((credit, index) => (
@@ -376,26 +396,26 @@ export default class Pricing extends Component {
         </section>
         <section className="compare">
           <div className="container">
-            <h1 className="compare-title">Compare Plans</h1>
+            <h1 className="compare-title">{this.t("pricingPage.compare.title")}</h1>
             <div className="compare__wrapper">
               <div className="compare__plans">
                 <div className="compare__plans__list features">
                   <dl className="compare__plans__list__info">
-                    <dt className="compare__plans__list-title top">Features</dt>
+                    <dt className="compare__plans__list-title top">{this.t("features")}</dt>
                     {compareList.features.map((feature, index) => (
                       <dd className="compare__plans__list-text" key={index}>
                         {feature}
                       </dd>
                     ))}
 
-                    <dt className="compare__plans__list-title">Security</dt>
+                    <dt className="compare__plans__list-title">{this.t("security")}</dt>
                     {compareList.securities.map((security, index) => (
                       <dd className="compare__plans__list-text" key={index}>
                         {security}
                       </dd>
                     ))}
 
-                    <dt className="compare__plans__list-title">Support</dt>
+                    <dt className="compare__plans__list-title">{this.t("support")}</dt>
                     {compareList.supports.map((support, index) => (
                       <dd className="compare__plans__list-text" key={index}>
                         {support}
@@ -470,7 +490,7 @@ export default class Pricing extends Component {
         </section>
         <section className="mobile_compare">
           <div className="container">
-            <h1 className="mobile_compare-title">Compare Plans</h1>
+            <h1 className="mobile_compare-title">{this.t("pricingPage.compare.title")}</h1>
             <table className="mobile_compare__tbl">
               <thead>
                 <tr>
@@ -489,7 +509,7 @@ export default class Pricing extends Component {
               </thead>
               <tbody>
                 <tr>
-                  <th colSpan="3">Features</th>
+                  <th colSpan="3">{this.t("features")}</th>
                 </tr>
                 {compareList.features.map((feature, index) => {
                   let grey = "grey";
@@ -510,7 +530,7 @@ export default class Pricing extends Component {
                   );
                 })}
                 <tr>
-                  <th colSpan="3">Security</th>
+                  <th colSpan="3">{this.t("security")}</th>
                 </tr>
                 {compareList.securities.map((security, index) => {
                   let grey = "grey";
@@ -531,7 +551,7 @@ export default class Pricing extends Component {
                   );
                 })}
                 <tr>
-                  <th colSpan="3">Support</th>
+                  <th colSpan="3">{this.t("support")}</th>
                 </tr>
                 {compareList.supports.map((support, index) => {
                   let grey = "grey";
@@ -562,3 +582,4 @@ export default class Pricing extends Component {
     );
   }
 }
+export default withTranslation()(Pricing);

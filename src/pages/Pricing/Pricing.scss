@@ -541,24 +541,17 @@ $color_dark-blue: #031a30;
     }
     .container {
       position: relative;
-      @include large {
-        padding-top: rem(100);
-      }
+      
     }
     &-title {
-      margin: 0 auto rem(100);
       font-size: rem(42);
+      margin-bottom: rem(50);
       text-align: center;
       @include extraLarge {
         font-size: rem(38);
       }
       @include large {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
         width: 100%;
-        margin: 0;
         font-size: rem(34);
         text-align: center;
       }
