@@ -5,8 +5,10 @@ import { GET_LEGAL_CATEGORIES } from "../../lib/graphqlQuery";
 import "./Legal.scss";
 
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
+import { useTranslation } from "react-i18next";
 
 export default function Legal() {
+  const {t} = useTranslation()
   const { loading, data } = useQuery(GET_LEGAL_CATEGORIES);
 
   const legalCategories = !loading
@@ -18,10 +20,9 @@ export default function Legal() {
         <div className="container ">
           <div className="hero__wrapper">
             <div className="hero__content">
-              <h1 className="hero__title">Paxform Legal</h1>
+              <h1 className="hero__title">{t("legalPage.title")}</h1>
               <p className="hero__description">
-                Find legal information and resources for our products and
-                services, including our policies and terms.
+                {t("legalPage.description")}
               </p>
             </div>
           </div>

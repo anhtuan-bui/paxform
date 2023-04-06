@@ -344,6 +344,8 @@ export default function Footer() {
 
     if (notFound) {
       setFooter(false);
+    }else{
+      setFooter(true)
     }
   }, []);
 

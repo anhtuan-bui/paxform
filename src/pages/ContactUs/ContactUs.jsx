@@ -1,5 +1,4 @@
 import React, {
-  Component,
   createRef,
   Fragment,
   useEffect,
@@ -12,21 +11,21 @@ import ReCAPTCHA from "react-google-recaptcha";
 import Button from "../../components/Button/Button";
 
 import Modal from "react-modal";
+import { useTranslation } from "react-i18next";
 
-export default class ContactUs extends Component {
-  render() {
+export default function ContactUs () {
+  const messageNumber = "+61 1300 181 346";
+  const callNumber = "+61 1300 181 346";
+  const {t} = useTranslation();
     return (
       <main className="contact">
         <section className="hero">
           <div className="container hero__wrapper">
             <div className="hero__content">
-              <p className="hero__name">Contact Us</p>
-              <h1 className="hero__title">We’d love to hear from you</h1>
+              <p className="hero__name">{t("contactUs")}</p>
+              <h1 className="hero__title">{t("contactUsPage.hero.title")}</h1>
               <p className="hero__description">
-                We value your feedback and are here to assist you with any
-                questions or concerns you may have. Please fill out the form,
-                and one of our representatives will get back to you as soon as
-                possible.
+              {t("contactUsPage.hero.description")}
               </p>
             </div>
             <div className="form__box-wrapper">
@@ -39,30 +38,30 @@ export default class ContactUs extends Component {
         </section>
         <section className="help">
           <div className="container">
-            <span className="help-name">GET IN TOUCH</span>
-            <h2 className="help-title">Our teams are here to help</h2>
+            <span className="help-name">{t("contactUsPage.getInTouch.name")}</span>
+            <h2 className="help-title">{t("contactUsPage.getInTouch.title")}</h2>
             <div className="help__wrapper">
               <div className="help__box">
                 <div className="help__box__inner">
                   <em className="help__box-icon"></em>
                   <strong className="help__box-title">
-                    Text us +61 482 084 480
+                    {t("contactUsPage.message.title", {messageNumber: messageNumber})}
                   </strong>
                   <p className="help__box-desc">
-                    Message and data rates may apply
+                  {t("contactUsPage.message.description")}
                   </p>
                   <a className="help__box-link" href="sms:+61482084480">
-                    Message us <ArrowRight />
+                    {t("contactUsPage.message.linkText")} <ArrowRight />
                   </a>
                 </div>
               </div>
               <div className="help__box">
                 <div className="help__box__inner">
                   <em className="help__box-icon"></em>
-                  <strong className="help__box-title">Send us an email</strong>
-                  <p className="help__box-desc">We’d love to hear from you!</p>
+                  <strong className="help__box-title">{t("contactUsPage.sendEmail.title")}</strong>
+                  <p className="help__box-desc">{t("contactUsPage.sendEmail.description")}</p>
                   <a className="help__box-link" href="mailto:hello@paxform.com">
-                    Email us <ArrowRight />
+                  {t("contactUsPage.sendEmail.linkText")} <ArrowRight />
                   </a>
                 </div>
               </div>
@@ -70,24 +69,24 @@ export default class ContactUs extends Component {
                 <div className="help__box__inner">
                   <em className="help__box-icon"></em>
                   <strong className="help__box-title">
-                    Call us at +61 1300 181 346
+                  {t("contactUsPage.callUs.title", {callNumber: callNumber})}
                   </strong>
-                  <p className="help__box-desc">We’d love to hear from you!</p>
+                  <p className="help__box-desc">{t("contactUsPage.callUs.description")}</p>
                   <a className="help__box-link" href="tel:+611300181346">
-                    Call us <ArrowRight />
+                  {t("contactUsPage.callUs.linkText")} <ArrowRight />
                   </a>
                 </div>
               </div>
               <div className="help__box">
                 <div className="help__box__inner">
                   <strong className="help__box-title">
-                    Chat with a specialist
+                  {t("contactUsPage.chatWithSpecialist.title")}
                   </strong>
                   <p className="help__box-desc">
-                    Available 9am - 5pm AEST, Monday - Friday
+                  {t("contactUsPage.chatWithSpecialist.description")}
                   </p>
                   <a id="chat_now" className="help__box-link" href="#chat_now">
-                    Chat now <ArrowRight />
+                  {t("contactUsPage.chatWithSpecialist.linkText")} <ArrowRight />
                   </a>
                 </div>
               </div>
@@ -98,10 +97,10 @@ export default class ContactUs extends Component {
         </section>
       </main>
     );
-  }
 }
 
 const ContactForm = () => {
+  const {t} = useTranslation();
   const sitekey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
   let alerts = {
     fullName: "Please enter your full name",
@@ -228,10 +227,10 @@ const ContactForm = () => {
     <Fragment>
       <form onSubmit={handleSubmit}>
         <label>
-          <strong>Full name</strong>
+          <strong>{t("fullName")}</strong>
           <input
             type="text"
-            placeholder="Full Name"
+            placeholder={t("fullName")}
             onChange={(e) => setFullName(e.target.value)}
             value={fullName}
             required
@@ -244,7 +243,7 @@ const ContactForm = () => {
           </p>
         </label>
         <label>
-          <strong>Email</strong>
+          <strong>{t("email")}</strong>
           <input
             type="email"
             placeholder="example@email.com"
@@ -261,22 +260,22 @@ const ContactForm = () => {
           </p>
         </label>
         <label>
-          <strong>Company name</strong>
+          <strong>{t("companyName")}</strong>
           <input
             type="text"
-            placeholder="Company Name"
+            placeholder={t("companyName")}
             onChange={(e) => setCompanyName(e.target.value)}
             value={companyName}
           />
         </label>
         <label>
-          <strong>Company size</strong>
+          <strong>{t("companySize")}</strong>
           <select
             onChange={(e) => setCompanySize(e.target.value)}
             defaultValue={companySize}
           >
             <option value="" disabled>
-              Select a range of employees
+              {t("selectARangeOfEmployees")}
             </option>
             <option value="1 - 10">1 - 10</option>
             <option value="10 - 100">10 - 100</option>
@@ -285,9 +284,9 @@ const ContactForm = () => {
           </select>
         </label>
         <label>
-          <strong>Message</strong>
+          <strong>{t("message")}</strong>
           <textarea
-            placeholder="Message"
+            placeholder={t("message")}
             onChange={(e) => handleMessageChange(e)}
             value={message}
             required
@@ -343,8 +342,8 @@ const ContactForm = () => {
         }}
       >
         <div className="contact_modal__message">
-          <h1>Your message has been sent!</h1>
-          <p>We will contact you shortly. Thank you!</p>
+          <h1>{t("contactUsPage.contactForm.messageTitle")}</h1>
+          <p>{t("contactUsPage.contactForm.message")}</p>
         </div>
         <Button
           className="contact_modal__button"
