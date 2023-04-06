@@ -212,6 +212,51 @@
       }
     }
   },
+  "privacyPolicyPage": {
+    "heroTitle": "Paxform Legal",
+    "securityNavList": {
+      "title": "Security",
+      "first": "Privacy Security",
+      "second": "Shield",
+      "third": "Account Security"
+    },
+    "servicesNavList": {
+      "title": "Services",
+      "first": "Personal",
+      "second": "Business"
+    },
+    "companyNavList": {
+      "title": "Company",
+      "first": "About",
+      "second": "Contact Us",
+      "third": "Pricing"
+    },
+    "content": {
+      "title": "Privacy Policy",
+      "description": "(“Products”) care about how their information is collected, used, processed, transferred, stored, and shared. This Global Privacy Policy describes Bynder’s commitment to protecting your privacy. It forms a part of our <strong>Website Terms of Use, Trial Terms of Use, and Standard Termsof Service</strong>, and all other documents incorporated therein (“Terms”). Any capitalized terms not defined in this Global Privacy Policy are defined as set out in the Terms.<br /><br />Please familiarize yourself with this Global Privacy Policy. This Global Privacy Policy is formally reviewed annually and is updated as often as necessary. Updates will be posted public on the Website. If we make substantive changes to the purposes and policies set out here, we will update this page and we will inform Product Users by email or in-application notification.<br /><br />This Global Privacy Policy provides information on how Bynder handles data as a data controller, meaning all data we process for our own purposes. Where Bynder is a processor or asub-processor of data, that activity is generally governed by a Data Processing Agreement.<br /><br />This Global Privacy Policy provides information on how Bynder handles data as a data controller, meaning all data we process for our own purposes. Where Bynder is a processor or asub-processor of data, that activity is generally governed by a Data Processing Agreement.",
+      "download": {
+        "name": "Paxform Privacy Policy",
+        "btn": "Download as PDF"
+      }
+    },
+    "list": {
+      "first": {
+        "heading": "1. What We Collect and How We Use It",
+        "subHeading": "1.1 website",
+        "description": "This Global Privacy Policy provides information on how Bynder handles data as a data controller, meaning all data we process for our own purposes. Where Bynder is a processor or a sub-processor of data, that activity is generally governed by a Data Processing Agreement."
+      },
+      "second": {
+        "heading": "2. Personal Data Retention and Security",
+        "subHeading": "2.1 Retention of Personal Data",
+        "description": "Data security is a matter of critical importance. Bynder uses a wide range of security measures to safeguard your data against unauthorized access and disclosure and we continually evaluate our security program to ensure its effectiveness. Amazon Web Services provides our servers and maintains them in high-security controlled environments pursuant to the <strong>&nbsp;AWS Cloud</strong>"
+      },
+      "third": {
+        "heading": "3. Your Data and Your Rights",
+        "subHeading": "3.1 Retention of Personal Data",
+        "description": "As a general matter, depending on local data protection laws, you have rights that may include: <br /><br /> <ul> <li> Clear information on our processing of your Personal Data; </li> <li> Access your Personal Data that we hold, together with the right to have inaccuracies corrected; </li> <li> To have your Personal Data delivered to you in a standard electronic format; </li> <li> To object to our processing of your Personal Data, and to prevent solely automated decision making or profiling; and </li> <li> To restrict our processing of your Personal Data, or have your Personal Data deleted. </li> </ul>"
+      }
+    }
+  },
   "personalPage": {
     "features": {
       "title1": "Create Form Templates",
