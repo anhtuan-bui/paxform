@@ -15,6 +15,7 @@ import getToken from "./lib/clientToken";
 import GQ from "./pages/GQ/GQ";
 import { useTranslation } from "react-i18next";
 import { convertLangToLocale } from "./lib/util";
+import { HelmetProvider } from "react-helmet-async";
 
 const Resources = lazy(() => import("./pages/Resources/Resources"));
 const Pricing = lazy(() => import("./pages/Pricing/Pricing"));
@@ -52,38 +53,40 @@ function App() {
   }, [lang, i18n]);
 
   return (
-    <ApolloProvider client={client}>
-      <BrowserRouter>
-        <Suspense>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="personal" element={<Personal />} />
-              <Route path="business" element={<Business />} />
-              <Route path="pricing" element={<Pricing />} />
-              <Route path="faqs" element={<FAQs />} />
-              <Route path="resources" element={<Resources />} />
-              <Route path="resources/:slug" element={<ResourceDetail />} />
-              <Route path="blogs" element={<Blogs />} />
-              <Route path="blogs/:slug" element={<BlogDetails />} />
-              <Route path="blog-details" element={<BlogDetails />} />
-              <Route path="privacy-policy" element={<PrivacyPolicy />} />{" "}
-              <Route path="legal" element={<Legal />} />
-              <Route path="legal/:slug/:slug" element={<LegalDetail />} />
-              <Route path="legal-detail" element={<LegalDetail />} />
-              <Route path="use-cases/:slug" element={<UseCase />} />
-              <Route path="contact-us" element={<ContactUs />} />
-              <Route path="company" element={<Company />} />
-              <Route path="data-security" element={<DataSecurity />} />
-              <Route path="resource-details" element={<ResourceDetail />} />
-              <Route path="*" element={<NotFound />} />
-              <Route path="gq" element={<GQ />} />
-              <Route path="faqv1" element={<FAQV1 />} />
-            </Route>
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </ApolloProvider>
+    <HelmetProvider>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <Suspense>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="personal" element={<Personal />} />
+                <Route path="business" element={<Business />} />
+                <Route path="pricing" element={<Pricing />} />
+                <Route path="faqs" element={<FAQs />} />
+                <Route path="resources" element={<Resources />} />
+                <Route path="resources/:slug" element={<ResourceDetail />} />
+                <Route path="blogs" element={<Blogs />} />
+                <Route path="blogs/:slug" element={<BlogDetails />} />
+                <Route path="blog-details" element={<BlogDetails />} />
+                <Route path="privacy-policy" element={<PrivacyPolicy />} />{" "}
+                <Route path="legal" element={<Legal />} />
+                <Route path="legal/:slug/:slug" element={<LegalDetail />} />
+                <Route path="legal-detail" element={<LegalDetail />} />
+                <Route path="use-cases/:slug" element={<UseCase />} />
+                <Route path="contact-us" element={<ContactUs />} />
+                <Route path="company" element={<Company />} />
+                <Route path="data-security" element={<DataSecurity />} />
+                <Route path="resource-details" element={<ResourceDetail />} />
+                <Route path="*" element={<NotFound />} />
+                <Route path="gq" element={<GQ />} />
+                <Route path="faqv1" element={<FAQV1 />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </ApolloProvider>
+    </HelmetProvider>
   );
 }
 
