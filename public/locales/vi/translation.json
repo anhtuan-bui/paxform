@@ -181,44 +181,89 @@
         "title": "Yêu cầu thông tin",
         "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
       }
+    },
+    "plans": {
+      "sectionName": "Kế hoạch cá nhân",
+      "sectionTitle": "Chọn một kế hoạch phù hợp với bạn",
+      "fullPricingButton": "Xem giá đầy đủ",
+      "included": "Bao gồm những gì",
+      "free": {
+        "title": "Miễn phí",
+        "price": "mãi mãi",
+        "description": "Một cách đơn giản để bắt đầu cho bạn mới làm quen với passfolio.",
+        "features": {
+          "first": "Dữ liệu không giới hạn",
+          "second": "5 Người được cứu",
+          "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+          "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        }
+      },
+      "premium": {
+        "title": "Phần thưởng",
+        "price": "mãi mãi",
+        "description": "Tốt nhất cho lập trình viên tự do",
+        "features": {
+          "first": "Dữ liệu không giới hạn",
+          "second": "5 Người được cứu",
+          "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+          "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        }
+      },
+      "family": {
+        "title": "Gia đình",
+        "price": "giá tùy chỉnh",
+        "description": "Tốt nhất cho lập trình viên tự do",
+        "features": {
+          "first": "Dữ liệu không giới hạn",
+          "second": "5 Người được cứu",
+          "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+          "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        }
+      }
     }
   },
-  "plans": {
-    "sectionName": "Kế hoạch cá nhân",
-    "sectionTitle": "Chọn một kế hoạch phù hợp với bạn",
-    "fullPricingButton": "Xem giá đầy đủ",
-    "included": "Bao gồm những gì",
-    "free": {
-      "title": "Miễn phí",
-      "price": "mãi mãi",
-      "description": "Một cách đơn giản để bắt đầu cho bạn mới làm quen với passfolio.",
-      "features": {
-        "first": "Dữ liệu không giới hạn",
-        "second": "5 Người được cứu",
-        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+  "privacyPolicyPage": {
+    "heroTitle": "Pháp lý Paxform",
+    "securityNavList": {
+      "title": "Bảo vệ",
+      "first": "Bảo mật riêng tư",
+      "second": "Cái khiên",
+      "third": "Bảo mật tài khoản"
+    },
+    "servicesNavList": {
+      "title": "Dịch vụ",
+      "first": "Riêng tư",
+      "second": "Việc kinh doanh"
+    },
+    "companyNavList": {
+      "title": "Công ty",
+      "first": "Về",
+      "second": "Liên hệ chúng tôi",
+      "third": "định giá"
+    },
+    "content": {
+      "title": "Chính sách bảo mật",
+      "description": "(“Sản phẩm”) quan tâm đến cách thông tin của họ được thu thập, sử dụng, xử lý, chuyển giao, lưu trữ và chia sẻ.  <strong>Điều khoản sử dụng trang web, Điều khoản sử dụng dùng thử và Điều khoản dịch vụ tiêu chuẩn</strong>và tất cả các tài liệu khác được kết hợp trong đó (\"Điều khoản\"). <br /><br />Vui lòng tự làm quen với Chính sách quyền riêng tư toàn cầu này. <br /><br />Chính sách Quyền riêng tư Toàn cầu này cung cấp thông tin về cách Bynder xử lý dữ liệu với tư cách là bên kiểm soát dữ liệu, nghĩa là tất cả dữ liệu chúng tôi xử lý cho mục đích riêng của mình. <br /><br />Chính sách Quyền riêng tư Toàn cầu này cung cấp thông tin về cách Bynder xử lý dữ liệu với tư cách là bên kiểm soát dữ liệu, nghĩa là tất cả dữ liệu chúng tôi xử lý cho mục đích riêng của mình. ",
+      "download": {
+        "name": "Chính sách quyền riêng tư của Paxform",
+        "btn": "Tải xuống dưới dạng PDF"
       }
     },
-    "premium": {
-      "title": "Phần thưởng",
-      "price": "mãi mãi",
-      "description": "Tốt nhất cho lập trình viên tự do",
-      "features": {
-        "first": "Dữ liệu không giới hạn",
-        "second": "5 Người được cứu",
-        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
-      }
-    },
-    "family": {
-      "title": "Gia đình",
-      "price": "giá tùy chỉnh",
-      "description": "Tốt nhất cho lập trình viên tự do",
-      "features": {
-        "first": "Dữ liệu không giới hạn",
-        "second": "5 Người được cứu",
-        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+    "list": {
+      "first": {
+        "heading": "1. Những gì chúng tôi thu thập và cách chúng tôi sử dụng",
+        "subHeading": "1.1 trang web",
+        "description": "Chính sách Quyền riêng tư Toàn cầu này cung cấp thông tin về cách Bynder xử lý dữ liệu với tư cách là bên kiểm soát dữ liệu, nghĩa là tất cả dữ liệu chúng tôi xử lý cho mục đích riêng của mình. "
+      },
+      "second": {
+        "heading": "2. Lưu trữ và Bảo mật Dữ liệu Cá nhân",
+        "subHeading": "2.1 Lưu giữ Dữ liệu Cá nhân",
+        "description": "Bảo mật dữ liệu là một vấn đề có tầm quan trọng đặc biệt.  <strong></strong>"
+      },
+      "third": {
+        "heading": "3. Dữ liệu và Quyền của Bạn",
+        "subHeading": "3.1 Lưu giữ Dữ liệu Cá nhân",
+        "description": "Nói chung, tùy thuộc vào luật bảo vệ dữ liệu địa phương, bạn có các quyền có thể bao gồm: <br /><br /> <ul> <li> Xóa thông tin về việc chúng tôi xử lý Dữ liệu Cá nhân của bạn; </li> <li> Truy cập Dữ liệu Cá nhân của bạn mà chúng tôi nắm giữ, cùng với quyền sửa chữa những điểm không chính xác; </li> <li> Để gửi Dữ liệu Cá nhân của bạn cho bạn ở định dạng điện tử tiêu chuẩn; </li> <li> Để phản đối việc chúng tôi xử lý Dữ liệu Cá nhân của bạn và để ngăn việc ra quyết định hoặc lập hồ sơ hoàn toàn tự động;  </li> <li> Để hạn chế chúng tôi xử lý Dữ liệu Cá nhân của bạn hoặc xóa Dữ liệu Cá nhân của bạn. </li> </ul>"
       }
     }
   },
@@ -309,7 +354,7 @@
     },
     "chatWithSpecialist": {
       "title": "Chat với bác sĩ chuyên khoa",
-      "description": "Có sẵn 9 giờ sáng - 5 giờ chiều AEST, Thứ Hai - Thứ Sáu",
+      "description": "Có sẵn từ 9 giờ sáng - 5 giờ chiều AEST, Thứ Hai - Thứ Sáu",
       "linkText": "Nói chuyện ngay"
     },
     "contactForm": {
