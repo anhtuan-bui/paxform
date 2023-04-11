@@ -338,11 +338,16 @@ export default function Footer() {
 
   const [footer, setFooter] = useState(true);
 
-  const [languageCode, setLanguageCode] = useState("en_AU");
+  const [languageCode, setLanguageCode] = useState("");
 
   const handleLanguageChange = (e) => {
     // const short = e.target.value.split("-")[0];
     const lang = e.target.value;
+
+    if (!lang) {
+      return;
+    }
+
     setLanguageCode(lang);
     i18n.changeLanguage(convertLangToLocale(lang));
     localStorage.setItem("lang", lang);
@@ -516,6 +521,9 @@ export default function Footer() {
                 defaultValue={languageCode}
                 onChange={(e) => handleLanguageChange(e)}
               >
+                <option className="footer__bottom-languages-option" value="">
+                  {t("selectYourLanguage")}
+                </option>
                 {languages.map((language, index) => (
                   <SelectorOption
                     language={language}
