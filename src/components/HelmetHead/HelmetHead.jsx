@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 
 export default function HelmetHead({ url, title, description, image }) {
   return (
-    <Helmet>
+    <Helmet prioritizeSeoTags>
       <meta property="og:type" content="article" />
       <title>{`Paxform | ${title}`} </title>
       <meta property="og:whatsapp" content="share"></meta>
