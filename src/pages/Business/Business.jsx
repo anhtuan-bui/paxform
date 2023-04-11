@@ -45,38 +45,38 @@ const features = [
 const plans = [
   {
     mainColor: "grey",
-    title: t("plans.free.title"),
-    price: [0, t("plans.free.price")],
-    description: t("plans.free.description"),
+    title: t("businessPage.plans.free.title"),
+    price: [0, t("businessPage.plans.free.price")],
+    description: t("businessPage.plans.free.description"),
     features: [
-      t("plans.free.features.first"),
-      t("plans.free.features.second"),
-      t("plans.free.features.third"),
-      t("plans.free.features.fourth"),
+      t("businessPage.plans.free.features.first"),
+      t("businessPage.plans.free.features.second"),
+      t("businessPage.plans.free.features.third"),
+      t("businessPage.plans.free.features.fourth"),
     ],
   },
   {
     mainColor: "green",
-    title: t("plans.premium.title"),
-    price: [50, t("plans.premium.price")],
-    description: t("plans.premium.description"),
+    title: t("businessPage.plans.premium.title"),
+    price: [50, t("businessPage.plans.premium.price")],
+    description: t("businessPage.plans.premium.description"),
     features: [
-      t("plans.premium.features.first"),
-      t("plans.premium.features.second"),
-      t("plans.premium.features.third"),
-      t("plans.premium.features.fourth"),
+      t("businessPage.plans.premium.features.first"),
+      t("businessPage.plans.premium.features.second"),
+      t("businessPage.plans.premium.features.third"),
+      t("businessPage.plans.premium.features.fourth"),
     ],
   },
   {
     mainColor: "blue",
-    title: t("plans.family.title"),
-    price: [t("plans.family.price"), ""],
-    description: t("plans.family.description"),
+    title: t("businessPage.plans.family.title"),
+    price: [t("businessPage.plans.family.price"), ""],
+    description: t("businessPage.plans.family.description"),
     features: [
-      t("plans.family.features.first"),
-      t("plans.family.features.second"),
-      t("plans.family.features.third"),
-      t("plans.family.features.fourth"),
+      t("businessPage.plans.family.features.first"),
+      t("businessPage.plans.family.features.second"),
+      t("businessPage.plans.family.features.third"),
+      t("businessPage.plans.family.features.fourth"),
     ],
   },
 ];
@@ -161,16 +161,16 @@ const plans = [
             <div className="plans__top">
               <div className="plans__top-title">
                 <p className="plans__name section_name">
-                  {t("plans.sectionName")}
+                  {t("businessPage.plans.sectionName")}
                 </p>
                 <h1 className="plans__title section_title">
-                  {t("plans.sectionTitle")}
+                  {t("businessPage.plans.sectionTitle")}
                 </h1>
               </div>
               <div className="plans__top-button">
                 <Button
                   className="plans__button"
-                  text={t("plans.fullPricingButton")}
+                  text={t("businessPage.plans.fullPricingButton")}
                   type="arrow outline"
                   color="green"
                   href="/pricing"

@@ -1,457 +1,502 @@
 {
-    "signUp": "Sign Up",
-    "howItWork": "How it works",
-    "learnMore": "Learn more",
-    "contactUs": "Contact Us",
-    "business": "Business",
-    "personal": "Personal",
-    "pricing": "Pricing",
-    "useCases": "Use Cases",
-    "support": "Support",
-    "resources": "Resources",
-    "blogs": "Blog",
-    "faqs": "FAQs",
-    "security": "Security",
-    "template": "Template",
-    "integrations": "Integrations",
-    "businessFeatures": "Business Features",
-    "formDesigner": "Form Designer",
-    "chat": "Chat",
-    "disclosures": "Disclosures",
-    "electronicSignatures": "Electronic Signatures",
-    "additionalQuestions": "Additional Questions",
-    "customStatuses": "Custom Statuses",
-    "consumerFeatures": "CONSUMER FEATURES",
-    "passwordManager": "Password Manager",
-    "passwordGenerator": "Password Generator",
-    "secret": "Secret",
-    "chatNotifications": "Chat & Notifications",
-    "helpCenter": "Help Center",
-    "encryption": "Encryption",
-    "biometric": "Biometric",
-    "fileStorage": "File Storage",
-    "dataStorage": "Data Storage",
-    "password": "Password",
-    "autoTimeout": "Auto Timeout",
-    "forms": "Forms",
-    "contactForm": "Contact Form",
-    "feedbackForm": "Feedback Form",
-    "securityForm": "Security Form",
-    "copyrightForm": "Copyright Form",
-    "gdprForm": "GDPR Form",
-    "company": "Company",
-    "aboutUs": "About Us",
-    "requestDemo": "Request a Demo",
-    "partnerProgram": "Partner Program",
-    "careers": "Careers",
-    "newsroom": "Newsroom",
-    "brandKit": "Brand kit",
-    "legal": "Legal",
-    "websiteTermsOfUse": "Website Terms of Use",
-    "websitePrivacyPolicy": "Website Privacy Policy",
-    "copyrightPaxform": "© Copyright 2022 Paxform. All rights reserved.",
-    "privacyPolicy": "Privacy Policy",
-    "termOfService": "Terms of Service",
-    "getStartedBtn": "Get Started",
-    "forever": "forever",
-    "free": "Free",
-    "premium": "Premium",
-    "family": "Family",
-    "customPricing": "Custom Pricing",
-    "fullName": "Full Name",
-    "email": "Email",
-    "companyName": "Company Name",
-    "companySize": "Company Size",
-    "message": "Message",
-    "selectARangeOfEmployees": "Select a range of employees",
-    "frequentlyAskedQuestions": "Frequently Asked Questions",
-    "max": "max",
-    "unlimited": "Unlimited",
-    "month": "month",
-    "essential": "Essential",
-    "standard": "Standard",
-    "plus": "Plus",
-    "features": "Features",
-    "blogToday": "BLOG TODAY",
-    "allPostsLoaded": "All posts loaded.",
-    "share": "Share",
-    "recommended": "Recommended",
-    "readArticle": "Read Article",
-    "seeAll": "See all",
-    "readMore": "Read More",
-    "all": "All",
-    "inThisCaseStudy": "In this case study",
-    "custom": "Custom",
-    "securityPolicy": {
-        "name": "SECURITY POLICY",
-        "title": "Only you can access your data. Not us—Not anyone else.",
-        "description": "<p>Paxform will never share your data with anyone. What’s more, no one at Paxform can view or access your information. Our mission is to apply end-to-end encryption to every piece of information stored, protecting the data of organizations and individuals at all stages and at all costs.</p> <p>Only you decide which parties can view what pieces of information. Our security architecture ensures that personal data is decentralized, guaranteeing that the point of access in a potential security threat will not reveal any information.</p>"
+  "signUp": "Sign Up",
+  "howItWork": "How it works",
+  "learnMore": "Learn more",
+  "contactUs": "Contact Us",
+  "business": "Business",
+  "personal": "Personal",
+  "pricing": "Pricing",
+  "useCases": "Use Cases",
+  "support": "Support",
+  "resources": "Resources",
+  "blogs": "Blog",
+  "faqs": "FAQs",
+  "security": "Security",
+  "template": "Template",
+  "integrations": "Integrations",
+  "businessFeatures": "Business Features",
+  "formDesigner": "Form Designer",
+  "chat": "Chat",
+  "disclosures": "Disclosures",
+  "electronicSignatures": "Electronic Signatures",
+  "additionalQuestions": "Additional Questions",
+  "customStatuses": "Custom Statuses",
+  "consumerFeatures": "CONSUMER FEATURES",
+  "passwordManager": "Password Manager",
+  "passwordGenerator": "Password Generator",
+  "secret": "Secret",
+  "chatNotifications": "Chat & Notifications",
+  "helpCenter": "Help Center",
+  "encryption": "Encryption",
+  "biometric": "Biometric",
+  "fileStorage": "File Storage",
+  "dataStorage": "Data Storage",
+  "password": "Password",
+  "autoTimeout": "Auto Timeout",
+  "forms": "Forms",
+  "contactForm": "Contact Form",
+  "feedbackForm": "Feedback Form",
+  "securityForm": "Security Form",
+  "copyrightForm": "Copyright Form",
+  "gdprForm": "GDPR Form",
+  "company": "Company",
+  "aboutUs": "About Us",
+  "requestDemo": "Request a Demo",
+  "partnerProgram": "Partner Program",
+  "careers": "Careers",
+  "newsroom": "Newsroom",
+  "brandKit": "Brand kit",
+  "legal": "Legal",
+  "websiteTermsOfUse": "Website Terms of Use",
+  "websitePrivacyPolicy": "Website Privacy Policy",
+  "copyrightPaxform": "© Copyright 2022 Paxform. All rights reserved.",
+  "privacyPolicy": "Privacy Policy",
+  "termOfService": "Terms of Service",
+  "getStartedBtn": "Get Started",
+  "forever": "forever",
+  "free": "Free",
+  "premium": "Premium",
+  "family": "Family",
+  "customPricing": "Custom Pricing",
+  "fullName": "Full Name",
+  "email": "Email",
+  "companyName": "Company Name",
+  "companySize": "Company Size",
+  "message": "Message",
+  "selectARangeOfEmployees": "Select a range of employees",
+  "frequentlyAskedQuestions": "Frequently Asked Questions",
+  "max": "max",
+  "unlimited": "Unlimited",
+  "month": "month",
+  "essential": "Essential",
+  "standard": "Standard",
+  "plus": "Plus",
+  "features": "Features",
+  "blogToday": "BLOG TODAY",
+  "allPostsLoaded": "All posts loaded.",
+  "share": "Share",
+  "recommended": "Recommended",
+  "readArticle": "Read Article",
+  "seeAll": "See all",
+  "readMore": "Read More",
+  "all": "All",
+  "inThisCaseStudy": "In this case study",
+  "custom": "Custom",
+  "securityPolicy": {
+    "name": "SECURITY POLICY",
+    "title": "Only you can access your data. Not us—Not anyone else.",
+    "description": "<p>Paxform will never share your data with anyone. What’s more, no one at Paxform can view or access your information. Our mission is to apply end-to-end encryption to every piece of information stored, protecting the data of organizations and individuals at all stages and at all costs.</p> <p>Only you decide which parties can view what pieces of information. Our security architecture ensures that personal data is decentralized, guaranteeing that the point of access in a potential security threat will not reveal any information.</p>"
+  },
+  "testimonial": {
+    "name": "TESTIMONIAL",
+    "title": "What people are saying about Paxform"
+  },
+  "getStarted": {
+    "title": "Get started for free. <br /> Download from your app store.",
+    "cardTitle1": "We’d love to hear from you!",
+    "cardTitle2": "Always know what you pay",
+    "cardTitle3": "Start your integration",
+    "cardDescription1": "You can also contact us to design a custom package for your business.automatically match that data no matter which form you are filling in. Say goodbye to manually inputting the same data over and over again.",
+    "cardDescription2": "Experience a new level of convenience by using your stored signatures to electronically sign your documents.",
+    "cardDescription3": "Experience a new level of convenience by using your stored signatures to electronically sign your documents."
+  },
+  "latestBlogs": {
+    "name": "PAXFORM BLOG",
+    "title": "Latest Blog’s from Paxform",
+    "button": "See All Blog Post"
+  },
+  "home": {
+    "hero": {
+      "title": "Forms <br /> without forms",
+      "description": "Paxform allows users to securely save and manage their personal data for immediate reference, enabling them to easily sign documents and share information with others."
     },
-    "testimonial": {
-        "name": "TESTIMONIAL",
-        "title": "What people are saying about Paxform"
+    "businessPlatform": {
+      "name": "BUSINESS PLATFORM",
+      "title": "Your business information at your fingertips",
+      "learnMoreAboutBusiness": "Learn more about Business",
+      "platformTitle1": "Create forms that suit your organization’s needs and send them to customers",
+      "platformTitle2": "Eliminate transcription & administrative rework",
+      "platformTitle3": "Reduce form abandonment rates",
+      "platformTitle4": "Reduce form abandonment rates",
+      "platformDescription1": "The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.",
+      "platformDescription2": "Receive auto-completed electronic forms the moment your customer shares it with your organization - No more waiting for hard copies to arrive because Paxform eliminates.",
+      "platformDescription3": "Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant.",
+      "platformDescription4": "Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant."
     },
-    "getStarted": {
-        "title": "Get started for free. <br /> Download from your app store.",
-        "cardTitle1": "We’d love to hear from you!",
-        "cardTitle2": "Always know what you pay",
-        "cardTitle3": "Start your integration",
-        "cardDescription1": "You can also contact us to design a custom package for your business.automatically match that data no matter which form you are filling in. Say goodbye to manually inputting the same data over and over again.",
-        "cardDescription2": "Experience a new level of convenience by using your stored signatures to electronically sign your documents.",
-        "cardDescription3": "Experience a new level of convenience by using your stored signatures to electronically sign your documents."
+    "personalPlatform": {
+      "name": "PERSONAL PLATFORM",
+      "title": "Your personal information at your fingertips",
+      "learnMoreAboutPersonal": "Learn more about Personal",
+      "platformTitle1": "Capture, save and use personal information to complete forms and applications",
+      "platformTitle2": "Share forms and applications with other parties and organizations",
+      "platformTitle3": "Complete simple and complex forms",
+      "platformTitle4": "Link your family's data",
+      "platformTitle5": "Electronically sign documents",
+      "platformDescription1": "The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.",
+      "platformDescription2": "Receive auto-completed electronic forms the moment your customer shares it with your organization - No more waiting for hard copies to arrive because Paxform eliminates.",
+      "platformDescription3": "Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant.",
+      "platformDescription4": "The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.",
+      "platformDescription5": "Experience a new level of convenience by using your stored signatures to electronically sign your documents."
     },
-    "latestBlogs": {
-        "name": "PAXFORM BLOG",
-        "title": "Latest Blog’s from Paxform",
-        "button": "See All Blog Post"
+    "simplicity": {
+      "whyPaxform": "WHY PAXFORM",
+      "title": "We simplify your work",
+      "cardTitle1": "Find all your information in one place",
+      "cardTitle2": "Most forms are too complex",
+      "cardDescription1": "<p>It can be a hassle looking for where you have stored different information. With Paxform, you can keep all your information like biodatas, signatures and documents, including your contacts, all in one app. </p> <p> Better yet, all the data is encrypted and only you and the person you share it with can have access to it.</p>",
+      "cardDescription2": "<p>Completing forms manually is an incredibly long process, prone to typos and form abandonment that often result in delays. To make matters worse, nearly 30% of people have difficulties understanding basic forms.</p> <p> With Paxform, you fill in your data once and it will automatically match that data no matter which form you are filling in. Say goodbye to manually inputting the same data over and over again.</p>"
+    }
+  },
+  "businessPage": {
+    "hero": {
+      "title": "Your Personal Information in One Place Fill Any Form, Anywhere",
+      "description": "Paxform’s function is simple: it completely fills any form anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety.",
+      "planButton": "See Plan",
+      "howButton": "How it works"
     },
-    "home": {
-        "hero": {
-            "title": "Forms <br /> without forms",
-            "description": "Paxform allows users to securely save and manage their personal data for immediate reference, enabling them to easily sign documents and share information with others."
-        },
-        "businessPlatform": {
-            "name": "BUSINESS PLATFORM",
-            "title": "Your business information at your fingertips",
-            "learnMoreAboutBusiness": "Learn more about Business",
-            "platformTitle1": "Create forms that suit your organization’s needs and send them to customers",
-            "platformTitle2": "Eliminate transcription & administrative rework",
-            "platformTitle3": "Reduce form abandonment rates",
-            "platformTitle4": "Reduce form abandonment rates",
-            "platformDescription1": "The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.",
-            "platformDescription2": "Receive auto-completed electronic forms the moment your customer shares it with your organization - No more waiting for hard copies to arrive because Paxform eliminates.",
-            "platformDescription3": "Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant.",
-            "platformDescription4": "Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant."
-        },
-        "personalPlatform": {
-            "name": "PERSONAL PLATFORM",
-            "title": "Your personal information at your fingertips",
-            "learnMoreAboutPersonal": "Learn more about Personal",
-            "platformTitle1": "Capture, save and use personal information to complete forms and applications",
-            "platformTitle2": "Share forms and applications with other parties and organizations",
-            "platformTitle3": "Complete simple and complex forms",
-            "platformTitle4": "Link your family's data",
-            "platformTitle5": "Electronically sign documents",
-            "platformDescription1": "The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.",
-            "platformDescription2": "Receive auto-completed electronic forms the moment your customer shares it with your organization - No more waiting for hard copies to arrive because Paxform eliminates.",
-            "platformDescription3": "Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant.",
-            "platformDescription4": "The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.",
-            "platformDescription5": "Experience a new level of convenience by using your stored signatures to electronically sign your documents."
-        },
-        "simplicity": {
-            "whyPaxform": "WHY PAXFORM",
-            "title": "We simplify your work",
-            "cardTitle1": "Find all your information in one place",
-            "cardTitle2": "Most forms are too complex",
-            "cardDescription1": "<p>It can be a hassle looking for where you have stored different information. With Paxform, you can keep all your information like biodatas, signatures and documents, including your contacts, all in one app. </p> <p> Better yet, all the data is encrypted and only you and the person you share it with can have access to it.</p>",
-            "cardDescription2": "<p>Completing forms manually is an incredibly long process, prone to typos and form abandonment that often result in delays. To make matters worse, nearly 30% of people have difficulties understanding basic forms.</p> <p> With Paxform, you fill in your data once and it will automatically match that data no matter which form you are filling in. Say goodbye to manually inputting the same data over and over again.</p>"
-        }
+    "flexbox": {
+      "heading": "Paper work was yesterday - Go digital today",
+      "text": "Eliminate the lengthy process of administrative rework while leaving no environmental footprint."
     },
-    "businessPage": {
-        "hero": {
-            "title": "Your Personal Information in One Place Fill Any Form, Anywhere",
-            "description": "Paxform’s function is simple: it completely fills any form anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety.",
-            "planButton": "See Plan",
-            "howButton": "How it works"
-        },
-        "flexbox": {
-            "heading": "Paper work was yesterday - Go digital today",
-            "text": "Eliminate the lengthy process of administrative rework while leaving no environmental footprint."
-        },
-        "features": {
-            "sectionName": "feature",
-            "sectionTitle": "Features For Your Organisation",
-            "first": {
-                "title": "Create Form Templates",
-                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-            },
-            "second": {
-                "title": "Multiple Admins",
-                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-            },
-            "third": {
-                "title": "View and Procees Applications",
-                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-            },
-            "fourth": {
-                "title": "Use APIs",
-                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-            },
-            "fifth": {
-                "title": "Request Information",
-                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-            }
-        }
+    "features": {
+      "sectionName": "feature",
+      "sectionTitle": "Features For Your Organisation",
+      "first": {
+        "title": "Create Form Templates",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+      },
+      "second": {
+        "title": "Multiple Admins",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+      },
+      "third": {
+        "title": "View and Procees Applications",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+      },
+      "fourth": {
+        "title": "Use APIs",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+      },
+      "fifth": {
+        "title": "Request Information",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+      }
     },
     "plans": {
-        "sectionName": "Personal Plans",
-        "sectionTitle": "Choose a Plan That’s Right for You",
-        "fullPricingButton": "See full pricing",
-        "included": "What’s included",
-        "free": {
-            "title": "Free",
-            "price": "forever",
-            "description": "A simple way to get started for you new to passfolio.",
-            "features": {
-                "first": "Unlimited data",
-                "second": "5 Person saved",
-                "third": "A simple way for you new started to Passfolio.",
-                "fourth": "A simple way for you new started to Passfolio."
-            }
-        },
-        "premium": {
-            "title": "Premium",
-            "price": "forever",
-            "description": "Best for freelance coders & designers who need.",
-            "features": {
-                "first": "Unlimited data",
-                "second": "5 Person saved",
-                "third": "A simple way for you new started to Passfolio.",
-                "fourth": "A simple way for you new started to Passfolio."
-            }
-        },
-        "family": {
-            "title": "Family",
-            "price": "Custom Pricing",
-            "description": "Best for freelance coders & designers who need.",
-            "features": {
-                "first": "Unlimited data",
-                "second": "5 Person saved",
-                "third": "A simple way for you new started to Passfolio.",
-                "fourth": "A simple way for you new started to Passfolio."
-            }
-        }
-    },
-    "personalPage": {
-        "hero": {
-            "name": "PERSONAL",
-            "title": "Your Personal Information in One Place Fill Any Form, Anywhere",
-            "description": "Paxform’s function is simple: it completely fills any form, anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety.",
-            "seePlan": "See Plan"
-        },
-        "flexBox": {
-            "title": "Repeatedly Filling Out Forms with the Same Data Requirements?",
-            "description": "Save precious time by having all your information on demand. Autocomplete forms and applications on the go. Only fill in your data once."
-        },
-        "featuresSection": {
-            "name": "Features",
-            "title": "Features For Your Organisation"
-        },
-        "planSection": {
-            "name": "PERSONAL PLANS",
-            "title": "Choose a Plan That’s Right for You",
-            "button": "See full pricing"
-        },
+      "sectionName": "Personal Plans",
+      "sectionTitle": "Choose a Plan That’s Right for You",
+      "fullPricingButton": "See full pricing",
+      "included": "What’s included",
+      "free": {
+        "title": "Free",
+        "price": "forever",
+        "description": "A simple way to get started for you new to passfolio.",
         "features": {
-            "title1": "Create Form Templates",
-            "title2": "Multiple Admins",
-            "title3": "View and Procees Applications",
-            "title4": "Use API",
-            "title5": "Request Information",
-            "description1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-            "description2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-            "description3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-            "description4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-            "description5": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-        },
-        "plans": {
-            "description1": "A simple way to get started for you new to passfolio.",
-            "description2": "Best for freelance coders & designers who need.",
-            "description3": "Best for freelance coders & designers who need.",
-            "freeFeatures": {
-                "feature1": "Unlimited data",
-                "feature2": "5 Person saved",
-                "feature3": "A simple way for you new started to Passfolio.",
-                "feature4": "A simple way for you new started to Passfolio."
-            },
-            "premiumFeatures": {
-                "feature1": "Unlimited data",
-                "feature2": "5 Person saved",
-                "feature3": "A simple way for you new started to Passfolio.",
-                "feature4": "A simple way for you new started to Passfolio."
-            },
-            "familyFeatures": {
-                "feature1": "Unlimited data",
-                "feature2": "5 Person saved",
-                "feature3": "A simple way for you new started to Passfolio.",
-                "feature4": "A simple way for you new started to Passfolio."
-            }
+          "first": "Unlimited data",
+          "second": "5 Person saved",
+          "third": "A simple way for you new started to Passfolio.",
+          "fourth": "A simple way for you new started to Passfolio."
         }
-    },
-    "notFound": {
-        "title": "Oops's Sorry we can't reach you!",
-        "description": "This page is missing or you assemble it incorrectly",
-        "button": "Go back to home"
-    },
-    "contactUsPage": {
-        "hero": {
-            "title": "We’d love to hear from you",
-            "description": "We value your feedback and are here to assist you with any questions or concerns you may have. Please fill out the form, and one of our representatives will get back to you as soon as possible."
-        },
-        "getInTouch": {
-            "name": "GET IN TOUCH",
-            "title": "Our teams are here to help"
-        },
-        "message": {
-            "title": "Text us {{messageNumber}}",
-            "description": "Message and data rates may apply",
-            "linkText": "Message us"
-        },
-        "sendEmail": {
-            "title": "Send us an email",
-            "description": "We’d love to hear from you!",
-            "linkText": "Email us"
-        },
-        "callUs": {
-            "title": "Call us at {{callNumber}}",
-            "description": "We’d love to hear from you!",
-            "linkText": "Call us"
-        },
-        "chatWithSpecialist": {
-            "title": "Chat with a specialist",
-            "description": "Available 9am - 5pm AEST, Monday - Friday",
-            "linkText": "Chat now"
-        },
-        "contactForm": {
-            "messageTitle": "Your message has been sent!",
-            "message": "We will contact you shortly. Thank you!"
+      },
+      "premium": {
+        "title": "Premium",
+        "price": "forever",
+        "description": "Best for freelance coders & designers who need.",
+        "features": {
+          "first": "Unlimited data",
+          "second": "5 Person saved",
+          "third": "A simple way for you new started to Passfolio.",
+          "fourth": "A simple way for you new started to Passfolio."
         }
-    },
-    "companyPage": {
-        "hero": {
-            "name": "ABOUT US",
-            "title": "Paxform for everyone",
-            "description": "Paxform’s function is simple: it completely fills any form, anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety."
-        },
-        "vision": {
-            "name": "Our Vision",
-            "title": "Forms without forms.",
-            "description": "Paxform’s function is simple: it completely fills any form, anytime. You can manage and save your personal data, allowing you to sign document s and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety."
-        },
-        "diversity": {
-            "title": "Diversity & Inclusion",
-            "description": "<p>At Paxform, we make diversity and inclusion part of everything we do. We are building a culture where one’s unique attributes and differences are part of who we are. Regardless of background or gender, our employees, customers and stakeholders are treated as equals. <p /> <p> As a fast-growing company, we focus on creating a diverse workforce globally and a workplace that welcomes, nurtures and celebrates camaraderie, initiative, leadership and innovation. We strive to build innovative products that can be used by everyone despite their cultural, language or geographic differences, furthermore, achieving the goals that we have set for ourselves and our stakeholders.</p>"
+      },
+      "family": {
+        "title": "Family",
+        "price": "Custom Pricing",
+        "description": "Best for freelance coders & designers who need.",
+        "features": {
+          "first": "Unlimited data",
+          "second": "5 Person saved",
+          "third": "A simple way for you new started to Passfolio.",
+          "fourth": "A simple way for you new started to Passfolio."
         }
-    },
-    "legalPage": {
-        "title": "Paxform Legal",
-        "description": "Find legal information and resources for our products and services, including our policies and terms."
-    },
-    "pricingPage": {
-        "free": {
-            "description": "A simple way to get started for you new to passfolio.",
-            "features": {
-                "first": "Unlimited data",
-                "second": "5 Person saved",
-                "third": "A simple way for you new started to Passfolio.",
-                "fourth": "A simple way for you new started to Passfolio."
-            }
-        },
-        "premium": {
-            "description": "Best for freelance coders & designers who need",
-            "features": {
-                "first": "Unlimited data",
-                "second": "5 Person saved",
-                "third": "A simple way for you new started to Passfolio.",
-                "fourth": "A simple way for you new started to Passfolio."
-            }
-        },
-        "family": {
-            "description": "Best for freelance coders & designers who need",
-            "features": {
-                "first": "Unlimited data",
-                "second": "5 Person saved",
-                "third": "A simple way for you new started to Passfolio.",
-                "fourth": "A simple way for you new started to Passfolio."
-            }
-        },
-        "essential": {
-            "description": "A simple way to get started for you new to passfolio.",
-            "features": {
-                "first": "Unlimited data",
-                "second": "5 Person saved",
-                "third": "A simple way for you new started to Passfolio.",
-                "fourth": "A simple way for you new started to Passfolio."
-            }
-        },
-        "standard": {
-            "description": "Best for freelance coders & designers who need",
-            "features": {
-                "first": "Unlimited data",
-                "second": "5 Person saved",
-                "third": "A simple way for you new started to Passfolio.",
-                "fourth": "A simple way for you new started to Passfolio."
-            }
-        },
-        "plus": {
-            "description": "Best for freelance coders & designers who need",
-            "features": {
-                "first": "Unlimited data",
-                "second": "5 Person saved",
-                "third": "A simple way for you new started to Passfolio.",
-                "fourth": "A simple way for you new started to Passfolio."
-            }
-        },
-        "silver": {
-            "description": "Additional Submissions"
-        },
-        "green": {
-            "description": "Additional Submissions"
-        },
-        "blue": {
-            "description": "Additional Submissions"
-        },
-        "compareList": {
-            "features": {
-                "first": "Pricing per Admin/month",
-                "second": "Number of Admins",
-                "third": "Published Forms",
-                "fourth": "Form template",
-                "fifth": "Agreement Templates",
-                "sixth": "Survey(monthly)",
-                "seventh": "Monthly Submissions",
-                "eight": "Storage Space Available"
-            },
-            "security": "End-to-End Encryption",
-            "supports": {
-                "first": "Generic PDF",
-                "second": "Max Questions per Form",
-                "third": "Conditional Questions",
-                "fourth": "Form template",
-                "fifth": "Attachments(in forms)",
-                "sixth": "Workflow support"
-            }
-        },
-        "hero": {
-            "name": "Pricing",
-            "title": "Choose a Plan That's Right for You"
-        },
-        "dataCredit": {
-            "name": "Data Credit",
-            "title": "Data Credits can be purchased in blocks."
-        },
-        "compare": {
-            "title": "Compare Plans"
-        }
-    },
-    "resourcesPage": {
-        "hero": {
-            "name": "Paxform Resources",
-            "title": "Guides and resources",
-            "description": "Paxform will never share your data with anyone. What’s more, no one at Paxform can view or access your information.",
-            "button": "See all Resources"
-        },
-        "businessInsight": {
-            "name": "BUSINESS INSIGHT HIGHLIGHT",
-            "title": "Latest Business Insight Highlight",
-            "button": "See all"
-        },
-        "insightUpdate": {
-            "name": "Business Insight and Industry Updates"
-        },
-        "latestUpdate": {
-            "name": "INDUSTRY UPDATES HIGHLIGHT",
-            "title": "Latest Industry Updates Highlight"
-        }
+      }
     }
+  },
+  "privacyPolicyPage": {
+    "heroTitle": "Paxform Legal",
+    "securityNavList": {
+      "title": "Security",
+      "first": "Privacy Security",
+      "second": "Shield",
+      "third": "Account Security"
+    },
+    "servicesNavList": {
+      "title": "Services",
+      "first": "Personal",
+      "second": "Business"
+    },
+    "companyNavList": {
+      "title": "Company",
+      "first": "About",
+      "second": "Contact Us",
+      "third": "Pricing"
+    },
+    "content": {
+      "title": "Privacy Policy",
+      "description": "(“Products”) care about how their information is collected, used, processed, transferred, stored, and shared. This Global Privacy Policy describes Bynder’s commitment to protecting your privacy. It forms a part of our <strong>Website Terms of Use, Trial Terms of Use, and Standard Termsof Service</strong>, and all other documents incorporated therein (“Terms”). Any capitalized terms not defined in this Global Privacy Policy are defined as set out in the Terms.<br /><br />Please familiarize yourself with this Global Privacy Policy. This Global Privacy Policy is formally reviewed annually and is updated as often as necessary. Updates will be posted public on the Website. If we make substantive changes to the purposes and policies set out here, we will update this page and we will inform Product Users by email or in-application notification.<br /><br />This Global Privacy Policy provides information on how Bynder handles data as a data controller, meaning all data we process for our own purposes. Where Bynder is a processor or asub-processor of data, that activity is generally governed by a Data Processing Agreement.<br /><br />This Global Privacy Policy provides information on how Bynder handles data as a data controller, meaning all data we process for our own purposes. Where Bynder is a processor or asub-processor of data, that activity is generally governed by a Data Processing Agreement.",
+      "download": {
+        "name": "Paxform Privacy Policy",
+        "btn": "Download as PDF"
+      }
+    },
+    "list": {
+      "first": {
+        "heading": "1. What We Collect and How We Use It",
+        "subHeading": "1.1 website",
+        "description": "This Global Privacy Policy provides information on how Bynder handles data as a data controller, meaning all data we process for our own purposes. Where Bynder is a processor or a sub-processor of data, that activity is generally governed by a Data Processing Agreement."
+      },
+      "second": {
+        "heading": "2. Personal Data Retention and Security",
+        "subHeading": "2.1 Retention of Personal Data",
+        "description": "Data security is a matter of critical importance. Bynder uses a wide range of security measures to safeguard your data against unauthorized access and disclosure and we continually evaluate our security program to ensure its effectiveness. Amazon Web Services provides our servers and maintains them in high-security controlled environments pursuant to the <strong>&nbsp;AWS Cloud</strong>"
+      },
+      "third": {
+        "heading": "3. Your Data and Your Rights",
+        "subHeading": "3.1 Retention of Personal Data",
+        "description": "As a general matter, depending on local data protection laws, you have rights that may include: <br /><br /> <ul> <li> Clear information on our processing of your Personal Data; </li> <li> Access your Personal Data that we hold, together with the right to have inaccuracies corrected; </li> <li> To have your Personal Data delivered to you in a standard electronic format; </li> <li> To object to our processing of your Personal Data, and to prevent solely automated decision making or profiling; and </li> <li> To restrict our processing of your Personal Data, or have your Personal Data deleted. </li> </ul>"
+      }
+    }
+  },
+  "personalPage": {
+    "hero": {
+      "name": "PERSONAL",
+      "title": "Your Personal Information in One Place Fill Any Form, Anywhere",
+      "description": "Paxform’s function is simple: it completely fills any form, anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety.",
+      "seePlan": "See Plan"
+    },
+    "flexBox": {
+      "title": "Repeatedly Filling Out Forms with the Same Data Requirements?",
+      "description": "Save precious time by having all your information on demand. Autocomplete forms and applications on the go. Only fill in your data once."
+    },
+    "featuresSection": {
+      "name": "Features",
+      "title": "Features For Your Organisation"
+    },
+    "planSection": {
+      "name": "PERSONAL PLANS",
+      "title": "Choose a Plan That’s Right for You",
+      "button": "See full pricing"
+    },
+    "features": {
+      "title1": "Create Form Templates",
+      "title2": "Multiple Admins",
+      "title3": "View and Procees Applications",
+      "title4": "Use API",
+      "title5": "Request Information",
+      "description1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "description2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "description3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "description4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "description5": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    "plans": {
+      "description1": "A simple way to get started for you new to passfolio.",
+      "description2": "Best for freelance coders & designers who need.",
+      "description3": "Best for freelance coders & designers who need.",
+      "freeFeatures": {
+        "feature1": "Unlimited data",
+        "feature2": "5 Person saved",
+        "feature3": "A simple way for you new started to Passfolio.",
+        "feature4": "A simple way for you new started to Passfolio."
+      },
+      "premiumFeatures": {
+        "feature1": "Unlimited data",
+        "feature2": "5 Person saved",
+        "feature3": "A simple way for you new started to Passfolio.",
+        "feature4": "A simple way for you new started to Passfolio."
+      },
+      "familyFeatures": {
+        "feature1": "Unlimited data",
+        "feature2": "5 Person saved",
+        "feature3": "A simple way for you new started to Passfolio.",
+        "feature4": "A simple way for you new started to Passfolio."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Oops's Sorry we can't reach you!",
+    "description": "This page is missing or you assemble it incorrectly",
+    "button": "Go back to home"
+  },
+  "contactUsPage": {
+    "hero": {
+      "title": "We’d love to hear from you",
+      "description": "We value your feedback and are here to assist you with any questions or concerns you may have. Please fill out the form, and one of our representatives will get back to you as soon as possible."
+    },
+    "getInTouch": {
+      "name": "GET IN TOUCH",
+      "title": "Our teams are here to help"
+    },
+    "message": {
+      "title": "Text us {{messageNumber}}",
+      "description": "Message and data rates may apply",
+      "linkText": "Message us"
+    },
+    "sendEmail": {
+      "title": "Send us an email",
+      "description": "We’d love to hear from you!",
+      "linkText": "Email us"
+    },
+    "callUs": {
+      "title": "Call us at {{callNumber}}",
+      "description": "We’d love to hear from you!",
+      "linkText": "Call us"
+    },
+    "chatWithSpecialist": {
+      "title": "Chat with a specialist",
+      "description": "Available 9am - 5pm AEST, Monday - Friday",
+      "linkText": "Chat now"
+    },
+    "contactForm": {
+      "messageTitle": "Your message has been sent!",
+      "message": "We will contact you shortly. Thank you!"
+    }
+  },
+  "companyPage": {
+    "hero": {
+      "name": "ABOUT US",
+      "title": "Paxform for everyone",
+      "description": "Paxform’s function is simple: it completely fills any form, anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety."
+    },
+    "vision": {
+      "name": "Our Vision",
+      "title": "Forms without forms.",
+      "description": "Paxform’s function is simple: it completely fills any form, anytime. You can manage and save your personal data, allowing you to sign document s and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety."
+    },
+    "diversity": {
+      "title": "Diversity & Inclusion",
+      "description": "<p>At Paxform, we make diversity and inclusion part of everything we do. We are building a culture where one’s unique attributes and differences are part of who we are. Regardless of background or gender, our employees, customers and stakeholders are treated as equals. <p /> <p> As a fast-growing company, we focus on creating a diverse workforce globally and a workplace that welcomes, nurtures and celebrates camaraderie, initiative, leadership and innovation. We strive to build innovative products that can be used by everyone despite their cultural, language or geographic differences, furthermore, achieving the goals that we have set for ourselves and our stakeholders.</p>"
+    }
+  },
+  "legalPage": {
+    "title": "Paxform Legal",
+    "description": "Find legal information and resources for our products and services, including our policies and terms."
+  },
+  "pricingPage": {
+    "free": {
+      "description": "A simple way to get started for you new to passfolio.",
+      "features": {
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
+      }
+    },
+    "premium": {
+      "description": "Best for freelance coders & designers who need",
+      "features": {
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
+      }
+    },
+    "family": {
+      "description": "Best for freelance coders & designers who need",
+      "features": {
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
+      }
+    },
+    "essential": {
+      "description": "A simple way to get started for you new to passfolio.",
+      "features": {
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
+      }
+    },
+    "standard": {
+      "description": "Best for freelance coders & designers who need",
+      "features": {
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
+      }
+    },
+    "plus": {
+      "description": "Best for freelance coders & designers who need",
+      "features": {
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
+      }
+    },
+    "silver": {
+      "description": "Additional Submissions"
+    },
+    "green": {
+      "description": "Additional Submissions"
+    },
+    "blue": {
+      "description": "Additional Submissions"
+    },
+    "compareList": {
+      "features": {
+        "first": "Pricing per Admin/month",
+        "second": "Number of Admins",
+        "third": "Published Forms",
+        "fourth": "Form template",
+        "fifth": "Agreement Templates",
+        "sixth": "Survey(monthly)",
+        "seventh": "Monthly Submissions",
+        "eight": "Storage Space Available"
+      },
+      "security": "End-to-End Encryption",
+      "supports": {
+        "first": "Generic PDF",
+        "second": "Max Questions per Form",
+        "third": "Conditional Questions",
+        "fourth": "Form template",
+        "fifth": "Attachments(in forms)",
+        "sixth": "Workflow support"
+      }
+    },
+    "hero": {
+      "name": "Pricing",
+      "title": "Choose a Plan That's Right for You"
+    },
+    "dataCredit": {
+      "name": "Data Credit",
+      "title": "Data Credits can be purchased in blocks."
+    },
+    "compare": {
+      "title": "Compare Plans"
+    }
+  },
+  "resourcesPage": {
+    "hero": {
+      "name": "Paxform Resources",
+      "title": "Guides and resources",
+      "description": "Paxform will never share your data with anyone. What’s more, no one at Paxform can view or access your information.",
+      "button": "See all Resources"
+    },
+    "businessInsight": {
+      "name": "BUSINESS INSIGHT HIGHLIGHT",
+      "title": "Latest Business Insight Highlight",
+      "button": "See all"
+    },
+    "insightUpdate": {
+      "name": "Business Insight and Industry Updates"
+    },
+    "latestUpdate": {
+      "name": "INDUSTRY UPDATES HIGHLIGHT",
+      "title": "Latest Industry Updates Highlight"
+    }
+  }
 }
