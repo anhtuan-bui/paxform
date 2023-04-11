@@ -93,21 +93,17 @@ export default function Personal() {
       <section className="hero">
         <div className="container hero__wrapper">
           <div className="hero__content">
-            <p className="hero__name">PERSONAL</p>
+            <p className="hero__name">{t("personalPage.hero.name")}</p>
             <h1 className="hero__title">
-              Your Personal Information in One Place Fill Any Form, Anywhere
+            {t("personalPage.hero.title")}
             </h1>
             <p className="hero__description">
-              Paxform’s function is simple: it completely fills any form,
-              anytime. You can manage and save your personal data, allowing you
-              to sign documents and send them to organisations with ease. No
-              need to worry about security and privacy—Paxform fully encrypts
-              your data to ensure your safety.
+            {t("personalPage.hero.description")}
             </p>
             <div className="hero__button">
-              <Button text="See Plan" type="flat-white arrow" color="green" />
+              <Button text={t("personalPage.hero.seePlan")} type="flat-white arrow" color="green" />
               <Button
-                text="How it works"
+                text={t("howItWork")}
                 type="outline triangle-right"
                 color="white"
               />
@@ -131,12 +127,10 @@ export default function Personal() {
           </div>
           <div className="flex_box__content">
             <h1 className="flex_box__content-title">
-              Repeatedly Filling Out Forms with the Same Data Requirements?
+              {t("personalPage.flexBox.title")}
             </h1>
             <div className="flex_box__content-description">
-              Save precious time by having all your information on demand.
-              Autocomplete forms and applications on the go. Only fill in your
-              data once.
+              {t("personalPage.flexBox.description")}
             </div>
           </div>
         </div>
@@ -151,9 +145,9 @@ export default function Personal() {
               <img src={repeatlyIllustration} alt="forms from Paxform" />
             </div>
             <div className="features__accordion">
-              <p className="features__name section_name">Features</p>
+              <p className="features__name section_name">{t("personalPage.featuresSection.name")}</p>
               <h1 className="features__title">
-                Features For Your Organisation
+              {t("personalPage.featuresSection.title")}
               </h1>
               <Accordion
                 list={features}
@@ -172,15 +166,15 @@ export default function Personal() {
         <div className="container plans__container">
           <div className="plans__top">
             <div className="plans__top-title">
-              <p className="plans__name section_name">PERSONAL PLANS</p>
+              <p className="plans__name section_name">{t("personalPage.planSection.name")}</p>
               <h1 className="plans__title section_title">
-                Choose a Plan That’s Right for You
+              {t("personalPage.planSection.title")}
               </h1>
             </div>
             <div className="plans__top-button">
               <Button
                 className="plans__button"
-                text="See full pricing"
+                text={t("personalPage.planSection.button")}
                 type="arrow outline"
                 color="green"
                 href="/pricing"

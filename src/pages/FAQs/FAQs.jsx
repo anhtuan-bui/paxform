@@ -6,11 +6,13 @@ import FAQ from "../../components/FAQ/FAQ";
 import { useQuery } from "@apollo/client";
 import { GET_FAQS } from "../../lib/graphqlQuery";
 import Skeleton from "react-loading-skeleton";
-import { convertToSlug, scrollIntoViewWithOffset } from "../../lib/util";
+import { convertToSlug, queryLanguageCode, scrollIntoViewWithOffset } from "../../lib/util";
 import { useTranslation } from "react-i18next";
 export default function FAQs() {
   const {t} = useTranslation();
-  const { loading, data } = useQuery(GET_FAQS);
+  const { loading, data } = useQuery(GET_FAQS, {variables: {
+    language: queryLanguageCode()
+  }});
   const [headings, setHeadings] = useState([]);
 
   const faqCategories = !loading

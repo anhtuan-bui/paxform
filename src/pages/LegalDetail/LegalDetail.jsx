@@ -10,6 +10,7 @@ import Skeleton from "react-loading-skeleton";
 import { Link, useLocation } from "react-router-dom";
 
 import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
+import { queryLanguageCode } from "../../lib/util";
 
 export default function LegalDetail() {
   const [pageTitle, setPageTitle] = useState("");
@@ -17,7 +18,9 @@ export default function LegalDetail() {
     setPageTitle(title);
   };
   const { loading: legalDetailLoading, data: legalDetailData } =
-    useQuery(GET_LEGAL_CATEGORIES);
+    useQuery(GET_LEGAL_CATEGORIES, {
+      variables: { language: queryLanguageCode() },
+    });
 
   const legalDetailCategories = !legalDetailLoading
     ? [...legalDetailData.legalCategories.nodes].sort(

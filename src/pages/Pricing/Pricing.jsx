@@ -81,7 +81,7 @@ class Pricing extends Component {
       {
         title: this.t("family"),
         description: this.t("pricingPage.family.description"),
-        cost: "Custom",
+        cost: this.t("custom"),
         period: "",
         features: [
           this.t("pricingPage.family.features.first"),
@@ -349,7 +349,7 @@ class Pricing extends Component {
                       <span>{price.period}</span>
                     </strong>
                     <Button
-                      text="Get started"
+                      text={this.t("getStartedBtn")}
                       type={`arrow ${index === 1 ? "flat-green" : "outline"}`}
                       color={`${index === 1 ? "white" : "green"}`}
                       href={this.registerLink}
@@ -444,7 +444,7 @@ class Pricing extends Component {
                               <em>{price.period}</em>
                             </span>
                             <Button
-                              text="Get started"
+                              text={this.t("getStartedBtn")}
                               type={`arrow ${
                                 index === 1 ? "flat-green" : "outline"
                               }`}

@@ -16,6 +16,7 @@ import withRouter from "../../lib/helper";
 import client from "../../configurations/apollo";
 import { GET_USE_CASES } from "../../lib/graphqlQuery";
 import { withTranslation } from "react-i18next";
+import { queryLanguageCode } from "../../lib/util";
 
 class Header extends Component {
   app = {
@@ -63,7 +64,7 @@ class Header extends Component {
   }
 
   loadUseCaseMenu() {
-    client.query({ query: GET_USE_CASES }).then((result) => {
+    client.query({ query: GET_USE_CASES , variables: {language: queryLanguageCode()}}).then((result) => {
       const useCasesResult = result.data.useCases.nodes;
       useCasesResult.forEach((useCaseResult) => {
         const useCase = {

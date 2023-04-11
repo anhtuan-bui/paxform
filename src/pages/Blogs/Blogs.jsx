@@ -9,12 +9,13 @@ import Button from "../../components/Button/Button";
 import BlogCard from "../../components/BlogCard/BlogCard";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
-import { scrollTop } from "../../lib/util";
+import { queryLanguageCode, scrollTop } from "../../lib/util";
+import { useTranslation } from "react-i18next";
 
 export default function Blogs() {
   const [chip, setChip] = useState("all");
 
-  const { loading, data } = useQuery(GET_CATEGORIES);
+  const { loading, data } = useQuery(GET_CATEGORIES, {variables: {language: queryLanguageCode()}});
 
   const categories = !loading
     ? data?.categories?.nodes
@@ -87,14 +88,15 @@ const Chip = ({ category, onChange, checked }) => {
 };
 
 const HeroBlogInfo = () => {
+  const {t} = useTranslation();
   const { loading, data } = useQuery(GET_POSTS, {
-    variables: { first: 1, after: null },
+    variables: { first: 1, after: null, language: queryLanguageCode() },
     fetchPolicy: "no-cache",
   });
 
   const blog = data?.posts?.nodes[0];
 
-  const headline = !loading ? "BLOG TODAYS" : <Skeleton width={100} />;
+  const headline = !loading ? t("blogToday") : <Skeleton width={100} />;
   const title = !loading ? (
     blog?.title
   ) : (
@@ -153,11 +155,13 @@ const HeroBlogInfo = () => {
 };
 
 const BlogsView = ({ chip }) => {
+  const {t} = useTranslation();
   const batchSize = 8;
   // get the first post to get the cursor for the first batch of posts
   const { data: firstPost } = useQuery(GET_POSTS, {
     variables: {
       first: 1,
+      language: queryLanguageCode(),
     },
   });
 
@@ -166,6 +170,7 @@ const BlogsView = ({ chip }) => {
     variables: {
       first: batchSize,
       after: firstPost?.posts?.pageInfo.endCursor,
+      language: queryLanguageCode(),
     },
     notifyOnNetworkStatusChange: true,
   });
@@ -222,7 +227,7 @@ const BlogsView = ({ chip }) => {
             }}
           />
         ) : (
-          <p>All posts loaded.</p>
+          <p>{t("allPostsLoaded")}</p>
         )}
       </div>
     </Fragment>

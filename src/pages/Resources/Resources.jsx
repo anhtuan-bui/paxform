@@ -22,14 +22,19 @@ import {
   GET_RESOURCES_CATEGORIES,
 } from "../../lib/graphqlQuery";
 import Skeleton from "react-loading-skeleton";
+import { convertToSlug, queryLanguageCode } from "../../lib/util";
+import { useTranslation } from "react-i18next";
 
 export default function Resources() {
+  const {t} = useTranslation();
   const [chip, setChip] = useState("all");
   const [resourceCategories, setResourceCategories] = useState([]);
   const [colorMap] = useState(new Map());
   const colors = ["#20976c", "#0a61b4", "#A8CA13", "#F48C06"];
 
-  const { loading, data } = useQuery(GET_FIRST_TWO_RESOURCES);
+  const { loading, data } = useQuery(GET_FIRST_TWO_RESOURCES, {variables: {
+    language: queryLanguageCode()
+  }});
 
   const twoResources = !loading
     ? data?.resources?.nodes
@@ -70,16 +75,15 @@ export default function Resources() {
             </div>
           </div>
           <div className="hero__content">
-            <p className="hero__name section_name">Paxform Resources</p>
-            <h1 className="hero__title">Guides and resources</h1>
+            <p className="hero__name section_name">{t("resourcesPage.hero.name")}</p>
+            <h1 className="hero__title">{t("resourcesPage.hero.title")}</h1>
             <p className="hero__description">
-              Paxform will never share your data with anyone. What’s more, no
-              one at Paxform can view or access your information.
+              {t("resourcesPage.hero.description")}
             </p>
             <Button
               type="flat-green arrow"
               color="white"
-              text="See all Resources"
+              text={t("resourcesPage.hero.button")}
             />
           </div>
         </div>
@@ -99,14 +103,14 @@ export default function Resources() {
             <div className="business_insight__top">
               <div className="business_insight__highlight">
                 <p className="section_name business_insight__name">
-                  BUSINESS INSIGHT HIGHLIGHT
+                  {t("resourcesPage.businessInsight.name")}
                 </p>
                 <h1 className="section_title business_insight__title">
-                  Latest Business Insight Highlight
+                {t("resourcesPage.businessInsight.title")}
                 </h1>
               </div>
               <div className="business_insight__button">
-                <Button type="outline arrow" text="See all" color="green" />
+                <Button type="outline arrow" text={t("resourcesPage.businessInsight.button")} color="green" />
               </div>
             </div>
 
@@ -120,7 +124,7 @@ export default function Resources() {
         <div className="container">
           <div className="insight_update__wrapper">
             <h1 className="insight_update__title section_title">
-              Business Insight and Industry Updates
+            {t("resourcesPage.insightUpdate.name")}
             </h1>
             <UpdateRadios
               loadChip={loadChip}
@@ -143,14 +147,14 @@ export default function Resources() {
             <div className="latest_update__top">
               <div className="latest_update__highlight">
                 <p className="latest_update__name section_name">
-                  INDUSTRY UPDATES HIGHLIGHT
+                  {t("resourcesPage.latestUpdate.name")}
                 </p>
                 <h1 className="latest_update__title section_title">
-                  Latest Industry Updates Highlight
+                {t("resourcesPage.latestUpdate.title")}
                 </h1>
               </div>
               <div className="latest_update__button">
-                <Button type="outline arrow" color="green" text="See all" />
+                <Button type="outline arrow" color="green" text={t("seeAll")} />
               </div>
             </div>
 
@@ -198,6 +202,7 @@ const LatestUpdates = ({ chip, endCursor, colorMap }) => {
     variables: {
       first: 8,
       cursor: endCursor,
+      language: queryLanguageCode()
     },
   });
 
@@ -233,6 +238,7 @@ const LatestUpdates = ({ chip, endCursor, colorMap }) => {
 };
 
 const UpdateRadios = ({ loadChip, loadResourceCategories }) => {
+  const {t} = useTranslation();
   const [chip, setChip] = useState("all");
   const [load, setLoad] = useState(false);
 
@@ -241,7 +247,9 @@ const UpdateRadios = ({ loadChip, loadResourceCategories }) => {
     setChip(event.target.id);
   };
 
-  const { loading, data } = useQuery(GET_RESOURCES_CATEGORIES);
+  const { loading, data } = useQuery(GET_RESOURCES_CATEGORIES, {variables: {
+    language: queryLanguageCode()
+  }});
 
   const resourceCategories = !loading
     ? data?.resourceCategories?.nodes.filter((node) => node.count > 0)
@@ -259,13 +267,13 @@ const UpdateRadios = ({ loadChip, loadResourceCategories }) => {
         <Fragment>
           <div className="chip">
             <input
-              id="all"
+              id={convertToSlug(t("all"))}
               type="radio"
               name="radio"
               onChange={handleRadioChange}
-              checked={chip === "all"}
+              checked={chip === convertToSlug(t("all"))}
             />
-            <label htmlFor="all">All</label>
+            <label htmlFor="all">{t("all")}</label>
           </div>
           {resourceCategories.map((category, index) => (
             <div className="chip" key={index}>

@@ -3,8 +3,10 @@ import Skeleton from "react-loading-skeleton";
 // import card1 from "../../assets/images/card-resource-1.png";
 import Button from "../Button/Button";
 import "./ResourceCard.scss";
+import { useTranslation } from "react-i18next";
 
 export default function ResourceCard(props) {
+  const {t} = useTranslation();
   const variant = props.variant ? `resource_card__image--${props.variant}` : "";
   const background = props.background
     ? `resource_card--${props.background}`
@@ -41,7 +43,7 @@ export default function ResourceCard(props) {
           <Button
             type="arrow outline"
             color="green"
-            text="Read More"
+            text={t("readMore")}
             href={`/resources/${slug}`}
           />
         ) : (

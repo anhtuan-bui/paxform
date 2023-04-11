@@ -10,12 +10,14 @@ import "react-loading-skeleton/dist/skeleton.css";
 // import card3 from "../../assets/images/card3.png";
 import { GET_BLOGS } from "../../lib/graphqlQuery";
 import { useTranslation } from "react-i18next";
+import { queryLanguageCode } from "../../lib/util";
 
 export default function LatestBlogs({ triangleColor }) {
   const {t} = useTranslation();
   const { loading, data } = useQuery(GET_BLOGS, {
     variables: {
       first: 4,
+      language: queryLanguageCode()
     },
   });
 

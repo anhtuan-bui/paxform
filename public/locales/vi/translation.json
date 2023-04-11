@@ -52,6 +52,36 @@
   "copyrightPaxform": "© Bản quyền 2022 Paxform. ",
   "privacyPolicy": "Chính sách bảo mật",
   "termOfService": "Điều khoản dịch vụ",
+  "getStartedBtn": "Bắt đầu",
+  "forever": "mãi mãi",
+  "free": "Miễn phí",
+  "premium": "Phần thưởng",
+  "family": "Gia đình",
+  "customPricing": "giá tùy chỉnh",
+  "fullName": "Họ và tên",
+  "email": "E-mail",
+  "companyName": "Tên công ty",
+  "companySize": "Quy mô công ty",
+  "message": "Tin nhắn",
+  "selectARangeOfEmployees": "Chọn một loạt nhân viên",
+  "frequentlyAskedQuestions": "Các câu hỏi thường gặp",
+  "max": "tối đa",
+  "unlimited": "Vô hạn",
+  "month": "tháng",
+  "essential": "Thiết yếu",
+  "standard": "Tiêu chuẩn",
+  "plus": "Thêm",
+  "features": "Đặc trưng",
+  "blogToday": "BLOG HÔM NAY",
+  "allPostsLoaded": "Đã tải tất cả các bài đăng.",
+  "share": "Chia sẻ",
+  "recommended": "Khuyến khích",
+  "readArticle": "đọc bài viết",
+  "seeAll": "Nhìn thấy tất cả",
+  "readMore": "Đọc thêm",
+  "all": "Tất cả",
+  "inThisCaseStudy": "trong nghiên cứu trường hợp này",
+  "custom": "Phong tục",
   "securityPolicy": {
     "name": "CHÍNH SÁCH BẢO MẬT",
     "title": "Chỉ bạn mới có thể truy cập dữ liệu của mình. ",
@@ -67,8 +97,13 @@
     "cardTitle2": "Luôn biết những gì bạn phải trả",
     "cardTitle3": "Bắt đầu tích hợp của bạn",
     "cardDescription1": "Bạn cũng có thể liên hệ với chúng tôi để thiết kế gói tùy chỉnh cho doanh nghiệp của mình. tự động đối sánh dữ liệu đó cho dù bạn đang điền vào biểu mẫu nào. Hãy nói lời tạm biệt với việc nhập đi nhập lại cùng một dữ liệu theo cách thủ công.",
-    "cardDescription2": "Trải nghiệm mức độ tiện lợi mới bằng cách sử dụng chữ ký được lưu trữ để ký điện tử vào tài liệu của bạn.",
-    "cardDescription3": "Trải nghiệm mức độ tiện lợi mới bằng cách sử dụng chữ ký được lưu trữ để ký điện tử vào tài liệu của bạn."
+    "cardDescription2": "Trải nghiệm một cấp độ tiện lợi mới bằng cách sử dụng chữ ký được lưu trữ của bạn để ký điện tử vào tài liệu của bạn.",
+    "cardDescription3": "Trải nghiệm một cấp độ tiện lợi mới bằng cách sử dụng chữ ký được lưu trữ của bạn để ký điện tử vào tài liệu của bạn."
+  },
+  "latestBlogs": {
+    "name": "BLOG PAXFORM",
+    "title": "Blog mới nhất từ ​​Paxform",
+    "button": "Xem tất cả bài đăng trên blog"
   },
   "home": {
     "hero": {
@@ -101,7 +136,7 @@
       "platformDescription2": "Nhận các biểu mẫu điện tử được điền tự động ngay khi khách hàng của bạn chia sẻ biểu mẫu đó với tổ chức của bạn - Không còn phải chờ các bản in ra giấy nữa vì Paxform đã loại bỏ.",
       "platformDescription3": "Các hình thức là một nhiệm vụ tẻ nhạt, tốn thời gian. ",
       "platformDescription4": "Dữ liệu cá nhân bạn gửi sẽ được ghi lại sau một lần sử dụng và được lưu trữ an toàn trong ứng dụng để sử dụng trong tương lai—bất kỳ lúc nào, bất kỳ hình thức nào. ",
-      "platformDescription5": "Trải nghiệm mức độ tiện lợi mới bằng cách sử dụng chữ ký được lưu trữ để ký điện tử vào tài liệu của bạn."
+      "platformDescription5": "Trải nghiệm một cấp độ tiện lợi mới bằng cách sử dụng chữ ký được lưu trữ của bạn để ký điện tử vào tài liệu của bạn."
     },
     "simplicity": {
       "whyPaxform": "TẠI SAO LÀ PAXFORM",
@@ -110,6 +145,313 @@
       "cardTitle2": "Hầu hết các hình thức quá phức tạp",
       "cardDescription1": "<p>Nó có thể là một rắc rối tìm kiếm nơi bạn đã lưu trữ thông tin khác nhau.  </p> <p> Tốt hơn nữa, tất cả dữ liệu đều được mã hóa và chỉ bạn và người mà bạn chia sẻ dữ liệu đó mới có quyền truy cập vào dữ liệu đó.</p>",
       "cardDescription2": "<p>Hoàn thành biểu mẫu theo cách thủ công là một quá trình cực kỳ dài, dễ mắc lỗi chính tả và bỏ biểu mẫu thường dẫn đến sự chậm trễ. </p> <p> Với Paxform, bạn điền dữ liệu của mình một lần và nó sẽ tự động khớp dữ liệu đó cho dù bạn đang điền vào biểu mẫu nào. Hãy nói lời tạm biệt với việc nhập đi nhập lại cùng một dữ liệu theo cách thủ công.</p>"
+    }
+  },
+  "businessPage": {
+    "hero": {
+      "title": "Thông tin cá nhân của bạn ở một nơi Điền vào mọi biểu mẫu, mọi nơi",
+      "description": "Chức năng của Paxform rất đơn giản: nó hoàn toàn điền vào bất kỳ biểu mẫu nào vào bất kỳ lúc nào. ",
+      "planButton": "Xem kế hoạch",
+      "howButton": "Làm thế nào nó hoạt động"
+    },
+    "flexbox": {
+      "heading": "Công việc giấy tờ là ngày hôm qua - Đi kỹ thuật số ngày hôm nay",
+      "text": "Loại bỏ quá trình làm lại hành chính kéo dài trong khi không để lại dấu vết môi trường."
+    },
+    "features": {
+      "sectionName": "tính năng",
+      "sectionTitle": "Tính năng cho tổ chức của bạn",
+      "first": {
+        "title": "Tạo mẫu biểu mẫu",
+        "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+      },
+      "second": {
+        "title": "Nhiều quản trị viên",
+        "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+      },
+      "third": {
+        "title": "Xem và Tiến hành Ứng dụng",
+        "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+      },
+      "fourth": {
+        "title": "Sử dụng API",
+        "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+      },
+      "fifth": {
+        "title": "Yêu cầu thông tin",
+        "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+      }
+    }
+  },
+  "plans": {
+    "sectionName": "Kế hoạch cá nhân",
+    "sectionTitle": "Chọn một kế hoạch phù hợp với bạn",
+    "fullPricingButton": "Xem giá đầy đủ",
+    "included": "Bao gồm những gì",
+    "free": {
+      "title": "Miễn phí",
+      "price": "mãi mãi",
+      "description": "Một cách đơn giản để bắt đầu cho bạn mới làm quen với passfolio.",
+      "features": {
+        "first": "Dữ liệu không giới hạn",
+        "second": "5 Người được cứu",
+        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      }
+    },
+    "premium": {
+      "title": "Phần thưởng",
+      "price": "mãi mãi",
+      "description": "Tốt nhất cho lập trình viên tự do",
+      "features": {
+        "first": "Dữ liệu không giới hạn",
+        "second": "5 Người được cứu",
+        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      }
+    },
+    "family": {
+      "title": "Gia đình",
+      "price": "giá tùy chỉnh",
+      "description": "Tốt nhất cho lập trình viên tự do",
+      "features": {
+        "first": "Dữ liệu không giới hạn",
+        "second": "5 Người được cứu",
+        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      }
+    }
+  },
+  "personalPage": {
+    "hero": {
+      "name": "RIÊNG TƯ",
+      "title": "Thông tin cá nhân của bạn ở một nơi Điền vào mọi biểu mẫu, mọi nơi",
+      "description": "Chức năng của Paxform rất đơn giản: nó hoàn toàn điền vào bất kỳ biểu mẫu nào, bất cứ lúc nào. ",
+      "seePlan": "Xem kế hoạch"
+    },
+    "flexBox": {
+      "title": "Liên tục điền vào các biểu mẫu với các yêu cầu dữ liệu giống nhau?",
+      "description": "Tiết kiệm thời gian quý báu bằng cách có tất cả thông tin của bạn theo yêu cầu. "
+    },
+    "featuresSection": {
+      "name": "Đặc trưng",
+      "title": "Tính năng cho tổ chức của bạn"
+    },
+    "planSection": {
+      "name": "KẾ HOẠCH CÁ NHÂN",
+      "title": "Chọn một kế hoạch phù hợp với bạn",
+      "button": "Xem giá đầy đủ"
+    },
+    "features": {
+      "title1": "Tạo mẫu biểu mẫu",
+      "title2": "Nhiều quản trị viên",
+      "title3": "Xem và Tiến hành Ứng dụng",
+      "title4": "Sử dụng API",
+      "title5": "Yêu cầu thông tin",
+      "description1": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. ",
+      "description2": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. ",
+      "description3": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. ",
+      "description4": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. ",
+      "description5": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+    },
+    "plans": {
+      "description1": "Một cách đơn giản để bắt đầu cho bạn mới làm quen với passfolio.",
+      "description2": "Tốt nhất cho lập trình viên tự do",
+      "description3": "Tốt nhất cho lập trình viên tự do",
+      "freeFeatures": {
+        "feature1": "Dữ liệu không giới hạn",
+        "feature2": "5 Người được cứu",
+        "feature3": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "feature4": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      },
+      "premiumFeatures": {
+        "feature1": "Dữ liệu không giới hạn",
+        "feature2": "5 Người được cứu",
+        "feature3": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "feature4": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      },
+      "familyFeatures": {
+        "feature1": "Dữ liệu không giới hạn",
+        "feature2": "5 Người được cứu",
+        "feature3": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "feature4": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Rất tiếc, chúng tôi không thể liên lạc với bạn!",
+    "description": "Trang này bị thiếu hoặc bạn lắp ráp nó không chính xác",
+    "button": "Trở về nhà"
+  },
+  "contactUsPage": {
+    "hero": {
+      "title": "Chúng tôi muốn nghe từ bạn",
+      "description": "Chúng tôi đánh giá cao phản hồi của bạn và sẵn sàng hỗ trợ bạn với bất kỳ câu hỏi hoặc thắc mắc nào mà bạn có thể có. "
+    },
+    "getInTouch": {
+      "name": "LIÊN LẠC",
+      "title": "Các nhóm của chúng tôi ở đây để giúp đỡ"
+    },
+    "message": {
+      "title": "Nhắn tin cho chúng tôi {{messageNumber}}",
+      "description": "Tin nhắn hoặc dữ liệu có thể được áp dụng",
+      "linkText": "Nhắn tin cho chúng tôi"
+    },
+    "sendEmail": {
+      "title": "Gửi email cho chúng tôi",
+      "description": "Chúng tôi muốn nghe từ bạn!",
+      "linkText": "Gửi email cho chúng tôi"
+    },
+    "callUs": {
+      "title": "Gọi cho chúng tôi tại {{callNumber}}",
+      "description": "Chúng tôi muốn nghe từ bạn!",
+      "linkText": "Gọi cho chúng tôi"
+    },
+    "chatWithSpecialist": {
+      "title": "Chat với bác sĩ chuyên khoa",
+      "description": "Có sẵn 9 giờ sáng - 5 giờ chiều AEST, Thứ Hai - Thứ Sáu",
+      "linkText": "Nói chuyện ngay"
+    },
+    "contactForm": {
+      "messageTitle": "Tin nhắn của bạn đã được gửi!",
+      "message": "Chúng tôi sẽ sớm liên lạc lại với bạn. "
+    }
+  },
+  "companyPage": {
+    "hero": {
+      "name": "VỀ CHÚNG TÔI",
+      "title": "Paxform cho mọi người",
+      "description": "Chức năng của Paxform rất đơn giản: nó hoàn toàn điền vào bất kỳ biểu mẫu nào, bất cứ lúc nào. "
+    },
+    "vision": {
+      "name": "tầm nhìn của chúng tôi",
+      "title": "Các hình thức không có hình thức.",
+      "description": "Chức năng của Paxform rất đơn giản: nó hoàn toàn điền vào bất kỳ biểu mẫu nào, bất cứ lúc nào. "
+    },
+    "diversity": {
+      "title": "Đa dạng",
+      "description": "<p>Tại Paxform, chúng tôi coi sự đa dạng và hòa nhập là một phần trong mọi việc chúng tôi làm.  <p /> <p> Là một công ty đang phát triển nhanh chóng, chúng tôi tập trung vào việc tạo ra một lực lượng lao động đa dạng trên toàn cầu và một nơi làm việc chào đón, nuôi dưỡng và tôn vinh tình bạn thân thiết, sáng kiến, khả năng lãnh đạo và đổi mới. </p>"
+    }
+  },
+  "legalPage": {
+    "title": "Pháp lý Paxform",
+    "description": "Tìm thông tin pháp lý và tài nguyên cho các sản phẩm và dịch vụ của chúng tôi, bao gồm các chính sách và điều khoản của chúng tôi."
+  },
+  "pricingPage": {
+    "free": {
+      "description": "Một cách đơn giản để bắt đầu cho bạn mới làm quen với passfolio.",
+      "features": {
+        "first": "Dữ liệu không giới hạn",
+        "second": "5 Người được cứu",
+        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      }
+    },
+    "premium": {
+      "description": "Tốt nhất cho lập trình viên tự do",
+      "features": {
+        "first": "Dữ liệu không giới hạn",
+        "second": "5 Người được cứu",
+        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      }
+    },
+    "family": {
+      "description": "Tốt nhất cho lập trình viên tự do",
+      "features": {
+        "first": "Dữ liệu không giới hạn",
+        "second": "5 Người được cứu",
+        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      }
+    },
+    "essential": {
+      "description": "Một cách đơn giản để bắt đầu cho bạn mới làm quen với passfolio.",
+      "features": {
+        "first": "Dữ liệu không giới hạn",
+        "second": "5 Người được cứu",
+        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      }
+    },
+    "standard": {
+      "description": "Tốt nhất cho lập trình viên tự do",
+      "features": {
+        "first": "Dữ liệu không giới hạn",
+        "second": "5 Người được cứu",
+        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      }
+    },
+    "plus": {
+      "description": "Tốt nhất cho lập trình viên tự do",
+      "features": {
+        "first": "Dữ liệu không giới hạn",
+        "second": "5 Người được cứu",
+        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
+        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+      }
+    },
+    "silver": {
+      "description": "Đệ trình bổ sung"
+    },
+    "green": {
+      "description": "Đệ trình bổ sung"
+    },
+    "blue": {
+      "description": "Đệ trình bổ sung"
+    },
+    "compareList": {
+      "features": {
+        "first": "Giá mỗi quản trị viên/tháng",
+        "second": "Số lượng quản trị viên",
+        "third": "Biểu mẫu đã xuất bản",
+        "fourth": "Mẫu biểu mẫu",
+        "fifth": "Mẫu thỏa thuận",
+        "sixth": "Khảo sát (hàng tháng)",
+        "seventh": "Gửi hàng tháng",
+        "eight": "Không gian lưu trữ có sẵn"
+      },
+      "security": "Mã hóa đầu cuối",
+      "supports": {
+        "first": "PDF chung",
+        "second": "Câu hỏi tối đa cho mỗi biểu mẫu",
+        "third": "câu hỏi có điều kiện",
+        "fourth": "Mẫu biểu mẫu",
+        "fifth": "Tệp đính kèm (theo mẫu)",
+        "sixth": "hỗ trợ quy trình làm việc"
+      }
+    },
+    "hero": {
+      "name": "định giá",
+      "title": "Chọn một kế hoạch phù hợp với bạn"
+    },
+    "dataCredit": {
+      "name": "tín dụng dữ liệu",
+      "title": "Tín dụng dữ liệu có thể được mua theo khối."
+    },
+    "compare": {
+      "title": "So sánh các gói"
+    }
+  },
+  "resourcesPage": {
+    "hero": {
+      "name": "Tài nguyên Paxform",
+      "title": "Hướng dẫn và tài nguyên",
+      "description": "Paxform sẽ không bao giờ chia sẻ dữ liệu của bạn với bất kỳ ai. ",
+      "button": "Xem tất cả Tài nguyên"
+    },
+    "businessInsight": {
+      "name": "ĐIỂM NỔI BẬT VỀ KINH DOANH",
+      "title": "Thông tin nổi bật về Business Insight mới nhất",
+      "button": "Nhìn thấy tất cả"
+    },
+    "insightUpdate": {
+      "name": "Thông tin chi tiết về doanh nghiệp và cập nhật ngành"
+    },
+    "latestUpdate": {
+      "name": "TIN TỨC CẬP NHẬT NGÀNH NỔI BẬT",
+      "title": "Thông tin cập nhật mới nhất về ngành"
     }
   }
 }

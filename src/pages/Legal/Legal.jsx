@@ -6,10 +6,13 @@ import "./Legal.scss";
 
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
 import { useTranslation } from "react-i18next";
+import { queryLanguageCode } from "../../lib/util";
 
 export default function Legal() {
-  const {t} = useTranslation()
-  const { loading, data } = useQuery(GET_LEGAL_CATEGORIES);
+  const { t } = useTranslation();
+  const { loading, data } = useQuery(GET_LEGAL_CATEGORIES, {
+    variables: { language: queryLanguageCode() },
+  });
 
   const legalCategories = !loading
     ? [...data?.legalCategories?.nodes].sort((a, b) => a.order - b.order)
@@ -21,9 +24,7 @@ export default function Legal() {
           <div className="hero__wrapper">
             <div className="hero__content">
               <h1 className="hero__title">{t("legalPage.title")}</h1>
-              <p className="hero__description">
-                {t("legalPage.description")}
-              </p>
+              <p className="hero__description">{t("legalPage.description")}</p>
             </div>
           </div>
         </div>
