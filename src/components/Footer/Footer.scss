@@ -28,6 +28,12 @@
       grid-column: 1 / span 2;
       margin-bottom: rem(10);
     }
+
+    &-svg {
+      path {
+        fill: $color__primary;
+      }
+    }
   }
 
   &__social {

@@ -9,7 +9,11 @@ import Article from "../../components/Article/Article";
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
 import "react-loading-skeleton/dist/skeleton.css";
 
+import HelmetHead from "../../components/HelmetHead/HelmetHead";
+
 const BlogDetails = () => {
+  const parser = new DOMParser();
+  const url = window.location.href;
   // Current Blog Slug
   const slug = useLocation().pathname.split("/").pop();
   // Querying Current Blog
@@ -23,10 +27,16 @@ const BlogDetails = () => {
     ? data?.post?.categories?.nodes[0]?.name
     : "";
   const imgSrc = !loading ? data?.post?.featuredImage?.node?.sourceUrl : "";
-  const id = !loading? data?.post?.databaseId : null
+  const id = !loading ? data?.post?.databaseId : null;
+  const description = !loading
+    ? parser
+        .parseFromString(data?.post?.content, "text/html")
+        .querySelector("p").innerText
+    : "";
 
   return (
     <>
+      <HelmetHead url={url} title={title} description={description} image={imgSrc}/>
       <div className="container hero" background="light">
         <main className="blog_details__main">
           <Article blogArticle={data} loading={loading} />

@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Footer.scss";
 
-import footerLogo from "../../assets/images/LOGO-footer.svg";
+import {ReactComponent as FooterLogo} from "../../assets/images/LOGO-footer.svg";
 import countries from "../../lib/countries";
 // import languages from "../../assets/json/languages.json";
 
@@ -451,7 +451,7 @@ export default function Footer() {
           <div className="footer__top-left">
             <div className="footer__logo">
               <a href="/">
-                <img src={footerLogo} alt="logo footer" />
+                <FooterLogo className="footer__logo-svg"/>
               </a>
             </div>
             <div className="footer__social">
@@ -521,7 +521,7 @@ export default function Footer() {
                 defaultValue={languageCode}
                 onChange={(e) => handleLanguageChange(e)}
               >
-                <option className="footer__bottom-languages-option" value="">
+                <option className="footer__bottom-languages-option" value="" disabled>
                   {t("selectYourLanguage")}
                 </option>
                 {languages.map((language, index) => (
