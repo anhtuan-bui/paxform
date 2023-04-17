@@ -5,7 +5,7 @@ export default function HelmetHead({ url, title, description, image }) {
   return (
     <Helmet prioritizeSeoTags>
       <meta property="og:type" content="article" />
-      <title>{`Paxform | ${title}`} </title>
+      <title>{`Paxform | ${title ? title :''}`} </title>
       <meta property="og:whatsapp" content="share"></meta>
       <meta name="pinterest-rich-pin" content="true"></meta>
 
