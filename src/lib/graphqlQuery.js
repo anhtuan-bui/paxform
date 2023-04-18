@@ -1,8 +1,23 @@
 import { gql } from "@apollo/client";
 
+const GET_LANGUAGES = gql`
+  query GetLanguages {
+    languages {
+      code
+      id
+      locale
+      name
+      slug
+    }
+  }
+`;
+
 const GET_ALL_TESTIMONIALS = gql`
-  query GetAllTestimonials {
-    testimonials {
+  query GetAllTestimonials(
+    $language: LanguageCodeFilterEnum = ALL
+    $first: Int = 10
+  ) {
+    testimonials(where: { language: $language }, first: $first) {
       nodes {
         title
         content
@@ -13,8 +28,8 @@ const GET_ALL_TESTIMONIALS = gql`
 `;
 
 const GET_FAQS = gql`
-  query GetFAQs {
-    faqCategories {
+  query GetFAQs($language: LanguageCodeFilterEnum = ALL) {
+    faqCategories(where: { language: $language }) {
       nodes {
         id
         name
@@ -50,8 +65,8 @@ const GET_RESOURCE_BY_SLUG = gql`
 `;
 
 const GET_BLOGS = gql`
-  query GetBlogs($first: Int) {
-    posts(first: $first) {
+  query GetBlogs($first: Int, $language: LanguageCodeFilterEnum = ALL) {
+    posts(first: $first, where: { language: $language }) {
       nodes {
         id
         slug
@@ -76,8 +91,8 @@ const GET_BLOGS = gql`
 `;
 
 const GET_RESOURCES_CATEGORIES = gql`
-  query GetResourcesCategories {
-    resourceCategories {
+  query GetResourcesCategories($language: LanguageCodeFilterEnum = ALL) {
+    resourceCategories(where: { language: $language }) {
       nodes {
         id
         name
@@ -89,8 +104,12 @@ const GET_RESOURCES_CATEGORIES = gql`
 `;
 
 const GET_RESOURCES = gql`
-  query GetResources($cursor: String, $first: Int) {
-    resources(first: $first, after: $cursor) {
+  query GetResources(
+    $cursor: String
+    $first: Int
+    $language: LanguageCodeFilterEnum = ALL
+  ) {
+    resources(first: $first, after: $cursor, where: { language: $language }) {
       nodes {
         id
         slug
@@ -136,8 +155,8 @@ const GET_RESOURCES_BY_CATEGORY = gql`
 `;
 
 const GET_FIRST_TWO_RESOURCES = gql`
-  query GetFirstTwoResources {
-    resources(first: 2) {
+  query GetFirstTwoResources($language: LanguageCodeFilterEnum = ALL) {
+    resources(first: 2, where: { language: $language }) {
       nodes {
         id
         slug
@@ -158,8 +177,8 @@ const GET_FIRST_TWO_RESOURCES = gql`
 `;
 
 const GET_USE_CASES = gql`
-  query GetUseCases {
-    useCases {
+  query GetUseCases($language: LanguageCodeFilterEnum = ALL) {
+    useCases(where: { language: $language }) {
       nodes {
         id
         slug
@@ -176,7 +195,7 @@ const GET_USE_CASES = gql`
 `;
 
 const GET_USE_CASE = gql`
-  query GetUseCases($id: ID!) {
+  query GetUseCase($id: ID!) {
     useCase(id: $id, idType: SLUG) {
       id
       heroName
@@ -232,8 +251,8 @@ const GET_LEGAL_BY_SLUG_TYPE = gql`
 `;
 
 const GET_LEGAL_CATEGORIES = gql`
-  query GetLegalCategories {
-    legalCategories {
+  query GetLegalCategories($language: LanguageCodeFilterEnum = ALL) {
+    legalCategories(where: { language: $language }) {
       nodes {
         slug
         name
@@ -250,8 +269,12 @@ const GET_LEGAL_CATEGORIES = gql`
 `;
 
 const GET_POSTS = gql`
-  query GetPosts($first: Int, $after: String) {
-    posts(first: $first, after: $after) {
+  query GetPosts(
+    $first: Int
+    $after: String
+    $language: LanguageCodeFilterEnum = ALL
+  ) {
+    posts(first: $first, after: $after, where: { language: $language }) {
       nodes {
         author {
           node {
@@ -309,8 +332,8 @@ const LOGIN_CLIENT = gql`
 `;
 
 const GET_CATEGORIES = gql`
-  query GetCategories {
-    categories {
+  query GetCategories($language: LanguageCodeFilterEnum = ALL) {
+    categories(where: { language: $language }) {
       nodes {
         id
         slug
@@ -321,8 +344,8 @@ const GET_CATEGORIES = gql`
 `;
 
 const GET_RECOMMENDED_POSTS = gql`
-  query getRecommendedPosts {
-    posts(first: 4) {
+  query getRecommendedPosts($language: LanguageCodeFilterEnum = ALL) {
+    posts(first: 4, where: { language: $language }) {
       nodes {
         id
         date
@@ -399,8 +422,15 @@ const GET_BLOG_DETAILS = gql`
 `;
 
 const GET_RELATED_POST = gql`
-  query getPosts($categoryName: String = "", $id: [ID]) {
-    posts(first: 4, where: { categoryName: $categoryName, notIn: $id }) {
+  query getPosts(
+    $categoryName: String = ""
+    $id: [ID]
+    $language: LanguageCodeFilterEnum = ALL
+  ) {
+    posts(
+      first: 4
+      where: { categoryName: $categoryName, notIn: $id, language: $language }
+    ) {
       nodes {
         id
         date
@@ -425,8 +455,8 @@ const GET_RELATED_POST = gql`
 `;
 
 export {
-  GET_POSTS,
   LOGIN_CLIENT,
+  GET_POSTS,
   GET_CATEGORIES,
   GET_RECOMMENDED_POSTS,
   GET_BLOG_DETAILS,
@@ -444,5 +474,6 @@ export {
   GET_BLOGS,
   GET_RESOURCE_BY_SLUG,
   GET_FAQS,
-  GET_ALL_TESTIMONIALS
+  GET_ALL_TESTIMONIALS,
+  GET_LANGUAGES
 };

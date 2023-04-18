@@ -4,13 +4,17 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { useQuery } from "@apollo/client";
 import { GET_RELATED_POST } from "../../lib/graphqlQuery";
 import RelatedCard from "../../components/RelatedCard/RelatedCard";
+import { queryLanguageCode } from "../../lib/util";
+import { useTranslation } from "react-i18next";
 
 const RelatedBlogs = ({ currentCategory, currentId }) => {
+  const {t} = useTranslation();
   const numberOfRelatedBlogs = 2;
   const { data, loading } = useQuery(GET_RELATED_POST, {
     variables: {
       categoryName: currentCategory,
-      id: currentId
+      id: currentId,
+      language: queryLanguageCode()
     },
   });
 
@@ -60,7 +64,7 @@ const RelatedBlogs = ({ currentCategory, currentId }) => {
 
   return (
     <section className="recommended">
-      <p className="recommended__title section_name">Recommended</p>
+      <p className="recommended__title section_name">{t("recommended")}</p>
       <div className="recommended_container">
         {loading ? relatedBlogsLoading() : relatedBlogsLoaded()}
       </div>

@@ -17,6 +17,7 @@ import { useQuery } from "@apollo/client";
 import Skeleton from "react-loading-skeleton";
 import { GET_ALL_TESTIMONIALS } from "../../lib/graphqlQuery";
 import { useTranslation } from "react-i18next";
+import { queryLanguageCode } from "../../lib/util";
 
 var home = {
   numberOftestimonialsPerView: 3,
@@ -76,11 +77,14 @@ export default class Testimonial extends Component {
   }
 }
 
-const TestimonialSwiper = (value) => {
+const TestimonialSwiper = () => {
   const swiperRef = useRef();
-
-  const { loading, data } = useQuery(GET_ALL_TESTIMONIALS);
   const { t } = useTranslation();
+
+  const { loading, data } = useQuery(GET_ALL_TESTIMONIALS, {variables: {
+    language: queryLanguageCode(),
+    first: 10
+  }});
 
   const testimonials = !loading
     ? data?.testimonials?.nodes
@@ -113,7 +117,7 @@ const TestimonialSwiper = (value) => {
             modules={[Autoplay, Pagination, Navigation]}
             className="testimonial__slider"
           >
-            {testimonials.map((item, index) => {
+            {testimonials?.map((item, index) => {
               return (
                 <SwiperSlide key={index}>
                   <TestimonialCard data={item} />

@@ -1,8 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Footer.scss";
 
-import footerLogo from "../../assets/images/LOGO-footer.svg";
-import languages from "../../assets/json/languages.json";
+import {ReactComponent as FooterLogo} from "../../assets/images/LOGO-footer.svg";
+import countries from "../../lib/countries";
+// import languages from "../../assets/json/languages.json";
 
 import { ReactComponent as LinkedIn } from "../../assets/icons/linkedin.svg";
 import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
@@ -13,6 +14,9 @@ import { ReactComponent as Discord } from "../../assets/icons/discord.svg";
 import { ReactComponent as WeChat } from "../../assets/icons/wechat.svg";
 import { ReactComponent as WhatsApp } from "../../assets/icons/whatsapp.svg";
 import { useTranslation } from "react-i18next";
+import { useQuery } from "@apollo/client";
+import { GET_LANGUAGES } from "../../lib/graphqlQuery";
+import { convertLangToLocale } from "../../lib/util";
 
 const socialMedias = [
   {
@@ -62,6 +66,9 @@ export default function Footer() {
   // const [shortName, setShortName] = useState("AU");
   // const [countryName, setCountryName] = useState("Australia");
   // const [filteredCountries, setFilteredCountries] = useState(languages);
+  const { loading, data } = useQuery(GET_LANGUAGES);
+
+  const languages = !loading ? data?.languages : Array.from({ length: 3 });
 
   const { t, i18n } = useTranslation();
 
@@ -331,21 +338,41 @@ export default function Footer() {
 
   const [footer, setFooter] = useState(true);
 
-  const [languageCode, setLanguageCode] = useState("en-AU");
+  const [languageCode, setLanguageCode] = useState("");
 
   const handleLanguageChange = (e) => {
-    const short = e.target.value.split("-")[0];
-    setLanguageCode(e.target.value);
-    i18n.changeLanguage(short);
+    // const short = e.target.value.split("-")[0];
+    const lang = e.target.value;
+
+    if (!lang) {
+      return;
+    }
+
+    setLanguageCode(lang);
+    i18n.changeLanguage(convertLangToLocale(lang));
+    localStorage.setItem("lang", lang);
   };
 
   useEffect(() => {
     const notFound = document.querySelector(".not_found");
+    const lang = localStorage.getItem("lang");
+
+    if (lang && !loading) {
+      const selector = document.querySelector(
+        ".footer__bottom-languages-selector"
+      );
+      if (selector) {
+        selector.value = lang;
+      }
+      setLanguageCode(lang);
+    }
 
     if (notFound) {
       setFooter(false);
+    } else {
+      setFooter(true);
     }
-  }, []);
+  }, [languageCode, loading]);
 
   if (!footer) {
     return;
@@ -424,7 +451,7 @@ export default function Footer() {
           <div className="footer__top-left">
             <div className="footer__logo">
               <a href="/">
-                <img src={footerLogo} alt="logo footer" />
+                <FooterLogo className="footer__logo-svg"/>
               </a>
             </div>
             <div className="footer__social">
@@ -494,14 +521,15 @@ export default function Footer() {
                 defaultValue={languageCode}
                 onChange={(e) => handleLanguageChange(e)}
               >
+                <option className="footer__bottom-languages-option" value="" disabled>
+                  {t("selectYourLanguage")}
+                </option>
                 {languages.map((language, index) => (
-                  <option
-                    className="footer__bottom-languages-option"
-                    value={language.code}
+                  <SelectorOption
+                    language={language}
                     key={index}
-                  >
-                    {`${language.emoji} ${language.name} - ${language.country}`}
-                  </option>
+                    loading={loading}
+                  />
                 ))}
               </select>
               {/* <div className="languages">
@@ -567,3 +595,20 @@ export default function Footer() {
     </footer>
   );
 }
+
+const SelectorOption = ({ language }) => {
+  const countryShort = language?.locale.split("_")[1];
+  const country = countries.find((c) => c.sortname === countryShort);
+
+  const languageCode = language ? language?.code : "";
+  const languageName = language
+    ? language?.name.replace(countryShort, "").trim()
+    : "";
+  const countryNative = country?.native;
+  const emoji = country?.emoji;
+  return (
+    <option className="footer__bottom-languages-option" value={languageCode}>
+      {`${emoji} ${languageName} - ${countryNative}`}
+    </option>
+  );
+};

@@ -6,13 +6,7 @@ import arrowDown from "../../assets/images/arrowDown.svg";
 import FrequentlyAsked from "../../components/FrequentlyAsked/FrequentlyAsked.jsx";
 
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql,
-  useQuery,
-} from "@apollo/client";
+import { forwardRef } from "react";
 
 const FAQV1 = () => {
     

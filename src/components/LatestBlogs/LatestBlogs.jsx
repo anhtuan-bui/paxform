@@ -9,11 +9,15 @@ import "react-loading-skeleton/dist/skeleton.css";
 // import card2 from "../../assets/images/card2.png";
 // import card3 from "../../assets/images/card3.png";
 import { GET_BLOGS } from "../../lib/graphqlQuery";
+import { useTranslation } from "react-i18next";
+import { queryLanguageCode } from "../../lib/util";
 
 export default function LatestBlogs({ triangleColor }) {
+  const {t} = useTranslation();
   const { loading, data } = useQuery(GET_BLOGS, {
     variables: {
       first: 4,
+      language: queryLanguageCode()
     },
   });
 
@@ -24,14 +28,14 @@ export default function LatestBlogs({ triangleColor }) {
         <div className="platform__top">
           <div className="platform__top-left">
             <p className="platform__name platform__name--green section_name">
-              PAXFORM BLOG
+              {t("latestBlogs.name")}
             </p>
             <h2 className="platform__title section_title">
-              Latest Blog’s from Paxform.
+              {t("latestBlogs.title")}
             </h2>
           </div>
           <div className="platform__top-right">
-            <Button type="outline arrow" text="See All Blog Post" href='/blogs'/>
+            <Button type="outline arrow" text={t("latestBlogs.button")} href='/blogs'/>
           </div>
         </div>
         <div className="platform__content">

@@ -2,18 +2,20 @@
     {
         "Language": "English",
         "name": "English",
-        "code": "en-US",
+        "code": "en-AU",
         "short": "en",
-        "country": "United States",
-        "emoji": "🇺🇸"
+        "country": "Australia",
+        "emoji": "🇦🇺",
+        "native": "Australia"
     },
     {
         "Language": "English",
         "name": "English",
-        "code": "en-AU",
+        "code": "en-US",
         "short": "en",
-        "country": "Australia",
-        "emoji": "🇦🇺"
+        "country": "United States",
+        "emoji": "🇺🇸",
+        "native": "United States"
     },
     {
         "Language": "Vietnamese",
@@ -21,6 +23,7 @@
         "code": "vi-VN",
         "short": "vi",
         "country": "Vietnam",
-        "emoji": "🇻🇳"
+        "emoji": "🇻🇳",
+        "native": "Việt Nam"
     }
 ]

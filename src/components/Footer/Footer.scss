@@ -28,6 +28,12 @@
       grid-column: 1 / span 2;
       margin-bottom: rem(10);
     }
+
+    &-svg {
+      path {
+        fill: $color__primary;
+      }
+    }
   }
 
   &__social {
@@ -164,6 +170,7 @@
       padding-left: 0;
       display: flex;
       gap: rem(20);
+      margin: rem(5) 0;
 
       li {
         font-size: rem(14);
@@ -182,6 +189,7 @@
       display: flex;
       align-items: center;
       padding: 0 $padding__column;
+      margin-top: rem(10);
 
       &-selector {
         border: none;

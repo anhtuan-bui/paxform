@@ -14,6 +14,7 @@ import twitterIcon from "../../assets/icons/twitter.svg";
 import pinterestIcon from "../../assets/icons/pinterest.svg";
 import whatsappIcon from "../../assets/icons/whatsapp.svg";
 import linkIcon from "../../assets/icons/share.svg";
+import { useTranslation } from "react-i18next";
 
 const url = "https://paxfolio.com/";
 
@@ -46,6 +47,7 @@ export default function ShareToSocialMedias({
   imageUrl,
   className,
 }) {
+  const {t} = useTranslation();
 
   return (
     <div
@@ -53,7 +55,7 @@ export default function ShareToSocialMedias({
         headings.length > 0 ? "" : "resource__share--sticky"
       }`}
     >
-      <p className="social_media__share-name">Share</p>
+      <p className="social_media__share-name">{t("share")}</p>
       <div className="social_media__social-medias">
         <div className="social_media__social-media">
           <FacebookShareButton

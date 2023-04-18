@@ -6,32 +6,31 @@ import { ReactComponent as Cpu } from "../../assets/icons/cpu.svg";
 import { ReactComponent as Shield } from "../../assets/icons/shield.svg";
 import { ReactComponent as Database } from "../../assets/icons/database.svg";
 import { ReactComponent as Server } from "../../assets/icons/server.svg";
+import { t } from "i18next";
 
 export default function DataSecurity() {
   const dataAccess = [
     {
       icon: <Cpu />,
-      title: "Safeguarding your data",
-      description:
-        "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes.",
+      title: t("dataSecurityPage.dataAccess.dataSafeguard.title"),
+      description: t("dataSecurityPage.dataAccess.dataSafeguard.description"),
     },
     {
       icon: <Shield />,
-      title: "Secure anywhere anytime",
-      description:
-        "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes.",
+      title: t("dataSecurityPage.dataAccess.dataSecurity.title"),
+      description: t("dataSecurityPage.dataAccess.dataSecurity.description"),
     },
     {
       icon: <Database />,
-      title: "Network protection",
-      description:
-        "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes.",
+      title: t("dataSecurityPage.dataAccess.networkProtection.title"),
+      description: t(
+        "dataSecurityPage.dataAccess.networkProtection.description"
+      ),
     },
     {
       icon: <Server />,
-      title: "Back-ups",
-      description:
-        "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes.",
+      title: t("dataSecurityPage.dataAccess.backups.title"),
+      description: t("dataSecurityPage.dataAccess.backups.description"),
     },
   ];
 
@@ -41,7 +40,9 @@ export default function DataSecurity() {
         <div className="container ">
           <div className="hero__wrapper">
             <div className="hero__content">
-              <h1 className="hero__title">Paxform Legal</h1>
+              <h1 className="hero__title">
+                {t("dataSecurityPage.hero.title")}
+              </h1>
             </div>
           </div>
         </div>
@@ -59,27 +60,20 @@ export default function DataSecurity() {
             </div>
             <div className="data_security__data-security">
               <h1 className="data_security__data-title section_title">
-                Data Security
+                {t("dataSecurityPage.dataSecurity.title")}
               </h1>
               <p className="data_security__data-name section_name">
-                Security Policy
+                {t("dataSecurityPage.dataSecurity.sectionName")}
               </p>
               <h2 className="data_security__data-slogan">
-                Only You Can Access Your Data. Not Us - Not Anyone Else.
+                {t("dataSecurityPage.dataSecurity.slogan")}
               </h2>
-              <p className="data_security__description section__description">
-                Paxform will never share your data with anyone. What’s more, no
-                one at Paxform can view or access your information. Our mission
-                is to apply end-toend encryption to every piece of information
-                stored, protecting the data of organizations and individuals at
-                all stages and at all costs.
-              </p>
-              <p className="data_security__description section__description">
-                Only you decide which parties can view what piece of
-                information. Our security architecture ensures that personal
-                data is decentralized, guaranteeing that the point of access in
-                a potential security threat will not reveal any information.
-              </p>
+              <div
+                className="data_security__description section__description"
+                dangerouslySetInnerHTML={{
+                  __html: t("dataSecurityPage.dataSecurity.description"),
+                }}
+              ></div>
             </div>
           </div>
         </div>
@@ -88,9 +82,11 @@ export default function DataSecurity() {
       <section className="data_access">
         <div className="container">
           <div className="data_access__wrapper">
-            <p className="data_access__name section_name">Security Policy</p>
+            <p className="data_access__name section_name">
+              {t("dataSecurityPage.dataAccess.sectionName")}
+            </p>
             <h1 className="data_access__title section_title">
-              Only You Can Access Your Data.
+              {t("dataSecurityPage.dataAccess.slogan")}
             </h1>
             <div className="data_access__grid">
               {dataAccess.map((data, index) => (
@@ -105,7 +101,7 @@ export default function DataSecurity() {
             </div>
           </div>
         </div>
-        <SectionTriangleRight variant='footer'/>
+        <SectionTriangleRight variant="footer" />
       </section>
     </main>
   );

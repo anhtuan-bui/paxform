@@ -10,14 +10,13 @@ import sampleAvatar from "../../assets/images/sample-avatar.png";
 
 import "react-loading-skeleton/dist/skeleton.css";
 
-// import { ReactComponent as LinkedIn } from "../../assets/icons/linkedin.svg";
-
 import { SCREEN_SIZE } from "../../configurations/configurations";
 import { useQuery } from "@apollo/client";
 import { GET_TEAM_MEMBERS } from "../../lib/graphqlQuery";
 import Skeleton from "react-loading-skeleton";
+import { withTranslation } from "react-i18next";
 
-export default class Company extends Component {
+class Company extends Component {
   componentDidMount() {
     this.handleResize();
     window.addEventListener("resize", this.handleResize);
@@ -41,6 +40,7 @@ export default class Company extends Component {
     iframe.style.height = (iframe.clientWidth * 9) / 16 + "px";
   }
   render() {
+    const { t } = this.props;
     return (
       <main className="company">
         <section className="hero" background="light">
@@ -56,16 +56,14 @@ export default class Company extends Component {
                 </div>
               </div>
               <div className="hero__content">
-                <p className="hero__name section_name">About Us</p>
+                <p className="hero__name section_name">
+                  {t("companyPage.hero.name")}
+                </p>
                 <h1 className="hero__title section_title">
-                  Paxform for everyone
+                  {t("companyPage.hero.title")}
                 </h1>
                 <p className="hero__description section__description">
-                  Paxform’s function is simple: it completely fills any form,
-                  anytime. You can manage and save your personal data, allowing
-                  you to sign documents and send them to organisations with
-                  ease. No need to worry about security and privacy—Paxform
-                  fully encrypts your data to ensure your safety.
+                  {t("companyPage.hero.description")}
                 </p>
               </div>
             </div>
@@ -101,16 +99,14 @@ export default class Company extends Component {
                 </div>
               </div>
               <div className="vision__content">
-                <p className="vision__name section_name">Our Vision</p>
+                <p className="vision__name section_name">
+                  {t("companyPage.vision.name")}
+                </p>
                 <h1 className="vision__title section_title">
-                  Forms without forms.
+                  {t("companyPage.vision.title")}
                 </h1>
                 <p className="vision__description section__description">
-                  Paxform’s function is simple: it completely fills any form,
-                  anytime. You can manage and save your personal data, allowing
-                  you to sign document s and send them to organisations with
-                  ease. No need to worry about security and privacy—Paxform
-                  fully encrypts your data to ensure your safety.
+                  {t("companyPage.vision.description")}
                 </p>
               </div>
             </div>
@@ -136,24 +132,14 @@ export default class Company extends Component {
           <div className="container diversity__wrapper">
             <div className="diversity__content">
               <h1 className="diversity__title section__title">
-                Diversity & Inclusion
+                {t("companyPage.diversity.title")}
               </h1>
-              <p className="diversity__description section__description">
-                At Paxform, we make diversity and inclusion part of everything
-                we do. We are building a culture where one’s unique attributes
-                and differences are part of who we are. Regardless of background
-                or gender, our employees, customers and stakeholders are treated
-                as equals.
-              </p>
-              <p className="diversity__description section__description">
-                As a fast-growing company, we focus on creating a diverse
-                workforce globally and a workplace that welcomes, nurtures and
-                celebrates camaraderie, initiative, leadership and innovation.
-                We strive to build innovative products that can be used by
-                everyone despite their cultural, language or geographic
-                differences, furthermore, achieving the goals that we have set
-                for ourselves and our stakeholders.
-              </p>
+              <div
+                className="diversity__description section__description"
+                dangerouslySetInnerHTML={{
+                  __html: t("companyPage.diversity.description"),
+                }}
+              ></div>
             </div>
             <div className="diversity__image">
               <img
@@ -257,3 +243,4 @@ const LinkedIn = ({ color }) => {
     </svg>
   );
 };
+export default withTranslation()(Company);

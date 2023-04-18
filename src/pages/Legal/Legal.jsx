@@ -5,9 +5,14 @@ import { GET_LEGAL_CATEGORIES } from "../../lib/graphqlQuery";
 import "./Legal.scss";
 
 import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
+import { useTranslation } from "react-i18next";
+import { queryLanguageCode } from "../../lib/util";
 
 export default function Legal() {
-  const { loading, data } = useQuery(GET_LEGAL_CATEGORIES);
+  const { t } = useTranslation();
+  const { loading, data } = useQuery(GET_LEGAL_CATEGORIES, {
+    variables: { language: queryLanguageCode() },
+  });
 
   const legalCategories = !loading
     ? [...data?.legalCategories?.nodes].sort((a, b) => a.order - b.order)
@@ -18,11 +23,8 @@ export default function Legal() {
         <div className="container ">
           <div className="hero__wrapper">
             <div className="hero__content">
-              <h1 className="hero__title">Paxform Legal</h1>
-              <p className="hero__description">
-                Find legal information and resources for our products and
-                services, including our policies and terms.
-              </p>
+              <h1 className="hero__title">{t("legalPage.title")}</h1>
+              <p className="hero__description">{t("legalPage.description")}</p>
             </div>
           </div>
         </div>

@@ -6,9 +6,13 @@ import FAQ from "../../components/FAQ/FAQ";
 import { useQuery } from "@apollo/client";
 import { GET_FAQS } from "../../lib/graphqlQuery";
 import Skeleton from "react-loading-skeleton";
-import { convertToSlug, scrollIntoViewWithOffset } from "../../lib/util";
+import { convertToSlug, queryLanguageCode, scrollIntoViewWithOffset } from "../../lib/util";
+import { useTranslation } from "react-i18next";
 export default function FAQs() {
-  const { loading, data } = useQuery(GET_FAQS);
+  const {t} = useTranslation();
+  const { loading, data } = useQuery(GET_FAQS, {variables: {
+    language: queryLanguageCode()
+  }});
   const [headings, setHeadings] = useState([]);
 
   const faqCategories = !loading
@@ -33,7 +37,7 @@ export default function FAQs() {
         <div className="container ">
           <div className="hero__wrapper">
             <div className="hero__content">
-              <h1 className="hero__title">Frequently Asked Question</h1>
+              <h1 className="hero__title">{t("frequentlyAskedQuestions")}</h1>
             </div>
           </div>
         </div>

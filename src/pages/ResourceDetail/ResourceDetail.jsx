@@ -13,8 +13,12 @@ import { useLocation } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import ShareToSocialMedias from "../../components/ShareToSocialMedias/ShareToSocialMedias";
 import { convertToSlug, scrollIntoViewWithOffset } from "../../lib/util";
+import { useTranslation } from "react-i18next";
+import HelmetHead from "../../components/HelmetHead/HelmetHead";
 
 export default function ResourceDetail() {
+  const { t } = useTranslation();
+  const parser = new DOMParser();
   const [showDropdown, setShowDropdown] = useState(false);
   const [headings, setHeadings] = useState([]);
   const [dropdownSelected, setDropdownSelected] = useState("");
@@ -42,13 +46,15 @@ export default function ResourceDetail() {
   );
   const imageUrl = resource?.featuredImage.node.sourceUrl;
   const slug = resource?.slug;
+  const description = !loading
+    ? parser.parseFromString(content, "text/html").querySelector("p").innerText
+    : "";
+
+  const url = window.location.href;
 
   if (headings[0] && !dropdownSelected) {
     setDropdownSelected(headings[0]);
   }
-
-
-
 
   const handleDropdownClick = () => {
     if (dropdownOpen) {
@@ -141,7 +147,7 @@ export default function ResourceDetail() {
   const dropdown = showDropdown ? (
     <section className="resource__dropdown">
       <p className="resource__dropdown-title resource__share-name">
-        IN THIS CASE STUDY
+        {t("inThisCaseStudy")}
       </p>
       <div className="resource__dropdown-select-box">
         <div
@@ -174,7 +180,7 @@ export default function ResourceDetail() {
   const tableOfContent =
     !showDropdown && headings.length > 0 ? (
       <div className="table_of_content">
-        <p className="resource__share-name">IN THIS CASE STUDY</p>
+        <p className="resource__share-name">{t("inThisCaseStudy")}</p>
         <ul className="table_of_content__table">
           {headings?.map((heading, index) => (
             <li
@@ -209,6 +215,7 @@ export default function ResourceDetail() {
   });
   return (
     <main className="resource hero" background="light">
+      <HelmetHead url={url} title={title} description={description} image={imageUrl} />
       <div className="container">
         <div className="resource__container">
           {dropdown}
