@@ -13,19 +13,10 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 import "swiper/scss/navigation";
 
-import { gql, useQuery } from "@apollo/client";
-
-const GetAllTestimonials = gql`
-  query GetAllTestimonials {
-    testimonials {
-      nodes {
-        title
-        content
-        position
-      }
-    }
-  }
-`;
+import { useQuery } from "@apollo/client";
+import Skeleton from "react-loading-skeleton";
+import { GET_ALL_TESTIMONIALS } from "../../lib/graphqlQuery";
+import { useTranslation } from "react-i18next";
 
 var home = {
   numberOftestimonialsPerView: 3,
@@ -56,7 +47,7 @@ export default class Testimonial extends Component {
     const screenWidth = window.innerWidth;
     if (screenWidth >= SCREEN_SIZE.large) {
       home = {
-        numberOftestimonialsPerView: 3,
+        numberOftestimonialsPerView: 4,
       };
     } else if (
       screenWidth < SCREEN_SIZE.large &&
@@ -88,24 +79,20 @@ export default class Testimonial extends Component {
 const TestimonialSwiper = (value) => {
   const swiperRef = useRef();
 
-  const { loading, error, data } = useQuery(GetAllTestimonials);
+  const { loading, data } = useQuery(GET_ALL_TESTIMONIALS);
+  const { t } = useTranslation();
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>
-  }
-  const testimonials = data.testimonials.nodes;
+  const testimonials = !loading
+    ? data?.testimonials?.nodes
+    : Array.from({ length: 4 });
 
   return (
     <div className="container">
       <div className="testimonial__container">
-        <p className="testimonial__name section_name">TESTIMONIAL</p>
-        <h2 className="testimonial__title">
-          What people are saying about Paxform
-        </h2>
+        <p className="testimonial__name section_name">
+          {t("testimonial.name")}
+        </p>
+        <h2 className="testimonial__title">{t("testimonial.title")}</h2>
         <div className="testimonial__swiper">
           <Swiper
             slidesPerView={home.numberOftestimonialsPerView}
@@ -129,22 +116,7 @@ const TestimonialSwiper = (value) => {
             {testimonials.map((item, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <div className="testimonial_card">
-                    <div
-                      className="testimonial_card__description"
-                      dangerouslySetInnerHTML={{
-                        __html: item.content,
-                      }}
-                    ></div>
-                    <div className="testimonial_card__name-box">
-                      <h3 className="testimonial_card__name">
-                        {item.title}
-                      </h3>
-                      <p className="testimonial_card__position">
-                        {item.position}
-                      </p>
-                    </div>
-                  </div>
+                  <TestimonialCard data={item} />
                 </SwiperSlide>
               );
             })}
@@ -160,6 +132,34 @@ const TestimonialSwiper = (value) => {
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  );
+};
+
+const TestimonialCard = ({ data }) => {
+  const content = data?.content;
+  const title = data ? data?.title : <Skeleton width={"40%"} />;
+  const position = data ? data?.position : <Skeleton width={"50%"} />;
+
+  return (
+    <div className="testimonial_card">
+      {content ? (
+        <div
+          className="testimonial_card__description"
+          dangerouslySetInnerHTML={{
+            __html: content,
+          }}
+        ></div>
+      ) : (
+        <div className="testimonial_card__description">
+          <Skeleton count={5} />
+          <Skeleton width={"75%"} />
+        </div>
+      )}
+      <div className="testimonial_card__name-box">
+        <h3 className="testimonial_card__name">{title}</h3>
+        <p className="testimonial_card__position">{position}</p>
       </div>
     </div>
   );

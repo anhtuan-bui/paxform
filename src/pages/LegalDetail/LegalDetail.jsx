@@ -1,113 +1,198 @@
-import React, { Component } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./LegalDetail.scss";
-import GetStarted from "../../components/GetStarted/GetStarted";
+import SectionTriangleRight from "../../components/SectionTriangleRight/SectionTriangleRight";
+import { useQuery } from "@apollo/client";
+import {
+  GET_LEGAL_BY_SLUG,
+  GET_LEGAL_CATEGORIES,
+} from "../../lib/graphqlQuery";
+import Skeleton from "react-loading-skeleton";
+import { Link, useLocation } from "react-router-dom";
 
-import intro from "../../assets/images/legal-policy-detail.svg";
-import icon1 from "../../assets/images/icon-security-policy-feature01.svg";
-import icon2 from "../../assets/images/icon-security-policy-feature02.svg";
-import icon3 from "../../assets/images/icon-security-policy-feature03.svg";
-import icon4 from "../../assets/images/icon-security-policy-feature04.svg";
+import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
 
-const features = [
-	{
-		title: "Safeguarding your data",
-		description:
-			"From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes.",
-		img: icon1,
-	},
-	{
-		title: "Secure anywhere anytime",
-		description:
-			"From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes.",
-		img: icon2,
-	},
-	{
-		title: "Network protection",
-		description:
-			"From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes.",
-		img: icon3,
-	},
-	{
-		title: "Back-ups",
-		description:
-			"From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes.",
-		img: icon4,
-	},
-];
+export default function LegalDetail() {
+  const [pageTitle, setPageTitle] = useState("");
+  const loadTitle = (title) => {
+    setPageTitle(title);
+  };
+  const { loading: legalDetailLoading, data: legalDetailData } =
+    useQuery(GET_LEGAL_CATEGORIES);
 
-export default class SecurityPolicy extends Component {
-	render() {
-		return (
-			<main className="legal_detail">
-				<section className="hero">
-					<div className="container hero__wrapper">
-						<div className="hero__content">
-							<h1 className="hero__title">Paxform Legal</h1>
-						</div>
-					</div>
-					<div className="bottom_triangle bottom_triangle--light-blue"></div>
-				</section>
-				<section className="security_introduction">
-					<div className="container">
-						<div className="grid_box">
-							<div className="grid_box__image">
-								<img src={intro} alt="Security policy" />
-								<span className="grid_box__image-parall scroll-effect"></span>
-								<span className="grid_box__image-parall scroll-effect"></span>
-							</div>
-							<div className="grid_box__content">
-								<h2>Data Security</h2>
-								<p className="grid_box__content-name">Security Policy</p>
-								<h3 className="grid_box__content-title">
-									Only You Can Access Your Data. Not Us - Not Anyone Else.
-								</h3>
-								<div className="grid_box__content-description">
-									Paxform will never share your data with anyone. What’s more,
-									no one at Paxform can view or access your information. Our
-									mission is to apply end-toend encryption to every piece of
-									information stored, protecting the data of organizations and
-									individuals at all stages and at all costs.
-									<br />
-									<br /> Only you decide which parties can view what piece of
-									information. Our security architecture ensures that personal
-									data is decentralized, guaranteeing that the point of access
-									in a potential security threat will not reveal any
-									information.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className="bottom_triangle bottom_triangle--white"></div>
-				</section>
-				<section className="security_features">
-					<div className="container">
-						<div className="grid_box">
-							<p className="grid_box-name">Our Vision</p>
-							<h2 className="grid_box-title">Forms without forms.</h2>
-							<ul className="grid_box__list">
-								{features.map((feature, index) => (
-									<li className="grid_box__list__content" key={index}>
-										<div className="grid_box__list__inner">
-											<i className="grid_box__list__content-image">
-												<img src={feature.img} alt={feature.title} />
-											</i>
-											<h3 className="grid_box__list__content-title">
-												{feature.title}
-											</h3>
-											<p className="grid_box__list__content-description">
-												{feature.description}
-											</p>
-										</div>
-									</li>
-								))}
-							</ul>
-						</div>
-					</div>
-					<div className="bottom_triangle bottom_triangle--light-blue"></div>
-				</section>
+  const legalDetailCategories = !legalDetailLoading
+    ? [...legalDetailData.legalCategories.nodes].sort(
+        (a, b) => a.order - b.order
+      )
+    : Array.from({ length: 3 }, (i = 0) => i++);
 
-				<GetStarted />
-			</main>
-		);
-	}
+  return (
+    <main className="legal_detail">
+      <section className="hero">
+        <div className="container hero__wrapper">
+          <div className="hero__content">
+            <h1 className="hero__title">
+              {pageTitle ? pageTitle : <Skeleton />}
+            </h1>
+          </div>
+        </div>
+        <div className="bottom_triangle bottom_triangle--white"></div>
+      </section>
+
+      <section className="legal_detail__content">
+        <div className="container">
+          <div className="legal_detail__wrapper">
+            <div className="legal_detail__sidebar">
+              {legalDetailCategories.map((legalDetailCategory, index) => (
+                <SidebarGroup
+                  category={legalDetailCategory}
+                  loading={legalDetailLoading}
+                  key={index}
+                />
+              ))}
+            </div>
+            <div className="legal_detail__legal">
+              <LegalBreadscrumb
+                title={pageTitle}
+                loading={legalDetailLoading}
+              />
+              <LegalContent loadTitle={loadTitle} />
+            </div>
+          </div>
+        </div>
+        <SectionTriangleRight variant="footer" />
+      </section>
+    </main>
+  );
 }
+
+const LegalBreadscrumb = ({ title, loading }) => {
+  let location = useLocation().pathname.split("/");
+  location = location.splice(1, location.length - 1);
+
+  const pageTitle = title.toLowerCase();
+  return (
+    <div className="legal_detail__breadscrumb">
+      {!loading ? (
+        location.map((loca, index) =>
+          index !== location.length - 1 ? (
+            <Fragment key={index}>
+              <Link
+                className="breadscrumb__link"
+                to={index === 0 ? `/${loca}` : `/legal/${loca}`}
+              >
+                {loca.split("-").join(" ")}
+              </Link>
+              <ArrowRight className="breadscrumb__arrow-right" />
+            </Fragment>
+          ) : (
+            <span className="breadscrumb__page-title" key={index}>
+              {pageTitle}
+            </span>
+          )
+        )
+      ) : (
+        <Fragment>
+          <Link className="breadscrumb__link-skeleton">
+            <Skeleton />
+          </Link>
+          <ArrowRight />
+          <Link className="breadscrumb__link-skeleton">
+            <Skeleton />
+          </Link>
+          <ArrowRight />
+          <span className="breadscrumb__page-title-skeleton">
+            <Skeleton />
+          </span>
+        </Fragment>
+      )}
+    </div>
+  );
+};
+
+const SidebarGroup = ({ category, loading }) => {
+  const categoryName = !loading ? category.name : <Skeleton />;
+  const legals = !loading
+    ? [...category.legals.nodes].sort((a, b) => a.title.localeCompare(b.title))
+    : Array.from({ length: 5 }, (i = 0) => i++);
+
+  return (
+    <div className="legal_detail__group">
+      <h4 className="legal_detail__group-title">{categoryName}</h4>
+      <ul className="legal_detail__group-items">
+        {legals.map((legal, index) => (
+          <SidebarItem
+            category={category}
+            legal={legal}
+            loading={loading}
+            key={index}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const SidebarItem = ({ category, legal, loading }) => {
+  const title = !loading ? legal.title.toLowerCase() : <Skeleton />;
+  return (
+    <li className="legal_detail__group-item">
+      <Link
+        className="legal_detail__group-item-link"
+        to={`/legal/${category.slug}/${legal.slug}`}
+      >
+        {title}
+      </Link>
+    </li>
+  );
+};
+
+const LegalContent = ({ loadTitle }) => {
+  const path = useLocation().pathname;
+  const slug = path.split("/").at(-1);
+  const { loading, data } = useQuery(GET_LEGAL_BY_SLUG, {
+    variables: { slug: slug },
+  });
+  const legal = !loading ? data.legalBy : "";
+
+  const navigateToLegal = () => {
+    window.location.href = "/legal";
+  };
+
+  if (!legal && !loading) {
+    navigateToLegal();
+  }
+
+  const content = legal?.content;
+  const contentLoadingArray = Array.from({ length: 2 });
+
+  useEffect(() => {
+    if (!loading) {
+      loadTitle(legal?.title);
+    }
+  }, [legal?.title, loading, loadTitle]);
+
+  return (
+    <div className="legal_detail__detail-box">
+      {!loading ? (
+        <div
+          className="legal_detail__detail-content"
+          dangerouslySetInnerHTML={{ __html: content }}
+        ></div>
+      ) : (
+        contentLoadingArray.map((_item, index) => (
+          <div key={index}>
+            <h2>
+              <Skeleton />
+            </h2>
+            <p>
+              <Skeleton count={5} />
+            </p>
+            <p>
+              <Skeleton count={5} />
+            </p>
+          </div>
+        ))
+      )}
+    </div>
+  );
+};

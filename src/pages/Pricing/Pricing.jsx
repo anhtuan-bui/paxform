@@ -52,6 +52,7 @@ const compareList = {
   ],
 };
 export default class Pricing extends Component {
+  registerLink = process.env.REACT_APP_REGISTER_LINK;
   personal = {
     pricing: [
       {
@@ -86,7 +87,7 @@ export default class Pricing extends Component {
         compares: {
           features: [
             "$39.90",
-            "5(max 9)",
+            "5 (max 9)",
             "30",
             "50",
             "10",
@@ -145,7 +146,7 @@ export default class Pricing extends Component {
           "A simple way for you new started to Passfolio.",
         ],
         compares: {
-          features: ["$29.90", "1(max 4)", "3", "10", "2", "1", "500", "10GB"],
+          features: ["$29.90", "1 (max 4)", "3", "10", "2", "1", "500", "10GB"],
           securities: [<Tick />],
           supports: [<Tick />, "40", <Tick />, <Tick />, <Eks />, <Eks />],
         },
@@ -331,6 +332,7 @@ export default class Pricing extends Component {
                       text="Get started"
                       type={`arrow ${index === 1 ? "flat-green" : "outline"}`}
                       color={`${index === 1 ? "white" : "green"}`}
+                      href={this.registerLink}
                     />
                     <strong className="plans__ul__list-inc">
                       What's Included
@@ -427,6 +429,7 @@ export default class Pricing extends Component {
                                 index === 1 ? "flat-green" : "outline"
                               }`}
                               color={`${index === 1 ? "white" : "green"}`}
+                              href={this.registerLink}
                             />
                           </dt>
                           {price.compares.features.map((feature, index) => (

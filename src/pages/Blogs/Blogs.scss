@@ -3,8 +3,28 @@
 .blogs {
   .hero {
     background-color: $color__gray-blue;
-    padding-top: rem(181);
+    padding-top: rem(100);
     position: relative;
+
+    &_graphic {
+      position: absolute;
+      bottom: -70px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      transform: skewY(5.5deg);
+      &__item {
+        height: rem(150);
+
+        &--green {
+          background-color: $color__success;
+        }
+
+        &--blue {
+          background-color: $color__primary;
+        }
+      }
+    }
   }
 }
 
@@ -12,18 +32,28 @@
   padding: 0 $padding__column;
   position: relative;
   box-sizing: border-box;
-  height: rem(420);
+  bottom: -70px;
+  margin-bottom: 4rem;
 
   &__wrapper {
     box-sizing: border-box;
-    width: calc(100% - $padding__column * 2);
-    position: absolute;
+    position: relative;
     display: flex;
     z-index: 1100;
     padding: 2rem;
     border-radius: rem(20);
     background-color: white;
     box-shadow: 0 rem(20) rem(30) rgba(3, 26, 48, 0.08);
+
+    @include medium {
+      padding: 1.5rem;
+    }
+
+    @include small {
+      padding: 1rem;
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 
   &__image,
@@ -33,34 +63,47 @@
   }
 
   &__image {
-    padding-right: calc($padding__column * 2);
+    padding-right: 2rem;
     max-height: rem(440);
+    overflow: hidden;
+    border-radius: rem(20);
+
+    @include medium {
+      padding-right: 1.5rem;
+    }
+
+    @include small {
+      padding-right: 0;
+    }
 
     img {
-      border-radius: rem(20);
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: rem(20);
+      display: block;
     }
   }
 
   &__content {
     padding-left: $padding__column;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
 
-    &-box {
-      margin-bottom: rem(76);
+    @include small {
+      padding-left: 0;
     }
   }
 
   &__name {
     color: $color__primary;
+    margin-bottom: 0;
   }
 
   &__title {
-    margin-top: rem(24);
-    margin-bottom: rem(28);
-    font-size: rem(42);
-    font-weight: 700;
+    margin: rem(24) 0;
   }
 
   &__summary {
@@ -133,4 +176,12 @@
   grid-template-columns: repeat(4, 1fr);
   gap: $padding__column--x2;
   padding: 0 $padding__column;
+
+  @include medium {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include small {
+    grid-template-columns: 1fr;
+  }
 }

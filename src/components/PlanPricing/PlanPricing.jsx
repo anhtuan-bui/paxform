@@ -4,6 +4,7 @@ import { ReactComponent as Tick } from "../../assets/images/tick.svg";
 import "./PlanPricing.scss";
 
 export default function PlanPricing({ plans }) {
+  const registerLink = process.env.REACT_APP_REGISTER_LINK;
   return (
     <div className="plans__pricing">
       {plans.map((plan, index) => (
@@ -38,9 +39,10 @@ export default function PlanPricing({ plans }) {
                 text="Get Started"
                 type="flat-green arrow"
                 color="white"
+                href='/pricing'
               />
             ) : (
-              <Button text="Get Started" type="outline arrow" color="green" />
+              <Button text="Get Started" type="outline arrow" color="green" href={registerLink}/>
             )}
 
             <p className="pricing_box__price-sub">What’s included</p>

@@ -1,6 +1,9 @@
 import client from "../configurations/apollo";
 import { LOGIN_CLIENT } from "./graphqlQuery";
 
+const USERNAME = process.env.REACT_APP_CLIENT_USERNAME;
+const PASSWORD = process.env.REACT_APP_CLIENT_PASSWORD;
+
 const parseJwt = (token) => {
     try {
       return JSON.parse(window.atob(token.split(".")[1]));
@@ -11,9 +14,12 @@ const parseJwt = (token) => {
   
   const login = () => {
     client
-      .mutate({ mutation: LOGIN_CLIENT })
+      .mutate({
+        mutation: LOGIN_CLIENT,
+        variables: { username: USERNAME, password: PASSWORD },
+      })
       .then((result) =>
-        localStorage.setItem("clientToken", result.data.login.authToken)
+        localStorage.setItem("clientToken", result.data.login.refreshToken)
       );
   };
   

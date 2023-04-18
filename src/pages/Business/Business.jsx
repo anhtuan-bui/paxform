@@ -85,7 +85,6 @@ const plans = [
 ];
 
 export default class Business extends Component {
- 
   render() {
     return (
       <main className="business">
@@ -104,7 +103,12 @@ export default class Business extends Component {
                 encrypts your data to ensure your safety.
               </p>
               <div className="hero__button">
-                <Button text="See Plan" type="flat-white arrow" color="blue" />
+                <Button
+                  text="See Plan"
+                  type="flat-white arrow"
+                  color="blue"
+                  href="/pricing"
+                />
                 <Button
                   text="How it works"
                   type="outline triangle-right"
@@ -175,6 +179,7 @@ export default class Business extends Component {
                   text="See full pricing"
                   type="arrow outline"
                   color="green"
+                  href='/pricing'
                 />
               </div>
             </div>

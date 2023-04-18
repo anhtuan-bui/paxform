@@ -1,139 +1,206 @@
 .container {
-    margin: auto;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 0 calc(rem(140) - 2rem);
-    width: $width__extraLarge;
-    // @include extraLarge {
-    //   width: $width__larger;
-    // }
-    @include larger {
-        padding: 0 2rem;
-    }
-    @include large {
-        padding: 0 1rem;
-        // width: $width__medium;
-    }
-    @include extraSmall {
-        padding: 0;
-    }
+  margin: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 calc(rem(140) - 2rem);
+  width: $width__extraLarge;
+  // @include extraLarge {
+  //   width: $width__larger;
+  // }
+  @include larger {
+    padding: 0 2rem;
+  }
+  @include large {
+    padding: 0 1rem;
+    // width: $width__medium;
+  }
+  @include extraSmall {
+    padding: 0;
+  }
 }
 
 .bottom_triangle {
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-    border-color: transparent transparent #f0f8ff #f0f8ff;
-    border-style: solid;
-    border-width: rem(70) 50vw;
-    height: 0px;
-    width: 0px;
-    z-index: 1000;
-    @include extraLarge {
-        border-width: rem(70) 720px;
-    }
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  border-color: transparent transparent #f0f8ff #f0f8ff;
+  border-style: solid;
+  border-width: rem(70) 50vw;
+  height: 0px;
+  width: 0px;
+  z-index: 1000;
+  @include extraLarge {
+    border-width: rem(70) 720px;
+  }
 
-    &--dark-blue {
-        border-color: transparent transparent #031a30 #031a30;
-    }
-    &--light-blue {
-        border-color: transparent transparent #e1edf9 #e1edf9;
-    }
-    &--light-grey {
-        border-color: transparent transparent #f6f6f6 #f6f6f6;
-    }
-    &--grey-blue {
-        border-color: transparent transparent $color__gray-blue $color__gray-blue;
-    }
-    &--white {
-        border-color: transparent transparent white white;
-    }
-    &--blue {
-        border-color: transparent transparent $color__primary $color__primary;
-    }
-    &--footer {
-        border-color: transparent transparent #e1edf9 #e1edf9;
-    }
-    &--light-green {
-        border-color: transparent transparent #def6ec #def6ec;
-    }
-    &--green {
-        border-color: transparent transparent #059459 #059459;
-    }
-    &--secondary {
-        border-color: transparent transparent $color__secondary $color__secondary;
-    }
+  &--dark-blue {
+    border-color: transparent transparent #031a30 #031a30;
+  }
+  &--light-blue {
+    border-color: transparent transparent #e1edf9 #e1edf9;
+  }
+  &--light-grey {
+    border-color: transparent transparent #f6f6f6 #f6f6f6;
+  }
+  &--grey-blue {
+    border-color: transparent transparent $color__gray-blue $color__gray-blue;
+  }
+  &--white {
+    border-color: transparent transparent white white;
+  }
+  &--blue {
+    border-color: transparent transparent $color__primary $color__primary;
+  }
+  &--footer {
+    border-color: transparent transparent #e1edf9 #e1edf9;
+  }
+  &--light-green {
+    border-color: transparent transparent #def6ec #def6ec;
+  }
+  &--green {
+    border-color: transparent transparent #059459 #059459;
+  }
+  &--secondary {
+    border-color: transparent transparent $color__secondary $color__secondary;
+  }
 }
 
 .rtl {
-    direction: rtl;
+  direction: rtl;
 }
 
 .ltr {
-    direction: ltr;
+  direction: ltr;
 }
 
 .display-none {
-    display: none;
+  display: none;
 }
 
 .span--hover {
-    position: relative;
-    display: inline-block;
-    white-space: nowrap;
-    &:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 1px;
-        bottom: -2px;
-        left: 0;
-        background-color: white;
-        transform-origin: bottom left;
-        transition: transform 0.25s ease-out;
-        
-        @include large {
-            background-color: transparent;
-        }
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+
+    @include large {
+      background-color: transparent;
     }
-    &:hover:after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-    }
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 }
 
 .section_name {
-    font-size: rem(14);
-    letter-spacing: 0.014rem;
-    font-weight: 600;
-    margin: 0;
-    text-transform: uppercase;
+  font-size: rem(14);
+  letter-spacing: 0.014rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
 }
 
 .section_title {
-    font-size: rem(38);
-    font-weight: 700;
-    line-height: rem(48);
-    @include extraLarge {
-        font-size: rem(36);
-    }
-    @include large {
-        font-size: rem(34);
-    }
-    @include medium {
-        font-size: rem(32);
-    }
-    @include small {
-        font-size: rem(30);
-    }
-    @include extraSmall {
-        font-size: rem(28);
-    }
+  font-size: rem(38);
+  font-weight: 700;
+  line-height: 1.3;
+  @include extraLarge {
+    font-size: rem(36);
+  }
+  @include large {
+    font-size: rem(34);
+  }
+  @include medium {
+    font-size: rem(32);
+  }
+  @include small {
+    font-size: rem(30);
+  }
+  @include extraSmall {
+    font-size: rem(28);
+  }
 }
 
 .section__description {
-    line-height: rem(25);
-    letter-spacing: 0.005;
-    font-weight: 400;
+  line-height: rem(25);
+  letter-spacing: 0.005;
+  font-weight: 400;
+}
+
+.link--black {
+  color: $color_main__text;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten($color_main__text, 20%);
+  }
+}
+
+.article_detail {
+  img {
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: scale-down;
+    border-radius: rem(20);
+    margin: 1rem auto;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  li {
+    line-height: 2.2;
+  }
+
+  a {
+    color: $color__success;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: lighten($color__success, 20%);
+    }
+  }
+
+  blockquote {
+    margin: 20px 0;
+    background-color: #e1edf9;
+    border-radius: 20px;
+    position: relative;
+    padding: 25px 50px;
+    &::before {
+      content: url("../assets/images/“.png");
+      margin-right: 10px;
+      display: block;
+      position: absolute;
+      top: 25px;
+      left: 20px;
+    }
+  }
+
+  iframe {
+    width: 100%;
+    border-radius: 20px;
+    height: 360px;
+
+    @include minMedium {
+      height: 460px;
+    }
+
+    @include minLarge {
+      height: 600px;
+    }
+  }
 }

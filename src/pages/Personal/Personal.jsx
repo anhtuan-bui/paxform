@@ -186,6 +186,7 @@ export default class Personal extends Component {
                   text="See full pricing"
                   type="arrow outline"
                   color="green"
+                  href='/pricing'
                 />
               </div>
             </div>

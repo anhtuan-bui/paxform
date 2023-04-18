@@ -206,10 +206,6 @@ $color_dark-blue: #031a30;
             color: #2f4356;
           }
         }
-        .button {
-          width: 100%;
-          height: rem(45);
-        }
         &-inc {
           display: block;
           margin-top: rem(40);
@@ -577,10 +573,14 @@ $color_dark-blue: #031a30;
       }
     }
     &__plans {
-      display: flex;
-      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 3fr;
       list-style: none;
       box-sizing: border-box;
+      .swiper {
+        max-width: 100%;
+        box-sizing: border-box;
+      }
       &__list {
         border: rem(1) solid #baccde;
         border-radius: rem(20);
@@ -638,10 +638,6 @@ $color_dark-blue: #031a30;
               font-weight: 400;
             }
           }
-          & .button {
-            width: 100%;
-            margin: 0 auto;
-          }
           &.top {
             height: rem(220);
           }
@@ -652,6 +648,8 @@ $color_dark-blue: #031a30;
           font-size: rem(16);
           text-align: center;
           white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
           &:nth-child(2n + 1) {
             background: rgba(3, 26, 48, 0.05);
           }

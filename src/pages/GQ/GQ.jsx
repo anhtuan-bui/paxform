@@ -1,50 +1,59 @@
-// import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import React, { useEffect } from "react";
+import "./GQ.scss";
 
-// const GET_ALL_COMPANIES = gql`
-// 	query GetAllCompanies {
-// 		companies {
-// 			nodes {
-// 				content
-// 				image {
-// 					node {
-// 						mediaItemUrl
-// 					}
-// 				}
-// 				title
-// 				userdate
-// 			}
-// 		}
-// 	}
-// `;
-
-const getData = async () => {
-	const response = await fetch("https://v1.paxfolio.com/wp-json/wp/v2/posts");
-	const json = await response.json();
-	return json;
-}
+const GET_FAQS = gql`
+  query getFAQs {
+    faqCategories {
+      nodes {
+        faqs {
+          nodes {
+            id
+            slug
+            title
+            content
+          }
+        }
+        id
+        slug
+        name
+      }
+    }
+  }
+`;
 
 export default function GQ() {
-	useEffect(() => {
-		const data =  getData();
-		console.log(data)
-	})
-	// console.log(response);
-	// const { loading, data } = useQuery(GET_ALL_COMPANIES);
-	// if (loading) return <p>Loading...</p>;
-	// console.log(data);
-	// const companies = data.companies.nodes;
-	return (
-		<div className="container">
-			{/* {companies.map((company, index) => (
-				<div key={index}>
-					<div>{company.title}</div>
-					<div dangerouslySetInnerHTML={{ __html: company.content }}></div>
-					<img src={company.image.node.mediaItemUrl} alt="" />
-					<strong>{company.userdate}</strong>
-				</div>
-			))} */}
-			GQ
-		</div>
-	);
+  const { loading, data } = useQuery(GET_FAQS);
+  if (loading) return "loading";
+  console.log(data);
+  const categories = data.faqCategories.nodes;
+
+  return (
+    <div className="container gq hero">
+      {categories.map((category, index) => (
+        <Category category={category} key={index} />
+      ))}
+    </div>
+  );
 }
+
+const Category = ({ category }) => {
+  const faqs = category.faqs.nodes;
+  return (
+    <div className="categories">
+      <h1 className="category_title">{category.name}</h1>
+      {faqs.map((faq, index) => (
+        <Faq faq={faq} key={index} />
+      ))}
+    </div>
+  );
+};
+
+const Faq = ({faq}) => {
+  return (
+    <div className="faqs">
+      <h2 className="faq_title">{faq.title}</h2>
+      <p className="faq_description" dangerouslySetInnerHTML={{__html: faq.content}}></p>
+    </div>
+  );
+};
