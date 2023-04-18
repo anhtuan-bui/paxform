@@ -1,0 +1,62 @@
+@import "../../styles/styles.scss";
+.frequently_ask {
+
+  &__title {
+    font-size: rem(38);
+    
+    @include extraLarge {
+      font-size: rem(38);
+    }
+    @include large {
+      font-size: rem(34);
+    }
+    @include medium {
+      font-size: rem(42);
+    }
+    @include small {
+      font-size: rem(36);
+    }
+    @include extraSmall {
+      font-size: rem(28);
+    }
+  }
+  &__accordion {
+    
+    &-item {
+      border-top: 1px solid $color__border;
+      padding: rem(16) 0;
+
+      &:last-of-type {
+        border-bottom: 1px solid $color__border;
+      }
+    }
+
+    &-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      //max-height: 0;
+      
+    }
+    &-title {
+      font-size: rem(18);
+      font-weight: 350;
+      line-height: rem(26);
+      margin: 0;
+    }
+
+    &-arrow {
+      width: 15px;
+      transition: 0.25s ease-in-out;
+    }
+
+    &-content {
+      margin: 0;
+      //max-height: 0; //changed from -30 to 0 but no change. 
+      overflow: hidden;
+      transition: 0.25s ease-in-out;
+      
+    }
+  }
+}
