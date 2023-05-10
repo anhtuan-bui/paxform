@@ -1,8 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Footer.scss";
 
-import {ReactComponent as FooterLogo} from "../../assets/images/LOGO-footer.svg";
-import countries from "../../lib/countries";
+import { ReactComponent as FooterLogo } from "../../assets/images/LOGO-footer.svg";
 // import languages from "../../assets/json/languages.json";
 
 import { ReactComponent as LinkedIn } from "../../assets/icons/linkedin.svg";
@@ -17,6 +16,10 @@ import { useTranslation } from "react-i18next";
 import { useQuery } from "@apollo/client";
 import { GET_LANGUAGES } from "../../lib/graphqlQuery";
 import { convertLangToLocale } from "../../lib/util";
+
+import { ReactComponent as ArrowDown } from "../../assets/icons/arrowDown.svg";
+
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 const socialMedias = [
   {
@@ -62,10 +65,12 @@ const socialMedias = [
 ];
 
 export default function Footer() {
-  // const [emoji, setEmoji] = useState("🇦🇺");
-  // const [shortName, setShortName] = useState("AU");
-  // const [countryName, setCountryName] = useState("Australia");
-  // const [filteredCountries, setFilteredCountries] = useState(languages);
+  const [selector, setSelector] = useState(false);
+  const [overlayOpened, setOverlayOpened] = useState(false);
+  const [shortName, setShortName] = useState("au");
+  const [languageFullName, setLanguageFullName] = useState(
+    "English - Australia"
+  );
   const { loading, data } = useQuery(GET_LANGUAGES);
 
   const languages = !loading ? data?.languages : Array.from({ length: 3 });
@@ -340,9 +345,37 @@ export default function Footer() {
 
   const [languageCode, setLanguageCode] = useState("");
 
-  const handleLanguageChange = (e) => {
-    // const short = e.target.value.split("-")[0];
-    const lang = e.target.value;
+  const handleLanguagesClick = (e) => {
+    if (!selector) {
+      openSelect();
+      openFooterOverlay();
+      setOverlayOpened(true);
+    } else {
+      closeSelect();
+      closeFooterOverlay();
+      setOverlayOpened(false);
+    }
+  };
+
+  const openSelect = () => {
+    const select = document.querySelector(".footer__languages-select");
+    select.classList.add("footer__languages-select--active");
+    setSelector(true);
+  };
+  const closeSelect = () => {
+    const select = document.querySelector(".footer__languages-select");
+    select.classList.remove("footer__languages-select--active");
+    setSelector(false);
+  };
+
+  const handleLanguageOptionClick = (e) => {
+    const lang = e.target.getAttribute("locale");
+    if (overlayOpened) {
+      closeFooterOverlay();
+    }
+    closeSelect();
+    setShortName(e.target.getAttribute("shortname"));
+    setLanguageFullName(e.target.getAttribute("fullname"));
 
     if (!lang) {
       return;
@@ -353,18 +386,32 @@ export default function Footer() {
     localStorage.setItem("lang", lang);
   };
 
+  const openFooterOverlay = () => {
+    const footerOverlay = document.querySelector(".footer__overlay");
+    footerOverlay.classList.add("footer__overlay--display");
+  };
+
+  const closeFooterOverlay = () => {
+    const footerOverlay = document.querySelector(".footer__overlay");
+    footerOverlay.classList.remove("footer__overlay--display");
+  };
+
+  const handleFooterOverlayClick = () => {
+    closeFooterOverlay();
+    closeSelect();
+  };
+
   useEffect(() => {
     const notFound = document.querySelector(".not_found");
     const lang = localStorage.getItem("lang");
 
-    if (lang && !loading) {
-      const selector = document.querySelector(
-        ".footer__bottom-languages-selector"
+    if (lang) {
+      const locale = lang?.split("_")[1].toLowerCase();
+      setShortName(locale);
+      const language = languages.find(
+        (language) => language?.locale?.toLowerCase() === lang.toLowerCase()
       );
-      if (selector) {
-        selector.value = lang;
-      }
-      setLanguageCode(lang);
+      setLanguageFullName(language?.name);
     }
 
     if (notFound) {
@@ -372,77 +419,11 @@ export default function Footer() {
     } else {
       setFooter(true);
     }
-  }, [languageCode, loading]);
+  }, [languageCode, loading, languages]);
 
   if (!footer) {
     return;
   }
-  // const openSelectorOptions = () => {
-  //   const languageOptions = document.querySelector(
-  //     ".languages_selector__options"
-  //   );
-  //   languageOptions.classList.add("languages_selector__options--display-block");
-  // };
-
-  // const closeSelectorOptions = () => {
-  //   const languageOptions = document.querySelector(
-  //     ".languages_selector__options"
-  //   );
-  //   languageOptions.classList.remove(
-  //     "languages_selector__options--display-block"
-  //   );
-  // };
-
-  // const openFooterOverlay = () => {
-  //   const footerOverlay = document.querySelector(".footer__overlay");
-  //   footerOverlay.classList.add("footer__overlay--display");
-  // };
-
-  // const closeFooterOverlay = () => {
-  //   const footerOverlay = document.querySelector(".footer__overlay");
-  //   footerOverlay.classList.remove("footer__overlay--display");
-  // };
-
-  // const handleFooterOverlayClick = () => {
-  //   console.log('clicked')
-  //   closeFooterOverlay();
-  // };
-
-  // const handleLanguageSelectorClick = () => {
-  //   openSelectorOptions();
-  //   openFooterOverlay();
-  // };
-
-  // const handleLanguageOptionClick = (e) => {
-  //   const optionClassName = "languages_selector__option";
-
-  //   closeSelectorOptions();
-  //   closeFooterOverlay();
-
-  //   if (e.target.classList.contains(optionClassName)) {
-  //     setEmoji(e.target.getAttribute("emoji"));
-  //     setShortName(e.target.getAttribute("sortname"));
-  //     setCountryName(e.target.getAttribute("countryname"));
-  //   } else if (e.target.parentElement.classList.contains(optionClassName)) {
-  //     setEmoji(e.target.parentElement.getAttribute("emoji"));
-  //     setShortName(e.target.parentElement.getAttribute("sortname"));
-  //     setCountryName(e.target.parentElement.getAttribute("countryname"));
-  //   }
-  // };
-
-  // const handleSearchInputChange = (e) => {
-  //   if (e.target.value) {
-  //     setFilteredCountries(
-  //       languages.filter((country) =>
-  //         country.country_name
-  //           .toLowerCase()
-  //           .includes(e.target.value.toLowerCase())
-  //       )
-  //     );
-  //   } else {
-  //     setFilteredCountries(languages);
-  //   }
-  // };
 
   return (
     <footer className="footer">
@@ -451,7 +432,7 @@ export default function Footer() {
           <div className="footer__top-left">
             <div className="footer__logo">
               <a href="/">
-                <FooterLogo className="footer__logo-svg"/>
+                <FooterLogo className="footer__logo-svg" />
               </a>
             </div>
             <div className="footer__social">
@@ -514,101 +495,51 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <div className="footer__bottom-languages">
-              <select
-                className="footer__bottom-languages-selector"
-                name="language"
-                defaultValue={languageCode}
-                onChange={(e) => handleLanguageChange(e)}
+            <div className="footer__languages">
+              <div
+                className="footer__languages-selector"
+                onClick={(e) => handleLanguagesClick(e)}
               >
-                <option className="footer__bottom-languages-option" value="" disabled>
-                  {t("selectYourLanguage")}
-                </option>
+                <div className="footer__languages-name">
+                  <span className={`fi fi-${shortName}`}></span>{" "}
+                  {languageFullName}
+                </div>
+                <ArrowDown className="footer__arrow-down" />
+              </div>
+
+              <div className="footer__languages-select">
                 {languages.map((language, index) => (
                   <SelectorOption
                     language={language}
+                    onClick={(e) => handleLanguageOptionClick(e)}
                     key={index}
-                    loading={loading}
                   />
                 ))}
-              </select>
-              {/* <div className="languages">
-                <div
-                  className="languages_selector"
-                  onClick={handleLanguageSelectorClick}
-                  sortname={sortName}
-                >
-                  <span className="languages_selector__emoji">{emoji}</span>
-                  <span>{countryName}</span>
-                  <img
-                    className="languages_selector__arrow-down"
-                    src={arrowDown}
-                    alt="arrow down"
-                  />
-                </div>
-                <div className="languages_selector__options">
-                  <div className="languages_selector__search">
-                    <input
-                      className="languages_selector__search-input"
-                      type="text"
-                      placeholder="Search"
-                      onChange={handleSearchInputChange}
-                    />
-                    <div className="languages_selector__search-button">
-                      <img
-                        className="languages_selector__search-icon"
-                        src={searchIcon}
-                        alt=""
-                        aria-hidden={true}
-                      />
-                    </div>
-                  </div>
-                  <div className="languages_selector__option-box">
-                    {filteredCountries.map((country, index) => (
-                      <div
-                        className="languages_selector__option"
-                        key={index}
-                        sortname={country.sortname}
-                        countryname={country.country_name}
-                        emoji={country.emoji}
-                        onClick={(e) => handleLanguageOptionClick(e)}
-                      >
-                        <span className="languages_selector__emoji">
-                          {country.emoji}
-                        </span>
-                        <span className="languages_selector__country-name">
-                          {country.country_name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <div
+      <div
         className="footer__overlay"
         onClick={(e) => handleFooterOverlayClick(e)}
-      ></div> */}
+      ></div>
     </footer>
   );
 }
 
-const SelectorOption = ({ language }) => {
-  const countryShort = language?.locale.split("_")[1];
-  const country = countries.find((c) => c.sortname === countryShort);
+const SelectorOption = ({ language, onClick }) => {
+  const shortName = language?.locale.split("_")[1].toLowerCase();
 
-  const languageCode = language ? language?.code : "";
-  const languageName = language
-    ? language?.name.replace(countryShort, "").trim()
-    : "";
-  const countryNative = country?.native;
-  const emoji = country?.emoji;
   return (
-    <option className="footer__bottom-languages-option" value={languageCode}>
-      {`${emoji} ${languageName} - ${countryNative}`}
-    </option>
+    <div
+      className="footer__languages-option"
+      onClick={(e) => onClick(e)}
+      locale={language?.locale?.toUpperCase()}
+      shortname={shortName}
+      fullname={language?.name}
+    >
+      <span className={`fi fi-${shortName}`}></span> {language?.name}
+    </div>
   );
 };

@@ -499,5 +499,36 @@
       "name": "INDUSTRY UPDATES HIGHLIGHT",
       "title": "Latest Industry Updates Highlight"
     }
+  },
+  "dataSecurityPage": {
+    "hero": {
+      "title": "Paxform Legal"
+    },
+    "dataSecurity": {
+      "title": "Data Security",
+      "sectionName": "Security Policy",
+      "slogan": "Only You Can Access Your Data. Not Us - Not Anyone Else.",
+      "description": "<p>Paxform will never share your data with anyone. What’s more, no one at Paxform can view or access your information. Our mission is to apply end-toend encryption to every piece of information stored, protecting the data of organizations and individuals at all stages and at all costs.</p><p>Only you decide which parties can view what piece of information. Our security architecture ensures that personal data is decentralized, guaranteeing that the point of access in a potential security threat will not reveal any information.</p>"
+    },
+    "dataAccess": {
+      "sectionName": "Security Policy",
+      "slogan": "Only You Can Access Your Data. Not Us - Not Anyone Else.",
+      "dataSafeguard": {
+        "title": "Safeguarding your data",
+        "description": "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes."
+      },
+      "dataSecurity": {
+        "title": "Secure anywhere anytime",
+        "description": "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes."
+      },
+      "networkProtection": {
+        "title": "Network protection",
+        "description": "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes."
+      },
+      "backups": {
+        "title": "Back-ups",
+        "description": "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes."
+      }
+    }
   }
 }
