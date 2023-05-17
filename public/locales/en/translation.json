@@ -150,8 +150,8 @@
   },
   "businessPage": {
     "hero": {
-      "title": "Your Personal Information in One Place Fill Any Form, Anywhere",
-      "description": "Paxform’s function is simple: it completely fills any form anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety.",
+      "title": "Fill Any Form, Anywhere with Your Personal Information All in One Place",
+      "description": "Paxform’s function is simple: It fills any form, anytime and anywhere. Our autofill technology creates a seamless form-filling process, removing the repetitive action of entering personal information. With Paxform, managing your personal data has never been easier - you can save it all in one secure place, sign important documents electronically, and send them off to organisations effortlessly. Paxform removes the worry of security and privacy as we fully encrypt your data to ensure your safety.",
       "planButton": "See Plan",
       "howButton": "How it works"
     },
@@ -271,13 +271,13 @@
   "personalPage": {
     "hero": {
       "name": "PERSONAL",
-      "title": "Your Personal Information in One Place Fill Any Form, Anywhere",
-      "description": "Paxform’s function is simple: it completely fills any form, anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety.",
+      "title": "Fill Any Form, Anywhere with Your Personal Information All in One Place",
+      "description": "Paxform’s function is simple: It fills any form, anytime and anywhere. Our autofill technology creates a seamless form-filling process, removing the repetitive action of entering personal information. With Paxform, managing your personal data has never been easier - you can save it all in one secure place, sign important documents electronically, and send them off to organisations effortlessly. Paxform removes the worry of security and privacy as we fully encrypt your data to ensure your safety.",
       "seePlan": "See Plan"
     },
     "flexBox": {
-      "title": "Repeatedly Filling Out Forms with the Same Data Requirements?",
-      "description": "Save precious time by having all your information on demand. Autocomplete forms and applications on the go. Only fill in your data once."
+      "title": "Tired of Repeatedly Filling Forms with the Same Data Requirements?",
+      "description": "Save your valuable time by having access to all your information on demand. Autocomplete forms and applications on the go. Fill your data once and let our system handle the rest."
     },
     "featuresSection": {
       "name": "Features",
