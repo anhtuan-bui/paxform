@@ -502,7 +502,7 @@ export default function Footer() {
               >
                 <div className="footer__languages-name">
                   <span className={`fi fi-${shortName}`}></span>{" "}
-                  {languageFullName}
+                  {languageFullName ? languageFullName : "Select your language"}
                 </div>
                 <ArrowDown className="footer__arrow-down" />
               </div>
@@ -537,7 +537,7 @@ const SelectorOption = ({ language, onClick }) => {
       onClick={(e) => onClick(e)}
       locale={language?.locale?.toUpperCase()}
       shortname={shortName}
-      fullname={language?.name}
+      fullname={language?.name }
     >
       <span className={`fi fi-${shortName}`}></span> {language?.name}
     </div>
