@@ -47,6 +47,11 @@ export default function Personal() {
       description: t("personalPage.features.description5"),
       isOpened: false,
     },
+    {
+      title: t("personalPage.features.title6"),
+      description: t("personalPage.features.description6"),
+      isOpened: false,
+    },
   ];
 
   const plans = [

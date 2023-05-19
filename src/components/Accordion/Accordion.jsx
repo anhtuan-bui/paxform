@@ -115,6 +115,7 @@ const Accordion = (props) => {
     features.forEach((feature, index) => {
       if (feature.isOpened) {
         panels[index].style.maxHeight = panels[index].scrollHeight + "px";
+        console.log(panels[index].style.maxHeight)
       }
     });
 

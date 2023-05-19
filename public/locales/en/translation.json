@@ -281,7 +281,7 @@
     },
     "featuresSection": {
       "name": "Features",
-      "title": "Features For Your Organisation"
+      "title": "Features Handpicked For Your Benefit"
     },
     "planSection": {
       "name": "PERSONAL PLANS",
@@ -289,16 +289,18 @@
       "button": "See full pricing"
     },
     "features": {
-      "title1": "Create Form Templates",
-      "title2": "Multiple Admins",
-      "title3": "View and Procees Applications",
-      "title4": "Use API",
-      "title5": "Request Information",
-      "description1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      "description2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      "description3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      "description4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      "description5": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+      "title1": "Access your personal data anytime",
+      "title2": "Fill forms at your convenience",
+      "title3": "Chat with organizations",
+      "title4": "Share data with family",
+      "title5": "Secrets",
+      "title6": "Disclosures",
+      "description1": "Once you start entering your personal information into the folio, instant access to that data becomes available at your fingertips. What's more, all your saved information is automatically populated into any relevant forms, eliminating the tedious task of repeatedly entering required details in multiple places. Thanks to Paxform's streamlined structure, editing and saving data is a breeze, providing users with a hassle-free form-filling experience.",
+      "description2": "Paxform has transformed form filling by seamlessly transitioning from paper to digital forms, enabling you to effortlessly complete forms anytime, anywhere. Unlike traditional physical forms, Paxform's advanced digital technology eliminates the frustration of lengthy and disorganized paperwork, converting the form-filling process into a smooth and automated experience. With just a scan or a click, you can now fill forms on the go, at your convenience. Bid farewell to the stress of dealing with physical forms and embrace a smoother and more convenient form-filling journey.",
+      "description3": "Upon form submission, you gain access to a user-friendly chat function, facilitating easy communication between you and the organization receiving your form. This convenient feature enables both parties to address any potential issues or concerns regarding the provided data. Additionally, you can direct any personal questions or concerns to the organization, ensuring effective and timely interaction throughout the process.",
+      "description4": "Paxform now offers two powerful features: 'Add a Person' and 'Link & Share.' These functions empower users to invite family members and securely share data with trusted recipients. Rest assured, your data remains protected through advanced encryption and robust security measures, ensuring that only the intended recipient can access it. Sharing data with family members simplifies the form-filling process, especially when entering information related to a shared identity, as many forms require this level of detail.",
+      "description5": "Our Secrets feature goes beyond your folio, granting you exclusive access to highly sensitive information like your bank card and bank account details. To ensure utmost confidentiality, single-factor authentication is mandatory for viewing and modifying this data. Additionally, the Secrets page offers a convenient random password generator, generating robust and dependable passwords for your security. Furthermore, you'll have the ability to utilize the Shared Secrets function, enabling you to securely share your confidential data with trusted users already connected to your account.",
+      "description6": "Enhance your understanding of your shared information with the powerful Disclosures feature. Access a comprehensive list of organizations you've engaged with through Paxform and effortlessly explore the forms you've filled for each specific organization. Stay in control of your interactions by utilizing this function, which efficiently organizes your form history and provides valuable insights into your engagements with various organizations."
     },
     "plans": {
       "description1": "A simple way to get started for you new to passfolio.",

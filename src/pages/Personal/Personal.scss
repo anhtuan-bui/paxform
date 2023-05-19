@@ -25,7 +25,7 @@ $color_bg_hero__gradient--first: #059459;
     &__wrapper {
       display: flex;
       align-items: center;
-      height: rem(820);
+      height: rem(840);
       box-sizing: border-box;
 
       @include medium {
@@ -273,6 +273,7 @@ $color_bg_hero__gradient--first: #059459;
 
     &__accordion {
       padding: 0 $padding__column;
+      min-height: 750px;
       &-item {
         &-title {
           font-size: rem(20);
