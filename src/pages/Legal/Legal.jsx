@@ -31,10 +31,12 @@ export default function Legal() {
         <SectionTriangleRight variant="white" />
       </section>
       <section className="category">
-        <div className="container category__wrap">
-          {legalCategories.map((category, index) => (
-            <CategoryBox category={category} key={index} loading={loading} />
-          ))}
+        <div className="container">
+          <div className="category__wrap">
+            {legalCategories.map((category, index) => (
+              <CategoryBox category={category} key={index} loading={loading} />
+            ))}
+          </div>
         </div>
 
         <SectionTriangleRight variant="footer" />

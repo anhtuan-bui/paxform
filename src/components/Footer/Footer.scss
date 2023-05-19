@@ -167,10 +167,8 @@
 
     ul {
       list-style: none;
-      padding-left: 0;
       display: flex;
       gap: rem(20);
-      margin: rem(5) 0;
 
       li {
         font-size: rem(14);
@@ -225,6 +223,7 @@
 
   &__languages {
     position: relative;
+    padding: 0 $padding__column;
     &-selector {
       display: flex;
       gap: rem(20);
