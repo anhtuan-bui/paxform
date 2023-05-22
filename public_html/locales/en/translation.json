@@ -150,8 +150,8 @@
   },
   "businessPage": {
     "hero": {
-      "title": "Fill Any Form, Anywhere with Your Personal Information All in One Place",
-      "description": "Paxform’s function is simple: It fills any form, anytime and anywhere. Our autofill technology creates a seamless form-filling process, removing the repetitive action of entering personal information. With Paxform, managing your personal data has never been easier - you can save it all in one secure place, sign important documents electronically, and send them off to organisations effortlessly. Paxform removes the worry of security and privacy as we fully encrypt your data to ensure your safety.",
+      "title": "Experience a Seamless Form Creation Process for Your Organization",
+      "description": "Experience the ultimate ease in form creation with Paxform. Our transition from physical to digital forms revolutionizes your user interactions, providing a reliable and efficient process to gather data for the benefit of your team and users alike. Our web application empowers you with straightforward functions and features, paving the way for your success on the road ahead.",
       "planButton": "See Plan",
       "howButton": "How it works"
     },
@@ -163,24 +163,24 @@
       "sectionName": "feature",
       "sectionTitle": "Features For Your Organisation",
       "first": {
-        "title": "Create Form Templates",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "title": "Create Form",
+        "description": "At Paxform, creating forms is our specialty. Our web application provides your team with a user-friendly interface, saving time and ensuring your forms are visually appealing and well-organized. We've made the form creation process incredibly easy, eliminating the need for coding or advanced design skills. With our standard and custom form fields, you can customize your forms to suit your organization's preferences."
       },
       "second": {
-        "title": "Multiple Admins",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "title": "Create Contracts",
+        "description": "By utilizing Paxform, the realm of digital data sharing and submissions is revolutionized, surpassing conventional expectations for contract creation. Similar to standard forms, contracts incorporate both standard and customizable fields, enabling your organization to tailor contracts to your specific requirements"
       },
       "third": {
-        "title": "View and Procees Applications",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "title": "View and Process Submissions",
+        "description": "Experience the convenience of centralized submission management with Paxform. Our user-friendly web application prioritizes simplicity and order, empowering your organization with a comprehensive suite of features and functions. Gain complete control over your submissions, effortlessly view and process the data your organization receives, all from a single platform."
       },
       "fourth": {
-        "title": "Use APIs",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "title": "Manage Checkins/visitors",
+        "description": "Recognizing the challenges posed by disorganized visitor management, we have integrated Checkins as a key feature in our mobile application. By offering Checkin forms to visitors upon entry to your physical facilities, you not only promote Covid-19 prevention measures but also facilitate customer follow-ups, gather valuable reviews, and provide timely notifications about organizational updates and offers. Experience seamless visitor management with Paxform."
       },
       "fifth": {
-        "title": "Request Information",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+        "title": "Chat with Customers",
+        "description": "Enhance communication between your organization and its users with our integrated chat function. This powerful feature breaks down common communication barriers and ensures seamless interactions. Take control of the conversation by initiating the chat, enabling users to engage with your organization."
       }
     },
     "plans": {
