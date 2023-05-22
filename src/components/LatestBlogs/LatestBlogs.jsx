@@ -39,7 +39,7 @@ export default function LatestBlogs({ triangleColor }) {
           </div>
         </div>
         <div className="platform__content">
-          {blogs.map((blog, index) => (
+          {blogs?.map((blog, index) => (
             <RelatedCard
               key={index}
               data={blog}

@@ -98,8 +98,8 @@
     "cardTitle2": "Always know what you pay",
     "cardTitle3": "Start your integration",
     "cardDescription1": "Feel free to get in touch with us. Our team can help you design a personalized package that meets your specific needs. With our advanced technology, your data will be automatically synced across all forms, eliminating the need for tedious manual input.",
-    "cardDescription2": "Experience a new level of convenience by using your stored signatures to electronically sign your documents.",
-    "cardDescription3": "Experience a new level of convenience by using your stored signatures to electronically sign your documents."
+    "cardDescription2": "Experience straightforward and transparent billing free from hidden charges with Paxform.",
+    "cardDescription3": "Leverage our robust API capabilities to effortlessly connect and synchronize with other systems."
   },
   "latestBlogs": {
     "name": "PAXFORM BLOG",
@@ -163,7 +163,7 @@
       "sectionName": "feature",
       "sectionTitle": "Features For Your Organisation",
       "first": {
-        "title": "Create Form",
+        "title": "Create Forms",
         "description": "At Paxform, creating forms is our specialty. Our web application provides your team with a user-friendly interface, saving time and ensuring your forms are visually appealing and well-organized. We've made the form creation process incredibly easy, eliminating the need for coding or advanced design skills. With our standard and custom form fields, you can customize your forms to suit your organization's preferences."
       },
       "second": {
