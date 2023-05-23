@@ -11,6 +11,8 @@ import RelatedCard from "../../components/RelatedCard/RelatedCard";
 import Button from "../../components/Button/Button";
 
 import shapeHeader from "../../assets/images/Resources/Shape header.svg";
+import shapeHeaderLeft from "../../assets/images/bg-left.svg";
+import shapeHeaderRight from "../../assets/images/bg-right.svg";
 import ReadyGet from "../../components/ReadyGet/ReadyGet";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import { useQuery } from "@apollo/client";
@@ -26,15 +28,17 @@ import { convertToSlug, queryLanguageCode } from "../../lib/util";
 import { useTranslation } from "react-i18next";
 
 export default function Resources() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const [chip, setChip] = useState("all");
   const [resourceCategories, setResourceCategories] = useState([]);
   const [colorMap] = useState(new Map());
   const colors = ["#20976c", "#0a61b4", "#A8CA13", "#F48C06"];
 
-  const { loading, data } = useQuery(GET_FIRST_TWO_RESOURCES, {variables: {
-    language: queryLanguageCode()
-  }});
+  const { loading, data } = useQuery(GET_FIRST_TWO_RESOURCES, {
+    variables: {
+      language: queryLanguageCode(),
+    },
+  });
 
   const twoResources = !loading
     ? data?.resources?.nodes
@@ -75,7 +79,9 @@ export default function Resources() {
             </div>
           </div>
           <div className="hero__content">
-            <p className="hero__name section_name">{t("resourcesPage.hero.name")}</p>
+            <p className="hero__name section_name">
+              {t("resourcesPage.hero.name")}
+            </p>
             <h1 className="hero__title">{t("resourcesPage.hero.title")}</h1>
             <p className="hero__description">
               {t("resourcesPage.hero.description")}
@@ -88,12 +94,29 @@ export default function Resources() {
           </div>
         </div>
         <div className="hero__background">
-          <img
+          {/* <div className="hero__background-left"></div> */}
+          {/* <div className="hero__background-right"></div> */}
+          {/* <img
             className="hero__background-image"
             src={shapeHeader}
             alt=""
             aria-hidden="true"
-          />
+          /> */}
+
+          <div className="container hero__bg">
+            <img
+              className="hero__bg-left"
+              src={shapeHeaderLeft}
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              className="hero__bg-right"
+              src={shapeHeaderRight}
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
         </div>
       </section>
 
@@ -106,11 +129,15 @@ export default function Resources() {
                   {t("resourcesPage.businessInsight.name")}
                 </p>
                 <h1 className="section_title business_insight__title">
-                {t("resourcesPage.businessInsight.title")}
+                  {t("resourcesPage.businessInsight.title")}
                 </h1>
               </div>
               <div className="business_insight__button">
-                <Button type="outline arrow" text={t("resourcesPage.businessInsight.button")} color="green" />
+                <Button
+                  type="outline arrow"
+                  text={t("resourcesPage.businessInsight.button")}
+                  color="green"
+                />
               </div>
             </div>
 
@@ -124,7 +151,7 @@ export default function Resources() {
         <div className="container">
           <div className="insight_update__wrapper">
             <h1 className="insight_update__title section_title">
-            {t("resourcesPage.insightUpdate.name")}
+              {t("resourcesPage.insightUpdate.name")}
             </h1>
             <UpdateRadios
               loadChip={loadChip}
@@ -150,7 +177,7 @@ export default function Resources() {
                   {t("resourcesPage.latestUpdate.name")}
                 </p>
                 <h1 className="latest_update__title section_title">
-                {t("resourcesPage.latestUpdate.title")}
+                  {t("resourcesPage.latestUpdate.title")}
                 </h1>
               </div>
               <div className="latest_update__button">
@@ -202,7 +229,7 @@ const LatestUpdates = ({ chip, endCursor, colorMap }) => {
     variables: {
       first: 8,
       cursor: endCursor,
-      language: queryLanguageCode()
+      language: queryLanguageCode(),
     },
   });
 
@@ -238,7 +265,7 @@ const LatestUpdates = ({ chip, endCursor, colorMap }) => {
 };
 
 const UpdateRadios = ({ loadChip, loadResourceCategories }) => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const [chip, setChip] = useState("all");
   const [load, setLoad] = useState(false);
 
@@ -247,9 +274,11 @@ const UpdateRadios = ({ loadChip, loadResourceCategories }) => {
     setChip(event.target.id);
   };
 
-  const { loading, data } = useQuery(GET_RESOURCES_CATEGORIES, {variables: {
-    language: queryLanguageCode()
-  }});
+  const { loading, data } = useQuery(GET_RESOURCES_CATEGORIES, {
+    variables: {
+      language: queryLanguageCode(),
+    },
+  });
 
   const resourceCategories = !loading
     ? data?.resourceCategories?.nodes.filter((node) => node.count > 0)
