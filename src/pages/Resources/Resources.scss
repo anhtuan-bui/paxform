@@ -143,10 +143,19 @@ $color__hero-background: $color__secondary;
       position: relative;
       top: rem(-66);
 
+      @include large {
+        top: rem(-7);
+      }
+
+      @include small {
+        top: rem(53);
+      }
+
       &-left, &-right {
         position: absolute;
         height: rem(120);
         z-index: 1000;
+
       }
 
       &-left {
@@ -193,13 +202,6 @@ $color__hero-background: $color__secondary;
           transform: translate(-32%, 48%);
         }
 
-        &-left {
-
-        }
-
-        &-right {
-
-        }
       }
 
 
