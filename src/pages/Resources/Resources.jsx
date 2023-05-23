@@ -10,7 +10,7 @@ import RelatedCard from "../../components/RelatedCard/RelatedCard";
 // import card3 from "../../assets/images/card3.png";
 import Button from "../../components/Button/Button";
 
-import shapeHeader from "../../assets/images/Resources/Shape header.svg";
+// import shapeHeader from "../../assets/images/Resources/Shape header.svg";
 import shapeHeaderLeft from "../../assets/images/bg-left.svg";
 import shapeHeaderRight from "../../assets/images/bg-right.svg";
 import ReadyGet from "../../components/ReadyGet/ReadyGet";

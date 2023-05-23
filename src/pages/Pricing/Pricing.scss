@@ -13,20 +13,21 @@ $color_dark-blue: #031a30;
       padding-bottom: rem(300);
       margin-bottom: rem(0);
     }
-    &::before {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("../../assets/images/pricing-personal-bg.png");
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      background-size: contain;
-      content: "";
-    }
+    // &::before {
+    //   display: block;
+    //   position: absolute;
+    //   bottom: -21%;
+    //   left: 0;
+    //   right: 0;
+    //   width: 100vw;
+    //   height: 100%;
+    //   max-height: rem(400);
+    //   background-image: url("../../assets/images/bg-pricing-personal.svg");
+    //   background-repeat: no-repeat;
+    //   background-position: center bottom;
+    //   background-size: contain;
+    //   content: "";
+    // }
     &__wrapper {
       padding-top: rem(150);
     }
@@ -115,6 +116,8 @@ $color_dark-blue: #031a30;
         }
       }
     }
+
+    
   }
   .plans {
     position: relative;
@@ -131,6 +134,19 @@ $color_dark-blue: #031a30;
     @include extraSmall {
       min-height: rem(1400);
     }
+
+    &__background {
+      position: relative;
+
+      &-image {
+        position: absolute;
+        left: 0;
+        bottom: rem(-175);
+        width: 100%;
+        height: rem(350);
+      }
+    }
+
     .container {
       position: absolute;
       top: rem(-500);

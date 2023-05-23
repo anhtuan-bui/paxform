@@ -13,6 +13,9 @@ import { ReactComponent as Eks } from "../../assets/images/icon-none.svg";
 import { SCREEN_SIZE } from "../../configurations/configurations";
 import { withTranslation } from "react-i18next";
 
+import personalBackground from "../../assets/images/bg-pricing-personal.svg";
+import businessBackground from "../../assets/images/bg-pricing-business.svg";
+
 class Pricing extends Component {
   t = this.props.t;
   registerLink = process.env.REACT_APP_REGISTER_LINK;
@@ -308,9 +311,11 @@ class Pricing extends Component {
           <div className="container">
             <div className="hero__wrapper">
               <div className="hero__top">
-                <p className="hero__top-name">{this.t("pricingPage.hero.name")}</p>
+                <p className="hero__top-name">
+                  {this.t("pricingPage.hero.name")}
+                </p>
                 <h1 className="hero__top-title">
-                {this.t("pricingPage.hero.title")}
+                  {this.t("pricingPage.hero.title")}
                 </h1>
                 <div className="hero__top__tabs personal">
                   <a
@@ -331,7 +336,8 @@ class Pricing extends Component {
               </div>
             </div>
           </div>
-          <div className="bottom_triangle bottom_triangle--white"></div>
+
+          {/* <div className="bottom_triangle bottom_triangle--white"></div> */}
         </section>
         <section className="plans">
           <div className="container">
@@ -355,7 +361,7 @@ class Pricing extends Component {
                       href={this.registerLink}
                     />
                     <strong className="plans__ul__list-inc">
-                     {this.t("plans.included")}
+                      {this.t("plans.included")}
                     </strong>
                     <ul className="plans__ul__list-benefits">
                       {price.features.map((feature, index) => (
@@ -367,12 +373,26 @@ class Pricing extends Component {
               ))}
             </ul>
           </div>
+          <div className="plans__background">
+            <img
+              className="plans__background-image"
+              src={
+                this.state.tap.pricing[0].title === "Free"
+                  ? personalBackground
+                  : businessBackground
+              }
+              alt="personal background"
+              aria-hidden="true"
+            />
+          </div>
         </section>
         <section className="data_credit">
           <div className="container">
-            <p className="data_credit-name">{this.t("pricingPage.dataCredit.name")}</p>
+            <p className="data_credit-name">
+              {this.t("pricingPage.dataCredit.name")}
+            </p>
             <h1 className="data_credit-title">
-            {this.t("pricingPage.dataCredit.title")}
+              {this.t("pricingPage.dataCredit.title")}
             </h1>
             <ul className="data_credit__cards">
               {credits.map((credit, index) => (
@@ -396,26 +416,34 @@ class Pricing extends Component {
         </section>
         <section className="compare">
           <div className="container">
-            <h1 className="compare-title">{this.t("pricingPage.compare.title")}</h1>
+            <h1 className="compare-title">
+              {this.t("pricingPage.compare.title")}
+            </h1>
             <div className="compare__wrapper">
               <div className="compare__plans">
                 <div className="compare__plans__list features">
                   <dl className="compare__plans__list__info">
-                    <dt className="compare__plans__list-title top">{this.t("features")}</dt>
+                    <dt className="compare__plans__list-title top">
+                      {this.t("features")}
+                    </dt>
                     {compareList.features.map((feature, index) => (
                       <dd className="compare__plans__list-text" key={index}>
                         {feature}
                       </dd>
                     ))}
 
-                    <dt className="compare__plans__list-title">{this.t("security")}</dt>
+                    <dt className="compare__plans__list-title">
+                      {this.t("security")}
+                    </dt>
                     {compareList.securities.map((security, index) => (
                       <dd className="compare__plans__list-text" key={index}>
                         {security}
                       </dd>
                     ))}
 
-                    <dt className="compare__plans__list-title">{this.t("support")}</dt>
+                    <dt className="compare__plans__list-title">
+                      {this.t("support")}
+                    </dt>
                     {compareList.supports.map((support, index) => (
                       <dd className="compare__plans__list-text" key={index}>
                         {support}
@@ -490,7 +518,9 @@ class Pricing extends Component {
         </section>
         <section className="mobile_compare">
           <div className="container">
-            <h1 className="mobile_compare-title">{this.t("pricingPage.compare.title")}</h1>
+            <h1 className="mobile_compare-title">
+              {this.t("pricingPage.compare.title")}
+            </h1>
             <table className="mobile_compare__tbl">
               <thead>
                 <tr>
