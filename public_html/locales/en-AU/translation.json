@@ -86,7 +86,7 @@
   "securityPolicy": {
     "name": "SECURITY POLICY",
     "title": "Only you can access your data. Not us—Not anyone else.",
-    "description": "<p>Paxform will never share your data with anyone. What’s more, no one at Paxform can view or access your information. Our mission is to apply end-to-end encryption to every piece of information stored, protecting the data of organizations and individuals at all stages and at all costs.</p> <p>Only you decide which parties can view what pieces of information. Our security architecture ensures that personal data is decentralized, guaranteeing that the point of access in a potential security threat will not reveal any information.</p>"
+    "description": "<p>Uncompromising Data Privacy: Your Information, Your Control.</p><p>At Paxform, safeguarding your data is our utmost priority. We never share your data with anyone, and rest assured, no one at Paxform can view or access your information. Our mission is to apply end-to-end encryption to every piece of stored data, ensuring the protection of organizations and individuals at all costs.</p> <p>With Paxform, you have full control over who can view specific pieces of information. Our security architecture decentralizes personal data, minimizing the risk of exposing any information in the event of a security threat. You can have full confidence in our commitment to preserving your privacy.</p>"
   },
   "testimonial": {
     "name": "TESTIMONIAL",
@@ -108,44 +108,44 @@
   },
   "home": {
     "hero": {
-      "title": "Forms <br /> without forms",
-      "description": "Paxform allows users to securely save and manage their personal data for immediate reference, enabling them to easily sign documents and share information with others."
+      "title": "Forms<br> Made Digital",
+      "description": "Protect your information with Paxform's secure personal data management. Save and access your data with ease for quick document signing and effortless information sharing with other users."
     },
     "businessPlatform": {
       "name": "BUSINESS PLATFORM",
       "title": "Your business information at your fingertips",
       "learnMoreAboutBusiness": "Learn more about Business",
-      "platformTitle1": "Create forms that suit your organization’s needs and send them to customers",
+      "platformTitle1": "Create and customize forms to send to customers effortlessly",
       "platformTitle2": "Eliminate transcription & administrative rework",
       "platformTitle3": "Reduce form abandonment rates",
-      "platformTitle4": "Reduce form abandonment rates",
-      "platformDescription1": "The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.",
-      "platformDescription2": "Receive auto-completed electronic forms the moment your customer shares it with your organization - No more waiting for hard copies to arrive because Paxform eliminates.",
-      "platformDescription3": "Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant.",
-      "platformDescription4": "Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant."
+      "platformTitle4": "Exclusive Forms: Tailored for Employees and Restricted Locations",
+      "platformDescription1": "Tailor forms to your organization's needs with Paxform's customizable features. Our extensive selection of standard and custom form fields allows you to mold each form to your liking.",
+      "platformDescription2": "Instantly receive auto-completed electronic forms from your customers upon submission. Say goodbye to waiting for hard copies to arrive as our platform eliminates this common issue.",
+      "platformDescription3": "Say goodbye to tedious and time-consuming forms. With Paxform, even the most comprehensive forms that require extensive information can be completed in an instant. Expect quicker and more efficient form submissions.",
+      "platformDescription4": "You may require subjective forms strictly for employees or specific locations. These separate functions are readily made available to your organization for your utmost convenience. Rest assured that all the hard work has already been taken care of for you!"
     },
     "personalPlatform": {
       "name": "PERSONAL PLATFORM",
       "title": "Your personal information at your fingertips",
       "learnMoreAboutPersonal": "Learn more about Personal",
-      "platformTitle1": "Capture, save and use personal information to complete forms and applications",
-      "platformTitle2": "Share forms and applications with other parties and organizations",
+      "platformTitle1": "Capture, save and use personal data to complete forms and applications",
+      "platformTitle2": "Link and share data with family",
       "platformTitle3": "Complete simple and complex forms",
       "platformTitle4": "Link your family's data",
       "platformTitle5": "Electronically sign documents",
-      "platformDescription1": "The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.",
-      "platformDescription2": "Receive auto-completed electronic forms the moment your customer shares it with your organization - No more waiting for hard copies to arrive because Paxform eliminates.",
-      "platformDescription3": "Forms are a tedious, time-consuming task. With Paxform, even those forms that want to know everything about you are completed in an instant.",
+      "platformDescription1": "The personal data you provide is captured securely within the app after a single use, ensuring its safe storage for future use across any form, at any time. With automatic saving, each time you complete a form, new information is integrated and readily available for your convenience.",
+      "platformDescription2": "Link accounts with family members to effortlessly share personal data, eliminating physical information exchange. Experience simplified form filling for secondary identities, automatically filling the required data for the respective individual.",
+      "platformDescription3": "Manually filling physical forms is a tedious, time-consuming task. Experience the sheer efficiency of Paxform, where even the most extensive forms demanding every detail about you are effortlessly and instantaneously completed.",
       "platformDescription4": "The personal data you submit is captured after one use and stored safely in the app for future use—any time, any form. New information is saved automatically as you complete each form.",
-      "platformDescription5": "Experience a new level of convenience by using your stored signatures to electronically sign your documents."
+      "platformDescription5": "Experience elevated confidence as you conveniently use previously stored signatures to electronically sign your documents effortlessly."
     },
     "simplicity": {
       "whyPaxform": "WHY PAXFORM",
       "title": "We simplify your work",
-      "cardTitle1": "Find all your information in one place",
+      "cardTitle1": "Centralize Your Information: Everything You Need in One Place",
       "cardTitle2": "Most forms are too complex",
-      "cardDescription1": "<p>It can be a hassle looking for where you have stored different information. With Paxform, you can keep all your information like biodatas, signatures and documents, including your contacts, all in one app. </p> <p> Better yet, all the data is encrypted and only you and the person you share it with can have access to it.</p>",
-      "cardDescription2": "<p>Completing forms manually is an incredibly long process, prone to typos and form abandonment that often result in delays. To make matters worse, nearly 30% of people have difficulties understanding basic forms.</p> <p> With Paxform, you fill in your data once and it will automatically match that data no matter which form you are filling in. Say goodbye to manually inputting the same data over and over again.</p>"
+      "cardDescription1": "<p>Say goodbye to the hassle of searching for scattered information. With Paxform, you can conveniently store all your important data, from biodatas and signatures to documents and contacts, in a single app.</p><p>What's more, rest assured that all your data is encrypted, ensuring that only you and the intended recipients have access to it.</p>",
+      "cardDescription2": "<p>Manual form completion is not only time-consuming but also prone to typos and form abandonment, leading to unnecessary delays. Complicating matters further, studies show that nearly 30% of individuals struggle with understanding basic forms.</p><p>With Paxform, you can bid farewell to repetitive data entry. Simply input your information once, and it will automatically populate across all forms. Eliminate the hassle of manually filling in the same data repeatedly.</p>"
     }
   },
   "businessPage": {
@@ -163,7 +163,7 @@
       "sectionName": "feature",
       "sectionTitle": "Features For Your Organisation",
       "first": {
-        "title": "Create Form",
+        "title": "Create Forms",
         "description": "At Paxform, creating forms is our specialty. Our web application provides your team with a user-friendly interface, saving time and ensuring your forms are visually appealing and well-organized. We've made the form creation process incredibly easy, eliminating the need for coding or advanced design skills. With our standard and custom form fields, you can customize your forms to suit your organization's preferences."
       },
       "second": {
