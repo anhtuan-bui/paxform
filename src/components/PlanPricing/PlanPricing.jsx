@@ -63,7 +63,7 @@ export default function PlanPricing({ plans }) {
             }`}
           >
             <div className="pricing_box__bottom">
-              <p className="pricing_box__price-sub">{t("plans.included")}</p>
+              <p className="pricing_box__price-sub">{t("businessPage.plans.included")}</p>
               <ul>
                 {plan.features.map((feature, index) => (
                   <li key={index}>
