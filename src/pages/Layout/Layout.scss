@@ -25,7 +25,7 @@ $stripe_border__color: rgb(101, 101, 101);
     grid-template-columns: auto;
   }
 
-  $line_color: rgba(101, 101, 101);
+  $line_color: #e1edf9;
 
   &__item {
     border-left: 1px dashed $line_color;

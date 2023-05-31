@@ -34,7 +34,7 @@ import icon13 from "../../assets/images/icon1-3.svg";
 import icon21 from "../../assets/images/icon2-1.svg";
 import icon22 from "../../assets/images/icon2-2.svg";
 import icon23 from "../../assets/images/icon2-3.svg";
-import icon24 from "../../assets/images/icon2-4.svg";
+// import icon24 from "../../assets/images/icon2-4.svg";
 import icon25 from "../../assets/images/icon2-5.svg";
 // import personalPlatformImg from "../../assets/images/Personal Platform Image.svg";
 
@@ -168,11 +168,11 @@ class Home extends Component {
 		  title: t("home.personalPlatform.platformTitle3"),
 		  description: t("home.personalPlatform.platformDescription3"),
 		},
-		{
-		  image: icon24,
-		  title: t("home.personalPlatform.platformTitle4"),
-		  description: t("home.personalPlatform.platformDescription4"),
-		},
+		// {
+		//   image: icon24,
+		//   title: t("home.personalPlatform.platformTitle4"),
+		//   description: t("home.personalPlatform.platformDescription4"),
+		// },
 		{
 		  image: icon25,
 		  title: t("home.personalPlatform.platformTitle5"),
