@@ -193,6 +193,11 @@ class Header extends Component {
     const { t } = this.props;
     const menu = [
       {
+        text: t("homePage"),
+        to: "/",
+        submenu: [],
+      },
+      {
         text: t("business"),
         to: "business",
         submenu: [],
@@ -203,37 +208,42 @@ class Header extends Component {
         submenu: [],
       },
       {
-        text: t("pricing"),
-        to: "pricing",
+        text: t("contact"),
+        to: "contact-us",
         submenu: [],
       },
-      {
-        text: t("useCases"),
-        to: "use-cases",
-        submenu: this.app.useCase,
-      },
+      // {
+      //   text: t("pricing"),
+      //   to: "pricing",
+      //   submenu: [],
+      // },
+      // {
+      //   text: t("useCases"),
+      //   to: "use-cases",
+      //   submenu: this.app.useCase,
+      // },
 
-      {
-        text: t("support"),
-        to: "use-cases",
-        submenu: [
-          {
-            text: t("resources"),
-            to: "resources",
-            submenu: [],
-          },
-          {
-            text: t("blogs"),
-            to: "blogs",
-            submenu: [],
-          },
-          {
-            text: t("faqs"),
-            to: "faqs",
-            submenu: [],
-          },
-        ],
-      },
+      // {
+      //   text: t("support"),
+      //   to: "use-cases",
+      //   submenu: [
+      //     {
+      //       text: t("resources"),
+      //       to: "resources",
+      //       submenu: [],
+      //     },
+      //     {
+      //       text: t("blogs"),
+      //       to: "blogs",
+      //       submenu: [],
+      //     },
+      //     {
+      //       text: t("faqs"),
+      //       to: "faqs",
+      //       submenu: [],
+      //     },
+      //   ],
+      // },
     ];
     return (
       <header className="header">

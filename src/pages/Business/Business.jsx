@@ -3,13 +3,14 @@ import React from "react";
 import Button from "../../components/Button/Button";
 import "./Business.scss";
 
-import personalIllustration from "../../assets/images/Personal/Hero Illustration.png";
-import repeatlyIllustration from "../../assets/images/Personal/repeatly illustration.svg";
+import personalIllustration from "../../assets/images/Business/Hero Illustration.png";
+// import repeatlyIllustration from "../../assets/images/Personal/repeatly illustration.svg";
+import createFormsFeatures from "../../assets/images/Business/Create Forms Features Mockup.png";
 import Testimonial from "../../components/Testimonial/Testimonial";
 
 import GetStarted from "../../components/GetStarted/GetStarted";
 import PlanPricing from "../../components/PlanPricing/PlanPricing";
-import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
+// import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import Accordion from "../../components/Accordion/Accordion";
 import { useTranslation } from "react-i18next";
 import { t } from "i18next";
@@ -102,11 +103,11 @@ const plans = [
                   color="blue"
                   href="/pricing"
                 />
-                <Button
+                {/* <Button
                   text={t("businessPage.hero.howButton")}
                   type="outline triangle-right"
                   color="white"
-                />
+                /> */}
               </div>
             </div>
             <div className="hero__image">
@@ -139,7 +140,7 @@ const plans = [
           <div className="container">
             <div className="features__container">
               <div className="features__image">
-                <img src={repeatlyIllustration} alt="forms from Paxform" />
+                <img src={createFormsFeatures} alt="forms from Paxform" />
               </div>
               <div className="features__accordion">
                 <p className="features__name section_name">
@@ -182,10 +183,10 @@ const plans = [
         </section>
         <section className="testimonial">
           <Testimonial />
-          <div className="bottom_triangle bottom_triangle--dark-blue"></div>
+          <div className="bottom_triangle bottom_triangle--footer"></div>
         </section>
 
-        <LatestBlogs triangleColor={"footer"} />
+        {/* <LatestBlogs triangleColor={"footer"} /> */}
 
         <GetStarted />
       </main>

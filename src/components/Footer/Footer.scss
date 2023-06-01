@@ -2,7 +2,7 @@
 
 .footer {
   background-color: #e1edf8;
-  padding-top: rem(80);
+  padding-top: rem(40);
   padding-bottom: rem(40);
   position: relative;
 
@@ -85,7 +85,6 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       justify-content: space-between;
-      margin-bottom: rem(64);
 
       padding: 0 $padding__column;
 

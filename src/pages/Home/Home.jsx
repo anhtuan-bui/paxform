@@ -200,11 +200,11 @@ class Home extends Component {
                   color="white"
                   href={this.registerLink}
                 />
-                <Button
+                {/* <Button
                   text={t("howItWork")}
                   type="outline triangle-right"
                   color="white"
-                />
+                /> */}
               </div>
             </div>
             <div className="hero__empty-box"></div>

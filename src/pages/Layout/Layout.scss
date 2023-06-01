@@ -25,7 +25,9 @@ $stripe_border__color: rgb(101, 101, 101);
     grid-template-columns: auto;
   }
 
-  $line_color: rgba(101, 101, 101);
+  $line_color: #6489AD;
+  $first_line_color: #09569F;
+  $last_line_color: #09549D;
 
   &__item {
     border-left: 1px dashed $line_color;
@@ -34,22 +36,22 @@ $stripe_border__color: rgb(101, 101, 101);
     opacity: 0.1;
 
     &:first-child {
-      border-left: 1px solid $line_color;
+      border-left: 1px solid $first_line_color;
     }
 
     &:last-child {
-      border-right: 1px solid $line_color;
+      border-right: 1px solid $last_line_color;
     }
 
     @include medium {
       &:nth-child(2) {
-        border-right: 1px solid $line_color;
+        border-right: 1px solid $last_line_color;
       }
     }
 
     @include small {
       &:first-child {
-        border-right: 1px solid $line_color;
+        border-right: 1px solid $last_line_color;
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Footer.scss";
 
 import { ReactComponent as FooterLogo } from "../../assets/images/LOGO-footer.svg";
@@ -20,7 +20,6 @@ import { convertLangToLocale } from "../../lib/util";
 import { ReactComponent as ArrowDown } from "../../assets/icons/arrowDown.svg";
 
 import "/node_modules/flag-icons/css/flag-icons.min.css";
-
 const socialMedias = [
   {
     name: "linkedin",
@@ -77,269 +76,269 @@ export default function Footer() {
 
   const { t, i18n } = useTranslation();
 
-  const footerItems = [
-    [
-      {
-        group: "PAXFORM",
-        items: [
-          {
-            title: t("business"),
-            to: "/business",
-          },
-          {
-            title: t("personal"),
-            to: "/personal",
-          },
-          {
-            title: t("security"),
-            to: "/data-security",
-          },
-          {
-            title: t("pricing"),
-            to: "/pricing",
-          },
-          {
-            title: t("template"),
-            to: "",
-          },
-          {
-            title: t("integrations"),
-            to: "",
-          },
-        ],
-      },
-      {
-        group: t("businessFeatures"),
-        items: [
-          {
-            title: t("formDesigner"),
-            to: "",
-          },
-          {
-            title: t("chat"),
-            to: "",
-          },
-          {
-            title: t("disclosures"),
-            to: "",
-          },
-          {
-            title: t("electronicSignatures"),
-            to: "",
-          },
-          {
-            title: t("additionalQuestions"),
-            to: "",
-          },
-          {
-            title: t("customStatuses"),
-            to: "",
-          },
-        ],
-      },
-      {
-        group: t("consumerFeatures"),
-        items: [
-          {
-            title: t("passwordManager"),
-            to: "",
-          },
-          {
-            title: t("passwordGenerator"),
-            to: "",
-          },
-          {
-            title: t("secret"),
-            to: "",
-          },
-          {
-            title: t("electronicSignatures"),
-            to: "",
-          },
-          {
-            title: t("disclosures"),
-            to: "",
-          },
-          {
-            title: t("chatNotifications"),
-            to: "",
-          },
-        ],
-      },
-    ],
-    [
-      {
-        group: t("useCases"),
-        items: [
-          {
-            title: "Hospitality",
-            to: "/hospitality",
-          },
-          {
-            title: "Education",
-            to: "",
-          },
-          {
-            title: "Transportation",
-            to: "",
-          },
-          {
-            title: "Real Estate",
-            to: "",
-          },
-          {
-            title: "Government",
-            to: "",
-          },
-          {
-            title: "Construction",
-            to: "",
-          },
-          {
-            title: "Health and Aged Care",
-            to: "",
-          },
-          {
-            title: "Retail",
-            to: "",
-          },
-        ],
-      },
-    ],
-    [
-      {
-        group: t("support"),
-        items: [
-          {
-            title: t("blogs"),
-            to: "/blogs",
-          },
-          {
-            title: t("faqs"),
-            to: "/faqs",
-          },
-          {
-            title: t("resources"),
-            to: "/resources",
-          },
-          {
-            title: t("helpCenter"),
-            to: "",
-          },
-        ],
-      },
-      {
-        group: t("security"),
-        items: [
-          {
-            title: t("encryption"),
-            to: "",
-          },
-          {
-            title: t("biometric"),
-            to: "",
-          },
-          {
-            title: t("fileStorage"),
-            to: "",
-          },
-          {
-            title: t("dataStorage"),
-            to: "",
-          },
-          {
-            title: t("password"),
-            to: "",
-          },
-          {
-            title: t("autoTimeout"),
-            to: "",
-          },
-        ],
-      },
-      {
-        group: t("forms"),
-        items: [
-          {
-            title: t("contactForm"),
-            to: "",
-          },
-          {
-            title: t("feedbackForm"),
-            to: "",
-          },
-          {
-            title: t("securityForm"),
-            to: "",
-          },
-          {
-            title: t("copyrightForm"),
-            to: "",
-          },
-          {
-            title: t("gdprForm"),
-            to: "",
-          },
-        ],
-      },
-    ],
-    [
-      {
-        group: t("company"),
-        items: [
-          {
-            title: t("aboutUs"),
-            to: "/company",
-          },
-          {
-            title: t("contactUs"),
-            to: "/contact-us",
-          },
-          {
-            title: t("requestDemo"),
-            to: "",
-          },
-          {
-            title: t("partnerProgram"),
-            to: "",
-          },
-          {
-            title: t("careers"),
-            to: "",
-          },
-          {
-            title: t("newsroom"),
-            to: "",
-          },
-          {
-            title: t("brandKit"),
-            to: "",
-          },
-        ],
-      },
-      {
-        group: t("legal"),
-        items: [
-          {
-            title: t("legal"),
-            to: "/legal",
-          },
-          {
-            title: "Data Security Policy",
-            to: "",
-          },
-          {
-            title: t("websiteTermsOfUse"),
-            to: "/legal/website/terms-of-use",
-          },
-          {
-            title: t("websitePrivacyPolicy"),
-            to: "/legal/website/website-privacy-policy",
-          },
-        ],
-      },
-    ],
-  ];
+  // const footerItems = [
+  //   [
+  //     {
+  //       group: "PAXFORM",
+  //       items: [
+  //         {
+  //           title: t("business"),
+  //           to: "/business",
+  //         },
+  //         {
+  //           title: t("personal"),
+  //           to: "/personal",
+  //         },
+  //         {
+  //           title: t("security"),
+  //           to: "/data-security",
+  //         },
+  //         {
+  //           title: t("pricing"),
+  //           to: "/pricing",
+  //         },
+  //         {
+  //           title: t("template"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("integrations"),
+  //           to: "",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       group: t("businessFeatures"),
+  //       items: [
+  //         {
+  //           title: t("formDesigner"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("chat"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("disclosures"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("electronicSignatures"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("additionalQuestions"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("customStatuses"),
+  //           to: "",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       group: t("consumerFeatures"),
+  //       items: [
+  //         {
+  //           title: t("passwordManager"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("passwordGenerator"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("secret"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("electronicSignatures"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("disclosures"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("chatNotifications"),
+  //           to: "",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   [
+  //     {
+  //       group: t("useCases"),
+  //       items: [
+  //         {
+  //           title: "Hospitality",
+  //           to: "/hospitality",
+  //         },
+  //         {
+  //           title: "Education",
+  //           to: "",
+  //         },
+  //         {
+  //           title: "Transportation",
+  //           to: "",
+  //         },
+  //         {
+  //           title: "Real Estate",
+  //           to: "",
+  //         },
+  //         {
+  //           title: "Government",
+  //           to: "",
+  //         },
+  //         {
+  //           title: "Construction",
+  //           to: "",
+  //         },
+  //         {
+  //           title: "Health and Aged Care",
+  //           to: "",
+  //         },
+  //         {
+  //           title: "Retail",
+  //           to: "",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   [
+  //     {
+  //       group: t("support"),
+  //       items: [
+  //         {
+  //           title: t("blogs"),
+  //           to: "/blogs",
+  //         },
+  //         {
+  //           title: t("faqs"),
+  //           to: "/faqs",
+  //         },
+  //         {
+  //           title: t("resources"),
+  //           to: "/resources",
+  //         },
+  //         {
+  //           title: t("helpCenter"),
+  //           to: "",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       group: t("security"),
+  //       items: [
+  //         {
+  //           title: t("encryption"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("biometric"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("fileStorage"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("dataStorage"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("password"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("autoTimeout"),
+  //           to: "",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       group: t("forms"),
+  //       items: [
+  //         {
+  //           title: t("contactForm"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("feedbackForm"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("securityForm"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("copyrightForm"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("gdprForm"),
+  //           to: "",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   [
+  //     {
+  //       group: t("company"),
+  //       items: [
+  //         {
+  //           title: t("aboutUs"),
+  //           to: "/company",
+  //         },
+  //         {
+  //           title: t("contactUs"),
+  //           to: "/contact-us",
+  //         },
+  //         {
+  //           title: t("requestDemo"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("partnerProgram"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("careers"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("newsroom"),
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("brandKit"),
+  //           to: "",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       group: t("legal"),
+  //       items: [
+  //         {
+  //           title: t("legal"),
+  //           to: "/legal",
+  //         },
+  //         {
+  //           title: "Data Security Policy",
+  //           to: "",
+  //         },
+  //         {
+  //           title: t("websiteTermsOfUse"),
+  //           to: "/legal/website/terms-of-use",
+  //         },
+  //         {
+  //           title: t("websitePrivacyPolicy"),
+  //           to: "/legal/website/website-privacy-policy",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // ];
 
   const [footer, setFooter] = useState(true);
 
@@ -452,7 +451,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="footer__top-right">
+          {/* <div className="footer__top-right">
             {footerItems.map((footerItem, i) => (
               <div className="footer__top-right-list" key={i}>
                 {footerItem.map(
@@ -476,7 +475,7 @@ export default function Footer() {
                 )}
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="footer__bottom-wrapper">
@@ -484,6 +483,11 @@ export default function Footer() {
           <div className="footer__bottom">
             <p>{t("copyrightPaxform")}</p>
             <ul>
+              <li>
+                <a href="/legal">
+                  <span className="span--hover">{t("legal")}</span>
+                </a>
+              </li>
               <li>
                 <a href="/privacy-policy">
                   <span className="span--hover">{t("privacyPolicy")}</span>

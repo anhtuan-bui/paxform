@@ -13,7 +13,7 @@ import Testimonial from "../../components/Testimonial/Testimonial";
 
 import GetStarted from "../../components/GetStarted/GetStarted";
 import PlanPricing from "../../components/PlanPricing/PlanPricing";
-import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
+// import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import Accordion from "../../components/Accordion/Accordion";
 import { useTranslation } from "react-i18next";
 
@@ -107,11 +107,11 @@ export default function Personal() {
             </p>
             <div className="hero__button">
               <Button text={t("personalPage.hero.seePlan")} type="flat-white arrow" color="green" />
-              <Button
+              {/* <Button
                 text={t("howItWork")}
                 type="outline triangle-right"
                 color="white"
-              />
+              /> */}
             </div>
           </div>
           <div className="hero__image">
@@ -192,10 +192,10 @@ export default function Personal() {
       </section>
       <section className="testimonial">
         <Testimonial />
-        <div className="bottom_triangle bottom_triangle--dark-blue"></div>
+        <div className="bottom_triangle bottom_triangle--footer"></div>
       </section>
 
-      <LatestBlogs triangleColor={"footer"} />
+      {/* <LatestBlogs triangleColor={"footer"} /> */}
 
       <GetStarted />
     </main>
