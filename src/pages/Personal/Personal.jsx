@@ -96,21 +96,21 @@ export default function Personal() {
 
   const [featureImage, setFeatureImage] = useState(features[0].image);
 
-  // const featureIndex = (index) => {
-  //   setFeatureImage(features[index].image);
-  // };
+  const featureIndex = (index) => {
+    setFeatureImage(features[index].image);
+  };
 
-  // const timeStart = () => {
-  //   const featureImageElement = document.querySelector(".features__image");
-  //   featureImageElement.style.transform = "translate(0)";
-  //   featureImageElement.style.opacity = 1;
-  // };
+  const timeStart = () => {
+    const featureImageElement = document.querySelector(".features__image");
+    featureImageElement.style.transform = "translate(0)";
+    featureImageElement.style.opacity = 1;
+  };
 
-  // const timeEnd = () => {
-  //   const featureImageElement = document.querySelector(".features__image");
-  //   featureImageElement.style.transform = "translate(20%)";
-  //   featureImageElement.style.opacity = 0;
-  // };
+  const timeEnd = () => {
+    const featureImageElement = document.querySelector(".features__image");
+    featureImageElement.style.transform = "translate(20%)";
+    featureImageElement.style.opacity = 0;
+  };
 
   return (
     <main className="personal">
@@ -182,10 +182,10 @@ export default function Personal() {
                 fontColor="white"
                 progressBarColor="dark-green"
                 titleHighlight="white"
-                // featureIndex={featureIndex}
-                // timeStart={timeStart}
-                // timeEnd={timeEnd}
-                // titleClicked={true}
+                featureIndex={featureIndex}
+                timeStart={timeStart}
+                timeEnd={timeEnd}
+                titleClicked={true}
               />
             </div>
           </div>

@@ -11,6 +11,7 @@ const Accordion = (props) => {
     if (props.featureIndex) {
       props.featureIndex(index);
       timeStart();
+
     }
   };
 
@@ -88,7 +89,7 @@ const Accordion = (props) => {
     setFeatureList(features);
   };
 
-  const handleAccordionAutomation = async () => {
+  const handleAccordionAutomation = () => {
     let length = props.length ? props.length : 4000;
     const time = length / 4;
     let index = 0;
@@ -127,6 +128,14 @@ const Accordion = (props) => {
         let nextIndex = index >= features.length - 1 ? 0 : index + 1;
         features[nextIndex].isOpened = true;
 
+        features.forEach((feature, i) => {
+          if (nextIndex === i) {
+            feature.isOpened = true;
+          } else {
+            feature.isOpened = false;
+          }
+        });
+
         featureIndex(nextIndex);
         timeStart();
 
@@ -148,7 +157,7 @@ const Accordion = (props) => {
 
   useEffect(() => {
     const panels = document.querySelectorAll(".accordion__item-panel");
-    features.forEach((feature, index) => {
+    featureList.forEach((feature, index) => {
       if (feature.isOpened) {
         featureIndex(index);
         // timeStart();
