@@ -17,6 +17,9 @@ import PlanPricing from "../../components/PlanPricing/PlanPricing";
 import Accordion from "../../components/Accordion/Accordion";
 import { useTranslation } from "react-i18next";
 
+import access from "../../assets/images/Personal/access.png";
+import tired from "../../assets/images/Personal/tired.png";
+
 export default function Personal() {
   const { t } = useTranslation();
 
@@ -99,14 +102,16 @@ export default function Personal() {
         <div className="container hero__wrapper">
           <div className="hero__content">
             <p className="hero__name">{t("personalPage.hero.name")}</p>
-            <h1 className="hero__title">
-            {t("personalPage.hero.title")}
-            </h1>
+            <h1 className="hero__title">{t("personalPage.hero.title")}</h1>
             <p className="hero__description">
-            {t("personalPage.hero.description")}
+              {t("personalPage.hero.description")}
             </p>
             <div className="hero__button">
-              <Button text={t("personalPage.hero.seePlan")} type="flat-white arrow" color="green" />
+              <Button
+                text={t("personalPage.hero.seePlan")}
+                type="flat-white arrow"
+                color="green"
+              />
               {/* <Button
                 text={t("howItWork")}
                 type="outline triangle-right"
@@ -122,13 +127,13 @@ export default function Personal() {
             />
           </div>
         </div>
-        <div className="bottom_triangle bottom_triangle--light-green"></div>
+        <div className="bottom_triangle bottom_triangle--low-blue"></div>
       </section>
 
       <section className="flex_box">
         <div className="container flex_box__container">
           <div className="flex_box__image">
-            <img src={repeatlyIllustration} alt="fill out form" />
+            <img src={tired} alt="fill out form" />
           </div>
           <div className="flex_box__content">
             <h1 className="flex_box__content-title">
@@ -140,20 +145,22 @@ export default function Personal() {
           </div>
         </div>
 
-        <div className="bottom_triangle bottom_triangle--green"></div>
+        <div className="bottom_triangle bottom_triangle--blue"></div>
       </section>
 
       <section className="features">
         <div className="container">
+          <p className="features__name section_name">
+            {t("personalPage.featuresSection.name")}
+          </p>
+          <h1 className="features__title">
+            {t("personalPage.featuresSection.title")}
+          </h1>
           <div className="features__container">
             <div className="features__image">
-              <img src={repeatlyIllustration} alt="forms from Paxform" />
+              <img src={access} alt="forms from Paxform" />
             </div>
             <div className="features__accordion">
-              <p className="features__name section_name">{t("personalPage.featuresSection.name")}</p>
-              <h1 className="features__title">
-              {t("personalPage.featuresSection.title")}
-              </h1>
               <Accordion
                 list={features}
                 fontColor="white"
@@ -171,9 +178,11 @@ export default function Personal() {
         <div className="container plans__container">
           <div className="plans__top">
             <div className="plans__top-title">
-              <p className="plans__name section_name">{t("personalPage.planSection.name")}</p>
+              <p className="plans__name section_name">
+                {t("personalPage.planSection.name")}
+              </p>
               <h1 className="plans__title section_title">
-              {t("personalPage.planSection.title")}
+                {t("personalPage.planSection.title")}
               </h1>
             </div>
             <div className="plans__top-button">

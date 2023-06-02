@@ -7,13 +7,19 @@ const Accordion = (props) => {
   let progressInterval;
   let progressTime = 0;
 
+  const featureIndex = (index) => {
+    if (props.featureIndex) {
+      props.featureIndex(index);
+      timeStart();
+    }
+  };
+
   const titleClicked = (index) => {
     if (props.titleClicked === true) {
-      console.log("clicked");
       timeEnd();
       setTimeout(() => {
         timeStart();
-        props.featureIndex(index);
+        featureIndex(index);
       }, 1000);
     }
   };
@@ -94,11 +100,9 @@ const Accordion = (props) => {
     progressTime = 0;
     progressInterval = setInterval(() => {
       progressTime += 1;
-      // console.log(progressTime);
       featureList.forEach((feature, i) => {
         if (feature.isOpened === true) {
           index = i;
-          // props.featureIndex(index);
           accordionProgresses[index].style.width =
             (progressTime / time) * 100 + "%";
         }
@@ -123,7 +127,7 @@ const Accordion = (props) => {
         let nextIndex = index >= features.length - 1 ? 0 : index + 1;
         features[nextIndex].isOpened = true;
 
-        props.featureIndex(nextIndex);
+        featureIndex(nextIndex);
         timeStart();
 
         panels[nextIndex].style.maxHeight =
@@ -146,7 +150,7 @@ const Accordion = (props) => {
     const panels = document.querySelectorAll(".accordion__item-panel");
     features.forEach((feature, index) => {
       if (feature.isOpened) {
-        props.featureIndex(index);
+        featureIndex(index);
         // timeStart();
         panels[index].style.maxHeight = panels[index].scrollHeight + "px";
       }
