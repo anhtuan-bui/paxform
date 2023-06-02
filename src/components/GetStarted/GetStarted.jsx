@@ -11,7 +11,7 @@ import Button from "../Button/Button";
 
 import logo from "../../assets/icons/logo.svg";
 
-import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
+// import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
 import { useTranslation } from "react-i18next";
 
 export default function GetStarted() {
@@ -75,10 +75,10 @@ export default function GetStarted() {
               </div>
               <h3>{t("getStarted.cardTitle2")}</h3>
               <p>{t("getStarted.cardDescription2")}</p>
-              <a href="https://">
+              {/* <a href="https://">
                 <span className="span--hover">{t("learnMore")}</span>
                 <ArrowRight />
-              </a>
+              </a> */}
             </div>
             <div className="love_to_hear__box-right-item">
               <div className="love_to_hear__box-right-item-image">
@@ -86,10 +86,10 @@ export default function GetStarted() {
               </div>
               <h3>{t("getStarted.cardTitle3")}</h3>
               <p>{t("getStarted.cardDescription3")}</p>
-              <a href="https://">
+              {/* <a href="https://">
                 <span className="span--hover">{t("learnMore")}</span>
                 <ArrowRight />
-              </a>
+              </a> */}
             </div>
             {/* </div> */}
           </div>

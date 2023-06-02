@@ -64,21 +64,26 @@ class Header extends Component {
   }
 
   loadUseCaseMenu() {
-    client.query({ query: GET_USE_CASES , variables: {language: queryLanguageCode()}}).then((result) => {
-      const useCasesResult = result.data.useCases.nodes;
-      useCasesResult.forEach((useCaseResult) => {
-        const useCase = {
-          text: useCaseResult.heroName.toLowerCase(),
-          to: `/use-cases/${useCaseResult.slug}`,
-          color: useCaseResult.heroImageBackgroundGradientStart,
-          icon: useCaseResult.headerIcon.node.sourceUrl,
-        };
-        if (!this.app.useCase.some((uc) => uc.text === useCase.text)) {
-          this.app.useCase.push(useCase);
-        }
-        this.setState(this.app);
+    client
+      .query({
+        query: GET_USE_CASES,
+        variables: { language: queryLanguageCode() },
+      })
+      .then((result) => {
+        const useCasesResult = result.data.useCases.nodes;
+        useCasesResult.forEach((useCaseResult) => {
+          const useCase = {
+            text: useCaseResult.heroName.toLowerCase(),
+            to: `/use-cases/${useCaseResult.slug}`,
+            color: useCaseResult.heroImageBackgroundGradientStart,
+            icon: useCaseResult.headerIcon.node.sourceUrl,
+          };
+          if (!this.app.useCase.some((uc) => uc.text === useCase.text)) {
+            this.app.useCase.push(useCase);
+          }
+          this.setState(this.app);
+        });
       });
-    });
   }
 
   clickHamburger() {
@@ -192,11 +197,6 @@ class Header extends Component {
   render() {
     const { t } = this.props;
     const menu = [
-      {
-        text: t("homePage"),
-        to: "/",
-        submenu: [],
-      },
       {
         text: t("business"),
         to: "business",

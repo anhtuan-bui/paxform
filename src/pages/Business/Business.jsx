@@ -59,36 +59,22 @@ const plans = [
     title: t("businessPage.plans.free.title"),
     price: [0, t("businessPage.plans.free.price")],
     description: t("businessPage.plans.free.description"),
-    features: [
-      t("businessPage.plans.free.features.first"),
-      t("businessPage.plans.free.features.second"),
-      t("businessPage.plans.free.features.third"),
-      t("businessPage.plans.free.features.fourth"),
-    ],
+    features: Array.from(Array(8), (x, index) => t(`businessPage.plans.free.features.feature${index+1}`))
   },
   {
     mainColor: "green",
     title: t("businessPage.plans.premium.title"),
     price: [50, t("businessPage.plans.premium.price")],
     description: t("businessPage.plans.premium.description"),
-    features: [
-      t("businessPage.plans.premium.features.first"),
-      t("businessPage.plans.premium.features.second"),
-      t("businessPage.plans.premium.features.third"),
-      t("businessPage.plans.premium.features.fourth"),
-    ],
+    features: Array.from(Array(8), (x, index) => t(`businessPage.plans.premium.features.feature${index+1}`))
+    
   },
   {
     mainColor: "blue",
     title: t("businessPage.plans.family.title"),
     price: [t("businessPage.plans.family.price"), ""],
     description: t("businessPage.plans.family.description"),
-    features: [
-      t("businessPage.plans.family.features.first"),
-      t("businessPage.plans.family.features.second"),
-      t("businessPage.plans.family.features.third"),
-      t("businessPage.plans.family.features.fourth"),
-    ],
+    features: Array.from(Array(8), (x, index) => t(`businessPage.plans.family.features.feature${index+1}`))
   },
 ];
 

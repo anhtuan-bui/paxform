@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../components/Button/Button";
 // import fillOutForm from '../../assets/images/fill-out-form.svg';
 // import fillOutFormMObile from '../../assets/images/fill-out-form__mobile.svg';
@@ -6,7 +6,7 @@ import "./Personal.scss";
 
 // import personelHero from '../../assets/images/personal-hero.svg';
 import personalIllustration from "../../assets/images/Personal/Hero Illustration.png";
-import repeatlyIllustration from "../../assets/images/Personal/repeatly illustration.svg";
+// import repeatlyIllustration from "../../assets/images/Personal/repeatly illustration.svg";
 
 // import featuresImg from '../../assets/images/feature-organisation.svg';
 import Testimonial from "../../components/Testimonial/Testimonial";
@@ -18,6 +18,12 @@ import Accordion from "../../components/Accordion/Accordion";
 import { useTranslation } from "react-i18next";
 
 import access from "../../assets/images/Personal/access.png";
+import fill from "../../assets/images/Personal/fill.png";
+import chat from "../../assets/images/Personal/chat.png";
+import disclosure from "../../assets/images/Personal/disclosure.png";
+import secret from "../../assets/images/Personal/secret.png";
+import share from "../../assets/images/Personal/share.png";
+
 import tired from "../../assets/images/Personal/tired.png";
 
 export default function Personal() {
@@ -27,33 +33,38 @@ export default function Personal() {
     {
       title: t("personalPage.features.title1"),
       description: t("personalPage.features.description1"),
-
       isOpened: true,
+      image: access
     },
     {
       title: t("personalPage.features.title2"),
       description: t("personalPage.features.description2"),
       isOpened: false,
+      image: fill
     },
     {
       title: t("personalPage.features.title3"),
       description: t("personalPage.features.description3"),
       isOpened: false,
+      image: chat
     },
     {
       title: t("personalPage.features.title4"),
       description: t("personalPage.features.description4"),
       isOpened: false,
+      image: share
     },
     {
       title: t("personalPage.features.title5"),
       description: t("personalPage.features.description5"),
       isOpened: false,
+      image: secret
     },
     {
       title: t("personalPage.features.title6"),
       description: t("personalPage.features.description6"),
       isOpened: false,
+      image: disclosure
     },
   ];
 
@@ -61,40 +72,45 @@ export default function Personal() {
     {
       mainColor: "grey",
       title: t("free"),
-      price: [0, t("forever")],
-      description: "A simple way to get started for you new to passfolio.",
-      features: [
-        t("personalPage.plans.freeFeatures.feature1"),
-        t("personalPage.plans.freeFeatures.feature2"),
-        t("personalPage.plans.freeFeatures.feature3"),
-        t("personalPage.plans.freeFeatures.feature4"),
-      ],
+      price: [0, t("user")],
+      description: t("personalPage.plans.description1"),
+      features: Array.from(Array(9), (x, index) => t(`personalPage.plans.freeFeatures.feature${index+1}`))
+      
     },
     {
       mainColor: "green",
       title: t("premium"),
-      price: [50, t("forever")],
-      description: "Best for freelance coders & designers who need.",
-      features: [
-        t("personalPage.plans.premiumFeatures.feature1"),
-        t("personalPage.plans.premiumFeatures.feature2"),
-        t("personalPage.plans.premiumFeatures.feature3"),
-        t("personalPage.plans.premiumFeatures.feature4"),
-      ],
+      price: [49.90, t("user")],
+      description: t("personalPage.plans.description2"),
+      features: Array.from(Array(9), (x, index) => t(`personalPage.plans.premiumFeatures.feature${index+1}`))
     },
     {
       mainColor: "blue",
       title: t("family"),
-      price: [t("customPricing"), ""],
-      description: "Best for freelance coders & designers who need.",
-      features: [
-        t("personalPage.plans.familyFeatures.feature1"),
-        t("personalPage.plans.familyFeatures.feature2"),
-        t("personalPage.plans.familyFeatures.feature3"),
-        t("personalPage.plans.familyFeatures.feature4"),
-      ],
+      price: [99.90, t("family")],
+      description: t("personalPage.plans.description3"),
+      features: Array.from(Array(9), (x, index) => t(`personalPage.plans.familyFeatures.feature${index+1}`))
     },
   ];
+
+
+  const [featureImage, setFeatureImage] = useState(features[0].image);
+
+  // const featureIndex = (index) => {
+  //   setFeatureImage(features[index].image);
+  // };
+
+  // const timeStart = () => {
+  //   const featureImageElement = document.querySelector(".features__image");
+  //   featureImageElement.style.transform = "translate(0)";
+  //   featureImageElement.style.opacity = 1;
+  // };
+
+  // const timeEnd = () => {
+  //   const featureImageElement = document.querySelector(".features__image");
+  //   featureImageElement.style.transform = "translate(20%)";
+  //   featureImageElement.style.opacity = 0;
+  // };
 
   return (
     <main className="personal">
@@ -158,7 +174,7 @@ export default function Personal() {
           </h1>
           <div className="features__container">
             <div className="features__image">
-              <img src={access} alt="forms from Paxform" />
+              <img src={featureImage} alt="forms from Paxform" />
             </div>
             <div className="features__accordion">
               <Accordion
@@ -166,6 +182,10 @@ export default function Personal() {
                 fontColor="white"
                 progressBarColor="dark-green"
                 titleHighlight="white"
+                // featureIndex={featureIndex}
+                // timeStart={timeStart}
+                // timeEnd={timeEnd}
+                // titleClicked={true}
               />
             </div>
           </div>
@@ -186,17 +206,17 @@ export default function Personal() {
               </h1>
             </div>
             <div className="plans__top-button">
-              <Button
+              {/* <Button
                 className="plans__button"
                 text={t("personalPage.planSection.button")}
                 type="arrow outline"
                 color="green"
                 href="/pricing"
-              />
+              /> */}
             </div>
           </div>
 
-          <PlanPricing plans={plans} />
+          <PlanPricing plans={plans} page="personal"/>
         </div>
       </section>
       <section className="testimonial">
