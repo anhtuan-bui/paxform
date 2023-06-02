@@ -3,7 +3,8 @@ import "./Accordion.scss";
 
 const Accordion = (props) => {
   let features = props.list;
-  const [featureList, setFeatureList] = useState(features);
+  const [featureList] = useState(features);
+  const [accordionClicked, setAccordionClicked] = useState(false);
   let progressInterval;
   let progressTime = 0;
 
@@ -11,7 +12,6 @@ const Accordion = (props) => {
     if (props.featureIndex) {
       props.featureIndex(index);
       timeStart();
-
     }
   };
 
@@ -38,6 +38,7 @@ const Accordion = (props) => {
   };
 
   const handleAccordionTitleClick = (e, index) => {
+    setAccordionClicked(true);
     progressTime = 0;
     titleClicked(index);
 
@@ -86,7 +87,7 @@ const Accordion = (props) => {
       }
     });
 
-    setFeatureList(features);
+    // setFeatureList(features);
   };
 
   const handleAccordionAutomation = () => {
@@ -98,7 +99,12 @@ const Accordion = (props) => {
     );
     const panels = document.querySelectorAll(".accordion__item-panel");
 
-    progressTime = 0;
+    if (!accordionClicked) {
+      progressTime = 0;
+    }
+
+    setAccordionClicked(false);
+
     progressInterval = setInterval(() => {
       progressTime += 1;
       featureList.forEach((feature, i) => {
@@ -128,7 +134,7 @@ const Accordion = (props) => {
         let nextIndex = index >= features.length - 1 ? 0 : index + 1;
         features[nextIndex].isOpened = true;
 
-        features.forEach((feature, i) => {
+        featureList.forEach((feature, i) => {
           if (nextIndex === i) {
             feature.isOpened = true;
           } else {
@@ -150,7 +156,7 @@ const Accordion = (props) => {
             "accordion__item-title--active-blue"
           );
         }
-        setFeatureList(features);
+        // setFeatureList(features);
       }
     }, 1);
   };

@@ -207,7 +207,7 @@ $color_bg_hero__gradient--first: #059459;
       img {
         position: relative;
         object-fit: cover;
-        width: 75%;
+        width: 65%;
 
       @include medium {
         width: 60%;
@@ -277,7 +277,6 @@ $color_bg_hero__gradient--first: #059459;
 
     &__accordion {
       padding: 0 $padding__column;
-      min-height: 750px;
       &-item {
         &-title {
           font-size: rem(20);
@@ -316,7 +315,7 @@ $color_bg_hero__gradient--first: #059459;
       }
 
       img {
-        width: 75%;
+        width: 65%;
         
 
         @include large {
