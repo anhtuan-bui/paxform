@@ -264,9 +264,7 @@
 
     &__image {
       text-align: center;
-      transform: translateX(20%);
-      opacity: 0;
-      transition: 0.4s;
+      transition: 0.5s;
       @include medium {
         width: 75%;
       }

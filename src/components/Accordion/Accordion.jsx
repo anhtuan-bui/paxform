@@ -11,7 +11,6 @@ const Accordion = (props) => {
   const featureIndex = (index) => {
     if (props.featureIndex) {
       props.featureIndex(index);
-      timeStart();
     }
   };
 
@@ -21,7 +20,7 @@ const Accordion = (props) => {
       setTimeout(() => {
         timeStart();
         featureIndex(index);
-      }, 1000);
+      }, 800);
     }
   };
 
@@ -87,7 +86,6 @@ const Accordion = (props) => {
       }
     });
 
-    // setFeatureList(features);
   };
 
   const handleAccordionAutomation = () => {
@@ -156,7 +154,6 @@ const Accordion = (props) => {
             "accordion__item-title--active-blue"
           );
         }
-        // setFeatureList(features);
       }
     }, 1);
   };
@@ -166,7 +163,6 @@ const Accordion = (props) => {
     featureList.forEach((feature, index) => {
       if (feature.isOpened) {
         featureIndex(index);
-        // timeStart();
         panels[index].style.maxHeight = panels[index].scrollHeight + "px";
       }
     });
