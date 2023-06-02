@@ -219,13 +219,15 @@
       opacity: 0.8;
       color: #1c85e8;
       margin-bottom: rem(20);
+      padding: 0 $padding__column;
     }
 
     &__title {
       font-size: rem(38);
       line-height: rem(48);
-      margin-bottom: rem(50);
       margin-top: 0;
+      margin-bottom: rem(20);
+      padding: 0 $padding__column;
 
       @include large {
         font-size: rem(32);
@@ -240,10 +242,8 @@
 
     &__container {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       direction: rtl;
-      min-height: rem(620);
 
       @include medium {
         flex-direction: column;
@@ -263,6 +263,9 @@
 
     &__image {
       text-align: center;
+      transform: translateX(20%);
+      opacity: 0;
+      transition: 0.4s;
       @include medium {
         width: 60%;
       }

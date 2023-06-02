@@ -35,5 +35,5 @@ export {
   convertToSlug,
   scrollTop,
   queryLanguageCode,
-  convertLangToLocale
+  convertLangToLocale,
 };

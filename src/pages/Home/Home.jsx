@@ -26,6 +26,10 @@ import flowbase from "../../assets/images/flowbase.svg";
 import linkedin from "../../assets/images/linkedin.svg";
 import paypal from "../../assets/images/paypal.svg";
 
+import info from "../../assets/icons/info.svg";
+import simpleForm from "../../assets/icons/simple forms.svg";
+import electronicallySign from "../../assets/icons/electronically sign.svg";
+
 import icon11 from "../../assets/images/icon1-1.svg";
 import icon12 from "../../assets/images/icon1-2.svg";
 import icon13 from "../../assets/images/icon1-3.svg";
@@ -63,7 +67,6 @@ var home = {
 };
 
 class Home extends Component {
- 
   registerLink = process.env.REACT_APP_REGISTER_LINK;
   constructor(props) {
     super(props);
@@ -128,57 +131,57 @@ class Home extends Component {
   }
 
   render() {
-	const {t} = this.props;
-	const businessPlatform = [
-		{
-		  image: icon11,
-		  title: t("home.businessPlatform.platformTitle1"),
-		  description: t("home.businessPlatform.platformDescription1"),
-		},
-		{
-		  image: icon12,
-		  title: t("home.businessPlatform.platformTitle2"),
-		  description: t("home.businessPlatform.platformDescription2"),
-		},
-		{
-		  image: icon13,
-		  title: t("home.businessPlatform.platformTitle3"),
-		  description: t("home.businessPlatform.platformDescription3"),
-		},
-		{
-		  image: icon13,
-		  title: t("home.businessPlatform.platformTitle4"),
-		  description: t("home.businessPlatform.platformDescription4"),
-		},
-	  ];
-	
-	  const personalPlatform = [
-		{
-		  image: icon21,
-		  title: t("home.personalPlatform.platformTitle1"),
-		  description: t("home.personalPlatform.platformDescription1"),
-		},
-		{
-		  image: icon22,
-		  title: t("home.personalPlatform.platformTitle2"),
-		  description: t("home.personalPlatform.platformDescription2"),
-		},
-		{
-		  image: icon23,
-		  title: t("home.personalPlatform.platformTitle3"),
-		  description: t("home.personalPlatform.platformDescription3"),
-		},
-		// {
-		//   image: icon24,
-		//   title: t("home.personalPlatform.platformTitle4"),
-		//   description: t("home.personalPlatform.platformDescription4"),
-		// },
-		{
-		  image: icon25,
-		  title: t("home.personalPlatform.platformTitle5"),
-		  description: t("home.personalPlatform.platformDescription5"),
-		},
-	  ];
+    const { t } = this.props;
+    const businessPlatform = [
+      {
+        image: icon11,
+        title: t("home.businessPlatform.platformTitle1"),
+        description: t("home.businessPlatform.platformDescription1"),
+      },
+      {
+        image: icon12,
+        title: t("home.businessPlatform.platformTitle2"),
+        description: t("home.businessPlatform.platformDescription2"),
+      },
+      {
+        image: icon13,
+        title: t("home.businessPlatform.platformTitle3"),
+        description: t("home.businessPlatform.platformDescription3"),
+      },
+      {
+        image: icon13,
+        title: t("home.businessPlatform.platformTitle4"),
+        description: t("home.businessPlatform.platformDescription4"),
+      },
+    ];
+
+    const personalPlatform = [
+      {
+        image: info,
+        title: t("home.personalPlatform.platformTitle1"),
+        description: t("home.personalPlatform.platformDescription1"),
+      },
+      {
+        image: icon22,
+        title: t("home.personalPlatform.platformTitle2"),
+        description: t("home.personalPlatform.platformDescription2"),
+      },
+      {
+        image: simpleForm,
+        title: t("home.personalPlatform.platformTitle3"),
+        description: t("home.personalPlatform.platformDescription3"),
+      },
+      // {
+      //   image: icon24,
+      //   title: t("home.personalPlatform.platformTitle4"),
+      //   description: t("home.personalPlatform.platformDescription4"),
+      // },
+      {
+        image: electronicallySign,
+        title: t("home.personalPlatform.platformTitle5"),
+        description: t("home.personalPlatform.platformDescription5"),
+      },
+    ];
     return (
       <main className="home">
         <section className="hero">
@@ -190,9 +193,7 @@ class Home extends Component {
                   __html: t("home.hero.title"),
                 }}
               ></h1>
-              <p className="hero__description">
-                {t("home.hero.description")}
-              </p>
+              <p className="hero__description">{t("home.hero.description")}</p>
               <div className="hero__button">
                 <Button
                   text={t("signUp")}
@@ -277,9 +278,7 @@ class Home extends Component {
                 <Button
                   type="flat-green arrow"
                   color="white"
-                  text={t(
-                    "home.businessPlatform.learnMoreAboutBusiness"
-                  )}
+                  text={t("home.businessPlatform.learnMoreAboutBusiness")}
                   href="/business"
                 />
               </div>
@@ -334,9 +333,7 @@ class Home extends Component {
                 <Button
                   type="outline arrow"
                   color="green"
-                  text={t(
-                    "home.personalPlatform.learnMoreAboutPersonal"
-                  )}
+                  text={t("home.personalPlatform.learnMoreAboutPersonal")}
                   href="/personal"
                 />
               </div>
@@ -389,9 +386,7 @@ class Home extends Component {
             <p className="simplify__why section_name">
               {t("home.simplicity.whyPaxform")}
             </p>
-            <h2 className="simplify__title">
-              {t("home.simplicity.title")}
-            </h2>
+            <h2 className="simplify__title">{t("home.simplicity.title")}</h2>
             <div className="simplify_flexbox">
               <div className="simplify_flexbox__content">
                 <h3 className="simplify_flexbox__content-title">
