@@ -127,6 +127,7 @@ export default function Personal() {
                 text={t("personalPage.hero.seePlan")}
                 type="flat-white arrow"
                 color="green"
+                href="#personal-plan"
               />
               {/* <Button
                 text={t("howItWork")}
@@ -194,7 +195,7 @@ export default function Personal() {
         <div className="bottom_triangle bottom_triangle--white"></div>
       </section>
 
-      <section className="plans">
+      <section id="personal-plan" className="plans">
         <div className="container plans__container">
           <div className="plans__top">
             <div className="plans__top-title">

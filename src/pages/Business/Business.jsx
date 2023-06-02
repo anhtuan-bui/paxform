@@ -113,7 +113,7 @@ const Business = () => {
                 text={t("businessPage.hero.planButton")}
                 type="flat-white arrow"
                 color="blue"
-                href="/pricing"
+                href="#business-plan"
               />
               {/* <Button
                   text={t("businessPage.hero.howButton")}
@@ -175,7 +175,7 @@ const Business = () => {
         <div className="bottom_triangle bottom_triangle--white"></div>
       </section>
 
-      <section className="plans">
+      <section className="plans" id="business-plan">
         <div className="container plans__container">
           <div className="plans__top">
             <div className="plans__top-title">
@@ -187,13 +187,13 @@ const Business = () => {
               </h1>
             </div>
             <div className="plans__top-button">
-              <Button
+              {/* <Button
                 className="plans__button"
                 text={t("businessPage.plans.fullPricingButton")}
                 type="arrow outline"
                 color="green"
                 href="/pricing"
-              />
+              /> */}
             </div>
           </div>
           <PlanPricing plans={plans} />
