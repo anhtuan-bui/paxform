@@ -140,7 +140,7 @@ const Accordion = (props) => {
           }
         });
 
-        featureIndex(nextIndex);
+        featureIndex(nextIndex); 
         timeStart();
 
         panels[nextIndex].style.maxHeight =
@@ -162,7 +162,6 @@ const Accordion = (props) => {
     const panels = document.querySelectorAll(".accordion__item-panel");
     featureList.forEach((feature, index) => {
       if (feature.isOpened) {
-        featureIndex(index);
         panels[index].style.maxHeight = panels[index].scrollHeight + "px";
       }
     });
