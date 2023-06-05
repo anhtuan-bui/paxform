@@ -1,7 +1,7 @@
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout/Layout";
-import FAQV1 from "./pages/FAQV1/FAQV1";
+// import FAQV1 from "./pages/FAQV1/FAQV1";
 import NotFound from "./pages/NotFound/NotFound";
 import { lazy, Suspense, useEffect } from "react";
 import { ApolloProvider } from "@apollo/client/react";
@@ -78,7 +78,7 @@ function App() {
               {/* <Route path="resource-details" element={<ResourceDetail />} /> */}
               <Route path="*" element={<NotFound />} />
               {/* <Route path="gq" element={<GQ />} /> */}
-              <Route path="faqv1" element={<FAQV1 />} />
+              {/* <Route path="faqv1" element={<FAQV1 />} /> */}
             </Route>
           </Routes>
         </Suspense>

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { ReactComponent as ArrowDown } from "../../assets/icons/arrowDown.svg";
 import "./FrequentlyAsked.scss";
-import { ApolloClient, InMemoryCache, ApolloProvider, gql, useQuery } from '@apollo/client';
+import {gql, useQuery } from '@apollo/client';
 const faqs = [
   {
     title: "what are data credits?",
@@ -21,24 +21,6 @@ const faqs = [
     content: "Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually, I would have had to find all the details, which would have taken hours!",
   },
 ]
-const faqs2 = [
-  {
-    title: "I want to store my information and share it with others. Which plan is right for me?",
-    content: "Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually, I would have had to find all the details, which would have taken hours!",
-  },
-  {
-    title: "Is there a free trial for the paid plans?",
-    content: "Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually, I would have had to find all the details, which would have taken hours!",
-  },
-  {
-    title: "I want to store my information and share it with others. Which plan is right for me?",
-    content: "Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually, I would have had to find all the details, which would have taken hours!",
-  },
-  {
-    title: "I want to store my information and share it with others. Which plan is right for me?",
-    content: "Paxform helped me fill my admission documents to a hospital. All my information and medical history were filled in an instance. Had I done it manually, I would have had to find all the details, which would have taken hours!",
-  },
-];
 
 export default function FrequentlyAsk() {
   const { loading, data } = useQuery(GET_FAQS)
@@ -159,23 +141,6 @@ query NewQuery {
   }
 `
 
-const ExampleTitle = () => {
-  const { loading, data } = useQuery(GET_FAQS)
-  if (loading) return 'loading';
-  const faqCategories = data.faqCategories.nodes;
-  // if (loading) return 'loading';
-  //const faqs = data.faqCategories.nodes[1].faqs.nodes;
-  return (
-    <div>
-      {faqCategories.map((category, index) => (
-        <div key={index}>
-          <h2 style={{ fontFamily: 'Arial', fontSize: '15px', fontWeight: 'bold' }}>{category.name}</h2>
-        </div>
-      ))}
-    </div>
-  );
-
-};
 
 const ExampleContent = () => {
   const query = useQuery(GET_FAQS)

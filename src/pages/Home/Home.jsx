@@ -35,11 +35,11 @@ import icon12 from "../../assets/images/icon1-2.svg";
 import icon13 from "../../assets/images/icon1-3.svg";
 // import businessImg from "../../assets/images/Business Image.svg";
 
-import icon21 from "../../assets/images/icon2-1.svg";
+// import icon21 from "../../assets/images/icon2-1.svg";
 import icon22 from "../../assets/images/icon2-2.svg";
-import icon23 from "../../assets/images/icon2-3.svg";
+// import icon23 from "../../assets/images/icon2-3.svg";
 // import icon24 from "../../assets/images/icon2-4.svg";
-import icon25 from "../../assets/images/icon2-5.svg";
+// import icon25 from "../../assets/images/icon2-5.svg";
 // import personalPlatformImg from "../../assets/images/Personal Platform Image.svg";
 
 // import securityPolicy from "../../assets/images/security-policy.svg";
