@@ -27,7 +27,7 @@
   "passwordManager": "Password Manager",
   "passwordGenerator": "Password Generator",
   "secret": "Secret",
-  "chatNotifications": "Chat",
+  "chatNotifications": "Chat & Notifications",
   "helpCenter": "Help Center",
   "encryption": "Encryption",
   "biometric": "Biometric",
@@ -121,7 +121,7 @@
       "title": "Your business information at your fingertips",
       "learnMoreAboutBusiness": "Learn more about Business",
       "platformTitle1": "Create and customize forms to send to customers effortlessly",
-      "platformTitle2": "Eliminate transcription",
+      "platformTitle2": "Eliminate transcription & administrative rework",
       "platformTitle3": "Reduce form abandonment rates",
       "platformTitle4": "Exclusive Forms: Tailored for Employees and Restricted Locations",
       "platformDescription1": "Tailor forms to your organization's needs with Paxform's customizable features. Our extensive selection of standard and custom form fields allows you to mold each form to your liking.",
@@ -274,7 +274,7 @@
       "second": {
         "heading": "2. Personal Data Retention and Security",
         "subHeading": "2.1 Retention of Personal Data",
-        "description": "Data security is a matter of critical importance. Bynder uses a wide range of security measures to safeguard your data against unauthorized access and disclosure and we continually evaluate our security program to ensure its effectiveness. Amazon Web Services provides our servers and maintains them in high-security controlled environments pursuant to the <strong></strong>"
+        "description": "Data security is a matter of critical importance. Bynder uses a wide range of security measures to safeguard your data against unauthorized access and disclosure and we continually evaluate our security program to ensure its effectiveness. Amazon Web Services provides our servers and maintains them in high-security controlled environments pursuant to the <strong>&nbsp;AWS Cloud</strong>"
       },
       "third": {
         "heading": "3. Your Data and Your Rights",
@@ -313,7 +313,7 @@
       "description1": "Once you start entering your personal information into the folio, instant access to that data becomes available at your fingertips. What's more, all your saved information is automatically populated into any relevant forms, eliminating the tedious task of repeatedly entering required details in multiple places. Thanks to Paxform's streamlined structure, editing and saving data is a breeze, providing users with a hassle-free form-filling experience.",
       "description2": "Paxform has transformed form filling by seamlessly transitioning from paper to digital forms, enabling you to effortlessly complete forms anytime, anywhere. Unlike traditional physical forms, Paxform's advanced digital technology eliminates the frustration of lengthy and disorganized paperwork, converting the form-filling process into a smooth and automated experience. With just a scan or a click, you can now fill forms on the go, at your convenience. Bid farewell to the stress of dealing with physical forms and embrace a smoother and more convenient form-filling journey.",
       "description3": "Upon form submission, you gain access to a user-friendly chat function, facilitating easy communication between you and the organization receiving your form. This convenient feature enables both parties to address any potential issues or concerns regarding the provided data. Additionally, you can direct any personal questions or concerns to the organization, ensuring effective and timely interaction throughout the process.",
-      "description4": "Paxform now offers two powerful features: 'Add a Person' and 'Link",
+      "description4": "Paxform now offers two powerful features: 'Add a Person' and 'Link & Share.' These functions empower users to invite family members and securely share data with trusted recipients. Rest assured, your data remains protected through advanced encryption and robust security measures, ensuring that only the intended recipient can access it. Sharing data with family members simplifies the form-filling process, especially when entering information related to a shared identity, as many forms require this level of detail.",
       "description5": "Our Secrets feature goes beyond your folio, granting you exclusive access to highly sensitive information like your bank card and bank account details. To ensure utmost confidentiality, single-factor authentication is mandatory for viewing and modifying this data. Additionally, the Secrets page offers a convenient random password generator, generating robust and dependable passwords for your security. Furthermore, you'll have the ability to utilize the Shared Secrets function, enabling you to securely share your confidential data with trusted users already connected to your account.",
       "description6": "Enhance your understanding of your shared information with the powerful Disclosures feature. Access a comprehensive list of organizations you've engaged with through Paxform and effortlessly explore the forms you've filled for each specific organization. Stay in control of your interactions by utilizing this function, which efficiently organizes your form history and provides valuable insights into your engagements with various organizations."
     },
@@ -407,7 +407,7 @@
       "description": "Paxform’s function is simple: it completely fills any form, anytime. You can manage and save your personal data, allowing you to sign document s and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety."
     },
     "diversity": {
-      "title": "Diversity",
+      "title": "Diversity & Inclusion",
       "description": "<p>At Paxform, we make diversity and inclusion part of everything we do. We are building a culture where one’s unique attributes and differences are part of who we are. Regardless of background or gender, our employees, customers and stakeholders are treated as equals. <p /> <p> As a fast-growing company, we focus on creating a diverse workforce globally and a workplace that welcomes, nurtures and celebrates camaraderie, initiative, leadership and innovation. We strive to build innovative products that can be used by everyone despite their cultural, language or geographic differences, furthermore, achieving the goals that we have set for ourselves and our stakeholders.</p>"
     }
   },
@@ -426,7 +426,7 @@
       }
     },
     "premium": {
-      "description": "Best for freelance coders",
+      "description": "Best for freelance coders & designers who need",
       "features": {
         "first": "Unlimited data",
         "second": "5 Person saved",
@@ -435,7 +435,7 @@
       }
     },
     "family": {
-      "description": "Best for freelance coders",
+      "description": "Best for freelance coders & designers who need",
       "features": {
         "first": "Unlimited data",
         "second": "5 Person saved",
@@ -453,7 +453,7 @@
       }
     },
     "standard": {
-      "description": "Best for freelance coders",
+      "description": "Best for freelance coders & designers who need",
       "features": {
         "first": "Unlimited data",
         "second": "5 Person saved",
@@ -462,7 +462,7 @@
       }
     },
     "plus": {
-      "description": "Best for freelance coders",
+      "description": "Best for freelance coders & designers who need",
       "features": {
         "first": "Unlimited data",
         "second": "5 Person saved",

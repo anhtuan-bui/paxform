@@ -66,10 +66,11 @@ const socialMedias = [
 export default function Footer() {
   const [selector, setSelector] = useState(false);
   const [overlayOpened, setOverlayOpened] = useState(false);
-  const [shortName, setShortName] = useState("au");
+  const [shortName, setShortName] = useState("us");
   const [languageFullName, setLanguageFullName] = useState(
-    "English - Australia"
+    "English - United States"
   );
+  const defaultLang = "EN_US";
   const { loading, data } = useQuery(GET_LANGUAGES);
 
   const languages = !loading ? data?.languages : Array.from({ length: 3 });
@@ -411,6 +412,8 @@ export default function Footer() {
         (language) => language?.locale?.toLowerCase() === lang.toLowerCase()
       );
       setLanguageFullName(language?.name);
+    } else {
+      localStorage.setItem("lang", defaultLang);
     }
 
     if (notFound) {
@@ -541,7 +544,7 @@ const SelectorOption = ({ language, onClick }) => {
       onClick={(e) => onClick(e)}
       locale={language?.locale?.toUpperCase()}
       shortname={shortName}
-      fullname={language?.name }
+      fullname={language?.name}
     >
       <span className={`fi fi-${shortName}`}></span> {language?.name}
     </div>
