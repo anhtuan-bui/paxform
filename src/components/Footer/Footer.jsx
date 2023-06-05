@@ -489,12 +489,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/privacy-policy">
+                <a href="/legal/website-en_au/privacy-policy">
                   <span className="span--hover">{t("privacyPolicy")}</span>
                 </a>
               </li>
               <li>
-                <a href="https://">
+                <a href="/legal/website-en_au/terms-of-use">
                   <span className="span--hover">{t("termOfService")}</span>
                 </a>
               </li>

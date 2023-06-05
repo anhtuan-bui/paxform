@@ -17,6 +17,9 @@ export default function Legal() {
   const legalCategories = !loading
     ? [...data?.legalCategories?.nodes].sort((a, b) => a.order - b.order)
     : Array.from({ length: 6 });
+
+    console.log(legalCategories)
+
   return (
     <main className="legal">
       <section className="hero">
