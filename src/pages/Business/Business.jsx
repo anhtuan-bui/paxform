@@ -57,14 +57,14 @@ const plans = [
   {
     mainColor: "grey",
     title: t("businessPage.plans.free.title"),
-    price: [29.90, t("user")],
+    price: [29.90, t("month")],
     description: t("businessPage.plans.free.description"),
     features: Array.from(Array(8), (x, index) => t(`businessPage.plans.free.features.feature${index+1}`))
   },
   {
     mainColor: "green",
     title: t("businessPage.plans.premium.title"),
-    price: [39.90, t("user")],
+    price: [39.90, t("month")],
     description: t("businessPage.plans.premium.description"),
     features: Array.from(Array(8), (x, index) => t(`businessPage.plans.premium.features.feature${index+1}`))
     
@@ -177,7 +177,6 @@ const Business = () => {
 
       <section className="plans" id="business-plan">
         <div className="container plans__container">
-          <div className="plans__top">
             <div className="plans__top-title">
               <p className="plans__name section_name">
                 {t("businessPage.plans.sectionName")}
@@ -186,6 +185,7 @@ const Business = () => {
                 {t("businessPage.plans.sectionTitle")}
               </h1>
             </div>
+          <div className="plans__top">
             <div className="plans__top-button">
               {/* <Button
                 className="plans__button"

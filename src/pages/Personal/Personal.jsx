@@ -34,37 +34,37 @@ export default function Personal() {
       title: t("personalPage.features.title1"),
       description: t("personalPage.features.description1"),
       isOpened: true,
-      image: access
+      image: access,
     },
     {
       title: t("personalPage.features.title2"),
       description: t("personalPage.features.description2"),
       isOpened: false,
-      image: fill
+      image: fill,
     },
     {
       title: t("personalPage.features.title3"),
       description: t("personalPage.features.description3"),
       isOpened: false,
-      image: chat
+      image: chat,
     },
     {
       title: t("personalPage.features.title4"),
       description: t("personalPage.features.description4"),
       isOpened: false,
-      image: share
+      image: share,
     },
     {
       title: t("personalPage.features.title5"),
       description: t("personalPage.features.description5"),
       isOpened: false,
-      image: secret
+      image: secret,
     },
     {
       title: t("personalPage.features.title6"),
       description: t("personalPage.features.description6"),
       isOpened: false,
-      image: disclosure
+      image: disclosure,
     },
   ];
 
@@ -72,27 +72,31 @@ export default function Personal() {
     {
       mainColor: "grey",
       title: t("free"),
-      price: [0, t("user")],
+      price: [0, ""],
       description: t("personalPage.plans.description1"),
-      features: Array.from(Array(9), (x, index) => t(`personalPage.plans.freeFeatures.feature${index+1}`))
-      
+      features: Array.from(Array(9), (x, index) =>
+        t(`personalPage.plans.freeFeatures.feature${index + 1}`)
+      ),
     },
     {
       mainColor: "green",
       title: t("premium"),
-      price: [49.90, t("user")],
+      price: [49.9, ""],
       description: t("personalPage.plans.description2"),
-      features: Array.from(Array(9), (x, index) => t(`personalPage.plans.premiumFeatures.feature${index+1}`))
+      features: Array.from(Array(9), (x, index) =>
+        t(`personalPage.plans.premiumFeatures.feature${index + 1}`)
+      ),
     },
     {
       mainColor: "blue",
       title: t("family"),
-      price: [99.90, t("family")],
+      price: [99.9, ""],
       description: t("personalPage.plans.description3"),
-      features: Array.from(Array(9), (x, index) => t(`personalPage.plans.familyFeatures.feature${index+1}`))
+      features: Array.from(Array(9), (x, index) =>
+        t(`personalPage.plans.familyFeatures.feature${index + 1}`)
+      ),
     },
   ];
-
 
   const [featureImage, setFeatureImage] = useState(features[0].image);
 
@@ -197,15 +201,15 @@ export default function Personal() {
 
       <section id="personal-plan" className="plans">
         <div className="container plans__container">
+          <div className="plans__top-title">
+            <p className="plans__name section_name">
+              {t("personalPage.planSection.name")}
+            </p>
+            <h1 className="plans__title section_title">
+              {t("personalPage.planSection.title")}
+            </h1>
+          </div>
           <div className="plans__top">
-            <div className="plans__top-title">
-              <p className="plans__name section_name">
-                {t("personalPage.planSection.name")}
-              </p>
-              <h1 className="plans__title section_title">
-                {t("personalPage.planSection.title")}
-              </h1>
-            </div>
             <div className="plans__top-button">
               {/* <Button
                 className="plans__button"
@@ -217,7 +221,7 @@ export default function Personal() {
             </div>
           </div>
 
-          <PlanPricing plans={plans} page="personal"/>
+          <PlanPricing plans={plans} page="personal" />
         </div>
       </section>
       <section className="testimonial">
