@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Accordion.scss";
 
-const AUTO_TIME = 1100;
+const AUTO_TIME = 1000;
 
 const Accordion = (props) => {
   let features = props.list;
@@ -12,7 +12,6 @@ const Accordion = (props) => {
   const featureIndex = (index) => {
     if (props.featureIndex) {
       props.featureIndex(index);
-      console.log("changed")
     }
   };
 
@@ -29,7 +28,6 @@ const Accordion = (props) => {
   const timeStart = () => {
     if (props.timeStart) {
       props.timeStart();
-      console.log("start")
     }
   };
 
@@ -111,7 +109,6 @@ const Accordion = (props) => {
         timeEnd();
       }
       if (progressTime >= time) {
-
         setProgressTime(0);
         features[index].isOpened = false;
         panels[index].style.maxHeight = null;
@@ -126,6 +123,7 @@ const Accordion = (props) => {
           );
         }
         let nextIndex = index >= features.length - 1 ? 0 : index + 1;
+        featureIndex(nextIndex);
         features[nextIndex].isOpened = true;
 
         featureList.forEach((feature, i) => {
@@ -135,9 +133,6 @@ const Accordion = (props) => {
             feature.isOpened = false;
           }
         });
-
-        featureIndex(nextIndex);
-        timeStart();
 
         panels[nextIndex].style.maxHeight =
           panels[nextIndex].scrollHeight + "px";
@@ -150,6 +145,8 @@ const Accordion = (props) => {
             "accordion__item-title--active-blue"
           );
         }
+
+        timeStart();
       }
     }, 1);
   };
