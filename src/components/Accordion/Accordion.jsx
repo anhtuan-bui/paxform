@@ -7,7 +7,7 @@ const Accordion = (props) => {
   let features = props.list;
   const [featureList] = useState(features);
   let progressInterval;
-  var [progressTime, setProgressTime] = useState(0);
+  let progressTime = 0;
 
   const featureIndex = (index) => {
     if (props.featureIndex) {
@@ -18,9 +18,7 @@ const Accordion = (props) => {
   const titleClicked = (index) => {
     if (props.titleClicked === true) {
       timeEnd();
-      setTimeout(() => {
-        featureIndex(index);
-      }, 500);
+      featureIndex(index);
     }
   };
 
@@ -37,7 +35,7 @@ const Accordion = (props) => {
   };
 
   const handleAccordionTitleClick = (e, index) => {
-    setProgressTime(0);
+    progressTime = 0;
     titleClicked(index);
 
     e.target.classList.add(
@@ -96,7 +94,7 @@ const Accordion = (props) => {
     const panels = document.querySelectorAll(".accordion__item-panel");
 
     progressInterval = setInterval(() => {
-      setProgressTime(progressTime + 1);
+      progressTime += 1;
       featureList.forEach((feature, i) => {
         if (feature.isOpened === true) {
           index = i;
@@ -108,7 +106,7 @@ const Accordion = (props) => {
         timeEnd();
       }
       if (progressTime >= time) {
-        setProgressTime(0);
+        progressTime = 0;
         features[index].isOpened = false;
         panels[index].style.maxHeight = null;
 
