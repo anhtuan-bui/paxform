@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+import React, {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 import Button from "../../components/Button/Button";
 // import fillOutForm from '../../assets/images/fill-out-form.svg';
 // import fillOutFormMObile from '../../assets/images/fill-out-form__mobile.svg';
@@ -98,10 +103,10 @@ export default function Personal() {
     },
   ];
 
-  const [featureImage, setFeatureImage] = useState(features[0].image);
-
+  const ref = useRef();
   const featureIndex = (index) => {
-    setFeatureImage(features[index].image);
+    ref.current.printImage(index);
+    return index;
   };
 
   const timeStart = () => {
@@ -178,9 +183,8 @@ export default function Personal() {
             {t("personalPage.featuresSection.title")}
           </h1>
           <div className="features__container">
-            <div className="features__image">
-              <img src={featureImage} alt="forms from Paxform" />
-            </div>
+            <FeatureImage features={features} index={featureIndex} ref={ref} />
+
             <div className="features__accordion">
               <Accordion
                 list={features}
@@ -235,3 +239,17 @@ export default function Personal() {
     </main>
   );
 }
+
+const FeatureImage = forwardRef(({ features }, ref) => {
+  const [image, setImage] = useState(features[0].image);
+  useImperativeHandle(ref, () => ({
+    printImage(index) {
+      setImage(features[index].image);
+    },
+  }));
+  return (
+    <div className="features__image">
+      <img src={image} alt="forms from Paxform" />
+    </div>
+  );
+});

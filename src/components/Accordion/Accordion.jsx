@@ -1,6 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Accordion.scss";
 
+const AUTO_TIME = 800;
+window.titleClicked = false;
+
 const Accordion = (props) => {
   let features = props.list;
   const [featureList] = useState(features);
@@ -15,12 +18,12 @@ const Accordion = (props) => {
   };
 
   const titleClicked = (index) => {
-    if (props.titleClicked === true) {
+    if (props.titleClicked === true && features[index].isOpened === false) {
       timeEnd();
       setTimeout(() => {
-        timeStart();
         featureIndex(index);
-      }, 800);
+        timeStart();
+      }, AUTO_TIME)
     }
   };
 
@@ -37,6 +40,7 @@ const Accordion = (props) => {
   };
 
   const handleAccordionTitleClick = (e, index) => {
+    window.titleClicked = true;
     setAccordionClicked(true);
     progressTime = 0;
     titleClicked(index);
@@ -85,7 +89,6 @@ const Accordion = (props) => {
         feature.isOpened = false;
       }
     });
-
   };
 
   const handleAccordionAutomation = () => {
@@ -101,8 +104,6 @@ const Accordion = (props) => {
       progressTime = 0;
     }
 
-    setAccordionClicked(false);
-
     progressInterval = setInterval(() => {
       progressTime += 1;
       featureList.forEach((feature, i) => {
@@ -112,10 +113,12 @@ const Accordion = (props) => {
             (progressTime / time) * 100 + "%";
         }
       });
-      if (progressTime >= 800) {
+      if (progressTime >= AUTO_TIME) {
         timeEnd();
       }
       if (progressTime >= time) {
+        setAccordionClicked(false);
+
         progressTime = 0;
         features[index].isOpened = false;
         panels[index].style.maxHeight = null;
@@ -140,7 +143,7 @@ const Accordion = (props) => {
           }
         });
 
-        featureIndex(nextIndex); 
+        featureIndex(nextIndex);
         timeStart();
 
         panels[nextIndex].style.maxHeight =
@@ -167,6 +170,7 @@ const Accordion = (props) => {
     });
 
     handleAccordionAutomation();
+
     return () => {
       clearInterval(progressInterval);
     };
@@ -219,4 +223,3 @@ const Accordion = (props) => {
 };
 
 export default Accordion;
-
