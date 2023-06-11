@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Accordion.scss";
 
-const AUTO_TIME = 1100;
+const AUTO_TIME = 1200;
 
 const Accordion = (props) => {
   let features = props.list;
