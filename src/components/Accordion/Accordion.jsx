@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Accordion.scss";
 
-const AUTO_TIME = 1000;
+const AUTO_TIME = 1100;
 
 const Accordion = (props) => {
   let features = props.list;
@@ -18,9 +18,7 @@ const Accordion = (props) => {
   const titleClicked = (index) => {
     if (props.titleClicked === true) {
       timeEnd();
-      setTimeout(() => {
-        featureIndex(index);
-      }, AUTO_TIME);
+      featureIndex(index);
     }
   };
 
@@ -144,7 +142,6 @@ const Accordion = (props) => {
             "accordion__item-title--active-blue"
           );
         }
-
       }
     }, 1);
   };

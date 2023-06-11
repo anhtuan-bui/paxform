@@ -104,7 +104,7 @@ export default function Personal() {
     setFeatureImage(features[index].image);
     setTimeout(() => {
       timeStart();
-    }, 1000);
+    }, 500);
   };
 
   const timeStart = () => {

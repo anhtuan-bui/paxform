@@ -89,7 +89,9 @@ const Business = () => {
 
   const featureIndex = (index) => {
     setFeatureImage(features[index].image);
-    timeStart();
+    setTimeout(() => {
+      timeStart();
+    }, 500);
   };
 
   const timeStart = () => {
