@@ -191,7 +191,6 @@ export default function Personal() {
                 timeStart={timeStart}
                 timeEnd={timeEnd}
                 titleClicked={true}
-                length={6000}
               />
             </div>
           </div>

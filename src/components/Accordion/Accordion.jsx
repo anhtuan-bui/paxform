@@ -1,12 +1,11 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Accordion.scss";
 
-const AUTO_TIME = 800;
+const AUTO_TIME = 1100;
 
 const Accordion = (props) => {
   let features = props.list;
   const [featureList] = useState(features);
-  const [accordionClicked, setAccordionClicked] = useState(false);
   let progressInterval;
   var [progressTime, setProgressTime] = useState(0);
 
@@ -39,7 +38,6 @@ const Accordion = (props) => {
   };
 
   const handleAccordionTitleClick = (e, index) => {
-    setAccordionClicked(true);
     setProgressTime(0);
     titleClicked(index);
 
@@ -90,7 +88,7 @@ const Accordion = (props) => {
   };
 
   const handleAccordionAutomation = () => {
-    let length = props.length ? props.length : 4000;
+    let length = props.length ? props.length : 6000;
     const time = length / 4;
     let index = 0;
     const accordionProgresses = document.querySelectorAll(
@@ -111,7 +109,6 @@ const Accordion = (props) => {
         timeEnd();
       }
       if (progressTime >= time) {
-        setAccordionClicked(false);
 
         setProgressTime(0);
         features[index].isOpened = false;
@@ -151,7 +148,6 @@ const Accordion = (props) => {
             "accordion__item-title--active-blue"
           );
         }
-        setAccordionClicked(false);
       }
     }, 1);
   };

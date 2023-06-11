@@ -167,7 +167,6 @@ const Business = () => {
                 timeStart={timeStart}
                 timeEnd={timeEnd}
                 titleClicked={true}
-                length={6000}
               />
             </div>
           </div>
