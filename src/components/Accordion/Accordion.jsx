@@ -2,14 +2,13 @@ import React, { Fragment, useEffect, useState } from "react";
 import "./Accordion.scss";
 
 const AUTO_TIME = 800;
-window.titleClicked = false;
 
 const Accordion = (props) => {
   let features = props.list;
   const [featureList] = useState(features);
   const [accordionClicked, setAccordionClicked] = useState(false);
   let progressInterval;
-  let progressTime = 0;
+  var [progressTime, setProgressTime] = useState(0);
 
   const featureIndex = (index) => {
     if (props.featureIndex) {
@@ -18,7 +17,7 @@ const Accordion = (props) => {
   };
 
   const titleClicked = (index) => {
-    if (props.titleClicked === true && features[index].isOpened === false) {
+    if (props.titleClicked === true) {
       timeEnd();
       setTimeout(() => {
         featureIndex(index);
@@ -40,9 +39,8 @@ const Accordion = (props) => {
   };
 
   const handleAccordionTitleClick = (e, index) => {
-    window.titleClicked = true;
     setAccordionClicked(true);
-    progressTime = 0;
+    setProgressTime(0);
     titleClicked(index);
 
     e.target.classList.add(
@@ -91,77 +89,72 @@ const Accordion = (props) => {
     });
   };
 
-  // const handleAccordionAutomation = () => {
-  //   clearInterval(progressInterval);
-  //   let length = props.length ? props.length : 4000;
-  //   const time = length / 4;
-  //   let index = 0;
-  //   const accordionProgresses = document.querySelectorAll(
-  //     ".accordion__progress-bar"
-  //   );
-  //   const panels = document.querySelectorAll(".accordion__item-panel");
+  const handleAccordionAutomation = () => {
+    let length = props.length ? props.length : 4000;
+    const time = length / 4;
+    let index = 0;
+    const accordionProgresses = document.querySelectorAll(
+      ".accordion__progress-bar"
+    );
+    const panels = document.querySelectorAll(".accordion__item-panel");
 
-  //   if (!accordionClicked) {
-  //     progressTime = 0;
-  //   }
+    progressInterval = setInterval(() => {
+      setProgressTime(progressTime + 1);
+      featureList.forEach((feature, i) => {
+        if (feature.isOpened === true) {
+          index = i;
+          accordionProgresses[index].style.width =
+            (progressTime / time) * 100 + "%";
+        }
+      });
+      if (progressTime >= AUTO_TIME) {
+        timeEnd();
+      }
+      if (progressTime >= time) {
+        setAccordionClicked(false);
 
-  //   progressInterval = setInterval(() => {
-  //     progressTime += 1;
-  //     featureList.forEach((feature, i) => {
-  //       if (feature.isOpened === true) {
-  //         index = i;
-  //         accordionProgresses[index].style.width =
-  //           (progressTime / time) * 100 + "%";
-  //       }
-  //     });
-  //     if (progressTime >= AUTO_TIME) {
-  //       timeEnd();
-  //     }
-  //     if (progressTime >= time) {
-  //       setAccordionClicked(false);
+        setProgressTime(0);
+        features[index].isOpened = false;
+        panels[index].style.maxHeight = null;
 
-  //       progressTime = 0;
-  //       features[index].isOpened = false;
-  //       panels[index].style.maxHeight = null;
+        if (props.titleHighlight) {
+          panels[index].previousElementSibling.classList.remove(
+            `accordion__item-title--active-${props.titleHighlight}`
+          );
+        } else {
+          panels[index].previousElementSibling.classList.remove(
+            "accordion__item-title--active-blue"
+          );
+        }
+        let nextIndex = index >= features.length - 1 ? 0 : index + 1;
+        features[nextIndex].isOpened = true;
 
-  //       if (props.titleHighlight) {
-  //         panels[index].previousElementSibling.classList.remove(
-  //           `accordion__item-title--active-${props.titleHighlight}`
-  //         );
-  //       } else {
-  //         panels[index].previousElementSibling.classList.remove(
-  //           "accordion__item-title--active-blue"
-  //         );
-  //       }
-  //       let nextIndex = index >= features.length - 1 ? 0 : index + 1;
-  //       features[nextIndex].isOpened = true;
+        featureList.forEach((feature, i) => {
+          if (nextIndex === i) {
+            feature.isOpened = true;
+          } else {
+            feature.isOpened = false;
+          }
+        });
 
-  //       featureList.forEach((feature, i) => {
-  //         if (nextIndex === i) {
-  //           feature.isOpened = true;
-  //         } else {
-  //           feature.isOpened = false;
-  //         }
-  //       });
+        featureIndex(nextIndex);
+        timeStart();
 
-  //       featureIndex(nextIndex);
-
-  //       panels[nextIndex].style.maxHeight =
-  //         panels[nextIndex].scrollHeight + "px";
-  //       if (props.titleHighlight) {
-  //         panels[nextIndex].previousElementSibling.classList.add(
-  //           `accordion__item-title--active-${props.titleHighlight}`
-  //         );
-  //       } else {
-  //         panels[nextIndex].previousElementSibling.classList.add(
-  //           "accordion__item-title--active-blue"
-  //         );
-  //       }
-        
-  //       timeStart();
-  //     }
-  //   }, 1);
-  // };
+        panels[nextIndex].style.maxHeight =
+          panels[nextIndex].scrollHeight + "px";
+        if (props.titleHighlight) {
+          panels[nextIndex].previousElementSibling.classList.add(
+            `accordion__item-title--active-${props.titleHighlight}`
+          );
+        } else {
+          panels[nextIndex].previousElementSibling.classList.add(
+            "accordion__item-title--active-blue"
+          );
+        }
+        setAccordionClicked(false);
+      }
+    }, 1);
+  };
 
   useEffect(() => {
     const panels = document.querySelectorAll(".accordion__item-panel");
@@ -171,7 +164,7 @@ const Accordion = (props) => {
       }
     });
 
-    // handleAccordionAutomation();
+    handleAccordionAutomation();
 
     return () => {
       clearInterval(progressInterval);
@@ -210,13 +203,13 @@ const Accordion = (props) => {
             >
               <p>{feature.description}</p>
             </div>
-            {/* <div className="accordion__progress">
+            <div className="accordion__progress">
               <div
                 className={`accordion__progress-bar accordion__progress-bar--${
                   props.progressBarColor ? props.progressBarColor : "blue"
                 }`}
               ></div>
-            </div> */}
+            </div>
           </div>
         </div>
       ))}
