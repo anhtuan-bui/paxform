@@ -12,6 +12,7 @@ const Accordion = (props) => {
   const featureIndex = (index) => {
     if (props.featureIndex) {
       props.featureIndex(index);
+      console.log("changed")
     }
   };
 
@@ -28,6 +29,7 @@ const Accordion = (props) => {
   const timeStart = () => {
     if (props.timeStart) {
       props.timeStart();
+      console.log("start")
     }
   };
 
