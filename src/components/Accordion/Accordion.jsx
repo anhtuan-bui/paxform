@@ -91,77 +91,77 @@ const Accordion = (props) => {
     });
   };
 
-  const handleAccordionAutomation = () => {
-    clearInterval(progressInterval);
-    let length = props.length ? props.length : 4000;
-    const time = length / 4;
-    let index = 0;
-    const accordionProgresses = document.querySelectorAll(
-      ".accordion__progress-bar"
-    );
-    const panels = document.querySelectorAll(".accordion__item-panel");
+  // const handleAccordionAutomation = () => {
+  //   clearInterval(progressInterval);
+  //   let length = props.length ? props.length : 4000;
+  //   const time = length / 4;
+  //   let index = 0;
+  //   const accordionProgresses = document.querySelectorAll(
+  //     ".accordion__progress-bar"
+  //   );
+  //   const panels = document.querySelectorAll(".accordion__item-panel");
 
-    if (!accordionClicked) {
-      progressTime = 0;
-    }
+  //   if (!accordionClicked) {
+  //     progressTime = 0;
+  //   }
 
-    progressInterval = setInterval(() => {
-      progressTime += 1;
-      featureList.forEach((feature, i) => {
-        if (feature.isOpened === true) {
-          index = i;
-          accordionProgresses[index].style.width =
-            (progressTime / time) * 100 + "%";
-        }
-      });
-      if (progressTime >= AUTO_TIME) {
-        timeEnd();
-      }
-      if (progressTime >= time) {
-        setAccordionClicked(false);
+  //   progressInterval = setInterval(() => {
+  //     progressTime += 1;
+  //     featureList.forEach((feature, i) => {
+  //       if (feature.isOpened === true) {
+  //         index = i;
+  //         accordionProgresses[index].style.width =
+  //           (progressTime / time) * 100 + "%";
+  //       }
+  //     });
+  //     if (progressTime >= AUTO_TIME) {
+  //       timeEnd();
+  //     }
+  //     if (progressTime >= time) {
+  //       setAccordionClicked(false);
 
-        progressTime = 0;
-        features[index].isOpened = false;
-        panels[index].style.maxHeight = null;
+  //       progressTime = 0;
+  //       features[index].isOpened = false;
+  //       panels[index].style.maxHeight = null;
 
-        if (props.titleHighlight) {
-          panels[index].previousElementSibling.classList.remove(
-            `accordion__item-title--active-${props.titleHighlight}`
-          );
-        } else {
-          panels[index].previousElementSibling.classList.remove(
-            "accordion__item-title--active-blue"
-          );
-        }
-        let nextIndex = index >= features.length - 1 ? 0 : index + 1;
-        features[nextIndex].isOpened = true;
+  //       if (props.titleHighlight) {
+  //         panels[index].previousElementSibling.classList.remove(
+  //           `accordion__item-title--active-${props.titleHighlight}`
+  //         );
+  //       } else {
+  //         panels[index].previousElementSibling.classList.remove(
+  //           "accordion__item-title--active-blue"
+  //         );
+  //       }
+  //       let nextIndex = index >= features.length - 1 ? 0 : index + 1;
+  //       features[nextIndex].isOpened = true;
 
-        featureList.forEach((feature, i) => {
-          if (nextIndex === i) {
-            feature.isOpened = true;
-          } else {
-            feature.isOpened = false;
-          }
-        });
+  //       featureList.forEach((feature, i) => {
+  //         if (nextIndex === i) {
+  //           feature.isOpened = true;
+  //         } else {
+  //           feature.isOpened = false;
+  //         }
+  //       });
 
-        featureIndex(nextIndex);
+  //       featureIndex(nextIndex);
 
-        panels[nextIndex].style.maxHeight =
-          panels[nextIndex].scrollHeight + "px";
-        if (props.titleHighlight) {
-          panels[nextIndex].previousElementSibling.classList.add(
-            `accordion__item-title--active-${props.titleHighlight}`
-          );
-        } else {
-          panels[nextIndex].previousElementSibling.classList.add(
-            "accordion__item-title--active-blue"
-          );
-        }
+  //       panels[nextIndex].style.maxHeight =
+  //         panels[nextIndex].scrollHeight + "px";
+  //       if (props.titleHighlight) {
+  //         panels[nextIndex].previousElementSibling.classList.add(
+  //           `accordion__item-title--active-${props.titleHighlight}`
+  //         );
+  //       } else {
+  //         panels[nextIndex].previousElementSibling.classList.add(
+  //           "accordion__item-title--active-blue"
+  //         );
+  //       }
         
-        timeStart();
-      }
-    }, 1);
-  };
+  //       timeStart();
+  //     }
+  //   }, 1);
+  // };
 
   useEffect(() => {
     const panels = document.querySelectorAll(".accordion__item-panel");
@@ -171,7 +171,7 @@ const Accordion = (props) => {
       }
     });
 
-    handleAccordionAutomation();
+    // handleAccordionAutomation();
 
     return () => {
       clearInterval(progressInterval);
@@ -210,13 +210,13 @@ const Accordion = (props) => {
             >
               <p>{feature.description}</p>
             </div>
-            <div className="accordion__progress">
+            {/* <div className="accordion__progress">
               <div
                 className={`accordion__progress-bar accordion__progress-bar--${
                   props.progressBarColor ? props.progressBarColor : "blue"
                 }`}
               ></div>
-            </div>
+            </div> */}
           </div>
         </div>
       ))}
