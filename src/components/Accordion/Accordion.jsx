@@ -18,7 +18,9 @@ const Accordion = (props) => {
   const titleClicked = (index) => {
     if (props.titleClicked === true) {
       timeEnd();
-      featureIndex(index);
+      setTimeout(() => {
+        featureIndex(index);
+      }, 500);
     }
   };
 
