@@ -14,6 +14,7 @@ const Accordion = (props) => {
   const featureIndex = (index) => {
     if (props.featureIndex) {
       props.featureIndex(index);
+      console.log("changed")
     }
   };
 
