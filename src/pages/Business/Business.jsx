@@ -57,24 +57,29 @@ const plans = [
   {
     mainColor: "grey",
     title: t("businessPage.plans.free.title"),
-    price: [29.90, t("month")],
+    price: [29.9, t("month")],
     description: t("businessPage.plans.free.description"),
-    features: Array.from(Array(8), (x, index) => t(`businessPage.plans.free.features.feature${index+1}`))
+    features: Array.from(Array(8), (x, index) =>
+      t(`businessPage.plans.free.features.feature${index + 1}`)
+    ),
   },
   {
     mainColor: "green",
     title: t("businessPage.plans.premium.title"),
-    price: [39.90, t("month")],
+    price: [39.9, t("month")],
     description: t("businessPage.plans.premium.description"),
-    features: Array.from(Array(8), (x, index) => t(`businessPage.plans.premium.features.feature${index+1}`))
-    
+    features: Array.from(Array(8), (x, index) =>
+      t(`businessPage.plans.premium.features.feature${index + 1}`)
+    ),
   },
   {
     mainColor: "blue",
     title: t("businessPage.plans.family.title"),
     price: ["Custom", t("user")],
     description: t("businessPage.plans.family.description"),
-    features: Array.from(Array(8), (x, index) => t(`businessPage.plans.family.features.feature${index+1}`))
+    features: Array.from(Array(8), (x, index) =>
+      t(`businessPage.plans.family.features.feature${index + 1}`)
+    ),
   },
 ];
 
@@ -84,6 +89,7 @@ const Business = () => {
 
   const featureIndex = (index) => {
     setFeatureImage(features[index].image);
+    timeStart();
   };
 
   const timeStart = () => {
@@ -177,14 +183,14 @@ const Business = () => {
 
       <section className="plans" id="business-plan">
         <div className="container plans__container">
-            <div className="plans__top-title">
-              <p className="plans__name section_name">
-                {t("businessPage.plans.sectionName")}
-              </p>
-              <h1 className="plans__title section_title">
-                {t("businessPage.plans.sectionTitle")}
-              </h1>
-            </div>
+          <div className="plans__top-title">
+            <p className="plans__name section_name">
+              {t("businessPage.plans.sectionName")}
+            </p>
+            <h1 className="plans__title section_title">
+              {t("businessPage.plans.sectionTitle")}
+            </h1>
+          </div>
           <div className="plans__top">
             <div className="plans__top-button">
               {/* <Button

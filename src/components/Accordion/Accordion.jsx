@@ -20,16 +20,15 @@ const Accordion = (props) => {
       timeEnd();
       setTimeout(() => {
         featureIndex(index);
-        timeStart();
       }, AUTO_TIME);
     }
   };
 
-  const timeStart = () => {
-    if (props.timeStart) {
-      props.timeStart();
-    }
-  };
+  // const timeStart = () => {
+  //   if (props.timeStart) {
+  //     props.timeStart();
+  //   }
+  // };
 
   const timeEnd = () => {
     if (props.timeEnd) {
@@ -146,7 +145,6 @@ const Accordion = (props) => {
           );
         }
 
-        timeStart();
       }
     }, 1);
   };

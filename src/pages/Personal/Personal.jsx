@@ -102,6 +102,7 @@ export default function Personal() {
 
   const featureIndex = (index) => {
     setFeatureImage(features[index].image);
+    timeStart();
   };
 
   const timeStart = () => {
