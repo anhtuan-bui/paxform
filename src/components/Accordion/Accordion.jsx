@@ -145,7 +145,6 @@ const Accordion = (props) => {
         });
 
         featureIndex(nextIndex);
-        timeStart();
 
         panels[nextIndex].style.maxHeight =
           panels[nextIndex].scrollHeight + "px";
@@ -158,6 +157,8 @@ const Accordion = (props) => {
             "accordion__item-title--active-blue"
           );
         }
+        
+        timeStart();
       }
     }, 1);
   };
