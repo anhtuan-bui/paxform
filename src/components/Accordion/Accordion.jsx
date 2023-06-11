@@ -14,7 +14,6 @@ const Accordion = (props) => {
   const featureIndex = (index) => {
     if (props.featureIndex) {
       props.featureIndex(index);
-      console.log("changed")
     }
   };
 
@@ -24,7 +23,7 @@ const Accordion = (props) => {
       setTimeout(() => {
         featureIndex(index);
         timeStart();
-      }, AUTO_TIME)
+      }, AUTO_TIME);
     }
   };
 
@@ -93,6 +92,7 @@ const Accordion = (props) => {
   };
 
   const handleAccordionAutomation = () => {
+    clearInterval(progressInterval);
     let length = props.length ? props.length : 4000;
     const time = length / 4;
     let index = 0;
