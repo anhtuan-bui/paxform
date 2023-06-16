@@ -72,7 +72,7 @@ export default function Personal() {
     {
       mainColor: "grey",
       title: t("free"),
-      price: [0, ""],
+      price: [0, "yr"],
       description: t("personalPage.plans.description1"),
       features: Array.from(Array(9), (x, index) =>
         t(`personalPage.plans.freeFeatures.feature${index + 1}`)
@@ -81,7 +81,7 @@ export default function Personal() {
     {
       mainColor: "green",
       title: t("premium"),
-      price: [49.9, ""],
+      price: [49.9, "yr"],
       description: t("personalPage.plans.description2"),
       features: Array.from(Array(9), (x, index) =>
         t(`personalPage.plans.premiumFeatures.feature${index + 1}`)
@@ -90,7 +90,7 @@ export default function Personal() {
     {
       mainColor: "blue",
       title: t("family"),
-      price: [99.9, ""],
+      price: [99.9, "yr"],
       description: t("personalPage.plans.description3"),
       features: Array.from(Array(9), (x, index) =>
         t(`personalPage.plans.familyFeatures.feature${index + 1}`)
