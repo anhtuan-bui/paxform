@@ -66,7 +66,7 @@ export default function GetStarted() {
                 type="outline arrow"
                 color="green"
                 text={t("contactUs")}
-                href="/contact-us"
+                href="/contact"
               />
             </div>
             <div className="love_to_hear__box-right-item">

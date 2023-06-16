@@ -72,7 +72,7 @@ function App() {
               <Route path="legal/:slug/:slug" element={<LegalDetail />} />
               <Route path="legal-detail" element={<LegalDetail />} />
               {/* <Route path="use-cases/:slug" element={<UseCase />} /> */}
-              <Route path="contact-us" element={<ContactUs />} />
+              <Route path="contact" element={<ContactUs />} />
               <Route path="company" element={<Company />} />
               {/* <Route path="data-security" element={<DataSecurity />} /> */}
               {/* <Route path="resource-details" element={<ResourceDetail />} /> */}

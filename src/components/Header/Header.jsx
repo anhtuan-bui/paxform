@@ -209,7 +209,7 @@ class Header extends Component {
       },
       {
         text: t("contact"),
-        to: "contact-us",
+        to: "contact",
         submenu: [],
       },
       // {

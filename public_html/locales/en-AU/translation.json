@@ -156,7 +156,7 @@
     "hero": {
       "title": "Experience a Seamless Form Creation Process for Your Organization",
       "description": "Experience the ultimate ease in form creation with Paxform. Our transition from physical to digital forms revolutionizes your user interactions, providing a reliable and efficient process to gather data for the benefit of your team and users alike. Our web application empowers you with straightforward functions and features, paving the way for your success on the road ahead.",
-      "planButton": "See Plan",
+      "planButton": "See Plans",
       "howButton": "How it works"
     },
     "flexbox": {
@@ -289,7 +289,7 @@
       "name": "PERSONAL",
       "title": "Fill Any Form, Anywhere with Your Personal Information All in One Place",
       "description": "Paxform simplifies form filling with its powerful autofill technology. Save time and effort by eliminating the repetitive task of entering personal information. With Paxform, you can securely manage and store all your personal data in one place, electronically sign important documents, and effortlessly send them to organizations. Rest assured, your data is fully encrypted for enhanced security and privacy.",
-      "seePlan": "See Plan"
+      "seePlan": "See Plans"
     },
     "flexBox": {
       "title": "Tired of Repeatedly Filling Forms with the Same Data Requirements?",
