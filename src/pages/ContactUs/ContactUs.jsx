@@ -260,7 +260,7 @@ const ContactForm = () => {
           </p>
         </label>
         <label>
-          <strong>{t("email")}</strong>
+          <strong>{t("workEmail")}</strong>
           <input
             type="email"
             placeholder="example@email.com"
@@ -294,10 +294,10 @@ const ContactForm = () => {
             <option value="" disabled>
               {t("selectARangeOfEmployees")}
             </option>
-            <option value="1 - 10">1 - 10</option>
-            <option value="10 - 100">10 - 100</option>
-            <option value="100 - 1000">100 - 1000</option>
-            <option value="Over 1000">Over 1000</option>
+            <option value="1 - 9">1 - 9</option>
+            <option value="10 - 99">10 - 99</option>
+            <option value="100 - 999">100 - 999</option>
+            <option value="1000 and Over">1000 and Over</option>
           </select>
         </label>
         <label>
