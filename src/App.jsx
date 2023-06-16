@@ -23,6 +23,7 @@ import { convertLangToLocale } from "./lib/util";
 const Home = lazy(() => import("./pages/Home/Home"));
 const Personal = lazy(() => import("./pages/Personal/Personal"));
 const Business = lazy(() => import("./pages/Business/Business"));
+const DataRequest = lazy(() => import("./pages/DataRequest/DataRequest"));
 // const UseCase = lazy(() => import("./pages/UseCase/UseCase"));
 const FAQs = lazy(() => import("./pages/FAQs/FAQs"));
 // const ResourceDetail = lazy(() =>
@@ -79,6 +80,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
               {/* <Route path="gq" element={<GQ />} /> */}
               {/* <Route path="faqv1" element={<FAQV1 />} /> */}
+                <Route path="/data-subject-access-request-form" element={<DataRequest />} />
             </Route>
           </Routes>
         </Suspense>
