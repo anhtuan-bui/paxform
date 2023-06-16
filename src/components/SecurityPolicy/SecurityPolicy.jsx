@@ -1,7 +1,7 @@
 import React from "react";
 import "./SecurityPolicy.scss";
 
-import Button from "../Button/Button";
+// import Button from "../Button/Button";
 
 import securityPolicyImage from "../../assets/images/home/security policy.svg";
 import bgBlue from "../../assets/images/UseCases/BgBlue.svg";
@@ -24,9 +24,9 @@ export default function SecurityPolicy() {
             }}
           ></p>
 
-          <div className="security_policy__button">
+          {/* <div className="security_policy__button">
             <Button type="outline arrow" text={t("learnMore")} />
-          </div>
+          </div> */}
         </div>
         <div className="security_policy__image">
           <img
