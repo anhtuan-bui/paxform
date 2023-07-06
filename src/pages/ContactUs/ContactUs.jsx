@@ -108,7 +108,7 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* <div className="help__box">
+            <div className="help__box">
               <div className="help__box__inner">
                 <em className="help__box-icon"></em>
                 <strong className="help__box-title">
@@ -136,7 +136,7 @@ export default function ContactUs() {
                   {t("contactUsPage.bookDemo.linkText")} <ArrowRight />
                 </a>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
 
