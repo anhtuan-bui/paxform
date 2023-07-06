@@ -138,7 +138,9 @@ $color_grey: #2f4356;
         font-size: rem(14);
         color: $color_grey;
         text-decoration: none;
-        text-transform: capitalize;
+        &::first-letter {
+          text-transform: capitalize;
+        }
         &::before {
           position: absolute;
           display: inline-block;

@@ -60,6 +60,14 @@ const CategoryBox = ({ category, loading }) => {
         {legals.map((legal, index) => (
           <LegalLink legal={legal} key={index} category={category} />
         ))}
+        {category?.name === "Website" && (
+          <a
+            className="category__box-link"
+            href={"/legal/data-subject-access-request-form"}
+          >
+            Data subject access request form
+          </a>
+        )}
       </div>
     </div>
   );

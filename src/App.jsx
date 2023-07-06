@@ -80,7 +80,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
               {/* <Route path="gq" element={<GQ />} /> */}
               {/* <Route path="faqv1" element={<FAQV1 />} /> */}
-                <Route path="/data-subject-access-request-form" element={<DataRequest />} />
+                <Route path="legal/data-subject-access-request-form" element={<DataRequest />} />
             </Route>
           </Routes>
         </Suspense>
