@@ -9,8 +9,8 @@ import Modal from "react-modal";
 import { useTranslation } from "react-i18next";
 
 export default function ContactUs() {
-  const messageNumber = "+61 1300 181 346";
-  const callNumber = "+61 1300 181 346";
+  const messageNumber = "+61 1300 181 345";
+  const callNumber = "+61 1300 181 345";
   const { t } = useTranslation();
 
   const handleChatNowClick = () => {
@@ -55,7 +55,7 @@ export default function ContactUs() {
                 <p className="help__box-desc">
                   {t("contactUsPage.message.description")}
                 </p>
-                <a className="help__box-link" href="sms:+61482084480">
+                <a className="help__box-link" href="sms:+611300181345">
                   {t("contactUsPage.message.linkText")} <ArrowRight />
                 </a>
               </div>
@@ -83,7 +83,7 @@ export default function ContactUs() {
                 <p className="help__box-desc">
                   {t("contactUsPage.callUs.description")}
                 </p>
-                <a className="help__box-link" href="tel:+611300181346">
+                <a className="help__box-link" href="tel:+611300181345">
                   {t("contactUsPage.callUs.linkText")} <ArrowRight />
                 </a>
               </div>
@@ -107,6 +107,36 @@ export default function ContactUs() {
                 </a>
               </div>
             </div>
+
+            {/* <div className="help__box">
+              <div className="help__box__inner">
+                <em className="help__box-icon"></em>
+                <strong className="help__box-title">
+                  {t("contactUsPage.bookMeeting.title", { callNumber: callNumber })}
+                </strong>
+                <p className="help__box-desc">
+                  {t("contactUsPage.bookMeeting.description")}
+                </p>
+                <a className="help__box-link" href="https://dealfollow.com/meet/catherine">
+                  {t("contactUsPage.bookMeeting.linkText")} <ArrowRight />
+                </a>
+              </div>
+            </div>
+
+            <div className="help__box">
+              <div className="help__box__inner">
+                <em className="help__box-icon"></em>
+                <strong className="help__box-title">
+                  {t("contactUsPage.bookDemo.title", { callNumber: callNumber })}
+                </strong>
+                <p className="help__box-desc">
+                  {t("contactUsPage.bookDemo.description")}
+                </p>
+                <a className="help__box-link" href="https://dealfollow.com/meet/Jehaiakim">
+                  {t("contactUsPage.bookDemo.linkText")} <ArrowRight />
+                </a>
+              </div>
+            </div> */}
           </div>
         </div>
 

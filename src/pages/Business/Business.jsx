@@ -57,7 +57,7 @@ const plans = [
   {
     mainColor: "grey",
     title: t("businessPage.plans.free.title"),
-    price: [29.9, t("month")],
+    price: [29, t("month")],
     description: t("businessPage.plans.free.description"),
     features: Array.from(Array(8), (x, index) =>
       t(`businessPage.plans.free.features.feature${index + 1}`)
@@ -66,7 +66,7 @@ const plans = [
   {
     mainColor: "green",
     title: t("businessPage.plans.premium.title"),
-    price: [39.9, t("month")],
+    price: [119, t("month")],
     description: t("businessPage.plans.premium.description"),
     features: Array.from(Array(8), (x, index) =>
       t(`businessPage.plans.premium.features.feature${index + 1}`)
@@ -75,7 +75,7 @@ const plans = [
   {
     mainColor: "blue",
     title: t("businessPage.plans.family.title"),
-    price: ["Custom", t("user")],
+    price: [299, t("month")],
     description: t("businessPage.plans.family.description"),
     features: Array.from(Array(8), (x, index) =>
       t(`businessPage.plans.family.features.feature${index + 1}`)

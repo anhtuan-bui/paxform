@@ -24,7 +24,7 @@ export default function PlanPricing({ plans, page }) {
                 }`}
               ></div>
               <h2 className="pricing_box__title">{plan.title}</h2>
-              <p className="pricing_box__description">{plan.description}</p>
+              <p className="pricing_box__description" dangerouslySetInnerHTML={{__html: plan.description}}></p>
             </div>
           </div>
 

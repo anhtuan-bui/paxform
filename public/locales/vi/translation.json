@@ -1,502 +1,568 @@
 {
-  "signUp": "Đăng ký",
-  "howItWork": "Làm thế nào nó hoạt động",
-  "learnMore": "Tìm hiểu thêm",
-  "contactUs": "Liên hệ chúng tôi",
-  "business": "Việc kinh doanh",
-  "personal": "Riêng tư",
-  "pricing": "định giá",
-  "useCases": "Trường hợp sử dụng",
-  "support": "Ủng hộ",
-  "resources": "Tài nguyên",
+  "workEmail": "Work Email",
+  "contact":"contact",
+  "user": "user",
+  "homePage": "Home",
+  "signUp": "Sign Up",
+  "howItWork": "How it works",
+  "learnMore": "Learn more",
+  "contactUs": "Contact Us",
+  "business": "Business",
+  "personal": "Personal",
+  "pricing": "Pricing",
+  "useCases": "Use Cases",
+  "support": "Support",
+  "resources": "Resources",
   "blogs": "Blog",
-  "faqs": "câu hỏi thường gặp",
-  "security": "Bảo vệ",
-  "template": "Bản mẫu",
-  "integrations": "tích hợp",
-  "businessFeatures": "Tính năng kinh doanh",
-  "formDesigner": "Nhà thiết kế biểu mẫu",
-  "chat": "Trò chuyện",
-  "disclosures": "tiết lộ",
-  "electronicSignatures": "Chữ ký điện tử",
-  "additionalQuestions": "Câu hỏi thêm",
-  "customStatuses": "Trạng thái tùy chỉnh",
-  "consumerFeatures": "TÍNH NĂNG TIÊU DÙNG",
-  "passwordManager": "Trình quản lý mật khẩu",
-  "passwordGenerator": "Tạo mật khẩu",
-  "secret": "Bí mật",
-  "chatNotifications": "Trò chuyện",
-  "helpCenter": "Trung tâm trợ giúp",
-  "encryption": "mã hóa",
-  "biometric": "sinh trắc học",
-  "fileStorage": "Lưu trữ tập tin",
-  "dataStorage": "Lưu trữ dữ liệu",
-  "password": "Mật khẩu",
-  "autoTimeout": "Hết thời gian tự động",
-  "forms": "Các hình thức",
-  "contactForm": "Mâu liên hệ",
-  "feedbackForm": "Mẫu phản hồi",
-  "securityForm": "Biểu mẫu bảo mật",
-  "copyrightForm": "Biểu mẫu bản quyền",
-  "gdprForm": "Biểu mẫu GDPR",
-  "company": "Công ty",
-  "aboutUs": "Về chúng tôi",
-  "requestDemo": "Yêu cầu bản trình diễn",
-  "partnerProgram": "Chương trình đối tác",
-  "careers": "nghề nghiệp",
-  "newsroom": "tòa soạn",
-  "brandKit": "bộ thương hiệu",
-  "legal": "Hợp pháp",
-  "websiteTermsOfUse": "Điều khoản sử dụng trang web",
-  "websitePrivacyPolicy": "Chính sách bảo mật của trang web",
-  "copyrightPaxform": "© Bản quyền 2022 Paxform. ",
-  "privacyPolicy": "Chính sách bảo mật",
-  "termOfService": "Điều khoản dịch vụ",
-  "getStartedBtn": "Bắt đầu",
-  "forever": "mãi mãi",
-  "free": "Miễn phí",
-  "premium": "Phần thưởng",
-  "family": "Gia đình",
-  "customPricing": "giá tùy chỉnh",
-  "fullName": "Họ và tên",
-  "email": "E-mail",
-  "companyName": "Tên công ty",
-  "companySize": "Quy mô công ty",
-  "message": "Tin nhắn",
-  "selectARangeOfEmployees": "Chọn một loạt nhân viên",
-  "frequentlyAskedQuestions": "Các câu hỏi thường gặp",
-  "max": "tối đa",
-  "unlimited": "Vô hạn",
-  "month": "tháng",
-  "essential": "Thiết yếu",
-  "standard": "Tiêu chuẩn",
-  "plus": "Thêm",
-  "features": "Đặc trưng",
-  "blogToday": "BLOG HÔM NAY",
-  "allPostsLoaded": "Đã tải tất cả các bài đăng.",
-  "share": "Chia sẻ",
-  "recommended": "Khuyến khích",
-  "readArticle": "đọc bài viết",
-  "seeAll": "Nhìn thấy tất cả",
-  "readMore": "Đọc thêm",
-  "all": "Tất cả",
-  "inThisCaseStudy": "trong nghiên cứu trường hợp này",
-  "custom": "Phong tục",
+  "faqs": "FAQs",
+  "security": "Security",
+  "template": "Template",
+  "integrations": "Integrations",
+  "businessFeatures": "Business Features",
+  "formDesigner": "Form Designer",
+  "chat": "Chat",
+  "disclosures": "Disclosures",
+  "electronicSignatures": "Electronic Signatures",
+  "additionalQuestions": "Additional Questions",
+  "customStatuses": "Custom Statuses",
+  "consumerFeatures": "CONSUMER FEATURES",
+  "passwordManager": "Password Manager",
+  "passwordGenerator": "Password Generator",
+  "secret": "Secret",
+  "chatNotifications": "Chat & Notifications",
+  "helpCenter": "Help Center",
+  "encryption": "Encryption",
+  "biometric": "Biometric",
+  "fileStorage": "File Storage",
+  "dataStorage": "Data Storage",
+  "password": "Password",
+  "autoTimeout": "Auto Timeout",
+  "forms": "Forms",
+  "contactForm": "Contact Form",
+  "feedbackForm": "Feedback Form",
+  "securityForm": "Security Form",
+  "copyrightForm": "Copyright Form",
+  "gdprForm": "GDPR Form",
+  "company": "Company",
+  "aboutUs": "About Us",
+  "requestDemo": "Request a Demo",
+  "partnerProgram": "Partner Program",
+  "careers": "Careers",
+  "newsroom": "Newsroom",
+  "brandKit": "Brand kit",
+  "legal": "Legal",
+  "websiteTermsOfUse": "Website Terms of Use",
+  "websitePrivacyPolicy": "Website Privacy Policy",
+  "copyrightPaxform": "Copyright © 2022 Paxform. All rights reserved.",
+  "privacyPolicy": "Privacy Policy",
+  "termOfService": "Terms of Service",
+  "getStartedBtn": "Get Started",
+  "forever": "forever",
+  "free": "Free",
+  "premium": "Premium",
+  "family": "Family",
+  "customPricing": "Custom Pricing",
+  "fullName": "Full Name",
+  "email": "Email",
+  "companyName": "Company Name",
+  "companySize": "Company Size",
+  "message": "Message",
+  "selectARangeOfEmployees": "Select a range of employees",
+  "frequentlyAskedQuestions": "Frequently Asked Questions",
+  "max": "max",
+  "unlimited": "Unlimited",
+  "month": "month",
+  "essential": "Essential",
+  "standard": "Standard",
+  "plus": "Plus",
+  "features": "Features",
+  "blogToday": "BLOG TODAY",
+  "allPostsLoaded": "All posts loaded.",
+  "share": "Share",
+  "recommended": "Recommended",
+  "readArticle": "Read Article",
+  "seeAll": "See all",
+  "readMore": "Read More",
+  "all": "All",
+  "inThisCaseStudy": "In this case study",
+  "custom": "Custom",
+  "selectYourLanguage": "Select your language",
+  "downloadAndroid": "Download on Google Play",
+  "downloadApple": "Download on App Store",
+  "register": "Register",
   "securityPolicy": {
-    "name": "CHÍNH SÁCH BẢO MẬT",
-    "title": "Chỉ bạn mới có thể truy cập dữ liệu của mình. ",
-    "description": "<p>Paxform sẽ không bao giờ chia sẻ dữ liệu của bạn với bất kỳ ai. </p> <p>Chỉ bạn mới quyết định bên nào có thể xem những phần thông tin nào. </p>"
+    "name": "SECURITY POLICY",
+    "title": "Only you can access your data. Not us—Not anyone else.",
+    "description": "<p>Uncompromising Data Privacy: Your Information, Your Control.</p><p>At Paxform, safeguarding your data is our utmost priority. We never share your data with anyone, and rest assured, no one at Paxform can view or access your information. Our mission is to apply end-to-end encryption to every piece of stored data, ensuring the protection of organizations and individuals at all costs.</p> <p>With Paxform, you have full control over who can view specific pieces of information. Our security architecture decentralizes personal data, minimizing the risk of exposing any information in the event of a security threat. You can have full confidence in our commitment to preserving your privacy.</p>"
   },
   "testimonial": {
-    "name": "CHỨNG MINH",
-    "title": "Mọi người đang nói gì về Paxform"
+    "name": "TESTIMONIAL",
+    "title": "What people are saying about Paxform"
   },
   "getStarted": {
-    "title": "Bắt đầu miễn phí. <br /> Tải xuống từ cửa hàng ứng dụng của bạn.",
-    "cardTitle1": "Chúng tôi muốn nghe từ bạn!",
-    "cardTitle2": "Luôn biết những gì bạn phải trả",
-    "cardTitle3": "Bắt đầu tích hợp của bạn",
-    "cardDescription1": "Bạn cũng có thể liên hệ với chúng tôi để thiết kế gói tùy chỉnh cho doanh nghiệp của mình. tự động đối sánh dữ liệu đó cho dù bạn đang điền vào biểu mẫu nào. Hãy nói lời tạm biệt với việc nhập đi nhập lại cùng một dữ liệu theo cách thủ công.",
-    "cardDescription2": "Trải nghiệm một cấp độ tiện lợi mới bằng cách sử dụng chữ ký được lưu trữ của bạn để ký điện tử vào tài liệu của bạn.",
-    "cardDescription3": "Trải nghiệm một cấp độ tiện lợi mới bằng cách sử dụng chữ ký được lưu trữ của bạn để ký điện tử vào tài liệu của bạn."
+    "title": "Get started for free. <br /> Download on your mobile device.",
+    "cardTitle1": "We’d love to hear from you!",
+    "cardTitle2": "Always know what you pay for",
+    "cardTitle3": "Start your integration",
+    "cardDescription1": "Feel free to get in touch with us. Our team can help you design a personalized package that meets your specific needs. With our advanced technology, your data will be automatically synced across all forms, eliminating the need for tedious manual input.",
+    "cardDescription2": "Experience straightforward and transparent billing free from hidden charges with Paxform.",
+    "cardDescription3": "Leverage our robust API capabilities to effortlessly connect and synchronize with other systems."
   },
   "latestBlogs": {
-    "name": "BLOG PAXFORM",
-    "title": "Blog mới nhất từ ​​Paxform",
-    "button": "Xem tất cả bài đăng trên blog"
+    "name": "PAXFORM BLOG",
+    "title": "Latest Blogs from Paxform",
+    "button": "See All Blog Post"
   },
   "home": {
     "hero": {
-      "title": "Các hình thức <br /> không có hình thức",
-      "description": "Paxform cho phép người dùng lưu và quản lý dữ liệu cá nhân của họ một cách an toàn để tham khảo ngay lập tức, cho phép họ dễ dàng ký các tài liệu và chia sẻ thông tin với người khác."
+      "title": "Forms<br> Made Digital",
+      "description": "Protect your information with Paxform's secure personal data management. Save and access your data with ease for quick document signing and effortless information sharing with other users."
     },
     "businessPlatform": {
-      "name": "NỀN TẢNG KINH DOANH",
-      "title": "Thông tin doanh nghiệp của bạn trong tầm tay của bạn",
-      "learnMoreAboutBusiness": "Tìm hiểu thêm về Kinh doanh",
-      "platformTitle1": "Tạo các biểu mẫu phù hợp với nhu cầu của tổ chức bạn và gửi chúng cho khách hàng",
-      "platformTitle2": "Loại bỏ phiên âm",
-      "platformTitle3": "Giảm tỷ lệ từ bỏ biểu mẫu",
-      "platformTitle4": "Giảm tỷ lệ từ bỏ biểu mẫu",
-      "platformDescription1": "Dữ liệu cá nhân bạn gửi sẽ được ghi lại sau một lần sử dụng và được lưu trữ an toàn trong ứng dụng để sử dụng trong tương lai—bất kỳ lúc nào, bất kỳ hình thức nào. ",
-      "platformDescription2": "Nhận các biểu mẫu điện tử được điền tự động ngay khi khách hàng của bạn chia sẻ biểu mẫu đó với tổ chức của bạn - Không còn phải chờ các bản in ra giấy nữa vì Paxform đã loại bỏ.",
-      "platformDescription3": "Các hình thức là một nhiệm vụ tẻ nhạt, tốn thời gian. ",
-      "platformDescription4": "Các hình thức là một nhiệm vụ tẻ nhạt, tốn thời gian. "
+      "name": "BUSINESS PLATFORM",
+      "title": "Your business information at your fingertips",
+      "learnMoreAboutBusiness": "Learn more about Business",
+      "platformTitle1": "Create and customize forms to send to customers effortlessly",
+      "platformTitle2": "Eliminate transcription & administrative rework",
+      "platformTitle3": "Reduce form abandonment rates",
+      "platformTitle4": "Exclusive Forms: Tailored for Employees and Restricted Locations",
+      "platformDescription1": "Tailor forms to your organization's needs with Paxform's customizable features. Our extensive selection of standard and custom form fields allows you to mold each form to your liking.",
+      "platformDescription2": "Instantly receive auto-completed electronic forms from your customers upon submission. Say goodbye to waiting for hard copies to arrive as our platform eliminates this common issue.",
+      "platformDescription3": "Say goodbye to tedious and time-consuming forms. With Paxform, even the most comprehensive forms that require extensive information can be completed in an instant. Expect quicker and more efficient form submissions.",
+      "platformDescription4": "You may require subjective forms strictly for employees or specific locations. These separate functions are readily made available to your organization for your utmost convenience. Rest assured that all the hard work has already been taken care of for you!"
     },
     "personalPlatform": {
-      "name": "NỀN TẢNG CÁ NHÂN",
-      "title": "Thông tin cá nhân của bạn trong tầm tay của bạn",
-      "learnMoreAboutPersonal": "Tìm hiểu thêm về Cá nhân",
-      "platformTitle1": "Chụp, lưu và sử dụng thông tin cá nhân để hoàn thành các biểu mẫu và ứng dụng",
-      "platformTitle2": "Chia sẻ biểu mẫu và ứng dụng với các bên và tổ chức khác",
-      "platformTitle3": "Hoàn thành các hình thức đơn giản và phức tạp",
-      "platformTitle4": "Liên kết dữ liệu của gia đình bạn",
-      "platformTitle5": "Ký điện tử tài liệu",
-      "platformDescription1": "Dữ liệu cá nhân bạn gửi sẽ được ghi lại sau một lần sử dụng và được lưu trữ an toàn trong ứng dụng để sử dụng trong tương lai—bất kỳ lúc nào, bất kỳ hình thức nào. ",
-      "platformDescription2": "Nhận các biểu mẫu điện tử được điền tự động ngay khi khách hàng của bạn chia sẻ biểu mẫu đó với tổ chức của bạn - Không còn phải chờ các bản in ra giấy nữa vì Paxform đã loại bỏ.",
-      "platformDescription3": "Các hình thức là một nhiệm vụ tẻ nhạt, tốn thời gian. ",
-      "platformDescription4": "Dữ liệu cá nhân bạn gửi sẽ được ghi lại sau một lần sử dụng và được lưu trữ an toàn trong ứng dụng để sử dụng trong tương lai—bất kỳ lúc nào, bất kỳ hình thức nào. ",
-      "platformDescription5": "Trải nghiệm một cấp độ tiện lợi mới bằng cách sử dụng chữ ký được lưu trữ của bạn để ký điện tử vào tài liệu của bạn."
+      "name": "PERSONAL PLATFORM",
+      "title": "Your personal information at your fingertips",
+      "learnMoreAboutPersonal": "Learn more about Personal",
+      "platformTitle1": "Capture, save and use personal data to complete forms and applications",
+      "platformTitle2": "Link and share data with family",
+      "platformTitle3": "Complete simple and complex forms",
+      "platformTitle5": "Electronically sign documents",
+      "platformDescription1": "The personal data you provide is captured securely within the app after a single use, ensuring its safe storage for future use across any form, at any time. With automatic saving, each time you complete a form, new information is integrated and readily available for your convenience.",
+      "platformDescription2": "Link accounts with family members to effortlessly share personal data, eliminating physical information exchange. Experience simplified form filling for secondary identities, automatically filling the required data for the respective individual.",
+      "platformDescription3": "Manually filling physical forms is a tedious, time-consuming task. Experience the sheer efficiency of Paxform, where even the most extensive forms demanding every detail about you are effortlessly and instantaneously completed.",
+      "platformDescription5": "Experience elevated confidence as you conveniently use previously stored signatures to electronically sign your documents effortlessly."
     },
     "simplicity": {
-      "whyPaxform": "TẠI SAO LÀ PAXFORM",
-      "title": "Chúng tôi đơn giản hóa công việc của bạn",
-      "cardTitle1": "Tìm tất cả thông tin của bạn ở một nơi",
-      "cardTitle2": "Hầu hết các hình thức quá phức tạp",
-      "cardDescription1": "<p>Nó có thể là một rắc rối tìm kiếm nơi bạn đã lưu trữ thông tin khác nhau.  </p> <p> Tốt hơn nữa, tất cả dữ liệu đều được mã hóa và chỉ bạn và người mà bạn chia sẻ dữ liệu đó mới có quyền truy cập vào dữ liệu đó.</p>",
-      "cardDescription2": "<p>Hoàn thành biểu mẫu theo cách thủ công là một quá trình cực kỳ dài, dễ mắc lỗi chính tả và bỏ biểu mẫu thường dẫn đến sự chậm trễ. </p> <p> Với Paxform, bạn điền dữ liệu của mình một lần và nó sẽ tự động khớp dữ liệu đó cho dù bạn đang điền vào biểu mẫu nào. Hãy nói lời tạm biệt với việc nhập đi nhập lại cùng một dữ liệu theo cách thủ công.</p>"
+      "whyPaxform": "WHY PAXFORM",
+      "title": "We simplify your work",
+      "cardTitle1": "Centralize Your Information: Everything You Need in One Place",
+      "cardTitle2": "Most forms are too complex",
+      "cardDescription1": "<p>Say goodbye to the hassle of searching for scattered information. With Paxform, you can conveniently store all your important data, from biodatas and signatures to documents and contacts, in a single app.</p><p>What's more, rest assured that all your data is encrypted, ensuring that only you and the intended recipients have access to it.</p>",
+      "cardDescription2": "<p>Manual form completion is not only time-consuming but also prone to typos and form abandonment, leading to unnecessary delays. Complicating matters further, studies show that nearly 30% of individuals struggle with understanding basic forms.</p><p>With Paxform, you can bid farewell to repetitive data entry. Simply input your information once, and it will automatically populate across all forms. Eliminate the hassle of manually filling in the same data repeatedly.</p>"
     }
   },
   "businessPage": {
     "hero": {
-      "title": "Thông tin cá nhân của bạn ở một nơi Điền vào mọi biểu mẫu, mọi nơi",
-      "description": "Chức năng của Paxform rất đơn giản: nó hoàn toàn điền vào bất kỳ biểu mẫu nào vào bất kỳ lúc nào. ",
-      "planButton": "Xem kế hoạch",
-      "howButton": "Làm thế nào nó hoạt động"
+      "title": "Experience a Seamless Form Creation Process for Your Organization",
+      "description": "Experience the ultimate ease in form creation with Paxform. Our transition from physical to digital forms revolutionizes your user interactions, providing a reliable and efficient process to gather data for the benefit of your team and users alike. Our web application empowers you with straightforward functions and features, paving the way for your success on the road ahead.",
+      "planButton": "See Plans",
+      "howButton": "How it works"
     },
     "flexbox": {
-      "heading": "Công việc giấy tờ là ngày hôm qua - Đi kỹ thuật số ngày hôm nay",
-      "text": "Loại bỏ quá trình làm lại hành chính kéo dài trong khi không để lại dấu vết môi trường."
+      "heading": "Paper work was yesterday - Go digital today",
+      "text": "Eliminate the lengthy process of administrative rework while leaving no environmental footprint."
     },
     "features": {
-      "sectionName": "tính năng",
-      "sectionTitle": "Tính năng cho tổ chức của bạn",
+      "sectionName": "features",
+      "sectionTitle": "Features For Your Organisation",
       "first": {
-        "title": "Tạo mẫu biểu mẫu",
-        "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+        "title": "Create Forms",
+        "description": "At Paxform, creating forms is our specialty. Our web application provides your team with a user-friendly interface, saving time and ensuring your forms are visually appealing and well-organized. We've made the form creation process incredibly easy, eliminating the need for coding or advanced design skills. With our standard and custom form fields, you can customize your forms to suit your organization's preferences."
       },
       "second": {
-        "title": "Nhiều quản trị viên",
-        "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+        "title": "Create Contracts",
+        "description": "By utilizing Paxform, the realm of digital data sharing and submissions is revolutionized, surpassing conventional expectations for contract creation. Similar to standard forms, contracts incorporate both standard and customizable fields, enabling your organization to tailor contracts to your specific requirements"
       },
       "third": {
-        "title": "Xem và Tiến hành Ứng dụng",
-        "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+        "title": "View and Process Submissions",
+        "description": "Experience the convenience of centralized submission management with Paxform. Our user-friendly web application prioritizes simplicity and order, empowering your organization with a comprehensive suite of features and functions. Gain complete control over your submissions, effortlessly view and process the data your organization receives, all from a single platform."
       },
       "fourth": {
-        "title": "Sử dụng API",
-        "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+        "title": "Manage Checkins/visitors",
+        "description": "Recognizing the challenges posed by disorganized visitor management, we have integrated Checkins as a key feature in our mobile application. By offering Checkin forms to visitors upon entry to your physical facilities, you not only promote Covid-19 prevention measures but also facilitate customer follow-ups, gather valuable reviews, and provide timely notifications about organizational updates and offers. Experience seamless visitor management with Paxform."
       },
       "fifth": {
-        "title": "Yêu cầu thông tin",
-        "description": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+        "title": "Chat with Customers",
+        "description": "Enhance communication between your organization and its users with our integrated chat function. This powerful feature breaks down common communication barriers and ensures seamless interactions. Take control of the conversation by initiating the chat, enabling users to engage with your organization."
       }
     },
     "plans": {
-      "sectionName": "Kế hoạch cá nhân",
-      "sectionTitle": "Chọn một kế hoạch phù hợp với bạn",
-      "fullPricingButton": "Xem giá đầy đủ",
-      "included": "Bao gồm những gì",
+      "sectionName": "Business Plans",
+      "sectionTitle": "Choose a Plan That’s Right for you",
+      "fullPricingButton": "See full pricing",
+      "included": "What’s included",
       "free": {
-        "title": "Miễn phí",
-        "price": "mãi mãi",
-        "description": "Một cách đơn giản để bắt đầu cho bạn mới làm quen với passfolio.",
+        "title": "Business Essential",
+        "price": "user",
+        "description": "The essential subscription plan for businesses, offering a solid foundation of features to streamline your form management and data collection processes.",
         "features": {
-          "first": "Dữ liệu không giới hạn",
-          "second": "5 Người được cứu",
-          "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-          "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+          "feature1": "3 Maximum admins",
+          "feature2": "5 Published forms",
+          "feature3": "5 Form templates",
+          "feature4": "500 Monthly submissions",
+          "feature5": "Generic PDF",
+          "feature6": "One-way chat",
+          "feature7": "Electronic Signatures",
+          "feature8": "Single-step workflow"
         }
       },
       "premium": {
-        "title": "Phần thưởng",
-        "price": "mãi mãi",
-        "description": "Tốt nhất cho lập trình viên tự do",
+        "title": "Business Standard",
+        "price": "user",
+        "description": "The standard subscription plan for businesses, providing advanced features and capabilities to enhance your form automation and data organization.",
         "features": {
-          "first": "Dữ liệu không giới hạn",
-          "second": "5 Người được cứu",
-          "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-          "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+          "feature1": "10 Maximum admins (min 4)",
+          "feature2": "20 Published forms",
+          "feature3": "20 Form templates",
+          "feature4": "2000 Monthly submissions",
+          "feature5": "Generic PDF",
+          "feature6": "Two-way chat",
+          "feature7": "Electronic Signatures",
+          "feature8": "Multi-step workflow"
         }
       },
       "family": {
-        "title": "Gia đình",
-        "price": "giá tùy chỉnh",
-        "description": "Tốt nhất cho lập trình viên tự do",
+        "title": "Business Plus",
+        "price": "Custom",
+        "description": "The premium subscription plan for businesses, unlocking the full power of Paxform with comprehensive features, integrations, and customization options for seamless form management and data utilization.",
         "features": {
-          "first": "Dữ liệu không giới hạn",
-          "second": "5 Người được cứu",
-          "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-          "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+          "feature1": "Unlimited admins (min 10)",
+          "feature2": "Unlimited forms",
+          "feature3": "Unlimited templates",
+          "feature4": "10,000 Submissions",
+          "feature5": "Generic PDF",
+          "feature6": "Two-way chat",
+          "feature7": "Electronic Signatures",
+          "feature8": "Multi-step workflow"
         }
       }
     }
   },
   "privacyPolicyPage": {
-    "heroTitle": "Pháp lý Paxform",
+    "heroTitle": "Paxform Legal",
     "securityNavList": {
-      "title": "Bảo vệ",
-      "first": "Bảo mật riêng tư",
-      "second": "Cái khiên",
-      "third": "Bảo mật tài khoản"
+      "title": "Security",
+      "first": "Privacy Security",
+      "second": "Shield",
+      "third": "Account Security"
     },
     "servicesNavList": {
-      "title": "Dịch vụ",
-      "first": "Riêng tư",
-      "second": "Việc kinh doanh"
+      "title": "Services",
+      "first": "Personal",
+      "second": "Business"
     },
     "companyNavList": {
-      "title": "Công ty",
-      "first": "Về",
-      "second": "Liên hệ chúng tôi",
-      "third": "định giá"
+      "title": "Company",
+      "first": "About",
+      "second": "Contact Us",
+      "third": "Pricing"
     },
     "content": {
-      "title": "Chính sách bảo mật",
-      "description": "(“Sản phẩm”) quan tâm đến cách thông tin của họ được thu thập, sử dụng, xử lý, chuyển giao, lưu trữ và chia sẻ.  <strong>Điều khoản sử dụng trang web, Điều khoản sử dụng dùng thử và Điều khoản dịch vụ tiêu chuẩn</strong>và tất cả các tài liệu khác được kết hợp trong đó (\"Điều khoản\"). <br /><br />Vui lòng tự làm quen với Chính sách quyền riêng tư toàn cầu này. <br /><br />Chính sách Quyền riêng tư Toàn cầu này cung cấp thông tin về cách Bynder xử lý dữ liệu với tư cách là bên kiểm soát dữ liệu, nghĩa là tất cả dữ liệu chúng tôi xử lý cho mục đích riêng của mình. <br /><br />Chính sách Quyền riêng tư Toàn cầu này cung cấp thông tin về cách Bynder xử lý dữ liệu với tư cách là bên kiểm soát dữ liệu, nghĩa là tất cả dữ liệu chúng tôi xử lý cho mục đích riêng của mình. ",
+      "title": "Privacy Policy",
+      "description": "(“Products”) care about how their information is collected, used, processed, transferred, stored, and shared. This Global Privacy Policy describes Bynder’s commitment to protecting your privacy. It forms a part of our <strong>Website Terms of Use, Trial Terms of Use, and Standard Termsof Service</strong>, and all other documents incorporated therein (“Terms”). Any capitalized terms not defined in this Global Privacy Policy are defined as set out in the Terms.<br /><br />Please familiarize yourself with this Global Privacy Policy. This Global Privacy Policy is formally reviewed annually and is updated as often as necessary. Updates will be posted public on the Website. If we make substantive changes to the purposes and policies set out here, we will update this page and we will inform Product Users by email or in-application notification.<br /><br />This Global Privacy Policy provides information on how Bynder handles data as a data controller, meaning all data we process for our own purposes. Where Bynder is a processor or asub-processor of data, that activity is generally governed by a Data Processing Agreement.<br /><br />This Global Privacy Policy provides information on how Bynder handles data as a data controller, meaning all data we process for our own purposes. Where Bynder is a processor or asub-processor of data, that activity is generally governed by a Data Processing Agreement.",
       "download": {
-        "name": "Chính sách quyền riêng tư của Paxform",
-        "btn": "Tải xuống dưới dạng PDF"
+        "name": "Paxform Privacy Policy",
+        "btn": "Download as PDF"
       }
     },
     "list": {
       "first": {
-        "heading": "1. Những gì chúng tôi thu thập và cách chúng tôi sử dụng",
-        "subHeading": "1.1 trang web",
-        "description": "Chính sách Quyền riêng tư Toàn cầu này cung cấp thông tin về cách Bynder xử lý dữ liệu với tư cách là bên kiểm soát dữ liệu, nghĩa là tất cả dữ liệu chúng tôi xử lý cho mục đích riêng của mình. "
+        "heading": "1. What We Collect and How We Use It",
+        "subHeading": "1.1 website",
+        "description": "This Global Privacy Policy provides information on how Bynder handles data as a data controller, meaning all data we process for our own purposes. Where Bynder is a processor or a sub-processor of data, that activity is generally governed by a Data Processing Agreement."
       },
       "second": {
-        "heading": "2. Lưu trữ và Bảo mật Dữ liệu Cá nhân",
-        "subHeading": "2.1 Lưu giữ Dữ liệu Cá nhân",
-        "description": "Bảo mật dữ liệu là một vấn đề có tầm quan trọng đặc biệt.  <strong></strong>"
+        "heading": "2. Personal Data Retention and Security",
+        "subHeading": "2.1 Retention of Personal Data",
+        "description": "Data security is a matter of critical importance. Bynder uses a wide range of security measures to safeguard your data against unauthorized access and disclosure and we continually evaluate our security program to ensure its effectiveness. Amazon Web Services provides our servers and maintains them in high-security controlled environments pursuant to the <strong>&nbsp;AWS Cloud</strong>"
       },
       "third": {
-        "heading": "3. Dữ liệu và Quyền của Bạn",
-        "subHeading": "3.1 Lưu giữ Dữ liệu Cá nhân",
-        "description": "Nói chung, tùy thuộc vào luật bảo vệ dữ liệu địa phương, bạn có các quyền có thể bao gồm: <br /><br /> <ul> <li> Xóa thông tin về việc chúng tôi xử lý Dữ liệu Cá nhân của bạn; </li> <li> Truy cập Dữ liệu Cá nhân của bạn mà chúng tôi nắm giữ, cùng với quyền sửa chữa những điểm không chính xác; </li> <li> Để gửi Dữ liệu Cá nhân của bạn cho bạn ở định dạng điện tử tiêu chuẩn; </li> <li> Để phản đối việc chúng tôi xử lý Dữ liệu Cá nhân của bạn và để ngăn việc ra quyết định hoặc lập hồ sơ hoàn toàn tự động;  </li> <li> Để hạn chế chúng tôi xử lý Dữ liệu Cá nhân của bạn hoặc xóa Dữ liệu Cá nhân của bạn. </li> </ul>"
+        "heading": "3. Your Data and Your Rights",
+        "subHeading": "3.1 Retention of Personal Data",
+        "description": "As a general matter, depending on local data protection laws, you have rights that may include: <br /><br /> <ul> <li> Clear information on our processing of your Personal Data; </li> <li> Access your Personal Data that we hold, together with the right to have inaccuracies corrected; </li> <li> To have your Personal Data delivered to you in a standard electronic format; </li> <li> To object to our processing of your Personal Data, and to prevent solely automated decision making or profiling; and </li> <li> To restrict our processing of your Personal Data, or have your Personal Data deleted. </li> </ul>"
       }
     }
   },
   "personalPage": {
     "hero": {
-      "name": "RIÊNG TƯ",
-      "title": "Thông tin cá nhân của bạn ở một nơi Điền vào mọi biểu mẫu, mọi nơi",
-      "description": "Chức năng của Paxform rất đơn giản: nó hoàn toàn điền vào bất kỳ biểu mẫu nào, bất cứ lúc nào. ",
-      "seePlan": "Xem kế hoạch"
+      "name": "PERSONAL",
+      "title": "Fill Any Form, Anywhere with Your Personal Information All in One Place",
+      "description": "Paxform simplifies form filling with its powerful autofill technology. Save time and effort by eliminating the repetitive task of entering personal information. With Paxform, you can securely manage and store all your personal data in one place, electronically sign important documents, and effortlessly send them to organizations. Rest assured, your data is fully encrypted for enhanced security and privacy.",
+      "seePlan": "See Plans"
     },
     "flexBox": {
-      "title": "Liên tục điền vào các biểu mẫu với các yêu cầu dữ liệu giống nhau?",
-      "description": "Tiết kiệm thời gian quý báu bằng cách có tất cả thông tin của bạn theo yêu cầu. "
+      "title": "Tired of Repeatedly Filling Forms with the Same Data Requirements?",
+      "description": "Save your valuable time by having access to all your information on demand. Autocomplete forms and applications on the go. Fill your data once and let our system handle the rest."
     },
     "featuresSection": {
-      "name": "Đặc trưng",
-      "title": "Tính năng cho tổ chức của bạn"
+      "name": "Features",
+      "title": "Features Handpicked For Your Benefit"
     },
     "planSection": {
-      "name": "KẾ HOẠCH CÁ NHÂN",
-      "title": "Chọn một kế hoạch phù hợp với bạn",
-      "button": "Xem giá đầy đủ"
+      "name": "PERSONAL PLANS",
+      "title": "Choose a Plan That’s Right for You",
+      "button": "See full pricing"
     },
     "features": {
-      "title1": "Tạo mẫu biểu mẫu",
-      "title2": "Nhiều quản trị viên",
-      "title3": "Xem và Tiến hành Ứng dụng",
-      "title4": "Sử dụng API",
-      "title5": "Yêu cầu thông tin",
-      "description1": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. ",
-      "description2": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. ",
-      "description3": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. ",
-      "description4": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. ",
-      "description5": "Lorem Ipsum chỉ đơn giản là văn bản giả của ngành công nghiệp in ấn và sắp chữ. "
+      "title1": "Access your personal data anytime",
+      "title2": "Fill forms at your convenience",
+      "title3": "Chat with organizations",
+      "title4": "Share data with family",
+      "title5": "Secrets",
+      "title6": "Disclosures",
+      "description1": "Once you start entering your personal information into the folio, instant access to that data becomes available at your fingertips. What's more, all your saved information is automatically populated into any relevant forms, eliminating the tedious task of repeatedly entering required details in multiple places. Thanks to Paxform's streamlined structure, editing and saving data is a breeze, providing users with a hassle-free form-filling experience.",
+      "description2": "Paxform has transformed form filling by seamlessly transitioning from paper to digital forms, enabling you to effortlessly complete forms anytime, anywhere. Unlike traditional physical forms, Paxform's advanced digital technology eliminates the frustration of lengthy and disorganized paperwork, converting the form-filling process into a smooth and automated experience. With just a scan or a click, you can now fill forms on the go, at your convenience. Bid farewell to the stress of dealing with physical forms and embrace a smoother and more convenient form-filling journey.",
+      "description3": "Upon form submission, you gain access to a user-friendly chat function, facilitating easy communication between you and the organization receiving your form. This convenient feature enables both parties to address any potential issues or concerns regarding the provided data. Additionally, you can direct any personal questions or concerns to the organization, ensuring effective and timely interaction throughout the process.",
+      "description4": "Paxform now offers two powerful features: 'Add a Person' and 'Link & Share.' These functions empower users to invite family members and securely share data with trusted recipients. Rest assured, your data remains protected through advanced encryption and robust security measures, ensuring that only the intended recipient can access it. Sharing data with family members simplifies the form-filling process, especially when entering information related to a shared identity, as many forms require this level of detail.",
+      "description5": "Our Secrets feature goes beyond your folio, granting you exclusive access to highly sensitive information like your bank card and bank account details. To ensure utmost confidentiality, single-factor authentication is mandatory for viewing and modifying this data. Additionally, the Secrets page offers a convenient random password generator, generating robust and dependable passwords for your security. Furthermore, you'll have the ability to utilize the Shared Secrets function, enabling you to securely share your confidential data with trusted users already connected to your account.",
+      "description6": "Enhance your understanding of your shared information with the powerful Disclosures feature. Access a comprehensive list of organizations you've engaged with through Paxform and effortlessly explore the forms you've filled for each specific organization. Stay in control of your interactions by utilizing this function, which efficiently organizes your form history and provides valuable insights into your engagements with various organizations."
     },
     "plans": {
-      "description1": "Một cách đơn giản để bắt đầu cho bạn mới làm quen với passfolio.",
-      "description2": "Tốt nhất cho lập trình viên tự do",
-      "description3": "Tốt nhất cho lập trình viên tự do",
+      "description1": "Enjoy basic access to Paxform's features, allowing individuals to securely store personal data, fill out forms, and receive notifications, all at no cost.",
+      "description2": "Upgrade to the premium subscription plan and unlock an enhanced experience with unlimited access to form filling, the ability to create and manage unlimited datasets, secret records, secondary identities, and more.",
+      "description3": "Perfect for families, the family subscription plan provides all the benefits of the premium plan and extends it to up to five additional family members, ensuring everyone can enjoy the convenience and security of Paxform.",
       "freeFeatures": {
-        "feature1": "Dữ liệu không giới hạn",
-        "feature2": "5 Người được cứu",
-        "feature3": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "feature4": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        "feature1": "1 Identity",
+        "feature2": "2 Devices",
+        "feature3": "Standard datasets",
+        "feature4": "Limited number of Secrets",
+        "feature5": "Two-way conversations",
+        "feature6": "Limited sharing",
+        "feature7": "Link to one organisation",
+        "feature8": "Electronic Signatures",
+        "feature9": "Recent submission history"
       },
       "premiumFeatures": {
-        "feature1": "Dữ liệu không giới hạn",
-        "feature2": "5 Người được cứu",
-        "feature3": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "feature4": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        "feature1": "Unlimited identities",
+        "feature2": "4 Devices",
+        "feature3": "All datasets",
+        "feature4": "Unlimited number of Secrets",
+        "feature5": "Two-way conversations",
+        "feature6": "Unlimited sharing",
+        "feature7": "Link to multiple organisations",
+        "feature8": "Electronic Signatures",
+        "feature9": "Full submission history"
       },
       "familyFeatures": {
-        "feature1": "Dữ liệu không giới hạn",
-        "feature2": "5 Người được cứu",
-        "feature3": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "feature4": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        "feature1": "Unlimited identities",
+        "feature2": "4 Devices",
+        "feature3": "All datasets",
+        "feature4": "Unlimited number of Secrets",
+        "feature5": "Two-way conversations",
+        "feature6": "Unlimited sharing",
+        "feature7": "Link to multiple organisations",
+        "feature8": "Electronic Signatures",
+        "feature9": "Full submission history"
       }
     }
   },
   "notFound": {
-    "title": "Rất tiếc, chúng tôi không thể liên lạc với bạn!",
-    "description": "Trang này bị thiếu hoặc bạn lắp ráp nó không chính xác",
-    "button": "Trở về nhà"
+    "title": "Oops's Sorry we can't reach you!",
+    "description": "This page is missing or you assemble it incorrectly",
+    "button": "Go back to home"
   },
   "contactUsPage": {
     "hero": {
-      "title": "Chúng tôi muốn nghe từ bạn",
-      "description": "Chúng tôi đánh giá cao phản hồi của bạn và sẵn sàng hỗ trợ bạn với bất kỳ câu hỏi hoặc thắc mắc nào mà bạn có thể có. "
+      "title": "We’d love to hear from you",
+      "description": "We value your feedback and are here to assist you with any questions or concerns you may have. Please fill out the form, and one of our representatives will get back to you as soon as possible."
     },
     "getInTouch": {
-      "name": "LIÊN LẠC",
-      "title": "Các nhóm của chúng tôi ở đây để giúp đỡ"
+      "name": "GET IN TOUCH",
+      "title": "Our teams are here to help"
     },
     "message": {
-      "title": "Nhắn tin cho chúng tôi {{messageNumber}}",
-      "description": "Tin nhắn hoặc dữ liệu có thể được áp dụng",
-      "linkText": "Nhắn tin cho chúng tôi"
+      "title": "Text us {{messageNumber}}",
+      "description": "Message and data rates may apply",
+      "linkText": "Message us"
     },
     "sendEmail": {
-      "title": "Gửi email cho chúng tôi",
-      "description": "Chúng tôi muốn nghe từ bạn!",
-      "linkText": "Gửi email cho chúng tôi"
+      "title": "Send us an email",
+      "description": "We’d love to hear from you!",
+      "linkText": "Email us"
     },
     "callUs": {
-      "title": "Gọi cho chúng tôi tại {{callNumber}}",
-      "description": "Chúng tôi muốn nghe từ bạn!",
-      "linkText": "Gọi cho chúng tôi"
+      "title": "Call us at {{callNumber}}",
+      "description": "We’d love to hear from you!",
+      "linkText": "Call us"
     },
     "chatWithSpecialist": {
-      "title": "Chat với bác sĩ chuyên khoa",
-      "description": "Có sẵn từ 9 giờ sáng - 5 giờ chiều AEST, Thứ Hai - Thứ Sáu",
-      "linkText": "Nói chuyện ngay"
+      "title": "Chat with a specialist",
+      "description": "Available 9am - 5pm AEST, Monday - Friday",
+      "linkText": "Chat now"
     },
     "contactForm": {
-      "messageTitle": "Tin nhắn của bạn đã được gửi!",
-      "message": "Chúng tôi sẽ sớm liên lạc lại với bạn. "
+      "messageTitle": "Your message has been sent!",
+      "message": "We will contact you shortly. Thank you!"
     }
   },
   "companyPage": {
     "hero": {
-      "name": "VỀ CHÚNG TÔI",
-      "title": "Paxform cho mọi người",
-      "description": "Chức năng của Paxform rất đơn giản: nó hoàn toàn điền vào bất kỳ biểu mẫu nào, bất cứ lúc nào. "
+      "name": "ABOUT US",
+      "title": "Paxform for everyone",
+      "description": "Paxform’s function is simple: it completely fills any form, anytime. You can manage and save your personal data, allowing you to sign documents and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety."
     },
     "vision": {
-      "name": "tầm nhìn của chúng tôi",
-      "title": "Các hình thức không có hình thức.",
-      "description": "Chức năng của Paxform rất đơn giản: nó hoàn toàn điền vào bất kỳ biểu mẫu nào, bất cứ lúc nào. "
+      "name": "Our Vision",
+      "title": "Forms without forms.",
+      "description": "Paxform’s function is simple: it completely fills any form, anytime. You can manage and save your personal data, allowing you to sign document s and send them to organisations with ease. No need to worry about security and privacy—Paxform fully encrypts your data to ensure your safety."
     },
     "diversity": {
-      "title": "Đa dạng",
-      "description": "<p>Tại Paxform, chúng tôi coi sự đa dạng và hòa nhập là một phần trong mọi việc chúng tôi làm.  <p /> <p> Là một công ty đang phát triển nhanh chóng, chúng tôi tập trung vào việc tạo ra một lực lượng lao động đa dạng trên toàn cầu và một nơi làm việc chào đón, nuôi dưỡng và tôn vinh tình bạn thân thiết, sáng kiến, khả năng lãnh đạo và đổi mới. </p>"
+      "title": "Diversity & Inclusion",
+      "description": "<p>At Paxform, we make diversity and inclusion part of everything we do. We are building a culture where one’s unique attributes and differences are part of who we are. Regardless of background or gender, our employees, customers and stakeholders are treated as equals. <p /> <p> As a fast-growing company, we focus on creating a diverse workforce globally and a workplace that welcomes, nurtures and celebrates camaraderie, initiative, leadership and innovation. We strive to build innovative products that can be used by everyone despite their cultural, language or geographic differences, furthermore, achieving the goals that we have set for ourselves and our stakeholders.</p>"
     }
   },
   "legalPage": {
-    "title": "Pháp lý Paxform",
-    "description": "Tìm thông tin pháp lý và tài nguyên cho các sản phẩm và dịch vụ của chúng tôi, bao gồm các chính sách và điều khoản của chúng tôi."
+    "title": "Paxform Legal",
+    "description": "Find legal information and resources for our products and services, including our policies and terms."
   },
   "pricingPage": {
     "free": {
-      "description": "Một cách đơn giản để bắt đầu cho bạn mới làm quen với passfolio.",
+      "description": "A simple way to get started for you new to passfolio.",
       "features": {
-        "first": "Dữ liệu không giới hạn",
-        "second": "5 Người được cứu",
-        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
       }
     },
     "premium": {
-      "description": "Tốt nhất cho lập trình viên tự do",
+      "description": "Best for freelance coders & designers who need",
       "features": {
-        "first": "Dữ liệu không giới hạn",
-        "second": "5 Người được cứu",
-        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
       }
     },
     "family": {
-      "description": "Tốt nhất cho lập trình viên tự do",
+      "description": "Best for freelance coders & designers who need",
       "features": {
-        "first": "Dữ liệu không giới hạn",
-        "second": "5 Người được cứu",
-        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
       }
     },
     "essential": {
-      "description": "Một cách đơn giản để bắt đầu cho bạn mới làm quen với passfolio.",
+      "description": "A simple way to get started for you new to passfolio.",
       "features": {
-        "first": "Dữ liệu không giới hạn",
-        "second": "5 Người được cứu",
-        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
       }
     },
     "standard": {
-      "description": "Tốt nhất cho lập trình viên tự do",
+      "description": "Best for freelance coders & designers who need",
       "features": {
-        "first": "Dữ liệu không giới hạn",
-        "second": "5 Người được cứu",
-        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
       }
     },
     "plus": {
-      "description": "Tốt nhất cho lập trình viên tự do",
+      "description": "Best for freelance coders & designers who need",
       "features": {
-        "first": "Dữ liệu không giới hạn",
-        "second": "5 Người được cứu",
-        "third": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio.",
-        "fourth": "Một cách đơn giản cho các bạn mới bắt đầu làm Passfolio."
+        "first": "Unlimited data",
+        "second": "5 Person saved",
+        "third": "A simple way for you new started to Passfolio.",
+        "fourth": "A simple way for you new started to Passfolio."
       }
     },
     "silver": {
-      "description": "Đệ trình bổ sung"
+      "description": "Additional Submissions"
     },
     "green": {
-      "description": "Đệ trình bổ sung"
+      "description": "Additional Submissions"
     },
     "blue": {
-      "description": "Đệ trình bổ sung"
+      "description": "Additional Submissions"
     },
     "compareList": {
       "features": {
-        "first": "Giá mỗi quản trị viên/tháng",
-        "second": "Số lượng quản trị viên",
-        "third": "Biểu mẫu đã xuất bản",
-        "fourth": "Mẫu biểu mẫu",
-        "fifth": "Mẫu thỏa thuận",
-        "sixth": "Khảo sát (hàng tháng)",
-        "seventh": "Gửi hàng tháng",
-        "eight": "Không gian lưu trữ có sẵn"
+        "first": "Pricing per Admin/month",
+        "second": "Number of Admins",
+        "third": "Published Forms",
+        "fourth": "Form template",
+        "fifth": "Agreement Templates",
+        "sixth": "Survey(monthly)",
+        "seventh": "Monthly Submissions",
+        "eight": "Storage Space Available"
       },
-      "security": "Mã hóa đầu cuối",
+      "security": "End-to-End Encryption",
       "supports": {
-        "first": "PDF chung",
-        "second": "Câu hỏi tối đa cho mỗi biểu mẫu",
-        "third": "câu hỏi có điều kiện",
-        "fourth": "Mẫu biểu mẫu",
-        "fifth": "Tệp đính kèm (theo mẫu)",
-        "sixth": "hỗ trợ quy trình làm việc"
+        "first": "Generic PDF",
+        "second": "Max Questions per Form",
+        "third": "Conditional Questions",
+        "fourth": "Form template",
+        "fifth": "Attachments(in forms)",
+        "sixth": "Workflow support"
       }
     },
     "hero": {
-      "name": "định giá",
-      "title": "Chọn một kế hoạch phù hợp với bạn"
+      "name": "Pricing",
+      "title": "Choose a Plan That's Right for You"
     },
     "dataCredit": {
-      "name": "tín dụng dữ liệu",
-      "title": "Tín dụng dữ liệu có thể được mua theo khối."
+      "name": "Data Credit",
+      "title": "Data Credits can be purchased in blocks."
     },
     "compare": {
-      "title": "So sánh các gói"
+      "title": "Compare Plans"
     }
   },
   "resourcesPage": {
     "hero": {
-      "name": "Tài nguyên Paxform",
-      "title": "Hướng dẫn và tài nguyên",
-      "description": "Paxform sẽ không bao giờ chia sẻ dữ liệu của bạn với bất kỳ ai. ",
-      "button": "Xem tất cả Tài nguyên"
+      "name": "Paxform Resources",
+      "title": "Guides and resources",
+      "description": "Paxform will never share your data with anyone. What’s more, no one at Paxform can view or access your information.",
+      "button": "See all Resources"
     },
     "businessInsight": {
-      "name": "ĐIỂM NỔI BẬT VỀ KINH DOANH",
-      "title": "Thông tin nổi bật về Business Insight mới nhất",
-      "button": "Nhìn thấy tất cả"
+      "name": "BUSINESS INSIGHT HIGHLIGHT",
+      "title": "Latest Business Insight Highlight",
+      "button": "See all"
     },
     "insightUpdate": {
-      "name": "Thông tin chi tiết về doanh nghiệp và cập nhật ngành"
+      "name": "Business Insight and Industry Updates"
     },
     "latestUpdate": {
-      "name": "TIN TỨC CẬP NHẬT NGÀNH NỔI BẬT",
-      "title": "Thông tin cập nhật mới nhất về ngành"
+      "name": "INDUSTRY UPDATES HIGHLIGHT",
+      "title": "Latest Industry Updates Highlight"
+    }
+  },
+  "dataSecurityPage": {
+    "hero": {
+      "title": "Paxform Legal"
+    },
+    "dataSecurity": {
+      "title": "Data Security",
+      "sectionName": "Security Policy",
+      "slogan": "Only You Can Access Your Data. Not Us - Not Anyone Else.",
+      "description": "<p>Paxform will never share your data with anyone. What’s more, no one at Paxform can view or access your information. Our mission is to apply end-toend encryption to every piece of information stored, protecting the data of organizations and individuals at all stages and at all costs.</p><p>Only you decide which parties can view what piece of information. Our security architecture ensures that personal data is decentralized, guaranteeing that the point of access in a potential security threat will not reveal any information.</p>"
+    },
+    "dataAccess": {
+      "sectionName": "Security Policy",
+      "slogan": "Only You Can Access Your Data. Not Us - Not Anyone Else.",
+      "dataSafeguard": {
+        "title": "Safeguarding your data",
+        "description": "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes."
+      },
+      "dataSecurity": {
+        "title": "Secure anywhere anytime",
+        "description": "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes."
+      },
+      "networkProtection": {
+        "title": "Network protection",
+        "description": "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes."
+      },
+      "backups": {
+        "title": "Back-ups",
+        "description": "From the very first brainstorming stages to launch, security is an integral aspect of every step in our development processes."
+      }
     }
   }
 }
