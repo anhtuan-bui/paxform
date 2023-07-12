@@ -303,6 +303,16 @@ $color_green: #20976c;
           background-image: url("../../assets/images/icon-chat.svg");
         }
       }
+      &:nth-child(5) {
+        .help__box-title::before {
+          background-image: url("../../assets/icons/book\ a\ meeting.svg");
+        }
+      }
+      &:nth-child(6) {
+        .help__box-title::before {
+          background-image: url("../../assets/icons/book\ a\ demonstration.svg");
+        }
+      }
     }
   }
 }
