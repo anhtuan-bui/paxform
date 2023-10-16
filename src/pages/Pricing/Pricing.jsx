@@ -613,4 +613,3 @@ class Pricing extends Component {
   }
 }
 export default withTranslation()(Pricing);
-
