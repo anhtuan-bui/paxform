@@ -1,4 +1,8 @@
 {
+  "startForFree": "Start for free",
+  "workEmail": "Work Email",
+  "contact": "contact",
+  "user": "user",
   "homePage": "Home",
   "signUp": "Sign Up",
   "howItWork": "How it works",
@@ -84,6 +88,9 @@
   "inThisCaseStudy": "In this case study",
   "custom": "Custom",
   "selectYourLanguage": "Select your language",
+  "downloadAndroid": "Download on Google Play",
+  "downloadApple": "Download on App Store",
+  "register": "Register",
   "securityPolicy": {
     "name": "SECURITY POLICY",
     "title": "Only you can access your data. Not us—Not anyone else.",
@@ -96,7 +103,7 @@
   "getStarted": {
     "title": "Get started for free. <br /> Download on your mobile device.",
     "cardTitle1": "We’d love to hear from you!",
-    "cardTitle2": "Always know what you pay",
+    "cardTitle2": "Always know what you pay for",
     "cardTitle3": "Start your integration",
     "cardDescription1": "Feel free to get in touch with us. Our team can help you design a personalized package that meets your specific needs. With our advanced technology, your data will be automatically synced across all forms, eliminating the need for tedious manual input.",
     "cardDescription2": "Experience straightforward and transparent billing free from hidden charges with Paxform.",
@@ -140,7 +147,7 @@
     },
     "simplicity": {
       "whyPaxform": "WHY PAXFORM",
-      "title": "We simplify your work",
+      "title": "Create forms your customers will autofill",
       "cardTitle1": "Centralize Your Information: Everything You Need in One Place",
       "cardTitle2": "Most forms are too complex",
       "cardDescription1": "<p>Say goodbye to the hassle of searching for scattered information. With Paxform, you can conveniently store all your important data, from biodatas and signatures to documents and contacts, in a single app.</p><p>What's more, rest assured that all your data is encrypted, ensuring that only you and the intended recipients have access to it.</p>",
@@ -151,7 +158,7 @@
     "hero": {
       "title": "Experience a Seamless Form Creation Process for Your Organization",
       "description": "Experience the ultimate ease in form creation with Paxform. Our transition from physical to digital forms revolutionizes your user interactions, providing a reliable and efficient process to gather data for the benefit of your team and users alike. Our web application empowers you with straightforward functions and features, paving the way for your success on the road ahead.",
-      "planButton": "See Plan",
+      "planButton": "See Plans",
       "howButton": "How it works"
     },
     "flexbox": {
@@ -183,41 +190,53 @@
       }
     },
     "plans": {
-      "sectionName": "Personal Plans",
-      "sectionTitle": "Choose a Plan That’s Right for You",
+      "sectionName": "Business Plans",
+      "sectionTitle": "Choose a Plan That’s Right for you",
       "fullPricingButton": "See full pricing",
       "included": "What’s included",
       "free": {
-        "title": "Free",
-        "price": "forever",
-        "description": "A simple way to get started for you new to passfolio.",
+        "title": "Business Essential",
+        "price": "user",
+        "description": "The essential subscription plan for businesses, offering a solid foundation of features to streamline your form management and data collection processes.",
         "features": {
-          "first": "Unlimited data",
-          "second": "5 Person saved",
-          "third": "A simple way for you new started to Passfolio.",
-          "fourth": "A simple way for you new started to Passfolio."
+          "feature1": "1 Admins",
+          "feature2": "3 Published forms",
+          "feature3": "5 Form templates",
+          "feature4": "500 Monthly submissions",
+          "feature5": "Generic PDF",
+          "feature6": "One-way chat",
+          "feature7": "Electronic Signatures",
+          "feature8": "Single-step workflow"
         }
       },
       "premium": {
-        "title": "Premium",
-        "price": "forever",
-        "description": "Best for freelance coders & designers who need.",
+        "title": "Business Standard",
+        "price": "user",
+        "description": "The standard subscription plan for businesses, providing advanced features and capabilities to enhance your form automation and data organization.",
         "features": {
-          "first": "Unlimited data",
-          "second": "5 Person saved",
-          "third": "A simple way for you new started to Passfolio.",
-          "fourth": "A simple way for you new started to Passfolio."
+          "feature1": "3 Admins",
+          "feature2": "10 Published forms",
+          "feature3": "20 Form templates",
+          "feature4": "1000 monthly submissions",
+          "feature5": "Generic PDF",
+          "feature6": "Two-way chat",
+          "feature7": "Electronic Signatures",
+          "feature8": "Multi-step workflow"
         }
       },
       "family": {
-        "title": "Family",
-        "price": "Custom Pricing",
-        "description": "Best for freelance coders & designers who need.",
+        "title": "Business Plus",
+        "price": "Custom",
+        "description": "The premium subscription plan for businesses, unlocking the full power of Paxform with comprehensive features, integrations, and customization options for seamless form management and data utilization.",
         "features": {
-          "first": "Unlimited data",
-          "second": "5 Person saved",
-          "third": "A simple way for you new started to Passfolio.",
-          "fourth": "A simple way for you new started to Passfolio."
+          "feature1": "5 Admins",
+          "feature2": "50 Published forms",
+          "feature3": "Unlimited form templates",
+          "feature4": "10,000 Submissions",
+          "feature5": "Generic PDF",
+          "feature6": "Two-way chat",
+          "feature7": "Electronic Signatures",
+          "feature8": "Multi-step workflow"
         }
       }
     }
@@ -272,7 +291,7 @@
       "name": "PERSONAL",
       "title": "Fill Any Form, Anywhere with Your Personal Information All in One Place",
       "description": "Paxform simplifies form filling with its powerful autofill technology. Save time and effort by eliminating the repetitive task of entering personal information. With Paxform, you can securely manage and store all your personal data in one place, electronically sign important documents, and effortlessly send them to organizations. Rest assured, your data is fully encrypted for enhanced security and privacy.",
-      "seePlan": "See Plan"
+      "seePlan": "See Plans"
     },
     "flexBox": {
       "title": "Tired of Repeatedly Filling Forms with the Same Data Requirements?",
@@ -302,26 +321,41 @@
       "description6": "Enhance your understanding of your shared information with the powerful Disclosures feature. Access a comprehensive list of organizations you've engaged with through Paxform and effortlessly explore the forms you've filled for each specific organization. Stay in control of your interactions by utilizing this function, which efficiently organizes your form history and provides valuable insights into your engagements with various organizations."
     },
     "plans": {
-      "description1": "A simple way to get started for you new to passfolio.",
-      "description2": "Best for freelance coders & designers who need.",
-      "description3": "Best for freelance coders & designers who need.",
+      "description1": "Enjoy basic access to Paxform's features, allowing individuals to securely store personal data, fill out forms, and receive notifications, all at no cost.",
+      "description2": "Upgrade to the premium subscription plan and unlock an enhanced experience with unlimited access to form filling, the ability to create and manage unlimited datasets, secret records, secondary identities, and more.",
+      "description3": "Perfect for families, the family subscription plan provides all the benefits of the premium plan and extends it to <b>up to five additional family members</b>, ensuring everyone can enjoy the convenience and security of Paxform.",
       "freeFeatures": {
-        "feature1": "Unlimited data",
-        "feature2": "5 Person saved",
-        "feature3": "A simple way for you new started to Passfolio.",
-        "feature4": "A simple way for you new started to Passfolio."
+        "feature1": "1 Identity",
+        "feature2": "2 Devices",
+        "feature3": "Standard datasets",
+        "feature4": "Limited number of Secrets",
+        "feature5": "Two-way conversations",
+        "feature6": "Limited sharing",
+        "feature7": "Link to one organisation",
+        "feature8": "Electronic Signatures",
+        "feature9": "Recent submission history"
       },
       "premiumFeatures": {
-        "feature1": "Unlimited data",
-        "feature2": "5 Person saved",
-        "feature3": "A simple way for you new started to Passfolio.",
-        "feature4": "A simple way for you new started to Passfolio."
+        "feature1": "Unlimited identities",
+        "feature2": "4 Devices",
+        "feature3": "All datasets",
+        "feature4": "Unlimited number of Secrets",
+        "feature5": "Two-way conversations",
+        "feature6": "Unlimited sharing",
+        "feature7": "Link to multiple organisations",
+        "feature8": "Electronic Signatures",
+        "feature9": "Full submission history"
       },
       "familyFeatures": {
-        "feature1": "Unlimited data",
-        "feature2": "5 Person saved",
-        "feature3": "A simple way for you new started to Passfolio.",
-        "feature4": "A simple way for you new started to Passfolio."
+        "feature1": "Unlimited identities",
+        "feature2": "4 Devices",
+        "feature3": "All datasets",
+        "feature4": "Unlimited number of Secrets",
+        "feature5": "Two-way conversations",
+        "feature6": "Unlimited sharing",
+        "feature7": "Link to multiple organisations",
+        "feature8": "Electronic Signatures",
+        "feature9": "Full submission history"
       }
     }
   },
@@ -362,6 +396,16 @@
     "contactForm": {
       "messageTitle": "Your message has been sent!",
       "message": "We will contact you shortly. Thank you!"
+    },
+    "bookMeeting": {
+      "title": "Book a meeting",
+      "description": "Discuss your needs with one of our team members",
+      "linkText": "Book now"
+    },
+    "bookDemo": {
+      "title": "Book a demostration",
+      "description": "Let our experts walk you though the platform",
+      "linkText": "Book now"
     }
   },
   "companyPage": {

@@ -1,9 +1,4 @@
-import React, {
-  createRef,
-  Fragment,
-  useEffect,
-  useState,
-} from "react";
+import React, { createRef, Fragment, useEffect, useState } from "react";
 import "./ContactUs.scss";
 import post from "../../lib/restApi";
 import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
@@ -13,94 +8,146 @@ import Button from "../../components/Button/Button";
 import Modal from "react-modal";
 import { useTranslation } from "react-i18next";
 
-export default function ContactUs () {
-  const messageNumber = "+61 1300 181 346";
-  const callNumber = "+61 1300 181 346";
-  const {t} = useTranslation();
-    return (
-      <main className="contact">
-        <section className="hero">
-          <div className="container hero__wrapper">
-            <div className="hero__content">
-              <p className="hero__name">{t("contactUs")}</p>
-              <h1 className="hero__title">{t("contactUsPage.hero.title")}</h1>
-              <p className="hero__description">
-              {t("contactUsPage.hero.description")}
-              </p>
-            </div>
-            <div className="form__box-wrapper">
-              <div className="form__box">
-                <ContactForm />
-              </div>
-            </div>
-          </div>
-          <div className="bottom_triangle bottom_triangle--white"></div>
-        </section>
-        <section className="help">
-          <div className="container">
-            <span className="help-name">{t("contactUsPage.getInTouch.name")}</span>
-            <h2 className="help-title">{t("contactUsPage.getInTouch.title")}</h2>
-            <div className="help__wrapper">
-              <div className="help__box">
-                <div className="help__box__inner">
-                  <em className="help__box-icon"></em>
-                  <strong className="help__box-title">
-                    {t("contactUsPage.message.title", {messageNumber: messageNumber})}
-                  </strong>
-                  <p className="help__box-desc">
-                  {t("contactUsPage.message.description")}
-                  </p>
-                  <a className="help__box-link" href="sms:+61482084480">
-                    {t("contactUsPage.message.linkText")} <ArrowRight />
-                  </a>
-                </div>
-              </div>
-              <div className="help__box">
-                <div className="help__box__inner">
-                  <em className="help__box-icon"></em>
-                  <strong className="help__box-title">{t("contactUsPage.sendEmail.title")}</strong>
-                  <p className="help__box-desc">{t("contactUsPage.sendEmail.description")}</p>
-                  <a className="help__box-link" href="mailto:hello@paxform.com">
-                  {t("contactUsPage.sendEmail.linkText")} <ArrowRight />
-                  </a>
-                </div>
-              </div>
-              <div className="help__box">
-                <div className="help__box__inner">
-                  <em className="help__box-icon"></em>
-                  <strong className="help__box-title">
-                  {t("contactUsPage.callUs.title", {callNumber: callNumber})}
-                  </strong>
-                  <p className="help__box-desc">{t("contactUsPage.callUs.description")}</p>
-                  <a className="help__box-link" href="tel:+611300181346">
-                  {t("contactUsPage.callUs.linkText")} <ArrowRight />
-                  </a>
-                </div>
-              </div>
-              <div className="help__box">
-                <div className="help__box__inner">
-                  <strong className="help__box-title">
-                  {t("contactUsPage.chatWithSpecialist.title")}
-                  </strong>
-                  <p className="help__box-desc">
-                  {t("contactUsPage.chatWithSpecialist.description")}
-                  </p>
-                  <a id="chat_now" className="help__box-link" href="#chat_now">
-                  {t("contactUsPage.chatWithSpecialist.linkText")} <ArrowRight />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+export default function ContactUs() {
+  const messageNumber = "+61 1300 181 345";
+  const callNumber = "+61 1300 181 345";
+  const { t } = useTranslation();
 
-          <div className="bottom_triangle bottom_triangle--footer"></div>
-        </section>
-      </main>
-    );
+  const handleChatNowClick = () => {
+    const chatNowButton = document.querySelector(".chat-button");
+    chatNowButton.click();
+  };
+
+  return (
+    <main className="contact">
+      <section className="hero">
+        <div className="container hero__wrapper">
+          <div className="hero__content">
+            <p className="hero__name">{t("contactUs")}</p>
+            <h1 className="hero__title">{t("contactUsPage.hero.title")}</h1>
+            <p className="hero__description">
+              {t("contactUsPage.hero.description")}
+            </p>
+          </div>
+          <div className="form__box-wrapper">
+            <div className="form__box">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+        <div className="bottom_triangle bottom_triangle--white"></div>
+      </section>
+      <section className="help">
+        <div className="container">
+          <span className="help-name">
+            {t("contactUsPage.getInTouch.name")}
+          </span>
+          <h2 className="help-title">{t("contactUsPage.getInTouch.title")}</h2>
+          <div className="help__wrapper">
+            <div className="help__box">
+              <div className="help__box__inner">
+                <em className="help__box-icon"></em>
+                <strong className="help__box-title">
+                  {t("contactUsPage.message.title", {
+                    messageNumber: messageNumber,
+                  })}
+                </strong>
+                <p className="help__box-desc">
+                  {t("contactUsPage.message.description")}
+                </p>
+                <a className="help__box-link" href="sms:+611300181345">
+                  {t("contactUsPage.message.linkText")} <ArrowRight />
+                </a>
+              </div>
+            </div>
+            <div className="help__box">
+              <div className="help__box__inner">
+                <em className="help__box-icon"></em>
+                <strong className="help__box-title">
+                  {t("contactUsPage.sendEmail.title")}
+                </strong>
+                <p className="help__box-desc">
+                  {t("contactUsPage.sendEmail.description")}
+                </p>
+                <a className="help__box-link" href="mailto:hello@paxform.com">
+                  {t("contactUsPage.sendEmail.linkText")} <ArrowRight />
+                </a>
+              </div>
+            </div>
+            <div className="help__box">
+              <div className="help__box__inner">
+                <em className="help__box-icon"></em>
+                <strong className="help__box-title">
+                  {t("contactUsPage.callUs.title", { callNumber: callNumber })}
+                </strong>
+                <p className="help__box-desc">
+                  {t("contactUsPage.callUs.description")}
+                </p>
+                <a className="help__box-link" href="tel:+611300181345">
+                  {t("contactUsPage.callUs.linkText")} <ArrowRight />
+                </a>
+              </div>
+            </div>
+            <div className="help__box">
+              <div className="help__box__inner">
+                <strong className="help__box-title">
+                  {t("contactUsPage.chatWithSpecialist.title")}
+                </strong>
+                <p className="help__box-desc">
+                  {t("contactUsPage.chatWithSpecialist.description")}
+                </p>
+                <a
+                  id="chat_now"
+                  className="help__box-link"
+                  href="#chat_now"
+                  onClick={handleChatNowClick}
+                >
+                  {t("contactUsPage.chatWithSpecialist.linkText")}{" "}
+                  <ArrowRight />
+                </a>
+              </div>
+            </div>
+
+            <div className="help__box">
+              <div className="help__box__inner">
+                <em className="help__box-icon"></em>
+                <strong className="help__box-title">
+                  {t("contactUsPage.bookMeeting.title", { callNumber: callNumber })}
+                </strong>
+                <p className="help__box-desc">
+                  {t("contactUsPage.bookMeeting.description")}
+                </p>
+                <a className="help__box-link" href="https://dealfollow.com/meet/catherine">
+                  {t("contactUsPage.bookMeeting.linkText")} <ArrowRight />
+                </a>
+              </div>
+            </div>
+
+            <div className="help__box">
+              <div className="help__box__inner">
+                <em className="help__box-icon"></em>
+                <strong className="help__box-title">
+                  {t("contactUsPage.bookDemo.title", { callNumber: callNumber })}
+                </strong>
+                <p className="help__box-desc">
+                  {t("contactUsPage.bookDemo.description")}
+                </p>
+                <a className="help__box-link" href="https://dealfollow.com/meet/Jehaiakim">
+                  {t("contactUsPage.bookDemo.linkText")} <ArrowRight />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bottom_triangle bottom_triangle--footer"></div>
+      </section>
+    </main>
+  );
 }
 
 const ContactForm = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const sitekey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
   let alerts = {
     fullName: "Please enter your full name",
@@ -211,7 +258,7 @@ const ContactForm = () => {
 
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
-    e.target.style.height = e.target.scrollHeight + 'px';
+    e.target.style.height = e.target.scrollHeight + "px";
   };
 
   useEffect(() => {
@@ -243,7 +290,7 @@ const ContactForm = () => {
           </p>
         </label>
         <label>
-          <strong>{t("email")}</strong>
+          <strong>{t("workEmail")}</strong>
           <input
             type="email"
             placeholder="example@email.com"
@@ -277,10 +324,10 @@ const ContactForm = () => {
             <option value="" disabled>
               {t("selectARangeOfEmployees")}
             </option>
-            <option value="1 - 10">1 - 10</option>
-            <option value="10 - 100">10 - 100</option>
-            <option value="100 - 1000">100 - 1000</option>
-            <option value="Over 1000">Over 1000</option>
+            <option value="1 - 9">1 - 9</option>
+            <option value="10 - 99">10 - 99</option>
+            <option value="100 - 999">100 - 999</option>
+            <option value="1000 and Over">1000 and Over</option>
           </select>
         </label>
         <label>

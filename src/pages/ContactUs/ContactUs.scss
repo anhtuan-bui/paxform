@@ -181,7 +181,6 @@ $color_green: #20976c;
 
   .help {
     position: relative;
-    padding: 0 $padding__column;
     padding-top: rem(200);
     padding-bottom: rem(200);
     background: $color_white;
@@ -213,6 +212,7 @@ $color_green: #20976c;
     }
     &__wrapper {
       display: grid;
+      padding: 0 $padding__column;
       grid-template-columns: repeat(2, 1fr);
       gap: rem(28);
       @include small {
@@ -303,6 +303,16 @@ $color_green: #20976c;
           background-image: url("../../assets/images/icon-chat.svg");
         }
       }
+      &:nth-child(5) {
+        .help__box-title::before {
+          background-image: url("../../assets/icons/book\ a\ meeting.svg");
+        }
+      }
+      &:nth-child(6) {
+        .help__box-title::before {
+          background-image: url("../../assets/icons/book\ a\ demonstration.svg");
+        }
+      }
     }
   }
 }
@@ -322,7 +332,7 @@ $color_green: #20976c;
     &--hidden {
       display: none;
     }
-  }   
+  }
 }
 
 .ReactModal__Overlay {

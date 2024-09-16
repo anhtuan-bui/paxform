@@ -247,6 +247,7 @@
 
       @include medium {
         flex-direction: column;
+        align-items: center;
       }
     }
 
@@ -263,11 +264,9 @@
 
     &__image {
       text-align: center;
-      transform: translateX(20%);
-      opacity: 0;
-      transition: 0.4s;
+      transition: 0.5s;
       @include medium {
-        width: 60%;
+        width: 75%;
       }
       
       @include small {
@@ -317,11 +316,13 @@
 
     &__name {
       color: #2d4bb6;
+      padding: 0 $padding__column;
     }
     &__title {
       margin-bottom: rem(60);
       max-width: 100%;
       margin-top: rem(16);
+      padding: 0 $padding__column;
     }
   }
 }

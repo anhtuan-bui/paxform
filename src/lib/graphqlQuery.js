@@ -254,11 +254,13 @@ const GET_LEGAL_CATEGORIES = gql`
   query GetLegalCategories($language: LanguageCodeFilterEnum = ALL) {
     legalCategories(where: { language: $language }) {
       nodes {
+        id
         slug
         name
         order
         legals {
           nodes {
+            id
             slug
             title
           }
@@ -475,5 +477,5 @@ export {
   GET_RESOURCE_BY_SLUG,
   GET_FAQS,
   GET_ALL_TESTIMONIALS,
-  GET_LANGUAGES
+  GET_LANGUAGES,
 };

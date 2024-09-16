@@ -11,16 +11,19 @@ import { Link, useLocation } from "react-router-dom";
 
 import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
 import { queryLanguageCode } from "../../lib/util";
+import { useTranslation } from "react-i18next";
 
 export default function LegalDetail() {
   const [pageTitle, setPageTitle] = useState("");
   const loadTitle = (title) => {
     setPageTitle(title);
   };
-  const { loading: legalDetailLoading, data: legalDetailData } =
-    useQuery(GET_LEGAL_CATEGORIES, {
+  const { loading: legalDetailLoading, data: legalDetailData } = useQuery(
+    GET_LEGAL_CATEGORIES,
+    {
       variables: { language: queryLanguageCode() },
-    });
+    }
+  );
 
   const legalDetailCategories = !legalDetailLoading
     ? [...legalDetailData.legalCategories.nodes].sort(
@@ -69,30 +72,21 @@ export default function LegalDetail() {
 }
 
 const LegalBreadscrumb = ({ title, loading }) => {
-  let location = useLocation().pathname.split("/");
-  location = location.splice(1, location.length - 1);
+  const { t } = useTranslation();
+  // location = location.splice(1, location.length - 1);
 
   const pageTitle = title.toLowerCase();
   return (
     <div className="legal_detail__breadscrumb">
       {!loading ? (
-        location.map((loca, index) =>
-          index !== location.length - 1 ? (
-            <Fragment key={index}>
-              <Link
-                className="breadscrumb__link"
-                to={index === 0 ? `/${loca}` : `/legal/${loca}`}
-              >
-                {loca.split("-").join(" ")}
-              </Link>
-              <ArrowRight className="breadscrumb__arrow-right" />
-            </Fragment>
-          ) : (
-            <span className="breadscrumb__page-title" key={index}>
-              {pageTitle}
-            </span>
-          )
-        )
+        <Fragment>
+          <Link className="breadscrumb__link" to={`/legal`}>
+            {t("legal")}
+          </Link>
+
+          <ArrowRight className="breadscrumb__arrow-right" />
+          <span className="breadscrumb__page-title">{pageTitle}</span>
+        </Fragment>
       ) : (
         <Fragment>
           <Link className="breadscrumb__link-skeleton">

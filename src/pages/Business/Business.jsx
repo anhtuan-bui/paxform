@@ -57,38 +57,29 @@ const plans = [
   {
     mainColor: "grey",
     title: t("businessPage.plans.free.title"),
-    price: [0, t("businessPage.plans.free.price")],
+    price: [t("startForFree")],
     description: t("businessPage.plans.free.description"),
-    features: [
-      t("businessPage.plans.free.features.first"),
-      t("businessPage.plans.free.features.second"),
-      t("businessPage.plans.free.features.third"),
-      t("businessPage.plans.free.features.fourth"),
-    ],
+    features: Array.from(Array(8), (x, index) =>
+      t(`businessPage.plans.free.features.feature${index + 1}`)
+    ),
   },
   {
     mainColor: "green",
     title: t("businessPage.plans.premium.title"),
-    price: [50, t("businessPage.plans.premium.price")],
+    price: [t("startForFree")],
     description: t("businessPage.plans.premium.description"),
-    features: [
-      t("businessPage.plans.premium.features.first"),
-      t("businessPage.plans.premium.features.second"),
-      t("businessPage.plans.premium.features.third"),
-      t("businessPage.plans.premium.features.fourth"),
-    ],
+    features: Array.from(Array(8), (x, index) =>
+      t(`businessPage.plans.premium.features.feature${index + 1}`)
+    ),
   },
   {
     mainColor: "blue",
     title: t("businessPage.plans.family.title"),
-    price: [t("businessPage.plans.family.price"), ""],
+    price: [t("startForFree")],
     description: t("businessPage.plans.family.description"),
-    features: [
-      t("businessPage.plans.family.features.first"),
-      t("businessPage.plans.family.features.second"),
-      t("businessPage.plans.family.features.third"),
-      t("businessPage.plans.family.features.fourth"),
-    ],
+    features: Array.from(Array(8), (x, index) =>
+      t(`businessPage.plans.family.features.feature${index + 1}`)
+    ),
   },
 ];
 
@@ -98,6 +89,9 @@ const Business = () => {
 
   const featureIndex = (index) => {
     setFeatureImage(features[index].image);
+    setTimeout(() => {
+      timeStart();
+    }, 1000);
   };
 
   const timeStart = () => {
@@ -127,7 +121,7 @@ const Business = () => {
                 text={t("businessPage.hero.planButton")}
                 type="flat-white arrow"
                 color="blue"
-                href="/pricing"
+                href="#business-plan"
               />
               {/* <Button
                   text={t("businessPage.hero.howButton")}
@@ -189,25 +183,25 @@ const Business = () => {
         <div className="bottom_triangle bottom_triangle--white"></div>
       </section>
 
-      <section className="plans">
+      <section className="plans" id="business-plan">
         <div className="container plans__container">
+          <div className="plans__top-title">
+            <p className="plans__name section_name">
+              {t("businessPage.plans.sectionName")}
+            </p>
+            <h1 className="plans__title section_title">
+              {t("businessPage.plans.sectionTitle")}
+            </h1>
+          </div>
           <div className="plans__top">
-            <div className="plans__top-title">
-              <p className="plans__name section_name">
-                {t("businessPage.plans.sectionName")}
-              </p>
-              <h1 className="plans__title section_title">
-                {t("businessPage.plans.sectionTitle")}
-              </h1>
-            </div>
             <div className="plans__top-button">
-              <Button
+              {/* <Button
                 className="plans__button"
                 text={t("businessPage.plans.fullPricingButton")}
                 type="arrow outline"
                 color="green"
                 href="/pricing"
-              />
+              /> */}
             </div>
           </div>
           <PlanPricing plans={plans} />

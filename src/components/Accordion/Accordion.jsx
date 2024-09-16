@@ -1,28 +1,32 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Accordion.scss";
 
+const AUTO_TIME = 1200;
+
 const Accordion = (props) => {
   let features = props.list;
-  const [featureList, setFeatureList] = useState(features);
+  const [featureList] = useState(features);
   let progressInterval;
   let progressTime = 0;
 
-  const titleClicked = (index) => {
-    if (props.titleClicked === true) {
-      console.log("clicked");
-      timeEnd();
-      setTimeout(() => {
-        timeStart();
-        props.featureIndex(index);
-      }, 1000);
+  const featureIndex = (index) => {
+    if (props.featureIndex) {
+      props.featureIndex(index);
     }
   };
 
-  const timeStart = () => {
-    if (props.timeStart) {
-      props.timeStart();
+  const titleClicked = (index) => {
+    if (props.titleClicked === true) {
+      timeEnd();
+      featureIndex(index);
     }
   };
+
+  // const timeStart = () => {
+  //   if (props.timeStart) {
+  //     props.timeStart();
+  //   }
+  // };
 
   const timeEnd = () => {
     if (props.timeEnd) {
@@ -78,12 +82,10 @@ const Accordion = (props) => {
         feature.isOpened = false;
       }
     });
-
-    setFeatureList(features);
   };
 
-  const handleAccordionAutomation = async () => {
-    let length = props.length ? props.length : 4000;
+  const handleAccordionAutomation = () => {
+    let length = props.length ? props.length : 6000;
     const time = length / 4;
     let index = 0;
     const accordionProgresses = document.querySelectorAll(
@@ -91,19 +93,16 @@ const Accordion = (props) => {
     );
     const panels = document.querySelectorAll(".accordion__item-panel");
 
-    progressTime = 0;
     progressInterval = setInterval(() => {
       progressTime += 1;
-      // console.log(progressTime);
       featureList.forEach((feature, i) => {
         if (feature.isOpened === true) {
           index = i;
-          // props.featureIndex(index);
           accordionProgresses[index].style.width =
             (progressTime / time) * 100 + "%";
         }
       });
-      if (progressTime >= 800) {
+      if (progressTime >= AUTO_TIME) {
         timeEnd();
       }
       if (progressTime >= time) {
@@ -121,10 +120,16 @@ const Accordion = (props) => {
           );
         }
         let nextIndex = index >= features.length - 1 ? 0 : index + 1;
+        featureIndex(nextIndex);
         features[nextIndex].isOpened = true;
 
-        props.featureIndex(nextIndex);
-        timeStart();
+        featureList.forEach((feature, i) => {
+          if (nextIndex === i) {
+            feature.isOpened = true;
+          } else {
+            feature.isOpened = false;
+          }
+        });
 
         panels[nextIndex].style.maxHeight =
           panels[nextIndex].scrollHeight + "px";
@@ -137,22 +142,20 @@ const Accordion = (props) => {
             "accordion__item-title--active-blue"
           );
         }
-        setFeatureList(features);
       }
     }, 1);
   };
 
   useEffect(() => {
     const panels = document.querySelectorAll(".accordion__item-panel");
-    features.forEach((feature, index) => {
+    featureList.forEach((feature, index) => {
       if (feature.isOpened) {
-        props.featureIndex(index);
-        // timeStart();
         panels[index].style.maxHeight = panels[index].scrollHeight + "px";
       }
     });
 
     handleAccordionAutomation();
+
     return () => {
       clearInterval(progressInterval);
     };

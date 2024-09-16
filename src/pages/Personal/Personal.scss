@@ -7,9 +7,9 @@ $color_bg_hero__gradient--first: #059459;
   .hero {
     position: relative;
     background: linear-gradient(
-      90deg,
-      $color_bg_hero__gradient--first 0%,
-      $color_bg_hero__gradient--last 100%
+      90.71deg,
+      $color__primary -74.09%,
+      #074581 99.41%
     );
 
     &__button {
@@ -130,7 +130,7 @@ $color_bg_hero__gradient--first: #059459;
 
   .flex_box {
     position: relative;
-    background-color: #def6ec;
+    background-color: #F0F8FF;
     z-index: 1000;
 
     @include extraLarge {
@@ -202,6 +202,12 @@ $color_bg_hero__gradient--first: #059459;
 
     &__image {
       position: relative;
+      text-align: center;
+
+      img {
+        position: relative;
+        object-fit: cover;
+        width: 65%;
 
       @include medium {
         width: 60%;
@@ -210,17 +216,13 @@ $color_bg_hero__gradient--first: #059459;
       @include small {
         width: 100%;
       }
-      img {
-        position: relative;
-        object-fit: cover;
-        width: 100%;
       }
     }
   }
 
   .features {
     position: relative;
-    background-color: #059459;
+    background-color: $color__primary;
     z-index: 1000;
     color: white;
     padding-top: rem(80);
@@ -234,6 +236,7 @@ $color_bg_hero__gradient--first: #059459;
       text-transform: uppercase;
       letter-spacing: rem(2);
       opacity: 0.8;
+      padding: 0 $padding__column;
     }
 
     &__title {
@@ -241,6 +244,7 @@ $color_bg_hero__gradient--first: #059459;
       line-height: rem(48);
       margin-bottom: rem(50);
       margin-top: 0;
+      padding: 0 $padding__column;
 
       @include large {
         font-size: rem(32);
@@ -255,12 +259,12 @@ $color_bg_hero__gradient--first: #059459;
 
     &__container {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       direction: rtl;
 
       @include medium {
         flex-direction: column;
+        align-items: center;
       }
     }
 
@@ -273,7 +277,6 @@ $color_bg_hero__gradient--first: #059459;
 
     &__accordion {
       padding: 0 $padding__column;
-      min-height: 750px;
       &-item {
         &-title {
           font-size: rem(20);
@@ -299,6 +302,8 @@ $color_bg_hero__gradient--first: #059459;
     }
 
     &__image {
+      text-align: center;
+      transition: 0.5s;
       @include medium {
         width: 60%;
       }
@@ -308,9 +313,8 @@ $color_bg_hero__gradient--first: #059459;
       }
 
       img {
-        @include extraLarge {
-          width: 100%;
-        }
+        width: 65%;
+        
 
         @include large {
           margin-top: rem(20);
@@ -348,13 +352,13 @@ $color_bg_hero__gradient--first: #059459;
 
     &__name {
       color: #2d4bb6;
+      padding: 0 $padding__column;
     }
     &__title {
       margin-bottom: rem(60);
       max-width: 100%;
       margin-top: rem(16);
+      padding: 0 $padding__column;
     }
   }
-
-
 }

@@ -13,10 +13,10 @@ import { NavLink } from "react-router-dom";
 
 import withRouter from "../../lib/helper";
 
-import client from "../../configurations/apollo";
-import { GET_USE_CASES } from "../../lib/graphqlQuery";
+// import client from "../../configurations/apollo";
+// import { GET_USE_CASES } from "../../lib/graphqlQuery";
 import { withTranslation } from "react-i18next";
-import { queryLanguageCode } from "../../lib/util";
+// import { queryLanguageCode } from "../../lib/util";
 
 class Header extends Component {
   app = {
@@ -48,7 +48,7 @@ class Header extends Component {
     );
 
     this.handleHeaderColorOnHero();
-    this.loadUseCaseMenu();
+    // this.loadUseCaseMenu();
   }
 
   componentWillUnmount() {
@@ -63,23 +63,28 @@ class Header extends Component {
     this.handleHeaderColorOnHero();
   }
 
-  loadUseCaseMenu() {
-    client.query({ query: GET_USE_CASES , variables: {language: queryLanguageCode()}}).then((result) => {
-      const useCasesResult = result.data.useCases.nodes;
-      useCasesResult.forEach((useCaseResult) => {
-        const useCase = {
-          text: useCaseResult.heroName.toLowerCase(),
-          to: `/use-cases/${useCaseResult.slug}`,
-          color: useCaseResult.heroImageBackgroundGradientStart,
-          icon: useCaseResult.headerIcon.node.sourceUrl,
-        };
-        if (!this.app.useCase.some((uc) => uc.text === useCase.text)) {
-          this.app.useCase.push(useCase);
-        }
-        this.setState(this.app);
-      });
-    });
-  }
+  // loadUseCaseMenu() {
+  //   client
+  //     .query({
+  //       query: GET_USE_CASES,
+  //       variables: { language: queryLanguageCode() },
+  //     })
+  //     .then((result) => {
+  //       const useCasesResult = result.data.useCases.nodes;
+  //       useCasesResult.forEach((useCaseResult) => {
+  //         const useCase = {
+  //           text: useCaseResult.heroName.toLowerCase(),
+  //           to: `/use-cases/${useCaseResult.slug}`,
+  //           color: useCaseResult.heroImageBackgroundGradientStart,
+  //           icon: useCaseResult.headerIcon.node.sourceUrl,
+  //         };
+  //         if (!this.app.useCase.some((uc) => uc.text === useCase.text)) {
+  //           this.app.useCase.push(useCase);
+  //         }
+  //         this.setState(this.app);
+  //       });
+  //     });
+  // }
 
   clickHamburger() {
     this.app.hamburgerIsOpen = !this.app.hamburgerIsOpen;
@@ -193,11 +198,6 @@ class Header extends Component {
     const { t } = this.props;
     const menu = [
       {
-        text: t("homePage"),
-        to: "/",
-        submenu: [],
-      },
-      {
         text: t("business"),
         to: "business",
         submenu: [],
@@ -209,7 +209,7 @@ class Header extends Component {
       },
       {
         text: t("contact"),
-        to: "contact-us",
+        to: "contact",
         submenu: [],
       },
       // {
